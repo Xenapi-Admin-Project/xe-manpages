@@ -3,12 +3,12 @@
 \fBxe host-cpu-param-get\fR    
 .\"    Author: Jens Schweikhardt <schweikh@schweikhardt.net>
 .\" Generator: DocBook XSL Stylesheets v1.76.1 <http://docbook.sf.net/>
-.\"      Date: 07/26/2012
+.\"      Date: 07/28/2012
 .\"    Manual: User Manuals
 .\"    Source: host-cpu-param-get 0.1.2
 .\"  Language: English
 .\"
-.TH "\FBXE HOST\-CPU\-PA" "1" "07/26/2012" "host-cpu-param-get 0.1.2" "User Manuals"
+.TH "\FBXE HOST\-CPU\-PA" "1" "07/28/2012" "host-cpu-param-get 0.1.2" "User Manuals"
 .\" -----------------------------------------------------------------
 .\" * Define some portability stuff
 .\" -----------------------------------------------------------------
@@ -29,20 +29,34 @@
 .\" * MAIN CONTENT STARTS HERE *
 .\" -----------------------------------------------------------------
 .SH "NAME"
-host-cpu-param-get \- Returns a parameter value for the host\*(Aqs CPU
+host-cpu-param-get \- Gets a parameter for the host\*(Aqs CPU
 .SH "SYNOPSIS"
-.HP \w'\fBxe\ host\-cpu\-param\-get\ uuid=<uuid>\ param\-name=<parameter>[param\-key=<key>]\fR\ 'u
-\fBxe host\-cpu\-param\-get uuid=<uuid> param\-name=<parameter>[param\-key=<key>]\fR
+.HP \w'\fBxe\ host\-cpu\-param\-get\ uuid=<uuid>\ param\-name=<parameter>\fR\ 'u
+\fBxe host\-cpu\-param\-get uuid=<uuid> param\-name=<parameter>\fR
+.SH "PREREQUISITES"
+.PP
+This command requires two arguments: the UUID for the CPU and a parameter name\&.
+.PP
+The UUID for the CPU can be obtained by running the
+\fBxe host\-cpu\-list \fR
+command\&.
+.PP
+To get the parameter name, run the
+\fBxe host\-cpu\-param\-list \fRcommand, assuming the UUID of the CPU is known\&.
 .SH "DESCRIPTION"
 .PP
 
 \fBxe host\-cpu\-param\-get\fR
-gets the CPU parameters for a host\&.
+command gets a CPU parameter for a host\&.
+.PP
+The CPU numbering system begins at 0\&. For example, the first CPU core\*(Aqs number is 0\&. Then the second CPU core\*(Aqs number would be 1 and so forth\&.
 .PP
 To get the CPU model, type in this command:
+.PP
 \fBxe host\-cpu\-param\-get uuid=<uuid> param\-name=modelname\fR
 .PP
 To get the CPU speed, type in this command:
+.PP
 \fBxe host\-cpu\-param\-get uuid=<uuid> param\-name=speed\fR
 .SH "OPTIONS"
 .PP
@@ -54,15 +68,17 @@ The unique identifier for the CPU\&.
 \fBparam\-name \fR
 .RS 4
 Parameter name\&.
+.RE
+.SH "PARAMETERS"
 .PP
 \fBhost\-uuid\fR
 .RS 4
-The unique identifier/object reference for the host\&.
+The unique identifier for the host\&.
 .RE
 .PP
 \fBnumber\fR
 .RS 4
-The number of physical CPU core within the host\&.
+The CPU number within the host\&.
 .RE
 .PP
 \fBvendor\fR
@@ -97,24 +113,23 @@ The CPU revision number\&.
 .PP
 \fBflags\fR
 .RS 4
-CPU flags\&.
+The flags set on the CPU\&.
 .RE
 .PP
 \fButilisation\fR
 .RS 4
 The current CPU utilisation\&.
 .RE
-.RE
 .SH "EXAMPLES"
 .PP
 \fBxe host\-cpu\-param\-get uuid=<uuid> param\-name=modelname\fR
 .RS 4
-Returns the CPU model given its UUID\&.
+Returns the CPU model\&.
 .RE
 .PP
 \fBxe host\-cpu\-param\-get uuid=<uuid> param\-name=speed\fR
 .RS 4
-Returns the CPU speed in Hz given its UUID\&.
+Returns the CPU speed\&.
 .RE
 .SH "SEE ALSO"
 .PP
