@@ -1,0 +1,267 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<?xml-stylesheet type="text/xsl"
+ href="http://docbook.sourceforge.net/release/xsl/current/manpages/docbook.xsl"?><!-- This document was created with Syntext Serna Free. --><!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN" "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd" [
+
+<!-- Process this file with an XSLT processor, e.g. xsltproc:    -->
+<!-- `xsltproc \
+      -''-nonet \
+      -''-param man.charmap.use.subset "0" \
+      -''-param make.year.ranges "1" \
+      -''-param make.single.year.ranges "1" \
+      manpage.xml'                                               -->
+
+  <!-- Fill in your name for FIRSTNAME and SURNAME.              -->
+  <!ENTITY dhfirstname "Daniel">
+  <!ENTITY dhsurname   "Leidert">
+  <!ENTITY dhemail     "daniel.leidert@wgdd.de">
+  <!-- dhusername could also be set to "&firstname; &surname;".  -->
+  <!ENTITY dhusername  "&dhfirstname; &dhsurname;">
+
+  <!-- The version information can also be suppressed (just      -->
+  <!-- remove it or comment it out.                              -->
+  <!ENTITY dhrelease   "0.1.2">
+
+  <!-- TITLE should be something like "User commands",           -->
+  <!-- "&dhpackage; command-line reference" or similar (see e.g. -->
+  <!-- http://www.tldp.org/HOWTO/Man-Page/q2.html). But limit    -->
+  <!-- the length to 30 chars.                                   -->
+  <!ENTITY dhtitle     "User Manuals">
+  
+  <!-- This is the application/package name.                     -->
+  <!ENTITY dhucpackage '<emphasis role="bold">xe &lt;command&gt;</emphasis>'>
+  <!ENTITY dhpackage 'host-cpu-param-get'>
+
+  <!-- If the application e.g. belongs to a package like X.org,  -->
+  <!-- this should be set to the package/suite name instead of   -->
+  <!-- dhpackage.                                                -->
+  <!ENTITY dhproduct   "&dhpackage;">
+
+  <!-- SECTION should be 1-8, maybe w/ subsection other          -->
+  <!-- parameters are allowed: see man(7), man(1) and            -->
+  <!-- http://www.tldp.org/HOWTO/Man-Page/q2.html.               -->
+  <!ENTITY dhsection   "1">
+
+]>
+<refentry>
+  <refentryinfo>
+    <title>&dhtitle;</title>
+<!-- Better put a suite name instead of &dhpackage; into productname -->    <productname>&dhproduct;</productname>
+    <releaseinfo role="version">&dhrelease;</releaseinfo>
+    <authorgroup>
+      <author>
+       <firstname>Lisa</firstname>
+       <surname>Nguyen</surname>
+       <contrib>Revised the xe help page for this command</contrib>
+       <address>
+	<email>ltn821@hotmail.com</email>
+       </address>
+      </author>
+      <author>
+        <firstname>Jens</firstname>
+        <surname>Schweikhardt</surname>
+        <contrib>Wrote this example manpage for the &quot;Linux Man Page Howto&quot;, available at <ulink url="http://www.schweikhardt.net/man_page_howto.html"/> or <ulink url="http://www.faqs.org/docs/Linux-mini/Man-Page.html"/>.</contrib>
+        <address>
+          <email>schweikh@schweikhardt.net</email>
+        </address>
+      </author>
+      <author>
+        <firstname>&dhfirstname;</firstname>
+        <surname>&dhsurname;</surname>
+        <contrib>Rewrote and extended the example manpage in DocBook XML for the Debian distribution.</contrib>
+        <address>
+          <email>&dhemail;</email>
+        </address>
+      </author>
+    </authorgroup>
+    <copyright>
+      <year>1995</year>
+      <year>1996</year>
+      <year>1997</year>
+      <year>1998</year>
+      <year>1999</year>
+      <year>2000</year>
+      <year>2001</year>
+      <year>2002</year>
+      <year>2003</year>
+      <holder>Jens Schweikhardt</holder>
+    </copyright>
+    <copyright>
+      <year>2006</year>
+      <holder>&dhusername;</holder>
+    </copyright>
+    <legalnotice>
+      <para>The Howto containing this example, was offered under the following conditions:</para>
+      <para>Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:</para>
+      <orderedlist>
+        <listitem>
+          <para>Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.</para>
+        </listitem>
+        <listitem>
+          <para>Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.</para>
+        </listitem>
+      </orderedlist>
+      <para>THIS SOFTWARE IS PROVIDED BY THE AUTHOR &quot;AS IS&quot; AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</para>
+    </legalnotice>
+  </refentryinfo>
+  <refmeta>
+    <refentrytitle>
+&dhucpackage;    </refentrytitle>
+    <manvolnum>&dhsection;</manvolnum>
+  </refmeta>
+  <refnamediv>
+    <refname>&dhpackage;</refname>
+    <refpurpose>&lt;one sentence description of command&gt;</refpurpose>
+  </refnamediv>
+  <refsynopsisdiv>
+    <cmdsynopsis>
+      <command>xe &lt;command&gt; required param=&lt;param&gt; [optional param=&lt;param&gt;]</command>
+    </cmdsynopsis>
+  </refsynopsisdiv>
+  <refsect1>
+    <title>PREREQUISITES </title>
+    <para>&lt;list any other commands needed to be used first&gt; </para>
+  </refsect1>
+  <refsect1 id="description">
+    <title>
+      <emphasis role="bold">DESCRIPTION</emphasis>
+    </title>
+    <para> &lt;describe the command&apos;s functionality&gt; .  </para>
+    <para>To get the CPU model, type in this command: </para>
+    <para><command>xe &lt;full command string including options and/or parameters&gt;</command></para>
+  </refsect1>
+  <refsect1 id="options">
+    <title>
+      <emphasis role="bold">OPTIONS</emphasis>
+    </title>
+    <variablelist>
+<!-- Use the variablelist.term.separator and the
+        variablelist.term.break.after parameters to
+        control the term elements. -->      <varlistentry>
+        <term>
+          <option>uuid</option>
+        </term>
+        <listitem>
+          <para>The unique identifier for
+the CPU.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>
+          <option>param-name </option>
+        </term>
+        <listitem>
+          <para>Parameter name.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </refsect1>
+  <refsect1>
+    <title>PARAMETERS</title>
+    <variablelist>
+      <varlistentry>
+        <term>
+          <option>host-uuid</option>
+        </term>
+        <listitem>
+          <para>The unique identifier for the host.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>
+          <option>number</option>
+        </term>
+        <listitem>
+          <para>The CPU number within the host.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>
+          <option>vendor</option>
+        </term>
+        <listitem>
+          <para>The vendor for the CPU.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>
+          <option>speed</option>
+        </term>
+        <listitem>
+          <para>The CPU clock speed in Hz.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>
+          <option>model</option>
+        </term>
+        <listitem>
+          <para>The model number for the CPU.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>
+          <option>family</option>
+        </term>
+        <listitem>
+          <para>The physical CPU family number.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>
+          <option>modelname</option>
+        </term>
+        <listitem>
+          <para>The CPU model.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>
+          <option>stepping</option>
+        </term>
+        <listitem>
+          <para>The CPU revision number.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>
+          <option>flags</option>
+        </term>
+        <listitem>
+          <para>The flags set on the CPU.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>
+          <option>utilisation</option>
+        </term>
+        <listitem>
+          <para>The current CPU utilisation.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </refsect1>
+  <refsect1 id="files">
+    <title>
+      <emphasis role="bold">EXAMPLES</emphasis>
+    </title>
+    <variablelist>
+      <varlistentry>
+        <term>
+          <command>xe &lt;full command string&gt;</command>
+        </term>
+        <listitem>
+          <para>Brief description of command output.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </refsect1>
+  <refsect1 id="see_also">
+    <title>
+      <emphasis role="bold">SEE ALSO</emphasis>
+    </title>
+<!-- In alpabetical order. -->    <para><citerefentry>
+        <refentrytitle>&lt;related command&gt;</refentrytitle>
+        <manvolnum>1</manvolnum>
+      </citerefentry>,  </para>
+  </refsect1>
+</refentry>
