@@ -29,7 +29,7 @@
   
   <!-- This is the application/package name.                     -->
   <!ENTITY dhucpackage '<emphasis role="bold">xe &lt;command&gt;</emphasis>'>
-  <!ENTITY dhpackage 'host-cpu-param-get'>
+  <!ENTITY dhpackage ''>
 
   <!-- If the application e.g. belongs to a package like X.org,  -->
   <!-- this should be set to the package/suite name instead of   -->
@@ -49,12 +49,12 @@
     <releaseinfo role="version">&dhrelease;</releaseinfo>
     <authorgroup>
       <author>
-       <firstname>Lisa</firstname>
-       <surname>Nguyen</surname>
-       <contrib>Revised the xe help page for this command</contrib>
-       <address>
-	<email>ltn821@hotmail.com</email>
-       </address>
+        <firstname>Lisa</firstname>
+        <surname>Nguyen</surname>
+        <contrib>Revised the xe help page for this command</contrib>
+        <address>
+          <email>ltn821@hotmail.com</email>
+        </address>
       </author>
       <author>
         <firstname>Jens</firstname>
@@ -104,17 +104,22 @@
     </legalnotice>
   </refentryinfo>
   <refmeta>
-    <refentrytitle>
-&dhucpackage;    </refentrytitle>
+    <refentrytitle>xe &lt;command name&gt;</refentrytitle>
     <manvolnum>&dhsection;</manvolnum>
   </refmeta>
   <refnamediv>
-    <refname>&dhpackage;</refname>
-    <refpurpose>&lt;one sentence description of command&gt;</refpurpose>
+    <refname>xe &lt;command&gt;</refname>
+    <refpurpose>one sentence summary of command</refpurpose>
   </refnamediv>
   <refsynopsisdiv>
     <cmdsynopsis>
-      <command>xe &lt;command&gt; required param=&lt;param&gt; [optional param=&lt;param&gt;]</command>
+      <command>xe &lt;command&gt; </command>
+    </cmdsynopsis>
+    <cmdsynopsis>
+      <command>xe &lt;command&gt; reqparam=&lt;param&gt; [optparam=&lt;param&gt;]</command>
+    </cmdsynopsis>
+    <cmdsynopsis>
+      <command>xe &lt;command&gt; [optparam={all | &lt;param1,param2,...&gt;}]</command>
     </cmdsynopsis>
   </refsynopsisdiv>
   <refsect1>
@@ -125,9 +130,9 @@
     <title>
       <emphasis role="bold">DESCRIPTION</emphasis>
     </title>
-    <para> &lt;describe the command&apos;s functionality&gt; .  </para>
-    <para>To get the CPU model, type in this command: </para>
-    <para><command>xe &lt;full command string including options and/or parameters&gt;</command></para>
+    <para> &lt;describe the command&apos;s functionality&gt; </para>
+    <para>To get &lt;fill in the blank&gt;, type in this command: </para>
+    <para><command>xe &lt;full command with options and/or arguments&gt;</command></para>
   </refsect1>
   <refsect1 id="options">
     <title>
@@ -138,11 +143,18 @@
         variablelist.term.break.after parameters to
         control the term elements. -->      <varlistentry>
         <term>
-          <option>uuid</option>
+          <option>&lt;required option name&gt;</option>
         </term>
         <listitem>
-          <para>The unique identifier for
-the CPU.</para>
+          <para>&lt;insert description&gt;</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>
+          <option>params </option>
+        </term>
+        <listitem>
+          <para>&lt;insert description&gt;</para>
         </listitem>
       </varlistentry>
       <varlistentry>
@@ -160,82 +172,10 @@ the CPU.</para>
     <variablelist>
       <varlistentry>
         <term>
-          <option>host-uuid</option>
+          <option>parameter name</option>
         </term>
         <listitem>
-          <para>The unique identifier for the host.</para>
-        </listitem>
-      </varlistentry>
-      <varlistentry>
-        <term>
-          <option>number</option>
-        </term>
-        <listitem>
-          <para>The CPU number within the host.</para>
-        </listitem>
-      </varlistentry>
-      <varlistentry>
-        <term>
-          <option>vendor</option>
-        </term>
-        <listitem>
-          <para>The vendor for the CPU.</para>
-        </listitem>
-      </varlistentry>
-      <varlistentry>
-        <term>
-          <option>speed</option>
-        </term>
-        <listitem>
-          <para>The CPU clock speed in Hz.</para>
-        </listitem>
-      </varlistentry>
-      <varlistentry>
-        <term>
-          <option>model</option>
-        </term>
-        <listitem>
-          <para>The model number for the CPU.</para>
-        </listitem>
-      </varlistentry>
-      <varlistentry>
-        <term>
-          <option>family</option>
-        </term>
-        <listitem>
-          <para>The physical CPU family number.</para>
-        </listitem>
-      </varlistentry>
-      <varlistentry>
-        <term>
-          <option>modelname</option>
-        </term>
-        <listitem>
-          <para>The CPU model.</para>
-        </listitem>
-      </varlistentry>
-      <varlistentry>
-        <term>
-          <option>stepping</option>
-        </term>
-        <listitem>
-          <para>The CPU revision number.</para>
-        </listitem>
-      </varlistentry>
-      <varlistentry>
-        <term>
-          <option>flags</option>
-        </term>
-        <listitem>
-          <para>The flags set on the CPU.</para>
-        </listitem>
-      </varlistentry>
-      <varlistentry>
-        <term>
-          <option>utilisation</option>
-        </term>
-        <listitem>
-          <para>The current CPU utilisation.</para>
+          <para>Parameter description.</para>
         </listitem>
       </varlistentry>
     </variablelist>
