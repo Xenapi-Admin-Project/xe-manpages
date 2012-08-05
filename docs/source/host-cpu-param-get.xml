@@ -67,12 +67,12 @@
       <author>
         <firstname>Lisa</firstname>
         <surname>Nguyen</surname>
-	<contrib>Revised the existing xe help page for the command.</contrib>
-	<address>
-	 <email>ltn821@hotmail.com</email>
+        <contrib>Revised the existing xe help page for the command.</contrib>
+        <address>
+          <email>ltn821@hotmail.com</email>
         </address>
-       </author>
-       </authorgroup>
+      </author>
+    </authorgroup>
     <copyright>
       <year>1995</year>
       <year>1996</year>
@@ -129,10 +129,6 @@
     </title>
     <para> <command>xe host-cpu-param-get</command> command gets a CPU parameter for a host.  </para>
     <para>The CPU numbering system begins at 0. For example, the first CPU core&apos;s number  is  0. Then the second CPU core&apos;s number would be 1 and so forth. </para>
-    <para>To get the CPU model, type in this command: </para>
-    <para><command>xe host-cpu-param-get uuid=&lt;uuid&gt; param-name=modelname</command></para>
-    <para>To get the CPU speed, type in this command: </para>
-    <para><command>xe host-cpu-param-get uuid=&lt;uuid&gt; param-name=speed</command></para>
   </refsect1>
   <refsect1 id="options">
     <title>
