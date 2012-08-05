@@ -131,8 +131,6 @@
       <emphasis role="bold">DESCRIPTION</emphasis>
     </title>
     <para> &lt;describe the command&apos;s functionality&gt; </para>
-    <para>To get &lt;fill in the blank&gt;, type in this command: </para>
-    <para><command>xe &lt;full command with options and/or arguments&gt;</command></para>
   </refsect1>
   <refsect1 id="options">
     <title>
