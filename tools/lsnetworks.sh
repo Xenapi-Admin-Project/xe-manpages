@@ -4,6 +4,9 @@
 # Author: Grant McWilliams (grantmcwilliams.com)
 # Version: 0.5
 # Date: August 4, 2012
+# Version: 0.6
+# Date: August 12, 2012
+# Fixed but in vlan variables not resetting
 
 setcolors()
 {
@@ -122,6 +125,7 @@ echo ""
 
 for NETWORK in ${NETNAMES[@]}
 do
+	
 	if [[ $UUID = "yes" ]] ;then
 			NETUUID="$NETWORK"
 	else
@@ -138,6 +142,10 @@ do
 		else
 			VLAN="$VLANNUM"
 		fi
+	else
+		VLAN=""
+		VLANNUM=""
+		VLANUUID=""
     fi    
     
     #echo the item followed by the correct number of spaces	
