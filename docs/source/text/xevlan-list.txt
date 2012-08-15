@@ -1,0 +1,18 @@
+author: Matthew Spah
+
+
+Command:
+
+xe vlan-list - Display VLANs
+
+Prerequisites:
+
+
+
+Description: 
+
+xe vlan-list lists VLANS present in a pool. Citrix recommends using xe pif-list to list VLANs. 
+
+Examples:
+
+

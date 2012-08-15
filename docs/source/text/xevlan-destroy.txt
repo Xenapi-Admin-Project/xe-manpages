@@ -1,0 +1,17 @@
+
+author: Matthew Spah
+
+Command:
+
+xe vlan-destoy - Delete a VLAN from a Network
+
+xe vlan-destroy uuid=<param>
+
+Prerequisites:
+
+
+Description: 
+
+xe vlan-destroy deletes an unused VLAN from a network. You have to disable any actives VIFs connected to the VLAN.
+
+Examples:

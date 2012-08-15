@@ -1,0 +1,18 @@
+author: Matthew Spah
+
+
+Command:
+
+xe vlan-param-list
+
+xe vlan-param-list uuid=<vlan uuid>
+
+Prerequisites:
+
+
+
+Description: 
+
+xe vlan-param-list will output the paramerts of the specified VLAN. Output functions just like xe vlan-list.
+
+Examples:
