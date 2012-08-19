@@ -1,6 +1,6 @@
 NAME
 
-xe - XCP's command line interface
+xe - XCP/Xenserver command line interface
 
 SYNOPSIS
 
@@ -16,12 +16,12 @@ xe is the commandline interface to Xen Cloud Platform (XCP) and Citrix Xenserver
 used to manage XCP/Xeserver. The xe CLI enables the writing of scripts for automating system administration tasks and 
 allows integration of XCP/XenServer into an existing IT infrastructure.
 
-The xe command line interface is installed by default on XCP/XenServer hosts. 
+The xe command line interface is installed by default on XCP/XenServer hosts. Some operating systems also offer a locally 
+installable version.
 
 On RPM-based distributions (such as, Red Hat and CentOS), you can install the stand-alone xe CLI executable from
 the RPM named xe-cli-6.00-@BUILD_NUMBER@.i386.rpm on the main XCP/Xeserver installation ISO, as follows:
 rpm -ivh xe-cli-6.00-@BUILD_NUMBER@.i386.rpm
-
 
 GENERAL OPTIONS
        Parameters and options conventions
@@ -37,112 +37,111 @@ GENERAL OPTIONS
        -u <user>
 
        -pw <password-file>
-
-
-COMMAND LIST
-
-audit-log-get - Write the pool audit log to a file
+       
+       
+<command> is one of:
+audit-log-get - Get the pool log and save to a file
 bond-create - Create a bonded interface from a list of existing PIFs
 bond-destroy - Destroy a bonded interface
 bond-list - List all bonded interfaces
-bond-param-get - Get parameters for a specific bonded interface
-bond-param-list - List all parameters for a specific bonded interface
+bond-param-get - Get bonded interface parameters
+bond-param-list - List all bonded interface parameters
 cd-list - List available CDs
 console-list - Lists all consoles
-console-param-add - Add map parameter to console
-console-param-clear - Clear parameter of console
-console-param-get - Get parameter of console
-console-param-list - List parameters of console
-console-param-remove - Remove parameter of console
-console-param-set - Set parameter value of console
+console-param-add - Add a console parameter
+console-param-clear - Clear a console parameter
+console-param-get - Get a console parameter
+console-param-list - List all console parameters
+console-param-remove - Remove a console parameter
+console-param-set - Set a console parameter
 diagnostic-compact - Perform a major GC collection and heap compaction
-diagnostic-db-log - Start logging database operations (cannot be stopped once started)
+diagnostic-db-log - Start a logging database operation (cannot be stopped once started)
 diagnostic-db-stats - Print db stats
 diagnostic-gc-stats - Print GC stats
 diagnostic-license-status - Help diagnose pool-wide licensing problems
 diagnostic-timing-stats - Print timing stats
-diagnostic-vdi-status - Query the locking and sharing status of a VDI
-diagnostic-vm-status - Query the hosts on which the VM can boot, check the sharing/locking status of all VBDs
-event-wait - Wait for the event that satisfies the conditions given on the command line
+*diagnostic-vdi-status - Query the locking and sharing status of a VDI
+*diagnostic-vm-status - Query the hosts on which the VM can boot, check the sharing/locking status of all VBDs
+event-wait - Wait for an event
 help - Print xe command help
-host-apply-edition - Change to another license edition or reactivate one after a license has expired 
-host-backup - Download a backup of the host's control domain
-host-bugreport-upload - Upload the output of xen-bugtool 
-host-call-plugin - Call the function within the plugin on the given host with optional arguments
+*host-apply-edition - Change to another license edition or reactivate one after a license has expired 
+*host-backup - Backup a control domain to a file
+*host-bugreport-upload - Upload the output of xen-bugtool 
+*host-call-plugin - Call the function within the plugin on the given host with optional arguments
 host-compute-free-memory - Compute the amount of free memory on the host
 host-compute-memory-overhead - Compute the virtualization memory overhead of a host
-host-cpu-info - List information about the host's physical CPUs.
-host-cpu-list - List all the host-cpus, filtering on the optional arguments. To filter on map parameters, use the syntax 'map-param
-host-cpu-param-get - Get a parameter of a CPU
-host-cpu-param-list - Lists all parameters of a CPU
-host-crashdump-destroy - Delete a host crashdump from the server
-host-crashdump-list - List all crashdumps of a host
-host-crashdump-param-get - Get crashdump parameter of a host
-host-crashdump-param-list - Lists all crashdump parameters of a host
-host-crashdump-upload - Upload a crashdump of a host to the support website
-host-data-source-forget - Stop recording the specified data source for a Host, and forget all of the recorded data. 
-host-data-source-list - List the data sources that can be recorded for a Host. 
-host-data-source-query - Query the last value read from a Host data source. 
-host-data-source-record - Record the specified data source for a Host. 
-host-disable - Disable the XE host. 
-host-disable-local-storage-caching - Disable local storage caching on the specified host 
-host-dmesg - Get xen dmesg of the XE host. 
-host-emergency-ha-disable - Disable HA on the local host. Only to be used to recover a pool with a broken HA setup.
-host-emergency-management-reconfigure - Reconfigure the management interface of this node
-host-enable - Enable the XE host. 
-host-enable-local-storage-caching - Enable local storage caching on the specified host 
-host-evacuate - Migrate all VMs off a host.
-host-forget - Forget about the host without contacting it explicitly. WARNING
-host-get-cpu-features - Prints a hexadecimal representation of the host's physical-CPU features.
-host-get-server-certificate - Get the installed server SSL certificate. 
-host-get-system-status - Download system status into <filename>.  
-host-get-system-status-capabilities - 
-host-get-uncooperative-vms - Return a list of VMs which are not co-operating with the memory control system.
-host-get-vms-which-prevent-evacuation - Return a list of VMs which prevent the evacuation of a specific host and display reasons for each one.
-host-is-in-emergency-mode - Query the target host to discover if it is in emergency mode.
-host-license-add - Add a license to a host.
-host-license-view - View the license parameters of the host.
-host-list - Lists all the hosts, 
-host-logs-download - Download a copy of the host logs. 
-host-management-disable - Disable the management interface of this node.
-host-management-reconfigure - Reconfigure the management interface of this node.
-host-param-add - Adds to a set or map parameter. 
-host-param-clear
-host-param-get - Gets the parameter specified of the object. 
-host-param-list - Lists all the parameters of the object specified by the uuid.
-host-param-remove - Removes a member or a key,value pair from a set/map respectively.
-host-param-set - Sets the parameter specified. 
-host-power-on
-host-reboot - Reboot the XE host. 
-host-reset-cpu-features - Removes the feature mask of the host's physical CPU (if any).
-host-restore - Upload a backup of the host's control domain. 
-host-retrieve-wlb-evacuate-recommendations - Retrieves recommended host migrations to perform when evacuating the host from the wlb server. If a vm cannot be migrated from the host the reason is listed instead of a recommendation.
-host-send-debug-keys - Send specified hypervisor debug keys to specified host
-host-set-cpu-features - Attempts to mask the host's physical-CPU features to match the given features. The given string must be a 32-digit hexadecimal number (optionally containing spaces), as given by host-get-cpu-features.
-host-set-hostname-live - Sets the host name to the specified string.  Both the API and lower-level system hostname are changed. The simplest way to select the host on which the operation is to be performed is by supplying the argument 'host=<name or uuid>'. Hosts can also be specified by filtering the full list of hosts on the values of fields. For example, specifying 'enabled=true' will select all hosts whose 'enabled' field is equal to 'true'. Where multiple hosts are matching, and the operation can be performed on multiple hosts, the option '--multiple' must be specified to perform the operation. The full list of fields that can be matched can be obtained by the command 'xe host-list params=all'. If no parameters to select hosts are given, the operation will be performed on all hosts.
-host-set-power-on-mode - Sets the power-on mode for the XE host 
-host-shutdown - Shutdown the XE host. 
-host-shutdown-agent - Shut down the agent on the local host.
-host-sync-data - Synchronise the non-database data stored on the pool master with the named XE host. 
-host-syslog-reconfigure - Reconfigure syslog daemon.
-log-get - Return the log currently stored in the string logger.
-log-get-keys - List the keys known by the logger.
-log-reopen - Reopen all loggers (use this for rotating files).
-log-set-output - Set all loggers to the specified output (nil, stderr, string, file
-message-create - Create a message associated with a particular API object. Note exactly one of the optional parameters must be supplied.
+host-cpu-info - List info on physical host CPUs
+host-cpu-list - List all host CPUs
+host-cpu-param-get - Get a host CPU parameter
+host-cpu-param-list - Lists all host CPU parameters
+host-crashdump-destroy - Delete a host crashdump
+host-crashdump-list - List host's crashdumps
+host-crashdump-param-get - Get host crashdump parameter
+host-crashdump-param-list - List host crashdump parameters 
+host-crashdump-upload - Upload a host crashdump to the support website
+*host-data-source-forget - Stop recording the specified data source for a Host, and forget all of the recorded data. 
+*host-data-source-list - List the data sources that can be recorded for a Host.
+*host-data-source-query - Query the last value read from a Host data source. 
+*host-data-source-record - Record the specified data source for a Host. 
+host-disable - Disable a host. All hosts will be disabled if one isn't specified
+host-disable-local-storage-caching - Disable a host's local storage caching
+host-dmesg - Get xen dmesg from host
+host-emergency-ha-disable - Disable a host's HA
+host-emergency-management-reconfigure - Reconfigure a host management interface
+host-enable - Enable a host
+host-enable-local-storage-caching - Enable a host's local storage caching
+host-evacuate - Migrate all VMs off a host
+host-forget - Forget about a dead host without contacting it explicitly
+host-get-cpu-features - Print a hexadecimal representation of the host's physical-CPU features
+host-get-server-certificate - Get the installed server SSL certificate 
+host-get-system-status - Download system status  
+host-get-system-status-capabilities - Get system status capabilities
+*host-get-uncooperative-vms - Return a list of VMs which are not co-operating with the memory control system
+*host-get-vms-which-prevent-evacuation - Return a list of VMs which prevent the evacuation of a specific host and display reasons for each one.
+host-is-in-emergency-mode - Query a host to discover if it is in emergency mode
+host-license-add - Add a license to a host
+host-license-view - View the host's license parameters
+host-list - Lists all hosts 
+host-logs-download - Download a copy of the host's logs
+host-management-disable - Disable the host's management interface 
+host-management-reconfigure - Reconfigure the host's management interface
+host-param-add - Add a host parameter 
+host-param-clear - Clear a host parameter
+host-param-get - Get a host parameter  
+host-param-list - List all host parameters 
+host-param-remove - Remove a parameter from a host
+host-param-set - Set the parameter specified
+host-power-on - Power on a host
+host-reboot - Reboot a host
+host-reset-cpu-features - Removes the feature mask of the host's physical CPU
+host-restore - Upload a backup of the host's control domain
+*host-retrieve-wlb-evacuate-recommendations - Retrieves recommended host migrations to perform when evacuating the host from the wlb server 
+*host-send-debug-keys - Send specified hypervisor debug keys to specified host
+*host-set-cpu-features - Attempts to mask the host's physical-CPU features to match the given features. 
+host-set-power-on-mode - Set the host power-on mode 
+host-shutdown - Shutdown a host 
+host-shutdown-agent - Shut down the agent on a host
+*host-sync-data - Synchronise the non-database data stored on the pool master with the specified host
+host-syslog-reconfigure - Reconfigure syslog daemon
+log-get - Return the log currently stored in the string logger
+log-get-keys - List the keys known by the logger
+log-reopen - Reopen all loggers (use this for rotating files)
+log-set-output - Set all loggers to the specified output 
+message-create - Create a message associated with a particular API object.
 message-destroy - Destroy an existing message.
-message-list - Lists all the messages, filtering on the optional arguments. To filter on map parameters, use the syntax 'map-param
-message-param-get - Gets the parameter specified of the object. 
-message-param-list - Lists all the parameters of the object specified by the uuid.
-network-create - Create a new network.
-network-destroy - Delete an existing network.
-network-list - Lists all the networks, 
-network-param-add - Adds to a set or map parameter. 
-network-param-clear - Clears the specified parameter
-network-param-get - Gets the parameter specified of the object. 
-network-param-list - Lists all the parameters of the object specified by the uuid.
-network-param-remove - Removes a member or a key,value pair from a set/map respectively.
-network-param-set - Sets the parameter specified.
+message-list - List all the messages
+message-param-get - Get the message parameter specified 
+message-param-list - List all message parameters 
+network-create - Create a new network
+network-destroy - Delete an existing network
+network-list - List all networks 
+network-param-add - Add a network parameter 
+network-param-clear - Clear a network parameter
+network-param-get - Get a network paramter 
+network-param-list - List all network parameters
+network-param-remove - Remove a network parameter
+network-param-set - Set a network parameter
+
 patch-apply - Apply the previously uploaded patch to the specified host.
 patch-clean - Delete a previously uploaded patch file.
 patch-destroy - Remove an unapplied patch record and files from the server.
@@ -773,5 +772,5 @@ xe-vm-vif-list
 
 AUTHORS
 
-
+Written by Grant McWilliams
 
