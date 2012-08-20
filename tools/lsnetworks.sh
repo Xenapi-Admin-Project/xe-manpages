@@ -7,6 +7,9 @@
 # Version: 0.6
 # Date: August 12, 2012
 # Fixed but in vlan variables not resetting
+# Version: 0.7
+# Date: August 19, 2012
+# Changed wording for VM device
 
 setcolors()
 {
@@ -69,7 +72,7 @@ else
 fi
 VLANUUIDS=( $(xe vlan-list --minimal | sort | sed 's/,/\n/g') )
 BRIDENAMES=( $(xe network-list params=bridge --minimal | sort | sed 's/,/\n/g') )
-TITLES=( 'Network' 'Bridge' 'VLAN' 'Virtual Machine' 'Device' )
+TITLES=( 'Network' 'Bridge' 'VLAN' 'Virtual Machine' 'VM Device' )
 
 MINSPACE="5"
 NETNAMELONGEST="0"
