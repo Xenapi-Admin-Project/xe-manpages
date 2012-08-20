@@ -141,17 +141,17 @@ network-param-get - Get a network paramter
 network-param-list - List all network parameters
 network-param-remove - Remove a network parameter
 network-param-set - Set a network parameter
+patch-apply - Apply an uploaded patch to a host
+patch-clean - Delete an uploaded patch file
+patch-destroy - Remove an unapplied patch from a host
+patch-list - List all patches
+patch-param-clear - Clear a patch parameter
+patch-param-get - Get a patch parameter
+patch-param-list - List all patch parameters
+patch-pool-apply - Apply an uploaded patch to all hosts in the pool
+patch-precheck - Run prechecks contained in an uploaded patch 
+patch-upload - Upload a patch file
 
-patch-apply - Apply the previously uploaded patch to the specified host.
-patch-clean - Delete a previously uploaded patch file.
-patch-destroy - Remove an unapplied patch record and files from the server.
-patch-list - Lists all the patches, filtering on the optional arguments. 
-patch-param-clear - Clears the specified parameter 
-patch-param-get - Gets the parameter specified of the object. 
-patch-param-list - Lists all the parameters of the object specified by the uuid.
-patch-pool-apply - Apply the previously uploaded patch to all hosts in the pool.
-patch-precheck - Run the prechecks contained within the patch previously uploaded to the specified host.
-patch-upload - Upload a patch file to the server.
 pbd-create - Create a PBD. The read-only device-config parameter can only be set on creation in the following manner. To
 pbd-destroy - Destroy the PBD.
 pbd-list - Lists all the pbds, filtering on the optional arguments. To filter on map parameters, use the syntax 'map-param
