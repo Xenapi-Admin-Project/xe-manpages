@@ -1,0 +1,137 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<?xml-stylesheet type="text/xsl"
+ href="http://docbook.sourceforge.net/release/xsl/current/manpages/docbook.xsl"?><!-- This document was created with Syntext Serna Free. --><!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN" "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd" [
+
+<!-- Process this file with an XSLT processor, e.g. xsltproc:    -->
+<!-- `xsltproc \
+      -''-nonet \
+      -''-param man.charmap.use.subset "0" \
+      -''-param make.year.ranges "1" \
+      -''-param make.single.year.ranges "1" \
+      manpage.xml'                                               -->
+
+  <!-- Fill in your name for FIRSTNAME and SURNAME.              -->
+  <!ENTITY dhfirstname "Daniel">
+  <!ENTITY dhsurname   "Leidert">
+  <!ENTITY dhemail     "daniel.leidert@wgdd.de">
+  <!-- dhusername could also be set to "&firstname; &surname;".  -->
+  <!ENTITY dhusername  "&dhfirstname; &dhsurname;">
+
+  <!-- The version information can also be suppressed (just      -->
+  <!-- remove it or comment it out.                              -->
+  <!ENTITY dhrelease   "0.1.2">
+
+  <!-- TITLE should be something like "User commands",           -->
+  <!-- "&dhpackage; command-line reference" or similar (see e.g. -->
+  <!-- http://www.tldp.org/HOWTO/Man-Page/q2.html). But limit    -->
+  <!-- the length to 30 chars.                                   -->
+  <!ENTITY dhtitle     "User Manuals">
+  
+  <!-- This is the application/package name.                     -->
+  <!ENTITY dhucpackage 'xe [command]'>
+  <!ENTITY dhpackage 'xe [command]'>
+
+  <!-- If the application e.g. belongs to a package like X.org,  -->
+  <!-- this should be set to the package/suite name instead of   -->
+  <!-- dhpackage.                                                -->
+  <!ENTITY dhproduct   "&dhpackage;">
+
+  <!-- SECTION should be 1-8, maybe w/ subsection other          -->
+  <!-- parameters are allowed: see man(7), man(1) and            -->
+  <!-- http://www.tldp.org/HOWTO/Man-Page/q2.html.               -->
+  <!ENTITY dhsection   "1">
+
+]>
+<refentry>
+  <refentryinfo>
+    <title>&dhtitle;</title>
+<!-- Better put a suite name instead of &dhpackage; into productname -->    <productname>&dhproduct;</productname>
+    <releaseinfo role="version">&dhrelease;</releaseinfo>
+    <authorgroup>
+      <author>
+        <firstname>Matthew</firstname>
+        <surname>Spah</surname>
+        <contrib/>
+        <address>
+          <email>spahmatthew@gmail.com</email>
+        </address>
+      </author>
+      <author>
+        <firstname>&dhfirstname;</firstname>
+        <surname>&dhsurname;</surname>
+        <contrib>Rewrote and extended the example manpage in DocBook XML for the Debian distribution.</contrib>
+        <address>
+          <email>&dhemail;</email>
+        </address>
+      </author>
+    </authorgroup>
+    <copyright>
+      <year/>
+      <year/>
+      <year/>
+      <year/>
+      <year/>
+      <year/>
+      <year/>
+      <year/>
+      <year/>
+      <holder>Matthew Spah</holder>
+    </copyright>
+    <copyright>
+      <year/>
+      <holder>&dhusername;</holder>
+    </copyright>
+    <legalnotice>
+      <para>The Howto containing this example, was offered under the following conditions:</para>
+      <para>Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:</para>
+      <orderedlist>
+        <listitem>
+          <para>Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.</para>
+        </listitem>
+        <listitem>
+          <para>Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.</para>
+        </listitem>
+      </orderedlist>
+      <para>THIS SOFTWARE IS PROVIDED BY THE AUTHOR &quot;AS IS&quot; AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</para>
+    </legalnotice>
+  </refentryinfo>
+  <refmeta>
+    <refentrytitle>&dhucpackage;</refentrytitle>
+    <manvolnum>&dhsection;</manvolnum>
+  </refmeta>
+  <refnamediv>
+    <refname>&dhpackage;</refname>
+    <refpurpose>A brief description of the command</refpurpose>
+  </refnamediv>
+  <refsynopsisdiv>
+    <cmdsynopsis>
+      <command>xe command required param=&lt;param&gt; [optional param=&lt;param&gt;]</command>
+    </cmdsynopsis>
+  </refsynopsisdiv>
+  <refsect1 id="options_1">
+    <title>PREREQUISITES</title>
+    <para>[Description of needed prerequisites]</para>
+    <cmdsynopsis>
+      <command>xe commands needed</command>
+    </cmdsynopsis>
+  </refsect1>
+  <refsect1 id="description">
+    <title>DESCRIPTION </title>
+    <para><command>&dhpackage;</command> </para>
+  </refsect1>
+  <refsect1 id="options">
+    <title>OPTIONS</title>
+  </refsect1>
+  <refsect1>
+    <title>PARAMETERS</title>
+    <para>&lt;list the parameters of the command&gt;</para>
+  </refsect1>
+  <refsect1>
+    <title>EXAMPLES</title>
+    <para>xe &lt;command&gt; with a description of its use</para>
+  </refsect1>
+  <refsect1>
+    <title>SEE ALSO</title>
+    <para>related commands</para>
+  </refsect1>
+</refentry>
