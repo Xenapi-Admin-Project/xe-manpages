@@ -10,8 +10,13 @@ xe vlan-destroy uuid=<param>
 Prerequisites:
 
 
+Parameters:
+
+uuid=<param>
+    UUID of the VLAN to delete 
+
 Description: 
 
-xe vlan-destroy deletes an unused VLAN from a network. You have to disable any actives VIFs connected to the VLAN.
+xe vlan-destroy deletes a VLAN from a network. You must disable any actives VIFs connected to the VLAN.
 
 Examples:

@@ -4,8 +4,7 @@ author: Matthew Spah
 Command:
 
 xe pool-vlan-create – Create a new VLAN on all hosts in a pool.
-
-xe pool-vlan-create pif-uuid=<param> network-uuid=<param> vlan=<param> 
+ 
 
 Prerequisites:
 
@@ -13,15 +12,21 @@ xe pool-vlan-create requires an internal network and one physical PIF device.
 
 Description: 
 
-xe pool-vlan-create creates a VLAN on all hosts in a pool and assigns it to the network you specified in the parameters. 
-In order for VLAN tagging to occur a peusdo PIF is created that is associated with the physical PIF specified in the paramters. 
-The UUID of the VLAN is returned. The physical PIF now supports 802.1Q tagging. The default native VLAN is 1. 
+xe pool-vlan-create creates a VLAN on all hosts in a pool and assigns it to the specified network.
+A pseudo PIF is created and associated with the specified physical PIF. VLAN tagging occurs on the pseudo PIF. 
+The resulting VLAN UUID is returned. 
 
-xe pool-vlan-create creates a VLAN on all hosts in a pool. In order for VLAN tagging to occur a peusdo PIF is created and attached to
-the network specified in the parameters. 
+Parameters:
 
+pif-uuid=<param>
+    Physical PIF that pseudo PIF will be created with #this needs work I know
 
-
+network-uuid=<param>
+    Network to be assigned VLAN # needs work I know...
+    
+vlan=<param>
+    VLAN 
+    
 Examples:
 
 xe vlan-create network-uuid=2177a448-d2c6-27f9-ca64-b3899d1cbe98 pif-uuid=3e558a35-b5ff-c58c-eee2-388bae80cdc6 vlan=2

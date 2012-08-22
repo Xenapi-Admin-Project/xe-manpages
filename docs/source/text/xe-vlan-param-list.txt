@@ -13,6 +13,11 @@ Prerequisites:
 
 Description: 
 
-xe vlan-param-list will output the paramerts of the specified VLAN. Output functions just like xe vlan-list.
+
+
+## GRANTS NOTE
+## maybe - xe vlan-param-list lists all vlan parameters 
+## Is the output like xe vlan-list? Doesn't that list vlans and vlan-param-list lists the parameters for a specific vlan?
+
 
 Examples:
