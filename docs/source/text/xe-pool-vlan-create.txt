@@ -19,13 +19,13 @@ The resulting VLAN UUID is returned.
 Parameters:
 
 pif-uuid=<param>
-    Physical PIF that pseudo PIF will be created with #this needs work I know
+    Physical PIF that the pseudo PIF will be associated with. 
 
 network-uuid=<param>
-    Network to be assigned VLAN # needs work I know...
+    Network to be assigned VLAN number
     
 vlan=<param>
-    VLAN 
+    VLAN number
     
 Examples:
 

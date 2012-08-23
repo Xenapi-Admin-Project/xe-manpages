@@ -28,7 +28,7 @@
   <!ENTITY dhtitle     "User Manuals">
   
   <!-- This is the application/package name.                     -->
-  <!ENTITY dhucpackage 'xe [command]'>
+  <!ENTITY dhucpackage 'xe pool-vlan-create'>
   <!ENTITY dhpackage 'xe [command]'>
 
   <!-- If the application e.g. belongs to a package like X.org,  -->
@@ -101,34 +101,37 @@
   </refmeta>
   <refnamediv>
     <refname>&dhpackage;</refname>
-    <refpurpose>A brief description of the command</refpurpose>
+    <refpurpose>Create a new VLAN on all hosts in a pool.</refpurpose>
   </refnamediv>
   <refsynopsisdiv>
     <cmdsynopsis>
-      <command>xe command required param=&lt;param&gt; [optional param=&lt;param&gt;]</command>
+      <command>xe pool-vlan-create network-uuid=&lt;param&gt; pif-uuid=&lt;param&gt; vlan=&lt;param&gt; </command>
     </cmdsynopsis>
   </refsynopsisdiv>
   <refsect1 id="options_1">
     <title>PREREQUISITES</title>
-    <para>[Description of needed prerequisites]</para>
-    <cmdsynopsis>
-      <command>xe commands needed</command>
-    </cmdsynopsis>
+    <para>xe pool-vlan-create requires an internal network and one physical PIF device.</para>
   </refsect1>
   <refsect1 id="description">
     <title>DESCRIPTION </title>
-    <para><command>&dhpackage;</command> </para>
+    <para>xe pool-vlan-create creates a VLAN on all hosts in a pool and assigns it to the specified network.
+A pseudo PIF is created and associated with the specified physical PIF. VLAN tagging occurs on the pseudo PIF. 
+The resulting VLAN UUID is returned. <note>
+         <para>Physical PIF supports 802.1Q </para>
+      </note></para>
   </refsect1>
   <refsect1 id="options">
     <title>OPTIONS</title>
   </refsect1>
   <refsect1>
     <title>PARAMETERS</title>
-    <para>&lt;list the parameters of the command&gt;</para>
+    <msgset/>
   </refsect1>
   <refsect1>
     <title>EXAMPLES</title>
-    <para>xe &lt;command&gt; with a description of its use</para>
+    <para>xe vlan-create network-uuid=2177a448-d2c6-27f9-ca64-b3899d1cbe98 pif-uuid=3e558a35-b5ff-c58c-eee2-388bae80cdc6 vlan=2
+</para>
+    <para>2d98179d-2041-6544-8dee-24da8f2a8c01</para>
   </refsect1>
   <refsect1>
     <title>SEE ALSO</title>
