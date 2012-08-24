@@ -105,7 +105,10 @@
   </refnamediv>
   <refsynopsisdiv>
     <cmdsynopsis>
-      <command>xe pool-vlan-create network-uuid=&lt;param&gt; pif-uuid=&lt;param&gt; vlan=&lt;param&gt; </command>
+      <command>xe pool-vlan-create</command>
+    </cmdsynopsis>
+    <cmdsynopsis>
+      <command>xe pool-vlan-create<option> pif-uuid=&lt;param&gt;</option><option> network-uuid=&lt;param&gt;<option> vlan=&lt;param&gt;</option></option> </command>
     </cmdsynopsis>
   </refsynopsisdiv>
   <refsect1 id="options_1">
@@ -114,27 +117,51 @@
   </refsect1>
   <refsect1 id="description">
     <title>DESCRIPTION </title>
-    <para>xe pool-vlan-create creates a VLAN on all hosts in a pool and assigns it to the specified network.
+    <para><command>xe pool-vlan-create </command>creates a VLAN on all hosts in a pool and assigns it to the specified network.
 A pseudo PIF is created and associated with the specified physical PIF. VLAN tagging occurs on the pseudo PIF. 
-The resulting VLAN UUID is returned. <note>
-         <para>Physical PIF supports 802.1Q </para>
-      </note></para>
+The resulting VLAN UUID is returned. </para>
   </refsect1>
   <refsect1 id="options">
     <title>OPTIONS</title>
+    <para>WHAT DOES THIS EVEN MEAN </para>
   </refsect1>
   <refsect1>
     <title>PARAMETERS</title>
-    <msgset/>
+    <variablelist>
+      <varlistentry>
+        <term>
+          <option>network-uuid=&lt;param&gt;</option>
+        </term>
+        <listitem>
+          <para>Network to be assigned VLAN number</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>
+          <option>pif-uuid=&lt;param&gt;</option>
+        </term>
+        <listitem>
+          <para>Physical PIF that the pseudo PIF will be associated with.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>
+          <option>vlan=&lt;param&gt;</option>
+        </term>
+        <listitem>
+          <para>VLAN number</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
   </refsect1>
   <refsect1>
     <title>EXAMPLES</title>
-    <para>xe vlan-create network-uuid=2177a448-d2c6-27f9-ca64-b3899d1cbe98 pif-uuid=3e558a35-b5ff-c58c-eee2-388bae80cdc6 vlan=2
+    <para><command>xe vlan-create</command> <option>network-uuid=2177a448-d2c6-27f9-ca64-b3899d1cbe98</option> <option>pif-uuid=3e558a35-b5ff-c58c-eee2-388bae80cdc6</option> <option>vlan=2</option>
 </para>
     <para>2d98179d-2041-6544-8dee-24da8f2a8c01</para>
   </refsect1>
   <refsect1>
     <title>SEE ALSO</title>
-    <para>related commands</para>
+    <para>vlan-create(1)</para>
   </refsect1>
 </refentry>
