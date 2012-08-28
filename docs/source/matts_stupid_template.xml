@@ -105,14 +105,18 @@
   </refnamediv>
   <refsynopsisdiv>
     <cmdsynopsis>
-      <command>xe command required param=&lt;param&gt; [optional param=&lt;param&gt;]</command>
+      <command>xe [command]</command>
+      <command>reqpam=&lt;param&gt;</command>
+      <arg>
+        <option>opparam=&lt;param&gt;</option>
+      </arg>
     </cmdsynopsis>
   </refsynopsisdiv>
   <refsect1 id="options_1">
     <title>PREREQUISITES</title>
     <para>[Description of needed prerequisites]</para>
     <cmdsynopsis>
-      <command>xe commands needed</command>
+      <command>xe commands</command>
     </cmdsynopsis>
   </refsect1>
   <refsect1 id="description">
@@ -128,7 +132,6 @@
   </refsect1>
   <refsect1>
     <title>EXAMPLES</title>
-    <para>xe &lt;command&gt; with a description of its use</para>
   </refsect1>
   <refsect1>
     <title>SEE ALSO</title>
