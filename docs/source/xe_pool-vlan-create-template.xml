@@ -100,7 +100,7 @@
     <manvolnum>&dhsection;</manvolnum>
   </refmeta>
   <refnamediv>
-    <refname>&dhpackage;</refname>
+    <refname>xe pool-vlan-create</refname>
     <refpurpose>Create a new VLAN on all hosts in a pool.</refpurpose>
   </refnamediv>
   <refsynopsisdiv>
