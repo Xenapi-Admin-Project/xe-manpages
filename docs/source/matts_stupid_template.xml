@@ -56,14 +56,6 @@
           <email>spahmatthew@gmail.com</email>
         </address>
       </author>
-      <author>
-        <firstname>&dhfirstname;</firstname>
-        <surname>&dhsurname;</surname>
-        <contrib>Rewrote and extended the example manpage in DocBook XML for the Debian distribution.</contrib>
-        <address>
-          <email>&dhemail;</email>
-        </address>
-      </author>
     </authorgroup>
     <copyright>
       <year/>
@@ -76,10 +68,6 @@
       <year/>
       <year/>
       <holder>Matthew Spah</holder>
-    </copyright>
-    <copyright>
-      <year/>
-      <holder>&dhusername;</holder>
     </copyright>
     <legalnotice>
       <para>The Howto containing this example, was offered under the following conditions:</para>
@@ -105,29 +93,26 @@
   </refnamediv>
   <refsynopsisdiv>
     <cmdsynopsis>
-      <command>xe [command]</command>
+      <command>xe command</command>
+    </cmdsynopsis>
+    <cmdsynopsis>
+      <command>xe command</command>
       <command>reqpam=&lt;param&gt;</command>
-      <arg>
-        <option>opparam=&lt;param&gt;</option>
-      </arg>
     </cmdsynopsis>
   </refsynopsisdiv>
   <refsect1 id="options_1">
     <title>PREREQUISITES</title>
     <para>[Description of needed prerequisites]</para>
     <cmdsynopsis>
-      <command>xe commands</command>
+      <command>xe commands required for output</command>
     </cmdsynopsis>
   </refsect1>
   <refsect1 id="description">
     <title>DESCRIPTION </title>
-    <para><command>&dhpackage;</command> </para>
-  </refsect1>
-  <refsect1 id="options">
-    <title>OPTIONS</title>
+    <para><command>xe command </command> [description paragraph!]</para>
   </refsect1>
   <refsect1>
-    <title>PARAMETERS</title>
+    <title>REQUIRED PARAMETERS</title>
     <para>&lt;list the parameters of the command&gt;</para>
   </refsect1>
   <refsect1>
