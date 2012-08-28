@@ -17,6 +17,6 @@ uuid
 
 Description: 
 
-xe vlan-destroy deletes a VLAN from a network. You must disable any actives VIFs connected to the VLAN.
+xe vlan-destroy deletes a VLAN from a network. You must disable any actives VIFs connected to the network the VLAN is assigned too.
 
 Examples:
