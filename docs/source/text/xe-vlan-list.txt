@@ -8,11 +8,11 @@ xe vlan-list - Display VLANs
 Prerequisites:
 
 Parameters:
-
+xe
 
 Description: 
 
-xe vlan-list lists VLANS present in a pool. The tagged-PIF is the Physical PIF, The untagged-PIF is the pseudo PIF, and the tag is the VLAN ID number.
+xe vlan-list lists VLANS present in a pool along with several other attributes. The tagged-PIF is the Physical PIF, the untagged-PIF is the pseudo PIF, and the tag is the VLAN ID number of listed VLAN.
 Citrix also recommends using xe pif-list to list VLANs. 
 
 Examples:
@@ -25,3 +25,12 @@ uuid ( RO)            : 8027abe9-612f-9515-8a2a-4f3506bb013f
     untagged-PIF ( RO): 81e4ac23-10bc-385f-6baf-0478621297a9
              tag ( RO): 10
 
+xe vlan-list params=uuid,tag
+
+output:
+uuid ( RO)    : decc5943-f6f1-a244-09e4-0dd9e557101d
+     tag ( RO): 11
+
+
+uuid ( RO)    : 8027abe9-612f-9515-8a2a-4f3506bb013f
+     tag ( RO): 10

@@ -1,4 +1,3 @@
-
 author: Matthew Spah
 
 Command:
@@ -9,10 +8,11 @@ xe vlan-destroy uuid=<param>
 
 Prerequisites:
 
+xe vlan-list
 
 Parameters:
 
-uuid=<param>
+uuid
     UUID of the VLAN to delete 
 
 Description: 
