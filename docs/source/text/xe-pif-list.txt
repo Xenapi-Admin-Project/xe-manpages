@@ -20,16 +20,20 @@ Parameters:
 
 device
 
-MAC 
+MAC
+    MAC address of PIF
 
 physical
-
+    #I'm not too sure how to word this one
+    If true PIF is a underlying physical interface on host    
+    
 currently-attached
 
 MTU
 
 VLAN 
-
+    VLAN configured for PIF
+    
 bond-master-of 
               
 bond-slave-of 
@@ -39,43 +43,61 @@ tunnel-access-PIF-of
 tunnel-transport-PIF-of 
 
 management 
-
+    PMI interface
+    
 network-uuid 
+    Attached Network UUID 
 
 network-name-label
+    Name of Network attached to PIF
 
 host-uuid 
+    UUID of host PIF is present on
 
 host-name-label 
+    Name of host PIF is present on
 
 IP-configuration-mode 
 
+
 IP 
+
 
 netmask 
 
+
 gateway 
+
 
 DNS
 
+
 io_read_kbs 
+
 
 io_write_kbs 
 
+
 carrier 
+
 
 vendor-id 
 
+
 vendor-name 
+
 
 device-id
 
+
 device-name 
 
+
 speed
+    
 
 duplex 
-
+    Full or Half
 disallow-unplug 
 
 pci-bus-path 

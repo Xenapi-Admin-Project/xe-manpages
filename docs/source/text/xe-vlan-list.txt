@@ -3,17 +3,18 @@ author: Matthew Spah
 
 Command:
 
-xe vlan-list - Display VLANs
+xe vlan-list - Display all the vlans present in a pool.
 
 Prerequisites:
 
+
 Parameters:
-xe
+
 
 Description: 
 
-xe vlan-list lists VLANS present in a pool along with several other attributes. The tagged-PIF is the Physical PIF, the untagged-PIF is the pseudo PIF, and the tag is the VLAN ID number of listed VLAN.
-Citrix also recommends using xe pif-list to list VLANs. 
+xe vlan-list lists VLANS present in a pool along with several other attributes. The tagged-PIF is the Physical PIF, the untagged-PIF is the pseudo PIF, 
+and the tag is the VLAN ID number of listed VLAN. Citrix also recommends using xe pif-list to list VLANs. 
 
 Examples:
 
