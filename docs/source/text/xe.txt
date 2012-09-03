@@ -45,13 +45,13 @@ bond-create - Create a bonded interface from a list of existing PIFs
 bond-destroy - Destroy a bonded interface
 bond-list - List all bonded interfaces
 bond-param-get - Get bonded interface parameters
-bond-param-list - List all bonded interface parameters
+bond-param-list - List all parameters bonded interface
 cd-list - List available CDs
 console-list - Lists all consoles
 console-param-add - Add a console parameter
 console-param-clear - Clear a console parameter
 console-param-get - Get a console parameter
-console-param-list - List all console parameters
+console-param-list - List all parameters of a console
 console-param-remove - Remove a console parameter
 console-param-set - Set a console parameter
 diagnostic-compact - Perform a major GC collection and heap compaction
@@ -73,7 +73,7 @@ host-compute-memory-overhead - Compute the virtualization memory overhead of a h
 host-cpu-info - List info on physical host CPUs
 host-cpu-list - List all host CPUs
 host-cpu-param-get - Get a host CPU parameter
-host-cpu-param-list - Lists all host CPU parameters
+host-cpu-param-list - Lists all parameters of a host CPU
 host-crashdump-destroy - Delete a host crashdump
 host-crashdump-list - List host's crashdumps
 host-crashdump-param-get - Get host crashdump parameter
@@ -108,9 +108,9 @@ host-management-reconfigure - Reconfigure the host's management interface
 host-param-add - Add a host parameter 
 host-param-clear - Clear a host parameter
 host-param-get - Get a host parameter  
-host-param-list - List all host parameters 
-host-param-remove - Remove a parameter from a host
-host-param-set - Set the parameter specified
+host-param-list - List all parameters of a host
+host-param-remove - Remove a host parameter 
+host-param-set - Set a host parameter 
 host-power-on - Power on a host
 host-reboot - Reboot a host
 host-reset-cpu-features - Removes the feature mask of the host's physical CPU
@@ -131,14 +131,14 @@ message-create - Create a message associated with a particular API object.
 message-destroy - Destroy an existing message.
 message-list - List all the messages
 message-param-get - Get the message parameter specified 
-message-param-list - List all message parameters 
+message-param-list - List all parameters of a message 
 network-create - Create a new network
 network-destroy - Delete an existing network
 network-list - List all networks 
 network-param-add - Add a network parameter 
 network-param-clear - Clear a network parameter
 network-param-get - Get a network paramter 
-network-param-list - List all network parameters
+network-param-list - List all parameters of a network
 network-param-remove - Remove a network parameter
 network-param-set - Set a network parameter
 patch-apply - Apply an uploaded patch to a host
@@ -151,19 +151,20 @@ patch-param-list - List all patch parameters
 patch-pool-apply - Apply an uploaded patch to all hosts in the pool
 patch-precheck - Run prechecks contained in an uploaded patch 
 patch-upload - Upload a patch file
+pbd-create - Create a new physical block device 
+pbd-destroy - Destroy a physical block device 
+pbd-list - List all the physical block devices 
+pbd-param-add - Add a physical block device parameter
+pbd-param-clear - Clear a physical block device parameter
+pbd-param-get - Get a physical block device parameter 
+pbd-param-list - List all parameters of a physical block device
+pbd-param-remove - Remove a physical block device parameter
+pbd-param-set - Set a physical block device parameter
+pbd-plug - Plug a physical block device into a host
+pbd-unplug - Unplug a physical block device from a host
+pif-forget - Forget a physical network interface
 
-pbd-create - Create a PBD. The read-only device-config parameter can only be set on creation in the following manner. To
-pbd-destroy - Destroy the PBD.
-pbd-list - Lists all the pbds, filtering on the optional arguments. To filter on map parameters, use the syntax 'map-param
-pbd-param-add - Adds to a set or map parameter. 
-pbd-param-clear - Clears the specified parameter (param-name can be device-config,other-config).
-pbd-param-get - Gets the parameter specified of the object.
-pbd-param-list - Lists all the parameters of the object specified by the uuid.
-pbd-param-remove - Removes a member or a key,value pair from a set/map respectively.
-pbd-param-set - Sets the parameter specified. 
-pbd-plug - Attempt to plug in the PBD to the host. 
-pbd-unplug - Attempt to unplug the PBD from the host. 
-pif-forget - Destroy a PIF object on a particular host.
+
 pif-introduce - Create a new PIF object representing a physical interface on a host.
 pif-list - Lists all the pifs, 
 pif-param-add - Adds to a set or map parameter. 

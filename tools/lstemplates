@@ -1,15 +1,36 @@
 #!/bin/bash
 # Lists XCP/Xenserver templates
 # Author: Grant McWilliams (grantmcwilliams.com)
-# Version: 0.5
+# Version: 0.6
 # Date: June 27, 2012
+# Version: 0.7
+# Date: Sept 3, 2012
+# UUIDs didn't match up to sorted name-labels
+# Much slower now with internal bubble sort but it's correct
 
+#give names to ansi sequences
 setcolors()
 {
-	red='\e[0;31m'
-	blue='\e[0;34m'
-	cyan='\e[0;36m'
-	off='\e[0m'
+	black='\e[30;47m'
+	white='\e[37;47m'
+    red='\e[0;31m'
+    blue='\e[0;34m'
+    cyan='\e[0;36m'
+    off='\e[0m'
+}
+
+#color echo
+cecho ()                     
+{
+	MSG="${1}"       
+	if [ -z $2 ] ;then
+		color="white"
+	else
+		eval color=\$$2
+	fi     
+  	echo -ne "${color}"
+  	echo -ne "$MSG"
+  	echo -ne "${off}"                      
 }
 
 syntax()
@@ -24,44 +45,85 @@ syntax()
 	exit
 }
 
+#get width of columns
+getcolwidth()
+{
+	#get longest item in array
+	array=( "$@" )
+	i=0
+	IFS=$'\n'
+	for ITEM in ${array[@]} ${TITLES[$1]} ;do
+		if [[ "${#ITEM}" -gt "${COLLONGEST[$1]}" ]] ;then
+			COLLONGEST[$1]="${#ITEM}"
+		fi
+	done
+}
+
+sort_templates()
+{   
+    # Sorts TMPLNAMES using a bubble sort
+    # Reorders TMPLUUIDS to match
+    # Had to use expr becuase using bash sort (>) put capitols before lowercase
+    # expr is much slower than [[ $var1 > $var2 ]] but is the only way to get both lower and upper case to 
+    # sort properly without using tr which was twice as slow as expr
+	IFS=$'\n'
+	local MAX=$((${#TMPLNAMES[@]} - 1))
+	
+    while ((MAX > 0)) ;do
+       	local i=0 
+        while ((i < MAX)) ;do
+			local j=$((i + 1))
+			if expr "${TMPLNAMES[$i]}" \< "${TMPLNAMES[$j]}" >/dev/null
+			then
+                local t=${TMPLNAMES[$i]}
+                local u=${TMPLUUIDS[$i]}
+                TMPLNAMES[$i]=${TMPLNAMES[$j]}
+                TMPLUUIDS[$i]=${TMPLUUIDS[$j]}
+                TMPLNAMES[$j]=$t
+                TMPLUUIDS[$j]=$u
+            fi
+            ((i++))
+        done
+        ((MAX--))
+    done
+}
+
 while getopts :dvh opt
 do
         case $opt in
                 d) set -x ;;
                 v) MODE="verbose" ;;
-		h) syntax ;;
+				h) syntax ;;
                 \?) echo "Unknown option"; syntax ;;
         esac
 done
 shift $(($OPTIND - 1))
 
 setcolors
-LIST=$(xe template-list params=name-label --minimal | sed 's/\,/\n/g' | sed '/^$/d' | sort)
-
 IFS=$'\n'
-LONGEST=0
+MINSPACE="3"
+TITLES=( 'Template' 'UUID' )
+declare -a TMPLNAMES
 
-for TEMPLATE in $LIST
-do
-  	if [[ ${#TEMPLATE} -gt $LONGEST ]]
- 	then
-    		LONGEST=${#TEMPLATE}
-  	fi
+TMPLUUIDS=( $(xe template-list params=uuid --minimal | sed 's/,/\n/g') )
+i=0
+for i in $(seq 0 $(( ${#TMPLUUIDS[@]} - 1 )) ) ;do
+	TMPLNAMES[$i]=$(xe template-list uuid="${TMPLUUIDS[$i]}" params=name-label --minimal)
 done
 
+getcolwidth "0" "${TMPLNAMES[@]}" 
+getcolwidth "1" "${TMPLUUIDS[@]}" 
+sort_templates
 
-for TEMPLATE in $LIST
-do
-	LENGTH=${#TEMPLATE}	
-	UUID=$(xe template-list name-label="$TEMPLATE" params=uuid --minimal)
-	(( SPACES = $LONGEST - $LENGTH + 2 ))
-	echo -ne "${cyan}$TEMPLATE${off}"
-	printf "%*s" "$SPACES"
-  	echo -e "${blue}uuid:${off}$UUID"
-	if [[ "$MODE" = "verbose" ]] ;then
-		DESC=$(xe template-list uuid=$UUID params=name-description --minimal)
-		echo -e "$DESC"
-		echo ""
-	fi
+for i in $(seq 0 $(( ${#TITLES[@]} - 1 )) ) ;do
+	cecho "${TITLES[$i]}" off ; printf "%*s" "$(( ${COLLONGEST[0]} + $MINSPACE - ${#TITLES[$i]} ))" 
+done
+echo ""
+
+i=0
+for i in $(seq 0 $(( ${#TMPLNAMES[@]} - 1 )) ) ;do
+	cecho "${TMPLNAMES[$i]}" cyan ; printf "%*s" "$(( ${COLLONGEST[0]} + $MINSPACE - ${#TMPLNAMES[$i]} ))"
+	cecho "${TMPLUUIDS[$i]}" cyan ; printf "%*s" "$(( ${COLLONGEST[1]} + $MINSPACE - ${#TMPLUUIDS[$i]} ))" 
+	echo ""
 done
 
