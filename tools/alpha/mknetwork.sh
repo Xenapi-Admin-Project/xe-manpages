@@ -4,6 +4,9 @@
 #verison .01
 #09/1/2012
 #CAUTION: Use at own risk. 
+#09/05/2012 Much work needs to be done here
+#Add grants suggestions 
+#https://portal.acs.edcc.edu/mod/forum/discuss.php?d=821
 
 set -x
 
