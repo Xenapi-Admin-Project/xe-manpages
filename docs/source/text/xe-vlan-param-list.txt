@@ -3,21 +3,15 @@ author: Matthew Spah
 
 Command:
 
-xe vlan-param-list
-
-xe vlan-param-list uuid=<vlan uuid>
+xe vlan-param-list - Display all parameters for specified VLAN
 
 Prerequisites:
 
-
+xe vlan-param-list requires the UUID of the specified VLAN. xe vlan-list lists all VLANs present in a pool.
 
 Description: 
 
-
-
-## GRANTS NOTE
-## maybe - xe vlan-param-list lists all vlan parameters 
-## Is the output like xe vlan-list? Doesn't that list vlans and vlan-param-list lists the parameters for a specific vlan?
+xe vlan-param-list displays all parameters for the specified VLAN
 
 
 Examples:

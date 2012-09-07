@@ -4,19 +4,22 @@ authout: Matthew Spah
 
 Command:
 
-xe vlan-param-get - Display VLANs
+xe vlan-param-get - Display a specified parameter from a VLAN 
 
-xe vlan-param-get uuid=<vlan uuid> param-name=<param>
 
 Prerequisites:
 
+Parameters:
+    param-key   
+    
+    param-name  
+    
+    uuid
 
 Description: 
 
-xe vlan-param-get allows you to out put only the UUID of the specifed paramater. 
+xe vlan-param-get will display the specified parameter for a VLAN. 
 
 Examples:
 
-xe vlan-param-get uuid=6dff94fd-cc6e-d738-96e5-e0366c2da295 param-name=tagged-PIF
 
-output: 3e558a35-b5ff-c58c-eee2-388bae80cdc6
