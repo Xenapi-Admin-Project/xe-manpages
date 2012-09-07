@@ -28,11 +28,13 @@ physical
     If true PIF is a underlying physical interface on host    
     
 currently-attached
+    if true, the PIF is currently attached on this host.
 
 MTU
+    Maximum Transmission Unit size (in bytes)
 
 VLAN 
-    VLAN configured for PIF
+    VLAN tag for this PIF. A -1 indicates no VLAN tag is assigned.
     
 bond-master-of 
               
@@ -43,13 +45,13 @@ tunnel-access-PIF-of
 tunnel-transport-PIF-of 
 
 management 
-    PMI interface
+    if true, this PIF is the management interface for the control domain
     
 network-uuid 
     Attached Network UUID 
 
 network-name-label
-    Name of Network attached to PIF
+    Name of Network associated to PIF
 
 host-uuid 
     UUID of host PIF is present on
@@ -58,46 +60,47 @@ host-name-label
     Name of host PIF is present on
 
 IP-configuration-mode 
-
+    DHCP or Static network addressing used
 
 IP 
-
+    IP address of the PIF
 
 netmask 
-
+    Netmask of the PIF
 
 gateway 
-
+    Gateway address of the PIF
 
 DNS
-
+    DNS address of the PIF
 
 io_read_kbs 
-
+    Average receive rate in kB/s for the device 
 
 io_write_kbs 
-
+    Average transmit rate in kB/s for the device
 
 carrier 
 
 
 vendor-id 
-
+    
 
 vendor-name 
-
+    the NIC vendor's name
 
 device-id
-
+    
 
 device-name 
 
 
 speed
-    
+    Ethernet speed of the interface. 10/100/1000 Mpbs
 
 duplex 
     Full or Half
+    
 disallow-unplug 
 
 pci-bus-path 

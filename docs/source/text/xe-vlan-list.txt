@@ -13,8 +13,16 @@ Parameters:
 
 Description: 
 
+
+#option 1
 xe vlan-list lists VLANS present in a pool along with several other attributes. The tagged-PIF is the Physical PIF, the untagged-PIF is the pseudo PIF, 
 and the tag is the VLAN ID number of listed VLAN. Citrix also recommends using xe pif-list to list VLANs. 
+
+
+#option 2
+xe vlan-list lists VLANs present in a pool along with several other attributes. The UUID is a reference to the VLANs UUID, 
+the tagged-PIF object references the Physical PIF leading out to the external network, the untagged-PIF references the pseudo PIF connected to the internal network, 
+and the tag is the VLAN ID number for the listed VLAN. Citrix also recommends using xe pif-list to list VLANs.
 
 Examples:
 

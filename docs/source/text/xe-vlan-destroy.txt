@@ -8,7 +8,7 @@ xe vlan-destroy uuid=<param>
 
 Prerequisites:
 
-xe vlan-list
+xe vlan-destroy requires the UUID of the VLAN to be deleted. xe vlan-list will display the VLANs present in a pool.
 
 Parameters:
 
@@ -20,3 +20,7 @@ Description:
 xe vlan-destroy deletes a VLAN from a network. You must disable any actives VIFs connected to the network the VLAN is assigned too.
 
 Examples:
+
+xe vlan-destroy uuid=037adc23-97d3-57a8-b99f-0270b0eff8ce
+
+
