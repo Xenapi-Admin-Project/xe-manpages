@@ -68,7 +68,7 @@ shift $(($OPTIND - 1))
 
 
 # Get longest HOST name
-NAMELIST=$(xe vdi-list params=name-label --minimal | sed 's/\,/\n/g' | sed '/^$/d' | sort)
+NAMELIST=$(xe vdi-list params=uuid --minimal | sed 's/\,/\n/g' | sed '/^$/d' | sort)
 for NAME in $NAMELIST "Virtual Disk Image"
 do
         if [[ ${#NAME} -gt $NAMELONGEST ]]
