@@ -142,7 +142,7 @@ do
 	
 	#checking valid VDI size
 	if [[ $VDISIZE = '-1' ]] ; then
-		SRSIZE=0
+		VDISIZE=0
 	fi
 
 	#get VDI sizes
