@@ -7,29 +7,49 @@ FOO(1)
 
 NAME
 -----
-foo - frobnicate the bar library
+xe pool-vlan-create - Create a new VLAN on all hosts in a pool.
 
 SYNOPSIS
 --------
-*foo* [*-bar*] [*-b* | *--busy*] [*-c* 'config-file' | *--config=*'config-file'] [{*-e* | *--example*} 'this'] [{*-e* | *--example*} {'this' | 'that'}] 'file(s)'...
+*xe pool-vlan-create* 
 
-*foo* [{*-h* | *--help*} | {*-v* | *--version*}]
+*xe pool-vlan-create*
+
 
 PREREQUISITES
 -------------
 
+*xe pool-vlan-create* requires an internal network and one physical PIF device.
+
+*xe pif-list* will list the PIFs found in a pool
+
+*xe network-list* will list the networks found in a pool
+
 DESCRIPTION
 -----------
-*foo* frobnicates the bar library by tweaking internal symbol tables. By default it parses all baz segments and rearranges them in reverse
-order by time for the *xyzzy*(1) linker to find them. The symdef entry is then compressed using the WBG (Whiz-Bang-Gizmo) algorithm. All
-files are processed in the order specified.
+
+*xe pool-vlan-create* creates a VLAN on all hosts in a pool and assigns it to the specified network.
+A pseudo PIF is created and associated with the specified physical PIF. VLAN tagging occurs on the pseudo PIF. 
+The resulting VLAN UUID is returned. 
 
 REQUIRED PARAMETERS
 -------------------
 
+*pif-uuid*::
+    Physical PIF that the pseudo PIF will be associated with. 
+
+*network-uuid*::
+    Network to be assigned VLAN number
+    
+*vlan*::
+    VLAN number
 
 
+EXAMPLES
+--------
 
+xe vlan-create network-uuid=2177a448-d2c6-27f9-ca64-b3899d1cbe98 pif-uuid=3e558a35-b5ff-c58c-eee2-388bae80cdc6 vlan=2
+2d98179d-2041-6544-8dee-24da8f2a8c01
 
 
 OPTIONS

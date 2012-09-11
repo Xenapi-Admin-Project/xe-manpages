@@ -7,44 +7,28 @@ FOO(1)
 
 NAME
 -----
-foo - frobnicate the bar library
+*xe vlan-param-list* - Display all parameters for specified VLAN
 
 SYNOPSIS
 --------
-*foo* [*-bar*] [*-b* | *--busy*] [*-c* 'config-file' | *--config=*'config-file'] [{*-e* | *--example*} 'this'] [{*-e* | *--example*} {'this' | 'that'}] 'file(s)'...
-
-*foo* [{*-h* | *--help*} | {*-v* | *--version*}]
+*xe vlan-list*
 
 PREREQUISITES
 -------------
 
+*xe vlan-param-list* requires the UUID of the specified VLAN. *xe vlan-list* lists all VLANs present in a pool.
+
 DESCRIPTION
 -----------
-*foo* frobnicates the bar library by tweaking internal symbol tables. By default it parses all baz segments and rearranges them in reverse
-order by time for the *xyzzy*(1) linker to find them. The symdef entry is then compressed using the WBG (Whiz-Bang-Gizmo) algorithm. All
-files are processed in the order specified.
+
+*xe vlan-param-list* displays all parameters for the specified VLAN
 
 REQUIRED PARAMETERS
 -------------------
 
+EXAMPLES
+--------
 
-
-
-
-
-OPTIONS
--------
-*-b, --busy*::
-	Do not write “busy” to stdout while processing.
-
-*-c* 'config-file', *--config=*'config-file'::
-	Use the alternate system wide 'config-file' instead of the /etc/foo.conf. This overrides any *FOOCONF* environment variable.
-
-*-a*::
-	In addition to the baz segments, also parse the *blurfl*(3) headers.
-
-*-r*::
-	Recursive mode. Operates as fast as lightning at the expense of a megabyte of virtual memory.
 
 
 DIAGNOSTICS

@@ -7,44 +7,122 @@ FOO(1)
 
 NAME
 -----
-foo - frobnicate the bar library
+*xe pif-list* - List PIFs present in a pool
 
 SYNOPSIS
 --------
-*foo* [*-bar*] [*-b* | *--busy*] [*-c* 'config-file' | *--config=*'config-file'] [{*-e* | *--example*} 'this'] [{*-e* | *--example*} {'this' | 'that'}] 'file(s)'...
-
-*foo* [{*-h* | *--help*} | {*-v* | *--version*}]
+*xe pif-list*
 
 PREREQUISITES
 -------------
 
+
+
 DESCRIPTION
 -----------
-*foo* frobnicates the bar library by tweaking internal symbol tables. By default it parses all baz segments and rearranges them in reverse
-order by time for the *xyzzy*(1) linker to find them. The symdef entry is then compressed using the WBG (Whiz-Bang-Gizmo) algorithm. All
-files are processed in the order specified.
+
+*xe pif-list* displays all parameters for the specified VLAN
 
 REQUIRED PARAMETERS
 -------------------
 
 
+PARAMETERS
+----------
+
+*device*::
+
+*MAC*::
+    MAC address of PIF
+
+*physical*::
+    #I'm not too sure how to word this one
+    If true PIF is a underlying physical interface on host    
+    
+*currently-attached*::
+    if true, the PIF is currently attached on this host.
+
+*MTU*::
+    Maximum Transmission Unit size (in bytes)
+
+*VLAN*:: 
+    VLAN tag for this PIF. A -1 indicates no VLAN tag is assigned.
+    
+*bond-master-of*:: 
+              
+*bond-slave-of*:: 
+
+*tunnel-access-PIF-of*:: 
+
+*tunnel-transport-PIF-of*:: 
+
+*management*:: 
+    if true, this PIF is the management interface for the control domain
+    
+*network-uuid*:: 
+    Attached Network UUID 
+
+*network-name-label*::
+    Name of Network associated to PIF
+
+*host-uuid*:: 
+    UUID of host PIF is present on
+
+*host-name-label*:: 
+    Name of host PIF is present on
+
+*IP-configuration-mode*:: 
+    DHCP or Static network addressing used
+
+*IP*:: 
+    IP address of the PIF
+
+*netmask*:: 
+    Netmask of the PIF
+
+*gateway*:: 
+    Gateway address of the PIF
+
+*DNS*::
+    DNS address of the PIF
+
+*io_read_kbs*:: 
+    Average receive rate in kB/s for the device 
+
+*io_write_kbs*::
+    Average transmit rate in kB/s for the device
+
+*carrier*:: 
 
 
+*vendor-id*:: 
+    
+
+*vendor-name*:: 
+    the NIC vendor's name
+
+*device-id*::
+    
+
+*device-name*:: 
 
 
-OPTIONS
--------
-*-b, --busy*::
-	Do not write “busy” to stdout while processing.
+*speed*::
+    Ethernet speed of the interface. 10/100/1000 Mpbs
 
-*-c* 'config-file', *--config=*'config-file'::
-	Use the alternate system wide 'config-file' instead of the /etc/foo.conf. This overrides any *FOOCONF* environment variable.
+*duplex*:: 
+    Full or Half
+    
+*disallow-unplug*:: 
 
-*-a*::
-	In addition to the baz segments, also parse the *blurfl*(3) headers.
+*pci-bus-path*:: 
 
-*-r*::
-	Recursive mode. Operates as fast as lightning at the expense of a megabyte of virtual memory.
+*other-config*::
+
+
+EXAMPLES
+--------
+
 
 
 DIAGNOSTICS
