@@ -1,29 +1,16 @@
 #!/bin/bash
-# Lists XCP/Xenserver templates
+
+# Shows network information
 # Author: Grant McWilliams (grantmcwilliams.com)
+# Version: 0.5
+# Date: August 4, 2012
 # Version: 0.6
-# Date: June 27, 2012
+# Date: August 12, 2012
+# Fixed but in vlan variables not resetting
 # Version: 0.7
-# Date: Sept 3, 2012
-# UUIDs didn't match up to sorted name-labels
-# Much slower now with internal bubble sort but it's correct
-# Version 0.8
-# Date: Sept 12, 2012
-# Replaced bubble sort with an outside file sorted using the sort command
-# execution time went from 4.2 seconds to 1.8.
-# changed getcolwidth to a function returning the longest length instead of setting COLLONGEST directly
+# Date: August 19, 2012
+# Changed wording for VM device
 
-setup()
-{
-	setcolors
-	TMPDIR=$(mktemp -d)
-	IFS=$'\n'
-	MINSPACE="3"
-	TITLES=( 'Template' 'UUID' )
-	declare -a TMPLNAMES
-}
-
-#give names to ansi sequences
 setcolors()
 {
 	black='\e[30;47m'
@@ -34,15 +21,10 @@ setcolors()
     off='\e[0m'
 }
 
-#color echo
 cecho ()                     
 {
 	MSG="${1}"       
-	if [ -z $2 ] ;then
-		color="white"
-	else
-		eval color=\$$2
-	fi     
+	eval color=\$$2     
   	echo -ne "${color}"
   	echo -ne "$MSG"
   	echo -ne "${off}"                      
@@ -50,83 +32,154 @@ cecho ()
 
 syntax()
 {
-	echo ""
-	echo "Syntax: $(basename $0) [options]"
-	echo "Options:"
-	echo "-d - shell debugging"
-	echo "-h - this help text"
-	echo "-v - verbose mode, show template descriptions"
-	echo ""
-	exit
+        echo ""
+        echo "Syntax: $(basename $0) [options]"
+        echo "Options:"
+        echo "-d - shell debugging"
+        echo "-h - this help text"
+        echo "-u - show UUIDs"
+        echo ""
+        exit
 }
 
-#get width of columns
-getcolwidth()
-{
-	#get longest item in array
-	array=( "$@" )
-	i=0
-	LONGEST="0"
-	IFS=$'\n'
-	for ITEM in ${array[@]} ;do
-		if [[ "${#ITEM}" -gt "$LONGEST" ]] ;then
-			LONGEST="${#ITEM}"
-		fi
-	done
-	echo "$LONGEST"
-}
-
-cleanup()
-{
-	rm -Rf "$TMPDIR"
-}
-
-trap cleanup SIGINT SIGTERM
-setup
-
-while getopts :dvh opt
+#Main
+setcolors
+while getopts :dhu opt
 do
         case $opt in
                 d) set -x ;;
-                v) MODE="verbose" ;;
-				h) syntax ;;
+                h) syntax ;;
+                u) UUID="yes" ;;
                 \?) echo "Unknown option"; syntax ;;
         esac
 done
 shift $(($OPTIND - 1))
 
-i=0
-TMPLUUIDS=( $(xe template-list params=uuid --minimal | sed 's/,/\n/g') )
-for i in $(seq 0 $(( ${#TMPLUUIDS[@]} - 1 )) ) ;do
-	TMPLNAMES[$i]=$(xe template-list uuid="${TMPLUUIDS[$i]}" params=name-label --minimal)
-	
+OLDIFS="$IFS"
+IFS=$'\n'
+
+# arrays of items
+NETUUIDS=( $(xe network-list params=uuid --minimal | sort | sed 's/,/\n/g') )
+if [[ "$UUID" = "yes" ]] ;then
+	NETNAMES=( $(xe network-list params=uuid --minimal | sort | sed 's/,/\n/g' ) )
+else
+	NETNAMES=( $(xe network-list params=name-label --minimal | sort | sed 's/,/\n/g') )
+fi
+if [[ "$UUID" = yes ]] ;then
+	VMNAMES=( $(xe vm-list params=uuid is-control-domain=false --minimal | sort | sed 's/,/\n/g') )
+else
+	VMNAMES=( $(xe vm-list params=name-label is-control-domain=false --minimal | sort | sed 's/,/\n/g') )
+fi
+VLANUUIDS=( $(xe vlan-list --minimal | sort | sed 's/,/\n/g') )
+BRIDENAMES=( $(xe network-list params=bridge --minimal | sort | sed 's/,/\n/g') )
+TITLES=( 'Network' 'Bridge' 'VLAN' 'Virtual Machine' 'VM Device' )
+
+MINSPACE="5"
+NETNAMELONGEST="0"
+NETUUIDLONGEST="0"
+BRIDENAMELONGEST="0"
+VMNAMELONGEST="0"
+VMNAMESPACES="0"
+
+
+# Get longest names in each column
+for NAME in ${NETNAMES[@]} ${TITLES[0]} ;do
+	if [[ "${#NAME}" -gt "${COLLONGEST[0]}" ]] ;then
+		COLLONGEST[0]="${#NAME}"
+	fi
 done
 
-COLLONGEST[0]=$(getcolwidth "${TITLES[0]}" "${TMPLNAMES[@]}")
-COLLONGEST[1]=$(getcolwidth "${TITLES[1]}" "${TMPLUUIDS[@]}")
+# Get longest Bridge name column
+for NAME in ${BRIDENAMES[@]} ${TITLES[1]} ;do
+	if [[ "${#NAME}" -gt "${COLLONGEST[1]}" ]] ;then
+		COLLONGEST[1]="${#NAME}"
+	fi
+done
 
-for i in $(seq 0 $(( ${#TITLES[@]} - 1 )) ) ;do
-	cecho "${TITLES[$i]}" off ; printf "%*s" "$(( ${COLLONGEST[0]} + $MINSPACE - ${#TITLES[$i]} ))" 
-done > "$TMPDIR/tmpllist.txt"
-echo "" >> "$TMPDIR/tmpllist.txt"
-
-for i in $(seq 0 $(( ${#TMPLUUIDS[@]} - 1 )) ) ;do
-	cecho "${TMPLNAMES[$i]}" cyan ;	printf "%*s" "$(( ${COLLONGEST[0]} + $MINSPACE - ${#TMPLNAMES[$i]} ))" 
-	cecho "${TMPLUUIDS[$i]}" cyan ;	printf "%*s" "$(( ${COLLONGEST[1]} + $MINSPACE - ${#TMPLUUIDS[$i]} ))" 
-	echo "" 
-done | sort >> "$TMPDIR/tmpllist.txt"
-
-if [[ "$MODE" = "verbose" ]] ;then
-	for LINE in $(cat $TMPDIR/tmpllist.txt) ;do
-		echo "$LINE"
-		UUID=$(echo "$LINE" | egrep -o '[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}')
-		xe template-list uuid="$UUID" params=name-description --minimal
-		echo ""
+# Get longest VLAN name column
+if [[ "$UUID" = "yes" ]] ;then
+	for NAME in ${VLANUUIDS[@]} ${TITLES[2]} ;do
+		if [[ "${#NAME}" -gt "${COLLONGEST[2]}" ]] ;then
+			COLLONGEST[2]="${#NAME}"
+		fi
 	done
 else
-	for LINE in $(cat $TMPDIR/tmpllist.txt) ;do
-		echo "$LINE"
-	done
+	COLLONGEST[2]=3
 fi
 
-cleanup
+# Get longest VM name column
+for NAME in ${VMNAMES[@]} ${TITLES[3]} ;do
+	if [[ "${#NAME}" -gt "${COLLONGEST[3]}" ]] ;then
+		COLLONGEST[3]="${#NAME}"
+	fi
+done
+
+# Print headings
+i=0
+for TITLE in ${TITLES[@]}
+do
+	LENGTH=${#TITLE}	
+    NAMESPACES=$(( ${COLLONGEST[$i]} + $MINSPACE - $LENGTH ))
+	cecho "$TITLE" off
+	printf "%*s" "$NAMESPACES" 	
+	(( i++ ))
+done
+echo ""
+
+for NETWORK in ${NETNAMES[@]}
+do
+	
+	if [[ $UUID = "yes" ]] ;then
+			NETUUID="$NETWORK"
+	else
+			NETUUID=$(xe network-list name-label="$NETWORK" --minimal)
+	fi
+	BRIDGE=$(xe network-param-get uuid=$NETUUID param-name=bridge)
+	if [[ "$BRIDGE" == *xapi* ]] 
+	then
+		#see if there's a vlan associated
+		VLANNUM=$(xe pif-list network-uuid="$NETUUID" params=VLAN --minimal)
+		if [[ "$UUID" = "yes" ]] ;then
+			VLANUUID=$(xe vlan-list tag="$VLANNUM" --minimal)
+			VLAN="$VLANUUID"
+		else
+			VLAN="$VLANNUM"
+		fi
+	else
+		VLAN=""
+		VLANNUM=""
+		VLANUUID=""
+    fi    
+    
+    #echo the item followed by the correct number of spaces	
+	cecho "$NETWORK" cyan ;	printf "%*s" "$(( ${COLLONGEST[0]} + $MINSPACE - ${#NETWORK} ))"  
+	cecho "$BRIDGE"  cyan ; printf "%*s" "$(( ${COLLONGEST[1]} + $MINSPACE - ${#BRIDGE} ))" 
+	cecho "$VLAN"    cyan ; printf "%*s" "$(( ${COLLONGEST[2]} + $MINSPACE - ${#VLAN} ))" 
+
+	#Get list of vifs on network	
+	i=0
+	VIFVMLIST=$(xe vif-list network-uuid=$NETUUID params=vm-uuid --minimal | sed 's/,/\n/g')
+	for VMUUID in $VIFVMLIST
+	do
+		#Get VM name-label
+		if [[ "$UUID" = "yes" ]] ;then
+			VMNAME[$i]="$VMUUID"
+		else
+			VMNAME[$i]=$(xe vm-list uuid=$VMUUID params=name-label --minimal)
+		fi
+		VMDEVNUM[$i]=$(xe vif-list vm-uuid=$VMUUID params=device --minimal )
+		if [[ $i == 0 ]] ;then
+			cecho "${VMNAME[0]}"  cyan ; printf "%*s" "$(( ${COLLONGEST[3]} + $MINSPACE - ${#VMNAME[0]} ))" 
+			cecho "${VMDEVNUM[0]}" cyan
+		else
+			VMNAMESPACES=$(( ${COLLONGEST[0]} + $MINSPACE + ${COLLONGEST[1]} + $MINSPACE + ${COLLONGEST[2]} + $MINSPACE ))
+			echo "" ; printf "%*s" "$VMNAMESPACES"	
+			cecho "${VMNAME[$i]}" cyan
+			printf "%*s" "$(( ${COLLONGEST[3]} + $MINSPACE - ${#VMNAME[$i]} ))" 
+			cecho "${VMDEVNUM[$i]}" cyan
+		fi
+		(( i++ ))
+	done
+	echo ""
+done
+
