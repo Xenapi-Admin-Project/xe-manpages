@@ -1,9 +1,9 @@
 FOO(1)
 =======
 :doctype: manpage
-:man source:   Foo
+:man source:   xe manual
 :man version:  {1}
-:man manual:   Foo Manual
+:man manual:   xe manual
 
 NAME
 -----
@@ -26,6 +26,20 @@ and the tag is the VLAN ID number for the listed VLAN. Citrix also recommends us
 
 REQUIRED PARAMETERS
 -------------------
+
+
+OPTIONAL PARAMETERS
+-------------------
+
+*params*
+       
+*tag*           
+
+*tagged-PIF*    
+
+*untagged-PIF*  
+
+*uuid*  
 
 EXAMPLES
 --------

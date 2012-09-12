@@ -13,10 +13,9 @@ NETWORKUUID=$1
 main() {
     
 
-    #first vif_check_disable checks for any active "currently-attached"	VIFs. If true then disable
+    #first vif_check_disable checks for any active "currently-attached"	VIFs. If true then disable.
     #then we move to vlan_check to see if any VLANs are assigned to the network. If true then move on to vlan_destroy
 	#vlan_destroy erased the VLAN and then the conditional destroys the network
-
 	#echo status of the script to the user here?
 	
 	if vif_check_disable

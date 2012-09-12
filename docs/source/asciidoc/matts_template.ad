@@ -1,13 +1,13 @@
 FOO(1)
 =======
 :doctype: manpage
-:man source:   Foo
+:man source:   xe 
 :man version:  {1}
-:man manual:   Foo Manual
+:man manual:   xe manual
 
 NAME
 -----
-foo - frobnicate the bar library
+pif-introduce -
 
 SYNOPSIS
 --------
@@ -20,31 +20,17 @@ PREREQUISITES
 
 DESCRIPTION
 -----------
-*foo* frobnicates the bar library by tweaking internal symbol tables. By default it parses all baz segments and rearranges them in reverse
-order by time for the *xyzzy*(1) linker to find them. The symdef entry is then compressed using the WBG (Whiz-Bang-Gizmo) algorithm. All
-files are processed in the order specified.
 
 REQUIRED PARAMETERS
+-------------------
+
+OPTIONAL PARAMETERS
 -------------------
 
 
 
 
 
-
-OPTIONS
--------
-*-b, --busy*::
-	Do not write “busy” to stdout while processing.
-
-*-c* 'config-file', *--config=*'config-file'::
-	Use the alternate system wide 'config-file' instead of the /etc/foo.conf. This overrides any *FOOCONF* environment variable.
-
-*-a*::
-	In addition to the baz segments, also parse the *blurfl*(3) headers.
-
-*-r*::
-	Recursive mode. Operates as fast as lightning at the expense of a megabyte of virtual memory.
 
 
 DIAGNOSTICS
@@ -71,15 +57,13 @@ The following return codes can be used in scripts:
                                        
 BUGS
 -----
-The command name should have been chosen more carefully to reflect its purpose.
 
-The upstreams BTS can be found at http://bugzilla.foo.tld.
 
 SEE ALSO
 --------
-*bar*(1), *foo*(1), *foo.conf*(5), *xyzzy*(1)
+*bar*(1)
 
-The programs are documented fully by The Rise and Fall of a Fooish Bar available via the Info system.
+
 
 AUTHORS
 -------

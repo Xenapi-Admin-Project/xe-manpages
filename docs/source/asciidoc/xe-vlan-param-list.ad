@@ -3,7 +3,7 @@ FOO(1)
 :doctype: manpage
 :man source:   Foo
 :man version:  {1}
-:man manual:   Foo Manual
+:man manual:   xe manual
 
 NAME
 -----
@@ -24,6 +24,9 @@ DESCRIPTION
 *xe vlan-param-list* displays all parameters for the specified VLAN
 
 REQUIRED PARAMETERS
+-------------------
+
+OPTIONAL PARAMETERS
 -------------------
 
 EXAMPLES
@@ -53,17 +56,12 @@ The following return codes can be used in scripts:
                                
 
                                        
-BUGS
------
-The command name should have been chosen more carefully to reflect its purpose.
-
-The upstreams BTS can be found at http://bugzilla.foo.tld.
 
 SEE ALSO
 --------
 *bar*(1), *foo*(1), *foo.conf*(5), *xyzzy*(1)
 
-The programs are documented fully by The Rise and Fall of a Fooish Bar available via the Info system.
+
 
 AUTHORS
 -------
