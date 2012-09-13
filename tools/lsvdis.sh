@@ -1,10 +1,9 @@
 #!/bin/bash
 
 # Shows virtual disk information
-# Author: Lisa Nguyen 
-# Author: Grant McWilliams (grantmcwilliams.com)
+# Authors: Lisa Nguyen (ltn821@hotmail.com), Grant McWilliams (grantmcwilliams.com)
 # Version: 0.5
-# Date: 
+# Date: 9/10/2012 
 
 setcolors()
 {
@@ -32,6 +31,7 @@ syntax()
         echo "Options:"
         echo "-d - shell debugging"
         echo "-h - this help text"
+	echo "-c - print as csv"
         echo ""
         exit
 }
@@ -51,129 +51,116 @@ getunit()
 	echo "$SIZE"
 }
 
+getcolwidth()
+{
+	#get longest item in array
+	array=( "$@" )
+	i=0
+	LONGEST="0"
+	IFS=$'\n'
+	for ITEM in ${array[@]} ;do
+		if [[ "${#ITEM}" -gt "$LONGEST" ]] ;then
+			LONGEST="${#ITEM}"
+		fi
+	done
+	echo "$LONGEST"
+}
 
 IFS=$'\n'
 NAMELONGEST=0
 setcolors
 
-while getopts :dh opt
+while getopts :dhc opt
 do
         case $opt in
                 d) set -x ;;
                 h) syntax ;;
+		c) CSV="yes" ;;
                 \?) echo "Unknown option"; syntax ;;
         esac
 done
 shift $(($OPTIND - 1))
 
+#number of spaces for formatting
+SPACE="3"
 
-# Get longest HOST name
-NAMELIST=$(xe vdi-list params=uuid --minimal | sed 's/\,/\n/g' | sed '/^$/d' | sort)
-for NAME in $NAMELIST "Virtual Disk Image"
-do
-        if [[ ${#NAME} -gt $NAMELONGEST ]]
-        then
-                NAMELONGEST=${#NAME}
+#get list of Titles, VDI uuids, SR names, VMs, and device names
+TITLES=( 'VDI' 'Size' 'SR Name' 'SR Type' 'VM' 'Device' )
+VDIUUIDS=( $(xe vdi-list params=uuid --minimal | sed 's/\,/\n/g' | sed '/^$/d') )
+
+for i in $(seq 0 $(( ${#VDIUUIDS[@]} - 1 ))) ;do
+	SRNAMES[$i]=$(xe vdi-param-get uuid=${VDIUUIDS[$i]} param-name=sr-name-label | tr -d \”)
+	SRUUID=$(xe vdi-param-get uuid=${VDIUUIDS[$i]} param-name=sr-uuid)
+	SRTYPES[$i]=$(xe sr-list uuid=$SRUUID params=type --minimal)
+	VBDUUID=$(xe vbd-list vdi-uuid=${VDIUUIDS[$i]} --minimal)
+	VDISIZE=$(xe vdi-param-get uuid=${VDIUUIDS[$i]} param-name=virtual-size)
+
+        #checking valid VDI size
+        if [[ $VDISIZE = '-1' ]] ; then
+        	VDISIZE=0
         fi
-done
+	
+	TOTALSIZE[$i]=$(getunit $VDISIZE)	
 
-#get list of VDIs
-VDILIST=$(xe vdi-list params=uuid --minimal | sed 's/\,/\n/g' | sed '/^$/d')
-
-#number of spaces
-SPACE="10"
-
-#headings
-TITLE="Virtual Disk Image"
-SIZETITLE="Size"
-SRTITLE="Storage Repository"
-VMTITLE="Virtual Machine"
-
-#print headings
-LENGTH=${#TITLE}	
-NAMESPACES=$(( $NAMELONGEST - $LENGTH + $SPACE ))
-echo -ne "Virtual Disk Image" ; printf "%*s" "$NAMESPACES"
-
-LENGTH=${#SIZETITLE} ; SIZESPACES=$(( $SPACE - $LENGTH ))
-echo -ne "$SIZETITLE" ; printf "%*s" "$SIZESPACES"
-
-LENGTH=${#SRTITLE} ; NAMESPACES=$(( $NAMELONGEST - $LENGTH + $SPACE )) 
-echo -ne "$SRTITLE" ; printf "%*s" "$NAMESPACES"
-
-LENGTH=${#VMTITLE} ; NAMESPACES=$(( $NAMELONGEST - $LENGTH + $SPACE ))
-echo -ne "$VMTITLE" ; printf "%*s" "$NAMESPACES"
-
-echo ""
-
-for VDIUUID in $VDILIST
-do
-
-	#get uuids
-	SRUUID=$(xe vdi-param-get uuid=$VDIUUID param-name=sr-uuid)
-	VBDUUID=$(xe vbd-list vdi-uuid=$VDIUUID --minimal)
-
-	#if VBD uuid doesn't exist
-	if [ -z $VBDUUID ]
-	then
-		#assign invalid value for vbd uuid (error checking)
-		VBDUUID=-1 
-		VMNAME="No VM Attached"
-	else
-		#get VM uuid
+	#if VBD uuid exists
+	if [ ! -z "$VBDUUID" ] ;then
 		VMUUID=$(xe vbd-param-get uuid=$VBDUUID param-name=vm-uuid)
-
-		if [ -z $VMUUID ]
-        	then
-			#assign invalid value for vm uuid (error checking)
-                	VMUUID=-1
-                	VMNAME="No VM Attached"
-        	else
-			#get VM name
-                	VMNAME=$(xe vm-param-get uuid=$VMUUID param-name=name-label)
-        	fi
-		
-	fi 
-
-	#get SR name
-	SRNAME=$(xe sr-param-get uuid=$SRUUID param-name=name-label)  
-
-        #get size 
-	VDISIZE=$(xe vdi-param-get uuid=$VDIUUID param-name=virtual-size)
-	
-	#checking valid VDI size
-	if [[ $VDISIZE = '-1' ]] ; then
-		VDISIZE=0
+		VMNAME[$i]=$(xe vm-param-get uuid=$VMUUID param-name=name-label)
+		DEVICENAME[$i]=$(xe vbd-param-get uuid=$VBDUUID param-name=device)
+	else
+		VMNAME[$i]=""
+		DEVICENAME[$i]=""
 	fi
-
-	#get VDI sizes
-	TOTALSIZE=$(getunit $VDISIZE)
-        
-	#display VDI uuids
-	LENGTH=${#VDIUUID}	
-        NAMESPACES=$(( $NAMELONGEST - $LENGTH + $SPACE ))
-	cecho "$VDIUUID" cyan
-	printf "%*s" "$NAMESPACES"
-
-	#print VDI size
-	for COL in $TOTALSIZE
-	do
-		LENGTH=${#COL}
-		SIZESPACES=$(( $SPACE - $LENGTH ))
-		cecho "$COL" blue
-		printf "%*s" "$SIZESPACES"
-	done
-	
-	#display SR information
-	LENGTH=${#SRNAME} 
-	NAMESPACES=$(( $NAMELONGEST - $LENGTH + $SPACE ))
-	cecho "$SRNAME" blue
-	printf "%*s" "$NAMESPACES"
-
-	#display VM information
-	LENGTH=${#VMNAME}
-        NAMESPACES=$(( $NAMELONGEST - $LENGTH + SPACE))
-	cecho "${VMNAME}" blue
-        echo ""
-
 done
 
+#calculate column width
+COLLONGEST[0]=$(getcolwidth  "${TITLES[0]}" "${VDIUUIDS[@]}")
+COLLONGEST[1]="4" # width of size will never be longer than 4 ie. 999M then 1G
+COLLONGEST[2]=$(getcolwidth  "${TITLES[2]}" "${SRNAMES[@]}")
+COLLONGEST[3]=$(getcolwidth  "${TITLES[3]}" "${VMNAMES[@]}" "No VM Attached")
+COLLONGEST[4]=$(getcolwidth  "${TITLES[4]}" "${VBDNAMES[@]}" "No Device")
+
+#prints titles
+IFS=$'\n'
+if [[ "$CSV" = "yes" ]] ;then
+        for i in $(seq 0 $(( ${#TITLES[@]} - 1 )) )
+        do
+                if [[ "$i" = $(( ${#TITLES[@]} - 1 )) ]] ;then
+                        echo -ne "${TITLES[$i]}"
+                else
+                        echo -ne "${TITLES[$i]},"
+                fi
+        done
+	echo ""
+else
+	for i in $(seq 0 $(( ${#TITLES[@]} - 1 )))
+	do
+		cecho "${TITLES[$i]}" off ; printf "%*s" "$(( ${COLLONGEST[$i]} + $SPACE - ${#TITLES[$i]} ))" 
+	done
+echo ""
+fi
+
+#output VDI information
+if [[ "$CSV" = "yes" ]] ;then
+	 for i in $(seq 0 $(( ${#VDIUUIDS[@]} - 1 )) ) ;do
+         	echo -ne "${VDIUUIDS[$i]},"
+	 	echo -ne "${TOTALSIZE[$i]},"
+		echo -ne "${SRNAMES[$i]},"
+		echo -ne "${SRTYPES[$i]},"
+		echo -ne "${VMNAME[$i]},"
+		echo -ne "${DEVICENAME[$i]}"
+		echo ""
+        done
+else
+	for i in $(seq 0 $(( ${#VDIUUIDS[@]} - 1 ))) 
+	do
+		#print rows
+		cecho "${VDIUUIDS[$i]}" cyan ; printf "%*s" "$(( ${COLLONGEST[0]} + $SPACE - ${#VDIUUIDS[$i]} ))" 
+		cecho "${TOTALSIZE[$i]}" cyan ; printf "%*s" "$(( ${COLLONGEST[1]} + $SPACE - ${#TOTALSIZE[$i]} ))" 
+		cecho "${SRNAMES[$i]}" cyan ; printf "%*s" "$(( ${COLLONGEST[2]} + $SPACE - ${#SRNAMES[$i]} ))" 
+		cecho "${SRTYPES[$i]}" cyan ; printf "%*s" "$(( ${COLLONGEST[2]} + $SPACE - ${#SRNAMES[$i]} ))"
+		cecho "${VMNAME[$i]}" cyan ; printf "%*s" "$(( ${COLLONGEST[3]} + $SPACE - ${#VMNAME[$i]} ))"
+		cecho "${DEVICENAME[$i]}" cyan ; printf "%*s" "$(( ${COLLONGEST[4]} + $SPACE - ${#DEVICENAME[$i]} ))"
+		echo ""
+	done
+fi
