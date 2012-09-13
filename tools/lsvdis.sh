@@ -159,7 +159,7 @@ else
 		cecho "${VDIUUIDS[$i]}" cyan ; printf "%*s" "$(( ${COLLONGEST[0]} + $SPACE - ${#VDIUUIDS[$i]} ))" 
 		cecho "${TOTALSIZE[$i]}" cyan ; printf "%*s" "$(( ${COLLONGEST[1]} + $SPACE - ${#TOTALSIZE[$i]} ))" 
 		cecho "${SRNAMES[$i]}" cyan ; printf "%*s" "$(( ${COLLONGEST[2]} + $SPACE - ${#SRNAMES[$i]} ))" 
-		cecho "${SRTYPES[$i]}" cyan ; printf "%*s" "$(( ${COLLONGEST[3]} + $SPACE - ${#SRNAMES[$i]} ))"
+		cecho "${SRTYPES[$i]}" cyan ; printf "%*s" "$(( ${COLLONGEST[3]} + $SPACE - ${#SRTYPES[$i]} ))"
 		cecho "${VMNAME[$i]}" cyan ; printf "%*s" "$(( ${COLLONGEST[4]} + $SPACE - ${#VMNAME[$i]} ))"
 		cecho "${DEVICENAME[$i]}" cyan ; printf "%*s" "$(( ${COLLONGEST[5]} + $SPACE - ${#DEVICENAME[$i]} ))"
 		echo ""
