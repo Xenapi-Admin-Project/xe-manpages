@@ -117,8 +117,9 @@ done
 COLLONGEST[0]=$(getcolwidth  "${TITLES[0]}" "${VDIUUIDS[@]}")
 COLLONGEST[1]="4" # width of size will never be longer than 4 ie. 999M then 1G
 COLLONGEST[2]=$(getcolwidth  "${TITLES[2]}" "${SRNAMES[@]}")
-COLLONGEST[3]=$(getcolwidth  "${TITLES[3]}" "${VMNAMES[@]}" "No VM Attached")
-COLLONGEST[4]=$(getcolwidth  "${TITLES[4]}" "${VBDNAMES[@]}" "No Device")
+COLLONGEST[3]=$(getcolwidth  "${TITLES[3]}" "${SRTYPES[@]}")
+COLLONGEST[4]=$(getcolwidth  "${TITLES[4]}" "${VMNAMES[@]}" "No VM Attached")
+COLLONGEST[5]=$(getcolwidth  "${TITLES[5]}" "${VBDNAMES[@]}" "No Device")
 
 #prints titles
 IFS=$'\n'
@@ -158,9 +159,9 @@ else
 		cecho "${VDIUUIDS[$i]}" cyan ; printf "%*s" "$(( ${COLLONGEST[0]} + $SPACE - ${#VDIUUIDS[$i]} ))" 
 		cecho "${TOTALSIZE[$i]}" cyan ; printf "%*s" "$(( ${COLLONGEST[1]} + $SPACE - ${#TOTALSIZE[$i]} ))" 
 		cecho "${SRNAMES[$i]}" cyan ; printf "%*s" "$(( ${COLLONGEST[2]} + $SPACE - ${#SRNAMES[$i]} ))" 
-		cecho "${SRTYPES[$i]}" cyan ; printf "%*s" "$(( ${COLLONGEST[2]} + $SPACE - ${#SRNAMES[$i]} ))"
-		cecho "${VMNAME[$i]}" cyan ; printf "%*s" "$(( ${COLLONGEST[3]} + $SPACE - ${#VMNAME[$i]} ))"
-		cecho "${DEVICENAME[$i]}" cyan ; printf "%*s" "$(( ${COLLONGEST[4]} + $SPACE - ${#DEVICENAME[$i]} ))"
+		cecho "${SRTYPES[$i]}" cyan ; printf "%*s" "$(( ${COLLONGEST[3]} + $SPACE - ${#SRNAMES[$i]} ))"
+		cecho "${VMNAME[$i]}" cyan ; printf "%*s" "$(( ${COLLONGEST[4]} + $SPACE - ${#VMNAME[$i]} ))"
+		cecho "${DEVICENAME[$i]}" cyan ; printf "%*s" "$(( ${COLLONGEST[5]} + $SPACE - ${#DEVICENAME[$i]} ))"
 		echo ""
 	done
 fi
