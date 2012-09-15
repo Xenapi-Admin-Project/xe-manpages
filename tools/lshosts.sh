@@ -7,6 +7,9 @@
 # Version: 0.6
 # Date: August 20, 2012
 # Complete rewrite
+# Version 0.7
+# Date: Sept 12, 2012
+# Changed to the new style getcolwidth and printspaces
 
 #give names to ansi sequences
 setcolors()
@@ -41,7 +44,7 @@ syntax()
         echo "-d - shell debugging"
         echo "-h - this help text"
         echo "-u - show UUIDs"
-        echo "-c - print as csv"
+        echo "-c - output comma seperated values"
         echo ""
         exit
 }
@@ -52,11 +55,14 @@ getcolwidth()
 	#get longest item in array
 	array=( "$@" )
 	i=0
-	for ITEM in ${array[@]} "${TITLES[$2]}" ;do
-		if [[ "${#ITEM}" -gt "${COLLONGEST[$2]}" ]] ;then
-			COLLONGEST[$2]="${#ITEM}"
+	LONGEST="0"
+	IFS=$'\n'
+	for ITEM in ${array[@]} ;do
+		if [[ "${#ITEM}" -gt "$LONGEST" ]] ;then
+			LONGEST="${#ITEM}"
 		fi
 	done
+	echo "$LONGEST"
 }
 
 #change bytes to human readable
@@ -71,6 +77,20 @@ getunit()
                 fi
         done
 	echo "$SIZE"
+}
+
+printspaces()
+{
+	# arg 1 - the longest item in the column (integer)
+	# arg 2 - the length of the item ie. ${#VAR} (integer)
+	COLUMN="$1"
+	ITEM="$2"
+	
+	if [[ "$CSV" = "yes" ]] ;then
+		echo -ne ","
+	else
+		printf "%*s" "$(( $COLUMN + $MINSPACE - $ITEM ))"
+	fi 
 }
 
 #main
@@ -88,13 +108,13 @@ done
 shift $(($OPTIND - 1))
 MINSPACE="3"
 
+# Populate arrays for Column titles, VM UUIDs and Host names
 TITLES=( 'Host' 'Active VMs' 'SW' 'Ver' 'Processor' 'Cores' 'Mhz' 'Tot Mem' 'Free Mem' 'Network')
 VMUUIDS=( $(xe vm-list params=uuid is-control-domain=false --minimal | sort | sed 's/,/\n/g') )
 HOSTNAMES=( $(xe host-list params=name-label --minimal | sed 's/,/\n/g' | sort ) )
 
-#get data about hosts
-for i in $(seq 0 $(( ${#HOSTNAMES[@]} - 1 )) )
-do
+# Get data about hosts
+for i in $(seq 0 $(( ${#HOSTNAMES[@]} - 1 )) ) ;do
 	HOSTUUID[$i]=$(xe host-list name-label=${HOSTNAMES[$i]} params=uuid --minimal)
 	HOSTVMNUM[$i]=$(xe vm-list params=resident-on power-state=running  is-control-domain=false | grep -c "$HOSTUUID")
 	HOSTSWTYPE[$i]=$(xe host-param-get uuid="$HOSTUUID" param-name=software-version param-key=product_brand)
@@ -107,70 +127,44 @@ do
 	HOSTNETWORK[$i]=$(xe host-param-get uuid="$HOSTUUID" param-name=software-version param-key=network_backend)
 done
 
-#set col1 as name-label or uuid
+# Set col1 as name-label or uuid
 if [[ "$UUID" = "yes" ]] ;then
 	HOSTCOL=("${HOSTUUID[@]}")
 else
 	HOSTCOL=("${HOSTNAMES[@]}")
 fi
 
-#get column widths
-getcolwidth "${HOSTCOL[@]}" 0
-getcolwidth "${HOSTVMNUM[@]}" 1
-getcolwidth "${HOSTSWTYPE[@]}" 2
-getcolwidth "${HOSTSWVER[@]}" 3
-getcolwidth "${HOSTCPUTYPE[@]}" 4
-getcolwidth "${HOSTCPUCOUNT[@]}" 5
-getcolwidth "${HOSTCPUSPEED[@]}" 6
-getcolwidth "${HOSTMAXMEM[@]}" 7
-getcolwidth "${HOSTMAXFREE[@]}" 8
-getcolwidth "${HOSTNETWORK[@]}" 9
+# Get the length of each column and store it in COLLONGEST[]
+COLLONGEST[0]=$(getcolwidth "${TITLES[0]}" "${HOSTCOL[@]}")
+COLLONGEST[1]=$(getcolwidth "${TITLES[1]}" "${HOSTVMNUM[@]}")
+COLLONGEST[2]=$(getcolwidth "${TITLES[2]}" "${HOSTSWTYPE[@]}")
+COLLONGEST[3]=$(getcolwidth "${TITLES[3]}" "${HOSTSWVER[@]}")
+COLLONGEST[4]=$(getcolwidth "${TITLES[4]}" "${HOSTCPUTYPE[@]}")
+COLLONGEST[5]=$(getcolwidth "${TITLES[5]}" "${HOSTCPUCOUNT[@]}")
+COLLONGEST[6]=$(getcolwidth "${TITLES[6]}" "${HOSTCPUSPEED[@]}")
+COLLONGEST[7]=$(getcolwidth "${TITLES[7]}" "${HOSTMAXMEM[@]}")
+COLLONGEST[8]=$(getcolwidth "${TITLES[8]}" "${HOSTMAXFREE[@]}")
+COLLONGEST[9]=$(getcolwidth "${TITLES[9]}" "${HOSTNETWORK[@]}")
 
-#print title
+# Print column headings
 IFS=$'\n'
-if [[ "$CSV" = "yes" ]] ;then
-	for i in $(seq 0 $(( ${#TITLES[@]} - 1 )) )
-	do
-		if [[ "$i" = $(( ${#TITLES[@]} - 1 )) ]] ;then
-			echo -ne "${TITLES[$i]}"
-		else
-			echo -ne "${TITLES[$i]},"
-		fi
-	done
-else
-	for i in $(seq 0 $(( ${#TITLES[@]} - 1 )) ) ;do
-		cecho "${TITLES[$i]}" off
-		printf "%*s" "$(( ${COLLONGEST[$i]} + $MINSPACE - ${#TITLES[$i]} ))" 	
-	done
-fi
+for i in $(seq 0 $(( ${#TITLES[@]} - 1 )) ) ;do
+	cecho "${TITLES[$i]}" off
+	printspaces "${COLLONGEST[$i]}"  "${#TITLES[$i]}" 	
+done
 echo ""
 
-#print host data columns
-if [[ "$CSV" = "yes" ]] ;then
-	for i in $(seq 0 $(( ${#HOSTCOL[@]} - 1 )) ) ;do
-		echo -ne "${HOSTCOL[$i]},"
-		echo -ne "${HOSTVMNUM[$i]},"
-		echo -ne "${HOSTSWTYPE[$i]}," 
-		echo -ne "${HOSTSWVER[$i]},"
-		echo -ne "${HOSTCPUTYPE[$i]}," 
-		echo -ne "${HOSTCPUCOUNT[$i]}," 
-		echo -ne "${HOSTCPUSPEED[$i]}," 
-		echo -ne "${HOSTMAXMEM[$i]}," 
-		echo -ne "${HOSTMAXFREE[$i]}," 
-		echo -ne "${HOSTNETWORK[$i]}" 
-	done
-else
-	for i in $(seq 0 $(( ${#HOSTCOL[@]} - 1 )) ) ;do
-		cecho "${HOSTCOL[$i]}" cyan ; printf "%*s" "$(( ${COLLONGEST[0]} + $MINSPACE - ${#HOSTCOL[$i]} ))" 
-		cecho "${HOSTVMNUM[$i]}" cyan ; printf "%*s" "$(( ${COLLONGEST[1]} + $MINSPACE - ${#HOSTVMNUM[$i]} ))" 
-		cecho "${HOSTSWTYPE[$i]}" cyan ; printf "%*s" "$(( ${COLLONGEST[2]} + $MINSPACE - ${#HOSTSWTYPE[$i]} ))" 
-		cecho "${HOSTSWVER[$i]}" cyan ; printf "%*s" "$(( ${COLLONGEST[3]} + $MINSPACE - ${#HOSTSWVER[$i]} ))" 
-		cecho "${HOSTCPUTYPE[$i]}" cyan ; printf "%*s" "$(( ${COLLONGEST[4]} + $MINSPACE - ${#HOSTCPUTYPE[$i]} ))" 
-		cecho "${HOSTCPUCOUNT[$i]}" cyan ; printf "%*s" "$(( ${COLLONGEST[5]} + $MINSPACE - ${#HOSTCPUCOUNT[$i]} ))" 
-		cecho "${HOSTCPUSPEED[$i]}" cyan ; printf "%*s" "$(( ${COLLONGEST[6]} + $MINSPACE - ${#HOSTCPUSPEED[$i]} ))" 
-		cecho "${HOSTMAXMEM[$i]}" cyan ; printf "%*s" "$(( ${COLLONGEST[7]} + $MINSPACE - ${#HOSTMAXMEM[$i]} ))" 
-		cecho "${HOSTMAXFREE[$i]}" cyan ; printf "%*s" "$(( ${COLLONGEST[8]} + $MINSPACE - ${#HOSTMAXFREE[$i]} ))" 
-		cecho "${HOSTNETWORK[$i]}" cyan ; printf "%*s" "$(( ${COLLONGEST[9]} + $MINSPACE - ${#HOSTNETWORK[$i]} ))" 
-	done
-fi
+# Print data columns
+for i in $(seq 0 $(( ${#HOSTCOL[@]} - 1 )) ) ;do
+	cecho "${HOSTCOL[$i]}" cyan ; printspaces "${COLLONGEST[0]}" "${#HOSTCOL[$i]}" 
+	cecho "${HOSTVMNUM[$i]}" cyan ; printspaces "${COLLONGEST[1]}" "${#HOSTVMNUM[$i]}" 
+	cecho "${HOSTSWTYPE[$i]}" cyan ; printspaces "${COLLONGEST[2]}" "${#HOSTSWTYPE[$i]}" 
+	cecho "${HOSTSWVER[$i]}" cyan ; printspaces "${COLLONGEST[3]}" "${#HOSTSWVER[$i]}" 
+	cecho "${HOSTCPUTYPE[$i]}" cyan ; printspaces "${COLLONGEST[4]}" "${#HOSTCPUTYPE[$i]}" 
+	cecho "${HOSTCPUCOUNT[$i]}" cyan ; printspaces "${COLLONGEST[5]}" "${#HOSTCPUCOUNT[$i]}" 
+	cecho "${HOSTCPUSPEED[$i]}" cyan ; printspaces "${COLLONGEST[6]}" "${#HOSTCPUSPEED[$i]}" 
+	cecho "${HOSTMAXMEM[$i]}" cyan ; printspaces "${COLLONGEST[7]}" "${#HOSTMAXMEM[$i]}" 
+	cecho "${HOSTMAXFREE[$i]}" cyan ; printspaces "${COLLONGEST[8]}" "${#HOSTMAXFREE[$i]}" 
+	cecho "${HOSTNETWORK[$i]}" cyan ; printspaces "${COLLONGEST[9]}" "${#HOSTNETWORK[$i]}" 
+done
 echo ""

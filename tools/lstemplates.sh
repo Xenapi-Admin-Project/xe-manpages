@@ -12,6 +12,9 @@
 # Replaced bubble sort with an outside file sorted using the sort command
 # execution time went from 4.2 seconds to 1.8.
 # changed getcolwidth to a function returning the longest length instead of setting COLLONGEST directly
+# Version 0.9
+# Date Sept 14, 2012
+# Added printspaces function and CSV support
 
 setup()
 {
@@ -55,9 +58,24 @@ syntax()
 	echo "Options:"
 	echo "-d - shell debugging"
 	echo "-h - this help text"
+        echo "-c - output comma seperated values"
 	echo "-v - verbose mode, show template descriptions"
 	echo ""
 	exit
+}
+
+printspaces()
+{
+	# arg 1 - the longest item in the column (integer)
+	# arg 2 - the length of the item ie. ${#VAR} (integer)
+	COLUMN="$1"
+	ITEM="$2"
+	
+	if [[ "$CSV" = "yes" ]] ;then
+		echo -ne ","
+	else
+		printf "%*s" "$(( $COLUMN + $MINSPACE - $ITEM ))"
+	fi 
 }
 
 #get width of columns
@@ -84,43 +102,47 @@ cleanup()
 trap cleanup SIGINT SIGTERM
 setup
 
-while getopts :dvh opt
+while getopts :dvch opt
 do
         case $opt in
                 d) set -x ;;
                 v) MODE="verbose" ;;
+                c) CSV="yes" ;;
 				h) syntax ;;
                 \?) echo "Unknown option"; syntax ;;
         esac
 done
 shift $(($OPTIND - 1))
 
-i=0
+# Populate arrays for Template UUIDs and Template Nmes
 TMPLUUIDS=( $(xe template-list params=uuid --minimal | sed 's/,/\n/g') )
 for i in $(seq 0 $(( ${#TMPLUUIDS[@]} - 1 )) ) ;do
 	TMPLNAMES[$i]=$(xe template-list uuid="${TMPLUUIDS[$i]}" params=name-label --minimal)
-	
 done
 
+# Get the length of each column and store it in COLLONGEST[]
 COLLONGEST[0]=$(getcolwidth "${TITLES[0]}" "${TMPLNAMES[@]}")
 COLLONGEST[1]=$(getcolwidth "${TITLES[1]}" "${TMPLUUIDS[@]}")
 
+# Print column headings
 for i in $(seq 0 $(( ${#TITLES[@]} - 1 )) ) ;do
-	cecho "${TITLES[$i]}" off ; printf "%*s" "$(( ${COLLONGEST[0]} + $MINSPACE - ${#TITLES[$i]} ))" 
+	cecho "${TITLES[$i]}" off ; printspaces "${COLLONGEST[$i]}" "${#TITLES[$i]}" 
 done > "$TMPDIR/tmpllist.txt"
 echo "" >> "$TMPDIR/tmpllist.txt"
 
+# sort template names and UUIDs using the sort command (twice as fast as bash or eval)
 for i in $(seq 0 $(( ${#TMPLUUIDS[@]} - 1 )) ) ;do
-	cecho "${TMPLNAMES[$i]}" cyan ;	printf "%*s" "$(( ${COLLONGEST[0]} + $MINSPACE - ${#TMPLNAMES[$i]} ))" 
-	cecho "${TMPLUUIDS[$i]}" cyan ;	printf "%*s" "$(( ${COLLONGEST[1]} + $MINSPACE - ${#TMPLUUIDS[$i]} ))" 
+	cecho "${TMPLNAMES[$i]}" cyan ;	printspaces "${COLLONGEST[0]}" "${#TMPLNAMES[$i]}" 
+	cecho "${TMPLUUIDS[$i]}" cyan ;	printspaces "${COLLONGEST[1]}" "${#TMPLUUIDS[$i]}" 
 	echo "" 
 done | sort >> "$TMPDIR/tmpllist.txt"
 
+# Print data columns
 if [[ "$MODE" = "verbose" ]] ;then
 	for LINE in $(cat $TMPDIR/tmpllist.txt) ;do
 		echo "$LINE"
 		UUID=$(echo "$LINE" | egrep -o '[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}')
-		xe template-list uuid="$UUID" params=name-description --minimal
+		xe template-param-get uuid="$UUID" params-name=name-description
 		echo ""
 	done
 else

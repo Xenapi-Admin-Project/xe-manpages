@@ -10,6 +10,22 @@
 # Version: 0.7
 # Date: August 19, 2012
 # Changed wording for VM device
+# Version: 0.8
+# Date: September 14th, 2012
+# rewrote using getcolwidth, printspaces and sort_netnames
+# addes CSV output
+
+setup()
+{
+	setcolors	
+	MINSPACE="5"
+	if [[ "$UUID" = "yes" ]] ;then
+		TITLES=( 'Network UUID' 'Bridge' 'VLAN UUID' 'Virtual Machine UUID' 'VM Device' )
+	else
+		TITLES=( 'Network' 'Bridge' 'VLAN' 'Virtual Machine' 'VM Device' )
+	fi
+	IFS=$'\n'
+}
 
 setcolors()
 {
@@ -36,149 +52,169 @@ syntax()
         echo "Syntax: $(basename $0) [options]"
         echo "Options:"
         echo "-d - shell debugging"
+        echo "-c - output comma seperated values"
         echo "-h - this help text"
         echo "-u - show UUIDs"
         echo ""
         exit
 }
 
-#Main
-setcolors
-while getopts :dhu opt
+#get width of columns
+getcolwidth()
+{
+	#get longest item in array
+	array=( "$@" )
+	i=0
+	LONGEST="0"
+	IFS=$'\n'
+	for ITEM in ${array[@]} ;do
+		if [[ "${#ITEM}" -gt "$LONGEST" ]] ;then
+			LONGEST="${#ITEM}"
+		fi
+	done
+	echo "$LONGEST"
+}
+
+sort_netnames()
+{   
+	local MAX=$((${#NETNAMES[@]} - 1))
+    while ((MAX > 0)) ;do
+       	local i=0 
+        while ((i < MAX)) ;do
+			local j=$((i + 1))
+			if expr "${NETNAMES[$i]}" \> "${NETNAMES[$j]}" >/dev/null
+			then
+                local t=${NETNAMES[$i]}
+                local u=${NETUUIDS[$i]}
+                local v=${BRIDGENAMES[$i]}
+                local w=${VLAN[$i]}
+                NETNAMES[$i]=${NETNAMES[$j]}
+                NETUUIDS[$i]=${NETUUIDS[$j]}
+                BRIDGENAMES[$i]=${BRIDGENAMES[$j]}
+                VLAN[$i]=${VLAN[$j]}
+                NETNAMES[$j]=$t
+                NETUUIDS[$j]=$u
+                BRIDGENAMES[$j]=$v
+                VLAN[$j]=$w
+            fi
+            ((i++))
+        done
+        ((MAX--))
+    done
+}
+
+printspaces()
+{
+	# arg 1 - the longest item in the column (integer)
+	# arg 2 - the length of the item ie. ${#VAR} (integer)
+	COLUMN="$1"
+	ITEM="$2"
+	
+	if [[ "$CSV" = "yes" ]] ;then
+		echo -ne ","
+	else
+		printf "%*s" "$(( $COLUMN + $MINSPACE - $ITEM ))"
+	fi 
+}
+
+UUID="no"
+# Get cli options
+while getopts :dhcu opt
 do
         case $opt in
                 d) set -x ;;
                 h) syntax ;;
+                c) CSV="yes" ;;
                 u) UUID="yes" ;;
                 \?) echo "Unknown option"; syntax ;;
         esac
 done
 shift $(($OPTIND - 1))
+setup
 
-OLDIFS="$IFS"
-IFS=$'\n'
-
-# arrays of items
-NETUUIDS=( $(xe network-list params=uuid --minimal | sort | sed 's/,/\n/g') )
-if [[ "$UUID" = "yes" ]] ;then
-	NETNAMES=( $(xe network-list params=uuid --minimal | sort | sed 's/,/\n/g' ) )
-else
-	NETNAMES=( $(xe network-list params=name-label --minimal | sort | sed 's/,/\n/g') )
-fi
-if [[ "$UUID" = yes ]] ;then
-	VMNAMES=( $(xe vm-list params=uuid is-control-domain=false --minimal | sort | sed 's/,/\n/g') )
-else
-	VMNAMES=( $(xe vm-list params=name-label is-control-domain=false --minimal | sort | sed 's/,/\n/g') )
-fi
-VLANUUIDS=( $(xe vlan-list --minimal | sort | sed 's/,/\n/g') )
-BRIDENAMES=( $(xe network-list params=bridge --minimal | sort | sed 's/,/\n/g') )
-TITLES=( 'Network' 'Bridge' 'VLAN' 'Virtual Machine' 'VM Device' )
-
-MINSPACE="5"
-NETNAMELONGEST="0"
-NETUUIDLONGEST="0"
-BRIDENAMELONGEST="0"
-VMNAMELONGEST="0"
-VMNAMESPACES="0"
-
-
-# Get longest names in each column
-for NAME in ${NETNAMES[@]} ${TITLES[0]} ;do
-	if [[ "${#NAME}" -gt "${COLLONGEST[0]}" ]] ;then
-		COLLONGEST[0]="${#NAME}"
-	fi
-done
-
-# Get longest Bridge name column
-for NAME in ${BRIDENAMES[@]} ${TITLES[1]} ;do
-	if [[ "${#NAME}" -gt "${COLLONGEST[1]}" ]] ;then
-		COLLONGEST[1]="${#NAME}"
-	fi
-done
-
-# Get longest VLAN name column
-if [[ "$UUID" = "yes" ]] ;then
-	for NAME in ${VLANUUIDS[@]} ${TITLES[2]} ;do
-		if [[ "${#NAME}" -gt "${COLLONGEST[2]}" ]] ;then
-			COLLONGEST[2]="${#NAME}"
+# Populate arrays for Network UUIDs, Bridge names VLAN Tags and UUIDs, VM names and VMUUIDs
+NETUUIDS=( $(xe network-list params=uuid --minimal | sed 's/,/\n/g') ) 
+for i in $(seq 0 $(( ${#NETUUIDS[@]} - 1 )) ) ;do
+	BRIDGENAMES[$i]=$(xe network-list uuid="${NETUUIDS[$i]}" params=bridge --minimal | sed 's/,/\n/g')
+	if [[ "${BRIDGENAMES[$i]}" == *xapi* ]] ;then
+		# If bridge has a VLAN, get it's tag or uuid
+		VLANNUM=$(xe pif-list network-uuid="${NETUUIDS[$i]}" params=VLAN --minimal)
+		if [[ ! -z "$VLANNUM" ]] ;then
+			if [[ ! "$VLANNUM" = '-1' ]] ;then
+				VLANUUID=$(xe pif-list VLAN="$VLANNUM" params=uuid --minimal)
+			else
+				VLANUUID=""
+			fi
 		fi
-	done
-else
-	COLLONGEST[2]=3
-fi
-
-# Get longest VM name column
-for NAME in ${VMNAMES[@]} ${TITLES[3]} ;do
-	if [[ "${#NAME}" -gt "${COLLONGEST[3]}" ]] ;then
-		COLLONGEST[3]="${#NAME}"
+	fi
+	
+	# For now just get all VM UUID/Names that will be printed later and assign them to an array for getcolwidth
+	VMUUIDS+=( $(xe vif-list network-uuid="${NETUUIDS[$i]}" params=vm-uuid --minimal | sed 's/,/\n/g' ) )
+	if [[ "$UUID" = "yes" ]] ;then
+		NETNAMES[$i]=${NETUUIDS[$i]}
+		VMNAMES+=( "${VMUUIDS[@]}" )
+		VLAN[$i]="$VLANUUID"
+	else
+		NETNAMES[$i]=$(xe network-list uuid="${NETUUIDS[$i]}" params=name-label --minimal)
+		for VMUUID in $VMUUIDS ;do
+			VMNAMES+=( $(xe vm-list uuid="$VMUUID" params=name-label --minimal) )
+		done
+		VLAN[$i]="$VLANNUM"
 	fi
 done
 
-# Print headings
-i=0
-for TITLE in ${TITLES[@]}
-do
-	LENGTH=${#TITLE}	
-    NAMESPACES=$(( ${COLLONGEST[$i]} + $MINSPACE - $LENGTH ))
-	cecho "$TITLE" off
-	printf "%*s" "$NAMESPACES" 	
-	(( i++ ))
+# bubble sort the network names in alphabetical order
+sort_netnames
+
+# Get the length of each column and store it in COLLONGEST[]
+COLLONGEST[0]=$(getcolwidth "${TITLES[0]}" "${NETNAMES[@]}")
+COLLONGEST[1]=$(getcolwidth "${TITLES[1]}" "${BRIDENAMES[@]}")
+COLLONGEST[2]=$(getcolwidth "${TITLES[2]}" "${VLAN[@]}")
+COLLONGEST[3]=$(getcolwidth "${TITLES[3]}" "${VMNAMES[@]}")
+
+# Print column headings
+for i in $(seq 0 $(( ${#TITLES[@]} - 1 )) ) ;do
+	cecho "${TITLES[$i]}" off ; printspaces "${COLLONGEST[$i]}" "${#TITLES[$i]}"
 done
 echo ""
 
-for NETWORK in ${NETNAMES[@]}
-do
+# Main loop - display Network and Bridge names and VLAN tag/uuid. 
+# Get vm names/uuids and display
+for i in $(seq 0 $(( ${#NETUUIDS[@]} - 1 )) ) ;do
+	cecho "${NETNAMES[$i]}" cyan ;	  printspaces "${COLLONGEST[0]}" "${#NETNAMES[$i]}" 
+	cecho "${BRIDGENAMES[$i]}" blue ; printspaces "${COLLONGEST[1]}" "${#BRIDGENAMES[$i]}" 
+	cecho "${VLAN[$i]}" blue ;	      printspaces "${COLLONGEST[2]}" "${#VLAN[$i]}" 
 	
-	if [[ $UUID = "yes" ]] ;then
-			NETUUID="$NETWORK"
-	else
-			NETUUID=$(xe network-list name-label="$NETWORK" --minimal)
+	#Get list of vifs on network
+	j=0
+	VMUUIDS=$(xe vif-list network-uuid=${NETUUIDS[$i]} params=vm-uuid --minimal | sed 's/,/\n/g' | sort)
+	if [[ -z $VMUUIDS && "$CSV" = "yes" ]] ;then
+		echo -ne ",,"
 	fi
-	BRIDGE=$(xe network-param-get uuid=$NETUUID param-name=bridge)
-	if [[ "$BRIDGE" == *xapi* ]] 
-	then
-		#see if there's a vlan associated
-		VLANNUM=$(xe pif-list network-uuid="$NETUUID" params=VLAN --minimal)
-		if [[ "$UUID" = "yes" ]] ;then
-			VLANUUID=$(xe vlan-list tag="$VLANNUM" --minimal)
-			VLAN="$VLANUUID"
-		else
-			VLAN="$VLANNUM"
-		fi
-	else
-		VLAN=""
-		VLANNUM=""
-		VLANUUID=""
-    fi    
-    
-    #echo the item followed by the correct number of spaces	
-	cecho "$NETWORK" cyan ;	printf "%*s" "$(( ${COLLONGEST[0]} + $MINSPACE - ${#NETWORK} ))"  
-	cecho "$BRIDGE"  cyan ; printf "%*s" "$(( ${COLLONGEST[1]} + $MINSPACE - ${#BRIDGE} ))" 
-	cecho "$VLAN"    cyan ; printf "%*s" "$(( ${COLLONGEST[2]} + $MINSPACE - ${#VLAN} ))" 
-
-	#Get list of vifs on network	
-	i=0
-	VIFVMLIST=$(xe vif-list network-uuid=$NETUUID params=vm-uuid --minimal | sed 's/,/\n/g')
-	for VMUUID in $VIFVMLIST
+	for VMUUID in $VMUUIDS
 	do
 		#Get VM name-label
 		if [[ "$UUID" = "yes" ]] ;then
-			VMNAME[$i]="$VMUUID"
+			VM="$VMUUID"
 		else
-			VMNAME[$i]=$(xe vm-list uuid=$VMUUID params=name-label --minimal)
+			VM=$(xe vm-list uuid="$VMUUID" params=name-label --minimal)
 		fi
-		VMDEVNUM[$i]=$(xe vif-list vm-uuid=$VMUUID params=device --minimal )
-		if [[ $i == 0 ]] ;then
-			cecho "${VMNAME[0]}"  cyan ; printf "%*s" "$(( ${COLLONGEST[3]} + $MINSPACE - ${#VMNAME[0]} ))" 
-			cecho "${VMDEVNUM[0]}" cyan
+		VMDEVNUM=$(xe vif-list vm-uuid="$VMUUID" network-uuid=${NETUUIDS[$i]} params=device --minimal )
+		if [[ "$j" -eq "0" ]] ;then
+			cecho "${VM}"  blue ; printspaces "${COLLONGEST[3]}" "${#VM}" 
+			cecho "$VMDEVNUM" blue
 		else
-			VMNAMESPACES=$(( ${COLLONGEST[0]} + $MINSPACE + ${COLLONGEST[1]} + $MINSPACE + ${COLLONGEST[2]} + $MINSPACE ))
-			echo "" ; printf "%*s" "$VMNAMESPACES"	
-			cecho "${VMNAME[$i]}" cyan
-			printf "%*s" "$(( ${COLLONGEST[3]} + $MINSPACE - ${#VMNAME[$i]} ))" 
-			cecho "${VMDEVNUM[$i]}" cyan
+			if [[ "$CSV" = "yes" ]] ;then
+				echo ""
+				echo -ne ",,,"
+			else
+				COLSPACES=$(( ${COLLONGEST[0]} + $MINSPACE + ${COLLONGEST[1]} + $MINSPACE + ${COLLONGEST[2]} + $MINSPACE ))
+				echo "" ; printf "%*s" "$COLSPACES"
+			fi
+			cecho "${VM}" blue ; printspaces "${COLLONGEST[3]}" "${#VM}"
+			cecho "${VMDEVNUM}" blue
 		fi
-		(( i++ ))
+		(( j++ ))
 	done
 	echo ""
 done
