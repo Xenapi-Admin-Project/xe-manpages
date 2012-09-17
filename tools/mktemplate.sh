@@ -18,8 +18,7 @@ if_yes()
 get_template()
 {
     OLD_IFS=${IFS}
-    IFS="
-"
+    IFS=$'\n'
     PS3="Please Choose: "
     select TPL in $(xe template-list params=name-label --minimal | sed 's/,/\n/g' | sort) Quit
     do  
@@ -29,7 +28,6 @@ get_template()
         TPLUUID=$(xe template-list name-label=$TPL --minimal)
         break; 
     done
-    
     IFS=${OLD_IFS}
 }
 

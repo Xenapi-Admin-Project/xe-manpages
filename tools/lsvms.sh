@@ -7,7 +7,7 @@
 # Version: 0.6
 # Date: Sept 15, 2012
 # Complete rewrite using printspaces, sort_vmnames and getcolwidth
-# Now provides three output modes - name, uuid. mixed and both
+# Now provides four output MODES - name, uuid. mixed and both
 # Also provides CSV output
 
 setup()
@@ -202,12 +202,12 @@ for i in $(seq 0 $(( ${#VMUUIDS[@]} - 1 )) ) ;do
 		;;
 		"mixed") cecho "${VMNAMES[$i]}" cyan ; printspaces "${COLLONGEST[0]}" "${#VMNAMES[$i]}" 
 				cecho "${STATES[$i]}" red ; printspaces "${COLLONGEST[1]}" "${#STATES[$i]}" 
-				cecho "${VMUUIDS[$i]}" cyan ; printspaces "${COLLONGEST[2]}" "${#VMUUIDS[$i]}"
+				cecho "${VMUUIDS[$i]}" blue ; printspaces "${COLLONGEST[2]}" "${#VMUUIDS[$i]}"
 				cecho "${HOSTNAMES[$i]}" blue ; printspaces "${COLLONGEST[3]}" "${#HOSTNAMES[$i]}" 
 		;;
 		"both") cecho "${VMNAMES[$i]}" cyan ; printspaces "${COLLONGEST[0]}" "${#VMNAMES[$i]}" 
 				cecho "${STATES[$i]}" red ; printspaces "${COLLONGEST[1]}" "${#STATES[$i]}" 
-				cecho "${VMUUIDS[$i]}" cyan ; printspaces "${COLLONGEST[2]}" "${#VMUUIDS[$i]}"
+				cecho "${VMUUIDS[$i]}" blue ; printspaces "${COLLONGEST[2]}" "${#VMUUIDS[$i]}"
 				cecho "${HOSTNAMES[$i]}" blue ; printspaces "${COLLONGEST[3]}" "${#HOSTNAMES[$i]}" 
 				cecho "${HOSTUUIDS[$i]}" blue ; printspaces "${COLLONGEST[4]}" "${#HOSTUUIDS[$i]}"
 		;;

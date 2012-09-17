@@ -10,6 +10,18 @@
 # Version 0.7
 # Date: Sept 12, 2012
 # Changed to the new style getcolwidth and printspaces
+# Version 0.8
+# Date: Sept 15, 2012
+# Changed to MODE structure to allow for future expansion
+
+setup()
+{
+	setcolors
+	VERSION="0.8"
+	MINSPACE="3"
+	MODE="name"
+	IFS=$'\n'
+}
 
 #give names to ansi sequences
 setcolors()
@@ -38,12 +50,14 @@ cecho ()
 
 syntax()
 {
+		echo "$(basename $0) $VERSION"
         echo ""
         echo "Syntax: $(basename $0) [options]"
         echo "Options:"
         echo "-d - shell debugging"
         echo "-h - this help text"
         echo "-u - show UUIDs"
+        echo "-n - show Names (default)"
         echo "-c - output comma seperated values"
         echo ""
         exit
@@ -94,48 +108,50 @@ printspaces()
 }
 
 #main
-setcolors
+setup
 
-while getopts :dhuc opt ;do
+while getopts :dhunc opt ;do
         case $opt in
                 d) set -x ;;
                 h) syntax ;;
                 c) CSV="yes" ;;
-                u) UUID="yes" ;;
+                u) MODE="uuid" ;;
+                n) MODE="name" ;;
                 \?) echo "Unknown option"; syntax ;;
         esac
 done
 shift $(($OPTIND - 1))
-MINSPACE="3"
 
-# Populate arrays for Column titles, VM UUIDs and Host names
-TITLES=( 'Host' 'Active VMs' 'SW' 'Ver' 'Processor' 'Cores' 'Mhz' 'Tot Mem' 'Free Mem' 'Network')
+# Set Title array depending on MODE
+case "$MODE" in
+	"uuid") TITLES=( 'Host UUID' 'Active VMs' 'SW' 'Ver' 'Processor' 'Cores' 'Mhz' 'Tot Mem' 'Free Mem' 'Network') ;;
+	"name") TITLES=( 'Host' 'Active VMs' 'SW' 'Ver' 'Processor' 'Cores' 'Mhz' 'Tot Mem' 'Free Mem' 'Network') ;;
+esac
+
+# Populate arrays for VM UUIDs and Host names
 VMUUIDS=( $(xe vm-list params=uuid is-control-domain=false --minimal | sort | sed 's/,/\n/g') )
 HOSTNAMES=( $(xe host-list params=name-label --minimal | sed 's/,/\n/g' | sort ) )
 
 # Get data about hosts
-for i in $(seq 0 $(( ${#HOSTNAMES[@]} - 1 )) ) ;do
-	HOSTUUID[$i]=$(xe host-list name-label=${HOSTNAMES[$i]} params=uuid --minimal)
-	HOSTVMNUM[$i]=$(xe vm-list params=resident-on power-state=running  is-control-domain=false | grep -c "$HOSTUUID")
-	HOSTSWTYPE[$i]=$(xe host-param-get uuid="$HOSTUUID" param-name=software-version param-key=product_brand)
-	HOSTSWVER[$i]=$(xe host-param-get uuid="$HOSTUUID" param-name=software-version param-key=product_version)
-	HOSTCPUTYPE[$i]=$(xe host-param-get uuid="$HOSTUUID" param-name=cpu_info param-key=vendor)
-	HOSTCPUCOUNT[$i]=$(xe host-param-get uuid="$HOSTUUID" param-name=cpu_info param-key=cpu_count)
-	HOSTCPUSPEED[$i]=$(xe host-param-get uuid="$HOSTUUID" param-name=cpu_info param-key=speed | awk -F. '{print $1}')
-	HOSTMAXMEM[$i]=$(getunit $(xe host-param-get uuid="$HOSTUUID" param-name=memory-total))
-	HOSTMAXFREE[$i]=$(getunit $(xe host-param-get uuid="$HOSTUUID" param-name=memory-free))
-	HOSTNETWORK[$i]=$(xe host-param-get uuid="$HOSTUUID" param-name=software-version param-key=network_backend)
+HOSTUUIDS=( $(xe host-list params=uuid --minimal | sed 's/,/\n/g') )
+for i in $(seq 0 $(( ${#HOSTUUIDS[@]} - 1 )) ) ;do
+	HOSTNAMES[$i]=$(xe host-list uuid="${HOSTUUIDS[$i]}" params=name-label --minimal)
+	HOSTVMNUM[$i]=$(xe vm-list params=resident-on power-state=running  is-control-domain=false | grep -c "${HOSTUUIDS[$i]}")
+	HOSTSWTYPE[$i]=$(xe host-param-get uuid="${HOSTUUIDS[$i]}" param-name=software-version param-key=product_brand)
+	HOSTSWVER[$i]=$(xe host-param-get uuid="${HOSTUUIDS[$i]}" param-name=software-version param-key=product_version)
+	HOSTCPUTYPE[$i]=$(xe host-param-get uuid="${HOSTUUIDS[$i]}" param-name=cpu_info param-key=vendor)
+	HOSTCPUCOUNT[$i]=$(xe host-param-get uuid="${HOSTUUIDS[$i]}" param-name=cpu_info param-key=cpu_count)
+	HOSTCPUSPEED[$i]=$(xe host-param-get uuid="${HOSTUUIDS[$i]}" param-name=cpu_info param-key=speed | awk -F. '{print $1}')
+	HOSTMAXMEM[$i]=$(getunit $(xe host-param-get uuid="${HOSTUUIDS[$i]}" param-name=memory-total))
+	HOSTMAXFREE[$i]=$(getunit $(xe host-param-get uuid="${HOSTUUIDS[$i]}" param-name=memory-free))
+	HOSTNETWORK[$i]=$(xe host-param-get uuid="${HOSTUUIDS[$i]}" param-name=software-version param-key=network_backend)
 done
 
-# Set col1 as name-label or uuid
-if [[ "$UUID" = "yes" ]] ;then
-	HOSTCOL=("${HOSTUUID[@]}")
-else
-	HOSTCOL=("${HOSTNAMES[@]}")
-fi
-
 # Get the length of each column and store it in COLLONGEST[]
-COLLONGEST[0]=$(getcolwidth "${TITLES[0]}" "${HOSTCOL[@]}")
+case "$MODE" in
+	"uuid") COLLONGEST[0]=$(getcolwidth "${TITLES[0]}" "${HOSTUUIDS[@]}") ;;
+	"name") COLLONGEST[0]=$(getcolwidth "${TITLES[0]}" "${HOSTNAMES[@]}");;
+esac
 COLLONGEST[1]=$(getcolwidth "${TITLES[1]}" "${HOSTVMNUM[@]}")
 COLLONGEST[2]=$(getcolwidth "${TITLES[2]}" "${HOSTSWTYPE[@]}")
 COLLONGEST[3]=$(getcolwidth "${TITLES[3]}" "${HOSTSWVER[@]}")
@@ -147,7 +163,6 @@ COLLONGEST[8]=$(getcolwidth "${TITLES[8]}" "${HOSTMAXFREE[@]}")
 COLLONGEST[9]=$(getcolwidth "${TITLES[9]}" "${HOSTNETWORK[@]}")
 
 # Print column headings
-IFS=$'\n'
 for i in $(seq 0 $(( ${#TITLES[@]} - 1 )) ) ;do
 	cecho "${TITLES[$i]}" off
 	printspaces "${COLLONGEST[$i]}"  "${#TITLES[$i]}" 	
@@ -155,16 +170,19 @@ done
 echo ""
 
 # Print data columns
-for i in $(seq 0 $(( ${#HOSTCOL[@]} - 1 )) ) ;do
-	cecho "${HOSTCOL[$i]}" cyan ; printspaces "${COLLONGEST[0]}" "${#HOSTCOL[$i]}" 
-	cecho "${HOSTVMNUM[$i]}" cyan ; printspaces "${COLLONGEST[1]}" "${#HOSTVMNUM[$i]}" 
-	cecho "${HOSTSWTYPE[$i]}" cyan ; printspaces "${COLLONGEST[2]}" "${#HOSTSWTYPE[$i]}" 
-	cecho "${HOSTSWVER[$i]}" cyan ; printspaces "${COLLONGEST[3]}" "${#HOSTSWVER[$i]}" 
-	cecho "${HOSTCPUTYPE[$i]}" cyan ; printspaces "${COLLONGEST[4]}" "${#HOSTCPUTYPE[$i]}" 
-	cecho "${HOSTCPUCOUNT[$i]}" cyan ; printspaces "${COLLONGEST[5]}" "${#HOSTCPUCOUNT[$i]}" 
-	cecho "${HOSTCPUSPEED[$i]}" cyan ; printspaces "${COLLONGEST[6]}" "${#HOSTCPUSPEED[$i]}" 
-	cecho "${HOSTMAXMEM[$i]}" cyan ; printspaces "${COLLONGEST[7]}" "${#HOSTMAXMEM[$i]}" 
-	cecho "${HOSTMAXFREE[$i]}" cyan ; printspaces "${COLLONGEST[8]}" "${#HOSTMAXFREE[$i]}" 
-	cecho "${HOSTNETWORK[$i]}" cyan ; printspaces "${COLLONGEST[9]}" "${#HOSTNETWORK[$i]}" 
+for i in $(seq 0 $(( ${#HOSTUUIDS[@]} - 1 )) ) ;do
+	case "$MODE" in
+		"uuid") cecho "${HOSTUUIDS[$i]}" cyan ; printspaces "${COLLONGEST[0]}" "${#HOSTUUIDS[$i]}"  ;;
+		"name") cecho "${HOSTNAMES[$i]}" cyan ; printspaces "${COLLONGEST[0]}" "${#HOSTNAMES[$i]}"  ;;
+	esac
+	cecho "${HOSTVMNUM[$i]}" blue ; printspaces "${COLLONGEST[1]}" "${#HOSTVMNUM[$i]}" 
+	cecho "${HOSTSWTYPE[$i]}" blue ; printspaces "${COLLONGEST[2]}" "${#HOSTSWTYPE[$i]}" 
+	cecho "${HOSTSWVER[$i]}" blue ; printspaces "${COLLONGEST[3]}" "${#HOSTSWVER[$i]}" 
+	cecho "${HOSTCPUTYPE[$i]}" blue ; printspaces "${COLLONGEST[4]}" "${#HOSTCPUTYPE[$i]}" 
+	cecho "${HOSTCPUCOUNT[$i]}" blue ; printspaces "${COLLONGEST[5]}" "${#HOSTCPUCOUNT[$i]}" 
+	cecho "${HOSTCPUSPEED[$i]}" blue ; printspaces "${COLLONGEST[6]}" "${#HOSTCPUSPEED[$i]}" 
+	cecho "${HOSTMAXMEM[$i]}" blue ; printspaces "${COLLONGEST[7]}" "${#HOSTMAXMEM[$i]}" 
+	cecho "${HOSTMAXFREE[$i]}" blue ; printspaces "${COLLONGEST[8]}" "${#HOSTMAXFREE[$i]}" 
+	cecho "${HOSTNETWORK[$i]}" blue ; printspaces "${COLLONGEST[9]}" "${#HOSTNETWORK[$i]}" 
 done
 echo ""

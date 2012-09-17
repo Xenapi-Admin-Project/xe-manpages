@@ -58,7 +58,7 @@ syntax()
 	echo "Options:"
 	echo "-d - shell debugging"
 	echo "-h - this help text"
-        echo "-c - output comma seperated values"
+    echo "-c - output comma seperated values"
 	echo "-v - verbose mode, show template descriptions"
 	echo ""
 	exit
@@ -133,7 +133,7 @@ echo "" >> "$TMPDIR/tmpllist.txt"
 # sort template names and UUIDs using the sort command (twice as fast as bash or eval)
 for i in $(seq 0 $(( ${#TMPLUUIDS[@]} - 1 )) ) ;do
 	cecho "${TMPLNAMES[$i]}" cyan ;	printspaces "${COLLONGEST[0]}" "${#TMPLNAMES[$i]}" 
-	cecho "${TMPLUUIDS[$i]}" cyan ;	printspaces "${COLLONGEST[1]}" "${#TMPLUUIDS[$i]}" 
+	cecho "${TMPLUUIDS[$i]}" blue ;	printspaces "${COLLONGEST[1]}" "${#TMPLUUIDS[$i]}" 
 	echo "" 
 done | sort >> "$TMPDIR/tmpllist.txt"
 
