@@ -1,4 +1,4 @@
-FOO(1)
+xe pif-list(1)
 =======
 :doctype: manpage
 :man source:   xe manual
@@ -13,6 +13,9 @@ SYNOPSIS
 --------
 *xe pif-list*
 
+##should I keep this going?
+*xe pif-list* [ device= MAC= physical= currently-attached= MTU= VLAN= ]
+
 PREREQUISITES
 -------------
 
@@ -21,7 +24,7 @@ PREREQUISITES
 DESCRIPTION
 -----------
 
-*xe pif-list* displays all parameters for the specified VLAN
+*xe pif-list* displays parameters for the specified PIF
 
 REQUIRED PARAMETERS
 -------------------
@@ -126,26 +129,7 @@ EXAMPLES
 
 DIAGNOSTICS
 -----------
-The following diagnostics may be issued on stderr:
-Item one
-“Bad magic number.”::
-	The input file does not look like an archive file.
-
-“Old style baz segments.”::
-	foo can only handle new style baz segments.  COBOL object libraries are not supported in this version.
-
-The following return codes can be used in scripts:
-
-[frame="none",valign="top",pageunits="pt",pagewidth="10000"]
-|=======
-|'Errorcode'|'Errortext'|'Diagnostic'
-|0 |Program exited normally.|No error. Program ran successfully.
-|1 |Bad magic number.|The input file does not look like an archive file.
-|2 |Old style baz segments.|foo can only handle new style baz segments. COBOL object libraries are not supported in this version.
-|=======
-                               
-
-                                       
+                  
 BUGS
 ----
 
@@ -167,7 +151,6 @@ Copyright \(C) 1995-2003 Jens Schweikhardt +
 Copyright \(C) 2006 Daniel Leidert
 
 The Howto containing this example, was offered under the following conditions:
-
 Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are
 met:
 

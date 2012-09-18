@@ -1,51 +1,54 @@
-xe vlan-param-list(1)
+xe pif-forget(1)
 =======
 :doctype: manpage
-:man source:   xe
+:man source:   xe 
 :man version:  {1}
 :man manual:   xe manual
 
 NAME
 -----
-*xe vlan-param-list* - Display all parameters for specified VLAN
+*xe pif-forget*
 
 SYNOPSIS
 --------
-*xe vlan-param-list* 
+*xe pif-forget*
 
-*xe vlan-param-list* uuid=
+*xe pif-forget* uuid=
 
 PREREQUISITES
 -------------
 
-*xe vlan-param-list* requires the UUID of the specified VLAN. *xe vlan-list* lists all VLANs present in a pool.
+*xe pif-list* will list PIFs present in a pool
+
 
 DESCRIPTION
 -----------
 
-*xe vlan-param-list* displays all parameters for the specified VLAN
+*xe pif-forget* will erase a PIF object on a host. A VLAN can't be attached to the PIF object. 
+See *xe vlan-destroy* to erase a PIF assigned a VLAN tag.
+
+*xe pif-forget* will erase a PIF object on a host. A VLAN can not be attached to the PIF object. 
+See *xe vlan-destroy* for further information.
+
 
 REQUIRED PARAMETERS
 -------------------
-
 *uuid*::
-	UUID of specified VLAN
-
+	UUID of PIF device
+	
 OPTIONAL PARAMETERS
 -------------------
 
-EXAMPLES
---------
-
-
-
 DIAGNOSTICS
------------                       
+-----------
+              
+BUGS
+-----
+
 
 SEE ALSO
 --------
-
-
+*xe pif-list*, *xe pif-introduce*, *xe vlan-destroy*
 
 
 AUTHORS

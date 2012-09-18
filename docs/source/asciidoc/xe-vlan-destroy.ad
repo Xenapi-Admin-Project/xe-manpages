@@ -1,4 +1,4 @@
-FOO(1)
+xe vlan-destoy(1)
 =======
 :doctype: manpage
 :man source:   xe 
@@ -23,7 +23,8 @@ PREREQUISITES
 DESCRIPTION
 -----------
 
-*xe vlan-destroy* deletes a VLAN from a network. You must disable any actives VIFs connected to the network the VLAN is assigned to.
+*xe vlan-destroy* deletes a VLAN from a network and the PIF object assigned to that VLAN. 
+You must disable any actives VIFs connected to the network the VLAN is assigned to.
 
 REQUIRED PARAMETERS
 -------------------
