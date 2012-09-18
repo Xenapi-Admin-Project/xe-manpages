@@ -1,7 +1,7 @@
 FOO(1)
 =======
 :doctype: manpage
-:man source:   xe manual
+:man source:   xe 
 :man version:  {1}
 :man manual:   xe manual
 
@@ -12,6 +12,8 @@ NAME
 SYNOPSIS
 --------
 *xe vlan-list*
+
+*xe vlan-list* [ params= tag= tagged-PIF= untagged-PIF= uuid= ]
 
 PREREQUISITES
 -------------
