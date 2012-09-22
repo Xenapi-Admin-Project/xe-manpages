@@ -1,0 +1,124 @@
+Host-cpu-info(1)
+=======
+:doctype: manpage
+:man source:   Host-cpu-info
+:man version:  {1}
+:man manual:   Host-cpu-info Manual
+
+NAME
+-----
+foo - frobnicate the bar library
+
+SYNOPSIS
+--------
+*foo* [*-bar*] [*-b* | *--busy*] [*-c* 'config-file' | *--config=*'config-file'] [{*-e* | *--example*} 'this'] [{*-e* | *--example*} {'this' | 'that'}] 'file(s)'...
+
+*foo* [{*-h* | *--help*} | {*-v* | *--version*}]
+
+DESCRIPTION
+-----------
+*foo* frobnicates the bar library by tweaking internal symbol tables. By default it parses all baz segments and rearranges them in reverse
+order by time for the *xyzzy*(1) linker to find them. The symdef entry is then compressed using the WBG (Whiz-Bang-Gizmo) algorithm. All
+files are processed in the order specified.
+
+OPTIONS
+-------
+*-b, --busy*::
+	Do not write “busy” to stdout while processing.
+
+*-c* 'config-file', *--config=*'config-file'::
+	Use the alternate system wide 'config-file' instead of the /etc/foo.conf. This overrides any *FOOCONF* environment variable.
+
+*-a*::
+	In addition to the baz segments, also parse the *blurfl*(3) headers.
+
+*-r*::
+	Recursive mode. Operates as fast as lightning at the expense of a megabyte of virtual memory.
+
+	
+FILES
+------
+/etc/foo.conf::
+	The system-wide configuration file. See *foo.conf*(5) for further details.
+
+$\{HOME\}/.foo.conf::
+	The per-user configuration file. See *foo.conf*(5) for further details.
+	
+	
+ENVIRONMENT
+----------     
+*FOOCONF*::
+	The full pathname for an alternate system wide configuration file *foo.conf*(5) (see also the section called “FILES”). Overridden by the
+	*-c* option.
+
+
+DIAGNOSTICS
+-----------
+The following diagnostics may be issued on stderr:
+Item one
+“Bad magic number.”::
+	The input file does not look like an archive file.
+
+“Old style baz segments.”::
+	foo can only handle new style baz segments.  COBOL object libraries are not supported in this version.
+
+The following return codes can be used in scripts:
+
+[frame="none",valign="top",pageunits="pt",pagewidth="10000"]
+|=======
+|'Errorcode'|'Errortext'|'Diagnostic'
+|0 |Program exited normally.|No error. Program ran successfully.
+|1 |Bad magic number.|The input file does not look like an archive file.
+|2 |Old style baz segments.|foo can only handle new style baz segments. COBOL object libraries are not supported in this version.
+|=======
+                               
+
+                                       
+BUGS
+-----
+The command name should have been chosen more carefully to reflect its purpose.
+
+The upstreams BTS can be found at http://bugzilla.foo.tld.
+
+SEE ALSO
+--------
+*bar*(1), *foo*(1), *foo.conf*(5), *xyzzy*(1)
+
+The programs are documented fully by The Rise and Fall of a Fooish Bar available via the Info system.
+
+AUTHORS
+-------
+Jens Schweikhardt <schweikh@schweikhardt.net>::
+Wrote this example manpage for the "Linux Man Page Howto", available at http://www.schweikhardt.net/man_page_howto.html or
+http://www.faqs.org/docs/Linux-mini/Man-Page.html.
+
+Daniel Leidert <daniel.leidert@wgdd.de>::
+Rewrote and extended the example manpage in DocBook XML for the Debian distribution.
+
+COPYRIGHT
+---------
+Copyright \(C) 1995-2003 Jens Schweikhardt + 
+Copyright \(C) 2006 Daniel Leidert
+
+The Howto containing this example, was offered under the following conditions:
+
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are
+met:
+
+[options="compact"]
+. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+
+
+.List
+.  Item one
+.  Item two
+
+
+THIS SOFTWARE IS PROVIDED BY THE AUTHOR "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT,
+INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
+STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+POSSIBILITY OF SUCH DAMAGE.
+
