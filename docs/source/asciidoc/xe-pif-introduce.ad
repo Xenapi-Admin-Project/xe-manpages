@@ -1,4 +1,4 @@
-xe pif-introduce(1)
+xe-pif-introduce(1)
 =======
 :doctype: manpage
 :man source:   xe 
@@ -13,17 +13,20 @@ SYNOPSIS
 --------
 *xe pif-introduce*
 
+
+
+DESCRIPTION
+-----------
+
+#I need to break some things before I really throw my self at these commands
+*xe pif-introduce*
+
 PREREQUISITES
 -------------
 
 Use *xe host-list* to obtain a list host UUIDs in a pool. Also use *ifconfig* on your control domain
 will list devices present on the host.
 
-
-DESCRIPTION
------------
-#I need to break some things before I really throw my self at these commands
-*xe pif-introduce*
 
 REQUIRED PARAMETERS
 -------------------
@@ -37,24 +40,16 @@ OPTIONAL PARAMETERS
 
 *mac*::
 	MAC Address for PIF object
-	
-DIAGNOSTICS
------------
-              
-BUGS
------
 
 
 SEE ALSO
 --------
 
-
+*xe-pif-list*(1), *xe-pif-scan*(1)
 
 AUTHORS
 -------
-Matthew Spah <spahmatthew@gmail.com>::
-Template for manpages written by Matthew Spah
-
+Matthew Spah <spahmatthew@gmail.com>
 
 
 COPYRIGHT

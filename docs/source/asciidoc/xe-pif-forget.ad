@@ -1,4 +1,4 @@
-xe pif-forget(1)
+xe-pif-forget(1)
 =======
 :doctype: manpage
 :man source:   xe 
@@ -15,12 +15,6 @@ SYNOPSIS
 
 *xe pif-forget* uuid=
 
-PREREQUISITES
--------------
-
-*xe pif-list* will list PIFs present in a pool
-
-
 DESCRIPTION
 -----------
 
@@ -30,6 +24,10 @@ See *xe vlan-destroy* to erase a PIF assigned a VLAN tag.
 *xe pif-forget* will erase a PIF object on a host. A VLAN can not be attached to the PIF object. 
 See *xe vlan-destroy* for further information.
 
+PREREQUISITES
+-------------
+
+*xe pif-list* will list PIFs present in a pool
 
 REQUIRED PARAMETERS
 -------------------
@@ -39,22 +37,17 @@ REQUIRED PARAMETERS
 OPTIONAL PARAMETERS
 -------------------
 
-DIAGNOSTICS
------------
-              
-BUGS
------
+
 
 
 SEE ALSO
 --------
-*xe pif-list*, *xe pif-introduce*, *xe vlan-destroy*
+*xe-pif-list*, *xe-pif-introduce*, *xe-vlan-destroy*
 
 
 AUTHORS
 -------
 Matthew Spah <spahmatthew@gmail.com>::
-Template for manpages written by Matthew Spah
 
 
 

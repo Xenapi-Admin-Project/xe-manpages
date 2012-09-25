@@ -1,4 +1,4 @@
-xe pool-vlan-create(1)
+xe-pool-vlan-create(1)
 =======
 :doctype: manpage
 :man source:   xe
@@ -16,6 +16,18 @@ SYNOPSIS
 *xe pool-vlan-create* pif-uuid= network-uuid= vlan=
 
 
+
+DESCRIPTION
+-----------
+
+*xe pool-vlan-create* creates a VLAN on all hosts in a pool and assigns it to the specified network. VLAN ID tags must be between 0 and 4094.
+A pseudo PIF is created and associated with the specified physical PIF. VLAN tagging occurs on the pseudo PIF. 
+The resulting VLAN UUID is returned. 
+
+The physical PIF associated with new pseudo PIF now supports 802.1Q and must be interfaced with a trunk port.
+Use native VLAN 1 as default.
+
+
 PREREQUISITES
 -------------
 
@@ -25,28 +37,20 @@ PREREQUISITES
 
 *xe network-list* will list the networks found in a pool
 
-DESCRIPTION
------------
-
-*xe pool-vlan-create* creates a VLAN on all hosts in a pool and assigns it to the specified network.
-A pseudo PIF is created and associated with the specified physical PIF. VLAN tagging occurs on the pseudo PIF. 
-The resulting VLAN UUID is returned. 
 
 REQUIRED PARAMETERS
 -------------------
 
 *pif-uuid*::
-    Physical PIF that the pseudo PIF will be associated with. 
+    Target physical PIF that the pseudo PIF will be associated with. 
 
 *network-uuid*::
-    Network to be assigned VLAN number
+    Network to be assigned VLAN 
     
 *vlan*::
     VLAN number
     
-OPTIONAL PARAMETERS
--------------------
-
+    
 
 EXAMPLES
 --------
@@ -57,25 +61,15 @@ EXAMPLES
 
 
 
-
-DIAGNOSTICS
------------
-
-                                       
-BUGS
------
-
-
 SEE ALSO
 --------
-*xe pif-list*(1), *xe network-list*(1)
+*xe-pif-list*(1), *xe-network-list*(1), *xe-vlan-list*(1)
 
 
 
 AUTHORS
 -------
 Matthew Spah <spahmatthew@gmail.com>::
-Template for manpages written by Matthew Spah
 
 
 

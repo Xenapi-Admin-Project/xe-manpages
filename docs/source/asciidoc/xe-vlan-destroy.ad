@@ -1,4 +1,4 @@
-xe vlan-destoy(1)
+xe-vlan-destoy(1)
 =======
 :doctype: manpage
 :man source:   xe 
@@ -15,16 +15,20 @@ SYNOPSIS
 
 *xe vlan-destroy* uuid=
 
-PREREQUISITES
--------------
-*xe vlan-destroy* requires the UUID of the VLAN to be deleted. *xe vlan-list* will display the VLANs present in a pool.
+
 
 
 DESCRIPTION
 -----------
 
-*xe vlan-destroy* deletes a VLAN from a network and the PIF object assigned to that VLAN. 
+*xe vlan-destroy* deletes a VLAN from a network and the pseudo PIF object assigned to that VLAN. 
 You must disable any actives VIFs connected to the network the VLAN is assigned to.
+
+
+PREREQUISITES
+-------------
+*xe vlan-destroy* requires the UUID of the VLAN to be deleted. *xe vlan-list* will display the VLANs present in a pool.
+
 
 REQUIRED PARAMETERS
 -------------------
@@ -34,24 +38,14 @@ REQUIRED PARAMETERS
 
 
 
-DIAGNOSTICS
------------
-
-                                       
-BUGS
------
-
 
 SEE ALSO
 --------
-
-
-The programs are documented fully by The Rise and Fall of a Fooish Bar available via the Info system.
+*xe-vlan-list*(1), *xe-pool-vlan-create*(1)
 
 AUTHORS
 -------
-Matthew Spah <spahmatthew@gmail.com>::
-Template for manpages written by Matthew Spah
+Matthew Spah <spahmatthew@gmail.com>
 
 
 

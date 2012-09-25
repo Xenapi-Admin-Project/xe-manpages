@@ -1,4 +1,4 @@
-FOO(1)
+xe-vlan-param-get.ad(1)
 =======
 :doctype: manpage
 :man source:   xe 
@@ -7,19 +7,17 @@ FOO(1)
 
 NAME
 -----
-
+*xe vlan-param-get*
 
 SYNOPSIS
 --------
-*foo* 
 
-*foo* 
-
-PREREQUISITES
--------------
 
 DESCRIPTION
 -----------
+
+PREREQUISITES
+-------------
 
 REQUIRED PARAMETERS
 -------------------

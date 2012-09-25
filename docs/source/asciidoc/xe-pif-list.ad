@@ -1,4 +1,4 @@
-xe pif-list(1)
+xe-pif-list(1)
 =======
 :doctype: manpage
 :man source:   xe manual
@@ -16,18 +16,15 @@ SYNOPSIS
 ##should I keep this going?
 *xe pif-list* [ device= MAC= physical= currently-attached= MTU= VLAN= ]
 
-PREREQUISITES
--------------
-
-
 
 DESCRIPTION
 -----------
 
 *xe pif-list* displays parameters for the specified PIF
 
-REQUIRED PARAMETERS
--------------------
+PREREQUISITES
+-------------
+
 
 OPTIONAL PARAMETERS
 ----------
@@ -127,21 +124,14 @@ EXAMPLES
 
 
 
-DIAGNOSTICS
------------
-                  
-BUGS
-----
-
 SEE ALSO
 --------
-*xe network-list*(1), *xe vlan-list*(1)
+*xe-network-list*(1), *xe-vlan-list*(1)
 
 
 AUTHORS
 -------
 Matthew Spah <spahmatthew@gmail.com>::
-Template for manpages written by Matthew Spah
 
 
 
