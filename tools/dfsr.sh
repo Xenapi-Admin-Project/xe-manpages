@@ -10,40 +10,27 @@
 # Version: 0.7
 # Date: Sept 15, 2012
 # Moved to MODE= to allow for future expansion
+# Version: 0.8
+# Date: Sept 28, 2012
+# Moved setcolors, cecho, getcolwidth and printspaces to library.sh
+
+. ./library.sh
 
 setup()
 {
 	IFS=$'\n'
 	setcolors
 	MINSPACE="10"
-	VERSION="0.7"
+	VERSION="0.8"
+	PROGNAME=$(basename $0)
 	MODE="name"
-}
-
-setcolors()
-{
-	black='\e[30;47m'
-	white='\e[37;47m'
-    red='\e[0;31m'
-    blue='\e[0;34m'
-    cyan='\e[0;36m'
-    off='\e[0m'
-}
-
-cecho ()                     
-{
-	MSG=${1}       
-	eval color=\$$2     
-  	echo -ne "${color}"
-  	echo -ne "$MSG"
-  	echo -ne "${off}"                      
 }
 
 syntax()
 {
-        echo "$(basename $0) $VERSION"
+        echo "$PROGNAME $VERSION"
         echo ""
-        echo "Syntax: $(basename $0) [options]"
+        echo "Syntax: $PROGNAME [options]"
         echo "Options:"
         echo "-d - shell debugging"
         echo "-h - this help text"
@@ -52,37 +39,6 @@ syntax()
         echo "-n - show Names (default)"
         echo ""
         exit
-}
-
-getunit()
-{
- 	SIZE="$1"
-        for UNIT in K M G
-        do
-                SIZE=$(echo "scale=0; $SIZE / 1024" | bc)
-                if [[ $SIZE -lt 1024 ]]
-                then
-                        SIZE=${SIZE}${UNIT}
-                        break
-                fi
-        done
-	echo "$SIZE"
-}
-
-#get width of columns
-getcolwidth()
-{
-	#get longest item in array
-	array=( "$@" )
-	i=0
-	LONGEST="0"
-	IFS=$'\n'
-	for ITEM in ${array[@]} ;do
-		if [[ "${#ITEM}" -gt "$LONGEST" ]] ;then
-			LONGEST="${#ITEM}"
-		fi
-	done
-	echo "$LONGEST"
 }
 
 sort_srnames()
@@ -108,20 +64,6 @@ sort_srnames()
         done
         ((MAX--))
     done
-}
-
-printspaces()
-{
-	# arg 1 - the longest item in the column
-	# arg 2 - the length of the item ie. ${#VAR}
-	COLUMN="$1"
-	ITEM="$2"
-	
-	if [[ "$CSV" = "yes" ]] ;then
-		echo -ne ","
-	else
-		printf "%*s" "$(( $COLUMN + $MINSPACE - $ITEM ))"
-	fi 
 }
 
 setup
@@ -162,14 +104,8 @@ COLLONGEST[2]="4"
 COLLONGEST[3]="4"
 COLLONGEST[4]="4"
 COLLONGEST[5]=$(getcolwidth "${TITLES[5]}" "${SRTYPE[@]}")
+printheadings
 
-# Print column headings
-for i in $(seq 0 $(( ${#TITLES[@]} - 1 )) ) ;do
-	cecho "${TITLES[$i]}" off ; printspaces "${COLLONGEST[$i]}" "${#TITLES[$i]}"
-done
-echo ""
-
-i=0
 for i in $(seq 0 $(( ${#SRUUIDS[@]} - 1 )) ) ;do
 	SRUSED=$(xe sr-param-get uuid=${SRUUIDS[$i]} param-name=physical-utilisation)
 	SRSIZE=$(xe sr-param-get uuid=${SRUUIDS[$i]} param-name=physical-size)

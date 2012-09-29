@@ -9,6 +9,13 @@
 # Complete rewrite using printspaces, sort_vmnames and getcolwidth
 # Now provides four output MODES - name, uuid. mixed and both
 # Also provides CSV output
+# Version 0.7
+# Date: Sept 28, 2012
+# Added Domain ID in output
+# Moved setcolors, cecho, getcolwidth and printspaces to library.sh
+# Created printheadings
+
+. ./library.sh
 
 setup()
 {
@@ -16,37 +23,15 @@ setup()
 	IFS=$'\n'	
 	MINSPACE="5"
 	MODE="mixed"
-}
-
-#give names to ansi sequences
-setcolors()
-{
-	black='\e[30;47m'
-	white='\e[37;47m'
-    red='\e[0;31m'
-    blue='\e[0;34m'
-    cyan='\e[0;36m'
-    off='\e[0m'
-}
-
-#color echo
-cecho ()                     
-{
-	MSG="${1}"       
-	if [ -z $2 ] ;then
-		color="white"
-	else
-		eval color=\$$2
-	fi     
-  	echo -ne "${color}"
-  	echo -ne "$MSG"
-  	echo -ne "${off}"                      
+	VERSION="0.7"
+	PROGNAME=$(basename $0)
 }
 
 syntax()
 {
+		echo "$PROGNAME $VERSION"
         echo ""
-        echo "Syntax: $(basename $0) [options]"
+        echo "Syntax: $PROGNAME [options]"
         echo "Options:"
         echo "-d - shell debugging"
         echo "-c - output comma seperated values"
@@ -57,20 +42,6 @@ syntax()
         echo "-h - this help text"
         echo ""
         exit
-}
-
-printspaces()
-{
-	# arg 1 - the longest item in the column (integer)
-	# arg 2 - the length of the item ie. ${#VAR} (integer)
-	COLUMN="$1"
-	ITEM="$2"
-	
-	if [[ "$CSV" = "yes" ]] ;then
-		echo -ne ","
-	else
-		printf "%*s" "$(( $COLUMN + $MINSPACE - $ITEM ))"
-	fi 
 }
 
 sort_vmnames()
@@ -87,37 +58,24 @@ sort_vmnames()
                 local v=${STATES[$i]}
                 local w=${HOSTUUIDS[$i]}
                 local x=${HOSTNAMES[$i]}
+                local y=${DOMID[$i]}
                 VMNAMES[$i]=${VMNAMES[$j]}
                 VMUUIDS[$i]=${VMUUIDS[$j]}
                 STATES[$i]=${STATES[$j]}
                 HOSTUUIDS[$i]=${HOSTUUIDS[$j]}
                 HOSTNAMES[$i]=${HOSTNAMES[$j]}
+                DOMID[$i]=${DOMID[$j]}
                 VMNAMES[$j]=$t
                 VMUUIDS[$j]=$u
                 STATES[$j]=$v
                 HOSTUUIDS[$j]=$w
                 HOSTNAMES[$j]=$x
+                DOMID[$j]=$y
             fi
             ((i++))
         done
         ((MAX--))
     done
-}
-
-#get width of columns
-getcolwidth()
-{
-	#get longest item in array
-	array=( "$@" )
-	i=0
-	LONGEST="0"
-	IFS=$'\n'
-	for ITEM in ${array[@]} ;do
-		if [[ "${#ITEM}" -gt "$LONGEST" ]] ;then
-			LONGEST="${#ITEM}"
-		fi
-	done
-	echo "$LONGEST"
 }
 
 setup 
@@ -137,16 +95,20 @@ shift $(($OPTIND - 1))
 
 # Set Title array depending on MODE
 case "$MODE" in
-	"uuid") TITLES=( 'VM UUID' 'Status' 'Host UUID' ) ;;
-	"name") TITLES=( 'VM Name' 'Status' 'Host Name' ) ;;
-	"mixed")  TITLES=( 'VM Name' 'Status' 'VM UUID' 'Host Name' ) ;;
-	"both") TITLES=( 'VM Name' 'Status' 'VM UUID' 'Host Name' 'Host UUID' ) ;;
+	"uuid") TITLES=( 'VM UUID' 'Status' 'Host UUID' 'Dom ID' ) ;;
+	"name") TITLES=( 'VM Name' 'Status' 'Host Name' 'Dom ID' ) ;;
+	"mixed")  TITLES=( 'VM Name' 'Status' 'VM UUID' 'Host Name' 'Dom ID' ) ;;
+	"both") TITLES=( 'VM Name' 'Status' 'VM UUID' 'Host Name' 'Host UUID' 'Dom ID' ) ;;
 esac
 
 # Populate arrays for VM UUIDs, VM name-label, power state, Host Name and Host UUID
 VMUUIDS=( $(xe vm-list params=uuid is-control-domain=false --minimal | sed 's/,/\n/g') )
 for i in $(seq 0 $(( ${#VMUUIDS[@]} - 1 )) ) ;do
 	VMNAMES[$i]=$(xe vm-param-get uuid="${VMUUIDS[$i]}" param-name=name-label)
+	DOMID[$i]=$(xe vm-param-get uuid="${VMUUIDS[$i]}" param-name=dom-id)
+	if [[ ${DOMID[$i]} = '-1' ]] ;then
+		DOMID[$i]="--"
+	fi
 	STATES[$i]=$(xe vm-param-get uuid="${VMUUIDS[$i]}"  param-name=power-state)
 	HOSTUUIDS[$i]=$(xe vm-param-get uuid="${VMUUIDS[$i]}" param-name=resident-on)
 	if [[ "${HOSTUUIDS[$i]}" = '<not in database>' ]] ;then
@@ -161,55 +123,57 @@ sort_vmnames
 
 # Get the length of each column and store it in COLLONGEST[]
 case "$MODE" in
-	"uuid") COLLONGEST[0]=$(getcolwidth "${TITLES[2]}" "${VMUUIDS[@]}")
+	"uuid") COLLONGEST[0]=$(getcolwidth "${TITLES[0]}" "${VMUUIDS[@]}")
 			COLLONGEST[1]=$(getcolwidth "${TITLES[1]}" "${STATES[@]}")
-			COLLONGEST[2]=$(getcolwidth "${TITLES[4]}" "${HOSTUUIDS[@]}")
+			COLLONGEST[2]=$(getcolwidth "${TITLES[2]}" "${HOSTUUIDS[@]}")
+			COLLONGEST[3]=$(getcolwidth "${TITLES[3]}" "${DOMID[@]}")
 	 ;;
 	"name") COLLONGEST[0]=$(getcolwidth "${TITLES[0]}" "${VMNAMES[@]}")
 			COLLONGEST[1]=$(getcolwidth "${TITLES[1]}" "${STATES[@]}")
-			COLLONGEST[2]=$(getcolwidth "${TITLES[3]}" "${HOSTNAMES[@]}")
+			COLLONGEST[2]=$(getcolwidth "${TITLES[2]}" "${HOSTNAMES[@]}")
+			COLLONGEST[3]=$(getcolwidth "${TITLES[3]}" "${DOMID[@]}")
 	 ;;
 	"mixed") COLLONGEST[0]=$(getcolwidth "${TITLES[0]}" "${VMNAMES[@]}")
 			COLLONGEST[1]=$(getcolwidth "${TITLES[1]}" "${STATES[@]}")
 			COLLONGEST[2]=$(getcolwidth "${TITLES[2]}" "${VMUUIDS[@]}")
 			COLLONGEST[3]=$(getcolwidth "${TITLES[3]}" "${HOSTNAMES[@]}")
+			COLLONGEST[4]=$(getcolwidth "${TITLES[4]}" "${DOMID[@]}")
 	 ;;
 	 "both") COLLONGEST[0]=$(getcolwidth "${TITLES[0]}" "${VMNAMES[@]}")
 			COLLONGEST[1]=$(getcolwidth "${TITLES[1]}" "${STATES[@]}")
 			COLLONGEST[2]=$(getcolwidth "${TITLES[2]}" "${VMUUIDS[@]}")
 			COLLONGEST[3]=$(getcolwidth "${TITLES[3]}" "${HOSTNAMES[@]}")
 			COLLONGEST[4]=$(getcolwidth "${TITLES[4]}" "${HOSTUUIDS[@]}")
+			COLLONGEST[5]=$(getcolwidth "${TITLES[5]}" "${DOMID[@]}")
 	 ;;
 esac
-
-# Print column headings
-for i in $(seq 0 $(( ${#TITLES[@]} - 1 )) ) ;do
-	cecho "${TITLES[$i]}" off
-	printspaces "${COLLONGEST[$i]}"  "${#TITLES[$i]}" 	
-done
-echo ""
+printheadings
 
 # Print data columns
 for i in $(seq 0 $(( ${#VMUUIDS[@]} - 1 )) ) ;do
 	case "$MODE" in
 		"uuid") cecho "${VMUUIDS[$i]}" cyan ; printspaces "${COLLONGEST[0]}" "${#VMUUIDS[$i]}" 
 				cecho "${STATES[$i]}" red ; printspaces "${COLLONGEST[1]}" "${#STATES[$i]}" 
-				cecho "${HOSTUUIDS[$i]}" blue ; printspaces "${COLLONGEST[3]}" "${#HOSTUUIDS[$i]}"
+				cecho "${HOSTUUIDS[$i]}" blue ; printspaces "${COLLONGEST[2]}" "${#HOSTUUIDS[$i]}"
+				cecho "${DOMID[$i]}" blue ; printspaces "${COLLONGEST[3]}" "${#DOMID[$i]}"
 		;;
 		"name") cecho "${VMNAMES[$i]}" cyan ; printspaces "${COLLONGEST[0]}" "${#VMNAMES[$i]}" 
 				cecho "${STATES[$i]}" red ; printspaces "${COLLONGEST[1]}" "${#STATES[$i]}" 
-				cecho "${HOSTNAMES[$i]}" blue ; printspaces "${COLLONGEST[3]}" "${#HOSTNAMES[$i]}" 
+				cecho "${HOSTNAMES[$i]}" blue ; printspaces "${COLLONGEST[2]}" "${#HOSTNAMES[$i]}" 
+				cecho "${DOMID[$i]}" blue ; printspaces "${COLLONGEST[3]}" "${#DOMID[$i]}"
 		;;
 		"mixed") cecho "${VMNAMES[$i]}" cyan ; printspaces "${COLLONGEST[0]}" "${#VMNAMES[$i]}" 
 				cecho "${STATES[$i]}" red ; printspaces "${COLLONGEST[1]}" "${#STATES[$i]}" 
 				cecho "${VMUUIDS[$i]}" blue ; printspaces "${COLLONGEST[2]}" "${#VMUUIDS[$i]}"
-				cecho "${HOSTNAMES[$i]}" blue ; printspaces "${COLLONGEST[3]}" "${#HOSTNAMES[$i]}" 
+				cecho "${HOSTNAMES[$i]}" blue ; printspaces "${COLLONGEST[3]}" "${#HOSTNAMES[$i]}"
+				cecho "${DOMID[$i]}" blue ; printspaces "${COLLONGEST[4]}" "${#DOMID[$i]}" 
 		;;
 		"both") cecho "${VMNAMES[$i]}" cyan ; printspaces "${COLLONGEST[0]}" "${#VMNAMES[$i]}" 
 				cecho "${STATES[$i]}" red ; printspaces "${COLLONGEST[1]}" "${#STATES[$i]}" 
 				cecho "${VMUUIDS[$i]}" blue ; printspaces "${COLLONGEST[2]}" "${#VMUUIDS[$i]}"
 				cecho "${HOSTNAMES[$i]}" blue ; printspaces "${COLLONGEST[3]}" "${#HOSTNAMES[$i]}" 
 				cecho "${HOSTUUIDS[$i]}" blue ; printspaces "${COLLONGEST[4]}" "${#HOSTUUIDS[$i]}"
+				cecho "${DOMID[$i]}" blue ; printspaces "${COLLONGEST[5]}" "${#DOMID[$i]}"
 		;;
 	esac  
 	echo ""   

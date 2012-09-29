@@ -15,6 +15,11 @@
 # Version 0.9
 # Date Sept 14, 2012
 # Added printspaces function and CSV support
+# Version 0.10
+# Date Sept 28, 2012
+# Moved setcolors, cecho, getcolwidth and printspaces to library.sh
+
+. ./library.sh
 
 setup()
 {
@@ -24,31 +29,6 @@ setup()
 	MINSPACE="3"
 	TITLES=( 'Template' 'UUID' )
 	declare -a TMPLNAMES
-}
-
-#give names to ansi sequences
-setcolors()
-{
-	black='\e[30;47m'
-	white='\e[37;47m'
-    red='\e[0;31m'
-    blue='\e[0;34m'
-    cyan='\e[0;36m'
-    off='\e[0m'
-}
-
-#color echo
-cecho ()                     
-{
-	MSG="${1}"       
-	if [ -z $2 ] ;then
-		color="white"
-	else
-		eval color=\$$2
-	fi     
-  	echo -ne "${color}"
-  	echo -ne "$MSG"
-  	echo -ne "${off}"                      
 }
 
 syntax()
@@ -62,36 +42,6 @@ syntax()
 	echo "-v - verbose mode, show template descriptions"
 	echo ""
 	exit
-}
-
-printspaces()
-{
-	# arg 1 - the longest item in the column (integer)
-	# arg 2 - the length of the item ie. ${#VAR} (integer)
-	COLUMN="$1"
-	ITEM="$2"
-	
-	if [[ "$CSV" = "yes" ]] ;then
-		echo -ne ","
-	else
-		printf "%*s" "$(( $COLUMN + $MINSPACE - $ITEM ))"
-	fi 
-}
-
-#get width of columns
-getcolwidth()
-{
-	#get longest item in array
-	array=( "$@" )
-	i=0
-	LONGEST="0"
-	IFS=$'\n'
-	for ITEM in ${array[@]} ;do
-		if [[ "${#ITEM}" -gt "$LONGEST" ]] ;then
-			LONGEST="${#ITEM}"
-		fi
-	done
-	echo "$LONGEST"
 }
 
 cleanup()

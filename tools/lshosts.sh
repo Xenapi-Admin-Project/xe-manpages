@@ -13,46 +13,27 @@
 # Version 0.8
 # Date: Sept 15, 2012
 # Changed to MODE structure to allow for future expansion
+# Version 0.9
+# Date: Sept 28, 2012
+# Moved setcolors, cecho, getcolwidth and printspaces to library.sh
+
+. ./library.sh
 
 setup()
 {
 	setcolors
-	VERSION="0.8"
+	VERSION="0.9"
 	MINSPACE="3"
 	MODE="name"
 	IFS=$'\n'
-}
-
-#give names to ansi sequences
-setcolors()
-{
-	black='\e[30;47m'
-	white='\e[37;47m'
-    red='\e[0;31m'
-    blue='\e[0;34m'
-    cyan='\e[0;36m'
-    off='\e[0m'
-}
-
-#color echo
-cecho ()                     
-{
-	MSG="${1}"       
-	if [ -z $2 ] ;then
-		color="white"
-	else
-		eval color=\$$2
-	fi     
-  	echo -ne "${color}"
-  	echo -ne "$MSG"
-  	echo -ne "${off}"                      
+	PROGNAME=$(basename $0)
 }
 
 syntax()
 {
-		echo "$(basename $0) $VERSION"
+		echo "$PROGNAME $VERSION"
         echo ""
-        echo "Syntax: $(basename $0) [options]"
+        echo "Syntax: $PROGNAME [options]"
         echo "Options:"
         echo "-d - shell debugging"
         echo "-h - this help text"
@@ -61,50 +42,6 @@ syntax()
         echo "-c - output comma seperated values"
         echo ""
         exit
-}
-
-#get width of columns
-getcolwidth()
-{
-	#get longest item in array
-	array=( "$@" )
-	i=0
-	LONGEST="0"
-	IFS=$'\n'
-	for ITEM in ${array[@]} ;do
-		if [[ "${#ITEM}" -gt "$LONGEST" ]] ;then
-			LONGEST="${#ITEM}"
-		fi
-	done
-	echo "$LONGEST"
-}
-
-#change bytes to human readable
-getunit()
-{
- 	SIZE="$1"
-        for UNIT in K M G ;do
-                SIZE=$(echo "scale=0; $SIZE / 1024" | bc)
-                if [[ $SIZE -lt 1024 ]] ;then
-                        SIZE=${SIZE}${UNIT}
-                        break
-                fi
-        done
-	echo "$SIZE"
-}
-
-printspaces()
-{
-	# arg 1 - the longest item in the column (integer)
-	# arg 2 - the length of the item ie. ${#VAR} (integer)
-	COLUMN="$1"
-	ITEM="$2"
-	
-	if [[ "$CSV" = "yes" ]] ;then
-		echo -ne ","
-	else
-		printf "%*s" "$(( $COLUMN + $MINSPACE - $ITEM ))"
-	fi 
 }
 
 #main
@@ -161,13 +98,7 @@ COLLONGEST[6]=$(getcolwidth "${TITLES[6]}" "${HOSTCPUSPEED[@]}")
 COLLONGEST[7]=$(getcolwidth "${TITLES[7]}" "${HOSTMAXMEM[@]}")
 COLLONGEST[8]=$(getcolwidth "${TITLES[8]}" "${HOSTMAXFREE[@]}")
 COLLONGEST[9]=$(getcolwidth "${TITLES[9]}" "${HOSTNETWORK[@]}")
-
-# Print column headings
-for i in $(seq 0 $(( ${#TITLES[@]} - 1 )) ) ;do
-	cecho "${TITLES[$i]}" off
-	printspaces "${COLLONGEST[$i]}"  "${#TITLES[$i]}" 	
-done
-echo ""
+printheadings
 
 # Print data columns
 for i in $(seq 0 $(( ${#HOSTUUIDS[@]} - 1 )) ) ;do
@@ -184,5 +115,6 @@ for i in $(seq 0 $(( ${#HOSTUUIDS[@]} - 1 )) ) ;do
 	cecho "${HOSTMAXMEM[$i]}" blue ; printspaces "${COLLONGEST[7]}" "${#HOSTMAXMEM[$i]}" 
 	cecho "${HOSTMAXFREE[$i]}" blue ; printspaces "${COLLONGEST[8]}" "${#HOSTMAXFREE[$i]}" 
 	cecho "${HOSTNETWORK[$i]}" blue ; printspaces "${COLLONGEST[9]}" "${#HOSTNETWORK[$i]}" 
+	echo ""
 done
 echo ""
