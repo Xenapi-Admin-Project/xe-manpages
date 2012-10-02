@@ -14,8 +14,8 @@ SYNOPSIS
 *xe pif-list*
 
 ##should I keep this going?
-*xe pif-list* [ device= MAC= physical= currently-attached= MTU= VLAN= ]
-
+*xe pif-list* [ device= ] [ MAC= ] [ physical= ] [ currently-attached= ]  [ MTU= ] [ VLAN= ]
+              				
 
 DESCRIPTION
 -----------
