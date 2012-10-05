@@ -15,15 +15,17 @@ SYNOPSIS
 
 *xe vlan-param-list* uuid=
 
-PREREQUISITES
--------------
-
-*xe vlan-param-list* requires the UUID of the specified VLAN. *xe vlan-list* lists all VLANs present in a pool.
 
 DESCRIPTION
 -----------
 
 *xe vlan-param-list* displays all parameters for the specified VLAN
+
+PREREQUISITES
+-------------
+
+*xe vlan-param-list* requires the UUID of the specified VLAN. *xe vlan-list* lists all VLANs present in a pool.
+
 
 REQUIRED PARAMETERS
 -------------------
@@ -31,12 +33,16 @@ REQUIRED PARAMETERS
 *uuid*::
 	UUID of specified VLAN
 
-OPTIONAL PARAMETERS
--------------------
 
 EXAMPLES
 --------
 
+*xe vlan-param-list* uuid=14543069-fab2-720c-52c0-7cd5097ced31 
+
+uuid ( RO)            : 14543069-fab2-720c-52c0-7cd5097ced31
+      tagged-PIF ( RO): 3e558a35-b5ff-c58c-eee2-388bae80cdc6
+    untagged-PIF ( RO): f07474ff-202f-af32-7ddd-7223ea393bfa
+             tag ( RO): 2
 
 
 DIAGNOSTICS
@@ -45,6 +51,7 @@ DIAGNOSTICS
 SEE ALSO
 --------
 
+*xe-vlan-list*(1), *xe-vlan-param-get*(1), *xe-pool-vlan-create*(1), *xe-vlan-create*(1)
 
 
 

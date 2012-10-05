@@ -18,11 +18,8 @@ SYNOPSIS
 DESCRIPTION
 -----------
 
-*xe pif-forget* will erase a PIF object on a host. A VLAN can't be attached to the PIF object. 
-See *xe vlan-destroy* to erase a PIF assigned a VLAN tag.
+*xe pif-forget* will destroy a physical PIF object on a host. See *xe vlan-destroy* to erase a pseudo PIF assigned a VLAN.
 
-*xe pif-forget* will erase a PIF object on a host. A VLAN can not be attached to the PIF object. 
-See *xe vlan-destroy* for further information.
 
 PREREQUISITES
 -------------
@@ -31,18 +28,14 @@ PREREQUISITES
 
 REQUIRED PARAMETERS
 -------------------
+
 *uuid*::
 	UUID of PIF device
 	
-OPTIONAL PARAMETERS
--------------------
-
-
-
 
 SEE ALSO
 --------
-*xe-pif-list*, *xe-pif-introduce*, *xe-vlan-destroy*
+*xe-pif-list*(1), *xe-pif-introduce*(1), *xe-vlan-destroy*(1)
 
 
 AUTHORS

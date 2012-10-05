@@ -28,21 +28,24 @@ OPTIONAL PARAMETERS
 -------------------
 
 *params*::
+	This option allows you to specificy which parameters to output
        
 *tag*::
-VLAN ID 0 to 4094          
+	VLAN ID 0 to 4094          
 
-*tagged-PIF*::    
+*tagged-PIF*::
+	The physical PIF object assioiscated with the VLAN that connects to the  802.1Q port.
 
 *untagged-PIF*::  
-
+	The pseudo PIF objected connected to the internal network.
+	
 *uuid*::
-VLAN uuid
+	VLAN uuid
 
 EXAMPLES
 --------
 
-xe vlan-list
+*xe vlan-list*
 
 output:
 uuid ( RO)            : 8027abe9-612f-9515-8a2a-4f3506bb013f
@@ -50,7 +53,7 @@ uuid ( RO)            : 8027abe9-612f-9515-8a2a-4f3506bb013f
     untagged-PIF ( RO): 81e4ac23-10bc-385f-6baf-0478621297a9
              tag ( RO): 10
 
-xe vlan-list params=uuid,tag
+*xe vlan-list* params=uuid,tag
 
 output:
 uuid ( RO)    : decc5943-f6f1-a244-09e4-0dd9e557101d
@@ -63,7 +66,7 @@ uuid ( RO)    : 8027abe9-612f-9515-8a2a-4f3506bb013f
 
 SEE ALSO
 --------
-*xe-pool-vlan-create*(1), *xe-vlan-destroy*(1)
+*xe-pool-vlan-create*(1), *xe-vlan-destroy*(1), *xe-pif-list*(1)
 
 
 AUTHORS

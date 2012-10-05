@@ -7,14 +7,19 @@ xe-vlan-param-get.ad(1)
 
 NAME
 -----
-*xe vlan-param-get*
+*xe vlan-param-get* Display a specified parameter for specified VLAN
 
 SYNOPSIS
 --------
 
+*xe vlan-param-get* 
+
+*xe vlan-param-get* param-name= uuid= [ param-key= ]
 
 DESCRIPTION
 -----------
+
+*xe vlan-param-get* will output a single selected parameter from a specified VLAN
 
 PREREQUISITES
 -------------
@@ -22,27 +27,33 @@ PREREQUISITES
 REQUIRED PARAMETERS
 -------------------
 
-uuid
+*uuid*::
+	UUID of specified VLAN
+
+*param-name*::
+	specified parameter to output 
 
 OPTIONAL PARAMETERS
 -------------------
 
-param-key   
+*param-key*::
     
-param-name  
+EXAMPLES
+--------
+
+*xe vlan-param-get* uuid=14543069-fab2-720c-52c0-7cd5097ced31  param-name=tag
+2
+
+*xe vlan-param-get* uuid=14543069-fab2-720c-52c0-7cd5097ced31  param-name=tagged-PIF 
+3e558a35-b5ff-c58c-eee2-388bae80cdc6
 
 
-DIAGNOSTICS
------------
-              
-BUGS
------
 
 
 SEE ALSO
 --------
 
-
+*xe-vlan-param-list*(1), *xe-vlan-list*(1), *xe-pif-list*(1)
 
 
 AUTHORS

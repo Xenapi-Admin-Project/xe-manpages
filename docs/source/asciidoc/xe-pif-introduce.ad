@@ -18,13 +18,12 @@ SYNOPSIS
 DESCRIPTION
 -----------
 
-#I need to break some things before I really throw my self at these commands
-*xe pif-introduce*
+*xe pif-introduce* create a new PIF object assoicated with a physical device found on the specified host
 
 PREREQUISITES
 -------------
 
-Use *xe host-list* to obtain a list host UUIDs in a pool. Also use *ifconfig* on your control domain
+Use *xe host-list* to obtain a list host UUIDs in a pool. Also use *ifconfig* -a on your control domain
 will list devices present on the host.
 
 
@@ -32,8 +31,10 @@ REQUIRED PARAMETERS
 -------------------
 
 *host-uuid*::
+	UUID of host
 
 *device*::
+	physical network device (for example: eth0)
 
 OPTIONAL PARAMETERS
 -------------------
@@ -45,7 +46,7 @@ OPTIONAL PARAMETERS
 SEE ALSO
 --------
 
-*xe-pif-list*(1), *xe-pif-scan*(1)
+*xe-pif-list*(1), *xe-pif-scan*(1), *xe-pif-forget*(1)
 
 AUTHORS
 -------

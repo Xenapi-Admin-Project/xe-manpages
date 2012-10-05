@@ -16,13 +16,11 @@ SYNOPSIS
 *xe vlan-destroy* uuid=
 
 
-
-
 DESCRIPTION
 -----------
 
 *xe vlan-destroy* deletes a VLAN from a network and the pseudo PIF object assigned to that VLAN. 
-You must disable any actives VIFs connected to the network the VLAN is assigned to.
+You must disable any actives VIFs connected to the VLAN.
 
 
 PREREQUISITES
@@ -38,10 +36,9 @@ REQUIRED PARAMETERS
 
 
 
-
 SEE ALSO
 --------
-*xe-vlan-list*(1), *xe-pool-vlan-create*(1)
+*xe-vlan-list*(1), *xe-pool-vlan-create*(1), *xe -pif-list*(1)
 
 AUTHORS
 -------

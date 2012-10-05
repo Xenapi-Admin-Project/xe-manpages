@@ -13,17 +13,18 @@ SYNOPSIS
 --------
 *xe pif-list*
 
-##should I keep this going?
-*xe pif-list* [ device= ] [ MAC= ] [ physical= ] [ currently-attached= ]  [ MTU= ] [ VLAN= ]
-              				
+*xe pif-list* [ device= ] [ MAC= ] [ physical= ] [ currently-attached= ] [ MTU= ] [ VLAN= ]
+[ bond-master-of= ] [ bond-slave-of= ] [ tunnel-access-PIF-of= ] [ tunnel-transport-PIF-of= ]
+[ management= ] [ network-uuid= ] [ network-name-label= ] [ host-uuid= ] [ host-name-label= ]
+[ IP-configuration-mode= ] [ IP= ]  [ netmask= ] [ gateway= ] [ DNS= ] [ io_read_kbs= ] [ io_write_kbs= ]
+[ carrier= ] [ vendor-id= ] [ vendor-name= ] [ device-id= ] [ device-name= ] [ speed= ] [ duplex= ]  
+[ pci-bus-path= ] [ other-config= ] [ disallow-unplug= ]
+              
 
 DESCRIPTION
 -----------
 
 *xe pif-list* displays parameters for the specified PIF
-
-PREREQUISITES
--------------
 
 
 OPTIONAL PARAMETERS
@@ -74,10 +75,10 @@ OPTIONAL PARAMETERS
     DHCP or Static network addressing used
 
 *IP*:: 
-    IP address of the PIF
+    IP address of a PIF
 
 *netmask*:: 
-    Netmask of the PIF
+    Netmask of a PIF
 
 *gateway*:: 
     Gateway address of the PIF
@@ -92,6 +93,7 @@ OPTIONAL PARAMETERS
     Average transmit rate in kB/s for the device
 
 *carrier*:: 
+	link state for this device 
 
 
 *vendor-id*:: 
@@ -114,7 +116,10 @@ OPTIONAL PARAMETERS
     
 *disallow-unplug*:: 
 
-*pci-bus-path*:: 
+
+*pci-bus-path*::
+	PCI bus path address 
+
 
 *other-config*::
 
@@ -126,7 +131,7 @@ EXAMPLES
 
 SEE ALSO
 --------
-*xe-network-list*(1), *xe-vlan-list*(1)
+*xe-network-list*(1), *xe-vlan-list*(1), *xe-pif-introduce*(1), *xe-pif-forget*(1)
 
 
 AUTHORS
