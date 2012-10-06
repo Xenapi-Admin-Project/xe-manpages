@@ -19,7 +19,7 @@ SYNOPSIS
 DESCRIPTION
 -----------
 
-*xe vlan-param-get* will output a single selected parameter from a specified VLAN
+*xe vlan-param-get* will return a single selected parameter from a specified VLAN
 
 PREREQUISITES
 -------------

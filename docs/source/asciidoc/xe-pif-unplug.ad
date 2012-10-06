@@ -1,64 +1,52 @@
-xe vlan-param-list(1)
+xe-pif-unplug.ad(1)
 =======
 :doctype: manpage
-:man source:   xe
+:man source:   xe 
 :man version:  {1}
 :man manual:   xe manual
 
 NAME
 -----
-*xe vlan-param-list* - Display all parameters for specified VLAN
+*xe pif-unplug*  - bring down a PIF object
+
 
 SYNOPSIS
 --------
-*xe vlan-param-list* 
+*xe pif-unplug* 
 
-*xe vlan-param-list* uuid=
-
+*xe pif-unplug* uuid=
 
 DESCRIPTION
 -----------
 
-*xe vlan-param-list* displays all parameters for specified VLAN.
+*xe pif-unplug* will bring down a specified PIF object on a host
 
 PREREQUISITES
 -------------
 
-*xe vlan-param-list* requires the UUID of the specified VLAN. *xe vlan-list* lists all VLANs present in a pool.
+*xe pif-list* will output PIFs present on a host and their status.
 
 
 REQUIRED PARAMETERS
 -------------------
 
 *uuid*::
-	UUID of specified VLAN
-
+	UUID of PIF object
 
 EXAMPLES
 --------
 
-*xe vlan-param-list* uuid=14543069-fab2-720c-52c0-7cd5097ced31 
 
-uuid ( RO)            : 14543069-fab2-720c-52c0-7cd5097ced31
-      tagged-PIF ( RO): 3e558a35-b5ff-c58c-eee2-388bae80cdc6
-    untagged-PIF ( RO): f07474ff-202f-af32-7ddd-7223ea393bfa
-             tag ( RO): 2
-
-
-DIAGNOSTICS
------------                       
 
 SEE ALSO
 --------
 
-*xe-vlan-list*(1), *xe-vlan-param-get*(1), *xe-pool-vlan-create*(1), *xe-vlan-create*(1)
-
-
+*xe-pif-scan*(1), *xe-pif-list*(1), *xe-pif-plug*(1) 
 
 AUTHORS
 -------
-Matthew Spah <spahmatthew@gmail.com>::
-Template for manpages written by Matthew Spah
+Matthew Spah <spahmatthew@gmail.com>
+
 
 
 

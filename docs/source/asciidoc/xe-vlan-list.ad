@@ -28,19 +28,19 @@ OPTIONAL PARAMETERS
 -------------------
 
 *params*::
-	This option allows you to specificy which parameters to output
+	This option allows you to specificy which parameters to output (for example params=tagged-pif)
        
 *tag*::
 	VLAN ID 0 to 4094          
 
 *tagged-PIF*::
-	The physical PIF object assioiscated with the VLAN that connects to the  802.1Q port.
+	The physical PIF object assigned to the VLAN that connects to the 802.1Q port.
 
 *untagged-PIF*::  
-	The pseudo PIF objected connected to the internal network.
+	The pseudo PIF objected connected to the internal network of the VLAN.
 	
 *uuid*::
-	VLAN uuid
+	VLAN uuid.
 
 EXAMPLES
 --------

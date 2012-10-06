@@ -7,18 +7,21 @@ xe-pif-introduce(1)
 
 NAME
 -----
-*xe pif-introduce*
+*xe pif-introduce* - Create a new PIF object
 
 SYNOPSIS
 --------
 *xe pif-introduce*
 
+*xe pif-introduce* host-uuid= device= [ mac= ] 
 
 
 DESCRIPTION
 -----------
 
-*xe pif-introduce* create a new PIF object assoicated with a physical device found on the specified host
+*xe pif-introduce* create a new PIF object assoicated with a physical device found on the specified host. PIF object will inherit the 
+MAC address of the physical device unless specified. The resulting PIF UUID is returned. 
+
 
 PREREQUISITES
 -------------

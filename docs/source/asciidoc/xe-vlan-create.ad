@@ -1,64 +1,55 @@
-xe vlan-param-list(1)
+xe-vlan-create.ad(1)
 =======
 :doctype: manpage
-:man source:   xe
+:man source:   xe 
 :man version:  {1}
 :man manual:   xe manual
 
 NAME
 -----
-*xe vlan-param-list* - Display all parameters for specified VLAN
+*xe vlan-create* - Create a new VLAN on a host
 
 SYNOPSIS
 --------
-*xe vlan-param-list* 
+*xe vlan-create*
 
-*xe vlan-param-list* uuid=
-
+*xe vlan-create* pif-uuid= vlan= network-uuid=
 
 DESCRIPTION
 -----------
 
-*xe vlan-param-list* displays all parameters for specified VLAN.
+*xe vlan-create* creates a VLAN on a host and assigns it to the specified network. VLAN ID tags must be between 0 and 4094.
+A pseudo PIF is created and associated with the specified physical PIF. VLAN tagging occurs on the pseudo PIF. 
+The resulting VLAN UUID is returned. 
+
+The physical PIF associated with new pseudo PIF now supports 802.1Q and must be interfaced with a trunk port.
+Use native VLAN 1 as default.
+
 
 PREREQUISITES
 -------------
 
-*xe vlan-param-list* requires the UUID of the specified VLAN. *xe vlan-list* lists all VLANs present in a pool.
+*xe vlan-create* requires an internal network and one physical PIF device.
 
+*xe pif-list* uuid= will list the PIFs found on a host
+
+*xe network-list* will list the networks found in a pool
 
 REQUIRED PARAMETERS
 -------------------
 
-*uuid*::
-	UUID of specified VLAN
 
-
-EXAMPLES
---------
-
-*xe vlan-param-list* uuid=14543069-fab2-720c-52c0-7cd5097ced31 
-
-uuid ( RO)            : 14543069-fab2-720c-52c0-7cd5097ced31
-      tagged-PIF ( RO): 3e558a35-b5ff-c58c-eee2-388bae80cdc6
-    untagged-PIF ( RO): f07474ff-202f-af32-7ddd-7223ea393bfa
-             tag ( RO): 2
-
-
-DIAGNOSTICS
------------                       
 
 SEE ALSO
 --------
 
-*xe-vlan-list*(1), *xe-vlan-param-get*(1), *xe-pool-vlan-create*(1), *xe-vlan-create*(1)
 
 
 
 AUTHORS
 -------
-Matthew Spah <spahmatthew@gmail.com>::
-Template for manpages written by Matthew Spah
+Matthew Spah <spahmatthew@gmail.com>
+
 
 
 
