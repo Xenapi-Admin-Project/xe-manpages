@@ -13,9 +13,7 @@ NAME
 SYNOPSIS
 --------
 
-*xe pif-plug*
-
-*xe pif-plug* uuid=
+*xe pif-plug* uuid=<pif uuid>
 
 DESCRIPTION
 -----------
@@ -36,20 +34,14 @@ REQUIRED PARAMETERS
 
 EXAMPLES
 --------
-/# xe pif-list
-uuid ( RO)                  : d6095aed-24c4-ea15-f231-0c1eebe19f5f
-                device ( RO): eth1
-    *currently-attached ( RO): false*
-                  VLAN ( RO): 10
-          network-uuid ( RO): 1aa83f61-3c59-cbaf-0ee3-fb63aeb1119f
 
-/# xe pif-plug uuid=d6095aed-24c4-ea15-f231-0c1eebe19f5f 
+xe pif-list will show an unplugged pif as *currently-attached ( RO): false*.
+xe pif-list will show an plugged pif as *currently-attached ( RO): true*.
 
-uuid ( RO)                  : d6095aed-24c4-ea15-f231-0c1eebe19f5f
-                device ( RO): eth1
-    *currently-attached ( RO): true*
-                  VLAN ( RO): 10
-          network-uuid ( RO): 1aa83f61-3c59-cbaf-0ee3-fb63aeb1119f
+To plug in an unplugged pif with uuid d6095aed-24c4-ea15-f231-0c1eebe19f5f do
+
+	xe pif-plug uuid=d6095aed-24c4-ea15-f231-0c1eebe19f5f 
+	
 
 SEE ALSO
 --------
