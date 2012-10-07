@@ -12,9 +12,8 @@ NAME
 
 SYNOPSIS
 --------
-*xe pif-unplug* 
 
-*xe pif-unplug* uuid=
+*xe pif-unplug* uuid=<pif uuid>
 
 DESCRIPTION
 -----------

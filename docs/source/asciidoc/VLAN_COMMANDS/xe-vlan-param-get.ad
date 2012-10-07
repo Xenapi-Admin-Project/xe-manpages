@@ -14,7 +14,7 @@ SYNOPSIS
 
 *xe vlan-param-get* 
 
-*xe vlan-param-get* param-name= uuid= [ param-key= ]
+*xe vlan-param-get* param-name=<param name> uuid=<vlan uuid> [ param-key=<I don't know what the fuck this does> ]
 
 DESCRIPTION
 -----------

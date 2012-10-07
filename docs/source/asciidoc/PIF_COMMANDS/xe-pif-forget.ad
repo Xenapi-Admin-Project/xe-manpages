@@ -13,7 +13,7 @@ SYNOPSIS
 --------
 *xe pif-forget*
 
-*xe pif-forget* uuid=
+*xe pif-forget* uuid=<pif uuid>
 
 DESCRIPTION
 -----------

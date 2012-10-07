@@ -13,7 +13,7 @@ SYNOPSIS
 --------
 *xe vlan-list*
 
-*xe vlan-list* [ params= ] [ tag= ] [ tagged-PIF= ] [ untagged-PIF= ]  [ uuid= ]
+*xe vlan-list* [ params=<params> ] [ tag=<vlan id> ] [ tagged-PIF=<tagged-PIF UUID> ] [ untagged-PIF=<untagged-PIF UUID> ]  [ uuid=<vlan UUID> ]
 
 
 DESCRIPTION

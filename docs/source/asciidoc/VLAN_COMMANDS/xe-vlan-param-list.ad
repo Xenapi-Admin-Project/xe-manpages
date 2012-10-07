@@ -13,7 +13,7 @@ SYNOPSIS
 --------
 *xe vlan-param-list* 
 
-*xe vlan-param-list* uuid=
+*xe vlan-param-list* uuid=<vlan uuid>
 
 
 DESCRIPTION

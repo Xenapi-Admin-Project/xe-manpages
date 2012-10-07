@@ -11,9 +11,8 @@ NAME
 
 SYNOPSIS
 --------
-*xe pif-introduce*
 
-*xe pif-introduce* host-uuid= device= [ mac= ] 
+*xe pif-introduce* host-uuid=<host uuid> device=<network device> [ mac=<mac address> ] 
 
 
 DESCRIPTION

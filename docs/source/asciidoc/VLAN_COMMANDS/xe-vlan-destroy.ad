@@ -11,9 +11,7 @@ NAME
 
 SYNOPSIS
 --------
-*xe vlan-destroy* 
-
-*xe vlan-destroy* uuid=
+*xe vlan-destroy* uuid=<vlan uuid>
 
 
 DESCRIPTION

@@ -13,9 +13,8 @@ NAME
 
 SYNOPSIS
 --------
-*xe pif-scan*
 
-*xe pif-scan* uuid=
+*xe pif-scan* uuid=<host uuid>
 
 DESCRIPTION
 -----------
