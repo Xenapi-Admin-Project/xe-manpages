@@ -3,7 +3,7 @@
 # Shows virtual block device information
 # Authors: Lisa Nguyen (ltn821@hotmail.com), Grant McWilliams (grantmcwilliams.com)
 # Version: 0.5
-# Date:  
+# Date: 10/6/2012  
 
 setcolors()
 {
@@ -82,46 +82,25 @@ done
 shift $(($OPTIND - 1))
 
 #number of spaces for formatting
-SPACE="3"
+SPACE="2"
 
 #get list 
-TITLES=( 'VBD' 'VDI' 'Type' 'VM' 'Device' )
-#VDIUUIDS=( $(xe vdi-list params=uuid --minimal | sed 's/\,/\n/g' | sed '/^$/d') )
+TITLES=( 'VBD' 'VDI' 'VM' 'Device' 'Attached' )
 VBDUUIDS=( $(xe vbd-list params=uuid --minimal | sed 's/\,/\n/g' | sed '/^$/d') )
 
-#for i in $(seq 0 $(( ${#VDIUUIDS[@]} - 1 ))) ;do
 for i in $(seq 0 $(( ${#VBDUUIDS[@]} - 1 ))) ;do
-	SRNAMES[$i]=$(xe vdi-param-get uuid=${VDIUUIDS[$i]} param-name=sr-name-label | tr -d \”)
-	SRUUID=$(xe vdi-param-get uuid=${VDIUUIDS[$i]} param-name=sr-uuid)
-	SRTYPES[$i]=$(xe sr-list uuid=$SRUUID params=type --minimal)
-	VBDUUID=$(xe vbd-list vdi-uuid=${VDIUUIDS[$i]} --minimal)
-	VDISIZE=$(xe vdi-param-get uuid=${VDIUUIDS[$i]} param-name=virtual-size)
-
-        #checking valid VDI size
-        if [[ $VDISIZE = '-1' ]] ; then
-        	VDISIZE=0
-        fi
-	
-	TOTALSIZE[$i]=$(getunit $VDISIZE)	
-
-	#if VBD uuid exists
-	if [ ! -z "$VBDUUID" ] ;then
-		VMUUID=$(xe vbd-param-get uuid=$VBDUUID param-name=vm-uuid)
-		VMNAME[$i]=$(xe vm-param-get uuid=$VMUUID param-name=name-label)
-		DEVICENAME[$i]=$(xe vbd-param-get uuid=$VBDUUID param-name=device)
-	else
-		VMNAME[$i]=""
-		DEVICENAME[$i]=""
-	fi
+	VDIUUIDS[$i]=$(xe vbd-param-get uuid=${VBDUUIDS[$i]} param-name=vdi-uuid)
+	VMNAMES[$i]=$(xe vbd-param-get uuid=${VBDUUIDS[$i]} param-name=vm-name-label)
+	DEVICES[$i]=$(xe vbd-param-get uuid=${VBDUUIDS[$i]} param-name=device)
+	ATTACHED[$i]=$(xe vbd-param-get uuid=${VBDUUIDS[$i]} param-name=currently-attached)
 done
 
 #calculate column width
-COLLONGEST[0]=$(getcolwidth  "${TITLES[0]}" "${VDIUUIDS[@]}")
-COLLONGEST[1]="4" # width of size will never be longer than 4 ie. 999M then 1G
-COLLONGEST[2]=$(getcolwidth  "${TITLES[2]}" "${SRNAMES[@]}")
-COLLONGEST[3]=$(getcolwidth  "${TITLES[3]}" "${SRTYPES[@]}")
-COLLONGEST[4]=$(getcolwidth  "${TITLES[4]}" "${VMNAMES[@]}" "No VM Attached")
-COLLONGEST[5]=$(getcolwidth  "${TITLES[5]}" "${VBDNAMES[@]}" "No Device")
+COLLONGEST[0]=$(getcolwidth  "${TITLES[0]}" "${VBDUUIDS[@]}")
+COLLONGEST[1]=$(getcolwidth  "${TITLES[1]}" "${VDIUUIDS[@]}")
+COLLONGEST[2]=$(getcolwidth  "${TITLES[2]}" "${VMNAMES[@]}")
+COLLONGEST[3]=$(getcolwidth  "${TITLES[3]}" "${DEVICES[@]}")
+COLLONGEST[4]=$(getcolwidth  "${TITLES[4]}" "${ATTACHED[@]}")
 
 #prints titles
 IFS=$'\n'
@@ -145,25 +124,23 @@ fi
 
 #output VDI information
 if [[ "$CSV" = "yes" ]] ;then
-	 for i in $(seq 0 $(( ${#VDIUUIDS[@]} - 1 )) ) ;do
+	 for i in $(seq 0 $(( ${#VBDUUIDS[@]} - 1 )) ) ;do
+		echo -ne "${VBDUUIDS[$i]},"
          	echo -ne "${VDIUUIDS[$i]},"
-	 	echo -ne "${TOTALSIZE[$i]},"
-		echo -ne "${SRNAMES[$i]},"
-		echo -ne "${SRTYPES[$i]},"
-		echo -ne "${VMNAME[$i]},"
-		echo -ne "${DEVICENAME[$i]}"
+		echo -ne "${VMNAMES[$i]},"
+		echo -ne "${DEVICES[$i]},"
+		echo -ne "${ATTACHED[$i]}"
 		echo ""
         done
 else
-	for i in $(seq 0 $(( ${#VDIUUIDS[@]} - 1 ))) 
+	for i in $(seq 0 $(( ${#VBDUUIDS[@]} - 1 ))) 
 	do
 		#print rows
-		cecho "${VDIUUIDS[$i]}" cyan ; printf "%*s" "$(( ${COLLONGEST[0]} + $SPACE - ${#VDIUUIDS[$i]} ))" 
-		cecho "${TOTALSIZE[$i]}" cyan ; printf "%*s" "$(( ${COLLONGEST[1]} + $SPACE - ${#TOTALSIZE[$i]} ))" 
-		cecho "${SRNAMES[$i]}" cyan ; printf "%*s" "$(( ${COLLONGEST[2]} + $SPACE - ${#SRNAMES[$i]} ))" 
-		cecho "${SRTYPES[$i]}" cyan ; printf "%*s" "$(( ${COLLONGEST[3]} + $SPACE - ${#SRTYPES[$i]} ))"
-		cecho "${VMNAME[$i]}" cyan ; printf "%*s" "$(( ${COLLONGEST[4]} + $SPACE - ${#VMNAME[$i]} ))"
-		cecho "${DEVICENAME[$i]}" cyan ; printf "%*s" "$(( ${COLLONGEST[5]} + $SPACE - ${#DEVICENAME[$i]} ))"
+		cecho "${VBDUUIDS[$i]}" cyan ; printf "%*s" "$(( ${COLLONGEST[0]} + $SPACE - ${#VBDUUIDS[$i]} ))" 
+		cecho "${VDIUUIDS[$i]}" cyan ; printf "%*s" "$(( ${COLLONGEST[1]} + $SPACE - ${#VDIUUIDS[$i]} ))"
+		cecho "${VMNAMES[$i]}" cyan ; printf "%*s" "$(( ${COLLONGEST[2]} + $SPACE - ${#VMNAMES[$i]} ))"
+		cecho "${DEVICES[$i]}" cyan ; printf "%*s" "$(( ${COLLONGEST[3]} + $SPACE - ${#DEVICES[$i]} ))"
+		cecho "${ATTACHED[$i]}" cyan ; printf "%*s" "$(( ${COLLONGEST[4]} + $SPACE - ${#ATTACHED[$i]} ))"
 		echo ""
 	done
 fi
