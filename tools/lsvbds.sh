@@ -122,7 +122,7 @@ else
 echo ""
 fi
 
-#output VDI information
+#output VBD information
 if [[ "$CSV" = "yes" ]] ;then
 	 for i in $(seq 0 $(( ${#VBDUUIDS[@]} - 1 )) ) ;do
 		echo -ne "${VBDUUIDS[$i]},"
