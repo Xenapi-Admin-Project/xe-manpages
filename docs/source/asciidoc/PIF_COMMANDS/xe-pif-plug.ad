@@ -23,7 +23,7 @@ DESCRIPTION
 PREREQUISITES
 -------------
 
-*xe pif-list* will output PIFs present on a host and their status.
+*xe pif-list* will output PIFs present in a pool and their parameters.
 
 REQUIRED PARAMETERS
 -------------------

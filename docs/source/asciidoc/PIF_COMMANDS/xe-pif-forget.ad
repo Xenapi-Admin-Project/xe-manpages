@@ -11,7 +11,6 @@ NAME
 
 SYNOPSIS
 --------
-*xe pif-forget*
 
 *xe pif-forget* uuid=<pif uuid>
 
@@ -24,7 +23,7 @@ DESCRIPTION
 PREREQUISITES
 -------------
 
-*xe pif-list* will list PIFs present in a pool
+*xe pif-list* will output PIFs present in a pool and their parameters.
 
 REQUIRED PARAMETERS
 -------------------

@@ -25,8 +25,9 @@ MAC address of the physical device unless specified. The resulting PIF UUID is r
 PREREQUISITES
 -------------
 
-Use *xe host-list* to obtain a list host UUIDs in a pool. Also use *ifconfig* -a on your control domain
-will list devices present on the host.
+Use *xe host-list* to obtain a list host UUIDs in a pool. 
+Also use *ifconfig* -a on your control domain will list devices present on the host.
+*xe pif-list* will output PIFs present in a pool and their parameters.
 
 
 REQUIRED PARAMETERS

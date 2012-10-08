@@ -1,4 +1,4 @@
-xe-pif-reconfigure-ip(1)
+xe-pif-param-clear.ad(1)
 =======
 :doctype: manpage
 :man source:   xe 
@@ -6,57 +6,35 @@ xe-pif-reconfigure-ip(1)
 :man manual:   xe manual
 
 NAME
-----
-*pif-reconfigure-ip* - Reconfigure the IP address settings on a PIF
+-----
+*xe pif-param-clear*
 
 SYNOPSIS
 --------
-*pif-reconfigure-ip*  mode=<static dhcp none> uuid=<PIF UUID> [ DNS=<name servers> ] [ gateway=<gateway IP> ] 
-[ IP=<IP address> ] [ netmask=<netmask> ] 
-
+*xe pif-param-clear*
 
 DESCRIPTION
 -----------
-
-*xe pif-reconfigure-ip* allows you to change network addressing parameters for the specified PIF object. 
-When using static addressing the IP and netmask parameters are required. When entering multiple DNS servers 
-use a comma has a field separator. 
 
 
 PREREQUISITES
 -------------
 
-*xe pif-list* will output PIFs present in a pool and their parameters.
 
 REQUIRED PARAMETERS
 -------------------
 
-*mode*::
-	Set mode for PIF interface dhcp, static, none.
-
-*uuid*::
-	UUID of PIF
 
 OPTIONAL PARAMETERS
 -------------------
 
-*DNS*::
-	Nameserver IP addresses
-
-*gateway*::
-	Gateway IP address
-
-*IP*::
-	IP address of PIF
-
-*netmask*::
-	netmask address of PIF
-
+EXAMPLES
+--------
 
 
 SEE ALSO
 --------
-*xe-pif-list*(1), *xe-pif-introduce*(1), *xe-pif-forget*(1), *xe-pif-list*(1), *xe-pif-plug*(1), *xe-pif-unplug*(1)
+
 
 
 

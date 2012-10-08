@@ -24,7 +24,7 @@ DESCRIPTION
 PREREQUISITES
 -------------
 
-*xe host-list* will display host UUIDs
+*xe host-list* will display host UUIDs 
 
 REQUIRED PARAMETERS
 -------------------
