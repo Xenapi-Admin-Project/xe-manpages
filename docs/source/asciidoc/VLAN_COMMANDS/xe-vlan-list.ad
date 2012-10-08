@@ -3,7 +3,7 @@ xe-vlan-list(1)
 :doctype: manpage
 :man source:   xe 
 :man version:  {1}
-:man manual:   xe manual
+:man manual:   xe vlan-list manual
 
 NAME
 -----
@@ -30,8 +30,12 @@ OPTIONAL PARAMETERS
 *params*::
 	This option allows you to specificy which parameters to output (for example params=tagged-pif)
        
+<<<<<<< .mine
+*tag*::      
+=======
 *tag*::
 	VLAN ID 0 to 4094          
+>>>>>>> .r86
 
 *tagged-PIF*::
 	The physical PIF object assigned to the VLAN that connects to the 802.1Q port.
@@ -39,8 +43,12 @@ OPTIONAL PARAMETERS
 *untagged-PIF*::  
 	The pseudo PIF objected connected to the internal network of the VLAN.
 	
+<<<<<<< .mine
+*uuid*:: 
+=======
 *uuid*::
 	VLAN uuid.
+>>>>>>> .r86
 
 EXAMPLES
 --------
@@ -64,14 +72,25 @@ uuid ( RO)    : 8027abe9-612f-9515-8a2a-4f3506bb013f
      tag ( RO): 10
 
 
+<<<<<<< .mine
+
+
+=======
+>>>>>>> .r86
 SEE ALSO
 --------
 *xe-pool-vlan-create*(1), *xe-vlan-destroy*(1), *xe-pif-list*(1)
+>>>>>>> .r86
 
 
 AUTHORS
 -------
+<<<<<<< .mine
+Matthew Spah <spahmatthew@gmail.com>::
+=======
 Matthew Spah <spahmatthew@gmail.com>
+>>>>>>> .r86
+
 
 
 COPYRIGHT

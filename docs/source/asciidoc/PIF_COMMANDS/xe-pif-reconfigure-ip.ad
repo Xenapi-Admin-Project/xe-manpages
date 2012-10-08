@@ -11,16 +11,19 @@ NAME
 
 SYNOPSIS
 --------
-*pif-reconfigure-ip*  mode=<static dhcp none> uuid=<PIF UUID> [ DNS=<name servers> ] [ gateway=<gateway IP> ] 
-[ IP=<IP address> ] [ netmask=<netmask> ] 
+*pif-reconfigure-ip*	mode=<dhcp> uuid=<PIF UUID> 
 
+*pif-reconfigure-ip*	mode=<static> uuid=<PIF UUID> IP=<IP address> netmask=<netmask> 	
+						[ DNS=<name servers> ] [ gateway=<gateway> ]
+						
+*pif-reconfigure-ip*	mode=<none> uuid=<PIF UUID>
 
 DESCRIPTION
 -----------
 
-*xe pif-reconfigure-ip* allows you to change network addressing parameters for the specified PIF object. 
-When using static addressing the IP and netmask parameters are required. When entering multiple DNS servers 
-use a comma has a field separator. 
+*xe pif-reconfigure-ip* will change network addressing parameters for the specified PIF object. 
+When using mode=static addressing the IP and netmask parameters are required. Rntering multiple DNS servers 
+requires the use of a comma has a field seperater.
 
 
 PREREQUISITES
@@ -41,13 +44,13 @@ OPTIONAL PARAMETERS
 -------------------
 
 *DNS*::
-	Nameserver IP addresses
+	Nameserver addresses
 
 *gateway*::
-	Gateway IP address
+	Gateway address
 
 *IP*::
-	IP address of PIF
+	host address of PIF
 
 *netmask*::
 	netmask address of PIF
