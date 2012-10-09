@@ -1,0 +1,77 @@
+xe-network-create.ad(1)
+=======
+:doctype: manpage
+:man source:   xe 
+:man version:  {1}
+:man manual:   xe manual
+
+NAME
+-----
+*xe network-create*	
+
+SYNOPSIS
+--------
+
+*xe network-create*
+
+
+
+
+DESCRIPTION
+-----------
+
+
+PREREQUISITES
+-------------
+
+
+REQUIRED PARAMETERS
+-------------------
+
+
+OPTIONAL PARAMETERS
+-------------------
+
+EXAMPLES
+--------
+
+SEE ALSO
+--------
+
+
+
+
+AUTHORS
+-------
+Matthew Spah <spahmatthew@gmail.com>
+
+
+
+
+COPYRIGHT
+---------
+Copyright \(C) 1995-2003 Jens Schweikhardt + 
+Copyright \(C) 2006 Daniel Leidert
+
+The Howto containing this example, was offered under the following conditions:
+
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are
+met:
+
+[options="compact"]
+. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+
+
+.List
+.  Item one
+.  Item two
+
+
+THIS SOFTWARE IS PROVIDED BY THE AUTHOR "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT,
+INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
+STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+POSSIBILITY OF SUCH DAMAGE.
+
