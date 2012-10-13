@@ -7,18 +7,19 @@ xe-pif-unplug.ad(1)
 
 NAME
 -----
+
 *xe pif-unplug*  - bring down a PIF object
 
 
 SYNOPSIS
 --------
 
-*xe pif-unplug* uuid=<pif uuid>
+*xe pif-unplug* uuid=<PIF UUID>
 
 DESCRIPTION
 -----------
 
-*xe pif-unplug* will bring down a specified PIF object on a host
+*xe pif-unplug* will bring down a specified PIF object on a host if allowed. 
 
 PREREQUISITES
 -------------
@@ -35,7 +36,8 @@ REQUIRED PARAMETERS
 EXAMPLES
 --------
 
-
+To unplug a PIF interface type,
+	*xe pif-unplug* uuid=<PIF UUID>
 
 SEE ALSO
 --------

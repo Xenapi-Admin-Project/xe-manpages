@@ -23,7 +23,7 @@ DESCRIPTION
 
 *xe pif-reconfigure-ip* will change network addressing parameters for the specified PIF object. 
 When using mode=static addressing the IP and netmask parameters are required. Rntering multiple DNS servers 
-requires the use of a comma has a field seperater.
+requires the use of a comma as a field seperater.
 
 
 PREREQUISITES
@@ -55,7 +55,11 @@ OPTIONAL PARAMETERS
 *netmask*::
 	netmask address of PIF
 
+EXAMPLES
+--------
 
+To set a PIF interface for DHCP type,
+	*xe pif-reconfigure-ip* mode=dhcp uuid=<PIF UUID>
 
 SEE ALSO
 --------

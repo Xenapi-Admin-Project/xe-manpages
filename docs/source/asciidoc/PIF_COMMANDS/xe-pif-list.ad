@@ -31,6 +31,7 @@ OPTIONAL PARAMETERS
 ----------
 
 *device*::
+	name of the machine-readable interface (for example, eth0)
 
 *MAC*::
     MAC address of PIF
@@ -112,16 +113,50 @@ OPTIONAL PARAMETERS
     Ethernet speed of the interface. 10/100/1000 Mpbs
 
 *duplex*:: 
-    Full or Half
+    full or half duplex
     
 *disallow-unplug*:: 
-
+	true or false.
 
 *pci-bus-path*::
 	PCI bus path address 
 
-
 *other-config*::
+
+*other-config:ethtool-speed*::
+	
+
+*other-config:ethtool-autoneg*::
+	  
+
+*other-config:ethtool-rx*::
+	
+
+*other-config:ethtool-tx*::
+	
+
+*other-config:ethtool-sg*::
+	
+
+*other-config:ethtool-tso*::
+	
+
+*other-config:ethtool-ufo*::
+	
+
+*other-config:ethtool-gso*::
+	
+
+*other-config:domain*::
+	
+
+*other-config:bond-miimon*::
+
+
+*other-config:bond-downdelay*::
+
+
+*other-config=bond-updelay*::
 
 
 EXAMPLES

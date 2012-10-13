@@ -11,11 +11,13 @@ NAME
 
 SYNOPSIS
 --------
-*xe pif-param-clear*
+
+*xe pif-param-clear* uuid=<PIF UUID> param-name=<parameter> 
 
 DESCRIPTION
 -----------
 
+*xe pif-param-clear* will clear a list from a read/write parameters from a PIF interface. 
 
 PREREQUISITES
 -------------
@@ -24,9 +26,10 @@ PREREQUISITES
 REQUIRED PARAMETERS
 -------------------
 
+*uuid*::
 
-OPTIONAL PARAMETERS
--------------------
+*param-name*::
+
 
 EXAMPLES
 --------

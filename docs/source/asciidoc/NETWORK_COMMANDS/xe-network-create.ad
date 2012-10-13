@@ -7,30 +7,34 @@ xe-network-create.ad(1)
 
 NAME
 -----
-*xe network-create*	
+*xe network-create*	- create a network in a pool
 
 SYNOPSIS
 --------
 
-*xe network-create*
-
-
+*xe network-create* name-label=<network name> [ MTU= ] [ name-description= ] 
 
 
 DESCRIPTION
 -----------
 
-
-PREREQUISITES
--------------
+*xe network-create* will create an internal network in a pool. The MTU default is 1500. The resulting network UUID is returned. 
 
 
 REQUIRED PARAMETERS
 -------------------
 
+*name-label*::
+	Name of the network 
 
 OPTIONAL PARAMETERS
 -------------------
+
+*MTU*::
+	MTU for the network
+	
+*name-description*::
+	Description of the network
 
 EXAMPLES
 --------
@@ -38,7 +42,7 @@ EXAMPLES
 SEE ALSO
 --------
 
-
+*xe network-list*(1), *xe network-param-set*(1), *xe pool-vlan-create*(1)
 
 
 AUTHORS

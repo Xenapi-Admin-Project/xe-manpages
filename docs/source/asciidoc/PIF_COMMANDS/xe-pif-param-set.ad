@@ -7,37 +7,89 @@ xe-pif-param-set.ad(1)
 
 NAME
 -----
-*xe pif-param-set*
+*xe pif-param-set* - set parameters for a PIF interface
 
 SYNOPSIS
 --------
-*xe pif-param-set*
 
+*xe pif-param-set* uuid=<pif uuid> [ disallow-unplug=<true/false> ] [ other-config:ethtool-speed= ] [ other-config:ethtool-autoneg= ]
+				[ other-config:ethtool-rx= ] [ other-config:ethtool-tx= ] [ other-config:ethtool-sg= ] [ other-config:ethtool-tso= ]
+				[ other-config:ethtool-ufo= ] [ other-config:ethtool-gso= ] [ other-config:domain= ] [ other-config:bond-miimon= ]
+				[ other-config:bond-downdelay= ] [ other-config=bond-updelay= ]  
+				
+				
 DESCRIPTION
 -----------
+
+*xe pif-param-set* will allow you to manipulate listed parameters for PIF interfaces. Changes to the *other-config* fields of a PIF interface will
+only take effect after a reboot or use the *xe pif-unplug* and *xe pif-plug* commands to cause the PIF configuration to take effect. 
 
 
 PREREQUISITES
 -------------
 
+*xe pif-list* and *xe pif-param-list* will output parameters and their values for PIF interfaces.
 
 REQUIRED PARAMETERS
 -------------------
 
 *uuid*::
+	UUID of PIF interface
+
 
 OPTIONAL PARAMETERS
 -------------------
-*disallow-unplug*::
 
-*other-config:*::
+*disallow-unplug*::
+	Set to *true* to disable unplugging a PIF interface.
+	
+*other-config:ethtool-speed*::
+	Set speed of PIF interface in Mbps. (for example, ethtool-speed=100)
+
+*other-config:ethtool-autoneg*::
+	to disable autonegotiation on PIF interface or bridge set to *no*. Default is *yes*.  
+
+*other-config:ethtool-rx*::
+	To enable receive checksum set to *on*, *off* to disable.
+
+*other-config:ethtool-tx*::
+	To enable transmit checksum set to *on*, *off* to disable. 
+
+*other-config:ethtool-sg*::
+	To enable scatter gather set to *on*, *off* to disable.
+
+*other-config:ethtool-tso*::
+	To enable tcp segmentation offload set to *on*, *off* to disable.
+
+*other-config:ethtool-ufo*::
+	To enable udp fragment offload set to *on*, *off* to disable.
+
+*other-config:ethtool-gso*::
+	To enable generic segmentation offload set to *on*, *off* to disable.
+
+*other-config:domain*::
+	Set the DNS search path ( DNS Suffix ). Use a comma as a field seperater.
+
+*other-config:bond-miimon*::
+
+
+*other-config:bond-downdelay*::
+
+
+*other-config=bond-updelay*::
+
 
 EXAMPLES
 --------
 
+to set a PIF interface for 1Gbs type,
+	*xe pif-param-set* uuid=<pif uuid> other-config=ethtool-speed=1000
+
+
 SEE ALSO
 --------
 
+*xe pif-list*(1), *xe pif-param-list*(1), *xe host-list*(1), *xe pif-param-remove*(1), *xe pif-reconfigure-ip*(1)
 
 
 

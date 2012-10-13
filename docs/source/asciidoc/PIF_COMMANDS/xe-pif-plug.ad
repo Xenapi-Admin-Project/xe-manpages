@@ -29,14 +29,14 @@ REQUIRED PARAMETERS
 -------------------
 
 *uuid*::
-	UUID of PIF object
+	UUID of PIF interface
 
 
 EXAMPLES
 --------
 
 xe pif-list will show an unplugged pif as *currently-attached ( RO): false*.
-xe pif-list will show an plugged pif as *currently-attached ( RO): true*.
+xe pif-list will show a plugged pif as *currently-attached ( RO): true*.
 
 To plug in an unplugged pif with uuid d6095aed-24c4-ea15-f231-0c1eebe19f5f do
 

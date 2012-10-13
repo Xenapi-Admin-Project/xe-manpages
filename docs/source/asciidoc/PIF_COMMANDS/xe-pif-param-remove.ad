@@ -6,30 +6,43 @@ xe-pif-param-remove.ad(1)
 :man manual:   xe manual
 
 NAME
------
+----
+
 *xe pif-param-remove*
 
 SYNOPSIS
 --------
-*xe pif-param-remove* 
+
+*xe pif-param-remove* uuid=<PIF UUID> param-name=other-config param-key=<paramter name>
 
 DESCRIPTION
 -----------
+
+*xe pif-param-remove* will remove a param-key value from a map parameter associated with a PIF interface. 
 
 
 PREREQUISITES
 -------------
 
+*xe pif-list* and *xe pif-param-list* will output parameters and their values for PIF interfaces.
 
 REQUIRED PARAMETERS
 -------------------
 
+*uuid*::
+	UUID of PIF interface
 
-OPTIONAL PARAMETERS
--------------------
+*param-name*::
+	
+*param-key*::
+	
 
 EXAMPLES
 --------
+
+To remove the *ethtool-speed* value type,
+	*xe pif-param-remove* uuid=<PIF UUID> param-name=other-config param-key=ethtool-speed
+	
 
 SEE ALSO
 --------
