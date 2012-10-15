@@ -12,13 +12,14 @@ NAME
 SYNOPSIS
 --------
 
-*xe network-create* name-label=<network name> [ MTU= ] [ name-description= ] 
+*xe network-create* name-label=<network name> [ MTU=<MTU Size> ] [ name-description=<description> ] 
 
 
 DESCRIPTION
 -----------
 
-*xe network-create* will create an internal network in a pool. The MTU default is 1500. The resulting network UUID is returned. 
+*xe network-create* will create an internal network in a pool. Name-labels and name-descriptions containing spaces
+need to be enclosed in quotes. The MTU default is 1500. The resulting network UUID is returned. 
 
 
 REQUIRED PARAMETERS
@@ -38,6 +39,9 @@ OPTIONAL PARAMETERS
 
 EXAMPLES
 --------
+
+To create an internal network with a name description type,
+	*xe network-create* name-label="Example Network" name-description="This is an example network"
 
 SEE ALSO
 --------

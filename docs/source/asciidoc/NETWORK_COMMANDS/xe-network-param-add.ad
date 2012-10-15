@@ -1,4 +1,4 @@
-xe-pif-param-list.ad(1)
+network-param-add.ad(1)
 =======
 :doctype: manpage
 :man source:   xe 
@@ -8,42 +8,34 @@ xe-pif-param-list.ad(1)
 NAME
 -----
 
-*xe pif-param-list* - Displays parameters for a specified PIF interface
+*xe network-param-add* 
 
 SYNOPSIS
 --------
 
-*xe pif-param-list* uuid=<PIF uuid>
+*xe network-param-add*
 
 DESCRIPTION
 -----------
 
-*xe pif-param-list* will display all parameters for a specified PIF interface.
 
 PREREQUISITES
 -------------
-
-*xe pif-list* will output PIFs present in a pool and their parameters.
 
 
 REQUIRED PARAMETERS
 -------------------
 
-*uuid*::
-	UUID of PIF interface
+
+OPTIONAL PARAMETERS
+-------------------
 
 EXAMPLES
 --------
 
-To display parameters for a specific PIF interface, type; 
-	xe pif-param-list uuid=405b52f6-6b6f-b182-9d96-b0ad9f098cf9
-
-
 SEE ALSO
 --------
 
-*xe-pif-list*(1), *xe-pif-param-clear*(1), *xe-pif-param-get*(1), *xe-pif-param-remove*(1), 
-*xe-pif-param-set*(1), *xe-pif-param-add*(1)
 
 
 

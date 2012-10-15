@@ -7,37 +7,85 @@ xe-network-list.ad(1)
 
 NAME
 -----
-*xe network-list*	
+*xe network-list* - will list networks and their paramters present in a pool
 
 SYNOPSIS
 --------
 
 *xe network-list*
 
-
+*xe network-list* [ uuid= ]  [ name-label= ] [ name-description= ] [ VIF-uuids= ] [ MTU= ] [ bridge= ]  
+				  [ blobs= ] [ tags= ] [ other-config= ] 
 
 
 DESCRIPTION
 -----------
 
-
-PREREQUISITES
--------------
-
-
-REQUIRED PARAMETERS
--------------------
+*xe network-list* will list the networks present in a pool and their parameters.  
 
 
 OPTIONAL PARAMETERS
 -------------------
 
+*uuid*::
+	UUID of a network.
+
+*name-label*::
+	name-label of a network.
+
+*name-description*::
+	description of the network.
+
+*VIF-uuids*::
+	VIF-uuids that are attached to this network.
+
+*MTU*::
+	MTU value of a network
+	
+*bridge*::
+	name of the bridge on the host
+
+*blobs*::
+	Binary data store 
+
+*tags*::
+
+*other-config*::
+
+*other-config:static-routes*::
+
+*other-config:ethtool-autoneg*::
+
+*other-config:ethtool-rx*:: 
+
+*other-config:ethtool-tx*::
+
+*other-config:ethtool-sg*:: 
+
+*other-config:ethtool-tso*::
+
+*other-config:ethtool-ufo*::
+
+*other-config:ethtool-gso*::
+
+
 EXAMPLES
 --------
+
+To display all paramters for a specific network type,
+	*xe network-list* uuid=<NETWORK UUID> params=all
+	
+To display all paramters for all networks in a pool type,
+	*xe network-list* params=all
+	
+To display VIF-uuids for a specific network type,
+	*xe network-list* uuid=<NETWORK UUID> params=VIF-uuids
+
 
 SEE ALSO
 --------
 
+*xe-network-create*(1), *xe-network-destroy*(1), *xe-network-param-set*(1), *xe-pif-list*(1), *xe-pool-vlan-create*(1)
 
 
 

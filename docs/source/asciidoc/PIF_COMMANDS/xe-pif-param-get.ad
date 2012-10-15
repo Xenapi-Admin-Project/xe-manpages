@@ -7,23 +7,28 @@ xe-pif-param-get.ad(1)
 
 NAME
 -----
-*xe pif-param-get* - Display a parameter for a specified PIF interface
+
+*xe pif-param-get* Display a parameter for a specified PIF interface
 
 SYNOPSIS
 --------
-*xe pif-param-get* uuid=<PIF uuid> param-name=<param name>
+
+*xe pif-param-get*	uuid=<PIF uuid> param-name=<param name>
 
 DESCRIPTION
 -----------
+
 *xe pif-param-get* will return a single selected parameter from a specified PIF interface.
 
 PREREQUISITES
 -------------
+
 *xe pif-list* will output PIFs present in a pool and their parameters.
 
 
 REQUIRED PARAMETERS
 -------------------
+
 *uuid*::
 	UUID of PIF interface
 
@@ -33,6 +38,7 @@ REQUIRED PARAMETERS
 
 OPTIONAL PARAMETERS
 -------------------
+	
 *param-key*::
 
 

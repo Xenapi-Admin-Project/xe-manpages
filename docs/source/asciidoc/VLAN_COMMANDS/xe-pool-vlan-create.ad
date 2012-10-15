@@ -52,10 +52,8 @@ REQUIRED PARAMETERS
 EXAMPLES
 --------
 
-*xe vlan-create* network-uuid=2177a448-d2c6-27f9-ca64-b3899d1cbe98 pif-uuid=3e558a35-b5ff-c58c-eee2-388bae80cdc6 vlan=2
-will assign 
-2d98179d-2041-6544-8dee-24da8f2a8c01
-
+To create a VLAN with the tag 2 on a network, type;
+	*xe vlan-create* network-uuid=2177a448-d2c6-27f9-ca64-b3899d1cbe98 pif-uuid=3e558a35-b5ff-c58c-eee2-388bae80cdc6 vlan=2
 
 
 SEE ALSO

@@ -7,37 +7,43 @@ xe-network-destroy.ad(1)
 
 NAME
 -----
-*xe network-destroy*	
+*xe network-destroy* - will erase a network from a pool
 
 SYNOPSIS
 --------
 
-*xe network-destroy*
-
-
+*xe network-destroy* uuid=
 
 
 DESCRIPTION
 -----------
 
+*xe network-destroy* will erase a network from a resoure pool. 
 
 PREREQUISITES
 -------------
 
+In order to erase a network from a pool using *xe network-destroy* the network must not have an active 
+PIF interface connected to it, active VIFs connected to it, and a VLAN assigned to it. See *xe pif-unplug*, 
+*xe vif-unplug*,  *xe vlan-destroy* for further information.
 
+ 
 REQUIRED PARAMETERS
 -------------------
 
-
-OPTIONAL PARAMETERS
--------------------
+*uuid*::
+	UUID of Network
 
 EXAMPLES
 --------
 
+To erase a network from a pool type,
+	*xe network-destroy* uuid=<NETWORK UUID>
+
 SEE ALSO
 --------
 
+*xe-network-create*(1), *xe-network-list*(1), *xe pif-unplug*(1), *xe vif-unplug*(1), *xe vlan-destroy*(1)
 
 
 

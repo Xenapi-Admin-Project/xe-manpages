@@ -11,12 +11,12 @@ NAME
 
 SYNOPSIS
 --------
-*pif-reconfigure-ip*	mode=<dhcp> uuid=<PIF UUID> 
+*pif-reconfigure-ip*	mode=<dhcp|none> uuid=<PIF UUID> 
 
 *pif-reconfigure-ip*	mode=<static> uuid=<PIF UUID> IP=<IP address> netmask=<netmask> 	
 						[ DNS=<name servers> ] [ gateway=<gateway> ]
 						
-*pif-reconfigure-ip*	mode=<none> uuid=<PIF UUID>
+
 
 DESCRIPTION
 -----------
@@ -39,21 +39,29 @@ REQUIRED PARAMETERS
 
 *uuid*::
 	UUID of PIF
-
-OPTIONAL PARAMETERS
--------------------
-
-*DNS*::
-	Nameserver addresses
-
-*gateway*::
-	Gateway address
-
+	
 *IP*::
 	host address of PIF
 
 *netmask*::
 	netmask address of PIF
+
+	
+
+OPTIONAL PARAMETERS
+-------------------
+
+*DNS*::
+	Name server addresses
+
+*gateway*::
+	Gateway address
+
+EXAMPLES
+--------
+
+To reconfigure a PIF interface for DHCP, type;
+	xe pif-reconfigure-ip mode=dhcp uuid=8f4aa626-966f-38dc-f28a-029a514ac870
 
 EXAMPLES
 --------

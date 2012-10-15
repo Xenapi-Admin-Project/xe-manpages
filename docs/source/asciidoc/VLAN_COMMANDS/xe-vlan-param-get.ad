@@ -12,7 +12,7 @@ NAME
 SYNOPSIS
 --------
 
-*xe vlan-param-get* param-name=<param name> uuid=<vlan uuid> [ param-key=<I don't know what the fuck this does> ]
+*xe vlan-param-get* param-name=<param name> uuid=<vlan uuid> [ param-key=<I don't know what this does> ]
 
 DESCRIPTION
 -----------
@@ -40,7 +40,6 @@ OPTIONAL PARAMETERS
     
 EXAMPLES
 --------
-
 
 To display the tagged-PIF parameter for a VLAN, type;
 	*xe vlan-param-get* uuid=14543069-fab2-720c-52c0-7cd5097ced31  param-name=tagged-PIF  
