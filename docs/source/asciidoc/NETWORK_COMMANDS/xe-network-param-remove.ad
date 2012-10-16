@@ -13,7 +13,7 @@ NAME
 SYNOPSIS
 --------
 
-*xe network-param-remove*
+*xe network-param-remove* uuid= param-name= param-key=
 
 DESCRIPTION
 -----------

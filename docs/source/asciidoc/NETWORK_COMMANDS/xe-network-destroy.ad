@@ -12,7 +12,7 @@ NAME
 SYNOPSIS
 --------
 
-*xe network-destroy* uuid=
+*xe network-destroy* uuid=<network uuid>
 
 
 DESCRIPTION
