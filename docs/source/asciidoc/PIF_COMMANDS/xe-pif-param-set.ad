@@ -41,7 +41,7 @@ OPTIONAL PARAMETERS
 -------------------
 
 *disallow-unplug*::
-	Set to *true* to disable unplugging a PIF interface.
+	Set to *true* to disable unplugging a PIF interface. To enable set to *false*.
 	
 *other-config:ethtool-speed*::
 	Set speed of PIF interface in Mbps. (for example, ethtool-speed=100)
@@ -50,22 +50,22 @@ OPTIONAL PARAMETERS
 	to disable autonegotiation on PIF interface or bridge set to *no*. Default is *yes*.  
 
 *other-config:ethtool-rx*::
-	To enable receive checksum set to *on*, *off* to disable.
+	To enable receive checksum set to *on*. To disable set to *off*
 
 *other-config:ethtool-tx*::
-	To enable transmit checksum set to *on*, *off* to disable. 
+	To enable transmit checksum set to *on*. To disable set to *off*
 
 *other-config:ethtool-sg*::
-	To enable scatter gather set to *on*, *off* to disable.
+	To enable scatter gather set to *on*. To disable set to *off*
 
 *other-config:ethtool-tso*::
-	To enable tcp segmentation offload set to *on*, *off* to disable.
+	To enable tcp segmentation offload set to *on*. To disable set to *off*.
 
 *other-config:ethtool-ufo*::
-	To enable udp fragment offload set to *on*, *off* to disable.
+	To enable udp fragment offload set to *on*. To disable set to *off*.
 
 *other-config:ethtool-gso*::
-	To enable generic segmentation offload set to *on*, *off* to disable.
+	To enable generic segmentation offload set to *on*. To disable set to *off*
 
 *other-config:domain*::
 	Set the DNS search path ( DNS Suffix ). Use a comma as a field seperater.

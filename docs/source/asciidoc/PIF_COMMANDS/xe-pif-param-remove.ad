@@ -47,6 +47,7 @@ To remove the *ethtool-speed* value type,
 SEE ALSO
 --------
 
+*xe-pif-param-set*(1), *xe-pif-param-add*(1),
 
 
 
