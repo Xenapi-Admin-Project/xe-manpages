@@ -1,71 +1,50 @@
-xe-pool-vlan-create(1)
+xe-bond-param-get.ad(1)
 =======
 :doctype: manpage
-:man source:   xe
+:man source:   xe 
 :man version:  {1}
-:man manual:   xe Manual
+:man manual:   xe manual
 
 NAME
------
-*xe pool-vlan-create* - Create a new VLAN on all hosts in a pool.
+----
+
+*xe bond-param-get*
+
 
 SYNOPSIS
 --------
-*xe pool-vlan-create* pif-uuid=<pif uuid> network-uuid=<network uuid> vlan=<tag id>
 
+*xe bond-param-get*
 
 DESCRIPTION
 -----------
-
-*xe pool-vlan-create* creates a virtual VLAN PIF interface on all hosts in a pool and assigns it to the specified network. VLAN ID tags must be between 0 and 4094.
-The virtual PIF interface is associated with the specified physical PIF interface. The resulting VLAN UUID is returned. 
-
-The physical PIF interface now performs 802.1Q VLAN tagging/untagging. Use native VLAN 1 as a default.
-
-NOTE: Primary Management Interfaces cannot be assigned a VLAN via a trunk port.
 
 
 
 PREREQUISITES
 -------------
 
-*xe pool-vlan-create* requires an internal network and one physical PIF device.
-
-*xe pif-list* will list the PIFs found in a pool
-
-*xe network-list* will list the networks found in a pool
-
 
 REQUIRED PARAMETERS
 -------------------
 
-*pif-uuid*::
-    Target physical PIF that the pseudo PIF will be associated with. 
 
-*network-uuid*::
-    Network to be assigned VLAN 
-    
-*vlan*::
-    VLAN number
-    
-    
+OPTIONAL PARAMETERS
+-------------------
 
 EXAMPLES
 --------
 
-To create a VLAN with the tag 2 on a network, type;
-	*xe vlan-create* network-uuid=2177a448-d2c6-27f9-ca64-b3899d1cbe98 pif-uuid=3e558a35-b5ff-c58c-eee2-388bae80cdc6 vlan=2
-
-
 SEE ALSO
 --------
-*xe-pif-list*(1), *xe-network-list*(1), *xe-vlan-list*(1)
+
 
 
 
 AUTHORS
 -------
-Matthew Spah <spahmatthew@gmail.com>::
+Matthew Spah <spahmatthew@gmail.com>
+
 
 
 

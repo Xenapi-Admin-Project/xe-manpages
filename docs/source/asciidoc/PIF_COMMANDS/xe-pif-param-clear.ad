@@ -6,7 +6,7 @@ xe-pif-param-clear.ad(1)
 :man manual:   xe manual
 
 NAME
------
+----
 *xe pif-param-clear*
 
 SYNOPSIS
@@ -27,9 +27,9 @@ REQUIRED PARAMETERS
 -------------------
 
 *uuid*::
-
+	UUID of PIF interface
 *param-name*::
-
+	other-config
 
 EXAMPLES
 --------

@@ -6,7 +6,7 @@ xe-pif-param-get.ad(1)
 :man manual:   xe manual
 
 NAME
------
+----
 
 *xe pif-param-get* Display a parameter for a specified PIF interface
 

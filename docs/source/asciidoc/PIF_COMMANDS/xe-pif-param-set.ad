@@ -6,7 +6,7 @@ xe-pif-param-set.ad(1)
 :man manual:   xe manual
 
 NAME
------
+----
 *xe pif-param-set* - set parameters for a PIF interface
 
 SYNOPSIS
@@ -21,14 +21,14 @@ SYNOPSIS
 DESCRIPTION
 -----------
 
-*xe pif-param-set* will allow you to manipulate listed parameters for PIF interfaces. Changes to the *other-config* fields of a PIF interface will
-only take effect after a reboot or use the *xe pif-unplug* and *xe pif-plug* commands to cause the PIF configuration to take effect. 
+*xe pif-param-set* will allow you to set values of listed parameters for a PIF interfaces. Changes to the *other-config* fields of a PIF interface will
+only take effect after a reboot or as an alternitive you can use the *xe pif-unplug* and *xe pif-plug* commands to cause the PIF configuration to take effect. 
 
 
 PREREQUISITES
 -------------
 
-*xe pif-list* and *xe pif-param-list* will output parameters and their values for PIF interfaces.
+*xe pif-list* and *xe pif-param-list* will output parameters and their values for a PIF interface in a pool.
 
 REQUIRED PARAMETERS
 -------------------
@@ -41,7 +41,7 @@ OPTIONAL PARAMETERS
 -------------------
 
 *disallow-unplug*::
-	Set to *true* to disable unplugging a PIF interface. To enable set to *false*.
+	To disable the unplugging of a PIF interface set to *true*. To enable set to *false*.
 	
 *other-config:ethtool-speed*::
 	Set speed of PIF interface in Mbps. (for example, ethtool-speed=100)

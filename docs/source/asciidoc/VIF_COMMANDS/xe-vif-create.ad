@@ -7,11 +7,13 @@ xe-vif-create.ad(1)
 
 NAME
 ----
+
 *xe vif-create* 
 
 SYNOPSIS
 --------
-*xe vif-create* 
+
+*xe vif-create* vm-uuid= network-uuid= device=
 
 
 DESCRIPTION
@@ -25,6 +27,11 @@ PREREQUISITES
 REQUIRED PARAMETERS
 -------------------
 
+v*m-uuid*::
+
+*network-uuid*::
+
+*device*::
 
 OPTIONAL PARAMETERS
 -------------------
