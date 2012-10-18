@@ -17,10 +17,12 @@ SYNOPSIS
 DESCRIPTION
 -----------
 
-*xe pif-param-clear* will clear a list from a read/write parameters from a PIF interface. 
+*xe pif-param-clear* will completely clear all set or map parameters from a PIF interface.
 
 PREREQUISITES
 -------------
+
+*xe pif-list* will display PIF interfaces present in a pool and their parameters.
 
 
 REQUIRED PARAMETERS
@@ -29,15 +31,18 @@ REQUIRED PARAMETERS
 *uuid*::
 	UUID of PIF interface
 *param-name*::
-	other-config
+	Name of parameter 
 
 EXAMPLES
 --------
 
+To clear all values found in the parameter other-config type,
+	*xe pif-param-clear* uuid=<PIF UUID> param-name=other-config
 
 SEE ALSO
 --------
 
+*xe-pif-list*(1), *xe-pif-param-list*(1), *xe-pif-param-remove*(1), *xe-pif-param-set*(1)
 
 
 

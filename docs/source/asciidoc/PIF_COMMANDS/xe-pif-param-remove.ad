@@ -31,8 +31,10 @@ REQUIRED PARAMETERS
 
 *uuid*::
 	UUID of PIF interface
+
 *param-name*::
 	other-config
+
 *param-key*::
 	Read/Write parameters for PIF interface
 

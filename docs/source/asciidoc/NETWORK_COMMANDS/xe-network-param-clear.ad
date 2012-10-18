@@ -13,11 +13,11 @@ NAME
 SYNOPSIS
 --------
 
-*xe network-param-clear* uuid= param-name=
+*xe network-param-clear* uuid=<network uuid> param-name=<parameter>
 
 DESCRIPTION
 -----------
-
+*xe network-param-clear* will completely clear all values from a set or a map parameter on a network. 
 
 PREREQUISITES
 -------------
@@ -26,12 +26,14 @@ PREREQUISITES
 REQUIRED PARAMETERS
 -------------------
 
+*uuid*::
 
-OPTIONAL PARAMETERS
--------------------
+*param-name*::
+
 
 EXAMPLES
 --------
+
 
 SEE ALSO
 --------

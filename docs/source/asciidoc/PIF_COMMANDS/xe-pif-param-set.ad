@@ -12,7 +12,7 @@ NAME
 SYNOPSIS
 --------
 
-*xe pif-param-set* uuid=<pif uuid> [ disallow-unplug=<true/false> ] [ other-config:ethtool-speed= ] [ other-config:ethtool-autoneg= ]
+*xe pif-param-set* uuid=<PIF UUID> [ disallow-unplug=<true | false> ] [ other-config:ethtool-speed= ] [ other-config:ethtool-autoneg= ]
 				[ other-config:ethtool-rx= ] [ other-config:ethtool-tx= ] [ other-config:ethtool-sg= ] [ other-config:ethtool-tso= ]
 				[ other-config:ethtool-ufo= ] [ other-config:ethtool-gso= ] [ other-config:domain= ] [ other-config:bond-miimon= ]
 				[ other-config:bond-downdelay= ] [ other-config=bond-updelay= ]  
@@ -47,7 +47,10 @@ OPTIONAL PARAMETERS
 	Set speed of PIF interface in Mbps. (for example, ethtool-speed=100)
 
 *other-config:ethtool-autoneg*::
-	to disable autonegotiation on PIF interface or bridge set to *no*. Default is *yes*.  
+	to disable autonegotiation on PIF interface or bridge set to *off*. Default is *on*.  
+	
+*other-config:ethtool-duplex*::
+	Duplex mode of PIF interface. Set to "full" or "half"
 
 *other-config:ethtool-rx*::
 	To enable receive checksum set to *on*. To disable set to *off*
@@ -81,6 +84,9 @@ OPTIONAL PARAMETERS
 
 EXAMPLES
 --------
+
+To set the speed and duplex settings of a PIF interface you must first turn off autonegotiation
+	*xe pif-param-set* uuid=<PIF UUID> other-config=ethtool-autoneg=off
 
 to set a PIF interface for 1Gbs type,
 	*xe pif-param-set* uuid=<pif uuid> other-config=ethtool-speed=1000

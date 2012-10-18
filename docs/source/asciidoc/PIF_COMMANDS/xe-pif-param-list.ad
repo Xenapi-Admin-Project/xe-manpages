@@ -23,7 +23,7 @@ DESCRIPTION
 PREREQUISITES
 -------------
 
-*xe pif-list* will output PIFs present in a pool and their parameters.
+*xe pif-list* will output PIF interfacess present in a pool and their parameters.
 
 
 REQUIRED PARAMETERS

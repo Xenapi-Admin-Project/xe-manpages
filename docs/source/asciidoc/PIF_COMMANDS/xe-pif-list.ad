@@ -7,7 +7,7 @@ sxe-pif-list(1)
 
 NAME
 -----
-*xe pif-list* - List PIFs present in a pool
+*xe pif-list* - Display PIF interfaces present in a pool
 
 SYNOPSIS
 --------
@@ -24,7 +24,7 @@ SYNOPSIS
 DESCRIPTION
 -----------
 
-*xe pif-list* displays parameters for the specified PIF
+*xe pif-list* will display PIF interfaces and their parameters found in a pool.
 
 
 OPTIONAL PARAMETERS
@@ -156,12 +156,16 @@ OPTIONAL PARAMETERS
 *other-config:bond-downdelay*::
 
 
-*other-config=bond-updelay*::
+*other-config:bond-updelay*::
 
 
 EXAMPLES
 --------
 
+to display all parameters for a specified PIF interface type,
+	*xe pif-list* uuid=<PIF UUID> params=all
+	
+	
 
 
 SEE ALSO
