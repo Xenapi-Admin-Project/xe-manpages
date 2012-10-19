@@ -48,19 +48,26 @@ OPTIONAL PARAMETERS
 *other-config:static-routes*::
 
 *other-config:ethtool-autoneg*::
-	To disable autonegotiation on PIF interface or bridge set to *no*. Default is *yes*.  
+	To disable autonegotiation on PIF interface or bridge set to *no*. Default is *yes*. 
+	
 *other-config:ethtool-rx*:: 
 	To enable receive checksum set to *on*. To disable set to *off*
+	
 *other-config:ethtool-tx*::
 	To enable transmit checksum set to *on*. To disable set to *off*
+	
 *other-config:ethtool-sg*:: 
 	To enable scatter gather set to *on*. To disable set to *off*
+	
 *other-config:ethtool-tso*::
 	To enable tcp segmentation offload set to *on*. To disable set to *off*.
+	
 *other-config:ethtool-ufo*::
 	To enable udp fragment offload set to *on*. To disable set to *off*.
+	
 *other-config:ethtool-gso*::
 	To enable generic segmentation offload set to *on*. To disable set to *off*
+	
 
 EXAMPLES
 --------
