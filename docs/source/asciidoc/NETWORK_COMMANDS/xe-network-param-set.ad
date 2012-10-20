@@ -8,27 +8,28 @@ network-param-set.ad(1)
 NAME
 -----
 
-*xe network-param-set* 
+*xe network-param-set* - Set specified parameters for a network. 
 
 SYNOPSIS
 --------
 
 *xe network-param-set* uuid=<NETWORK UUID>
 
-*xe network-param-set* uuid=<NETWORK UUID> [ name-label=<name label> ] [ name-description=<description> ] [ MTU=<MTU SIZE> ]
-					   [ other-config:static-routes= ] [ other-config:ethtool-autoneg= ] [ other-config:ethtool-rx= ]
-					   [ other-config:ethtool-tx= ] [ other-config:ethtool-sg= ] [ other-config:ethtool-tso= ]
-					   [ other-config:ethtool-ufo= ] [ other-config:ethtool-gso= ]
+*xe network-param-set* uuid=<NETWORK UUID> [ name-label=<name label> ] [ name-description=<description> ] [ MTU=<MTU SIZE> ] [ other-config:ethtool-autoneg=<on | off> ]
+					   [ other-config:static-routes=<Network Address/<Subnet Mask>/<Next hop address> ] [ other-config:ethtool-rx=<on | off> ] [ other-config:ethtool-tx=<on | off> ]
+					   [ other-config:ethtool-sg=<on | off> ] [ other-config:ethtool-tso=<on | off> ] [ other-config:ethtool-ufo=<on | off> ] [ other-config:ethtool-gso=<on | off> ]
 
 
 
 DESCRIPTION
 -----------
 
+*xe network-param-set* will allow you to set values of listed read/write parameters for a network found in a pool.
 
 PREREQUISITES
 -------------
 
+*xe network-list* params=all will display all networks and their parameters in a pool.
 
 REQUIRED PARAMETERS
 -------------------
@@ -41,12 +42,17 @@ OPTIONAL PARAMETERS
 
 *name-label*::
 	Name of network
+	
 *name-description*::
 	Description of network
+	
 *MTU*::
 	MTU size for network 
+	
 *other-config:static-routes*::
-
+	To create a static route for a network use the following syntax <Network Address>/<Subnet Mask>/<Next hop address>. 
+	Seperate routes using a comma.
+		
 *other-config:ethtool-autoneg*::
 	To disable autonegotiation on PIF interface or bridge set to *no*. Default is *yes*. 
 	
@@ -60,10 +66,10 @@ OPTIONAL PARAMETERS
 	To enable scatter gather set to *on*. To disable set to *off*
 	
 *other-config:ethtool-tso*::
-	To enable tcp segmentation offload set to *on*. To disable set to *off*.
+	To enable TCP segmentation offload set to *on*. To disable set to *off*.
 	
 *other-config:ethtool-ufo*::
-	To enable udp fragment offload set to *on*. To disable set to *off*.
+	To enable UDP fragment offload set to *on*. To disable set to *off*.
 	
 *other-config:ethtool-gso*::
 	To enable generic segmentation offload set to *on*. To disable set to *off*
@@ -71,6 +77,10 @@ OPTIONAL PARAMETERS
 
 EXAMPLES
 --------
+
+To create a static route that would route traffic from 192.168.1.0/24 to the gateway of 192.168.0.1 type,
+	*xe network-param-set* uuid=<Network UUID> other-config=static-routes=192.168.1.0/24/192.168.0.1 
+
 
 SEE ALSO
 --------

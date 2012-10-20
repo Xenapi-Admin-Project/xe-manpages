@@ -121,34 +121,32 @@ OPTIONAL PARAMETERS
 *pci-bus-path*::
 	PCI bus path address 
 
-*other-config*::
-
 *other-config:ethtool-speed*::
-	
+	Speed of PIF interface in Mbps
 
 *other-config:ethtool-autoneg*::
-	  
-
-*other-config:ethtool-rx*::
+	Ethernet Autonegotiation status 
 	
+*other-config:ethtool-rx*::
+	Receive checksum status 
 
 *other-config:ethtool-tx*::
-	
+	Transmit checksum status 
 
 *other-config:ethtool-sg*::
-	
+	Scatter gather status 
 
 *other-config:ethtool-tso*::
-	
+	TCP segmentation offload status 
 
 *other-config:ethtool-ufo*::
-	
+	UDP fragment offload
 
 *other-config:ethtool-gso*::
-	
+	Generic segmentation offload
 
 *other-config:domain*::
-	
+	DNS search path ( DNS suffix )
 
 *other-config:bond-miimon*::
 

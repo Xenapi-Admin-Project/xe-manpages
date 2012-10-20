@@ -24,7 +24,7 @@ PREREQUISITES
 -------------
 
 In order to erase a network from a pool using *xe network-destroy* the network must not have an active 
-PIF interface connected to it, active VIFs connected to it, and a VLAN assigned to it. See *xe pif-unplug*, 
+PIF interface connected to it, active VIFs connected to it, or a VLAN assigned to it. See *xe pif-unplug*, 
 *xe vif-unplug*,  *xe vlan-destroy* for further information.
 
  

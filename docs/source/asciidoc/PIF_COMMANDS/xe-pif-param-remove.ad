@@ -18,7 +18,7 @@ SYNOPSIS
 DESCRIPTION
 -----------
 
-*xe pif-param-remove* will remove a param-key value from a map parameter associated with a PIF interface. 
+*xe pif-param-remove* will remove a param-key value from a set/map parameter associated with a PIF interface found in a pool.
 
 
 PREREQUISITES

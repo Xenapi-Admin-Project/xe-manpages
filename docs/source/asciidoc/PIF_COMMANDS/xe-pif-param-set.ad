@@ -7,21 +7,22 @@ xe-pif-param-set.ad(1)
 
 NAME
 ----
-*xe pif-param-set* - set parameters for a PIF interface
+
+*xe pif-param-set* - Set specified parameters for a PIF interface
 
 SYNOPSIS
 --------
 
-*xe pif-param-set* uuid=<PIF UUID> [ disallow-unplug=<true | false> ] [ other-config:ethtool-speed= ] [ other-config:ethtool-autoneg= ]
-				[ other-config:ethtool-rx= ] [ other-config:ethtool-tx= ] [ other-config:ethtool-sg= ] [ other-config:ethtool-tso= ]
-				[ other-config:ethtool-ufo= ] [ other-config:ethtool-gso= ] [ other-config:domain= ] [ other-config:bond-miimon= ]
+*xe pif-param-set* uuid=<PIF UUID> [ disallow-unplug=<true | false> ] [ other-config:ethtool-speed=<10 | 100 | 1000 | 10000> ] [ other-config:ethtool-autoneg=<on | off> ]
+				[ other-config:ethtool-rx=<on | off> ] [ other-config:ethtool-tx=<on | off> ] [ other-config:ethtool-sg=<on | off> ] [ other-config:ethtool-tso=<on | off> ]
+				[ other-config:ethtool-ufo=<on | off> ] [ other-config:ethtool-gso=<on | off> ] [ other-config:domain=<DNS Suffix> ] [ other-config:bond-miimon= ]
 				[ other-config:bond-downdelay= ] [ other-config=bond-updelay= ]  
 				
 				
 DESCRIPTION
 -----------
 
-*xe pif-param-set* will allow you to set values of listed parameters for a PIF interfaces. Changes to the *other-config* fields of a PIF interface will
+*xe pif-param-set* will allow you to set values of read/write parameters for PIF interfaces fopund in a pool. Changes to the *other-config* fields of a PIF interface will
 only take effect after a reboot or as an alternitive you can use the *xe pif-unplug* and *xe pif-plug* commands to cause the PIF configuration to take effect. 
 
 
@@ -50,7 +51,7 @@ OPTIONAL PARAMETERS
 	to disable autonegotiation on PIF interface or bridge set to *off*. Default is *on*.  
 	
 *other-config:ethtool-duplex*::
-	Duplex mode of PIF interface. Set to "full" or "half"
+	Duplex mode of PIF interface. Set to *full* or *half*
 
 *other-config:ethtool-rx*::
 	To enable receive checksum set to *on*. To disable set to *off*
@@ -62,10 +63,10 @@ OPTIONAL PARAMETERS
 	To enable scatter gather set to *on*. To disable set to *off*
 
 *other-config:ethtool-tso*::
-	To enable tcp segmentation offload set to *on*. To disable set to *off*.
+	To enable TCP segmentation offload set to *on*. To disable set to *off*.
 
 *other-config:ethtool-ufo*::
-	To enable udp fragment offload set to *on*. To disable set to *off*.
+	To enable UDP fragment offload set to *on*. To disable set to *off*.
 
 *other-config:ethtool-gso*::
 	To enable generic segmentation offload set to *on*. To disable set to *off*

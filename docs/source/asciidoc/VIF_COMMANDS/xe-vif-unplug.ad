@@ -7,27 +7,30 @@ xe-vif-unplug.ad(1)
 
 NAME
 ----
-*xe vif-unplug* 
+*xe vif-unplug* - Unplug a VIF interface
 
 SYNOPSIS
 --------
-*xe vif-unplug* 
+
+*xe vif-unplug* uuid=<VIF UUID>
 
 
 DESCRIPTION
 -----------
 
+*xe vif-unplug* will unplug a VIF interface from a network
+#I need to see if it actually removes the VIF from *xe network-list* params=VIF uuids#
 
 PREREQUISITES
 -------------
 
+*xe vif-list* will out put 
 
 REQUIRED PARAMETERS
 -------------------
 
-
-OPTIONAL PARAMETERS
--------------------
+*uuid*::
+	UUID of VIF interface
 
 EXAMPLES
 --------

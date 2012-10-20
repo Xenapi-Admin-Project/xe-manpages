@@ -13,25 +13,33 @@ NAME
 SYNOPSIS
 --------
 
-*xe network-param-remove* uuid= param-name= param-key=
+*xe network-param-remove* uuid=<Network UUID> param-name=<Parameter Name> param-key=<Parameter key>
 
 DESCRIPTION
 -----------
 
+*xe network-param-remove* will remove a param-key value from a set/map parameter associated with a network found in a pool.
 
 PREREQUISITES
 -------------
 
+*xe network-param-list* uuid=<Network UUID> , *xe network-list* params=all will output parameters for networks found in a pool.
 
 REQUIRED PARAMETERS
 -------------------
 
+*uuid*::
+	UUID of network 
 
-OPTIONAL PARAMETERS
--------------------
+*param-name*::
+	Parameter name 
+	
+*param-key*::
+	Param-key to be removed 
 
 EXAMPLES
 --------
+
 
 SEE ALSO
 --------

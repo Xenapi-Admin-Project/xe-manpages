@@ -7,16 +7,19 @@ xe-vif-plug.ad(1)
 
 NAME
 ----
-*xe vif-plug* 
+*xe vif-plug* - Will plug in a VIF interface 
 
 SYNOPSIS
 --------
-*xe vif-plug* 
+
+*xe vif-plug* uuid=<VIF uuid>
 
 
 DESCRIPTION
 -----------
 
+*xe vif-plug* will plug in a VIF interface 
+#I need to see if it actually removes the VIF from *xe network-list* params=VIF uuids#
 
 PREREQUISITES
 -------------
@@ -26,8 +29,7 @@ REQUIRED PARAMETERS
 -------------------
 
 
-OPTIONAL PARAMETERS
--------------------
+
 
 EXAMPLES
 --------
