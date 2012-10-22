@@ -1,0 +1,101 @@
+Name
+xe vm-list
+
+Prerequisites
+none
+
+Description
+Lists all virtual machines filtering on optional parameters.
+
+Required Parameters
+none
+
+Optional Parameters
+ params
+ uuid
+ name-label
+ name-description
+ user-version
+ is-a-template
+ is-a-snapshot
+ snapshot-of
+ snapshots
+ snapshot-time
+ snapshot-info
+ parent
+ children
+ is-control-domain
+ power-state
+ memory-actual
+ memory-target
+ memory-overhead
+ memory-static-max
+ memory-dynamic-max
+ memory-dynamic-min
+ memory-static-min
+ suspend-VDI-uuid
+ VCPUs-params
+ VCPUs-max
+ VCPUs-at-startup
+ actions-after-shutdown
+ actions-after-reboot
+ actions-after-crash
+ console-uuids
+ platform
+ allowed-operations
+ current-operations
+ blocked-operations
+ allowed-VBD-devices
+ allowed-VIF-devices
+ possible-hosts
+ HVM-boot-policy
+ HVM-boot-params
+ HVM-shadow-multiplier
+ PV-kernel
+ PV-ramdisk
+ PV-args
+ PV-legacy-args
+ PV-bootloader
+ PV-bootloader-args
+ last-boot-CPU-flags
+ last-boot-record
+ resident-on
+ affinity
+ other-config
+ dom-id
+ recommendations
+ xenstore-data
+ ha-always-run
+ ha-restart-priority
+ blobs
+ start-time
+ install-time
+ VCPUs-number
+ VCPUs-utilisation
+ os-version
+ PV-drivers-version
+ PV-drivers-up-to-date
+ memory
+ disks
+ networks
+ other
+ live
+ guest-metrics-last-updated
+ cooperative
+ protection-policy
+ is-snapshot-from-vmpp
+ tags
+ console-uuids:contains
+ allowed-operations:contains
+ current-operations:contains
+ allowed-VBD-devices:contains
+ allowed-VIF-devices:contains
+ tags:contains
+
+
+
+Author
+Grant McWilliams grant@soundlinuxtraining.com
+
+See Also
+xe-vm-params
