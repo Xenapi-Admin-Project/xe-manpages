@@ -7,10 +7,12 @@ xe-pif-reconfigure-ip(1)
 
 NAME
 ----
+
 *pif-reconfigure-ip* - Reconfigure the IP address settings on a PIF
 
 SYNOPSIS
 --------
+
 *pif-reconfigure-ip*	mode=<dhcp|none> uuid=<PIF UUID> 
 
 *pif-reconfigure-ip*	mode=<static> uuid=<PIF UUID> IP=<IP address> netmask=<netmask> 	
@@ -21,30 +23,28 @@ SYNOPSIS
 DESCRIPTION
 -----------
 
-*xe pif-reconfigure-ip* will change network addressing parameters for the specified PIF object. 
-When using mode=static addressing the IP and netmask parameters are required. Rntering multiple DNS servers 
-requires the use of a comma as a field seperater.
+*xe pif-reconfigure-ip* will change network addressing parameters for the specified PIF interface. 
 
 
 PREREQUISITES
 -------------
 
-*xe pif-list* will output PIFs present in a pool and their parameters.
+*xe pif-list* will output PIF interfaces present in a pool and their parameters.
 
 REQUIRED PARAMETERS
 -------------------
 
 *mode*::
-	Set mode for PIF interface dhcp, static, none.
+	Set addressing mode for PIF interface dhcp, static, none.
 
 *uuid*::
 	UUID of PIF
 	
 *IP*::
-	host address of PIF
+	Host address of PIF
 
 *netmask*::
-	netmask address of PIF
+	Netmask address of PIF
 
 	
 
@@ -52,22 +52,21 @@ OPTIONAL PARAMETERS
 -------------------
 
 *DNS*::
-	Name server addresses
+	Name server addresses. When configuring multiple name servers use a comma as a field seperater.
 
 *gateway*::
 	Gateway address
 
-EXAMPLES
---------
 
-To reconfigure a PIF interface for DHCP, type;
-	xe pif-reconfigure-ip mode=dhcp uuid=8f4aa626-966f-38dc-f28a-029a514ac870
 
 EXAMPLES
 --------
 
 To set a PIF interface for DHCP type,
 	*xe pif-reconfigure-ip* mode=dhcp uuid=<PIF UUID>
+	
+To set a PIF interface with a static IP address configuration type,
+	*xe pif-reconfigure-ip* mode=static uuid=<PIF UUID>  IP=192.168.1.2 netmask=255.255.255.0 gateway=192.168.1.1
 
 SEE ALSO
 --------
