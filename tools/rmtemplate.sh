@@ -38,6 +38,14 @@ cleanup()
 	exit
 }
 
+remove_template()
+{
+	TEMPLATE="$1"
+	xe template-param-set other-config:default_template=false uuid="$TEMPLATE"
+	xe template-param-set is-a-template=false uuid="$TEMPLATE"
+	xe vm-destroy uuid="$TEMPLATE"
+}
+
 #main
 setup
 
@@ -93,9 +101,7 @@ then
 					:
 				else
 					TMPLUUID=$(xe template-list name-label="$ITEM" --minimal)
-					#xe template-param-set other-config:default_template=false uuid="$TMPLUUID"
-					#xe template-param-set is-a-template=false uuid="$TMPLUUID"
-					#xe vm-destroy uuid="$TMPLUUID"
+					echo remove_template "$TMPLUUID"
 				fi
 				break
 			;;
