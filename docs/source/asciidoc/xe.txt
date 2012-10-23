@@ -1,0 +1,773 @@
+NAME
+
+xe - XCP/Xenserver command line interface
+
+SYNOPSIS
+
+xe <command> [-s server] [-pw passwd] [-p port] [-u user] [-pwf password-file]
+[command specific arguments]
+
+To get help on a specific command: xe help <command>
+
+
+DESCRIPTION
+
+xe is the commandline interface to Xen Cloud Platform (XCP) and Citrix Xenserver. xe provides a large list of subcommands used to manage XCP/Xeserver. The xe CLI enables the writing of scripts for automating system administration tasks and allows integration of XCP/XenServer into an existing IT infrastructure.
+
+The xe command line interface is installed by default on XCP/XenServer hosts. 
+
+On RPM-based distributions (such as, Red Hat and CentOS), you can install the stand-alone xe CLI executable from
+the RPM named xe-cli-6.00-@BUILD_NUMBER@.i386.rpm on the main XCP/Xeserver installation ISO, as follows:
+rpm -ivh xe-cli-6.00-@BUILD_NUMBER@.i386.rpm
+
+GENERAL OPTIONS
+       Parameters and options conventions
+
+       -s <server-hostname>
+
+       -pw <password>
+
+       -p <port>
+
+              Port number on which to connect.
+
+       -u <user>
+
+       -pw <password-file>
+       
+       
+<command> is one of:
+audit-log-get - Write the pool audit log to a file
+bond-create - Create a bonded interface from a list of existing PIFs
+bond-destroy - Destroy a bonded interface
+bond-list - List all bonded interfaces
+bond-param-get - Get parameters for a specific bonded interface
+bond-param-list - List all parameters for a specific bonded interface
+cd-list - List available CDs
+console-list - Lists all consoles
+console-param-add - Add map parameter to console
+console-param-clear - Clear parameter of console
+console-param-get - Get parameter of console
+console-param-list - List parameters of console
+console-param-remove - Remove parameter of console
+console-param-set - Set parameter value of console
+diagnostic-compact - Perform a major GC collection and heap compaction
+diagnostic-db-log - Start logging database operations (cannot be stopped once started)
+diagnostic-db-stats - Print db stats
+diagnostic-gc-stats - Print GC stats
+diagnostic-license-status - Help diagnose pool-wide licensing problems
+diagnostic-timing-stats - Print timing stats
+diagnostic-vdi-status - Query the locking and sharing status of a VDI
+diagnostic-vm-status - Query the hosts on which the VM can boot, check the sharing/locking status of all VBDs
+event-wait - Wait for the event that satisfies the conditions specified on the command line
+help - Print xe command help
+host-apply-edition - Change to another license edition or reactivate one after a license has expired 
+host-backup - Download a backup of the host's control domain
+host-bugreport-upload - Upload the output of xen-bugtool 
+host-call-plugin - Call the function within the plugin on the given host with optional arguments
+host-compute-free-memory - Compute the amount of free memory on the host
+host-compute-memory-overhead - Compute the virtualization memory overhead of a host
+host-cpu-info - List information about the host's physical CPUs.
+host-cpu-list - List all the host CPUs
+host-cpu-param-get - Get a parameter of a host CPU
+host-cpu-param-list - Lists all parameters of a host CPU
+host-crashdump-destroy - Delete a host crashdump from a host
+host-crashdump-list - List all crashdumps of a host
+host-crashdump-param-get - Get crashdump parameter of a host
+host-crashdump-param-list - List all crashdump parameters of a host
+host-crashdump-upload - Upload a crashdump of a host to the support website
+host-data-source-forget - Stop recording the specified data source for a Host, and forget all of the recorded data. 
+host-data-source-list - List the data sources that can be recorded for a Host.
+host-data-source-query - Query the last value read from a Host data source. 
+host-data-source-record - Record the specified data source for a Host. 
+host-disable - Disable a host. If host not specified all will be diabled 
+host-disable-local-storage-caching - Disable local storage caching on the specified host 
+host-dmesg - Get xen dmesg of a host
+host-emergency-ha-disable - Disable HA on the local host
+host-emergency-management-reconfigure - Reconfigure the management interface of this node
+host-enable - Enable a host. 
+host-enable-local-storage-caching - Enable local storage caching on the specified host 
+host-evacuate - Migrate all VMs off a host.
+host-forget - Forget about a dead host without contacting it explicitly
+host-get-cpu-features - Print a hexadecimal representation of the host's physical-CPU features
+host-get-server-certificate - Get the installed server SSL certificate 
+host-get-system-status - Download system status  
+host-get-system-status-capabilities - Get system status capabilities
+host-get-uncooperative-vms - Return a list of VMs which are not co-operating with the memory control system.
+host-get-vms-which-prevent-evacuation - Return a list of VMs which prevent the evacuation of a specific host and display reasons for each one.
+host-is-in-emergency-mode - Query the target host to discover if it is in emergency mode.
+host-license-add - Add a license to a host.
+host-license-view - View the license parameters of the host.
+host-list - Lists all hosts 
+host-logs-download - Download a copy of the host logs. 
+host-management-disable - Disable the management interface of this node.
+host-management-reconfigure - Reconfigure the management interface of this node.
+host-param-add - Add host map parameter 
+host-param-clear - Clear host parameter
+host-param-get - Get host parameter specified  
+host-param-list - List all the parameters of a host
+host-param-remove - Remove a parameter from a host
+host-param-set - Set the parameter specified
+host-power-on - Power on a host
+host-reboot - Reboot a host. 
+host-reset-cpu-features - Removes the feature mask of the host's physical CPU if any.
+host-restore - Upload a backup of the host's control domain. 
+host-retrieve-wlb-evacuate-recommendations - Retrieves recommended host migrations to perform when evacuating the host from the wlb server. 
+host-send-debug-keys - Send specified hypervisor debug keys to specified host
+host-set-cpu-features - Attempts to mask the host's physical-CPU features to match the given features. 
+host-set-power-on-mode - Sets the power-on mode for a host 
+host-shutdown - Shutdown a host. 
+host-shutdown-agent - Shut down the agent on the local host.
+host-sync-data - Synchronise the non-database data stored on the pool master with the specified host. 
+host-syslog-reconfigure - Reconfigure syslog daemon.
+log-get - Return the log currently stored in the string logger.
+log-get-keys - List the keys known by the logger.
+log-reopen - Reopen all loggers (use this for rotating files).
+log-set-output - Set all loggers to the specified output 
+message-create - Create a message associated with a particular API object.
+message-destroy - Destroy an existing message.
+message-list - List all the messages
+message-param-get - Get the message parameter specified 
+message-param-list - List all message parameters 
+network-create - Create a new network
+network-destroy - Delete an existing network
+network-list - List all networks 
+
+
+network-param-add - Adds to a set or map parameter. 
+network-param-clear - Clears the specified parameter
+network-param-get - Gets the parameter specified of the object. 
+network-param-list - Lists all the parameters of the object specified by the uuid.
+network-param-remove - Removes a member or a key,value pair from a set/map respectively.
+network-param-set - Sets the parameter specified.
+patch-apply - Apply the previously uploaded patch to the specified host.
+patch-clean - Delete a previously uploaded patch file.
+patch-destroy - Remove an unapplied patch record and files from the server.
+patch-list - Lists all the patches, filtering on the optional arguments. 
+patch-param-clear - Clears the specified parameter 
+patch-param-get - Gets the parameter specified of the object. 
+patch-param-list - Lists all the parameters of the object specified by the uuid.
+patch-pool-apply - Apply the previously uploaded patch to all hosts in the pool.
+patch-precheck - Run the prechecks contained within the patch previously uploaded to the specified host.
+patch-upload - Upload a patch file to the server.
+pbd-create - Create a PBD. The read-only device-config parameter can only be set on creation in the following manner. To
+pbd-destroy - Destroy the PBD.
+pbd-list - Lists all the pbds, filtering on the optional arguments. To filter on map parameters, use the syntax 'map-param
+pbd-param-add - Adds to a set or map parameter. 
+pbd-param-clear - Clears the specified parameter (param-name can be device-config,other-config).
+pbd-param-get - Gets the parameter specified of the object.
+pbd-param-list - Lists all the parameters of the object specified by the uuid.
+pbd-param-remove - Removes a member or a key,value pair from a set/map respectively.
+pbd-param-set - Sets the parameter specified. 
+pbd-plug - Attempt to plug in the PBD to the host. 
+pbd-unplug - Attempt to unplug the PBD from the host. 
+pif-forget - Destroy a PIF object on a particular host.
+pif-introduce - Create a new PIF object representing a physical interface on a host.
+pif-list - Lists all the pifs, 
+pif-param-add - Adds to a set or map parameter. 
+pif-param-clear - Clears the specified parameter 
+pif-param-get - Gets the parameter specified of the object. 
+pif-param-list - Lists all the parameters of the object specified by the uuid.
+pif-param-remove - Removes a member or a key,value pair from a set/map respectively.
+pif-param-set - Sets the parameter specified. 
+pif-plug - Attempt to bring up a network interface.
+pif-reconfigure-ip - Reconfigure the IP address settings on a PIF.
+pif-scan - Scan for new physical interfaces on a host.
+pif-unplug - Attempt to bring down a network interface.
+pool-certificate-install - Install an SSL certificate, pool-wide.
+pool-certificate-list - List all installed SSL certificates.
+pool-certificate-sync - Sync SSL certificates and certificate revocation lists from master to slaves.
+pool-certificate-uninstall - Uninstall an SSL certificate.
+pool-crl-install - Install an SSL certificate revocation list, pool-wide.
+pool-crl-list - List all installed SSL certificate revocation lists.
+pool-crl-uninstall - Uninstall an SSL certificate revocation list.
+pool-deconfigure-wlb - Permanently remove the configuration for workload balancing
+pool-designate-new-master - Request an orderly handover of the role of master to another host.
+pool-disable-external-auth - Disables external authentication in all the hosts in a pool
+pool-disable-local-storage-caching - Disable local storage caching across the pool
+pool-disable-redo-log - Disable the redo log if in use, unless HA is enabled.
+pool-dump-database - Download a dump of the pool database.
+pool-eject - Instruct host to leave an existing pool.
+pool-emergency-reset-master - Instruct slave to reset master address.
+pool-emergency-transition-to-master - Instruct slave to become pool master.
+pool-enable-external-auth - Enables external authentication in all the hosts in a pool. Note that some values of auth-type will require particular config
+pool-enable-local-storage-caching - Enable local storage caching across the pool
+pool-enable-redo-log - Enable the redo log on the given SR and start using it, unless HA is enabled.
+pool-ha-compute-hypothetical-max-host-failures-to-tolerate - Compute the maximum number of host failures to tolerate with the supplied, proposed protected VMs.
+pool-ha-compute-max-host-failures-to-tolerate - Compute the maximum number of host failures to tolerate under the current Pool configuration
+pool-ha-disable - Disable HA on this Pool.
+pool-ha-enable - Enable HA on this Pool.
+pool-initialize-wlb - Initialize workload balancing for the current pool with the target wlb server
+pool-join - Instruct host to join an existing pool.
+pool-list - Lists all the pools, 
+pool-param-add - Adds to a set or map parameter. 
+pool-param-clear - Clears the specified parameter 
+pool-param-get - Gets the parameter specified of the object. 
+pool-param-list - Lists all the parameters of the object specified by the uuid.
+pool-param-remove - Removes a member or a key,value pair from a set/map respectively.
+pool-param-set - Sets the parameter specified. 
+pool-recover-slaves - Instruct master to try and reset master-address of all slaves currently running in emergency mode.
+pool-restore-database - Restore a dump of the pool database to the server.
+pool-retrieve-wlb-configuration - Retrieves the pool optimization criteria from the workload balancing server
+pool-retrieve-wlb-diagnostics - 
+pool-retrieve-wlb-recommendations - Retrieves vm migrate recommendations for the pool from the workload balancing server
+pool-retrieve-wlb-report - 
+pool-send-test-post - Send the given body to the given host and port, using HTTPS, and print the response.  This is used for debugging the SSL layer.
+pool-send-wlb-configuration - Sets the pool optimization criteria for the workload balancing server
+pool-sync-database - Synchronise the current database across all hosts in the pool.
+pool-vlan-create - Create a new VLAN on each host in a pool.
+role-list - Lists all the roles, 
+role-param-get - Gets the parameter specified of the object. 
+role-param-list - Lists all the parameters of the object specified by the uuid.
+secret-create - Create a secret
+secret-destroy - Destroy a secret
+secret-list - Lists all the secrets, 
+secret-param-clear - Clears the specified parameter 
+secret-param-get - Gets the parameter specified of the object. 
+secret-param-set - Sets the parameter specified. 
+session-subject-identifier-list - Return a list of all the user subject ids of all externally-authenticated existing sessions
+session-subject-identifier-logout - Log out all externally-authenticated sessions associated to a user subject id
+session-subject-identifier-logout-all - Log out all externally-authenticated sessions
+sm-list - Lists all the sms, 
+sm-param-get - Gets the parameter specified of the object. 
+sm-param-list - Lists all the parameters of the object specified by the uuid.
+snapshot-clone - Create a new template by cloning an existing snapshot, using storage-level fast disk clone operation where available.
+snapshot-copy - Create a new template by copying an existing VM, but without using storage-level fast disk clone operation (even if this is available). The disk images of the copied VM are guaranteed to be 'full images' - i.e. not part of a CoW chain.
+snapshot-destroy - Destroy a snapshot. This leaves the storage associated with the snapshot intact. To delete storage too, use snapshot-uninstall.
+snapshot-disk-list - List the disks on the selected VM(s). 
+snapshot-export-to-template - Export a snapshot to <filename>.
+snapshot-list - Lists all the snapshots, 
+snapshot-param-add - Adds to a set or map parameter. 
+snapshot-param-clear - Clears the specified parameter 
+snapshot-param-get - Gets the parameter specified of the object. 
+snapshot-param-list - Lists all the parameters of the object specified by the uuid.
+snapshot-param-remove - Removes a member or a key,value pair from a set/map respectively.
+snapshot-param-set - Sets the parameter specified. 
+snapshot-reset-powerstate
+snapshot-revert - Revert an existing VM to a previous checkpointed or snapshotted state.
+snapshot-uninstall - Uninstall a snapshot. This operation will destroy those VDIs that are marked RW and connected to this snapshot only. To simply destroy the VM record, use snapshot-destroy.
+sr-create - Create an SR, also a PBD. the device-config parameters can be specified by e.g. device-config
+sr-destroy - Destroy the SR.
+sr-forget - Forget about the SR.
+sr-introduce - Introduces an SR (but does not create any PBDs).
+sr-list - Lists all the srs, 
+sr-param-add - Adds to a set or map parameter. 
+sr-param-clear - Clears the specified parameter 
+sr-param-get - Gets the parameter specified of the object. 
+sr-param-list - Lists all the parameters of the object specified by the uuid.
+sr-param-remove - Removes a member or a key,value pair from a set/map respectively.
+sr-param-set - Sets the parameter specified. 
+sr-probe - Perform a storage probe.  The device-config parameters can be specified by e.g. device-config
+sr-scan - Force an SR scan, syncing database with VDIs present in underlying storage substrate.
+sr-update - Refresh the fields of the SR object in the database.
+subject-add - Add a subject to the list of subjects that can access the pool
+subject-list - Lists all the subjects, 
+subject-param-clear - Clears the specified parameter 
+subject-param-get - Gets the parameter specified of the object. 
+subject-param-list - Lists all the parameters of the object specified by the uuid.
+subject-remove - Remove a subject from the list of subjects that can access the pool
+subject-role-add - Add a role to a subject
+subject-role-remove - Remove a role from a subject
+task-cancel - Set a task to cancelling and return.
+task-list - Lists all the tasks, 
+task-param-get - Gets the parameter specified of the object. 
+task-param-list - Lists all the parameters of the object specified by the uuid.
+template-export - Export a template to <filename>.
+template-list - Lists all the templates, 
+template-param-add - Adds to a set or map parameter. 
+template-param-clear - Clears the specified parameter 
+template-param-get - Gets the parameter specified of the object. 
+template-param-list - Lists all the parameters of the object specified by the uuid.
+template-param-remove - Removes a member or a key,value pair from a set/map respectively.
+template-param-set - Sets the parameter specified. 
+template-uninstall - Uninstall a custom template. This operation will destroy those VDIs that are marked as 'owned' by this template
+tunnel-create - Create a new tunnel on a host.
+tunnel-destroy - Destroy a tunnel.
+tunnel-list - Lists all the tunnels
+tunnel-param-add - Adds to a set or map parameter. 
+tunnel-param-clear - Clears the specified parameter 
+tunnel-param-get - Gets the parameter specified of the object. 
+tunnel-param-list - Lists all the parameters of the object specified by the uuid.
+tunnel-param-remove - Removes a member or a key,value pair from a set/map respectively.
+tunnel-param-set - Sets the parameter specified. 
+update-upload - Stream new update to the server.
+user-password-change - Change a user's login password.
+vbd-create - Create a VBD. Appropriate values for the device field are listed in the parameter 'allowed-VBD-devices' on the VM. If no VDI is specified, an empty VBD will be created. The type parameter can be 'Disk' or 'CD', and the mode is 'RO' or 'RW'.
+vbd-destroy - Destroy a VBD.
+vbd-eject - Remove the media from the drive represented by a VBD.
+vbd-insert - Insert new media into the drive represented by a VBD.
+vbd-list - Lists all the vbds, 
+vbd-param-add - Adds to a set or map parameter. 
+vbd-param-clear - Clears the specified parameter 
+vbd-param-get - Gets the parameter specified of the object. 
+vbd-param-list - Lists all the parameters of the object specified by the uuid.
+vbd-param-remove - Removes a member or a key,value pair from a set/map respectively.
+vbd-param-set - Sets the parameter specified. 
+vbd-plug - Attempt to attach the VBD while the VM is in the running state.
+vbd-unplug - Attempt to detach the VBD while the VM is in the running state. If the optional argument 'timeout=N' is given then the command will wait for up to 'N' seconds for the unplug to complete. If the optional argument 'force' is given and the device supports surprise removal then it will be immediately unplugged.
+vdi-clone - Clone a specified VDI.
+vdi-copy - Copy a VDI to a specified SR.
+vdi-create - Create a VDI. 
+vdi-destroy - Destroy a VDI.
+vdi-forget - Forget about a VDI.
+vdi-import - Import a raw VDI.
+vdi-introduce - Create a VDI object representing an existing disk.
+vdi-list - Lists all the vdis, 
+vdi-param-add - Adds to a set or map parameter. 
+vdi-param-clear - Clears the specified parameter 
+vdi-param-get - Gets the parameter specified of the object. 
+vdi-param-list - Lists all the parameters of the object specified by the uuid.
+vdi-param-remove - Removes a member or a key,value pair from a set/map respectively.
+vdi-param-set - Sets the parameter specified. 
+vdi-resize - Resize a VDI.
+vdi-snapshot - Snapshot a specified VDI.
+vdi-unlock - Attempt to unlock a VDI.
+vdi-update - Refresh the fields of the VDI object in the database.
+vif-create - Create a VIF. Appropriate values for the device are listed in the parameter 'allowed-VIF-devices' on the VM. If specified, the MAC parameter is of the form aa
+vif-destroy - Destroy a VIF.
+vif-list - Lists all the vifs, 
+vif-param-add - Adds to a set or map parameter. 
+vif-param-clear - Clears the specified parameter 
+vif-param-get - Gets the parameter specified of the object. 
+vif-param-list - Lists all the parameters of the object specified by the uuid.
+vif-param-remove - Removes a member or a key,value pair from a set/map respectively.
+vif-param-set - Sets the parameter specified. 
+vif-plug - Attempt to attach the VIF while the VM is in the running state.
+vif-unplug - Attempt to detach the VIF while the VM is in the running state.
+vlan-create - Create a new VLAN on a host.
+vlan-destroy - Destroy a VLAN.
+vlan-list - Lists all the vlans,
+vlan-param-get - Gets the parameter specified of the object
+vlan-param-list - Lists all the parameters of the object specified by the uuid.
+vm-cd-add - Add a CD to the VM(s). 
+vm-cd-eject - Eject a CD from the virtual CD drive. 
+vm-cd-insert - Insert a CD into the virtual CD drive. 
+vm-cd-list - List the CDs currently attached to the VM(s).
+vm-cd-remove - Remove the selected CDs from the VM(s). 
+vm-checkpoint - Checkpoint an existing VM, using storage-level fast disk snapshot operation where available. 
+vm-clone - Clone an existing VM, using storage-level fast disk clone operation where available. 
+vm-compute-maximum-memory - Compute the maximum amount of guest memory given the VM's configuration. 
+vm-compute-memory-overhead - Computes the virtualization memory overhead of a VM. 
+vm-copy - Copy an existing VM, but without using storage-level fast disk clone operation (even if this is available). 
+vm-copy-bios-strings - Copy the BIOS strings of the given host to the VM. 
+vm-crashdump-list - List crashdumps associated with the selected VM(s). 
+vm-data-source-forget - Stop recording the specified data source for a VM, and forget all of the recorded data. 
+vm-data-source-list - List the data sources that can be recorded for a VM. 
+vm-data-source-query - Query the last value read from a VM data source. 
+vm-data-source-record - Record the specified data source for a VM. 
+vm-destroy - Destroy a VM. This leaves the storage associated with the VM intact. To delete storage too, use vm-uninstall.
+vm-disk-add - Add a new disk to the selected VM(s). 
+vm-disk-list - List the disks on the selected VM(s). 
+vm-disk-remove - Remove a disk from the selected VM and destroy it. 
+vm-export - Export a VM to <filename>. 
+vm-import - Import a VM. 
+vm-install - Install a new VM from a template. 
+vm-is-bios-customized - Indicates whether the BIOS strings of the VM have been customized. 
+vm-list - Lists all the vms, 
+vm-memory-dynamic-range-set - Configure the dynamic memory range of a VM. 
+vm-memory-limits-set - Configure the memory limits of a VM. 
+vm-memory-shadow-multiplier-set - Set the shadow memory multiplier of a VM which may be running. 
+vm-memory-static-range-set - Configure the static memory range of a VM. 
+vm-memory-target-set - Set the memory target for a halted or running VM. 
+vm-migrate - Migrate the selected VM(s). 
+vm-param-add - Adds to a set or map parameter. 
+vm-param-clear - Clears the specified parameter 
+vm-param-get - Gets the parameter specified of the object. 
+vm-param-list - Lists all the parameters of the object specified by the uuid.
+vm-param-remove - Removes a member or a key,value pair from a set/map respectively.
+vm-param-set - Sets the parameter specified. 
+vm-pause - Pause a running VM. 
+vmpp-create - Create a new VM protection policy.
+vmpp-destroy - Destroy a VM protection policy.
+vmpp-list - Lists all the vmpps, 
+vmpp-param-add - Adds to a set or map parameter. 
+vmpp-param-clear - Clears the specified parameter 
+vmpp-param-get - Gvm-migrateets the parameter specified of the object. 
+vmpp-param-list - Lists all the parameters of the object specified by the uuid.
+vmpp-param-remove - Removes a member or a key,value pair from a set/map respectively.
+vmpp-param-set - Sets the parameter specified. 
+vm-reboot - Reboot the selected VM(s). 
+vm-reset-powerstate - Force the VM powerstate to halted in the management toolstack database only. 
+vm-resume - Resume the selected VM(s). 
+vm-retrieve-wlb-recommendations - Retrieve the workload balancing recommendations for the selected VM. 
+vm-shutdown - Shutdown the selected VM(s). The optional argument --force will forcibly shut down the VM. 
+vm-snapshot - Snapshot an existing VM, using storage-level fast disk snapshot operation where available. 
+vm-snapshot-with-quiesce - Snapshot an existing VM with quiesce, using storage-level fast disk snapshot operation where available. 
+vm-start - Start the selected VM(s). Where pooling is enabled, the host on which to start can be specified with the 'on' parameter that takes a uuid. 
+vm-suspend - Suspend the selected VM(s). 
+vm-uninstall - Uninstall a VM. This operation will destroy those VDIs that are marked RW and connected to this VM only. 
+vm-unpause - Unpause a paused VM. 
+vm-vcpu-hotplug - Dynamically adjust the number of VCPUs available to running VM. 
+vm-vif-list - List the VIFs presvm-start ent on selected VM. 
+
+
+
+
+SEE ALSO
+xe-audit-log-get
+xe-bond-create
+xe-bond-destroy
+xe-bond-list
+xe-bond-param-get
+xe-bond-param-list
+xe-cd-list
+xe-console-list
+xe-console-param-add
+xe-console-param-clear
+xe-console-param-get
+xe-console-param-list
+xe-console-param-remove
+xe-console-param-set
+xe-diagnostic-compact
+xe-diagnostic-db-log
+xe-diagnostic-db-stats
+xe-diagnostic-gc-stats
+xe-diagnostic-license-status
+xe-diagnostic-timing-stats
+xe-diagnostic-vdi-status
+xe-diagnostic-vm-status
+xe-event-wait
+xe-host-apply-edition
+xe-host-backup
+xe-host-bugreport-upload
+xe-host-call-plugin
+xe-host-compute-free-memory
+xe-host-compute-memory-overhead
+xe-host-cpu-info
+xe-host-cpu-list
+xe-host-cpu-param-get
+xe-host-cpu-param-list
+xe-host-crashdump-destroy
+xe-host-crashdump-list
+xe-host-crashdump-param-get
+xe-host-crashdump-param-list
+xe-host-crashdump-upload
+xe-host-data-source-forget
+xe-host-data-source-list
+xe-host-data-source-query
+xe-host-data-source-record
+xe-host-disable
+xe-host-disable-local-storage-caching
+xe-host-dmesg
+xe-host-emergency-ha-disable
+xe-host-emergency-management-reconfigure
+xe-host-enable
+xe-host-enable-local-storage-caching
+xe-host-evacuate
+xe-host-forget
+xe-host-get-cpu-features
+xe-host-get-server-certificate
+xe-host-get-system-status
+xe-host-get-system-status-capabilities
+xe-host-get-uncooperative-vms
+xe-host-get-vms-which-prevent-evacuation
+xe-host-is-in-emergency-mode
+xe-host-license-add
+xe-host-license-view
+xe-host-list
+xe-host-logs-download
+xe-host-management-disable
+xe-host-management-reconfigure
+xe-host-param-add
+xe-host-param-clear
+xe-host-param-get
+xe-host-param-list
+xe-host-param-remove
+xe-host-param-set
+xe-host-power-on
+xe-host-reboot
+xe-host-reset-cpu-features
+xe-host-restore
+xe-host-retrieve-wlb-evacuate-recommendations
+xe-host-send-debug-keys
+xe-host-set-cpu-features
+xe-host-set-hostname-live
+xe-host-set-power-on-mode
+xe-host-shutdown
+xe-host-shutdown-agent
+xe-host-sync-data
+xe-host-syslog-reconfigure
+xe-log-get
+xe-log-get-keys
+xe-log-reopen
+xe-log-set-output
+xe-message-create
+xe-message-destroy
+xe-message-list
+xe-message-param-get
+xe-message-param-list
+xe-network-create
+xe-network-destroy
+xe-network-list
+xe-network-param-add
+xe-network-param-clear
+xe-network-param-get
+xe-network-param-list
+xe-network-param-remove
+xe-network-param-set
+xe-patch-apply
+xe-patch-clean
+xe-patch-destroy
+xe-patch-list
+xe-patch-param-clear
+xe-patch-param-get
+xe-patch-param-list
+xe-patch-pool-apply
+xe-patch-precheck
+xe-patch-upload
+xe-pbd-create
+xe-pbd-destroy
+xe-pbd-list
+xe-pbd-param-add
+xe-pbd-param-clear
+xe-pbd-param-get
+xe-pbd-param-list
+xe-pbd-param-remove
+xe-pbd-param-set
+xe-pbd-plug
+xe-pbd-unplug
+xe-pif-forget
+xe-pif-introduce
+xe-pif-list
+xe-pif-param-add
+xe-pif-param-clear
+xe-pif-param-get
+xe-pif-param-list
+xe-pif-param-remove
+xe-pif-param-set
+xe-pif-plug
+xe-pif-reconfigure-ip
+xe-pif-scan
+xe-pif-unplug
+xe-pool-certificate-install
+xe-pool-certificate-list
+xe-pool-certificate-sync
+xe-pool-certificate-uninstall
+xe-pool-crl-install
+xe-pool-crl-list
+xe-pool-crl-uninstall
+xe-pool-deconfigure-wlb
+xe-pool-designate-new-master
+xe-pool-disable-external-auth
+xe-pool-disable-local-storage-caching
+xe-pool-disable-redo-log
+xe-pool-dump-database
+xe-pool-eject
+xe-pool-emergency-reset-master
+xe-pool-emergency-transition-to-master
+xe-pool-enable-external-auth
+xe-pool-enable-local-storage-caching
+xe-pool-enable-redo-log
+xe-pool-ha-compute-hypothetical-max-host-failures-to-tolerate
+xe-pool-ha-compute-max-host-failures-to-tolerate
+xe-pool-ha-disable
+xe-pool-ha-enable
+xe-pool-initialize-wlb
+xe-pool-join
+xe-pool-list
+xe-pool-param-add
+xe-pool-param-clear
+xe-pool-param-get
+xe-pool-param-list
+xe-pool-param-remove
+xe-pool-param-set
+xe-pool-recover-slaves
+xe-pool-restore-database
+xe-pool-retrieve-wlb-configuration
+xe-pool-retrieve-wlb-diagnostics
+xe-pool-retrieve-wlb-recommendations
+xe-pool-retrieve-wlb-report
+xe-pool-send-test-post
+xe-pool-send-wlb-configuration
+xe-pool-sync-database
+xe-pool-vlan-create
+xe-role-list
+xe-role-param-get
+xe-role-param-list
+xe-secret-create
+xe-secret-destroy
+xe-secret-list
+xe-secret-param-clear
+xe-secret-param-get
+xe-secret-param-list
+xe-secret-param-set
+xe-session-subject-identifier-list
+xe-session-subject-identifier-logout
+xe-session-subject-identifier-logout-all
+xe-sm-list
+xe-sm-param-get
+xe-sm-param-list
+xe-snapshot-clone
+xe-snapshot-copy
+xe-snapshot-destroy
+xe-snapshot-disk-list
+xe-snapshot-export-to-template
+xe-snapshot-list
+xe-snapshot-param-add
+xe-snapshot-param-clear
+xe-snapshot-param-get
+xe-snapshot-param-list
+xe-snapshot-param-remove
+xe-snapshot-param-set
+xe-snapshot-reset-powerstate
+xe-snapshot-revert
+xe-snapshot-uninstall
+xe-sr-create
+xe-sr-destroy
+xe-sr-forget
+xe-sr-introduce
+xe-sr-list
+xe-sr-param-add
+xe-sr-param-clear
+xe-sr-param-get
+xe-sr-param-list
+xe-sr-param-remove
+xe-sr-param-set
+xe-sr-probe
+xe-sr-scan
+xe-sr-update
+xe-subject-add
+xe-subject-list
+xe-subject-param-clear
+xe-subject-param-get
+xe-subject-param-list
+xe-subject-remove
+xe-subject-role-add
+xe-subject-role-remove
+xe-task-cancel
+xe-task-list
+xe-task-param-get
+xe-task-param-list
+xe-template-export
+xe-template-list
+xe-template-param-add
+xe-template-param-clear
+xe-template-param-get
+xe-template-param-list
+xe-template-param-remove
+xe-template-param-set
+xe-template-uninstall
+xe-tunnel-create
+xe-tunnel-destroy
+xe-tunnel-list
+xe-tunnel-param-add
+xe-tunnel-param-clear
+xe-tunnel-param-get
+xe-tunnel-param-list
+xe-tunnel-param-remove
+xe-tunnel-param-set
+xe-update-upload
+xe-user-password-change
+xe-vbd-create
+xe-vbd-destroy
+xe-vbd-eject
+xe-vbd-insert
+xe-vbd-list
+xe-vbd-param-add
+xe-vbd-param-clear
+xe-vbd-param-get
+xe-vbd-param-list
+xe-vbd-param-remove
+xe-vbd-param-set
+xe-vbd-plug
+xe-vbd-unplug
+xe-vdi-clone
+xe-vdi-copy
+xe-vdi-create
+xe-vdi-destroy
+xe-vdi-forget
+xe-vdi-import
+xe-vdi-introduce
+xe-vdi-list
+xe-vdi-param-add
+xe-vdi-param-clear
+xe-vdi-param-get
+xe-vdi-param-list
+xe-vdi-param-remove
+xe-vdi-param-set
+xe-vdi-resize
+xe-vdi-snapshot
+xe-vdi-unlock
+xe-vdi-update
+xe-vif-create
+xe-vif-destroy
+xe-vif-list
+xe-vif-param-add
+xe-vif-param-clear
+xe-vif-param-get
+xe-vif-param-list
+xe-vif-param-remove
+xe-vif-param-set
+xe-vif-plug
+xe-vif-unplug
+xe-vlan-create
+xe-vlan-destroy
+xe-vlan-list
+xe-vlan-param-get
+xe-vlan-param-list
+xe-vm-cd-add
+xe-vm-cd-eject
+xe-vm-cd-insert
+xe-vm-cd-list
+xe-vm-cd-remove
+xe-vm-checkpoint
+xe-vm-clone
+xe-vm-compute-maximum-memory
+xe-vm-compute-memory-overhead
+xe-vm-copy
+xe-vm-copy-bios-strings
+xe-vm-crashdump-list
+xe-vm-data-source-forget
+xe-vm-data-source-list
+xe-vm-data-source-query
+xe-vm-data-source-record
+xe-vm-destroy
+xe-vm-disk-add
+xe-vm-disk-list
+xe-vm-disk-remove
+xe-vm-export
+xe-vm-import
+xe-vm-install
+xe-vm-is-bios-customized
+xe-vm-list
+xe-vm-memory-dynamic-range-set
+xe-vm-memory-limits-set
+xe-vm-memory-shadow-multiplier-set
+xe-vm-memory-static-range-set
+xe-vm-memory-target-set
+xe-vm-migrate
+xe-vm-param-add
+xe-vm-param-clear
+xe-vm-param-get
+xe-vm-param-list
+xe-vm-param-remove
+xe-vm-param-set
+xe-vm-pause
+xe-vmpp-create
+xe-vmpp-destroy
+xe-vmpp-list
+xe-vmpp-param-add
+xe-vmpp-param-clear
+xe-vmpp-param-get
+xe-vmpp-param-list
+xe-vmpp-param-remove
+xe-vmpp-param-set
+xe-vm-reboot
+xe-vm-reset-powerstate
+xe-vm-resume
+xe-vm-retrieve-wlb-recommendations
+xe-vm-shutdown
+xe-vm-snapshot
+xe-vm-snapshot-with-quiesce
+xe-vm-start
+xe-vm-suspend
+xe-vm-uninstall
+xe-vm-unpause
+xe-vm-vcpu-hotplug
+xe-vm-vif-list
+
+
+
+AUTHORS
+
+Grant McWilliams
