@@ -8,7 +8,7 @@ network-param-remove.ad(1)
 NAME
 -----
 
-*xe network-param-remove* 
+*xe network-param-remove* - Remove a param-key from a network
 
 SYNOPSIS
 --------
@@ -18,12 +18,13 @@ SYNOPSIS
 DESCRIPTION
 -----------
 
-*xe network-param-remove* will remove a param-key value from a set/map parameter associated with a network found in a pool.
+*xe network-param-remove* will remove a param-key value from a set/map parameter assigned to a network found in a pool.
 
 PREREQUISITES
 -------------
 
-*xe network-param-list* uuid=<Network UUID> , *xe network-list* params=all will output parameters for networks found in a pool.
+*xe network-param-list* uuid=<Network UUID> - will output parameters for a specific network found in a pool
+*xe network-list* params="all" - will output parameters for networks found in a pool.
 
 REQUIRED PARAMETERS
 -------------------
@@ -40,10 +41,15 @@ REQUIRED PARAMETERS
 EXAMPLES
 --------
 
+To remove the param-key *other-config:ethtool-autoneg*: yes type,
+	*xe network-param-remove* uuid=<Network UUID> param-name=other-config param-key=ethool-autoneg
+
+
 
 SEE ALSO
 --------
 
+*xe-network-param-set*(1), *xe-network-list*(1), *xe-network-create*(1), *xe-network-param-list*(1), *xe-pif-list*(1), *xe-vif-list*(1)
 
 
 

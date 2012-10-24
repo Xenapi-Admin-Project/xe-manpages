@@ -8,7 +8,7 @@ xe-pif-param-get.ad(1)
 NAME
 ----
 
-*xe pif-param-get* Display a parameter for a specified PIF interface
+*xe pif-param-get* - Display a parameter for a specified PIF interface
 
 SYNOPSIS
 --------
@@ -18,7 +18,7 @@ SYNOPSIS
 DESCRIPTION
 -----------
 
-*xe pif-param-get* will return a single selected parameter from a specified PIF interface.
+*xe pif-param-get* will return a selected parameter from a specified PIF interface.
 
 PREREQUISITES
 -------------

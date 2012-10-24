@@ -1,4 +1,4 @@
-xe-vlan-destoy(1)
+xe-vlan-destroy(1)
 =======
 :doctype: manpage
 :man source:   xe 
@@ -8,7 +8,7 @@ xe-vlan-destoy(1)
 NAME
 ----
 
-*xe vlan-destoy* - Delete a VLAN from a Network
+*xe vlan-destroy* - Delete a VLAN from a Network
 
 SYNOPSIS
 --------
@@ -20,13 +20,14 @@ DESCRIPTION
 -----------
 
 *xe vlan-destroy* deletes a VLAN from a network and the pseudo PIF interface assigned to that VLAN. 
-You must disable any actives VIFs connected to the VLAN.
+Active VIF interfaces attached to the VLAN need to be disabled before deletion. 
 
 
 PREREQUISITES
 -------------
 
 *xe vlan-destroy* requires the UUID of the VLAN to be deleted. *xe vlan-list* will display the VLANs present in a pool.
+
 
 
 REQUIRED PARAMETERS
@@ -39,12 +40,12 @@ EXAMPLES
 --------
 
 To delete a VLAN, type;
-	xe vlan-destroy uuid=<VLAN UUID>
+	*xe vlan-destroy* uuid=<VLAN UUID>
 
 SEE ALSO
 --------
 
-*xe-vlan-list*(1), *xe-pool-vlan-create*(1), *xe-pif-list*(1)
+*xe-vlan-list*(1), *xe-pool-vlan-create*(1), *xe-pif-list*(1), *xe-vif-list*(1), *xe-vif-unplug*(1), *xe-vif-destroy*(1)
 
 AUTHORS
 -------

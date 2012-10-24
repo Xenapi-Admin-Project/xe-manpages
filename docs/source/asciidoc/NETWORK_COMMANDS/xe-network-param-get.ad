@@ -8,27 +8,36 @@ network-param-get.ad(1)
 NAME
 -----
 
-*xe network-param-get* 
+*xe network-param-get* - Display a parameter for a specified network.
 
 SYNOPSIS
 --------
 
-*xe network-param-get* uuid= param-name= param-key=
+*xe network-param-get* uuid=<Network UUID> param-name=<Parameter Name> 
+
+*xe network-param-get* uuid=<Network UUID> param-name=other-config param-key=<Key>
 
 DESCRIPTION
 -----------
 
+*xe network-param-get* will return a selected parameter from a specified network. 
 
 PREREQUISITES
 -------------
+
+*xe network-list* will display networks and their UUIDs present in a pool
 
 
 REQUIRED PARAMETERS
 -------------------
 
+*uuid*::
 
-OPTIONAL PARAMETERS
--------------------
+*param-name*::
+
+*param-key*::
+
+
 
 EXAMPLES
 --------
