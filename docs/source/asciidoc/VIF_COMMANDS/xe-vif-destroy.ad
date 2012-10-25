@@ -7,27 +7,30 @@ xe-vif-destroy.ad(1)
 
 NAME
 ----
-*xe vif-destroy* 
+*xe vif-destroy* - Destroy a VIF interface
 
 SYNOPSIS
 --------
-*xe vif-destroy* 
+
+*xe vif-destroy* uuid=<VIF UUID>
 
 
 DESCRIPTION
 -----------
 
+*xe vif-destroy* will destroy a VIF interface attached to a Virtual Machine
 
 PREREQUISITES
 -------------
+
+*xe vif-list* will display VIF interface present in a pool.
 
 
 REQUIRED PARAMETERS
 -------------------
 
-
-OPTIONAL PARAMETERS
--------------------
+*uuid*::
+	VIF Interface UUID
 
 EXAMPLES
 --------

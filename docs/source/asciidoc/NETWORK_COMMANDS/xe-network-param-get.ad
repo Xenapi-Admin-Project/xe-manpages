@@ -32,19 +32,31 @@ REQUIRED PARAMETERS
 -------------------
 
 *uuid*::
+	UUID of Network
 
 *param-name*::
-
+	Name of Parameter
+	
 *param-key*::
-
+	Parameter Key
 
 
 EXAMPLES
 --------
 
+To display the VIF-uuids attached to a network type,
+	*xe network-param-get* uuid=<Network UUID> param-name=VIF-uuids
+	
+To display the static-routes present on a network type,
+	*xe network-param-get* uuid=<Network UUID> param-name=other-config param-key=static-routes
+
+
+
 SEE ALSO
 --------
 
+*xe-network-list*(1), *xe-network-create*(1), *xe-network-param-list*(1), *xe-pif-list*(1), *xe-vif-list*(1)
+*xe-network-param-set*(1)
 
 
 

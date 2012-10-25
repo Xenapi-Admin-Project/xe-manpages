@@ -13,28 +13,40 @@ NAME
 SYNOPSIS
 --------
 
-*xe vif-create* vm-uuid= network-uuid= device=
+*xe vif-create* vm-uuid=<VM UUID> network-uuid=<Network UUID> device=<Ethernet Device Number>
 
 
 DESCRIPTION
 -----------
 
 
+
 PREREQUISITES
 -------------
 
+*xe vm-list* will display Virtual Machines present in your pool. *xe vif-list* will display VIF interfaces present in your pool.
+*xe network-list* will display networks present in your pool. 
 
 REQUIRED PARAMETERS
 -------------------
 
-v*m-uuid*::
+*vm-uuid*::
+	Virtual Machine UUID
 
 *network-uuid*::
+	Network UUID 
 
 *device*::
-
+	Machine-readable Interface Number
+	
+	
+	
 OPTIONAL PARAMETERS
 -------------------
+
+*mac*::
+	48-bit MAC Address
+
 
 EXAMPLES
 --------

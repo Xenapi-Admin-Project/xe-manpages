@@ -24,12 +24,12 @@ SYNOPSIS
 DESCRIPTION
 -----------
 
-*xe network-param-set* will allow you to set values of listed read/write parameters for a network found in a pool.
+*xe network-param-set* will set values of listed read/write parameters for a network found in a pool.
 
 PREREQUISITES
 -------------
 
-*xe network-list* params="all" - will display all networks and their parameters in a pool.
+*xe network-list* params="all" will display all networks and their parameters in a pool.
 
 REQUIRED PARAMETERS
 -------------------
@@ -81,6 +81,9 @@ EXAMPLES
 To create a static route that would route traffic from 192.168.1.0/24 to the gateway of 192.168.0.1 type,
 	*xe network-param-set* uuid=<Network UUID> other-config=static-routes=192.168.1.0/24/192.168.0.1 
 
+To change the MTU size for a network type,
+	*xe network-param-set* uuid=<Network UUID> MTU=<MTU Size>
+	
 
 SEE ALSO
 --------

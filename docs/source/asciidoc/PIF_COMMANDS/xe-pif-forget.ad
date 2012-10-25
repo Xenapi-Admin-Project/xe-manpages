@@ -17,7 +17,7 @@ SYNOPSIS
 DESCRIPTION
 -----------
 
-*xe pif-forget* will destroy a physical PIF object on a host. See *xe vlan-destroy* to erase a pseudo PIF assigned a VLAN.
+*xe pif-forget* will erase a physical PIF interface on a host. See *xe vlan-destroy* to erase a pseudo PIF interface assigned a VLAN.
 
 
 PREREQUISITES

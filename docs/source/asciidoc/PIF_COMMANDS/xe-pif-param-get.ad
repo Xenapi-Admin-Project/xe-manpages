@@ -13,7 +13,9 @@ NAME
 SYNOPSIS
 --------
 
-*xe pif-param-get*	uuid=<PIF uuid> param-name=<param name>
+*xe pif-param-get* uuid=<PIF UUID> param-name=<param name>
+
+*xe pif-param-get* uuid=<PIF UUID> param-name=other-config param-key=<Key>
 
 DESCRIPTION
 -----------
@@ -33,21 +35,17 @@ REQUIRED PARAMETERS
 	UUID of PIF interface
 
 *param-name*::
-	name of parameter
+	Name of Parameter
 
-
-OPTIONAL PARAMETERS
--------------------
-	
 *param-key*::
-
+	Parameter Key
 
 
 EXAMPLES
 --------
 
 To display the the management parameter for a PIF interface, type;
-	xe pif-param-get param-name=management uuid=405b52f6-6b6f-b182-9d96-b0ad9f098cf9 
+	*xe pif-param-get* uuid=<PIF UUID> param-name=management
 
 
 SEE ALSO

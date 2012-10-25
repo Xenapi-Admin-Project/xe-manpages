@@ -23,8 +23,8 @@ DESCRIPTION
 PREREQUISITES
 -------------
 
-*xe network-param-list* uuid=<Network UUID> - will output parameters for a specific network found in a pool
-*xe network-list* params="all" - will output parameters for networks found in a pool.
+*xe network-param-list* uuid=<Network UUID> will output parameters for a specific network found in a pool
+*xe network-list* params="all" will output parameters for networks found in a pool.
 
 REQUIRED PARAMETERS
 -------------------
@@ -41,7 +41,7 @@ REQUIRED PARAMETERS
 EXAMPLES
 --------
 
-To remove the param-key *other-config:ethtool-autoneg*: yes type,
+To remove the param-key *other-config:ethtool-autoneg*: "yes" type,
 	*xe network-param-remove* uuid=<Network UUID> param-name=other-config param-key=ethool-autoneg
 
 

@@ -11,7 +11,8 @@ NAME
 
 SYNOPSIS
 --------
-*xe vif-param-set* 
+
+*xe vif-param-set* uuid=<VIF UUID> other-config: qos_algorithm_type=  qos_algorithm_params:   #I NEED TO READ UP ON QOS :(#
 
 
 DESCRIPTION
@@ -25,9 +26,12 @@ PREREQUISITES
 REQUIRED PARAMETERS
 -------------------
 
+*uuid*::
 
-OPTIONAL PARAMETERS
--------------------
+*other-config*::
+
+
+
 
 EXAMPLES
 --------

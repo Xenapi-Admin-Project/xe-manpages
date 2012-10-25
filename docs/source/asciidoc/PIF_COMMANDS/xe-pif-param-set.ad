@@ -13,7 +13,7 @@ NAME
 SYNOPSIS
 --------
 
-*xe pif-param-set* uuid=<PIF UUID> [ disallow-unplug=<true | false> ] [ other-config:ethtool-speed=<10 | 100 | 1000 | 10000> ] [ other-config:ethtool-autoneg=<on | off> ]
+*xe pif-param-set* uuid=<PIF UUID> [ disallow-unplug=<true | false> ] [ other-config:ethtool-speed=<10 | 100 | 1000> ] [ other-config:ethtool-autoneg=<on | off> ]
 				[ other-config:ethtool-rx=<on | off> ] [ other-config:ethtool-tx=<on | off> ] [ other-config:ethtool-sg=<on | off> ] [ other-config:ethtool-tso=<on | off> ]
 				[ other-config:ethtool-ufo=<on | off> ] [ other-config:ethtool-gso=<on | off> ] [ other-config:domain=<DNS Suffix> ] [ other-config:bond-miimon= ]
 				[ other-config:bond-downdelay= ] [ other-config=bond-updelay= ]  
@@ -22,14 +22,14 @@ SYNOPSIS
 DESCRIPTION
 -----------
 
-*xe pif-param-set* will allow you to set values of read/write parameters for PIF interfaces fopund in a pool. Changes to the *other-config* fields of a PIF interface will
-only take effect after a reboot or as an alternitive you can use the *xe pif-unplug* and *xe pif-plug* commands to cause the PIF configuration to take effect. 
+*xe pif-param-set* will set values of read/write parameters for PIF interfaces found in a pool. Changes to the *other-config* fields of a PIF interface will
+only take effect after a reboot or use of *xe pif-unplug* and *xe pif-plug*.
 
 
 PREREQUISITES
 -------------
 
-*xe pif-list* and *xe pif-param-list* will output parameters and their values for a PIF interface in a pool.
+*xe pif-list* and *xe pif-param-list* will output UUIDs and parameters for PIF interfaces found in a pool.
 
 REQUIRED PARAMETERS
 -------------------
