@@ -8,7 +8,7 @@ network-param-set.ad(1)
 NAME
 -----
 
-*xe network-param-set* - Set specified parameters for a network. 
+*xe network-param-set* - Set network parameters
 
 SYNOPSIS
 --------
@@ -24,7 +24,7 @@ SYNOPSIS
 DESCRIPTION
 -----------
 
-*xe network-param-set* will set values of listed read/write parameters for a network found in a pool.
+*xe network-param-set* will set values of read/write parameters for a network.
 
 PREREQUISITES
 -------------

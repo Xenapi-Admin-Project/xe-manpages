@@ -11,7 +11,7 @@ NAME
 
 SYNOPSIS
 --------
-*xe vif-param-clear* 
+*xe vif-param-clear* uuid=<VIF UUID> param-name=<Param UUID>
 
 
 DESCRIPTION
@@ -21,13 +21,21 @@ DESCRIPTION
 PREREQUISITES
 -------------
 
+*xe vif-list* will display VIF interfaces and their parameters. 
+
+
 
 REQUIRED PARAMETERS
 -------------------
 
 
-OPTIONAL PARAMETERS
--------------------
+*uuid*::
+	VIF Interface UUID
+
+*param-name*::
+	#Parameter to have its value clear#
+
+
 
 EXAMPLES
 --------

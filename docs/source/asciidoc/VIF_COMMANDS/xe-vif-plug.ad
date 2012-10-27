@@ -28,15 +28,18 @@ PREREQUISITES
 REQUIRED PARAMETERS
 -------------------
 
-
+*uuid*::
+	VIF Interface UUID
 
 
 EXAMPLES
 --------
 
+
 SEE ALSO
 --------
 
+*xe-vif-list*(1), *xe-vif-unplug*(1), *xe-vif-create*(1), *xe-vif-destroy*, *xe-vm-list*(1), *xe-network-list*(1)
 
 
 

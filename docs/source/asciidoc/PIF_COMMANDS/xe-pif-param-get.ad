@@ -15,7 +15,7 @@ SYNOPSIS
 
 *xe pif-param-get* uuid=<PIF UUID> param-name=<param name>
 
-*xe pif-param-get* uuid=<PIF UUID> param-name=other-config param-key=<Key>
+*xe pif-param-get* uuid=<PIF UUID> param-name=other-config [ param-key=<Key> ]
 
 DESCRIPTION
 -----------
@@ -35,10 +35,16 @@ REQUIRED PARAMETERS
 	UUID of PIF interface
 
 *param-name*::
-	Name of Parameter
+	Name of PIF interface parameter 
+
+
+OPTIONAL PARAMETERS
+-------------------
 
 *param-key*::
-	Parameter Key
+	Name of key in other-config parameter 
+
+
 
 
 EXAMPLES
