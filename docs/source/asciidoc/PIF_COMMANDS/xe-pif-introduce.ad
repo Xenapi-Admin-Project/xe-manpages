@@ -7,7 +7,7 @@ xe-pif-introduce(1)
 
 NAME
 -----
-*xe pif-introduce* - Create a new PIF object
+*xe pif-introduce* - Create a new PIF interface
 
 SYNOPSIS
 --------
@@ -18,26 +18,18 @@ SYNOPSIS
 DESCRIPTION
 -----------
 
-*xe pif-introduce* create a new PIF object assoicated with a physical device found on the specified host. PIF object will inherit the 
+*xe pif-introduce* create a new PIF interface associated with a physical device found on the specified host. The PIF interface will inherit the 
 MAC address of the physical device unless specified. The resulting PIF UUID is returned. 
-
-
-PREREQUISITES
--------------
-
-Use *xe host-list* to obtain a list host UUIDs in a pool. 
-Also use *ifconfig* -a on your control domain will list devices present on the host.
-*xe pif-list* will output PIFs present in a pool and their parameters.
 
 
 REQUIRED PARAMETERS
 -------------------
 
 *host-uuid*::
-	UUID of host
+	UUID of host - Use *xe host-list* to obtain a list of host UUIDs.
 
 *device*::
-	physical network device (for example: eth0)
+	physical network device (e.g. eth0) - Use *ifconfig -a* on your control domain to list network devices present on the host.
 
 OPTIONAL PARAMETERS
 -------------------
@@ -49,7 +41,7 @@ OPTIONAL PARAMETERS
 SEE ALSO
 --------
 
-*xe-pif-list*(1), *xe-pif-scan*(1), *xe-pif-forget*(1)
+*xe-pif-list*(1), *xe-pif-scan*(1), *xe-pif-forget*(1), *xe-host-list*(1), *ifconfig*(1), *xe-network-list*(1)
 
 AUTHORS
 -------
@@ -58,8 +50,8 @@ Matthew Spah <spahmatthew@gmail.com>
 
 COPYRIGHT
 ---------
-Copyright \(C) 1995-2003 Jens Schweikhardt + 
-Copyright \(C) 2006 Daniel Leidert
+Copyright \(C) 2012 - Matthew Spah
+
 
 The Howto containing this example, was offered under the following conditions:
 
@@ -70,10 +62,6 @@ met:
 . Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
 . Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
 
-
-.List
-.  Item one
-.  Item two
 
 
 THIS SOFTWARE IS PROVIDED BY THE AUTHOR "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED

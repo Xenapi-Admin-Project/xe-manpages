@@ -6,7 +6,7 @@ xe-pif-forget(1)
 :man manual:   xe manual
 
 NAME
------
+----
 *xe pif-forget*
 
 SYNOPSIS
@@ -20,21 +20,16 @@ DESCRIPTION
 *xe pif-forget* will erase a physical PIF interface on a host. See *xe vlan-destroy* to erase a pseudo PIF interface assigned a VLAN.
 
 
-PREREQUISITES
--------------
-
-*xe pif-list* will output PIFs present in a pool and their parameters.
-
 REQUIRED PARAMETERS
 -------------------
 
 *uuid*::
-	UUID of PIF device
+	UUID of PIF interface - *xe pif-list* will output PIF interfaces and their parameters.
 	
 
 SEE ALSO
 --------
-*xe-pif-list*(1), *xe-pif-introduce*(1), *xe-vlan-destroy*(1)
+*xe-pif-list*(1), *xe-pif-introduce*(1), *xe-vlan-destroy*(1) #add more retard
 
 
 AUTHORS

@@ -26,11 +26,6 @@ DESCRIPTION
 *xe pif-reconfigure-ip* will change network addressing parameters for the specified PIF interface. 
 
 
-PREREQUISITES
--------------
-
-*xe pif-list* will output PIF interfaces present in a pool and their parameters.
-
 REQUIRED PARAMETERS
 -------------------
 
@@ -52,7 +47,7 @@ OPTIONAL PARAMETERS
 -------------------
 
 *DNS*::
-	Name server addresses. When configuring multiple name servers use a comma as a field seperater.
+	Name server addresses. When configuring multiple name servers use a comma as a field separator.
 
 *gateway*::
 	Gateway address
@@ -70,7 +65,7 @@ To set a PIF interface with a static IP address configuration type,
 
 SEE ALSO
 --------
-*xe-pif-list*(1), *xe-pif-introduce*(1), *xe-pif-forget*(1), *xe-pif-list*(1), *xe-pif-plug*(1), *xe-pif-unplug*(1)
+*xe-pif-list*(1), *xe-pif-introduce*(1), *xe-pif-forget*(1), *xe-pif-list*(1), *xe-pif-plug*(1), *xe-pif-unplug*(1), *xe-network-list*(1)
 
 
 
@@ -83,8 +78,7 @@ Matthew Spah <spahmatthew@gmail.com>
 
 COPYRIGHT
 ---------
-Copyright \(C) 1995-2003 Jens Schweikhardt + 
-Copyright \(C) 2006 Daniel Leidert
+Copyright \(C) 2012 - Matthew Spah
 
 The Howto containing this example, was offered under the following conditions:
 
@@ -96,9 +90,6 @@ met:
 . Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
 
 
-.List
-.  Item one
-.  Item two
 
 
 THIS SOFTWARE IS PROVIDED BY THE AUTHOR "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED

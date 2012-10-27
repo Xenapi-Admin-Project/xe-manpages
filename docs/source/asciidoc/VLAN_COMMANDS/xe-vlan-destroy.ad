@@ -23,10 +23,6 @@ DESCRIPTION
 Active VIF interfaces attached to the VLAN need to be disabled before deletion. 
 
 
-PREREQUISITES
--------------
-
-*xe vlan-destroy* requires the UUID of the VLAN to be deleted. *xe vlan-list* will display the VLANs present in a pool.
 
 
 
@@ -34,7 +30,7 @@ REQUIRED PARAMETERS
 -------------------
 
 *uuid*::
-    UUID of the VLAN to delete 
+    UUID of the VLAN to delete - *xe vlan-list* will display the VLAN UUIDs present. 
 
 EXAMPLES
 --------
