@@ -190,13 +190,17 @@ fsort_arrays()
 # Set ${XE} variable to include server, username and password 
 getpoolcreds()
 {
-	XE="xe"
-	# Check to see if there's a local password file
+	# Check to see if there's a local config file 
+	# File format  POOLMASTER="hostname" \n PORT="port" \n USERNAME="username" \n PASSWORD="password"
 	if [[ "$REMOTE" = "yes" ]] ;then
-		if [[ -e "$SCRIPTDIR/.xeconfig" ]] ;then
-			PERMS=$(stat -c '%a' "$SCRIPTDIR/.xetoolsconfig")
-			if [[ "$PERMS" =~ "[4-7]00" ]] ;then
-				source "$SCRIPTDIR/.xetoolsconfig"
+		if [[ -d "$SCRIPTDIR/.XECONFIGS" ]] ;then
+			PERMS=$(stat -c '%a' "$SCRIPTDIR/.XECONFIGS")
+			if [[ "$PERMS" =~ "[5-7]00" ]] ;then
+				select POOLHOST in $(awk -F= '/POOLMASTER/{print $2}' $SCRIPTDIR/.XECONFIG/*.cfg | sed 's/\"//g') ;do
+					XECONF=$(grep "$POOLHOST" $SCRIPTDIR/.XECONFIG/*.cfg | awk -F: '{print $1}')
+					source "$XECONF"
+					break ;
+				done
 			else
 				cecho "Warning: " red 
 				echo "Permissions allow other users to read $SCRIPTDIR/.xetoolsconfig" 
@@ -208,13 +212,17 @@ getpoolcreds()
 			echo "Enter the remote poolmaster ip or hostname"
 			read -s POOLMASTER
 		fi
+		if [[ -z "$PORT" ]] ;then
+			echo "Enter the remote poolmaster port number [default 443]"
+			read -s PORT
+		fi
 		if [[ -z "$PASSWORD" ]] ;then
 			echo "Enter the remote poolmaster admin password"
 			read -s PASSWORD
 		fi
-		
-		XE="${XE} -s ${POOLMASTER} -u root -pw ${PASSWORD}"
+		export XE_EXTRA_ARGS="server=${POOLMASTER},port=${PORT},username=${USERNAME},password=${PASSWORD}"
 	fi
+	
 }	
 
 # Show a select menu by passing multiple arrays, return UUID. Only pass ONE array holding UUID

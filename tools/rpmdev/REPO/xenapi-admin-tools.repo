@@ -1,0 +1,5 @@
+[xenapi-admin-tools]
+name=CentOS-$releasever - Xenapi Admin Tools
+baseurl=https://github.com/grantmcwilliams/xenapi-admin-tools
+gpgcheck=0
+
