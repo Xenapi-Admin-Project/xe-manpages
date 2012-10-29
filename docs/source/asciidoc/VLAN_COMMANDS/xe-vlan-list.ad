@@ -15,13 +15,13 @@ SYNOPSIS
 
 *xe vlan-list*
 
-*xe vlan-list* [ params=<params> ] [ tag=<vlan id> ] [ tagged-PIF=<tagged-PIF UUID> ] [ untagged-PIF=<untagged-PIF UUID> ]  [ uuid=<vlan UUID> ]
+*xe vlan-list* [ params=<parameterss> ] [ tag=<VLAN id> ] [ tagged-PIF=<PIF UUID> ] [ untagged-PIF=<PIF UUID> ]  [ uuid=<VLAN UUID> ]
 
 
 DESCRIPTION
 -----------
 
-*xe vlan-list* lists VLANs present in a pool along with several other attributes. The UUID is a reference to the VLANs UUID, 
+*xe vlan-list* display VLANs present in a pool along with several other attributes. The UUID is a reference to the VLANs UUID, 
 the tagged-PIF object references the Physical PIF leading out to the external network, the untagged-PIF references the pseudo PIF connected to the internal network, 
 and the tag is the VLAN ID number for the listed VLAN. Citrix also recommends using *xe pif-list* to list VLANs.
 
@@ -30,49 +30,33 @@ OPTIONAL PARAMETERS
 -------------------
 
 *params*::
-	This option allows you to specificy which parameters to output (for example params=tagged-pif)
+	Parameters to display
        
-<<<<<<< .mine
-*tag*::      
-=======
 *tag*::
 	VLAN ID 0 to 4094          
->>>>>>> .r86
 
 *tagged-PIF*::
-	The physical PIF object assigned to the VLAN that connects to the 802.1Q port.
-
-*untagged-PIF*::  
-	The pseudo PIF objected connected to the internal network of the VLAN.
+	The physical PIF interface UUID connected to the VLAN. 802.1Q Tagging occurs on this interface
 	
-<<<<<<< .mine
-*uuid*:: 
-=======
-*uuid*::
-	VLAN uuid.
->>>>>>> .r86
+*untagged-PIF*::  
+	The pseudo PIF interface connected to the VLAN.
+	
 
 EXAMPLES
 --------
 
 
+To display only the tagged-PIF and tag parameters for VLANs type,
+	*xe vlan-list* params=tag,tagged-PIF
 
-<<<<<<< .mine
-
-
-=======
->>>>>>> .r86
 SEE ALSO
 --------
-*xe-pool-vlan-create*(1), *xe-vlan-destroy*(1), *xe-pif-list*(1)
->>>>>>> .r86
+
+*xe-pool-vlan-create*(1), *xe-pif-list*(1), *xe-vlan-destroy*(1), *xe-network-list*(1)
 
 
 AUTHORS
 -------
-<<<<<<< .mine
-Matthew Spah <spahmatthew@gmail.com>::
-=======
 Matthew Spah <spahmatthew@gmail.com>
 
 
@@ -80,22 +64,12 @@ Matthew Spah <spahmatthew@gmail.com>
 
 COPYRIGHT
 ---------
-Copyright \(C) 1995-2003 Jens Schweikhardt + 
-Copyright \(C) 2006 Daniel Leidert
+Copyright \(C) 2012 - Matthew Spah
 
 The Howto containing this example, was offered under the following conditions:
 
 Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are
 met:
-
-[options="compact"]
-. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
-. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
-
-
-.List
-.  Item one
-.  Item two
 
 
 THIS SOFTWARE IS PROVIDED BY THE AUTHOR "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED

@@ -22,20 +22,16 @@ SYNOPSIS
 DESCRIPTION
 -----------
 
-*xe pif-param-set* will set values of read/write parameters for PIF interfaces found in a pool. Changes to the *other-config* fields of a PIF interface will
+*xe pif-param-set* will set values of read/write parameters for PIF interfaces. Changes to the *other-config* fields of a PIF interface will
 only take effect after a reboot or use of *xe pif-unplug* and *xe pif-plug*.
 
 
-PREREQUISITES
--------------
-
-*xe pif-list* and *xe pif-param-list* will output UUIDs and parameters for PIF interfaces found in a pool.
 
 REQUIRED PARAMETERS
 -------------------
 
 *uuid*::
-	UUID of PIF interface
+	UUID of PIF interface - *xe pif-list* and *xe pif-param-list* will output parameters for PIF interfaces.
 
 
 OPTIONAL PARAMETERS
@@ -109,8 +105,7 @@ Matthew Spah <spahmatthew@gmail.com>
 
 COPYRIGHT
 ---------
-Copyright \(C) 1995-2003 Jens Schweikhardt + 
-Copyright \(C) 2006 Daniel Leidert
+Copyright \(C) 2012 - Matthew Spah
 
 The Howto containing this example, was offered under the following conditions:
 
@@ -120,11 +115,6 @@ met:
 [options="compact"]
 . Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
 . Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
-
-
-.List
-.  Item one
-.  Item two
 
 
 THIS SOFTWARE IS PROVIDED BY THE AUTHOR "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED

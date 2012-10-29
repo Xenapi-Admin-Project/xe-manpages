@@ -8,7 +8,7 @@ xe-vlan-destroy(1)
 NAME
 ----
 
-*xe vlan-destroy* - Delete a VLAN from a Network
+*xe vlan-destroy* - Delete a VLAN from a network
 
 SYNOPSIS
 --------
@@ -21,8 +21,6 @@ DESCRIPTION
 
 *xe vlan-destroy* deletes a VLAN from a network and the pseudo PIF interface assigned to that VLAN. 
 Active VIF interfaces attached to the VLAN need to be disabled before deletion. 
-
-
 
 
 

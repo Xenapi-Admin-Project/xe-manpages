@@ -17,7 +17,7 @@ SYNOPSIS
 DESCRIPTION
 -----------
 
-*xe pif-forget* will erase a physical PIF interface on a host. See *xe vlan-destroy* to erase a pseudo PIF interface assigned a VLAN.
+*xe pif-forget* will erase a physical PIF interface on a host. See *xe vlan-destroy* to erase a pseudo PIF interface connected to a VLAN.
 
 
 REQUIRED PARAMETERS
@@ -29,7 +29,7 @@ REQUIRED PARAMETERS
 
 SEE ALSO
 --------
-*xe-pif-list*(1), *xe-pif-introduce*(1), *xe-vlan-destroy*(1) #add more retard
+*xe-pif-list*(1), *xe-pif-introduce*(1), *xe-vlan-destroy*(1), *xe-pif-plug*(1), *xe-pif-unplug*(1)
 
 
 AUTHORS
@@ -40,8 +40,7 @@ Matthew Spah <spahmatthew@gmail.com>::
 
 COPYRIGHT
 ---------
-Copyright \(C) 1995-2003 Jens Schweikhardt + 
-Copyright \(C) 2006 Daniel Leidert
+Copyright \(C) 2012 - Matthew Spah
 
 The Howto containing this example, was offered under the following conditions:
 
@@ -52,10 +51,6 @@ met:
 . Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
 . Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
 
-
-.List
-.  Item one
-.  Item two
 
 
 THIS SOFTWARE IS PROVIDED BY THE AUTHOR "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED

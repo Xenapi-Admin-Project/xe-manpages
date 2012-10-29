@@ -22,17 +22,13 @@ DESCRIPTION
 
 *xe pif-param-get* will return a selected parameter from a specified PIF interface.
 
-PREREQUISITES
--------------
-
-*xe pif-list* will output PIFs present in a pool and their parameters.
-
 
 REQUIRED PARAMETERS
 -------------------
 
 *uuid*::
-	UUID of PIF interface
+	UUID of PIF interface *xe pif-list* and *xe pif-param-list* will display parameters for PIF interfaces.
+
 
 *param-name*::
 	Name of PIF interface parameter 
@@ -70,8 +66,7 @@ Matthew Spah <spahmatthew@gmail.com>
 
 COPYRIGHT
 ---------
-Copyright \(C) 1995-2003 Jens Schweikhardt + 
-Copyright \(C) 2006 Daniel Leidert
+Copyright \(C) 2012 - Matthew Spah
 
 The Howto containing this example, was offered under the following conditions:
 
@@ -83,9 +78,6 @@ met:
 . Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
 
 
-.List
-.  Item one
-.  Item two
 
 
 THIS SOFTWARE IS PROVIDED BY THE AUTHOR "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED

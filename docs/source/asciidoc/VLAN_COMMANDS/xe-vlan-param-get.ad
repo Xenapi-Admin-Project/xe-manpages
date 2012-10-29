@@ -6,29 +6,26 @@ xe-vlan-param-get.ad(1)
 :man manual:   xe manual
 
 NAME
------
+----
+
 *xe vlan-param-get* Display a parameter for specified VLAN
 
 SYNOPSIS
 --------
 
-*xe vlan-param-get* param-name=<param name> uuid=<vlan uuid> [ param-key=<I don't know what this does> ]
+*xe vlan-param-get* param-name=<Parameter Name> uuid=<VLAN UUID> [ param-key=<Key> ]
 
 DESCRIPTION
 -----------
 
 *xe vlan-param-get* will return a single selected parameter from a specified VLAN
 
-PREREQUISITES
--------------
-
-*xe vlan-list* will output VLANs present in a pool and their parameters.
 
 REQUIRED PARAMETERS
 -------------------
 
 *uuid*::
-	UUID of specified VLAN
+	UUID of VLAN - *xe vlan-list* lists all VLANs present in a pool.
 
 *param-name*::
 	 Parameter to output 
@@ -37,46 +34,39 @@ OPTIONAL PARAMETERS
 -------------------
 
 *param-key*::
+
+
     
 EXAMPLES
 --------
 
 To display the tagged-PIF parameter for a VLAN, type;
-	*xe vlan-param-get* uuid=14543069-fab2-720c-52c0-7cd5097ced31  param-name=tagged-PIF  
+	*xe vlan-param-get* uuid=<VLAN UUID> param-name=tagged-PIF  
 
 
 
 SEE ALSO
 --------
 
-*xe-vlan-param-list*(1), *xe-vlan-list*(1), *xe-pif-list*(1)
+*xe-vlan-param-list*(1), *xe-vlan-list*(1), *xe-pif-list*(1), *xe-pool-vlan-create*(1), *xe-network-list*(1)
 
 
 AUTHORS
 -------
-Matthew Spah <spahmatthew@gmail.com>::
-Template for manpages written by Matthew Spah
+Matthew Spah <spahmatthew@gmail.com>
 
 
 
 COPYRIGHT
 ---------
-Copyright \(C) 1995-2003 Jens Schweikhardt + 
-Copyright \(C) 2006 Daniel Leidert
+Copyright \(C) 2012 - Matthew Spah 
+
 
 The Howto containing this example, was offered under the following conditions:
 
 Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are
 met:
 
-[options="compact"]
-. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
-. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
-
-
-.List
-.  Item one
-.  Item two
 
 
 THIS SOFTWARE IS PROVIDED BY THE AUTHOR "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED

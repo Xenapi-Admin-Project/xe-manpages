@@ -13,30 +13,26 @@ NAME
 SYNOPSIS
 --------
 
-*xe pif-param-remove* uuid=<PIF UUID> param-name=other-config param-key=<paramter name>
+*xe pif-param-remove* uuid=<PIF UUID> param-name=other-config param-key=<Ley name>
+
 
 DESCRIPTION
 -----------
 
-*xe pif-param-remove* will remove a param-key value from a set/map parameter associated with a PIF interface found in a pool.
+*xe pif-param-remove* will remove a param-key value from a set/map parameter assigned to a PIF interface.
 
-
-PREREQUISITES
--------------
-
-*xe pif-list* and *xe pif-param-list* will output parameters and their values for PIF interfaces.
 
 REQUIRED PARAMETERS
 -------------------
 
 *uuid*::
-	UUID of PIF interface
+	UUID of PIF interface - *xe pif-list* and *xe pif-param-list* will output parameters for PIF interfaces.
 
 *param-name*::
-	other-config
+	Paramter that contains param-keys. (e.g. other-config)
 
 *param-key*::
-	Read/Write parameters for PIF interface
+	Read/Write keys for PIF interface
 
 EXAMPLES
 --------

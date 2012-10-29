@@ -8,28 +8,24 @@ xe-pif-plug.ad(1)
 NAME
 ----
 
-*xe pif-plug* - Bring up a PIF object
+*xe pif-plug* - Bring up a PIF interface.
 
 SYNOPSIS
 --------
 
-*xe pif-plug* uuid=<pif uuid>
+*xe pif-plug* uuid=<PIF UUID>
 
 DESCRIPTION
 -----------
 
-*xe pif-plug* will bring up a specified PIF object
+*xe pif-plug* will bring up a specified PIF interface.
 
-PREREQUISITES
--------------
-
-*xe pif-list* will output PIFs present in a pool and their parameters.
 
 REQUIRED PARAMETERS
 -------------------
 
 *uuid*::
-	UUID of PIF interface
+	UUID of PIF interface - *xe pif-list* will output PIF interfaces present in a pool.
 
 
 EXAMPLES
@@ -38,15 +34,14 @@ EXAMPLES
 xe pif-list will show an unplugged pif as *currently-attached ( RO): false*.
 xe pif-list will show a plugged pif as *currently-attached ( RO): true*.
 
-To plug in an unplugged pif with uuid d6095aed-24c4-ea15-f231-0c1eebe19f5f do
-
-	xe pif-plug uuid=d6095aed-24c4-ea15-f231-0c1eebe19f5f 
+To plug in a PIF interface type,
+	*xe pif-plug* uuid=<PIF UUID>
 	
 
 SEE ALSO
 --------
 
-*xe-pif-scan*(1), *xe-pif-list*(1), *xe-pif-unplug*(1) 
+*xe-pif-scan*(1), *xe-pif-list*(1), *xe-pif-unplug*(1) , *xe-pif-param-set*(1), *xe-pif-reconfigure-ip*(1), *xe-network-list*(1)
 
 
 AUTHORS
@@ -58,8 +53,7 @@ Matthew Spah <spahmatthew@gmail.com>
 
 COPYRIGHT
 ---------
-Copyright \(C) 1995-2003 Jens Schweikhardt + 
-Copyright \(C) 2006 Daniel Leidert
+Copyright \(C) 2012 - Matthew Spah
 
 The Howto containing this example, was offered under the following conditions:
 
@@ -69,11 +63,6 @@ met:
 [options="compact"]
 . Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
 . Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
-
-
-.List
-.  Item one
-.  Item two
 
 
 THIS SOFTWARE IS PROVIDED BY THE AUTHOR "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED

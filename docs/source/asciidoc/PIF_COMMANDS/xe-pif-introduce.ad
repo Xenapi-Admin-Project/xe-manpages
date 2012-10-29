@@ -12,13 +12,13 @@ NAME
 SYNOPSIS
 --------
 
-*xe pif-introduce* host-uuid=<host uuid> device=<network device> [ mac=<mac address> ] 
+*xe pif-introduce* host-uuid=<Host UUID> device=<Network Device> [ mac=<Mac Address> ] 
 
 
 DESCRIPTION
 -----------
 
-*xe pif-introduce* create a new PIF interface associated with a physical device found on the specified host. The PIF interface will inherit the 
+*xe pif-introduce* creates a new PIF interface associated with a network device found on the specified host. The PIF interface will inherit the 
 MAC address of the physical device unless specified. The resulting PIF UUID is returned. 
 
 

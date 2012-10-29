@@ -6,10 +6,9 @@ xe-pif-unplug.ad(1)
 :man manual:   xe manual
 
 NAME
------
+----
 
-*xe pif-unplug*  - bring down a PIF object
-
+*xe pif-unplug*  - bring down a PIF interface
 
 SYNOPSIS
 --------
@@ -19,22 +18,22 @@ SYNOPSIS
 DESCRIPTION
 -----------
 
-*xe pif-unplug* will bring down a specified PIF object on a host if allowed. 
-
-PREREQUISITES
--------------
-
-*xe pif-list* will output PIFs present in a pool and their parameters.
-
+*xe pif-unplug* will bring down a specified PIF interface on a host if allowed. 
 
 REQUIRED PARAMETERS
 -------------------
 
 *uuid*::
-	UUID of PIF object
+	UUID of PIF interface - *xe pif-list* will output PIF interfaces present in a pool.
 
 EXAMPLES
 --------
+
+xe pif-list will show an unplugged pif as *currently-attached ( RO): false*.
+xe pif-list will show a plugged pif as *currently-attached ( RO): true*.
+
+To see if you can unplug a PIF interface type, 
+	*xe pif-param-get* uuid=<PIF UUID> param-name=disallow-unplug 
 
 To unplug a PIF interface type,
 	*xe pif-unplug* uuid=<PIF UUID>
@@ -42,7 +41,8 @@ To unplug a PIF interface type,
 SEE ALSO
 --------
 
-*xe-pif-scan*(1), *xe-pif-list*(1), *xe-pif-plug*(1) 
+*xe-pif-scan*(1), *xe-pif-list*(1), *xe-pif-plug*(1), *xe-pif-param-set*(1), *xe-pif-param-list*(1), 
+*xe-pif-reconfigure-ip*(1), *xe-pif-param-get*(1), *xe-network-list*(1)
 
 AUTHORS
 -------
@@ -50,11 +50,9 @@ Matthew Spah <spahmatthew@gmail.com>
 
 
 
-
 COPYRIGHT
 ---------
-Copyright \(C) 1995-2003 Jens Schweikhardt + 
-Copyright \(C) 2006 Daniel Leidert
+Copyright \(C) 2012 - Matthew Spah
 
 The Howto containing this example, was offered under the following conditions:
 
@@ -64,11 +62,6 @@ met:
 [options="compact"]
 . Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
 . Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
-
-
-.List
-.  Item one
-.  Item two
 
 
 THIS SOFTWARE IS PROVIDED BY THE AUTHOR "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
