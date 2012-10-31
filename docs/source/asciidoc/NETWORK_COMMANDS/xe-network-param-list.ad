@@ -20,17 +20,13 @@ DESCRIPTION
 
 *xe network-param-list* will display all parameters for a specified network. 
 
-PREREQUISITES
--------------
-
-*xe network-list* will display all networks and their UUIDs found in a pool.
-
 
 REQUIRED PARAMETERS
 -------------------
 
 *uuid*::
-	UUID of Network
+	UUID of Network - *xe network-list* will display all networks 
+
 
 EXAMPLES
 --------

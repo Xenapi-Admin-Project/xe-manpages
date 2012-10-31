@@ -20,17 +20,12 @@ DESCRIPTION
 
 *xe network-param-remove* will remove a param-key value from a set/map parameter assigned to a network found in a pool.
 
-PREREQUISITES
--------------
-
-*xe network-param-list* uuid=<Network UUID> will output parameters for a specific network found in a pool
-*xe network-list* params="all" will output parameters for networks found in a pool.
 
 REQUIRED PARAMETERS
 -------------------
 
 *uuid*::
-	UUID of network 
+	UUID of network - *xe network-list* params="all" will display all networks and their parameters.
 
 *param-name*::
 	Parameter name 

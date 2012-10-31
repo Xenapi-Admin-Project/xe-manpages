@@ -22,17 +22,12 @@ DESCRIPTION
 
 *xe network-param-get* will return a selected parameter from a specified network. 
 
-PREREQUISITES
--------------
-
-*xe network-list* will display networks and their UUIDs present in a pool
-
-
 REQUIRED PARAMETERS
 -------------------
 
 *uuid*::
-	UUID of Network
+	UUID of Network - *xe network-list* params="all" will display all networks and their parameters.
+
 
 *param-name*::
 	Name of Parameter

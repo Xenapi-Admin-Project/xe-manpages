@@ -26,16 +26,12 @@ DESCRIPTION
 
 *xe network-param-set* will set values of read/write parameters for a network.
 
-PREREQUISITES
--------------
-
-*xe network-list* params="all" will display all networks and their parameters in a pool.
 
 REQUIRED PARAMETERS
 -------------------
 
 *uuid*::
-	UUID of Network
+	UUID of Network - *xe network-list* params="all" will display all networks and their parameters.
 
 OPTIONAL PARAMETERS
 -------------------
