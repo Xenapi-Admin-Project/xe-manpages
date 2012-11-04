@@ -7,33 +7,41 @@ xe-vif-param-get.ad(1)
 
 NAME
 ----
-*xe vif-param-get* 
+*xe vif-param-get* - Display a parameter for a VIF interface
 
 SYNOPSIS
 --------
-*xe vif-param-get* 
+*xe vif-param-get* uuid=<VIF UUID> param-name=<Parameter Name> [ param-key=<key> ]
 
 
 DESCRIPTION
 -----------
 
-
-PREREQUISITES
--------------
+*xe vif-param-get* will return a selected parameter from a specified VIF interface.
 
 
 REQUIRED PARAMETERS
 -------------------
 
+*uuid*::
+	UUID of VIF Interface. *xe vif-list* will display VIF interfaces present
+
+*param-name*::
+
 
 OPTIONAL PARAMETERS
 -------------------
 
+*param-key*::
+
+
 EXAMPLES
 --------
 
+
 SEE ALSO
 --------
+*xe-vif-list*(1), *xe-vif-param-set*(1), , *xe-vif-param-list*(1), *xe-vif-param-remove*(1), *xe-network-list*(1)
 
 
 
@@ -47,8 +55,7 @@ Matthew Spah <spahmatthew@gmail.com>
 
 COPYRIGHT
 ---------
-Copyright \(C) 1995-2003 Jens Schweikhardt + 
-Copyright \(C) 2006 Daniel Leidert
+Copyright \(C) 2012 - Matthew Spah
 
 The Howto containing this example, was offered under the following conditions:
 
@@ -60,9 +67,6 @@ met:
 . Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
 
 
-.List
-.  Item one
-.  Item two
 
 
 THIS SOFTWARE IS PROVIDED BY THE AUTHOR "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED

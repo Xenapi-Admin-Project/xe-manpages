@@ -18,7 +18,8 @@ SYNOPSIS
 DESCRIPTION
 -----------
 
-*xe network-create* will create an internal network in a pool. Name-labels and name-descriptions containing spaces need to be enclosed in quotes. The MTU default is 1500. The resulting network UUID is returned. 
+*xe network-create* will create an internal network in a pool. Name-labels and name-descriptions containing spaces
+need to be enclosed in quotes. The MTU default is 1500. The resulting network UUID is returned. 
 
 
 REQUIRED PARAMETERS
@@ -27,7 +28,7 @@ REQUIRED PARAMETERS
 *name-label*::
 	Name of the network 
 
-OPTIONAL PARAMETERS
+OPTIONAL PARAMETER
 -------------------
 
 *MTU*::
@@ -45,8 +46,7 @@ To create an internal network with a name description type,
 SEE ALSO
 --------
 
-*xe network-list*(1), *xe network-param-set*(1), *xe pool-vlan-create*(1) #add more
-
+*xe-network-list*(1), *xe-network-param-set*(1), *xe-pool-vlan-create*(1), *xe-network-param-set*(1), *xe-vif-create*(1)
 
 AUTHORS
 -------

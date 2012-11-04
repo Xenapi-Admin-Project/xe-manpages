@@ -25,7 +25,7 @@ REQUIRED PARAMETERS
 -------------------
 
 *uuid*::
-	UUID of PIF interface - *xe pif-list* will output PIF interfaces present in a pool.
+	UUID of PIF interface - *xe pif-list* will display PIF interfaces present in a pool.
 
 
 EXAMPLES

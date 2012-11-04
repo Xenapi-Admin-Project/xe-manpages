@@ -17,29 +17,29 @@ SYNOPSIS
 
 DESCRIPTION
 -----------
-*xe network-param-clear* will completely clear all values from a set or a map parameter on a network. 
 
-PREREQUISITES
--------------
+*xe network-param-clear* will completely clear all values from a set or a map parameter on a network. 
 
 
 REQUIRED PARAMETERS
 -------------------
 
 *uuid*::
-	UUID of Network
+	UUID of Network - *xe network-list* params="all" will display all networks and their parameters.
 
 *param-name*::
-
+	
 
 EXAMPLES
 --------
 
 
+
 SEE ALSO
 --------
 
-
+*xe-network-list*(1), *xe-network-create*(1), *xe-network-param-list*(1), *xe-pif-list*(1), *xe-vif-list*(1)
+*xe-network-param-set*(1), *xe-network-param-remove*(1)
 
 
 AUTHORS
@@ -47,13 +47,9 @@ AUTHORS
 Matthew Spah <spahmatthew@gmail.com>
 
 
-
-
 COPYRIGHT
 ---------
-Copyright \(C) 1995-2003 Jens Schweikhardt + 
-Copyright \(C) 2006 Daniel Leidert
-
+Copyright \(C) 2012 - Matthew Spah	
 The Howto containing this example, was offered under the following conditions:
 
 Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are

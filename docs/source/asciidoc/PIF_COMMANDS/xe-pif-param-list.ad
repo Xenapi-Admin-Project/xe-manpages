@@ -8,7 +8,7 @@ xe-pif-param-list.ad(1)
 NAME
 ----
 
-*xe pif-param-list* - Displays parameters for a specified PIF interface
+*xe pif-param-list* - Displays parameters for a PIF interface
 
 SYNOPSIS
 --------

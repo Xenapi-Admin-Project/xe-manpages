@@ -46,7 +46,6 @@ To display the static-routes present on a network type,
 	*xe network-param-get* uuid=<Network UUID> param-name=other-config param-key=static-routes
 
 
-
 SEE ALSO
 --------
 
@@ -54,18 +53,14 @@ SEE ALSO
 *xe-network-param-set*(1)
 
 
-
 AUTHORS
 -------
 Matthew Spah <spahmatthew@gmail.com>
 
 
-
-
 COPYRIGHT
 ---------
-Copyright \(C) 1995-2003 Jens Schweikhardt + 
-Copyright \(C) 2006 Daniel Leidert
+Copyright \(C) 2012 - Matthew Spah
 
 The Howto containing this example, was offered under the following conditions:
 

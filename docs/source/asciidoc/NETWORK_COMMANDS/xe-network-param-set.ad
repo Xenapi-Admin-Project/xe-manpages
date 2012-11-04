@@ -84,7 +84,7 @@ To change the MTU size for a network type,
 SEE ALSO
 --------
 
-*xe-network-list*(1), *xe-network-create*(1), *xe-network-param-list*(1), *xe-pif-list*(1), *xe-vif-list*(1)
+*xe-network-list*(1), *xe-network-create*(1), *xe-network-param-list*(1), *xe-network-param-remove*(1), *xe-pif-list*(1), *xe-vif-list*(1)
 
 
 AUTHORS
@@ -96,8 +96,7 @@ Matthew Spah <spahmatthew@gmail.com>
 
 COPYRIGHT
 ---------
-Copyright \(C) 1995-2003 Jens Schweikhardt + 
-Copyright \(C) 2006 Daniel Leidert
+Copyright \(C) 2012 - Matthew Spah
 
 The Howto containing this example, was offered under the following conditions:
 
@@ -108,10 +107,6 @@ met:
 . Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
 . Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
 
-
-.List
-.  Item one
-.  Item two
 
 
 THIS SOFTWARE IS PROVIDED BY THE AUTHOR "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED

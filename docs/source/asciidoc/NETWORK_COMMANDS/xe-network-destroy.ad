@@ -18,23 +18,15 @@ SYNOPSIS
 DESCRIPTION
 -----------
 
-*xe network-destroy* will erase a network from a pool. 
+*xe network-destroy* will erase a network from a pool. In order to erase a network their must be 
+no active PIF interfaces connected to it, active VIFs connected to it, or a VLAN assigned to it.
+See *xe pif-unplug*, *xe vif-unplug*,  *xe vlan-destroy* for further information.
 
-PREREQUISITES
--------------
-
-In order to erase a network their must be no active 
-PIF interfaces connected to it, active VIFs connected to it, or a VLAN assigned to it. See *xe pif-unplug*, 
-*xe vif-unplug*,  *xe vlan-destroy* for further information.
-
-#redo!
-
- 
 REQUIRED PARAMETERS
 -------------------
 
 *uuid*::
-	UUID of Network
+	UUID of Network to erase
 
 EXAMPLES
 --------
@@ -48,23 +40,15 @@ SEE ALSO
 *xe-network-create*(1), *xe-network-list*(1), *xe pif-unplug*(1), *xe vif-unplug*(1), *xe vlan-destroy*(1)
 
 
-
 AUTHORS
 -------
 Matthew Spah <spahmatthew@gmail.com>
 
 
 
-
 COPYRIGHT
 ---------
-Copyright \(C) 1995-2003 Jens Schweikhardt + 
-Copyright \(C) 2006 Daniel Leidert
-
-The Howto containing this example, was offered under the following conditions:
-
-Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are
-met:
+Copyright \(C) 2012 - Matthew Spah
 
 [options="compact"]
 . Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.

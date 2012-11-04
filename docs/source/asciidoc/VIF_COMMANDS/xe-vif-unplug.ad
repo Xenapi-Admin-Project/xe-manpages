@@ -18,27 +18,25 @@ SYNOPSIS
 DESCRIPTION
 -----------
 
-*xe vif-unplug* will unplug a VIF interface from a network
-#I need to see if it actually removes the VIF from *xe network-list* params=VIF uuids#
+*xe vif-unplug* will detach a VIF interface from a running VM.
 
-PREREQUISITES
--------------
-
-*xe vif-list* will out put 
 
 REQUIRED PARAMETERS
 -------------------
 
 *uuid*::
-	UUID of VIF interface
+	UUID of VIF interface - *xe vif-list params=all* will display VIF interfaces and their parameters.
 
 EXAMPLES
 --------
 
+To detach a VIF interface from a running VM type,
+	*xe vif-unplug* uuid=<VIF UUID>
+
 SEE ALSO
 --------
 
-
+*xe-vif-list*(1), *xe-vif-plug*(1), *xe-vif-param-set*(1), *xe-vif-destroy*(1), *xe-network-list*(1)
 
 
 AUTHORS
@@ -46,12 +44,9 @@ AUTHORS
 Matthew Spah <spahmatthew@gmail.com>
 
 
-
-
 COPYRIGHT
 ---------
-Copyright \(C) 1995-2003 Jens Schweikhardt + 
-Copyright \(C) 2006 Daniel Leidert
+Copyright \(C) 2012 - Matthew Spah
 
 The Howto containing this example, was offered under the following conditions:
 
@@ -64,10 +59,6 @@ met:
 
 
 .List
-.  Item one
-.  Item two
-
-
 THIS SOFTWARE IS PROVIDED BY THE AUTHOR "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
 WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT,
 INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR

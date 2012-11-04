@@ -18,26 +18,33 @@ SYNOPSIS
 DESCRIPTION
 -----------
 
-*xe vif-destroy* will destroy a VIF interface attached to a Virtual Machine
+*xe vif-destroy* will destroy a VIF interface attached to a halted VM. Use *xe vif-unplug* before
+destroying a VIF interface from a running VM.
 
-PREREQUISITES
--------------
-
-*xe vif-list* will display VIF interface present in a pool.
 
 
 REQUIRED PARAMETERS
 -------------------
 
 *uuid*::
-	VIF Interface UUID
+	UUID of VIF interface to be destroyed. *xe vif-list* will display VIF interface present in a pool.
+
+
 
 EXAMPLES
 --------
 
+To destroy a VIF interface attached to a running VM type,
+	*xe vif-unplug* uuid=<VIF UUID>
+	*xe vif-destroy* uuid=<VIF UUID>
+	
+
+
 SEE ALSO
 --------
 
+*xe-vif-list*(1), *xe-vif-create*(1), *xe-vif-unplug*(1), *xe-vif-unplug*(1), *xe-vif-param-set*(1),
+*xe-network-list*(1), *xe-vm-list*(1),
 
 
 
@@ -50,8 +57,7 @@ Matthew Spah <spahmatthew@gmail.com>
 
 COPYRIGHT
 ---------
-Copyright \(C) 1995-2003 Jens Schweikhardt + 
-Copyright \(C) 2006 Daniel Leidert
+Copyright \(C) 2012 - Matthew Spah
 
 The Howto containing this example, was offered under the following conditions:
 
@@ -62,10 +68,6 @@ met:
 . Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
 . Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
 
-
-.List
-.  Item one
-.  Item two
 
 
 THIS SOFTWARE IS PROVIDED BY THE AUTHOR "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED

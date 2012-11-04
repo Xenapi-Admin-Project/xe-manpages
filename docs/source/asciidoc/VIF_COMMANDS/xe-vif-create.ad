@@ -19,25 +19,27 @@ SYNOPSIS
 DESCRIPTION
 -----------
 
+*xe vif-create* will create a new VIF interface for a VM and attach it to a network. A VIF interface created on a 
+running VM needs to be attached using *xe vif-plug*. The resulting VIF interface UUID will be returned.
 
 
 PREREQUISITES
 -------------
 
-*xe vm-list* will display Virtual Machines present in your pool. *xe vif-list* will display VIF interfaces present in your pool.
+ 
 *xe network-list* will display networks present in your pool. 
 
 REQUIRED PARAMETERS
 -------------------
 
 *vm-uuid*::
-	Virtual Machine UUID
+	VM to assign the VIF interface. *xe vm-list* will display VMs present.
 
 *network-uuid*::
-	Network UUID 
+	Network that the VIF interface will be assigned. *xe network-list* will display networks present.
 
 *device*::
-	Machine-readable Interface Number
+	Machine-readable Interface Number. *xe vif-list* will display VIF interfaces present.
 	
 	
 	
@@ -51,10 +53,18 @@ OPTIONAL PARAMETERS
 EXAMPLES
 --------
 
+To create a VIF interface on a running VM type,
+	*xe vif-create* vm-uuid=<VM UUID> device=<device number> network-uuid=<network uuid>
+	*xe vif-plug* uuid=<VIF UUID>
+	
+To create a VIF interface on a halted VM type,
+	*xe vif-create* vm-uuid=<VM UUID> device=<device number> network-uuid=<network uuid>
+	
+
 SEE ALSO
 --------
 
-
+*xe-vif-list*(1), *xe-vif-destroy*(1), *xe-vif-param-set*(1), *xe-network-list*(1), *xe-vm-list*(1)
 
 
 AUTHORS
@@ -66,8 +76,7 @@ Matthew Spah <spahmatthew@gmail.com>
 
 COPYRIGHT
 ---------
-Copyright \(C) 1995-2003 Jens Schweikhardt + 
-Copyright \(C) 2006 Daniel Leidert
+Copyright \(C) 2012 - Matthew Spah
 
 The Howto containing this example, was offered under the following conditions:
 
@@ -79,9 +88,6 @@ met:
 . Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
 
 
-.List
-.  Item one
-.  Item two
 
 
 THIS SOFTWARE IS PROVIDED BY THE AUTHOR "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
