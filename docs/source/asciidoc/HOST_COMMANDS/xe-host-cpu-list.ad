@@ -7,7 +7,7 @@ xe-host-cpu-list(1)
 
 NAME
 -----
-*xe host-cpu-list - list
+*xe host-cpu-list - displays lists of all the cpus on the host-machine.
 
 SYNOPSIS
 --------
@@ -16,7 +16,17 @@ SYNOPSIS
 
 DESCRIPTION
 -----------
-*xe host-cpu-list* 
+*xe host-cpu-list*  will display a list all of the cpus on the host-machine. Output can be filtered by supplying params=<parameter>. 
+Multiple parameters can be displayed by seperating each parameter with a comma (params=uuid,vendor,speed).
+
+<parameter> can be any of
+
+*all*::
+Display all cpu(s) parameters
+*uuid*::
+Display all cpu(s) UUIDs
+*host-uuid*::
+Display all cpu(s) host UUID 
 
 OPTIONS
 -------
