@@ -22,11 +22,13 @@ Multiple parameters can be displayed by seperating each parameter with a comma (
 <parameter> can be any of
 
 *all*::
-Display all cpu(s) parameters
+     Display all cpu(s) parameters
 *uuid*::
-Display all cpu(s) UUIDs
+     Display all cpu(s) UUIDs
 *host-uuid*::
-Display all cpu(s) host UUID 
+     Display all cpu(s) host UUID
+*number*::
+     Display 
 
 OPTIONS
 -------
