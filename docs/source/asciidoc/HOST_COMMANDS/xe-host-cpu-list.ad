@@ -11,8 +11,8 @@ NAME
 
 SYNOPSIS
 --------
-*xe host-cpu-list* [--minimal] [params=all, uuid, host-uuid, number, vendor, speed, mmodel, family, modelname, stepping, flags, utilisation ]
-[ 
+*xe host-cpu-list* [--minimal] [params | params=<all>] [params=<uuid>, <host-uuid>, <number>, <vendor>, <speed>, <model>, <family>, <modelname>, <stepping>, <flags>, <utilisation> ]
+[uuid=<uuid>] [host-uuid=<host uuid>] [number=<number>] [vendor=<vendor>] [speed=<speed>] [model=<model>] [family=<family>] [stepping=<stepping>]  
 
 DESCRIPTION
 -----------
