@@ -1,9 +1,9 @@
 xe-pif-reconfigure-ip(1)
 =======
 :doctype: manpage
-:man source:   xe 
+:man source:   xe-pif-reconfigure-ip
 :man version:  {1}
-:man manual:   xe manual
+:man manual:   xe pif-reconfigure-ip Manual
 
 NAME
 ----
@@ -17,13 +17,11 @@ SYNOPSIS
 
 *pif-reconfigure-ip*	mode=<static> uuid=<PIF UUID> IP=<IP address> netmask=<netmask> 	
 						[ DNS=<name servers> ] [ gateway=<gateway> ]
-						
-
 
 DESCRIPTION
 -----------
 
-*xe pif-reconfigure-ip* will change network addressing parameters for the specified PIF interface. 
+*xe pif-reconfigure-ip* will change network addressing parameters for a specified PIF interface. 
 
 
 REQUIRED PARAMETERS
@@ -41,8 +39,6 @@ REQUIRED PARAMETERS
 *netmask*::
 	Netmask address of PIF interface
 
-	
-
 OPTIONAL PARAMETERS
 -------------------
 
@@ -51,8 +47,6 @@ OPTIONAL PARAMETERS
 
 *gateway*::
 	Gateway address
-
-
 
 EXAMPLES
 --------
@@ -67,14 +61,13 @@ SEE ALSO
 --------
 *xe-pif-list*(1), *xe-pif-introduce*(1), *xe-pif-forget*(1), *xe-pif-list*(1), *xe-pif-plug*(1), *xe-pif-unplug*(1), *xe-network-list*(1)
 
-
+BUGS
+----
+Send bugs to xen-devel@lists.xen.org, see http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP on how to send bug reports. General questions can be sent to xen-api@lists.xen.org.
 
 AUTHORS
 -------
 Matthew Spah <spahmatthew@gmail.com>
-
-
-
 
 COPYRIGHT
 ---------

@@ -1,9 +1,9 @@
 xe-pif-scan.ad(1)
 =======
 :doctype: manpage
-:man source:   xe 
+:man source:   xe-pif-scan
 :man version:  {1}
-:man manual:   xe manual
+:man manual:   xe pif-scan Manual
 
 NAME
 ----
@@ -39,6 +39,10 @@ SEE ALSO
 
 *xe-pif-list*(1), *xe-pif-unplug*(1), *xe-pif-introduce*(1), *xe-host-list*(1), *xe-pif-forget*(1), *xe-pif-introduce*(1),
 *xe-network-list*(1)
+
+BUGS
+----
+Send bugs to xen-devel@lists.xen.org, see http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP on how to send bug reports. General questions can be sent to xen-api@lists.xen.org.
 
 
 AUTHORS
