@@ -31,7 +31,7 @@ REQUIRED PARAMETERS
 	Set addressing mode for PIF interface dhcp, static, none.
 
 *uuid*::
-	UUID of PIF interface - Use *xe pif-list* to display PIF interfaces
+	UUID of PIF interface - Use *xe pif-list* to obtain PIF interface UUIDs.
 	
 *IP*::
 	Host address of PIF interface

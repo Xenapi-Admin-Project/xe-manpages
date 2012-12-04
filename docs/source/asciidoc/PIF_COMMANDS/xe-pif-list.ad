@@ -13,18 +13,12 @@ SYNOPSIS
 --------
 *xe pif-list*
 
-*xe pif-list* [ device= ] [ MAC= ] [ physical= ] [ currently-attached= ] [ MTU= ] [ VLAN= ]
-[ bond-master-of= ] [ bond-slave-of= ] [ tunnel-access-PIF-of= ] [ tunnel-transport-PIF-of= ]
-[ management= ] [ network-uuid= ] [ network-name-label= ] [ host-uuid= ] [ host-name-label= ]
-[ IP-configuration-mode= ] [ IP= ]  [ netmask= ] [ gateway= ] [ DNS= ] [ io_read_kbs= ] [ io_write_kbs= ]
-[ carrier= ] [ vendor-id= ] [ vendor-name= ] [ device-id= ] [ device-name= ] [ speed= ] [ duplex= ]  
-[ pci-bus-path= ] [ other-config= ] [ disallow-unplug= ]
-              
+*xe pif-list*  [ params=<parameter> ]
 
 DESCRIPTION
 -----------
 
-*xe pif-list* will display PIF interfaces and their parameters found in a pool.
+*xe pif-list* will display PIF interfaces and their parameters found in a pool. Output can be filtered by supplying params=<parameter>. Multiple parameters can be displayed by seperating each parameter with a comma (params=uuid,name-label).
 
 
 OPTIONAL PARAMETERS
@@ -160,15 +154,19 @@ OPTIONAL PARAMETERS
 EXAMPLES
 --------
 
-to display all parameters for a specified PIF interface type,
+To display all parameters for a specified PIF interface type,
 	*xe pif-list* uuid=<PIF UUID> params=all
 	
+To display all physical PIF interfaces and all their parameters type,
+	*xe pif-list* physical=true params=all
 	
 
 
 SEE ALSO
 --------
-*xe-network-list*(1), *xe-vlan-list*(1), *xe-pif-introduce*(1), *xe-pif-forget*(1), *xe-pif-reconfig
+*xe-network-list*(1), *xe-vlan-list*(1), *xe-pif-introduce*(1), *xe-pif-forget*(1), *xe-pif-reconfige-ip*(1), *xe-pif-param-add*(1), #probably add some bondage commands
+
+
 
 
 AUTHORS

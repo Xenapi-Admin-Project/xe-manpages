@@ -19,12 +19,15 @@ DESCRIPTION
 -----------
 
 *xe pif-unplug* will bring down a specified PIF interface on a host if allowed. The PIF interface will retain its configuration.
+// eh? Grant wants me to expand a little more on this one...
+// I could talk about how you bring it down on a layer 2 level..
+
 
 REQUIRED PARAMETERS
 -------------------
 
 *uuid*::
-	UUID of PIF interface - *xe pif-list* will display PIF interfaces present in a pool.
+	UUID of PIF interface - Use *xe pif-list* to obtain a list of PIF interface UUIDs.
 
 EXAMPLES
 --------

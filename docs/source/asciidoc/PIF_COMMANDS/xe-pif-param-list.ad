@@ -31,7 +31,7 @@ EXAMPLES
 --------
 
 To display parameters for a specific PIF interface, type; 
-	*xe pif-param-list* uuid=<PIF uuid>
+	*xe pif-param-list* uuid=<PIF UUID>
 
 SEE ALSO
 --------
@@ -39,13 +39,9 @@ SEE ALSO
 *xe-pif-list*(1), *xe-pif-param-clear*(1), *xe-pif-param-get*(1), *xe-pif-param-remove*(1), 
 *xe-pif-param-set*(1), *xe-pif-param-add*(1)
 
-
-
 AUTHORS
 -------
 Matthew Spah <spahmatthew@gmail.com>
-
-
 
 
 COPYRIGHT

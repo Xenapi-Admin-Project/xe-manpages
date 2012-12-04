@@ -17,7 +17,7 @@ SYNOPSIS
 				[ other-config:ethtool-rx=<on | off> ] [ other-config:ethtool-tx=<on | off> ] [ other-config:ethtool-sg=<on | off> ] [ other-config:ethtool-tso=<on | off> ]
 				[ other-config:ethtool-ufo=<on | off> ] [ other-config:ethtool-gso=<on | off> ] [ other-config:domain=<DNS Suffix> ] [ other-config:bond-miimon= ]
 				[ other-config:bond-downdelay= ] [ other-config=bond-updelay= ]  
-				
+// this mess has got to go				
 				
 DESCRIPTION
 -----------
@@ -87,6 +87,9 @@ To set the speed and duplex settings of a PIF interface you must first turn off 
 
 to set a PIF interface for 1Gbs type,
 	*xe pif-param-set* uuid=<pif uuid> other-config=ethtool-speed=1000
+	
+// might add a couple more examples just for shits
+
 
 
 SEE ALSO

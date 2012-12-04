@@ -12,13 +12,14 @@ NAME
 SYNOPSIS
 --------
 
-*xe pif-forget* uuid=<pif uuid>
+*xe pif-forget* uuid=<PIF UUID>
 
 DESCRIPTION
 -----------
 
 *xe pif-forget* will erase a physical PIF interface on a host. See *xe vlan-destroy* to erase a pseudo PIF interface connected to a VLAN.
 
+// maybe expand on this?
 
 REQUIRED PARAMETERS
 -------------------

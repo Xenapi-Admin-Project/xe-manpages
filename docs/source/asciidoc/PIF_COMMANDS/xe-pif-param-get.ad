@@ -33,15 +33,11 @@ REQUIRED PARAMETERS
 *param-name*::
 	Name of PIF interface parameter 
 
-
 OPTIONAL PARAMETERS
 -------------------
 
 *param-key*::
 	Name of key in other-config parameter 
-
-
-
 
 EXAMPLES
 --------
@@ -49,6 +45,10 @@ EXAMPLES
 To display the the management parameter for a PIF interface, type;
 	*xe pif-param-get* uuid=<PIF UUID> param-name=management
 
+To display the map paramter
+	*xe pif-param-get* uuid=<PIF UUID> param-name=other-config param-key= 
+	// finish this 
+	
 
 SEE ALSO
 --------

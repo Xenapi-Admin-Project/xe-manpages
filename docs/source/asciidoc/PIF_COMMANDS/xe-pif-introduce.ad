@@ -35,7 +35,15 @@ OPTIONAL PARAMETERS
 -------------------
 
 *mac*::
-	MAC Address for PIF object
+	MAC Address for PIF interface.
+	
+EXAMPLES
+--------
+
+// WTF NO EXAMPLE?! 
+
+// *xe pif-introduce* host-uuid=<Host UUID> device=eth1 
+// that should work... better test first
 
 
 SEE ALSO

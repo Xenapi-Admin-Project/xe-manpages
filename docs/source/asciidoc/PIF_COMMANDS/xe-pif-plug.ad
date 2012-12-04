@@ -20,11 +20,13 @@ DESCRIPTION
 
 *xe pif-plug* will bring up a specified PIF interface.
 
+// Grant would like to see me expand on this... not sure how yet
+
 REQUIRED PARAMETERS
 -------------------
 
 *uuid*::
-	UUID of PIF interface - *xe pif-list* will display PIF interfaces present in a pool.
+	UUID of PIF interface - Use *xe pif-list* to obtain a list PIF interface UUIDs.
 
 EXAMPLES
 --------

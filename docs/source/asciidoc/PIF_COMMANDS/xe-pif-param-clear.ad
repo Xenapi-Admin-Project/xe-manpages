@@ -5,6 +5,10 @@ xe-pif-param-clear.ad(1)
 :man version:  {1}
 :man manual:   xe manual
 
+
+//	took out the prereq section 12/03/12
+
+
 NAME
 ----
 *xe pif-param-clear*
@@ -14,22 +18,22 @@ SYNOPSIS
 
 *xe pif-param-clear* uuid=<PIF UUID> param-name=<parameter> 
 
+//	this needs to be looked into a little more...
+//	There really is only one parameter that can be cleared from what I remember
+//	and that is other config!
+
+
 DESCRIPTION
 -----------
 
 *xe pif-param-clear* will completely clear all set or map parameters from a PIF interface.
 
-PREREQUISITES
--------------
-
-*xe pif-list* will display PIF interfaces present in a pool and their parameters.
-
-
 REQUIRED PARAMETERS
 -------------------
 
 *uuid*::
-	UUID of PIF interface
+	UUID of PIF interface - Use *xe pif-list* to obtain a list PIF interface UUIDs.
+	
 *param-name*::
 	Name of parameter 
 
@@ -42,7 +46,7 @@ To clear all values found in the parameter other-config type,
 SEE ALSO
 --------
 
-*xe-pif-list*(1), *xe-pif-param-list*(1), *xe-pif-param-remove*(1), *xe-pif-param-set*(1)
+*xe-pif-list*(1), *xe-pif-param-list*(1), *xe-pif-param-remove*(1), *xe-pif-param-set*(1), *xe network-list*(1), *xe vlan-list*(1)
 
 
 
