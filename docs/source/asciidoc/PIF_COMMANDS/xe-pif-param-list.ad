@@ -1,4 +1,4 @@
-xe-pif-param-list.ad(1)
+XE(1)
 =======
 :doctype: manpage
 :man source:   xe 
@@ -13,7 +13,7 @@ NAME
 SYNOPSIS
 --------
 
-*xe pif-param-list* uuid=<PIF uuid>
+*xe pif-param-list* uuid=<PIF UUID>
 
 DESCRIPTION
 -----------
@@ -38,6 +38,10 @@ SEE ALSO
 
 *xe-pif-list*(1), *xe-pif-param-clear*(1), *xe-pif-param-get*(1), *xe-pif-param-remove*(1), 
 *xe-pif-param-set*(1), *xe-pif-param-add*(1)
+
+BUGS
+----
+Send bugs to xen-devel@lists.xen.org, see http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP on how to send bug reports. General questions can be sent to xen-api@lists.xen.org.
 
 AUTHORS
 -------

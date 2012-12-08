@@ -6,32 +6,34 @@ XE(1)
 :man manual:   xe manual
 
 NAME
-----
+-----
 
-*xe pif-forget*
+*xe pif-set-primary-address-type* - Set primary address type used by a PIF interface
 
 SYNOPSIS
 --------
 
-*xe pif-forget* uuid=<PIF UUID>
+*xe pif-set-primary-address-type* uuid=<PIF UUID> primary_address_type=<ipv6 | ipv4>
+
 
 DESCRIPTION
 -----------
-
-*xe pif-forget* will erase a physical PIF interface on a host. See *xe vlan-destroy* to erase a pseudo PIF interface connected to a VLAN.
-
-// Check to see if you can erase a physical PIF with an active PIF attached.
+// add description
 
 REQUIRED PARAMETERS
 -------------------
 
 *uuid*::
-	UUID of PIF interface - *xe pif-list* will output PIF interfaces and their parameters.
-	
 
+*primary_address_type*::
+
+EXAMPLES
+--------
+
+// add examples
 SEE ALSO
 --------
-*xe-pif-list*(1), *xe-pif-introduce*(1), *xe-vlan-destroy*(1), *xe-pif-plug*(1), *xe-pif-unplug*(1)
+// yeah add see also's
 
 BUGS
 ----
@@ -39,7 +41,10 @@ Send bugs to xen-devel@lists.xen.org, see http://wiki.xen.org/wiki/Reporting_Bug
 
 AUTHORS
 -------
-Matthew Spah <spahmatthew@gmail.com>::
+Matthew Spah <spahmatthew@gmail.com>
+
+
+
 
 COPYRIGHT
 ---------

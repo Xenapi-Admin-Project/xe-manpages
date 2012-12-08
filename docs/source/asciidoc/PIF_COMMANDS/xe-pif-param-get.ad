@@ -1,4 +1,4 @@
-xe-pif-param-get.ad(1)
+XE(1)
 =======
 :doctype: manpage
 :man source:   xe 
@@ -20,8 +20,7 @@ SYNOPSIS
 DESCRIPTION
 -----------
 
-*xe pif-param-get* will return a selected parameter from a specified PIF interface.
-
+*xe pif-param-get* will return a selected parameter or key from a specified PIF interface.
 
 REQUIRED PARAMETERS
 -------------------
@@ -56,13 +55,9 @@ SEE ALSO
 *xe-pif-list*(1), *xe-pif-param-clear*(1), *xe-pif-param-get*(1), *xe-pif-param-remove*(1), 
 *xe-pif-param-set*(1), *xe-pif-param-add*(1)
 
-
 AUTHORS
 -------
 Matthew Spah <spahmatthew@gmail.com>
-
-
-
 
 COPYRIGHT
 ---------

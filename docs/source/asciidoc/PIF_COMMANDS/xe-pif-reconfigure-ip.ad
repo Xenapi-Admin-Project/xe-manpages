@@ -1,4 +1,4 @@
-xe-pif-reconfigure-ip(1)
+XE(1)
 =======
 :doctype: manpage
 :man source:   xe-pif-reconfigure-ip
@@ -8,7 +8,7 @@ xe-pif-reconfigure-ip(1)
 NAME
 ----
 
-*pif-reconfigure-ip* - Reconfigure the IP address settings on a PIF interface.
+*pif-reconfigure-ip* - Configure the IPv4 address settings on a PIF interface.
 
 SYNOPSIS
 --------
@@ -21,7 +21,7 @@ SYNOPSIS
 DESCRIPTION
 -----------
 
-*xe pif-reconfigure-ip* will change network addressing parameters for a specified PIF interface. 
+*xe pif-reconfigure-ip* will change IPv4 addressing parameters for a specified PIF interface. 
 
 
 REQUIRED PARAMETERS
@@ -34,7 +34,7 @@ REQUIRED PARAMETERS
 	UUID of PIF interface - Use *xe pif-list* to obtain PIF interface UUIDs.
 	
 *IP*::
-	Host address of PIF interface
+	IPv4 Host address of PIF interface. Address is only required for mode=static.
 
 *netmask*::
 	Netmask address of PIF interface

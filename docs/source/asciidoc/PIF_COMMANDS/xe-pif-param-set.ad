@@ -1,4 +1,4 @@
-xe-pif-param-set.ad(1)
+XE(1)
 =======
 :doctype: manpage
 :man source:   xe-pif-param-set
@@ -22,16 +22,16 @@ SYNOPSIS
 DESCRIPTION
 -----------
 
-*xe pif-param-set* will set values of read/write parameters for PIF interfaces. Changes to the *other-config* fields of a PIF interface will
-only take effect after a reboot or use of *xe pif-unplug* and *xe pif-plug*.
+*xe pif-param-set* will set values of read/write parameters for PIF interfaces. Parameters are set by providing the <parameter>=<value>. Changes to the *other-config* fields of a PIF interface will only take effect after a reboot or use of *xe pif-unplug* and *xe pif-plug*. 
 
+// ask the team what they think
 
 
 REQUIRED PARAMETERS
 -------------------
 
 *uuid*::
-	UUID of PIF interface - *xe pif-list* and *xe pif-param-list* will output parameters for PIF interfaces.
+	UUID of PIF interface - *xe pif-list* and *xe pif-param-list* will output UUIDs and parameters for PIF interfaces.
 
 
 OPTIONAL PARAMETERS
@@ -105,8 +105,6 @@ Send bugs to xen-devel@lists.xen.org, see http://wiki.xen.org/wiki/Reporting_Bug
 AUTHORS
 -------
 Matthew Spah <spahmatthew@gmail.com>
-
-
 
 
 COPYRIGHT

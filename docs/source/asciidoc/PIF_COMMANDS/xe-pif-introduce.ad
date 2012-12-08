@@ -1,4 +1,4 @@
-xe-pif-introduce(1)
+XE(1)
 =======
 :doctype: manpage
 :man source:   xe 
@@ -40,9 +40,10 @@ OPTIONAL PARAMETERS
 EXAMPLES
 --------
 
-// WTF NO EXAMPLE?! 
 
+// To introduce a new physical PIF interface to a host type,
 // *xe pif-introduce* host-uuid=<Host UUID> device=eth1 
+
 // that should work... better test first
 
 
@@ -51,7 +52,11 @@ SEE ALSO
 
 *xe-pif-list*(1), *xe-pif-scan*(1), *xe-pif-forget*(1), *xe-host-list*(1), *ifconfig*(1), *xe-network-list*(1)
 
+BUGS
+----
+Send bugs to xen-devel@lists.xen.org, see http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP on how to send bug reports. General questions can be sent to xen-api@lists.xen.org.
 AUTHORS
+
 -------
 Matthew Spah <spahmatthew@gmail.com>
 

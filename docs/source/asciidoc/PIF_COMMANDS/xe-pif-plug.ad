@@ -1,4 +1,4 @@
-xe-pif-plug.ad(1)
+XE(1)
 =======
 :doctype: manpage
 :man source:   xe-pif-plug
@@ -18,8 +18,9 @@ SYNOPSIS
 DESCRIPTION
 -----------
 
-*xe pif-plug* will bring up a specified PIF interface.
+*xe pif-plug* will bring up a specified PIF interface. 
 
+// "New parameter settings will be applied." Should I include something like this?
 // Grant would like to see me expand on this... not sure how yet
 
 REQUIRED PARAMETERS

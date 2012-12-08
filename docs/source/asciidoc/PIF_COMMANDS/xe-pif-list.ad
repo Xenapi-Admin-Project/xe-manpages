@@ -1,4 +1,4 @@
-sxe-pif-list(1)
+XE(1)
 =======
 :doctype: manpage
 :man source:   xe manual
@@ -160,20 +160,17 @@ To display all parameters for a specified PIF interface type,
 To display all physical PIF interfaces and all their parameters type,
 	*xe pif-list* physical=true params=all
 	
-
-
 SEE ALSO
 --------
 *xe-network-list*(1), *xe-vlan-list*(1), *xe-pif-introduce*(1), *xe-pif-forget*(1), *xe-pif-reconfige-ip*(1), *xe-pif-param-add*(1), #probably add some bondage commands
 
-
-
+BUGS
+----
+Send bugs to xen-devel@lists.xen.org, see http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP on how to send bug reports. General questions can be sent to xen-api@lists.xen.org.
 
 AUTHORS
 -------
 Matthew Spah <spahmatthew@gmail.com>::
-
-
 
 COPYRIGHT
 ---------
