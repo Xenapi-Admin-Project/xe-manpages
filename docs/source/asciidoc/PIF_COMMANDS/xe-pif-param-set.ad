@@ -15,7 +15,7 @@ SYNOPSIS
 //added another line -lisa
 *xe pif-param-set* uuid=<PIF UUID> 
 
-*xe pif-param-set* uuid=<PIF UUID> [ disallow-unplug=<true | false> ] [other-config:<Parameter Key>=<Key Value>]
+*xe pif-param-set* uuid=<PIF UUID> [ disallow-unplug=<true | false> ] [ other-config:<Parameter Key>=<Key Value> ]
 
 DESCRIPTION
 -----------
