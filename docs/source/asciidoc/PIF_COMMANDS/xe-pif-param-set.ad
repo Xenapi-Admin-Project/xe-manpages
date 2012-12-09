@@ -7,22 +7,22 @@ XE(1)
 
 NAME
 ----
-
-*xe pif-param-set* - Set specified parameters for a PIF interface
+//added description -lisa
+*xe pif-param-set* - Set parameters for a PIF interface
 
 SYNOPSIS
 --------
+//added another line -lisa
+*xe pif-param-set* uuid=<PIF UUID> 
 
-*xe pif-param-set* uuid=<PIF UUID> [ disallow-unplug=<true | false> ] [ other-config:ethtool-speed=<10 | 100 | 1000> ] [ other-config:ethtool-autoneg=<on | off> ]
-				[ other-config:ethtool-rx=<on | off> ] [ other-config:ethtool-tx=<on | off> ] [ other-config:ethtool-sg=<on | off> ] [ other-config:ethtool-tso=<on | off> ]
-				[ other-config:ethtool-ufo=<on | off> ] [ other-config:ethtool-gso=<on | off> ] [ other-config:domain=<DNS Suffix> ] [ other-config:bond-miimon= ]
-				[ other-config:bond-downdelay= ] [ other-config=bond-updelay= ]  
-// this mess has got to go				
-				
+*xe pif-param-set* uuid=<PIF UUID> [ disallow-unplug=<true | false> ] [other-config:<Parameter Key>=<Key Value>]
+
 DESCRIPTION
 -----------
+//edited the description a bit -lisa
+*xe pif-param-set* sets read/write parameters for a PIF interface. 
 
-*xe pif-param-set* will set values of read/write parameters for PIF interfaces. Parameters are set by providing the <parameter>=<value>. Changes to the *other-config* fields of a PIF interface will only take effect after a reboot or use of *xe pif-unplug* and *xe pif-plug*. 
+Changes to the *other-config* fields of a PIF interface will only take effect after a reboot or use of *xe pif-unplug* and *xe pif-plug*. 
 
 // ask the team what they think
 
@@ -31,20 +31,20 @@ REQUIRED PARAMETERS
 -------------------
 
 *uuid*::
-	UUID of PIF interface - *xe pif-list* and *xe pif-param-list* will output UUIDs and parameters for PIF interfaces.
+	UUID of PIF interface - Use *xe pif-list* to obtain PIF interface UUIDs.
 
 
 OPTIONAL PARAMETERS
 -------------------
-
+//edited description for the first three parameters; the rest i'll have to look at later - lisa
 *disallow-unplug*::
-	To disable the unplugging of a PIF interface set to *true*. To enable set to *false*.
+	Enable or disable the unplugging process for a PIF
 	
 *other-config:ethtool-speed*::
-	Set speed of PIF interface in Mbps. (for example, ethtool-speed=100)
+	Speed of PIF interface in Mbps. (e.g. ethtool-speed=100)
 
 *other-config:ethtool-autoneg*::
-	to disable autonegotiation on PIF interface or bridge set to *off*. Default is *on*.  
+	Enable or disable autonegotiation on PIF interface or bridge   
 	
 *other-config:ethtool-duplex*::
 	Duplex mode of PIF interface. Set to *full* or *half*
@@ -82,14 +82,14 @@ OPTIONAL PARAMETERS
 EXAMPLES
 --------
 
-To set the speed and duplex settings of a PIF interface you must first turn off autonegotiation
+To set the speed and duplex settings of a PIF interface, turn off autonegotiation first:
 	*xe pif-param-set* uuid=<PIF UUID> other-config=ethtool-autoneg=off
 
-to set a PIF interface for 1Gbs type,
-	*xe pif-param-set* uuid=<pif uuid> other-config=ethtool-speed=1000
+To set ethernet speed for a PIF interface:
+	*xe pif-param-set* uuid=<PIF UUID> other-config=ethtool-speed=1000
 	
 // might add a couple more examples just for shits
-
+// you go do that, Matt! -lisa
 
 
 SEE ALSO
@@ -97,14 +97,13 @@ SEE ALSO
 
 *xe pif-list*(1), *xe pif-param-list*(1), *xe host-list*(1), *xe pif-param-remove*(1), *xe pif-reconfigure-ip*(1)
 
-BUGS
-----
-Send bugs to xen-devel@lists.xen.org, see http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP on how to send bug reports. General questions can be sent to xen-api@lists.xen.org.
-
-
 AUTHORS
 -------
 Matthew Spah <spahmatthew@gmail.com>
+
+BUGS
+----
+Send bugs to xen-devel@lists.xen.org, see http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP on how to send bug reports. General questions can be sent to xen-api@lists.xen.org.
 
 
 COPYRIGHT
