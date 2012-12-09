@@ -7,37 +7,37 @@ XE(1)
 
 NAME
 ----
-//added description
-*xe pif-param-remove* - Removes a parameter for a specific PIF
+//added description -lisa
+*xe pif-param-remove* - Removes a set or map writable parameter for a specific PIF
 
 SYNOPSIS
 --------
-
-*xe pif-param-remove* uuid=<PIF UUID> param-name=other-config param-key=<Ley name>
+//changed synopsis -lisa
+*xe pif-param-remove* uuid=<PIF UUID> param-name=<Parameter> param-key=<Parameter Key>
 
 
 DESCRIPTION
 -----------
-
-*xe pif-param-remove* will remove a param-key value from a set/map parameter assigned to a PIF interface.
+//edited description -lisa
+*xe pif-param-remove* removes a parameter key assigned to a PIF interface.
 
 
 REQUIRED PARAMETERS
 -------------------
 
 *uuid*::
-	UUID of PIF interface - *xe pif-list* and *xe pif-param-list* will output parameters for PIF interfaces.
+	UUID of PIF interface - Use *xe pif-list* to obtain PIF interface UUIDs.
 
 *param-name*::
-	Paramter that contains param-keys. (e.g. other-config)
+	Parameter that contains parameter keys (e.g. other-config)
 
 *param-key*::
-	Read/Write keys for PIF interface
+	Parameter key that displays additional information on a PIF
 
 EXAMPLES
 --------
 
-To remove the *ethtool-speed* value type,
+To remove the *ethtool-speed* value:
 	*xe pif-param-remove* uuid=<PIF UUID> param-name=other-config param-key=ethtool-speed
 
 // see if there is a RW parameter that can be removed
@@ -53,8 +53,9 @@ AUTHORS
 -------
 Matthew Spah <spahmatthew@gmail.com>
 
-
-
+BUGS
+----
+Send bugs to xen-devel@lists.xen.org, see http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP on how to send bug reports. General questions can be sent to xen-api@lists.xen.org.
 
 COPYRIGHT
 ---------

@@ -8,29 +8,30 @@ XE(1)
 NAME
 ----
 
-*xe pif-param-get* - Display a parameter for a PIF interface
+*xe pif-param-get* - Returns a parameter for a PIF interface
 
 SYNOPSIS
 --------
 
-*xe pif-param-get* uuid=<PIF UUID> param-name=<param name>
+*xe pif-param-get* uuid=<PIF UUID> param-name=<Parameter>
 
-*xe pif-param-get* uuid=<PIF UUID> param-name=other-config [ param-key=<Key> ]
+*xe pif-param-get* uuid=<PIF UUID> param-name=<Parameter> [ param-key=<Parameter Key> ]
 
 DESCRIPTION
 -----------
 
-*xe pif-param-get* will return a selected parameter or key from a specified PIF interface.
+*xe pif-param-get* returns parameter or key value for a specific PIF interface.
 
 REQUIRED PARAMETERS
 -------------------
 
 *uuid*::
-	UUID of PIF interface *xe pif-list* and *xe pif-param-list* will display parameters for PIF interfaces.
+	UUID of PIF interface - Use *xe pif-list* to obtain PIF interface UUIDs
 
 
 *param-name*::
-	Name of PIF interface parameter 
+	Parameter for the PIF
+	 
 
 OPTIONAL PARAMETERS
 -------------------
@@ -41,10 +42,10 @@ OPTIONAL PARAMETERS
 EXAMPLES
 --------
 
-To display the the management parameter for a PIF interface, type;
+To display the management parameter for a PIF interface:
 	*xe pif-param-get* uuid=<PIF UUID> param-name=management
 
-To display the map paramter
+To display the map parameter:
 	*xe pif-param-get* uuid=<PIF UUID> param-name=other-config param-key= 
 	// finish this 
 	
@@ -59,6 +60,10 @@ AUTHORS
 -------
 Matthew Spah <spahmatthew@gmail.com>
 
+BUGS
+----
+Send bugs to xen-devel@lists.xen.org, see http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP on how to send bug reports. General questions can be sent to xen-api@lists.xen.org.
+
 COPYRIGHT
 ---------
 Copyright \(C) 2012 - Matthew Spah
@@ -71,8 +76,6 @@ met:
 [options="compact"]
 . Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
 . Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
-
-
 
 
 THIS SOFTWARE IS PROVIDED BY THE AUTHOR "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
