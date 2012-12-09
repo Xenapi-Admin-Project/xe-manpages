@@ -8,7 +8,7 @@ XE(1)
 NAME
 ----
 
-*xe pif-unplug*  - bring down a PIF interface
+*xe pif-unplug*  - Brings a network interface down
 
 SYNOPSIS
 --------
@@ -22,6 +22,8 @@ DESCRIPTION
 // eh? Grant wants me to expand a little more on this one...
 // I could talk about how you bring it down on a layer 2 level..
 
+//added a line -lisa
+If successful, *xe pif-list* will show an unplugged pif as *currently-attached ( RO): false*.
 
 REQUIRED PARAMETERS
 -------------------
@@ -31,14 +33,11 @@ REQUIRED PARAMETERS
 
 EXAMPLES
 --------
-
-xe pif-list will show an unplugged pif as *currently-attached ( RO): false*.
-xe pif-list will show a plugged pif as *currently-attached ( RO): true*.
-
-To see if you can unplug a PIF interface type, 
+//edited examples -lisa
+To check if a PIF interface is unplugged: 
 	*xe pif-param-get* uuid=<PIF UUID> param-name=disallow-unplug 
 
-To unplug a PIF interface type,
+To unplug a PIF interface:
 	*xe pif-unplug* uuid=<PIF UUID>
 
 SEE ALSO

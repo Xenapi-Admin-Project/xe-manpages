@@ -3,22 +3,25 @@ XE(1)
 :doctype: manpage
 :man source:   xe-pif-plug
 :man version:  {1}
-:man manual:   xe pif-pluf Manual 
+:man manual:   xe pif-plug Manual 
 
 NAME
 ----
-
-*xe pif-plug* - Bring up a PIF interface.
+//edited description  -lisa
+*xe pif-plug* - Brings a network interface up
 
 SYNOPSIS
 --------
-
 *xe pif-plug* uuid=<PIF UUID>
 
 DESCRIPTION
 -----------
 
-*xe pif-plug* will bring up a specified PIF interface. 
+*xe pif-plug* brings a PIF interface up. 
+//what is the expected result and do I use *xe pif-list* to see if a pif has been successfully plugged? -lisa
+
+//added a line -lisa
+If successful, *xe pif-list* will show a plugged pif as *currently-attached ( RO): true*.
 
 // "New parameter settings will be applied." Should I include something like this?
 // Grant would like to see me expand on this... not sure how yet
@@ -27,16 +30,13 @@ REQUIRED PARAMETERS
 -------------------
 
 *uuid*::
-	UUID of PIF interface - Use *xe pif-list* to obtain a list PIF interface UUIDs.
+	UUID of PIF interface - Use *xe pif-list* to obtain PIF interface UUIDs.
 
 EXAMPLES
 --------
-
-xe pif-list will show an unplugged pif as *currently-attached ( RO): false*.
-xe pif-list will show a plugged pif as *currently-attached ( RO): true*.
-
-To plug in a PIF interface type,
+To plug in a PIF interface:
 	*xe pif-plug* uuid=<PIF UUID>
+	
 	
 SEE ALSO
 --------

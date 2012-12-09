@@ -8,7 +8,7 @@ XE(1)
 NAME
 ----
 
-*xe pif-scan* - Scan for new physical interfaces on a host.
+*xe pif-scan* - Scans for new physical interfaces on a host.
 
 
 SYNOPSIS
@@ -19,7 +19,7 @@ SYNOPSIS
 DESCRIPTION
 -----------
 
-*xe pif-scan* will scan a host for new physical network devices. If found new PIF interfaces with networks are created on the host.
+*xe pif-scan* scans a host for new physical network devices. If found new PIF interfaces with networks are created on the host.
 
 //	maybe I should talk about the effects this will have a pool
 //	citrix talks about how the physical network should be the consitistant (how the fuck do you spell that?)
@@ -29,12 +29,12 @@ REQUIRED PARAMETERS
 -------------------
  
  *uuid*::
-	UUID of host - *xe host-list* will display host UUIDs present in a pool. 
+	UUID of host - Use *xe host-list* to obtain host UUIDs. 
 
 EXAMPLES
 --------
 
-to scan a specific host for new PIF interfaces type,
+To scan a host for new PIF interfaces:
 	*xe-pif-scan* uuid=<Host UUID>
 
 SEE ALSO
@@ -51,7 +51,6 @@ Send bugs to xen-devel@lists.xen.org, see http://wiki.xen.org/wiki/Reporting_Bug
 AUTHORS
 -------
 Matthew Spah <spahmatthew@gmail.com>
-
 
 
 
