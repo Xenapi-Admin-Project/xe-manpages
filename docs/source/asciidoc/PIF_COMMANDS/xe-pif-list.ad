@@ -7,7 +7,8 @@ XE(1)
 
 NAME
 -----
-*xe pif-list* - Display PIF interfaces present in a pool
+//edited brief description -lisa
+*xe pif-list* - Lists PIF interfaces in a resource pool
 
 SYNOPSIS
 --------
@@ -17,31 +18,31 @@ SYNOPSIS
 
 DESCRIPTION
 -----------
-
-*xe pif-list* will display PIF interfaces and their parameters found in a pool. Output can be filtered by supplying params=<parameter>. Multiple parameters can be displayed by seperating each parameter with a comma (params=uuid,name-label).
+//corrected spelling and edited a few words -lisa
+*xe pif-list* lists PIF interfaces and their parameters found in a pool. Output can be filtered by supplying params=<parameter>. Multiple parameters can be displayed by separating each parameter with a comma (e.g. params=uuid,name-label).
 
 
 OPTIONAL PARAMETERS
 ----------
-
+//added and edited some words, I only went far down to the management parameter -lisa
 *device*::
-	name of the machine-readable interface (for example, eth0)
+	Name of the machine-readable interface (e.g. eth0)
 
 *MAC*::
-    MAC address of PIF
+    MAC address of PIF interface
 
 *physical*::
     #I'm not too sure how to word this one
     If true PIF is a underlying physical interface on host    
     
 *currently-attached*::
-    if true, the PIF is currently attached on this host.
+    True if a PIF is currently attached on a host. Otherwise false.
 
 *MTU*::
-    Maximum Transmission Unit size (in bytes)
+    Maximum Transmission Unit size in bytes
 
 *VLAN*:: 
-    VLAN tag for this PIF. A -1 indicates no VLAN tag is assigned.
+    VLAN tag for this PIF. Value of-1 indicates no VLAN tag is assigned.
     
 *bond-master-of*:: 
               
@@ -52,7 +53,7 @@ OPTIONAL PARAMETERS
 *tunnel-transport-PIF-of*:: 
 
 *management*:: 
-    if true, this PIF is the management interface for the control domain
+    True if a specific PIF is the management interface for the control domain. Otherwise false.
     
 *network-uuid*:: 
     Attached Network UUID 
@@ -153,11 +154,12 @@ OPTIONAL PARAMETERS
 
 EXAMPLES
 --------
+//need moar examples! -lisa
 
-To display all parameters for a specified PIF interface type,
+To display all parameters for a specific PIF interface:
 	*xe pif-list* uuid=<PIF UUID> params=all
 	
-To display all physical PIF interfaces and all their parameters type,
+To display all physical PIF interfaces and all their parameters:
 	*xe pif-list* physical=true params=all
 	
 SEE ALSO

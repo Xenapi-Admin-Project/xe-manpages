@@ -7,8 +7,8 @@ XE(1)
 
 NAME
 ----
-
-*xe pif-param-remove*
+//added description
+*xe pif-param-remove* - Removes a parameter for a specific PIF
 
 SYNOPSIS
 --------

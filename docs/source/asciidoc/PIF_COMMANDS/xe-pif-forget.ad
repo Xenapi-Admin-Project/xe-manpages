@@ -5,30 +5,38 @@ XE(1)
 :man version:  {1}
 :man manual:   xe manual
 
+//don't forget to verify when your new NICs arrive! -lisa
+
 NAME
 ----
-
-*xe pif-forget*
+//added brief description -lisa
+*xe pif-forget* - Removes a PIF interface from the Xen Cloud Platform database
 
 SYNOPSIS
 --------
-
 *xe pif-forget* uuid=<PIF UUID>
 
 DESCRIPTION
 -----------
-
-*xe pif-forget* will erase a physical PIF interface on a host. See *xe vlan-destroy* to erase a pseudo PIF interface connected to a VLAN.
+*xe pif-forget* removes a PIF interface from the XCP database, so it will not be listed. Use *xe pif-list* to verify the removal process. 
+See *xe vlan-destroy* to erase a pseudo PIF interface connected to a VLAN.
 
 // Check to see if you can erase a physical PIF with an active PIF attached.
 
 REQUIRED PARAMETERS
 -------------------
 
+//edited sentence -lisa
 *uuid*::
-	UUID of PIF interface - *xe pif-list* will output PIF interfaces and their parameters.
+	UUID of PIF interface - Use *xe pif-list* to obtain PIF interface UUIDs.
 	
-
+EXAMPLES
+---------
+// added example -lisa
+// To delete a PIF interface:
+//		*xe pif-forget* uuid=<PIF UUID>
+	
+	
 SEE ALSO
 --------
 *xe-pif-list*(1), *xe-pif-introduce*(1), *xe-vlan-destroy*(1), *xe-pif-plug*(1), *xe-pif-unplug*(1)
@@ -39,7 +47,7 @@ Send bugs to xen-devel@lists.xen.org, see http://wiki.xen.org/wiki/Reporting_Bug
 
 AUTHORS
 -------
-Matthew Spah <spahmatthew@gmail.com>::
+Matthew Spah <spahmatthew@gmail.com>
 
 COPYRIGHT
 ---------
@@ -54,12 +62,9 @@ met:
 . Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
 . Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
 
-
-
 THIS SOFTWARE IS PROVIDED BY THE AUTHOR "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
 WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT,
 INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
 SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
 STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 POSSIBILITY OF SUCH DAMAGE.
-

@@ -7,16 +7,21 @@ XE(1)
 
 NAME
 -----
-*xe pif-introduce* - Create a new PIF interface
+*xe pif-introduce* - Creates a new PIF interface
 
 SYNOPSIS
 --------
-
 *xe pif-introduce* host-uuid=<Host UUID> device=<Network Device> [ mac=<Mac Address> ] 
 
 
 DESCRIPTION
 -----------
+// Do you mean... *xe pif-introduce* creates a new PIF interface associated with a network device (e.g. eth0) found on a specific host.
+// The PIF interface inherits the MAC address of the physical device (e.g. ?) unless it is manually configured(?).
+// *xe pif-introduce* generates a PIF UUID for the new PIF interface.
+//
+// I kept your original description in case I misunderstood you. 
+// I have a hard time picturing things in my head and examples would help to see things clearer -lisa
 
 *xe pif-introduce* creates a new PIF interface associated with a network device found on the specified host. The PIF interface will inherit the 
 MAC address of the physical device unless specified. The resulting PIF UUID is returned. 
@@ -25,11 +30,12 @@ MAC address of the physical device unless specified. The resulting PIF UUID is r
 REQUIRED PARAMETERS
 -------------------
 
+//changed sentence -lisa
 *host-uuid*::
-	UUID of host - Use *xe host-list* to obtain a list of host UUIDs.
+	UUID of host - Use *xe host-list* to obtain host UUIDs.
 
 *device*::
-	physical network device (e.g. eth0) - Use *ifconfig -a* on your control domain to list network devices present on the host.
+	Physical network device (e.g. eth0) - Use *ifconfig -a* on your control domain to list network devices present on the host.
 
 OPTIONAL PARAMETERS
 -------------------
@@ -39,9 +45,7 @@ OPTIONAL PARAMETERS
 	
 EXAMPLES
 --------
-
-
-// To introduce a new physical PIF interface to a host type,
+// To introduce a new physical PIF interface:
 // *xe pif-introduce* host-uuid=<Host UUID> device=eth1 
 
 // that should work... better test first
@@ -74,8 +78,6 @@ met:
 [options="compact"]
 . Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
 . Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
-
-
 
 THIS SOFTWARE IS PROVIDED BY THE AUTHOR "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
 WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT,

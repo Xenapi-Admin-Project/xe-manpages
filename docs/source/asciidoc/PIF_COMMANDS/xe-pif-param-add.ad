@@ -7,51 +7,52 @@ xe-pif-param-add.ad(1)
 
 NAME
 ----
-*xe pif-param-add*
+//added description -lisa
+*xe pif-param-add* - Adds a parameter for a PIF 
 
 SYNOPSIS
 --------
+//finished your synopsis -lisa
+*xe pif-param-add* uuid=<PIF UUID> param-name=<Parameter>
 
-*xe pif-param-add*
+*xe pif-param-add* uuid=<PIF UUID> param-name=<Parameter> [ param-key=<Parameter Key> ]
 
 DESCRIPTION
 -----------
-
 // blah blah blah
-
-PREREQUISITES
--------------
 
 
 REQUIRED PARAMETERS
 -------------------
-
+//meh... started writing -lisa
 *uuid*::
+	UUID of PIF interface - Use *xe pif-list* to obtain PIF interface UUIDs
 
 *param-name*::
+	Parameter to be added for a PIF interface
+
 
 OPTIONAL PARAMETERS
 -------------------
-
 *param-key*::
-
-
+	Parameter key value required if the other-config parameter will be modified. 
+	
 
 EXAMPLES
 --------
 
+
 SEE ALSO
 --------
-
-
-
+*xe pif-list*(1)
 
 AUTHORS
 -------
 Matthew Spah <spahmatthew@gmail.com>
 
-
-
+BUGS
+----
+Send bugs to xen-devel@lists.xen.org, see http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP on how to send bug reports. General questions can be sent to xen-api@lists.xen.org.
 
 COPYRIGHT
 ---------
@@ -66,11 +67,6 @@ met:
 [options="compact"]
 . Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
 . Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
-
-
-.List
-.  Item one
-.  Item two
 
 
 THIS SOFTWARE IS PROVIDED BY THE AUTHOR "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED

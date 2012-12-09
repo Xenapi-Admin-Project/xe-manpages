@@ -5,9 +5,10 @@ XE(1)
 :man version:  {1}
 :man manual:   xe manual
 
+//added description -lisa
 NAME
 ----
-*xe pif-param-clear*
+*xe pif-param-clear* - Clears a parameter for a PIF
 
 SYNOPSIS
 --------
@@ -20,27 +21,26 @@ SYNOPSIS
 
 DESCRIPTION
 -----------
-
-*xe pif-param-clear* will completely clear all set or map parameters from a PIF interface.
+//changed sentence -lisa
+*xe pif-param-clear* clears all set or map parameters for a PIF interface. 
 
 REQUIRED PARAMETERS
 -------------------
 
 *uuid*::
-	UUID of PIF interface - Use *xe pif-list* to obtain a list PIF interface UUIDs.
+	UUID of PIF interface - Use *xe pif-list* to obtain PIF interface UUIDs.
 	
 *param-name*::
-	Name of parameter 
+	Parameter to be cleared for a PIF interface (e.g. other-config) 
 
 EXAMPLES
 --------
-
-To clear all values found in the parameter other-config type,
+//changed sentence -lisa
+To clear all values found in the other-config parameter:
 	*xe pif-param-clear* uuid=<PIF UUID> param-name=other-config
 
 SEE ALSO
 --------
-
 *xe-pif-list*(1), *xe-pif-param-list*(1), *xe-pif-param-remove*(1), *xe-pif-param-set*(1), *xe network-list*(1), *xe vlan-list*(1)
 
 BUGS
@@ -63,9 +63,6 @@ met:
 [options="compact"]
 . Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
 . Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
-
-
-
 
 THIS SOFTWARE IS PROVIDED BY THE AUTHOR "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
 WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT,

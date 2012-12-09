@@ -19,21 +19,31 @@ SYNOPSIS
 DESCRIPTION
 -----------
 // add description
+// What is a primary address? :0 - lisa
 
 REQUIRED PARAMETERS
 -------------------
-
 *uuid*::
+// added a line - lisa
+// UUID of PIF interface - Use *xe pif-list* to obtain PIF interface UUIDs 
 
 *primary_address_type*::
+// just guessing? - lisa
+// Type for the primary address, either in IPv4 or IPv6. 
 
 EXAMPLES
 --------
-
 // add examples
+// check to see if any of these examples work - lisa
+// To set the primary address type to IPv4:
+//	*xe pif-set-primary-address-type* uuid=<PIF UUID> primary_address_type=ipv4
+// To set the primary address type to IPv6:
+//	*xe pif-set-primary-address-type* uuid=<PIF UUID> primary_address_type=ipv6
+
 SEE ALSO
 --------
-// yeah add see also's
+// added something -lisa
+// *xe pif-list*(1) 
 
 BUGS
 ----
@@ -42,8 +52,6 @@ Send bugs to xen-devel@lists.xen.org, see http://wiki.xen.org/wiki/Reporting_Bug
 AUTHORS
 -------
 Matthew Spah <spahmatthew@gmail.com>
-
-
 
 
 COPYRIGHT
@@ -60,11 +68,9 @@ met:
 . Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
 
 
-
 THIS SOFTWARE IS PROVIDED BY THE AUTHOR "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
 WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT,
 INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
 SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
 STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 POSSIBILITY OF SUCH DAMAGE.
-

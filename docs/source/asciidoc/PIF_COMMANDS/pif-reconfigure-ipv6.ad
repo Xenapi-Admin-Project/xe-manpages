@@ -14,29 +14,30 @@ NAME
 
 SYNOPSIS
 --------
-
 *xe pif-reconfigure-ipv6*	mode=<autoconf | dhcp | none>	uuid=<PIF UUID>
 
 *xe pif-reconfigure-ipv6*	mode=<static> uuid=<PIF UUID> IPv6=<IPv6 Address> [ gateway=<Gateway Address> ]
-							DNS=<Name servers>
+							DNS=<Name Server>
 
 DESCRIPTION
 -----------
-
-*xe pif-reconfigure-ip* will change IPv6 addressing parameters for a specified PIF interface. 
+//modified sentence - lisa
+*xe pif-reconfigure-ipv6* configures IPv6 addressing settings for a specific PIF interface. 
 
 
 REQUIRED PARAMETERS
 -------------------
 
 *mode*::
-	Set addressing mode for PIF interface dhcp, static, none, and autoconf.
+// modified sentence; are  - lisa	
+	Addressing mode for the PIF interface. Mode options are dhcp, static, autoconf, or none.
 
 *uuid*::
 	UUID of PIF interface - Use *xe pif-list* to obtain PIF interface UUIDs
 
 *IPv6*::
-	IPv6 Host address of PIF interface. Address is only required for mode=static.
+// modified sentence - lisa
+	IPv6 Host address of PIF interface. Address is only required for static mode.
 
 OPTIONAL PARAMETERS
 -------------------
@@ -49,13 +50,18 @@ OPTIONAL PARAMETERS
 	
 EXAMPLES
 --------
-
 // add examples
+// I don't even know if these example work, but I'm making up something ... -lisa
+// To set the dhcp mode:
+//		*xe pif-reconfigure-ipv6* mode=dhcp uuid=<PIF UUID>
+// To set the static mode with a gateway address and one DNS:
+//		*xe pif-reconfigure-ipv6* mode=static uuid=<PIF UUID> IPv6=<IPv6 Address> gateway=<Gateway Address> DNS=<Name Server>
+// One example using static mode without gateway
+// Can you set up multiple name servers?
 
 
 SEE ALSO
 --------
-
 *xe-pif-list*(1), *xe-pif-reconfigure-ip*(1), *xe-pif-param-set*(1), *xe-set-primary-address-type*(1), *xe-network-list*(1), *xe-vif-list*(1)
 
 BUGS
@@ -65,9 +71,6 @@ Send bugs to xen-devel@lists.xen.org, see http://wiki.xen.org/wiki/Reporting_Bug
 AUTHORS
 -------
 Matthew Spah <spahmatthew@gmail.com>
-
-
-
 
 COPYRIGHT
 ---------
@@ -81,12 +84,6 @@ met:
 [options="compact"]
 . Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
 . Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
-
-
-.List
-.  Item one
-.  Item two
-
 
 THIS SOFTWARE IS PROVIDED BY THE AUTHOR "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
 WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT,

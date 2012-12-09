@@ -7,31 +7,31 @@ XE(1)
 
 NAME
 ----
-
-*xe pif-param-list* - Displays parameters for a PIF interface
+//changed description -lisa
+*xe pif-param-list* - Lists all parameters for a specific PIF interface
 
 SYNOPSIS
 --------
-
 *xe pif-param-list* uuid=<PIF UUID>
 
 DESCRIPTION
 -----------
-
-*xe pif-param-list* will display all parameters for a specified PIF interface.
+//modified sentence -lisa
+*xe pif-param-list* lists all parameters for a specific PIF interface.
 
 
 REQUIRED PARAMETERS
 -------------------
-
+//modified sentence -lisa
 *uuid*::
-	UUID of PIF interface - *xe pif-list* will display PIF interfaces 
+	UUID of PIF interface - Use *xe pif-list* to obtain PIF interface UUIDs
 	
+
 EXAMPLES
 --------
-
-To display parameters for a specific PIF interface, type; 
+To display parameters for a specific PIF interface: 
 	*xe pif-param-list* uuid=<PIF UUID>
+
 
 SEE ALSO
 --------
