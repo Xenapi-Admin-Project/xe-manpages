@@ -1,4 +1,4 @@
-xe-vlan-param-get.ad(1)
+XE(1)
 =======
 :doctype: manpage
 :man source:   xe 
@@ -29,12 +29,13 @@ REQUIRED PARAMETERS
 
 *param-name*::
 	 Parameter to output 
+	 // update this
 
 OPTIONAL PARAMETERS
 -------------------
 
 *param-key*::
-
+	// add description
 
     
 EXAMPLES
@@ -42,7 +43,7 @@ EXAMPLES
 
 To display the tagged-PIF parameter for a VLAN, type;
 	*xe vlan-param-get* uuid=<VLAN UUID> param-name=tagged-PIF  
-
+// this is about all you can do with vlans from what I remember
 
 
 SEE ALSO
@@ -50,6 +51,9 @@ SEE ALSO
 
 *xe-vlan-param-list*(1), *xe-vlan-list*(1), *xe-pif-list*(1), *xe-pool-vlan-create*(1), *xe-network-list*(1)
 
+BUGS
+----
+Send bugs to xen-devel@lists.xen.org, see http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP on how to send bug reports. General questions can be sent to xen-api@lists.xen.org.
 
 AUTHORS
 -------

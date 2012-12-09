@@ -1,4 +1,4 @@
-xe-vlan-list(1)
+XE(1)
 =======
 :doctype: manpage
 :man source:   xe 
@@ -15,15 +15,12 @@ SYNOPSIS
 
 *xe vlan-list*
 
-*xe vlan-list* [ params=<parameterss> ] [ tag=<VLAN id> ] [ tagged-PIF=<PIF UUID> ] [ untagged-PIF=<PIF UUID> ]  [ uuid=<VLAN UUID> ]
-
+*xe vlan-list* [ params=<parameter> ]
 
 DESCRIPTION
 -----------
 
-*xe vlan-list* display VLANs present in a pool along with several other attributes. The UUID is a reference to the VLANs UUID, 
-the tagged-PIF object references the Physical PIF leading out to the external network, the untagged-PIF references the pseudo PIF connected to the internal network, 
-and the tag is the VLAN ID number for the listed VLAN. Citrix also recommends using *xe pif-list* to list VLANs.
+*xe vlan-list* display VLANs present in a pool along with several other attributes. Citrix also recommends using *xe pif-list* to display VLANs present. Output can be filtered by supplying params=<parameter>. Multiple parameters can be displayed by seperating each parameter with a comma (params=uuid,name-label).
 
 
 OPTIONAL PARAMETERS
@@ -45,7 +42,6 @@ OPTIONAL PARAMETERS
 EXAMPLES
 --------
 
-
 To display only the tagged-PIF and tag parameters for VLANs type,
 	*xe vlan-list* params=tag,tagged-PIF
 
@@ -54,16 +50,19 @@ SEE ALSO
 
 *xe-pool-vlan-create*(1), *xe-pif-list*(1), *xe-vlan-destroy*(1), *xe-network-list*(1)
 
+BUGS
+----
+
+Send bugs to xen-devel@lists.xen.org, see http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP on how to send bug reports. General questions can be sent to xen-api@lists.xen.org.
 
 AUTHORS
 -------
+
 Matthew Spah <spahmatthew@gmail.com>
-
-
-
 
 COPYRIGHT
 ---------
+
 Copyright \(C) 2012 - Matthew Spah
 
 The Howto containing this example, was offered under the following conditions:

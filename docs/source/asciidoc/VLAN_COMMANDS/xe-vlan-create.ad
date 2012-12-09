@@ -11,52 +11,50 @@ NAME
 
 SYNOPSIS
 --------
-*xe vlan-create*
 
-*xe vlan-create* pif-uuid= vlan= network-uuid=
+*xe vlan-create* pif-uuid=<PIF UUID> vlan=<VLAN ID> network-uuid=<Network UUID>
 
 DESCRIPTION
 -----------
 
-*xe vlan-create* creates a VLAN on a host and assigns it to the specified network. VLAN ID tags must be between 0 and 4094.
-A pseudo PIF is created and associated with the specified physical PIF. VLAN tagging occurs on the pseudo PIF. 
-The resulting VLAN UUID is returned. 
+// This needs be works 
+// This needs verifying with the new hosts
+
+*xe vlan-create* creates a virtual VLAN PIF interface on a host in a pool and assigns it to the target network. VLAN ID tags must be between 0 and 4094.
+The virtual PIF interface is assigned to the target physical PIF interface. The resulting VLAN UUID is returned. 
 
 The physical PIF associated with new pseudo PIF now supports 802.1Q and must be interfaced with a trunk port.
 Use native VLAN 1 as default.
 
 
-PREREQUISITES
--------------
-
-*xe vlan-create* requires an internal network and one physical PIF device.
-
-*xe pif-list* uuid= will list the PIFs found on a host
-
-*xe network-list* will list the networks found in a pool
-
 REQUIRED PARAMETERS
 -------------------
 
+*pif-uuid*::
+    Physical PIF that the pseudo PIF will be associated with. - Use *xe pif-list* to obtain a list of PIF interfaces.
 
+*network-uuid*::
+    Network to be assigned VLAN - Use *xe network-list* to obtain a list of networks found in a pool.
+    
+*vlan*::
+    VLAN number
 
 SEE ALSO
 --------
 
+*xe-pool-vlan-create(1), *xe-vlan-destroy*(1), *xe-vlan-list*(1), *xe-pif-list*(1), *xe-network-list*(1), *xe-vif-list*(1)
 
-
+BUGS
+----
+Send bugs to xen-devel@lists.xen.org, see http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP on how to send bug reports. General questions can be sent to xen-api@lists.xen.org.
 
 AUTHORS
 -------
 Matthew Spah <spahmatthew@gmail.com>
 
-
-
-
 COPYRIGHT
 ---------
-Copyright \(C) 1995-2003 Jens Schweikhardt + 
-Copyright \(C) 2006 Daniel Leidert
+Copyright \(C) 2012 - Matthew Spah
 
 The Howto containing this example, was offered under the following conditions:
 
@@ -66,11 +64,6 @@ met:
 [options="compact"]
 . Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
 . Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
-
-
-.List
-.  Item one
-.  Item two
 
 
 THIS SOFTWARE IS PROVIDED BY THE AUTHOR "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED

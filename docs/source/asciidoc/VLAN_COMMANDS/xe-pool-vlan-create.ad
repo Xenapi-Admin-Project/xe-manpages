@@ -1,4 +1,4 @@
-xe-pool-vlan-create(1)
+XE(1)
 =======
 :doctype: manpage
 :man source:   xe
@@ -11,45 +11,33 @@ NAME
 
 SYNOPSIS
 --------
-*xe pool-vlan-create* pif-uuid=<pif uuid> network-uuid=<network uuid> vlan=<tag id>
+*xe pool-vlan-create* pif-uuid=<PIF UUID> network-uuid=<Network UUID> vlan=<tag id>
 
 
 DESCRIPTION
 -----------
 
-*xe pool-vlan-create* creates a virtual VLAN PIF interface on all hosts in a pool and assigns it to the specified network. VLAN ID tags must be between 0 and 4094.
-The virtual PIF interface is associated with the specified physical PIF interface. The resulting VLAN UUID is returned. 
+*xe pool-vlan-create* creates a virtual VLAN PIF interface on all hosts in a pool and assigns it to the target network. VLAN ID tags must be between 0 and 4094.
+The virtual PIF interface is assigned to the target physical PIF interface. The resulting VLAN UUID is returned. 
 
 The physical PIF interface now performs 802.1Q VLAN tagging/untagging. Use native VLAN 1 as a default.
 
-NOTE: Primary Management Interfaces cannot be assigned a VLAN via a trunk port.
-
-
-
-PREREQUISITES
--------------
-
-*xe pool-vlan-create* requires an internal network and one physical PIF device.
-
-*xe pif-list* will list the PIFs found in a pool
-
-*xe network-list* will list the networks found in a pool
+NOTE: Primary Management Interfaces cannot be assigned a VLAN.
 
 
 REQUIRED PARAMETERS
 -------------------
 
 *pif-uuid*::
-    Target physical PIF that the pseudo PIF will be associated with. 
+    Physical PIF that the pseudo PIF will be associated with. - Use *xe pif-list* to obtain a list of PIF interfaces.
 
 *network-uuid*::
-    Network to be assigned VLAN 
+    Network to be assigned VLAN - Use *xe network-list* to obtain a list of networks found in a pool.
     
 *vlan*::
     VLAN number
     
     
-
 EXAMPLES
 --------
 
@@ -59,9 +47,11 @@ To create a VLAN with the tag 2 on a network, type;
 
 SEE ALSO
 --------
-*xe-pif-list*(1), *xe-network-list*(1), *xe-vlan-list*(1)
+*xe-vlan-create*(1), *xe-vlan-destroy*(1), *xe-pif-list*(1), *xe-network-list*(1), *xe-vlan-list*(1)
 
-
+BUGS
+----
+Send bugs to xen-devel@lists.xen.org, see http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP on how to send bug reports. General questions can be sent to xen-api@lists.xen.org.
 
 AUTHORS
 -------
@@ -71,8 +61,7 @@ Matthew Spah <spahmatthew@gmail.com>::
 
 COPYRIGHT
 ---------
-Copyright \(C) 1995-2003 Jens Schweikhardt + 
-Copyright \(C) 2006 Daniel Leidert
+Copyright \(C) 2012 - Matthew Spah
 
 The Howto containing this example, was offered under the following conditions:
 
@@ -82,11 +71,6 @@ met:
 [options="compact"]
 . Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
 . Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
-
-
-.List
-.  Item one
-.  Item two
 
 
 THIS SOFTWARE IS PROVIDED BY THE AUTHOR "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
