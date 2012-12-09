@@ -1,4 +1,4 @@
-xe-vif-plug.ad(1)
+XE(1)
 =======
 :doctype: manpage
 :man source:   xe 
@@ -11,15 +11,15 @@ NAME
 
 SYNOPSIS
 --------
-
 *xe vif-plug* uuid=<VIF uuid>
 
 
 DESCRIPTION
 -----------
-
 *xe vif-plug* will attach a VIF interface to a running VM. VIF interfaces will automattically be attached 
+when you start a VM. 
 
+// test this 
 
 REQUIRED PARAMETERS
 -------------------
@@ -30,28 +30,25 @@ REQUIRED PARAMETERS
 
 EXAMPLES
 --------
-
 To attach a VIF interface to a running VM type,
 	*xe vif-plug* uuid=<VIF UUID>
 
 SEE ALSO
 --------
-
 *xe-vif-list*(1), *xe-vif-unplug*(1), *xe-vif-create*(1), *xe-vif-destroy*, *xe-vm-list*(1), *xe-network-list*(1)
 
-
+BUGS
+----
+Send bugs to xen-devel@lists.xen.org, see http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP on how to send bug reports. General questions can be sent to xen-api@lists.xen.org.
 
 AUTHORS
 -------
-Matthew Spah <spahmatthew@gmail.com>
-
-
+Matthew Spah <spahmatthew@gmail.com>::
 
 
 COPYRIGHT
 ---------
-Copyright \(C) 1995-2003 Jens Schweikhardt + 
-Copyright \(C) 2006 Daniel Leidert
+Copyright \(C) 2012 - Matthew Spah
 
 The Howto containing this example, was offered under the following conditions:
 
@@ -61,13 +58,7 @@ met:
 [options="compact"]
 . Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
 . Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
-
-
-.List
-.  Item one
-.  Item two
-
-
+ 
 THIS SOFTWARE IS PROVIDED BY THE AUTHOR "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
 WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT,
 INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR

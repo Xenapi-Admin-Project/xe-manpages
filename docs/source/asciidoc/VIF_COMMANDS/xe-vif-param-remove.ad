@@ -1,4 +1,4 @@
-xe-vif-param-remove.ad(1)
+XE(1)
 =======
 :doctype: manpage
 :man source:   xe 
@@ -7,49 +7,53 @@ xe-vif-param-remove.ad(1)
 
 NAME
 ----
-*xe vif-param-remove* 
+*xe vif-param-remove* - Removes a set or map writable parameter for a specific VIF
 
 SYNOPSIS
 --------
-*xe vif-param-remove* 
+*xe vif-param-remove* uuid=<VIF UUID> param-name=<Parameter> param-key=<Parameter Key>
 
 
 DESCRIPTION
 -----------
+*xe vif-param-remove* removes a parameter key assigned to a VIF interface.
 
-
-PREREQUISITES
--------------
 
 
 REQUIRED PARAMETERS
 -------------------
+*uuid*::
+	UUID of VIF interface - Use *xe vif-list* to obtain VIF interface UUIDs.
 
+*param-name*::
+	Parameter that contains parameter keys (e.g. other-config)
 
-OPTIONAL PARAMETERS
--------------------
+*param-key*::
+	Parameter key that displays additional information on a VIF
+
 
 EXAMPLES
 --------
 
+// bah add examples
+
 SEE ALSO
 --------
 
+*xe-vif-list*(1), *xe-vif-destroy*(1), *xe-vif-param-clear*(1), *xe-vif-param-set*(1), *xe-network-list*(1), *xe-vm-list*(1)
 
 
 
 AUTHORS
 -------
-Matthew Spah <spahmatthew@gmail.com>
+Matthew Spah <spahmatthew@gmail.com>::
 
 
 
 
 COPYRIGHT
 ---------
-Copyright \(C) 1995-2003 Jens Schweikhardt + 
-Copyright \(C) 2006 Daniel Leidert
-
+Copyright \(C) 2012 - Matthew Spah
 The Howto containing this example, was offered under the following conditions:
 
 Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are
@@ -58,11 +62,6 @@ met:
 [options="compact"]
 . Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
 . Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
-
-
-.List
-.  Item one
-.  Item two
 
 
 THIS SOFTWARE IS PROVIDED BY THE AUTHOR "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED

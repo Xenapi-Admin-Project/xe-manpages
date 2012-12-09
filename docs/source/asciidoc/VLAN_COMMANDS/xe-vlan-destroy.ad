@@ -7,18 +7,15 @@ xe-vlan-destroy(1)
 
 NAME
 ----
-
 *xe vlan-destroy* - Delete a VLAN from a network
 
 SYNOPSIS
 --------
-
 *xe vlan-destroy* uuid=<VLAN UUID>
 
 
 DESCRIPTION
 -----------
-
 *xe vlan-destroy* deletes a VLAN from a network and the pseudo PIF interface assigned to that VLAN. 
 Active VIF interfaces attached to the VLAN need to be disabled before deletion. 
 
@@ -26,32 +23,29 @@ Active VIF interfaces attached to the VLAN need to be disabled before deletion.
 
 REQUIRED PARAMETERS
 -------------------
-
 *uuid*::
     UUID of the VLAN to delete - *xe vlan-list* will display the VLAN UUIDs present. 
 
 EXAMPLES
 --------
-
 To delete a VLAN, type;
 	*xe vlan-destroy* uuid=<VLAN UUID>
 
 SEE ALSO
 --------
-
 *xe-vlan-list*(1), *xe-pool-vlan-create*(1), *xe-pif-list*(1), *xe-vif-list*(1), *xe-vif-unplug*(1), *xe-vif-destroy*(1)
+
+BUGS
+----
+Send bugs to xen-devel@lists.xen.org, see http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP on how to send bug reports. General questions can be sent to xen-api@lists.xen.org.
 
 AUTHORS
 -------
-
-Matthew Spah <spahmatthew@gmail.com>
-
-
+Matthew Spah <spahmatthew@gmail.com>::
 
 COPYRIGHT
 ---------
-Copyright \(C) 1995-2003 Jens Schweikhardt + 
-Copyright \(C) 2006 Daniel Leidert
+Copyright \(C) 2012 - Matthew Spah
 
 The Howto containing this example, was offered under the following conditions:
 
@@ -61,11 +55,6 @@ met:
 [options="compact"]
 . Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
 . Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
-
-
-.List
-.  Item one
-.  Item two
 
 
 THIS SOFTWARE IS PROVIDED BY THE AUTHOR "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED

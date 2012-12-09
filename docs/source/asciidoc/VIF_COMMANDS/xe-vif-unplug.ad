@@ -1,4 +1,4 @@
-xe-vif-unplug.ad(1)
+XE(1)
 =======
 :doctype: manpage
 :man source:   xe 
@@ -11,15 +11,13 @@ NAME
 
 SYNOPSIS
 --------
-
 *xe vif-unplug* uuid=<VIF UUID>
 
 
 DESCRIPTION
 -----------
-
 *xe vif-unplug* will detach a VIF interface from a running VM.
-
+// add more info you newb
 
 REQUIRED PARAMETERS
 -------------------
@@ -29,19 +27,22 @@ REQUIRED PARAMETERS
 
 EXAMPLES
 --------
+// maybe I add how to tell if the VIF is plugged in or not
 
 To detach a VIF interface from a running VM type,
 	*xe vif-unplug* uuid=<VIF UUID>
 
 SEE ALSO
 --------
-
 *xe-vif-list*(1), *xe-vif-plug*(1), *xe-vif-param-set*(1), *xe-vif-destroy*(1), *xe-network-list*(1)
 
+BUGS
+----
+Send bugs to xen-devel@lists.xen.org, see http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP on how to send bug reports. General questions can be sent to xen-api@lists.xen.org.
 
 AUTHORS
 -------
-Matthew Spah <spahmatthew@gmail.com>
+Matthew Spah <spahmatthew@gmail.com>::
 
 
 COPYRIGHT
