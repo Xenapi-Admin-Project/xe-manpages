@@ -1,4 +1,4 @@
-xe-vif-param-get.ad(1)
+XE(1)
 =======
 :doctype: manpage
 :man source:   xe 
@@ -33,24 +33,25 @@ OPTIONAL PARAMETERS
 -------------------
 
 *param-key*::
+	Name of key in other-config parameter 
 
 
 EXAMPLES
 --------
 
+To return the UUID of the VM assigned the VIF interface type,
+	*xe vif-param-get* uuid=<VIF UUID> param-name=vm-uuid
+	
+To return 
 
 SEE ALSO
 --------
-*xe-vif-list*(1), *xe-vif-param-set*(1), , *xe-vif-param-list*(1), *xe-vif-param-remove*(1), *xe-network-list*(1)
-
-
+*xe-vif-create*(1), *xe-vif-list*(1), *xe-vif-param-set*(1), , *xe-vif-param-list*(1), *xe-vif-param-remove*(1), *xe-network-list*(1)
 
 
 AUTHORS
 -------
-Matthew Spah <spahmatthew@gmail.com>
-
-
+Matthew Spah <spahmatthew@gmail.com>::
 
 
 COPYRIGHT
@@ -65,8 +66,6 @@ met:
 [options="compact"]
 . Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
 . Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
-
-
 
 
 THIS SOFTWARE IS PROVIDED BY THE AUTHOR "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
