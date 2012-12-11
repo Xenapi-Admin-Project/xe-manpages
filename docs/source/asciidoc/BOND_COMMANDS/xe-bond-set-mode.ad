@@ -7,51 +7,55 @@ XE(1)
 
 NAME
 ----
-//changed description -lisa
-*xe pif-param-list* - Lists all parameters for a specific PIF interface
+
+*xe set-mode* - // add description
+
 
 SYNOPSIS
 --------
-*xe pif-param-list* uuid=<PIF UUID>
+
+*xe set-mode* uuid=<Bond UUID> mode=<Bond mode> // lol
 
 DESCRIPTION
 -----------
-//modified sentence -lisa
-*xe pif-param-list* lists all parameters for a specific PIF interface.
+
+// description
+
 
 
 REQUIRED PARAMETERS
 -------------------
-//modified sentence -lisa
+
 *uuid*::
-	UUID of PIF interface - Use *xe pif-list* to obtain PIF interface UUIDs
-	
+
+*mode*::
+
 
 EXAMPLES
 --------
-To display parameters for a specific PIF interface: 
-	*xe pif-param-list* uuid=<PIF UUID>
 
 
 SEE ALSO
 --------
 
-*xe-pif-list*(1), *xe-pif-param-clear*(1), *xe-pif-param-get*(1), *xe-pif-param-remove*(1), 
-*xe-pif-param-set*(1), *xe-pif-param-add*(1)
+*xe-bond-destroy*(1), *xe-bond-list*(1), *xe-bond-set-mode*(1), *xe-bond-param-set*(1), *xe-network-list*(1), *xe-pif-list*(1)
+
 
 BUGS
 ----
 Send bugs to xen-devel@lists.xen.org, see http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP on how to send bug reports. General questions can be sent to xen-api@lists.xen.org.
 
+
 AUTHORS
 -------
 Matthew Spah <spahmatthew@gmail.com>::
-Lisa Nguyen <ltn821@hotmail.com>::
+
+
 
 
 COPYRIGHT
 ---------
-Copyright \(C) 2012 - Matthew Spah, Lisa Nguyen
+Copyright \(C) 2012 - Matthew Spah
 
 The Howto containing this example, was offered under the following conditions:
 
@@ -61,7 +65,6 @@ met:
 [options="compact"]
 . Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
 . Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
-
 
 THIS SOFTWARE IS PROVIDED BY THE AUTHOR "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
 WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT,

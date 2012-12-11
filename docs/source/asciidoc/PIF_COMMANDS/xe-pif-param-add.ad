@@ -48,7 +48,8 @@ SEE ALSO
 
 AUTHORS
 -------
-Matthew Spah <spahmatthew@gmail.com>
+Matthew Spah <spahmatthew@gmail.com>::
+Lisa Nguyen <ltn821@hotmail.com>::
 
 BUGS
 ----
@@ -56,8 +57,7 @@ Send bugs to xen-devel@lists.xen.org, see http://wiki.xen.org/wiki/Reporting_Bug
 
 COPYRIGHT
 ---------
-Copyright \(C) 1995-2003 Jens Schweikhardt + 
-Copyright \(C) 2006 Daniel Leidert
+Copyright \(C) 2012 - Matthew Spah, Lisa Nguyen
 
 The Howto containing this example, was offered under the following conditions:
 

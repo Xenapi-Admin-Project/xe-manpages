@@ -8,49 +8,66 @@ xe-bond-create.ad(1)
 NAME
 ----
 
-*xe bond-create*
+*xe bond-create* - // add description
 
 
 SYNOPSIS
 --------
 
-*xe bond-create*
+*xe bond-create* network-uuid=<Network UUID> pif-uuids=<PIF UUIDs> // how do we list multiple?
+				[ mac=<Mac Address] [ mode=<Bond Mode>] [ properties=<umm stuff>]
+				
+				// gotta look into these!
 
 DESCRIPTION
 -----------
 
+// description
 
-PREREQUISITES
--------------
 
 
 REQUIRED PARAMETERS
 -------------------
 
+*network-uuid*::
+
+*pif-uuids*::
 
 OPTIONAL PARAMETERS
 -------------------
 
+*mac*::
+
+*mode*::
+
+*properties*::
+
+
 EXAMPLES
 --------
+
 
 SEE ALSO
 --------
 
+*xe-bond-destroy*(1), *xe-bond-list*(1), *xe-bond-set-mode*(1), *xe-bond-param-set*(1), *xe-network-list*(1), *xe-pif-list*(1)
 
+
+BUGS
+----
+Send bugs to xen-devel@lists.xen.org, see http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP on how to send bug reports. General questions can be sent to xen-api@lists.xen.org.
 
 
 AUTHORS
 -------
-Matthew Spah <spahmatthew@gmail.com>
+Matthew Spah <spahmatthew@gmail.com>::
 
 
 
 
 COPYRIGHT
 ---------
-Copyright \(C) 1995-2003 Jens Schweikhardt + 
-Copyright \(C) 2006 Daniel Leidert
+Copyright \(C) 2012 - Matthew Spah
 
 The Howto containing this example, was offered under the following conditions:
 
@@ -60,12 +77,6 @@ met:
 [options="compact"]
 . Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
 . Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
-
-
-.List
-.  Item one
-.  Item two
-
 
 THIS SOFTWARE IS PROVIDED BY THE AUTHOR "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
 WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT,

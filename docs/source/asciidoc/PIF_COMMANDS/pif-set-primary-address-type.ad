@@ -58,12 +58,13 @@ Send bugs to xen-devel@lists.xen.org, see http://wiki.xen.org/wiki/Reporting_Bug
 
 AUTHORS
 -------
-Matthew Spah <spahmatthew@gmail.com>
+Matthew Spah <spahmatthew@gmail.com>::
+Lisa Nguyen <ltn821@hotmail.com>::
 
 
 COPYRIGHT
 ---------
-Copyright \(C) 2012 - Matthew Spah
+Copyright \(C) 2012 - Matthew Spah, Lisa Nguyen
 
 The Howto containing this example, was offered under the following conditions:
 

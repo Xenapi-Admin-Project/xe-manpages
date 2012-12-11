@@ -1,4 +1,4 @@
-xe-bond-param-get.ad(1)
+XE(1)
 =======
 :doctype: manpage
 :man source:   xe 
@@ -6,40 +6,50 @@ xe-bond-param-get.ad(1)
 :man manual:   xe manual
 
 NAME
-----
+-----
 
-*xe bond-param-get
-
+*xe bond-list* 
 
 SYNOPSIS
 --------
-
-xe bond-param-get
+*xe bond-list* [ params=<parameters> ]
 
 DESCRIPTION
 -----------
 
-
-
-PREREQUISITES
--------------
-
-
-REQUIRED PARAMETERS
--------------------
-
+// add description
 
 OPTIONAL PARAMETERS
 -------------------
 
+*uuid*::
+
+*mode*::
+
+*links-up*::
+
+*master*::
+
+*primary-slave*::
+
+*slaves*::
+
+*properties*::
+
+
 EXAMPLES
 --------
+
+
 
 SEE ALSO
 --------
 
+*xe-bond-create*(1), *xe-bond-destroy*(1), *xe-bond-set-mode*(1), *xe-bond-param-get*(1), *xe-bond-param-set*(1), *xe-pif-list*(1)
 
-
+BUGS
+----
+Send bugs to xen-devel@lists.xen.org, see http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP on how to send bug reports. General questions can be sent to xen-api@lists.xen.org.
 
 AUTHORS
 -------
@@ -50,8 +60,7 @@ Matthew Spah <spahmatthew@gmail.com>
 
 COPYRIGHT
 ---------
-Copyright \(C) 1995-2003 Jens Schweikhardt + 
-Copyright \(C) 2006 Daniel Leidert
+Copyright \(C) 2012 - Matthew Spah
 
 The Howto containing this example, was offered under the following conditions:
 
@@ -62,10 +71,6 @@ met:
 . Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
 . Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
 
-
-.List
-.  Item one
-.  Item two
 
 
 THIS SOFTWARE IS PROVIDED BY THE AUTHOR "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED

@@ -6,39 +6,39 @@ XE(1)
 :man manual:   xe manual
 
 NAME
-----
-//changed description -lisa
-*xe pif-param-list* - Lists all parameters for a specific PIF interface
+-----
+*xe tunnel-param-remove* 
 
 SYNOPSIS
 --------
-*xe pif-param-list* uuid=<PIF UUID>
+*xe tunnel-param-remove* uuid=<Tunnel UUID> param-name=<Parameter> [ param-key=<Key> ]
 
 DESCRIPTION
 -----------
-//modified sentence -lisa
-*xe pif-param-list* lists all parameters for a specific PIF interface.
+// add description 
 
 
 REQUIRED PARAMETERS
 -------------------
-//modified sentence -lisa
+
 *uuid*::
-	UUID of PIF interface - Use *xe pif-list* to obtain PIF interface UUIDs
-	
+
+*param-name*::
+
+OPTIONAL PARAMETERS
+-------------------
+
+*param-key*::
 
 EXAMPLES
 --------
-To display parameters for a specific PIF interface: 
-	*xe pif-param-list* uuid=<PIF UUID>
+// add examples
 
 
 SEE ALSO
 --------
-
-*xe-pif-list*(1), *xe-pif-param-clear*(1), *xe-pif-param-get*(1), *xe-pif-param-remove*(1), 
-*xe-pif-param-set*(1), *xe-pif-param-add*(1)
-
+*xe-tunnel-create*(1), *xe-tunnel-list*(1), *xe-tunnel-param-set*(1), *xe-tunnel-param-clear*(1) *xe-pif-list*(1), *xe-network-list*(1)
+// I'm going to have to mix these up
 BUGS
 ----
 Send bugs to xen-devel@lists.xen.org, see http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP on how to send bug reports. General questions can be sent to xen-api@lists.xen.org.
@@ -46,12 +46,13 @@ Send bugs to xen-devel@lists.xen.org, see http://wiki.xen.org/wiki/Reporting_Bug
 AUTHORS
 -------
 Matthew Spah <spahmatthew@gmail.com>::
-Lisa Nguyen <ltn821@hotmail.com>::
+
+
 
 
 COPYRIGHT
 ---------
-Copyright \(C) 2012 - Matthew Spah, Lisa Nguyen
+Copyright \(C) 2012 - Matthew Spah
 
 The Howto containing this example, was offered under the following conditions:
 
@@ -61,6 +62,7 @@ met:
 [options="compact"]
 . Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
 . Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+
 
 
 THIS SOFTWARE IS PROVIDED BY THE AUTHOR "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
