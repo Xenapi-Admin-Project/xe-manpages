@@ -7,7 +7,7 @@ xe-network-create.ad(1)
 
 NAME
 -----
-*xe network-create*	- Create a network in a pool #pool wide test?
+*xe network-create*	- Create a network in a pool // pool wide test?
 
 SYNOPSIS
 --------
@@ -20,7 +20,7 @@ DESCRIPTION
 
 *xe network-create* will create an internal network in a pool. Name-labels and name-descriptions containing spaces
 need to be enclosed in quotes. The MTU default is 1500. The resulting network UUID is returned. 
-
+// I need to look up does this really create a network on each host in the pool
 
 REQUIRED PARAMETERS
 -------------------
@@ -50,15 +50,14 @@ SEE ALSO
 
 AUTHORS
 -------
-Matthew Spah <spahmatthew@gmail.com>
+Matthew Spah <spahmatthew@gmail.com>::
 
 
 
 
 COPYRIGHT
 ---------
-Copyright \(C) 1995-2003 Jens Schweikhardt + 
-Copyright \(C) 2006 Daniel Leidert
+Copyright \(C) 2012 - Matthew Spah
 
 The Howto containing this example, was offered under the following conditions:
 

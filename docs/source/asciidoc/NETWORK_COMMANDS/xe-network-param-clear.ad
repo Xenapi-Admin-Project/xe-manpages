@@ -1,4 +1,4 @@
-network-param-clear.ad(1)
+XE(1)
 =======
 :doctype: manpage
 :man source:   xe 
@@ -6,18 +6,15 @@ network-param-clear.ad(1)
 :man manual:   xe manual
 
 NAME
------
-
+----
 *xe network-param-clear* 
 
 SYNOPSIS
 --------
-
 *xe network-param-clear* uuid=<network uuid> param-name=<parameter>
 
 DESCRIPTION
 -----------
-
 *xe network-param-clear* will completely clear all values from a set or a map parameter on a network. 
 
 
@@ -32,19 +29,23 @@ REQUIRED PARAMETERS
 
 EXAMPLES
 --------
+To clear all values found in the other-config parameter:
+	*xe network-param-clear* uuid=<Network UUID> param-name=other-config
 
 
 
 SEE ALSO
 --------
-
 *xe-network-list*(1), *xe-network-create*(1), *xe-network-param-list*(1), *xe-pif-list*(1), *xe-vif-list*(1)
 *xe-network-param-set*(1), *xe-network-param-remove*(1)
 
+BUGS
+----
+Send bugs to xen-devel@lists.xen.org, see http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP on how to send bug reports. General questions can be sent to xen-api@lists.xen.org.
 
 AUTHORS
 -------
-Matthew Spah <spahmatthew@gmail.com>
+Matthew Spah <spahmatthew@gmail.com>::
 
 
 COPYRIGHT
@@ -58,11 +59,6 @@ met:
 [options="compact"]
 . Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
 . Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
-
-
-.List
-.  Item one
-.  Item two
 
 
 THIS SOFTWARE IS PROVIDED BY THE AUTHOR "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED

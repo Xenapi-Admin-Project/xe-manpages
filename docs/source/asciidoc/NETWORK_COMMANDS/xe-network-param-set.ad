@@ -1,4 +1,4 @@
-network-param-set.ad(1)
+XE(1)
 =======
 :doctype: manpage
 :man source:   xe 
@@ -15,16 +15,14 @@ SYNOPSIS
 
 *xe network-param-set* uuid=<NETWORK UUID>
 
-*xe network-param-set* uuid=<NETWORK UUID> [ name-label=<name label> ] [ name-description=<description> ] [ MTU=<MTU SIZE> ] [ other-config:ethtool-autoneg=<on | off> ]
-					   [ other-config:static-routes=<Network Address/<Subnet Mask>/<Next Hop Address> ] [ other-config:ethtool-rx=<on | off> ] [ other-config:ethtool-tx=<on | off> ]
-					   [ other-config:ethtool-sg=<on | off> ] [ other-config:ethtool-tso=<on | off> ] [ other-config:ethtool-ufo=<on | off> ] [ other-config:ethtool-gso=<on | off> ]
-
+*xe network-param-set* uuid=<NETWORK UUID> [ name-label=<name label> ] [ name-description=<description> ] 
+										   [ MTU=<MTU SIZE> ] [ other-config:<Parameter Key>=<Key Value> ]
 
 
 DESCRIPTION
 -----------
 
-*xe network-param-set* will set values of read/write parameters for a network.
+*xe network-param-set* sets read/write parameters for a network.
 
 
 REQUIRED PARAMETERS
@@ -74,22 +72,24 @@ OPTIONAL PARAMETERS
 EXAMPLES
 --------
 
-To create a static route that would route traffic from 192.168.1.0/24 to the gateway of 192.168.0.1 type,
+To create a static route that would route traffic from 192.168.1.0/24 to the gateway of 192.168.0.1:
 	*xe network-param-set* uuid=<Network UUID> other-config=static-routes=192.168.1.0/24/192.168.0.1 
 
-To change the MTU size for a network type,
+To set the MTU size for a network:
 	*xe network-param-set* uuid=<Network UUID> MTU=<MTU Size>
 	
 
 SEE ALSO
 --------
-
 *xe-network-list*(1), *xe-network-create*(1), *xe-network-param-list*(1), *xe-network-param-remove*(1), *xe-pif-list*(1), *xe-vif-list*(1)
 
+BUGS
+----
+Send bugs to xen-devel@lists.xen.org, see http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP on how to send bug reports. General questions can be sent to xen-api@lists.xen.org.
 
 AUTHORS
 -------
-Matthew Spah <spahmatthew@gmail.com>
+Matthew Spah <spahmatthew@gmail.com>::
 
 
 

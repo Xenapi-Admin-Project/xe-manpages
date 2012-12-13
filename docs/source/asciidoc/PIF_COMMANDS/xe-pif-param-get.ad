@@ -45,9 +45,9 @@ EXAMPLES
 To display the management parameter for a PIF interface:
 	*xe pif-param-get* uuid=<PIF UUID> param-name=management
 
-To display the map parameter:
-	*xe pif-param-get* uuid=<PIF UUID> param-name=other-config param-key= 
-	// finish this 
+To display the map parameter ethtool-speed:
+	*xe pif-param-get* uuid=<PIF UUID> param-name=other-config param-key=ethtool-speed
+
 	
 
 SEE ALSO

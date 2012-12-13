@@ -1,18 +1,17 @@
 XE(1)
 =======
 :doctype: manpage
-:man source:   xe-pif-param-set
+:man source:   xe
 :man version:  {1}
-:man manual:   xe pif-param-set Manual
+:man manual:   xe Manual
 
 NAME
 ----
-//added description -lisa
-*xe pif-param-set* - Set parameters for a PIF interface
+xe, pif-param-set - Set parameters for a PIF interface
 
 SYNOPSIS
 --------
-//added another line -lisa
+
 *xe pif-param-set* uuid=<PIF UUID> 
 
 *xe pif-param-set* uuid=<PIF UUID> [ disallow-unplug=<true | false> ] [ other-config:<Parameter Key>=<Key Value> ]
@@ -71,13 +70,13 @@ OPTIONAL PARAMETERS
 	Set the DNS search path ( DNS Suffix ). Use a comma as a field seperater.
 
 *other-config:bond-miimon*::
-
+// add
 
 *other-config:bond-downdelay*::
-
+// add
 
 *other-config=bond-updelay*::
-
+// add
 
 EXAMPLES
 --------
@@ -90,11 +89,11 @@ To set ethernet speed for a PIF interface:
 	
 // might add a couple more examples just for shits
 // you go do that, Matt! -lisa
+// maybe I will - Matt
 
 
 SEE ALSO
 --------
-
 *xe pif-list*(1), *xe pif-param-list*(1), *xe host-list*(1), *xe pif-param-remove*(1), *xe pif-reconfigure-ip*(1)
 
 AUTHORS

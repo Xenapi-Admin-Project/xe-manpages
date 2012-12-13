@@ -25,6 +25,8 @@ DESCRIPTION
 REQUIRED PARAMETERS
 -------------------
 //meh... started writing -lisa
+// lisa this has changed function in 1.6... It doesn't work like it does in 1.1
+// we should probably talk about it - Matt
 *uuid*::
 	UUID of PIF interface - Use *xe pif-list* to obtain PIF interface UUIDs
 
