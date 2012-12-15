@@ -33,6 +33,7 @@ OPTIONAL PARAMETERS
 
 *physical*::
     #I'm not too sure how to word this one
+    //Maybe we could say "If value is true, PIF is not virtual." -Paul
     If true PIF is a underlying physical interface on host    
     
 *currently-attached*::
@@ -111,15 +112,21 @@ OPTIONAL PARAMETERS
     full or half duplex
     
 *disallow-unplug*:: 
+// is it worth noting that this a setting that is listed as writable? If so, we might want to say "Can be set to true or false."
+// also, is there a default, and is it something that one might want to change? If so, maybe tell them what command to use. -Paul
 	true or false.
 
 *pci-bus-path*::
 	PCI bus path address 
 
 *other-config:ethtool-speed*::
+//is this automatically detected? If so, could word it "Detected speed of PIF interface (in Mbps)" Something that should be screwed with? 
+// (e.g. it is installed at 100, but the device is rated at 1000, or vice versa) Maybe append 
+//"Set with: xe pif-param-set uuid=<PIF UUID> other-config=ethtool-speed=<SPEED> Note: speed is in Mbps." -Paul
 	Speed of PIF interface in Mbps
 
 *other-config:ethtool-autoneg*::
+//do we want to specify that it will be on or off, and does it have a default?-Paul
 	Ethernet Autonegotiation status 
 	
 *other-config:ethtool-rx*::

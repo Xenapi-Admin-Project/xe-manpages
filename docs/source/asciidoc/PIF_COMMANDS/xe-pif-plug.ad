@@ -8,6 +8,8 @@ XE(1)
 NAME
 ----
 //edited description  -lisa
+//I found a description online that says "Attempt to bring up the specified physical interface." and I like it.
+//network interface seems a bit ambiguous, even though you are using the PIF command set ;D -Paul
 *xe pif-plug* - Brings a network interface up
 
 SYNOPSIS

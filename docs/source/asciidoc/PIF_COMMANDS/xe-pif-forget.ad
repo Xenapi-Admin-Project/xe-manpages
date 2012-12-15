@@ -20,7 +20,7 @@ DESCRIPTION
 -----------
 *xe pif-forget* removes a PIF interface from the XCP database, so it will not be listed. Use *xe pif-list* to verify the removal process. 
 See *xe vlan-destroy* to erase a pseudo PIF interface connected to a VLAN.
-
+// Do we want to warn them NOT to use xe pif-scan at this point? This could be helpful information for some people. -Paul
 // Check to see if you can erase a physical PIF with an active PIF attached.
 
 REQUIRED PARAMETERS

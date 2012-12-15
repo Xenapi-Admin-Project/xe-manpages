@@ -84,7 +84,7 @@ EXAMPLES
 To set the speed and duplex settings of a PIF interface, turn off autonegotiation first:
 	*xe pif-param-set* uuid=<PIF UUID> other-config=ethtool-autoneg=off
 
-To set ethernet speed for a PIF interface:
+To set ethernet speed for a PIF interface: // do we want to specify that this will set it to 1000 Mbps? Knowing the units is nice. -Paul
 	*xe pif-param-set* uuid=<PIF UUID> other-config=ethtool-speed=1000
 	
 // might add a couple more examples just for shits
