@@ -86,7 +86,7 @@ OPTIONAL PARAMETERS
 	List of all IPv6 addresses used to filter traffic. Each VIF has its own list.
 
 *other-config*::
-	Additional configuration information for each VIF
+	Additional configuration settings for each VIF
 
 *other-config:ethtool-rx*::
 	Receive checksum status 
