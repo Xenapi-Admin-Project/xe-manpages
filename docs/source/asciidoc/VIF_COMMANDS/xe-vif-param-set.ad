@@ -20,7 +20,7 @@ SYNOPSIS
 //wrote description and parameters -lisa
 DESCRIPTION
 -----------
-*xe vif-param-set* assigns values to read-write parameters for a specific VIF.
+*xe vif-param-set* sets values to read-write parameters for a specific VIF.
 
 REQUIRED PARAMETERS
 -------------------
