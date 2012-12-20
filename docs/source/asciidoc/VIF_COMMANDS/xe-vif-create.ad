@@ -1,4 +1,4 @@
-xe-vif-create.ad(1)
+XE(1)
 =======
 :doctype: manpage
 :man source:   xe-vif-create 
@@ -8,7 +8,7 @@ xe-vif-create.ad(1)
 NAME
 ----
 
-*xe vif-create* - Create a VIF interface
+*xe vif-create* - Creates a VIF interface
 
 SYNOPSIS
 --------
@@ -20,7 +20,6 @@ DESCRIPTION
 -----------
 
 *xe vif-create* will create a new VIF interface for a VM on a network. A VIF interface created on a running VM needs to be attached to the VM using *xe vif-plug*. The resulting VIF interface UUID will be returned.
-
 
 REQUIRED PARAMETERS
 -------------------
