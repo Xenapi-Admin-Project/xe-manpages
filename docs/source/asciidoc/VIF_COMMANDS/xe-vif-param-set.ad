@@ -7,52 +7,69 @@ XE(1)
 
 NAME
 ----
-*xe vif-param-set* 
+//added brief description -lisa
+*xe vif-param-set* - Sets read-write parameters for a VIF
 
 SYNOPSIS
 --------
+//finished your synopsis; will need to double check later -lisa
+*xe vif-param-set* uuid=<VIF UUID> [ qos_algorithm_type=<Type> locking-mode=<Mode> ipv4-allowed=<IPv4 Address> ipv6-allowed=<IPv6 Address> qos_algorithm_params:<Parameter>=<Value> other-config:<Parameter>=<Key> ]
 
-*xe vif-param-set* uuid=<VIF UUID> other-config: qos_algorithm_type=  qos_algorithm_params:   #I NEED TO READ UP ON QOS :(#
-
+#I NEED TO READ UP ON QOS :(#
 
 DESCRIPTION
 -----------
-
-
-PREREQUISITES
--------------
-
+*xe vif-param-set* assigns values to read-write parameters for a specific VIF.
 
 REQUIRED PARAMETERS
 -------------------
-
 *uuid*::
+	VIF UUID - Use *xe vif-list* to see list of VIF UUIDs
+
+OPTIONAL PARAMETERS
+-------------------
+*qos_algorithm_type*::
+	Type of QoS algorithm used by the VIF
+
+*locking-mode*::
+	Current locking mode set for the VIF
+
+*ipv4-allowed*::
+	List of IPv4 addresses used to filter traffic through the VIF
+
+*ipv6-allowed*::
+	List of IPv6 addresses used to filter traffic through the VIF
+
+*qos_algorithm_params*::
+	Parameters for the Qos algorithms supported by the VIF
 
 *other-config*::
-
-
-
+	Additional configuration settings for the VIF
 
 EXAMPLES
 --------
+//added an example, will need more, please test the first example -lisa
+To set the maximum transmit rate of 100 kbps/s on a VIF
+	xe vif-param-set uuid=<VIF UUID> qos_algorithm_type=ratelimit
+        xe vif-param-set uuid=<VIF UUID> qos_algorithm_params:kbps=100
+
 
 SEE ALSO
 --------
-
-
-
+*xe vif-list*(1) 
 
 AUTHORS
 -------
-Matthew Spah <spahmatthew@gmail.com>
+Matthew Spah <spahmatthew@gmail.com>::
+Lisa Nguyen <ltn821@hotmail.com>::
 
-
-
+BUGS
+----
+Send bugs to xen-devel@lists.xen.org, see http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP on how to send bug reports. General questions can be sent to xen-api@lists.xen.org.
 
 COPYRIGHT
 ---------
-Copyright \(C) 1995-2003 Jens Schweikhardt + 
-Copyright \(C) 2006 Daniel Leidert
+Copyright \(C) 2012 - Matthew Spah, Lisa Nguyen
 
 The Howto containing this example, was offered under the following conditions:
 
@@ -63,16 +80,9 @@ met:
 . Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
 . Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
 
-
-.List
-.  Item one
-.  Item two
-
-
 THIS SOFTWARE IS PROVIDED BY THE AUTHOR "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
 WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT,
 INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
 SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
 STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 POSSIBILITY OF SUCH DAMAGE.
-
