@@ -56,10 +56,10 @@ OPTIONAL PARAMETERS
 	Maximum Transmission Unit size
              
 *qos_algorithm_type*::
-	Type of QoS algorithm used for each VIF
+	Type of QoS algorithm used for each VIF (e.g. ratelimit)
 
 *qos_algorithm_params*::
-	Parameters for the Qos algorithms supported by each VIF
+	Parameters for the Qos algorithms supported by each VIF (e.g. kbps)
 
 *qos_supported_algorithms*::
 	Supported QoS algorithms for each VIF
