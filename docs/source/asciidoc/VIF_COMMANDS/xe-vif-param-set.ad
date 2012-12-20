@@ -41,7 +41,7 @@ OPTIONAL PARAMETERS
 	List of IPv6 addresses used to filter traffic through the VIF
 
 *qos_algorithm_params*::
-	Parameters for the Qos algorithms supported by the VIF
+	Parameters for the QoS algorithms supported by the VIF
 
 *other-config*::
 	Additional configuration settings for the VIF
