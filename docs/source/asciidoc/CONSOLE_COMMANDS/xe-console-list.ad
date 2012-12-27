@@ -1,0 +1,98 @@
+XE(1)
+=======
+:doctype: manpage
+:man source:   xe manual
+:man version:  {1}
+:man manual:   xe manual
+
+NAME
+-----
+*xe console-list* - Lists PIF interfaces in a resource pool
+
+SYNOPSIS
+--------
+*xe console-list*
+
+*xe console-list*  [ params=<parameter> ]
+
+DESCRIPTION
+-----------
+
+*xe console-list* lists available consoles, and their parameters. Output can be filtered by supplying params=<parameter>. Multiple parameters can be displayed by separating each parameter with a comma (e.g. params=vm-uuid,protocol).
+
+
+OPTIONAL PARAMETERS
+----------
+
+*params*::
+	Specify which parameter(s) to display.
+	
+*database:*::
+	//not sure what this is for. it's not listed when using params=all. 
+	//I've looked around on the internet, and it seems like this might just be 
+	//one of those cases where they populated a list without actually paying attention to if it is useful.
+	
+*uuid*::
+	Universally Unique IDentifier for the console. (Autocomplete by using the tab key twice after a reasonable number of characters.) 
+	
+*vm-uuid*::
+	Display the Virtual Machine the console currently resides on.
+
+*vm-name-label*::
+	User readable name associated with the virtual machine.
+
+*protocol*::
+	Protocol console uses. Return values are VT100(VT100 terminal), RFB(Remote FrameBuffer protocol), or RDP(Remote Desktop Protocol).
+
+*location*::
+
+*other-config*::
+
+
+EXAMPLES
+--------
+
+
+To display all parameters for a specific console:
+	*xe console-list* uuid=<VM UUID> params=all
+	
+To display all consoles, and all their parameters:
+	*xe console-list* params=all
+To display console UUIDs, and Protocols:
+	*xe console list* params=uuid,protocol
+
+SEE ALSO
+--------
+ *xe console-param-add*(1), *xe console-param-clear*(1) *xe console-param-get*(1) *xe console-param-list*(1) *xe console-param-remove*(1) *xe console-param-set*(1)
+
+BUGS
+----
+Send bugs to xen-devel@lists.xen.org, see http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP on how to send bug reports. General questions can be sent to xen-api@lists.xen.org.
+
+AUTHORS
+-------
+Paul T. Maack <paultmaack@gmail.com>::
+
+
+
+COPYRIGHT
+---------
+Copyright \(C) 2012 - Paul T. Maack
+
+
+The Howto containing this example, was offered under the following conditions:
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are
+met:
+
+[options="compact"]
+. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+
+
+THIS SOFTWARE IS PROVIDED BY THE AUTHOR "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT,
+INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
+STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+POSSIBILITY OF SUCH DAMAGE.
+
