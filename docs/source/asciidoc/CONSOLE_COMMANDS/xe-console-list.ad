@@ -7,7 +7,7 @@ XE(1)
 
 NAME
 -----
-*xe console-list* - Lists PIF interfaces in a resource pool
+*xe console-list* - Lists all the consoles, filtering on the optional arguments.
 
 SYNOPSIS
 --------
@@ -27,11 +27,6 @@ OPTIONAL PARAMETERS
 *params*::
 	Specify which parameter(s) to display.
 	
-*database:*::
-	//not sure what this is for. it's not listed when using params=all. 
-	//I've looked around on the internet, and it seems like this might just be 
-	//one of those cases where they populated a list without actually paying attention to if it is useful.
-	
 *uuid*::
 	Universally Unique IDentifier for the console. (Autocomplete by using the tab key twice after a reasonable number of characters.) 
 	
@@ -42,11 +37,13 @@ OPTIONAL PARAMETERS
 	User readable name associated with the virtual machine.
 
 *protocol*::
-	Protocol console uses. Return values are VT100(VT100 terminal), RFB(Remote FrameBuffer protocol), or RDP(Remote Desktop Protocol).
+	Protocol that the console uses. Return values are VT100(VT100 terminal), RFB(Remote FrameBuffer protocol), or RDP(Remote Desktop Protocol).
 
 *location*::
+	URI for the console service.
 
 *other-config*::
+	A list of key/value pairs that specify additional configuration parameters for the console.
 
 
 EXAMPLES
@@ -58,6 +55,7 @@ To display all parameters for a specific console:
 	
 To display all consoles, and all their parameters:
 	*xe console-list* params=all
+	
 To display console UUIDs, and Protocols:
 	*xe console list* params=uuid,protocol
 
@@ -71,9 +69,7 @@ Send bugs to xen-devel@lists.xen.org, see http://wiki.xen.org/wiki/Reporting_Bug
 
 AUTHORS
 -------
-Paul T. Maack <paultmaack@gmail.com>::
-
-
+Paul T. Maack <paultmaack@gmail.com>
 
 COPYRIGHT
 ---------
