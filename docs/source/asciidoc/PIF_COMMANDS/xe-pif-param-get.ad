@@ -3,17 +3,15 @@ XE(1)
 :doctype: manpage
 :man source:   xe 
 :man version:  {1}
-:man manual:   xe manual
+:man manual:   xe pif-param-get manual
 
 NAME
 ----
 
-*xe pif-param-get* - Returns a parameter for a PIF interface
+xe-pif-param-get - Returns a parameter for a PIF interface.
 
 SYNOPSIS
 --------
-
-*xe pif-param-get* uuid=<PIF UUID> param-name=<Parameter>
 
 *xe pif-param-get* uuid=<PIF UUID> param-name=<Parameter> [ param-key=<Parameter Key> ]
 
@@ -26,44 +24,41 @@ REQUIRED PARAMETERS
 -------------------
 
 *uuid*::
-	UUID of PIF interface - Use *xe pif-list* to obtain PIF interface UUIDs
-
+	UUID of PIF interface - Use *xe pif-list* to obtain PIF interface UUIDs.
 
 *param-name*::
-	Parameter for the PIF
+	Parameter for the PIF.
 	 
 
 OPTIONAL PARAMETERS
 -------------------
 
 *param-key*::
-	Name of key in other-config parameter 
+	Name of key in other-config parameter (e.g. ethtool-speed). 
 
 EXAMPLES
 --------
+To display the management parameter for a PIF interface: ::
+	*xe pif-param-get* uuid=<PIF UUID> param-name="management"
 
-To display the management parameter for a PIF interface:
-	*xe pif-param-get* uuid=<PIF UUID> param-name=management
-
-To display the map parameter ethtool-speed:
-	*xe pif-param-get* uuid=<PIF UUID> param-name=other-config param-key=ethtool-speed
+To display the map parameter ethtool-speed: ::
+	*xe pif-param-get* uuid=<PIF UUID> param-name="other-config" param-key="ethtool-speed"
 
 	
 
 SEE ALSO
 --------
-
 *xe-pif-list*(1), *xe-pif-param-clear*(1), *xe-pif-param-get*(1), *xe-pif-param-remove*(1), 
 *xe-pif-param-set*(1), *xe-pif-param-add*(1)
 
 AUTHORS
 -------
 Matthew Spah <spahmatthew@gmail.com>::
-Lisa Nguyen <ltn821@hotmail.com>::
+Lisa Nguyen <ltn821@hotmail.com>
 
 BUGS
 ----
-Send bugs to xen-devel@lists.xen.org, see http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP on how to send bug reports. General questions can be sent to xen-api@lists.xen.org.
+See http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP on how to send bug reports, send bugs to xen-devel@lists.xen.org, General questions can be sent to xen-api@lists.xen.org.
 
 COPYRIGHT
 ---------

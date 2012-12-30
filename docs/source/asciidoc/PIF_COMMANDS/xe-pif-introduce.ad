@@ -3,7 +3,7 @@ XE(1)
 :doctype: manpage
 :man source:   xe 
 :man version:  {1}
-:man manual:   xe manual
+:man manual:   xe pif-introduce manual
 
 NAME
 -----
@@ -23,8 +23,10 @@ DESCRIPTION
 // I kept your original description in case I misunderstood you. 
 // I have a hard time picturing things in my head and examples would help to see things clearer -lisa
 
-*xe pif-introduce* creates a new PIF interface associated with a network device found on the specified host. The PIF interface will inherit the 
-MAC address of the physical device unless specified. The resulting PIF UUID is returned. 
+*xe pif-introduce* creates a new PIF interface associated with an unassigned network device (e.g. eth0) found on the specified host. The PIF interface will inherit the 
+MAC address of the physical network device (e.g. eth0) unless specified. The resulting PIF UUID is returned. 
+
+*xe pif-introduce* will create a new PIF interface by
 
 
 REQUIRED PARAMETERS
@@ -45,25 +47,22 @@ OPTIONAL PARAMETERS
 	
 EXAMPLES
 --------
-// To introduce a new physical PIF interface:
-// *xe pif-introduce* host-uuid=<Host UUID> device=eth1 
 
-// that should work... better test first
+*xe pif-introduce* host-uuid=<Host UUID> device=eth1 
 
 
 SEE ALSO
 --------
-
 *xe-pif-list*(1), *xe-pif-scan*(1), *xe-pif-forget*(1), *xe-host-list*(1), *ifconfig*(1), *xe-network-list*(1)
 
 BUGS
 ----
 Send bugs to xen-devel@lists.xen.org, see http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP on how to send bug reports. General questions can be sent to xen-api@lists.xen.org.
-AUTHORS
 
+AUTHORS
 -------
 Matthew Spah <spahmatthew@gmail.com>::
-Lisa Nguyen <ltn821@hotmail.com>::
+Lisa Nguyen <ltn821@hotmail.com>
 
 
 COPYRIGHT

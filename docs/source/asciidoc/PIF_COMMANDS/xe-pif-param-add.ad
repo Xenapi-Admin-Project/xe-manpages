@@ -3,7 +3,7 @@ xe-pif-param-add.ad(1)
 :doctype: manpage
 :man source:   xe 
 :man version:  {1}
-:man manual:   xe manual
+:man manual:   xe pif-param-add manual
 
 NAME
 ----
@@ -26,6 +26,7 @@ REQUIRED PARAMETERS
 // lisa this has changed function in 1.6... It doesn't work like it does in 1.1
 // we should probably talk about it - Matt
 // probably? we must talk about it! let me know when :) -lisa 12/21/12
+// still haven't talked about it - Matt
 
 *uuid*::
 	UUID of PIF interface - Use *xe pif-list* to obtain PIF interface UUIDs

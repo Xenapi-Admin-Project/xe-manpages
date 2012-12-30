@@ -3,12 +3,11 @@ XE(1)
 :doctype: manpage
 :man source:   xe 
 :man version:  {1}
-:man manual:   xe manual
+:man manual:   xe pif-param-list manual
 
 NAME
 ----
-//changed description -lisa
-*xe pif-param-list* - Lists all parameters for a specific PIF interface
+xe-pif-param-list - Lists all parameters for a PIF interface.
 
 SYNOPSIS
 --------
@@ -16,37 +15,33 @@ SYNOPSIS
 
 DESCRIPTION
 -----------
-//modified sentence -lisa
 *xe pif-param-list* lists all parameters for a specific PIF interface.
 
 
 REQUIRED PARAMETERS
 -------------------
-//modified sentence -lisa
 *uuid*::
-	UUID of PIF interface - Use *xe pif-list* to obtain PIF interface UUIDs
+	UUID of PIF interface - Use *xe pif-list* to obtain PIF interface UUIDs.
 	
 
 EXAMPLES
 --------
-To display parameters for a specific PIF interface: 
+To display parameters for a PIF interface::
 	*xe pif-param-list* uuid=<PIF UUID>
 
 
 SEE ALSO
 --------
-
-*xe-pif-list*(1), *xe-pif-param-clear*(1), *xe-pif-param-get*(1), *xe-pif-param-remove*(1), 
-*xe-pif-param-set*(1), *xe-pif-param-add*(1)
+*xe-pif-list*(1), *xe-pif-param-clear*(1), *xe-pif-scan*(1), *xe-pif-introduce*(1), *xe-network-list*(1)
 
 BUGS
 ----
-Send bugs to xen-devel@lists.xen.org, see http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP on how to send bug reports. General questions can be sent to xen-api@lists.xen.org.
+See http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP on how to send bug reports, send bugs to xen-devel@lists.xen.org. General questions can be sent to xen-api@lists.xen.org.
 
 AUTHORS
 -------
 Matthew Spah <spahmatthew@gmail.com>::
-Lisa Nguyen <ltn821@hotmail.com>::
+Lisa Nguyen <ltn821@hotmail.com>
 
 
 COPYRIGHT

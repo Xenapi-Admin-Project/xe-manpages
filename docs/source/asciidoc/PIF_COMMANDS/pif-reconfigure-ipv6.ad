@@ -3,7 +3,7 @@ XE(1)
 :doctype: manpage
 :man source:   xe 
 :man version:  {1}
-:man manual:   xe manual
+:man manual:   xe pif-reconfigure-ipv6 manual
 
 // draft 1 12/07/2012
 // still need to verify everything... I'm just creating the page now - Matt
@@ -21,7 +21,7 @@ SYNOPSIS
 
 DESCRIPTION
 -----------
-//modified sentence - lisa
+
 *xe pif-reconfigure-ipv6* configures IPv6 addressing settings for a specific PIF interface. 
 
 
@@ -29,14 +29,12 @@ REQUIRED PARAMETERS
 -------------------
 
 *mode*::
-// modified sentence; are  - lisa	
 	Addressing mode for the PIF interface. Mode options are dhcp, static, autoconf, or none.
 
 *uuid*::
 	UUID of PIF interface - Use *xe pif-list* to obtain PIF interface UUIDs
 
 *IPv6*::
-// modified sentence - lisa
 	IPv6 Host address of PIF interface. Address is only required for static mode.
 
 OPTIONAL PARAMETERS
@@ -71,7 +69,7 @@ Send bugs to xen-devel@lists.xen.org, see http://wiki.xen.org/wiki/Reporting_Bug
 AUTHORS
 -------
 Matthew Spah <spahmatthew@gmail.com>::
-Lisa Nguyen <ltn821@hotmail.com>::
+Lisa Nguyen <ltn821@hotmail.com>
 
 COPYRIGHT
 ---------

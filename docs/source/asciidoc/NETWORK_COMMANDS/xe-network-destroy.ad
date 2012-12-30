@@ -1,9 +1,9 @@
-xe-network-destroy.ad(1)
+XE(1)
 =======
 :doctype: manpage
 :man source:   xe 
 :man version:  {1}
-:man manual:   xe manual
+:man manual:   xe network-destroy manual
 
 NAME
 -----
@@ -18,9 +18,10 @@ SYNOPSIS
 DESCRIPTION
 -----------
 
-*xe network-destroy* will erase a network from a pool. In order to erase a network their must be 
-no active PIF interfaces connected to it, active VIFs connected to it, or a VLAN assigned to it.
+*xe network-destroy* will erase a network. To erase a network no active PIF interfaces,VIFs interface, or a VLAN assigned to it.
 See *xe pif-unplug*, *xe vif-unplug*,  *xe vlan-destroy* for further information.
+
+// I have to word this right
 
 REQUIRED PARAMETERS
 -------------------
@@ -39,6 +40,9 @@ SEE ALSO
 
 *xe-network-create*(1), *xe-network-list*(1), *xe pif-unplug*(1), *xe vif-unplug*(1), *xe vlan-destroy*(1)
 
+BUGS
+----
+Send bugs to xen-devel@lists.xen.org, see http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP on how to send bug reports. General questions can be sent to xen-api@lists.xen.org.
 
 AUTHORS
 -------

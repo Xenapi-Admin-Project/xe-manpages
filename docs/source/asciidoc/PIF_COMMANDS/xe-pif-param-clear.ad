@@ -3,26 +3,21 @@ XE(1)
 :doctype: manpage
 :man source:   xe 
 :man version:  {1}
-:man manual:   xe manual
+:man manual:   xe pif-param-clear manual
 
-//added description -lisa
 NAME
 ----
-*xe pif-param-clear* - Clears a parameter for a PIF
+xe-pif-param-clear - Clears a specific writable parameter for a PIF.
 
 SYNOPSIS
 --------
 
 *xe pif-param-clear* uuid=<PIF UUID> param-name=<parameter> 
 
-//	this needs to be looked into a little more...
-//	There really is only one parameter that can be cleared from what I remember
-//	and that is other config!
 
 DESCRIPTION
 -----------
-//changed sentence -lisa
-*xe pif-param-clear* clears all set or map parameters for a PIF interface. 
+*xe pif-param-clear* attempts to clear all values for a specific writable parameter for a PIF interface. 
 
 REQUIRED PARAMETERS
 -------------------
@@ -31,13 +26,13 @@ REQUIRED PARAMETERS
 	UUID of PIF interface - Use *xe pif-list* to obtain PIF interface UUIDs.
 	
 *param-name*::
-	Parameter to be cleared for a PIF interface (e.g. other-config) 
+	Parameter to be cleared for a PIF interface (e.g. other-config). 
 
 EXAMPLES
 --------
-//changed sentence -lisa
-To clear all values found in the other-config parameter:
-	*xe pif-param-clear* uuid=<PIF UUID> param-name=other-config
+
+To clear all values found in the other-config parameter: ::
+	*xe pif-param-clear* uuid=<PIF UUID> param-name="other-config"
 
 SEE ALSO
 --------
@@ -50,7 +45,7 @@ Send bugs to xen-devel@lists.xen.org, see http://wiki.xen.org/wiki/Reporting_Bug
 AUTHORS
 -------
 Matthew Spah <spahmatthew@gmail.com>::
-Lisa Nguyen <ltn821@hotmail.com>::
+Lisa Nguyen <ltn821@hotmail.com>
 
 COPYRIGHT
 ---------
