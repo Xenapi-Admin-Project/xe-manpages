@@ -1,14 +1,14 @@
 XE(1)
 =======
 :doctype: manpage
-:man source:   xe 
+:man source:   xe vif-list
 :man version:  {1}
-:man manual:   xe manual
+:man manual:   xe vif-list manual
 
 NAME
 ----
 //added brief description -lisa
-*xe vif-list* - Lists all virtual network interfaces
+xe-vif-list - Lists all virtual network interfaces
 // page is 1.6 current
 
 SYNOPSIS
@@ -124,13 +124,12 @@ SEE ALSO
 
 AUTHORS
 -------
-Matthew Spah <spahmatthew@gmail.com>::
-Lisa Nguyen <ltn821@hotmail.com>::
-
+Matthew Spah <spahmatthew@xenapiadmin.com>::
+Lisa Nguyen <lisa@xenapiadmin.com>
 
 BUGS
 ----
-Send bugs to xen-devel@lists.xen.org, see http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP on how to send bug reports. General questions can be sent to xen-api@lists.xen.org.
+See http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP on how to send bug reports, send bugs to xen-devel@lists.xen.org.  General questions can be sent to xen-api@lists.xen.org.
 
 
 COPYRIGHT

@@ -1,16 +1,16 @@
 XE(1)
 =======
 :doctype: manpage
-:man source:   xe-pif-plug
+:man source:   xe pif-plug
 :man version:  {1}
-:man manual:   xe pif-plug Manual 
+:man manual:   xe pif-plug manual 
 
 NAME
 ----
 //edited description  -lisa
 //I found a description online that says "Attempt to bring up the specified physical interface." and I like it.
 //network interface seems a bit ambiguous, even though you are using the PIF command set ;D -Paul
-*xe pif-plug* - Brings a network interface up
+xe-pif-plug - Brings a network interface up
 
 SYNOPSIS
 --------
@@ -45,15 +45,15 @@ SEE ALSO
 
 *xe-pif-scan*(1), *xe-pif-list*(1), *xe-pif-unplug*(1) , *xe-pif-param-set*(1), *xe-pif-reconfigure-ip*(1), *xe-network-list*(1)
 
-BUGS
-----
-Send bugs to xen-devel@lists.xen.org, see http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP on how to send bug reports. General questions can be sent to xen-api@lists.xen.org.
 
 AUTHORS
 -------
-Matthew Spah <spahmatthew@gmail.com>::
-Lisa Nguyen <ltn821@hotmail.com>::
+Matthew Spah <spahmatthew@xenapiadmin.com>::
+Lisa Nguyen <lisa@xenapiadmin.com>
 
+BUGS
+----
+See http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP on how to send bug reports, send bugs to xen-devel@lists.xen.org.  General questions can be sent to xen-api@lists.xen.org.
 
 COPYRIGHT
 ---------

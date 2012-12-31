@@ -1,13 +1,13 @@
 XE(1)
 =======
 :doctype: manpage
-:man source:   xe 
+:man source:   xe vif-param-remove
 :man version:  {1}
-:man manual:   xe manual
+:man manual:   xe vif-param-remove manual
 
 NAME
 ----
-*xe vif-param-remove* - Removes a set or map writable parameter for a specific VIF
+xe-vif-param-remove - Removes a set or map writable parameter for a specific VIF
 
 SYNOPSIS
 --------
@@ -46,7 +46,11 @@ SEE ALSO
 
 AUTHORS
 -------
-Matthew Spah <spahmatthew@gmail.com>::
+Matthew Spah <spahmatthew@xenapiadmin.com>
+
+BUGS
+----
+See http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP on how to send bug reports, send bugs to xen-devel@lists.xen.org.  General questions can be sent to xen-api@lists.xen.org.
 
 
 

@@ -1,47 +1,60 @@
 XE(1)
 =======
 :doctype: manpage
-:man source:   xe bond-param-set
+:man source:   xe pif-set-primary-address-type
 :man version:  {1}
-:man manual:   xe bond-param-set manual
+:man manual:   xe pif-set-primary-address-type manual
 
 NAME
-----
-xe-bond-param-set - add description
+-----
 
+xe-pif-set-primary-address-type - Set primary address type used by a PIF interface
 
 SYNOPSIS
 --------
 
-*xe bond-param-set* uuid=<Bond UUID> properties:<Ummm stuff>
+*xe pif-set-primary-address-type* uuid=<PIF UUID> primary_address_type=<ipv6 | ipv4>
+
 
 DESCRIPTION
 -----------
+// What is a primary address? :0 - lisa
 
-// Description 
+*xe pif-set-primary-address-type* will set the primary address type for a PIF interface.
 
+// No idea how this works... I know we are setting the interface for ether ipv6 or ipv4 as the
+// primary address type but what does that entail? Is ipv4/ipv6 traffic completely disregarded? 
+// read and test!
 
 
 REQUIRED PARAMETERS
 -------------------
-
 *uuid*::
+	UUID of PIF interface - Use *xe pif-list* to obtain a list PIF interface UUIDs.
 
-*properties:*::
-
+*primary_address_type*::
+	Primary address type to be selected. IPv4 or IPv6 // I can do way better than this
+	
 
 EXAMPLES
 --------
+// add examples
+// check to see if any of these examples work - lisa
+// To set the primary address type to IPv4:
+//	*xe pif-set-primary-address-type* uuid=<PIF UUID> primary_address_type=ipv4
+// To set the primary address type to IPv6:
+//	*xe pif-set-primary-address-type* uuid=<PIF UUID> primary_address_type=ipv6
 
 
 SEE ALSO
 --------
+*xe-pif-reconfigure-ip*(1), *xe-pif-reconfigure-ipv6*(1), *xe-pif-list*(1), *xe-pif-param-set*(1), *xe-network-list*(1), *xe-vif-list*(1)
 
-*xe-bond-create*(1), *xe-bond-destroy*(1), *xe-bond-set-mode*(1), *xe-bond-param-clear*(1), *xe-bond-param-list*(1), *xe-pif-list*(1)
 
 AUTHORS
 -------
-Matthew Spah <spahmatthew@xenapiadmin.com>
+Matthew Spah <spahmatthew@xenapiadmin.com>::
+Lisa Nguyen <lisa@xenapiadmin.com>
 
 BUGS
 ----
@@ -49,7 +62,7 @@ See http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP on how to send bug repor
 
 COPYRIGHT
 ---------
-Copyright \(C) 2012 - Matthew Spah 
+Copyright \(C) 2012 - Matthew Spah, Lisa Nguyen
 
 The Howto containing this example, was offered under the following conditions:
 
@@ -60,10 +73,10 @@ met:
 . Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
 . Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
 
+
 THIS SOFTWARE IS PROVIDED BY THE AUTHOR "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
 WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT,
 INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
 SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
 STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 POSSIBILITY OF SUCH DAMAGE.
-

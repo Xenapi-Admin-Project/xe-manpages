@@ -1,13 +1,13 @@
 XE(1)
 =======
 :doctype: manpage
-:man source:   xe
+:man source:   xe pool-vlan-create
 :man version:  {1}
-:man manual:   xe Manual
+:man manual:   xe pool-vlan-create manual
 
 NAME
------
-*xe pool-vlan-create* - Create a new VLAN on all hosts in a pool.
+----
+xe-pool-vlan-create - Create a new VLAN on all hosts in a pool.
 
 SYNOPSIS
 --------
@@ -45,13 +45,13 @@ To create a VLAN with the tag 2 on a network, type;
 	*xe vlan-create* network-uuid=2177a448-d2c6-27f9-ca64-b3899d1cbe98 pif-uuid=3e558a35-b5ff-c58c-eee2-388bae80cdc6 vlan=2
 
 
-SEE ALSO
---------
-*xe-vlan-create*(1), *xe-vlan-destroy*(1), *xe-pif-list*(1), *xe-network-list*(1), *xe-vlan-list*(1)
+AUTHORS
+-------
+Matthew Spah <spahmatthew@xenapiadmin.com>
 
 BUGS
 ----
-Send bugs to xen-devel@lists.xen.org, see http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP on how to send bug reports. General questions can be sent to xen-api@lists.xen.org.
+See http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP on how to send bug reports, send bugs to xen-devel@lists.xen.org.  General questions can be sent to xen-api@lists.xen.org.
 
 AUTHORS
 -------

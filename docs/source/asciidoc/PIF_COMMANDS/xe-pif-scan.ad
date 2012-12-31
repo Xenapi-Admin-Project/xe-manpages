@@ -3,12 +3,12 @@ XE(1)
 :doctype: manpage
 :man source:   xe-pif-scan
 :man version:  {1}
-:man manual:   xe pif-scan Manual
+:man manual:   xe pif-scan manual
 
 NAME
 ----
 
-*xe pif-scan* - Scans for new physical interfaces on a host.
+xe-pif-scan - Scans for new physical interfaces on a host.
 
 
 SYNOPSIS
@@ -43,17 +43,15 @@ SEE ALSO
 *xe-pif-list*(1), *xe-pif-unplug*(1), *xe-pif-introduce*(1), *xe-host-list*(1), *xe-pif-forget*(1), *xe-pif-introduce*(1),
 *xe-network-list*(1)
 
-BUGS
-----
-Send bugs to xen-devel@lists.xen.org, see http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP on how to send bug reports. General questions can be sent to xen-api@lists.xen.org.
-
 
 AUTHORS
 -------
-Matthew Spah <spahmatthew@gmail.com>::
-Lisa Nguyen <ltn821@hotmail.com>::
+Matthew Spah <spahmatthew@xenapiadmin.com>::
+Lisa Nguyen <lisa@xenapiadmin.com>
 
-
+BUGS
+----
+See http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP on how to send bug reports, send bugs to xen-devel@lists.xen.org.  General questions can be sent to xen-api@lists.xen.org.
 
 COPYRIGHT
 ---------

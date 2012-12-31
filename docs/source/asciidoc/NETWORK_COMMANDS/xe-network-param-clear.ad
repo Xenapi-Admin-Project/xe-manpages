@@ -1,13 +1,13 @@
 XE(1)
 =======
 :doctype: manpage
-:man source:   xe 
+:man source:   xe network-param-clear
 :man version:  {1}
-:man manual:   xe manual
+:man manual:   xe network-param-clear manual
 
 NAME
 ----
-*xe network-param-clear* 
+xe-network-param-clear
 
 SYNOPSIS
 --------
@@ -39,14 +39,15 @@ SEE ALSO
 *xe-network-list*(1), *xe-network-create*(1), *xe-network-param-list*(1), *xe-pif-list*(1), *xe-vif-list*(1)
 *xe-network-param-set*(1), *xe-network-param-remove*(1)
 
-BUGS
-----
-Send bugs to xen-devel@lists.xen.org, see http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP on how to send bug reports. General questions can be sent to xen-api@lists.xen.org.
+
 
 AUTHORS
 -------
-Matthew Spah <spahmatthew@gmail.com>::
+Matthew Spah <spahmatthew@xenapiadmin.com>
 
+BUGS
+----
+See http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP on how to send bug reports, send bugs to xen-devel@lists.xen.org.  General questions can be sent to xen-api@lists.xen.org.
 
 COPYRIGHT
 ---------

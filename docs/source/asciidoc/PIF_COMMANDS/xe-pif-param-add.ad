@@ -1,14 +1,14 @@
 xe-pif-param-add.ad(1)
 =======
 :doctype: manpage
-:man source:   xe 
+:man source:   xe pif-param-add
 :man version:  {1}
 :man manual:   xe pif-param-add manual
 
 NAME
 ----
 //added description -lisa
-*xe pif-param-add* - Adds a parameter for a PIF 
+xe-pif-param-add - Adds a parameter for a PIF 
 
 SYNOPSIS
 --------

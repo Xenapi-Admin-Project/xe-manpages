@@ -1,14 +1,14 @@
 XE(1)
 =======
 :doctype: manpage
-:man source:   xe 
+:man source:   xe bond-param-clear
 :man version:  {1}
-:man manual:   xe manual
+:man manual:   xe bond-param-clear manual
 
 NAME
 ----
 
-*xe bond-param-clear* - add description
+xe-bond-param-clear - add description
 
 
 SYNOPSIS
@@ -40,14 +40,13 @@ SEE ALSO
 
 *xe-bond-create*(1), *xe-bond-destroy*(1), *xe-bond-set-mode*(1), *xe-bond-param-list*(1), *xe-pif-list*(1)
 
-BUGS
-----
-Send bugs to xen-devel@lists.xen.org, see http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP on how to send bug reports. General questions can be sent to xen-api@lists.xen.org.
-
-
 AUTHORS
 -------
-Matthew Spah <spahmatthew@gmail.com>::
+Matthew Spah <spahmatthew@xenapiadmin.com>
+
+BUGS
+----
+See http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP on how to send bug reports, send bugs to xen-devel@lists.xen.org.  General questions can be sent to xen-api@lists.xen.org.
 
 COPYRIGHT
 ---------

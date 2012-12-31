@@ -1,13 +1,13 @@
 XE(1)
 =======
 :doctype: manpage
-:man source:   xe 
+:man source:   xe vif-plug
 :man version:  {1}
-:man manual:   xe manual
+:man manual:   xe vif-plug manual
 
 NAME
 ----
-*xe vif-plug* - Will plug in a VIF interface 
+xe-vif-plug - Will plug in a VIF interface 
 
 SYNOPSIS
 --------
@@ -37,13 +37,14 @@ SEE ALSO
 --------
 *xe-vif-list*(1), *xe-vif-unplug*(1), *xe-vif-create*(1), *xe-vif-destroy*, *xe-vm-list*(1), *xe-network-list*(1)
 
-BUGS
-----
-Send bugs to xen-devel@lists.xen.org, see http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP on how to send bug reports. General questions can be sent to xen-api@lists.xen.org.
-
 AUTHORS
 -------
-Matthew Spah <spahmatthew@gmail.com>::
+Matthew Spah <spahmatthew@xenapiadmin.com>
+
+BUGS
+----
+See http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP on how to send bug reports, send bugs to xen-devel@lists.xen.org.  General questions can be sent to xen-api@lists.xen.org.
+
 
 
 COPYRIGHT

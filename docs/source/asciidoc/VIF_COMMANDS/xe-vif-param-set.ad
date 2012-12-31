@@ -1,14 +1,14 @@
 XE(1)
 =======
 :doctype: manpage
-:man source:   xe 
+:man source:   xe vif-param-set
 :man version:  {1}
-:man manual:   xe manual
+:man manual:   xe vif-param-set manual
 
 NAME
 ----
 //added brief description -lisa
-*xe vif-param-set* - Sets read-write parameters for a VIF
+xe-vif-param-set - Sets read-write parameters for a VIF
 
 SYNOPSIS
 --------
@@ -55,14 +55,14 @@ To set the maximum transmit rate of 100 kbps/s on a VIF
         xe vif-param-set uuid=<VIF UUID> qos_algorithm_params:kbps=100
 
 
-SEE ALSO
---------
-*xe vif-list*(1) 
-
 AUTHORS
 -------
-Matthew Spah <spahmatthew@gmail.com>::
-Lisa Nguyen <ltn821@hotmail.com>::
+Matthew Spah <spahmatthew@xenapiadmin.com>
+
+BUGS
+----
+See http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP on how to send bug reports, send bugs to xen-devel@lists.xen.org.  General questions can be sent to xen-api@lists.xen.org.
+
 
 BUGS
 ----

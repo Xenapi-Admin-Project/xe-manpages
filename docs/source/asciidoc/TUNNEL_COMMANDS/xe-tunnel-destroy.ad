@@ -1,13 +1,13 @@
 XE(1)
 =======
 :doctype: manpage
-:man source:   xe 
+:man source:   xe tunnel-destroy
 :man version:  {1}
-:man manual:   xe manual
+:man manual:   xe tunnel-destory manual
 
 NAME
 -----
-*xe tunnel-destroy* 
+xe-tunnel-destroy 
 
 SYNOPSIS
 --------

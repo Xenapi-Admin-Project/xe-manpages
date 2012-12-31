@@ -1,13 +1,13 @@
 XE(1)
 =======
 :doctype: manpage
-:man source:   xe 
+:man source:   xe network-destory
 :man version:  {1}
 :man manual:   xe network-destroy manual
 
 NAME
 -----
-*xe network-destroy* - will erase a network from a pool
+xe-network-destroy - will erase a network from a pool
 
 SYNOPSIS
 --------
@@ -40,15 +40,15 @@ SEE ALSO
 
 *xe-network-create*(1), *xe-network-list*(1), *xe pif-unplug*(1), *xe vif-unplug*(1), *xe vlan-destroy*(1)
 
-BUGS
-----
-Send bugs to xen-devel@lists.xen.org, see http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP on how to send bug reports. General questions can be sent to xen-api@lists.xen.org.
+
 
 AUTHORS
 -------
-Matthew Spah <spahmatthew@gmail.com>
+Matthew Spah <spahmatthew@xenapiadmin.com>
 
-
+BUGS
+----
+See http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP on how to send bug reports, send bugs to xen-devel@lists.xen.org.  General questions can be sent to xen-api@lists.xen.org.
 
 COPYRIGHT
 ---------

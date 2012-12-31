@@ -1,13 +1,13 @@
 XE(1)
 =======
 :doctype: manpage
-:man source:   xe 
+:man source:   xe network-create 
 :man version:  {1}
 :man manual:   xe network-create manual
 
 NAME
 -----
-*xe network-create*	- Create a network
+xe-network-create - Create a network
 
 SYNOPSIS
 --------
@@ -46,15 +46,14 @@ SEE ALSO
 --------
 *xe-network-list*(1), *xe-network-param-set*(1), *xe-pool-vlan-create*(1), *xe-network-param-set*(1), *xe-vif-create*(1), *xe-pif-list*(1)
 
-BUGS
-----
-Send bugs to xen-devel@lists.xen.org, see http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP on how to send bug reports. General questions can be sent to xen-api@lists.xen.org.
-
 
 AUTHORS
 -------
-Matthew Spah <spahmatthew@gmail.com>
+Matthew Spah <spahmatthew@xenapiadmin.com>
 
+BUGS
+----
+See http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP on how to send bug reports, send bugs to xen-devel@lists.xen.org.  General questions can be sent to xen-api@lists.xen.org.
 
 COPYRIGHT
 ---------
