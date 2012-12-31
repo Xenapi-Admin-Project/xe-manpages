@@ -36,7 +36,7 @@ To clear all values found in the other-config parameter: ::
 
 SEE ALSO
 --------
-*xe-pif-list*(1), *xe-pif-param-list*(1), *xe-pif-param-remove*(1), *xe-pif-param-set*(1), *xe network-list*(1), *xe vlan-list*(1)
+*xe-pif-list*(1), *xe-pif-param-list*(1), *xe-pif-param-remove*(1), *xe-pif-param-set*(1), *xe-network-list*(1), *xe-vlan-list*(1)
 
 BUGS
 ----
@@ -44,8 +44,8 @@ Send bugs to xen-devel@lists.xen.org, see http://wiki.xen.org/wiki/Reporting_Bug
 
 AUTHORS
 -------
-Matthew Spah <spahmatthew@gmail.com>::
-Lisa Nguyen <ltn821@hotmail.com>
+Matthew Spah <spahmatthew@xenapiadmin.com>::
+Lisa Nguyen <lisa@xenapiadmin.com>
 
 COPYRIGHT
 ---------

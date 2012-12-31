@@ -26,7 +26,7 @@ REQUIRED PARAMETERS
 
 EXAMPLES
 --------
-To display parameters for a PIF interface::
+To display parameters for a PIF interface: ::
 	*xe pif-param-list* uuid=<PIF UUID>
 
 
@@ -40,8 +40,8 @@ See http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP on how to send bug repor
 
 AUTHORS
 -------
-Matthew Spah <spahmatthew@gmail.com>::
-Lisa Nguyen <ltn821@hotmail.com>
+Matthew Spah <spahmatthew@xenapiadmin.com>::
+Lisa Nguyen <lisa@xenapiadmin.com>
 
 
 COPYRIGHT
