@@ -7,11 +7,11 @@ XE(1)
 
 NAME
 ----
-xe-vif-param-list - Lists all parameters for a VIF
+xe-vif-param-list - Lists all parameters for a VIF interface
 
 SYNOPSIS
 --------
-*xe vif-param-list* uuid=<VIF UUID> [ database:<???> ]
+*xe vif-param-list* uuid=<VIF UUID> 
 
 
 DESCRIPTION
@@ -22,21 +22,16 @@ DESCRIPTION
 REQUIRED PARAMETERS
 -------------------
 *uuid*::
-	VIF UUID - Use *xe vif-list* to see list of VIF UUIDs
-
-//will need to look up what the database parameter does -lisa
-OPTIONAL PARAMETERS
--------------------
-*database*::
+	VIF UUID - Use *xe vif-list* to obtain VIF UUIDs
 
 EXAMPLES
 --------
 To list all parameters for a VIF: 
-	*xe vif-param-list* uuid=<PIF UUID>
+	*xe vif-param-list* uuid=<VIF UUID>
 
 SEE ALSO
 --------
-*xe-vif-list*(1)
+*xe-vif-list*(1), *xe-vif-param-get*(1), *xe-vif-param-list*(1), *xe-vif-param-add*(1), *xe-vif-param-remove*(1), *xe-vif-create*(1)
 
 AUTHORS
 -------

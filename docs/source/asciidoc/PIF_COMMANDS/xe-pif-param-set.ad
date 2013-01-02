@@ -33,10 +33,10 @@ OPTIONAL PARAMETERS
 -------------------
 
 *disallow-unplug*::
-	Enable or disable the unplugging process for a PIF
+	Enable or disable the unplugging process for a PIF. Set to *true* or *false*.
 	
 *other-config:ethtool-speed*::
-	Speed of PIF interface in Mbps. (e.g. ethtool-speed=100)
+	Speed of PIF interface in Mbps. (e.g. ethtool-speed="100")
 
 *other-config:ethtool-autoneg*::
 	Enable or disable autonegotiation on PIF interface or bridge   
@@ -66,22 +66,28 @@ OPTIONAL PARAMETERS
 	Set the DNS search path ( DNS Suffix ). Use a comma as a field separator.
 
 *other-config:bond-miimon*::
-// add this stuff
-
+	Set the time between link liveness checks, in milliseconds.
+	
 *other-config:bond-downdelay*::
-// add this stuff 
-
+	Set number of milliseconds to wait after link is lost before considering the link down. Default is 200ms.
+	 
 *other-config:bond-updelay*::
-// add this stuff
+	Set number of milliseconds to wait after the link comes up before considering it up. Default is 
+	31s.
+	
+	
 
 EXAMPLES
 --------
 
-To set the speed and duplex settings of a PIF interface, turn off autonegotiation first::
+To set the speed and duplex settings of a PIF interface, turn off autonegotiation first: ::
 	*xe pif-param-set* uuid=<PIF UUID> other-config:ethtool-autoneg="off"
 
-To set ethernet speed for a PIF interface::
+To set ethernet speed for a PIF interface: ::
 	*xe pif-param-set* uuid=<PIF UUID> other-config:ethtool-speed="1000"
+
+To enable disallow-unplug on a PIF interface type: ::
+	*xe pif-param-set* uuid=<PIF UUID> disallow-unplug="true"
 	
 
 

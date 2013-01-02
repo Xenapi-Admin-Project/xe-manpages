@@ -38,6 +38,7 @@ OPTIONAL PARAMETERS
 
 EXAMPLES
 --------
+
 To display the management parameter for a PIF interface: ::
 	*xe pif-param-get* uuid=<PIF UUID> param-name="management"
 

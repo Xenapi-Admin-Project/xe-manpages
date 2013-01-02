@@ -7,7 +7,7 @@ XE(1)
 
 NAME
 ----
-xe-vif-param-remove - Removes a set or map writable parameter for a specific VIF
+xe-vif-param-remove - Removes a writable parameter key for a VIF.
 
 SYNOPSIS
 --------
@@ -16,7 +16,7 @@ SYNOPSIS
 
 DESCRIPTION
 -----------
-*xe vif-param-remove* removes a parameter key assigned to a VIF interface.
+*xe pif-param-remove* removes a set or map writable parameter key assigned to a VIF interface. 
 
 
 
@@ -35,7 +35,13 @@ REQUIRED PARAMETERS
 EXAMPLES
 --------
 
-// bah add examples
+To remove an allowed IPv4 address from a VIF: ::
+	xe vif-param-remove uuid=<VIF UUID> param-name="ipv4-allowed" param-key=<IPv4 address to be removed>
+	
+
+// test Lisa's QoS example in xe-vif-param-remove and then use it as an example for removal here :) - Matt
+
+
 
 SEE ALSO
 --------

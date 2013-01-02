@@ -16,7 +16,8 @@ SYNOPSIS
 
 DESCRIPTION
 -----------
-*xe pif-param-remove* removes a set or map writable parameter key assigned to a PIF interface. Tags is one example of a set or map parameter.
+
+*xe pif-param-remove* removes a set or map writable parameter key assigned to a PIF interface. 
 
 
 REQUIRED PARAMETERS
@@ -29,11 +30,12 @@ REQUIRED PARAMETERS
 	Parameter that contains parameter keys (e.g. other-config).
 
 *param-key*::
-	Parameter key that displays additional information on a PIF.
+	Parameter key that will be removed (e.g. ethtool-speed).
 
 EXAMPLES
 --------
-To remove the *ethtool-speed* value::
+
+To remove the *ethtool-speed* value: ::
 	*xe pif-param-remove* uuid=<PIF UUID> param-name="other-config" param-key="ethtool-speed"
 
 SEE ALSO

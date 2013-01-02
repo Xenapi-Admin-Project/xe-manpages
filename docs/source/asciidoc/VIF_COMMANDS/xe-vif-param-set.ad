@@ -7,20 +7,17 @@ XE(1)
 
 NAME
 ----
-//added brief description -lisa
 xe-vif-param-set - Sets read-write parameters for a VIF
 
 SYNOPSIS
 --------
-//finished your synopsis; will need to double check later -lisa
+
 *xe vif-param-set* uuid=<VIF UUID> [ qos_algorithm_type=<Type> locking-mode=<Mode> ipv4-allowed=<IPv4 Address> ipv6-allowed=<IPv6 Address> qos_algorithm_params:<Parameter>=<Value> other-config:<Parameter>=<Key> ]
 
-#I NEED TO READ UP ON QOS :(#
 
-//wrote description and parameters -lisa
 DESCRIPTION
 -----------
-*xe vif-param-set* sets values to read-write parameters for a specific VIF.
+*xe vif-param-set* sets values to read-write parameters for a VIF interface.
 
 REQUIRED PARAMETERS
 -------------------
@@ -30,43 +27,68 @@ REQUIRED PARAMETERS
 OPTIONAL PARAMETERS
 -------------------
 *qos_algorithm_type*::
-	Type of QoS algorithm used by the VIF
+	Type of QoS algorithm used by the VIF interface.
 
 *locking-mode*::
-	Current locking mode set for the VIF
+	// list all the locking modes under this one list? 
+	// or have one for each mode? - matt
 
+	
 *ipv4-allowed*::
-	List of IPv4 addresses used to filter traffic through the VIF
+	List of IPv4 addresses used to filter traffic through the VIF interface. Use a comma to separate multiple IPv4 addresses.
 
 *ipv6-allowed*::
-	List of IPv6 addresses used to filter traffic through the VIF
+	List of IPv6 addresses used to filter traffic through the VIF interface. Use a comma to separate multiple IPv6 addresses. 
 
 *qos_algorithm_params*::
-	Parameters for the QoS algorithms supported by the VIF
+	Parameters for the QoS algorithms supported by the VIF interface.
 
-*other-config*::
-	Additional configuration settings for the VIF
+*other-config:ethtool-rx*::
+	To enable receive checksum set to *on*. To disable set to *off*
+
+*other-config:ethtool-tx*::
+	To enable transmit checksum set to *on*. To disable set to *off*
+
+*other-config:ethtool-sg*::
+	To enable scatter gather set to *on*. To disable set to *off*
+
+*other-config:ethtool-tso*::
+	To enable TCP segmentation offload set to *on*. To disable set to *off*.
+
+*other-config:ethtool-ufo*::
+	To enable UDP fragment offload set to *on*. To disable set to *off*.
+
+*other-config:ethtool-gso*::
+	To enable generic segmentation offload set to *on*. To disable set to *off*
+	
+*other-config:mtu*::
+	Set MTU size for VIF interface.
+	
+*other-config:promiscuous*::
+	To enable promiscuous mode on a VIF so it sees all traffic over the bridge set to *true*. To disable set to *false*
 
 EXAMPLES
 --------
 //added an example, will need more, please test the first example -lisa
-To set the maximum transmit rate of 100 kbps/s on a VIF
+To set the maximum transmit rate of 100 kbps/s on a VIF: ::
 	xe vif-param-set uuid=<VIF UUID> qos_algorithm_type=ratelimit
-        xe vif-param-set uuid=<VIF UUID> qos_algorithm_params:kbps=100
+    xe vif-param-set uuid=<VIF UUID> qos_algorithm_params:kbps=100
+    
+To set the locking mode to locked and restrict a specific IP address: ::
+	xe vif-param-set uuid=<VIF UUID> locking-mode="locked"
+	xe vif-param-set uuid=<VIF UUID> ipv4-allowed=<IPv4 Address to be allowed>
+
 
 
 AUTHORS
 -------
-Matthew Spah <spahmatthew@xenapiadmin.com>
+Matthew Spah <spahmatthew@xenapiadmin.com>::
+Lisa Nguyen <lisa@xenapiadmin.com>
 
 BUGS
 ----
 See http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP on how to send bug reports, send bugs to xen-devel@lists.xen.org.  General questions can be sent to xen-api@lists.xen.org.
 
-
-BUGS
-----
-Send bugs to xen-devel@lists.xen.org, see http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP on how to send bug reports. General questions can be sent to xen-api@lists.xen.org.
 
 COPYRIGHT
 ---------

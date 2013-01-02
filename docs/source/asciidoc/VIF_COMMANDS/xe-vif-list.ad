@@ -105,6 +105,9 @@ OPTIONAL PARAMETERS
 
 *other-config:ethtool-gso*::
 	Generic segmentation offload
+	
+*other-config:promiscous*::
+	Promiscuous status of VIF interface. If true VIF interface can see all traffic on bridge.
 
 
 EXAMPLES

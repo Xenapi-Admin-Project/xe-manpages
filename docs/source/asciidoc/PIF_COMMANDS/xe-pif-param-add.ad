@@ -1,4 +1,4 @@
-xe-pif-param-add.ad(1)
+XE(1)
 =======
 :doctype: manpage
 :man source:   xe pif-param-add
@@ -7,47 +7,51 @@ xe-pif-param-add.ad(1)
 
 NAME
 ----
-//added description -lisa
-xe-pif-param-add - Adds a parameter for a PIF 
+xe-pif-param-add - Add a key to a parameter for a PIF 
 
 SYNOPSIS
 --------
-//finished your synopsis -lisa
-*xe pif-param-add* uuid=<PIF UUID> param-name=<Parameter> [ param-key=<Parameter Key> ]
+// ask group how they think we should handle the key
+
+*xe pif-param-add* uuid=<PIF UUID> param-name=<Parameter> [ param-key=<Parameter Key> ] [ <key>=<value> ]
 
 DESCRIPTION
 -----------
-// blah blah blah
-
+*xe pif-param-add* will add a key/value to a set or map parameter for a PIF interface.
 
 REQUIRED PARAMETERS
 -------------------
-//meh... started writing -lisa
-// lisa this has changed function in 1.6... It doesn't work like it does in 1.1
-// we should probably talk about it - Matt
-// probably? we must talk about it! let me know when :) -lisa 12/21/12
-// still haven't talked about it - Matt
 
 *uuid*::
 	UUID of PIF interface - Use *xe pif-list* to obtain PIF interface UUIDs
 
 *param-name*::
-	Parameter to be added for a PIF interface
+	Parameter to have key added for a PIF interface
 
 
 OPTIONAL PARAMETERS
 -------------------
+
 *param-key*::
 	Parameter key value required if the other-config parameter will be modified. 
+
 	
 
 EXAMPLES
 --------
 
+// there isn't a ton of ways to use pif-param-add... I feel like pif-param-set is the better command for PIF interfaces
+// the only map parameter is otherconfig which has many options that can be set with pif-param-set
+// actually after some reading I have an idea :| - Matt 
+
+To add a DNS search path ( DNS Suffix ) value for a PIF interface: ::
+	xe pif-param-add uuid=<PIF UUID> param-name=other-config domain=<DNS Suffix>
+	
+
 
 SEE ALSO
 --------
-*xe pif-list*(1)
+*xe pif-list*(1),*xe pif-param-list*(1), *xe pif-param-get*(1), *xe pif-param-set*(1), *xe pif-param-remove*(1), *xe pif-param-clear*(1), *xe network-list*(1)
 
 AUTHORS
 -------
