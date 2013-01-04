@@ -13,7 +13,6 @@ SYNOPSIS
 --------
 *xe pif-param-remove* uuid=<PIF UUID> param-name=<Parameter> param-key=<Parameter Key>
 
-
 DESCRIPTION
 -----------
 
@@ -54,7 +53,7 @@ See http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP on how to send bug repor
 
 COPYRIGHT
 ---------
-Copyright \(C) 2012 - Matthew Spah, Lisa Nguyen
+Copyright \(C) 2013 - Matthew Spah, Lisa Nguyen
 
 The Howto containing this example, was offered under the following conditions:
 

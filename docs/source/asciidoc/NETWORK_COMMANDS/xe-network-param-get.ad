@@ -7,43 +7,48 @@ XE(1)
 
 NAME
 ----
-xe-network-param-get - Display a parameter for a specified network.
+xe-network-param-get - Returns a parameter for a network.
 
 SYNOPSIS
 --------
 
-*xe network-param-get* uuid=<Network UUID> param-name=<Parameter Name> 
+*xe network-param-get* uuid=<Network UUID> param-name=<Parameter Name> [ param-key=<Parameter Key> ]
 
-*xe network-param-get* uuid=<Network UUID> param-name=other-config param-key=<Key>
 
 DESCRIPTION
 -----------
 
-*xe network-param-get* will return a selected parameter from a specified network. 
+*xe network-param-get* returns a parameter or a key value for a specified network.
+
 
 REQUIRED PARAMETERS
 -------------------
 
 *uuid*::
-	UUID of Network - *xe network-list* params="all" will display all networks and their parameters.
+	UUID of Network - Use *xe network-list* to obtain a list of network UUIDs.
 
 
 *param-name*::
-	Name of Parameter
+	Parameter for the network.
 	
+OPTIONAL PARAMETERS
+-------------------
+
 *param-key*::
-	Parameter Key
+	Name of key in other-config parameter (e.g. static-routes). 
 
 
 EXAMPLES
 --------
 
-To display the VIF-uuids attached to a network type,
-	*xe network-param-get* uuid=<Network UUID> param-name=VIF-uuids
+To display the VIF-uuids attached to a network: ::
+	*xe network-param-get* uuid=<Network UUID> param-name="VIF-uuids"
 	
-To display the static-routes present on a network type,
-	*xe network-param-get* uuid=<Network UUID> param-name=other-config param-key=static-routes
+To display the static-routes present on a network: ::
+	*xe network-param-get* uuid=<Network UUID> param-name="other-config" param-key="static-routes"
 
+To display the default-locking-mode parameter on a network: ::
+	*Xe network-param-get* uuid=<Network UUID> param-name="default-locking-mode"
 
 SEE ALSO
 --------

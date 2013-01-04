@@ -6,37 +6,43 @@ XE(1)
 :man manual:   xe network-param-add manual
 
 NAME
------
-
-xe-network-param-add 
+----
+xe-network-param-add  - Add a key to a parameter for a network.
 
 SYNOPSIS
 --------
-
-*xe network-param-add* uuid= param-name= param-key=
+*xe network-param-add* uuid=<Network UUID> param-name=<Parameter> [ param-key=<Parameter Key> ] [ <key>=<value> ]
 
 DESCRIPTION
 -----------
-
-
-PREREQUISITES
--------------
-
+*xe network-param-add* will add a key/value to a set or map parameter for a network.
 
 REQUIRED PARAMETERS
 -------------------
+
+*uuid*::
+	UUID of PIF interface - Use *xe network-list* to obtain list of network UUIDs
+
+*param-name*::
+	Parameter to have key added for a network.
 
 
 OPTIONAL PARAMETERS
 -------------------
 
+*param-key*::
+	Parameter key value required if the other-config parameter will be modified. 
+
 EXAMPLES
 --------
+
+To add a key to the tag parameter: ::
+	*xe network-param-add* uuid=<Network UUID> param-name="tag" param-key=<Key>
 
 SEE ALSO
 --------
 
-
+*xe-network-param-set*(1), *xe-network-param-list*(1), *xe-network-param-remove*(1), *xe-network-list*(1), *xe-network-create*(1)
 
 
 AUTHORS

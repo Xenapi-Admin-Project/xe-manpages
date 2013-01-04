@@ -22,18 +22,22 @@ REQUIRED PARAMETERS
 -------------------
 
 *uuid*::
-	UUID of network - *xe network-list* params="all" will display all networks and their parameters.
-
-*param-name*::
-	Parameter name 
+	UUID of network - Use *xe network-list* to obtain a list of network UUIDs.
 	
+*param-name*::
+	Parameter that contains parameter keys (e.g. other-config).
+ 
 *param-key*::
 	Param-key to be removed 
 
 EXAMPLES
 --------
-To remove the param-key *other-config:ethtool-autoneg*: "yes" type,
-	*xe network-param-remove* uuid=<Network UUID> param-name=other-config param-key=ethool-autoneg
+To remove a specific key in the tag parameter: ::
+	*xe network-param-remove* uuid=<Network UUID> param-name="tags" param-key=<Key to be removed>
+	
+To remove static routes from a network: ::
+	*xe network-param-remove* uuid=<Network UUID> param-name="other-config" param-key="static-routes"
+	
 
 SEE ALSO
 --------

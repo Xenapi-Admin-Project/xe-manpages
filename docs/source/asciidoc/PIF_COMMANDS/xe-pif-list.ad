@@ -113,44 +113,44 @@ OPTIONAL PARAMETERS
 	PCI bus path address 
 
 *other-config:ethtool-speed*::
-	Speed of PIF interface in Mbps
+	Speed of PIF interface in Mbps.
 
 *other-config:ethtool-autoneg*::
-	Ethernet Autonegotiation status *[ on | off ]*
+	Ethernet Autonegotiation status. *[ on | off ]*
 	
 *other-config:ethtool-rx*::
-	Receive checksum status *[ on | off ]*
+	Receive checksum status. *[ on | off ]*
 
 *other-config:ethtool-tx*::
-	Transmit checksum status *[ on | off ]*
+	Transmit checksum status. *[ on | off ]*
 
 *other-config:ethtool-sg*::
-	Scatter gather status *[ on | off ]*
+	Scatter gather status. *[ on | off ]*
 
 *other-config:ethtool-tso*::
-	TCP segmentation offload status *[ on | off ]*
+	TCP segmentation offload status. *[ on | off ]*
 
 *other-config:ethtool-ufo*::
-	UDP fragment offload *[ on | off ]*
+	UDP fragment offload. *[ on | off ]*
 
 *other-config:ethtool-gso*::
-	Generic segmentation offload *[ on | off ]*
+	Generic segmentation offload. *[ on | off ]*
 
 *other-config:domain*::
-	DNS search path ( DNS suffix )
+	DNS search path ( DNS suffix ).
 
 *other-config:bond-miimon*::
-
+	The time between link liveness checks, in milliseconds.
 
 *other-config:bond-downdelay*::
-
+	The number of milliseconds to wait after link is lost before considering the link down. Default is 200ms.
 
 *other-config:bond-updelay*::
-
+	The number of milliseconds to wait after the link comes up before considering it up. Default is 31s.
 
 EXAMPLES
 --------
-//need moar examples! -lisa
+
 
 To display all parameters for a specific PIF interface: ::
 	*xe pif-list* uuid=<PIF UUID> params=all

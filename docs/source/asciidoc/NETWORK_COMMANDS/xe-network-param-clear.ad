@@ -7,7 +7,7 @@ XE(1)
 
 NAME
 ----
-xe-network-param-clear
+xe-network-param-clear - Clears a specific writable parameter for a network.
 
 SYNOPSIS
 --------
@@ -15,7 +15,7 @@ SYNOPSIS
 
 DESCRIPTION
 -----------
-*xe network-param-clear* will completely clear all values from a set or a map parameter on a network. 
+*xe network-param-clear* attempts to clear all values for a specific writable parameter for a network.
 
 
 REQUIRED PARAMETERS
@@ -25,13 +25,17 @@ REQUIRED PARAMETERS
 	UUID of Network - *xe network-list* params="all" will display all networks and their parameters.
 
 *param-name*::
-	
+	Parameter to be cleared (e.g. name-description)
 
 EXAMPLES
 --------
-To clear all values found in the other-config parameter:
-	*xe network-param-clear* uuid=<Network UUID> param-name=other-config
 
+To clear all values found in the other-config parameter: ::
+	*xe network-param-clear* uuid=<Network UUID> param-name="other-config"
+
+To clear the name-description parameter: ::
+	*xe network-param-clear* uuid=<Network UUID> param-name="name-description"
+	
 
 
 SEE ALSO
