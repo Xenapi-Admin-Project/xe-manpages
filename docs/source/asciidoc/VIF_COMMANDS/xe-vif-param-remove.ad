@@ -16,7 +16,7 @@ SYNOPSIS
 
 DESCRIPTION
 -----------
-*xe pif-param-remove* removes a set or map writable parameter key assigned to a VIF interface. 
+*xe vif-param-remove* removes a set or map writable parameter key assigned to a VIF interface. 
 
 
 

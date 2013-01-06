@@ -8,7 +8,7 @@ XE(1)
 NAME
 ----
 
-xe-vlan-param-get - Display a parameter for specified VLAN
+xe-vlan-param-get - Returns a parameter for a VLAN
 
 SYNOPSIS
 --------
@@ -18,7 +18,7 @@ SYNOPSIS
 DESCRIPTION
 -----------
 
-*xe vlan-param-get* will return a single selected parameter from a specified VLAN
+*xe vlan-param-get* returns a parameter or a key value for a specific PIF interface.
 
 
 REQUIRED PARAMETERS
@@ -28,22 +28,20 @@ REQUIRED PARAMETERS
 	UUID of VLAN - *xe vlan-list* lists all VLANs present in a pool.
 
 *param-name*::
-	 Parameter to output 
-	 // update this
-
+	 Parameter for the VLAN.
+	 
 OPTIONAL PARAMETERS
 -------------------
 
 *param-key*::
-	// add description
+	Name of key.
 
     
 EXAMPLES
 --------
 
-To display the tagged-PIF parameter for a VLAN, type;
-	*xe vlan-param-get* uuid=<VLAN UUID> param-name=tagged-PIF  
-// this is about all you can do with vlans from what I remember
+To display the tagged-PIF parameter for a VLAN: ::
+	*xe vlan-param-get* uuid=<VLAN UUID> param-name="tagged-PIF"  
 
 
 SEE ALSO

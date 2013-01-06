@@ -7,31 +7,27 @@ XE(1)
 
 NAME
 ----
+xe-vlan-param-list - Lists all parameters for a VLAN
 
-xe-vlan-param-list - Display all parameters for a specified VLAN
 
 SYNOPSIS
 --------
-
 *xe vlan-param-list* uuid=<VLAN UUID>
 
 DESCRIPTION
 -----------
-
-*xe vlan-param-list* will display all parameters for a specified VLAN.
+*xe vlan-param-list* lists all parameters for a specified VLAN.
 
 REQUIRED PARAMETERS
 -------------------
-
 *uuid*::
-	UUID of VLAN - *xe vlan-list* lists all VLANs present in a pool.
+	UUID of VLAN - Use *xe vlan-list* to obtain a list of a VLAN UUIDs.
 
 
 EXAMPLES
 --------
-
-To list all the parameters for a specific VLAN, type;
-	xe vlan-param-list uuid=<VLAN UUID>
+To list all the parameters for a specific VLAN: ::
+	*xe vlan-param-list* uuid=<VLAN UUID>
 
                  
 SEE ALSO

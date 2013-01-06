@@ -11,7 +11,6 @@ xe-pif-param-clear - Clears a specific writable parameter for a PIF.
 
 SYNOPSIS
 --------
-
 *xe pif-param-clear* uuid=<PIF UUID> param-name=<parameter> 
 
 

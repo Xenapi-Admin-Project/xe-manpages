@@ -84,14 +84,17 @@ OPTIONAL PARAMETERS
 EXAMPLES
 --------
 
-To display all paramters for a specific network type,
-	*xe network-list* uuid=<NETWORK UUID> params=all
+To display the name-label and UUID of all networks with a MTU of 1500: ::
+	*xe network-list* MTU="1500" params="name-label,uuid"
+
+To display all paramters for a specific network type: ::
+	*xe network-list* uuid=<NETWORK UUID> params="all"
 	
-To display all paramters for all networks in a pool type,
-	*xe network-list* params=all
+To display all parameters for all networks in a pool type: ::
+	*xe network-list* params="all"
 	
-To display VIF-uuids for a specific network type,
-	*xe network-list* uuid=<NETWORK UUID> params=VIF-uuids
+To display VIF-uuids for a specific network type: ::
+	*xe network-list* uuid=<NETWORK UUID> params="VIF-uuids"
 
 
 SEE ALSO

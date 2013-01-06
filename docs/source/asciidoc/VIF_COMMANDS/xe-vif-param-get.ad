@@ -7,7 +7,7 @@ XE(1)
 
 NAME
 ----
-xe-vif-param-get - Display a parameter for a VIF interface
+xe-vif-param-get - Display a parameter for a VIF interface.
 
 SYNOPSIS
 --------
@@ -34,7 +34,7 @@ OPTIONAL PARAMETERS
 -------------------
 
 *param-key*::
-	Name of key in other-config parameter (e.g. promiscous)
+	Name of key in other-config parameter (e.g. promiscous).
 
 
 EXAMPLES

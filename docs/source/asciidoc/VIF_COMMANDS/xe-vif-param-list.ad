@@ -26,7 +26,7 @@ REQUIRED PARAMETERS
 
 EXAMPLES
 --------
-To list all parameters for a VIF: 
+To list all parameters for a VIF: ::
 	*xe vif-param-list* uuid=<VIF UUID>
 
 SEE ALSO

@@ -20,7 +20,7 @@ SYNOPSIS
 DESCRIPTION
 -----------
 
-*xe vlan-list* display VLANs present in a pool along with several other attributes. Citrix also recommends using *xe pif-list* to display VLANs present. Output can be filtered by supplying params=<parameter>. Multiple parameters can be displayed by seperating each parameter with a comma (params=uuid,name-label).
+*xe vlan-list* lists all VLANs and their parameters on a host. Citrix also recommends using *xe pif-list* to display VLANs present. Output can be filtered by supplying params=<parameter>. Multiple parameters can be displayed by seperating each parameter with a comma (params=uuid,name-label).
 
 
 OPTIONAL PARAMETERS
@@ -36,18 +36,20 @@ OPTIONAL PARAMETERS
 	The physical PIF interface UUID connected to the VLAN. 802.1Q Tagging occurs on this interface
 	
 *untagged-PIF*::  
-	The pseudo PIF interface connected to the VLAN.
+	The pseudo PIF UUID connected to the VLAN. 
 	
 
 EXAMPLES
 --------
 
-To display only the tagged-PIF and tag parameters for VLANs type,
-	*xe vlan-list* params=tag,tagged-PIF
+To display only the tagged-PIF and tag parameters for VLANs type: ::
+	*xe vlan-list* params="tag,tagged-PIF"
+
+To display all the VLANS associated with a physical PIF interface: :
+	*xe vlan-list* tagged-PIF=<Physical PIF UUID> params="all"
 
 SEE ALSO
 --------
-
 *xe-pool-vlan-create*(1), *xe-pif-list*(1), *xe-vlan-destroy*(1), *xe-network-list*(1)
 
 AUTHORS

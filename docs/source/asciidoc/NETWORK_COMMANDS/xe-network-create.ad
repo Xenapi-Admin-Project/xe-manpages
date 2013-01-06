@@ -18,7 +18,7 @@ SYNOPSIS
 DESCRIPTION
 -----------
 
-*xe network-create* will create a network. Name-labels and name-descriptions containing spaces
+*xe network-create* will create an internal network. Name-labels and name-descriptions containing spaces
 need to be enclosed in quotes. The MTU default is 1500. The resulting network UUID is returned. 
 
 REQUIRED PARAMETERS

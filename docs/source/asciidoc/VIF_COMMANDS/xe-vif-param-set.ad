@@ -27,12 +27,19 @@ REQUIRED PARAMETERS
 OPTIONAL PARAMETERS
 -------------------
 *qos_algorithm_type*::
-	Type of QoS algorithm used by the VIF interface.
+	Set type of QoS algorithm used by the VIF interface.
 
-*locking-mode*::
-	// list all the locking modes under this one list? 
-	// or have one for each mode? - matt
+*locking-mode:default*::
+	VIF interface applies filtering level of the networks default-locking-mode parameter.
+	
+*locking-mode:locked*::
+	Set to only allow permitted MAC and IP addresses to send and receive traffic on VIF interface.
 
+*locking-mode:unlocked*::
+	Set to permit all traffic.
+
+*locking-mode:disabled*::
+	Set to filter all traffic.
 	
 *ipv4-allowed*::
 	List of IPv4 addresses used to filter traffic through the VIF interface. Use a comma to separate multiple IPv4 addresses.
@@ -69,6 +76,7 @@ OPTIONAL PARAMETERS
 
 EXAMPLES
 --------
+
 //added an example, will need more, please test the first example -lisa
 To set the maximum transmit rate of 100 kbps/s on a VIF: ::
 	xe vif-param-set uuid=<VIF UUID> qos_algorithm_type=ratelimit
