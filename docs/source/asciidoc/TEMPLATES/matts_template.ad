@@ -12,18 +12,11 @@ NAME
 SYNOPSIS
 --------
 
-
 DESCRIPTION
 -----------
 
-
-PREREQUISITES
--------------
-
-
 REQUIRED PARAMETERS
 -------------------
-
 
 OPTIONAL PARAMETERS
 -------------------
@@ -31,21 +24,16 @@ OPTIONAL PARAMETERS
 EXAMPLES
 --------
 
-
-
 SEE ALSO
 --------
-
-
-BUGS
-----
-Send bugs to xen-devel@lists.xen.org, see http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP on how to send bug reports. General questions can be sent to xen-api@lists.xen.org.
 
 AUTHORS
 -------
 Matthew Spah <spahmatthew@gmail.com>
 
-
+BUGS
+----
+See http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP on how to send bug reports, Send bugs to xen-devel@lists.xen.org. General questions can be sent to xen-api@lists.xen.org.
 
 
 COPYRIGHT
