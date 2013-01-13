@@ -34,41 +34,41 @@ OPTIONAL PARAMETERS
 -------------------
 
 *name-label*::
-	Name of network.
+	Set name of network.
 	
 *name-description*::
-	Description of network.
+	Set description of network.
 	
 *MTU*::
-	MTU size for a network.
+	Set MTU size for a network.
 
 *default-locking-mode*::
 	Set to *disabled* to have VIF interfaces filter all traffic. Set to *unlocked* to remove all filtering rules associated with the VIF interfaces. Default is "unlocked".
 	
 *other-config:static-routes*::
-	To create a static route for a network use the following syntax <Network Address>/<Subnet Mask>/<Next Hop Address>. 
-	Seperate routes using a comma.
+	To create a static route for a network use the following syntax *<Network Address>/<Subnet Mask>/<Next Hop Address>*. 
+	Seperate multiple routes using a comma.
 		
 *other-config:ethtool-autoneg*::
-	To disable autonegotiation on PIF interface or bridge set to *no*. Default is *yes*. 
+	Enable autonegotiation on a network. Set *on* to enable, *off* to disable. (e.g. *ethtool-autoneg="on"*)
 	
 *other-config:ethtool-rx*:: 
-	To enable receive checksum set to *on*. To disable set to *off*.
+	Enable receive checksum. Set *on* to enable, *off* to disable. (e.g. *ethtool-rx="on"*)
 	
 *other-config:ethtool-tx*::
-	To enable transmit checksum set to *on*. To disable set to *off*.
+	Enable transmit checksum. Set *on* to enable, *off* to disable. (e.g. *ethtool-tx="on"*)
 	
 *other-config:ethtool-sg*:: 
-	To enable scatter gather set to *on*. To disable set to *off*.
+	Enable scatter gather. Set *on* to enable, *off* to disable. (e.g. *ethtool-sg="on"*)
 	
 *other-config:ethtool-tso*::
-	To enable TCP segmentation offload set to *on*. To disable set to *off*.
+	Enable TCP segmentation offload. Set *on* to enable, *off* to disable. (e.g. *ethtool-tso="on"*)
 	
 *other-config:ethtool-ufo*::
-	To enable UDP fragment offload set to *on*. To disable set to *off*.
+	Enable UDP fragment offload. Set *on* to enable,  *off* to disable. (e.g. *ethtool-ufo="on"*)
 	
 *other-config:ethtool-gso*::
-	To enable generic segmentation offload set to *on*. To disable set to *off*.
+	Enable generic segmentation offload. Set *on* to enable, *off* to disable. (e.g. *ethtool-gso="on"*)
 	
 
 EXAMPLES

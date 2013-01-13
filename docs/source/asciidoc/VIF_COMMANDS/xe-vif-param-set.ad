@@ -26,6 +26,7 @@ REQUIRED PARAMETERS
 
 OPTIONAL PARAMETERS
 -------------------
+
 *qos_algorithm_type*::
 	Set type of QoS algorithm used by the VIF interface.
 
@@ -51,22 +52,22 @@ OPTIONAL PARAMETERS
 	Parameters for the QoS algorithms supported by the VIF interface.
 
 *other-config:ethtool-rx*::
-	To enable receive checksum set to *on*. To disable set to *off*
+	Enable receive checksum. Set *on* to enable, *off* to disable. (e.g. *ethtool-rx="on"*)
 
 *other-config:ethtool-tx*::
-	To enable transmit checksum set to *on*. To disable set to *off*
+	Enable transmit checksum. Set *on* to enable, *off* to disable. (e.g. *ethtool-tx="on"*)
 
 *other-config:ethtool-sg*::
-	To enable scatter gather set to *on*. To disable set to *off*
+	Enable scatter gather. Set *on* to enable, *off* to disable. (e.g. *ethtool-sg="on"*)
 
 *other-config:ethtool-tso*::
-	To enable TCP segmentation offload set to *on*. To disable set to *off*.
+	Enable TCP segmentation offload. Set *on* to enable, *off* to disable. (e.g. *ethtool-tso="on"*)
 
 *other-config:ethtool-ufo*::
-	To enable UDP fragment offload set to *on*. To disable set to *off*.
+	Enable UDP fragment offload. Set *on* to enable,  *off* to disable. (e.g. *ethtool-ufo="on"*)
 
 *other-config:ethtool-gso*::
-	To enable generic segmentation offload set to *on*. To disable set to *off*
+	Enable generic segmentation offload. Set *on* to enable, *off* to disable. (e.g. *ethtool-gso="on"*)
 	
 *other-config:mtu*::
 	Set MTU size for VIF interface.
@@ -77,7 +78,6 @@ OPTIONAL PARAMETERS
 EXAMPLES
 --------
 
-//added an example, will need more, please test the first example -lisa
 To set the maximum transmit rate of 100 kbps/s on a VIF: ::
 	xe vif-param-set uuid=<VIF UUID> qos_algorithm_type=ratelimit
     xe vif-param-set uuid=<VIF UUID> qos_algorithm_params:kbps=100

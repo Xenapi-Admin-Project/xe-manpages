@@ -19,10 +19,8 @@ SYNOPSIS
 DESCRIPTION
 -----------
 
-*xe pif-scan* scans a host for new physical network devices. If found new PIF interfaces with networks are created on the host.
-
-//	maybe I should talk about the effects this will have a pool
-//	citrix talks about how the physical network should be the consitistant (how the fuck do you spell that?)
+*xe pif-scan* scans a host for new physical network devices. If new network devices are found on the host new PIF interfaces are created and assigned to the network devices.
+New pool wide networks are created and [ think of some way to say joined to those new PIF interfaces created ] 
 
 
 REQUIRED PARAMETERS

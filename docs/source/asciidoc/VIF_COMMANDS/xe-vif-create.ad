@@ -19,7 +19,7 @@ SYNOPSIS
 DESCRIPTION
 -----------
 
-*xe vif-create* will create a new VIF interface for a VM on a network. A VIF interface created on a running VM needs to be attached to the VM using *xe vif-plug*. The resulting VIF interface UUID will be returned.
+*xe vif-create* will create a new VIF interface for a VM on a network. A VIF interface created on a running VM needs to be attached to the VM using *xe vif-plug*. The MTU size of the VIF interface is automatically inherited from the network. The resulting VIF interface UUID will be returned.
 
 REQUIRED PARAMETERS
 -------------------
@@ -32,9 +32,7 @@ REQUIRED PARAMETERS
 
 *device*::
 	Machine-readable Interface Number. *xe vm-param-get uuid=<VM UUID> param-name=allowed-VIF-devices* will display available VIF devices.
-	
-	
-	
+			
 OPTIONAL PARAMETERS
 -------------------
 
@@ -45,11 +43,11 @@ OPTIONAL PARAMETERS
 EXAMPLES
 --------
 
-To create a VIF interface on a running VM::
+To create a VIF interface on a running VM: ::
 	*xe vif-create* vm-uuid=<VM UUID> device=<device number> network-uuid=<network uuid>
 	*xe vif-plug* uuid=<VIF UUID>
 	
-To create a VIF interface on a halted VM::
+To create a VIF interface on a halted VM: ::
 	*xe vif-create* vm-uuid=<VM UUID> device=<device number> network-uuid=<network uuid>
 	
 

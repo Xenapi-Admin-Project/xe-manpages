@@ -6,7 +6,7 @@ XE(1)
 :man manual:   xe network-create manual
 
 NAME
------
+----
 xe-network-create - Create a network
 
 SYNOPSIS
@@ -18,29 +18,31 @@ SYNOPSIS
 DESCRIPTION
 -----------
 
-*xe network-create* will create an internal network. Name-labels and name-descriptions containing spaces
-need to be enclosed in quotes. The MTU default is 1500. The resulting network UUID is returned. 
+*xe network-create* will create an internal network. Name-labels and name-descriptions containing spaces need to be enclosed in quotes.  The resulting network UUID is returned. 
 
 REQUIRED PARAMETERS
 -------------------
 
 *name-label*::
-	Name of the network 
+	Name of the network. 
 
 OPTIONAL PARAMETER
 -------------------
 
 *MTU*::
-	MTU for the network
+	MTU for the network. The MTU default is 1500.
 	
 *name-description*::
-	Description of the network
+	Description of the network.
 
 EXAMPLES
 --------
 
-To create a network with a name description type,
+To create a network with a name description: ::
 	*xe network-create* name-label="Example Network" name-description="This is an Example Network"
+
+To create a network with a custom MTU: ::
+	*xe network-create* name-label="MTU Example Network" MTU="9000"
 
 SEE ALSO
 --------

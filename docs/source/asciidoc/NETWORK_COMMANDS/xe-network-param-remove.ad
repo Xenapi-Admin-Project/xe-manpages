@@ -6,15 +6,18 @@ XE(1)
 :man manual:   xe network-param-remove manual
 
 NAME
------
+----
+
 xe-network-param-remove - Remove a param-key from a network
 
 SYNOPSIS
 --------
+
 *xe network-param-remove* uuid=<Network UUID> param-name=<Parameter Name> param-key=<Parameter key>
 
 DESCRIPTION
 -----------
+
 *xe network-param-remove* will remove a param-key value from a set/map parameter assigned to a network found in a pool.
 
 
@@ -32,6 +35,7 @@ REQUIRED PARAMETERS
 
 EXAMPLES
 --------
+
 To remove a specific key in the tag parameter: ::
 	*xe network-param-remove* uuid=<Network UUID> param-name="tags" param-key=<Key to be removed>
 	
