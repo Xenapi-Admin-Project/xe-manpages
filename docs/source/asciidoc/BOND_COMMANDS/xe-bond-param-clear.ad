@@ -7,28 +7,26 @@ XE(1)
 
 NAME
 ----
-
-xe-bond-param-clear - add description
+xe-bond-param-clear - Clears a specific writable parameter for a bond.
 
 
 SYNOPSIS
 --------
-
 *xe bond-param-clear* uuid=<Bond UUID> param-name=<Parameter>
 
 DESCRIPTION
 -----------
-
-// Description 
-
+*xe bond-param-clear* attempts to clear all values for a specific writable parameter for a bond.
 
 
 REQUIRED PARAMETERS
 -------------------
 
 *uuid*::
+	UUID of Bond. Use *xe bond-list* to obtain a list of bond UUIDs.
 
 *param-name*::
+	Parameter to be cleared for a bond. (e.g. other-config). 
 
 
 EXAMPLES
@@ -37,7 +35,6 @@ EXAMPLES
 
 SEE ALSO
 --------
-
 *xe-bond-create*(1), *xe-bond-destroy*(1), *xe-bond-set-mode*(1), *xe-bond-param-list*(1), *xe-pif-list*(1)
 
 AUTHORS

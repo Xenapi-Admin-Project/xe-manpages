@@ -7,7 +7,7 @@ XE(1)
 
 NAME
 ----
-xe-bond-param-set - add description
+xe-bond-param-set -  Set parameters for a Bond. 
 
 
 SYNOPSIS
@@ -18,7 +18,9 @@ SYNOPSIS
 DESCRIPTION
 -----------
 
-// Description 
+*xe pif-param-set* sets read/write parameters for a bond. 
+
+// Use 
 
 
 
@@ -26,6 +28,7 @@ REQUIRED PARAMETERS
 -------------------
 
 *uuid*::
+	UUID of Bond.
 
 *properties:*::
 

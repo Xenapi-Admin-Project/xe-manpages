@@ -6,9 +6,8 @@ XE(1)
 :man manual:   xe bond-list manual
 
 NAME
------
-
-xe-bond-list 
+----
+xe-bond-list -  Lists Bond in a resource pool
 
 SYNOPSIS
 --------
@@ -17,12 +16,12 @@ SYNOPSIS
 DESCRIPTION
 -----------
 
-// add description
 
 OPTIONAL PARAMETERS
 -------------------
 
 *uuid*::
+	UUID of Bond.
 
 *mode*::
 

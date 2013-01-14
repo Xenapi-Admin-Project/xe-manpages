@@ -8,7 +8,7 @@ XE(1)
 NAME
 ----
 
-xe-bond-param-list - add description
+xe-bond-param-list -  Lists all parameters for a bond.
 
 
 SYNOPSIS
@@ -19,18 +19,21 @@ SYNOPSIS
 DESCRIPTION
 -----------
 
-// Description 
-
+*xe bond-param-list* lists all parameters for a specific bond.
 
 
 REQUIRED PARAMETERS
 -------------------
 
 *uuid*::
+	UUID of Bond.
 
 
 EXAMPLES
 --------
+
+To display parameters for a bond: ::
+	*xe bond-param-list* uuid=<Bond UUID>
 
 
 SEE ALSO

@@ -25,13 +25,13 @@ REQUIRED PARAMETERS
 -------------------
 
 *vm-uuid*::
-	VM to assign the VIF interface. *xe vm-list* will display VMs.
+	VM to assign the VIF interface. Use *xe vm-list* to obtain a list of VMs.
 
 *network-uuid*::
-	Network that the VIF interface will be assigned. *xe network-list* will display networks.
+	Network that the VIF interface will be assigned. Use *xe network-list* to obtain a list of networks.
 
 *device*::
-	Machine-readable Interface Number. *xe vm-param-get uuid=<VM UUID> param-name=allowed-VIF-devices* will display available VIF devices.
+	Machine-readable Interface Number. Use *xe vm-param-get uuid=<VM UUID> param-name=allowed-VIF-devices* to display available VIF devices numbers for a VM.
 			
 OPTIONAL PARAMETERS
 -------------------

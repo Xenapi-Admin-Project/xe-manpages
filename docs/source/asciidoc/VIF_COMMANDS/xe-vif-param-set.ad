@@ -73,14 +73,14 @@ OPTIONAL PARAMETERS
 	Set MTU size for VIF interface.
 	
 *other-config:promiscuous*::
-	To enable promiscuous mode on a VIF so it sees all traffic over the bridge set to *true*. To disable set to *false*
+	Enable promiscuous mode on a VIF interface. Set *true* to enable, *false* to disable. (e.g. *other-config:promiscuous=true*)
 
 EXAMPLES
 --------
 
-To set the maximum transmit rate of 100 kbps/s on a VIF: ::
-	xe vif-param-set uuid=<VIF UUID> qos_algorithm_type=ratelimit
-    xe vif-param-set uuid=<VIF UUID> qos_algorithm_params:kbps=100
+//To set the maximum transmit rate of 100 kbps/s on a VIF: ::
+	//xe vif-param-set uuid=<VIF UUID> qos_algorithm_type=ratelimit
+    //xe vif-param-set uuid=<VIF UUID> qos_algorithm_params:kbps=100
     
 To set the locking mode to locked and restrict a specific IP address: ::
 	xe vif-param-set uuid=<VIF UUID> locking-mode="locked"

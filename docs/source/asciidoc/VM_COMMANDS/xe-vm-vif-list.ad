@@ -1,58 +1,55 @@
 XE(1)
 =======
 :doctype: manpage
-:man source:   xe bond-param-get
+:man source:   xe vm-vif-list
 :man version:  {1}
-:man manual:   xe bond-param-get manual
+:man manual:   xe vm-vif-list manual
 
 NAME
 ----
-xe-bond-param-get - Returns a parameter for a bond.
+
+xe-vm-vif-list - List VIF interfaces for VMs 
 
 SYNOPSIS
 --------
 
-*xe bond-param-get* uuid=<Bond UUID> param-name=<Parameter> [ param-key=<Parameter Key> ]
+*xe-vm-vif-list* [ <vm-selector>=<vm_selector_value> ] 
 
 DESCRIPTION
 -----------
-*xe bond-param-get* returns a parameter or a key value for a specific bond.
 
-
-REQUIRED PARAMETERS
--------------------
-*uuid*::
-	UUID of bond. Use *xe bond-list* to obtain a list of bonds.
-
-*param-name*::
-	Parameter for the bond.
-
+*xe vm-vif-list* will display VIF interface information for Virtual Machines in your resource pool.
 
 OPTIONAL PARAMETERS
 -------------------
 
-*param-key*::
-	// see what keys are available 
+*<vm-selectory>*::
+	// blah blah blah!
 
 
 EXAMPLES
 --------
 
+To display VIF information for all running VMs: ::
+	*xe vm-vif-list* power-state=running
+
+To display VIF information for a specific VM: ::
+	*xe vm-vif-list* uuid=<VM UUID>
+	
+
 
 SEE ALSO
 --------
-*xe-bond-create*(1), *xe-bond-destroy*(1), *xe-bond-set-mode*(1), *xe-bond-param-list*(1) *xe-bond-param-get*(1), *xe-bond-param-set*(1), *xe-pif-list*(1)
 
+*xe vm-create*(1), *xe vif-create*(1), 
 
 AUTHORS
 -------
-Matthew Spah <spahmatthew@xenapiadmin.com>
+Matthew Spah <spahmatthew@gmail.com>
 
 BUGS
 ----
-See http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP on how to send bug reports, send bugs to xen-devel@lists.xen.org.  General questions can be sent to xen-api@lists.xen.org.
-
-
+See http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP on how to send bug reports, Send bugs to xen-devel@lists.xen.org. General questions can be sent to xen-api@lists.xen.org.
 
 
 COPYRIGHT
@@ -67,6 +64,7 @@ met:
 [options="compact"]
 . Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
 . Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+
 
 
 THIS SOFTWARE IS PROVIDED BY THE AUTHOR "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
