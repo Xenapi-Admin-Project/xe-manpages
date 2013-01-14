@@ -12,7 +12,7 @@ xe-network-param-get - Returns a parameter for a network.
 SYNOPSIS
 --------
 
-*xe network-param-get* uuid=<Network UUID> param-name=<Parameter Name> [ param-key=<Parameter Key> ]
+*xe network-param-get* uuid=<network uuid> param-name=<parameter> [ param-key=<parameter key> ]
 
 
 DESCRIPTION
@@ -25,7 +25,7 @@ REQUIRED PARAMETERS
 -------------------
 
 *uuid*::
-	UUID of Network - Use *xe network-list* to obtain a list of network UUIDs.
+	Network UUID - Use *xe network-list* to see list of network UUIDs.
 
 
 *param-name*::
@@ -42,13 +42,13 @@ EXAMPLES
 --------
 
 To display the VIF-uuids attached to a network: ::
-	*xe network-param-get* uuid=<Network UUID> param-name="VIF-uuids"
+	*xe network-param-get* uuid=<network uuid> param-name="VIF-uuids"
 	
 To display the static-routes present on a network: ::
-	*xe network-param-get* uuid=<Network UUID> param-name="other-config" param-key="static-routes"
+	*xe network-param-get* uuid=<network uuid> param-name="other-config" param-key="static-routes"
 
 To display the default-locking-mode parameter on a network: ::
-	*Xe network-param-get* uuid=<Network UUID> param-name="default-locking-mode"
+	*Xe network-param-get* uuid=<network uuid> param-name="default-locking-mode"
 
 SEE ALSO
 --------
@@ -77,12 +77,6 @@ met:
 [options="compact"]
 . Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
 . Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
-
-
-.List
-.  Item one
-.  Item two
-
 
 THIS SOFTWARE IS PROVIDED BY THE AUTHOR "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
 WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT,
