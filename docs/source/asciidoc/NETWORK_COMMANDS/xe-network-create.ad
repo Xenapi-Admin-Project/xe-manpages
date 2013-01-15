@@ -51,11 +51,13 @@ SEE ALSO
 
 AUTHORS
 -------
+Man Page Author(s)::
 Matthew Spah <spahmatthew@xenapiadmin.com>
+
 
 BUGS
 ----
-See http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP on how to send bug reports, send bugs to xen-devel@lists.xen.org.  General questions can be sent to xen-api@lists.xen.org.
+See http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP on how to send bug reports, send bugs and general questions to xen-api@lists.xen.org.
 
 COPYRIGHT
 ---------
