@@ -8,24 +8,31 @@ XE(1)
 NAME
 ----
 
-xe-network-param-remove - Remove a param-key from a network
+xe-network-param-remove - Removes a param-key from a network.
+// added an 's' after "Remove", added a period --Christina
+// Should it be "Remove a param-key from a network" as in "xe-network-param-remove - [How to] Remove a param-key"
+// OR "Removes a param-key from a network" as in "[The command] xe-network-param-remove Removes a param-key from a network."
+// Y'know whattamean? The former sounds more like a TITLE or a NAME, whereas the latter sounds more like..well, a DESCRIPTION
+// Also, is the param-key writeable? --Christina
 
 SYNOPSIS
 --------
 
-*xe network-param-remove* uuid=<Network UUID> param-name=<Parameter Name> param-key=<Parameter key>
+*xe network-param-remove* uuid=<Network UUID> param-name=<Parameter Name> param-key=<Parameter Key>
 
 DESCRIPTION
 -----------
 
-*xe network-param-remove* will remove a param-key value from a set/map parameter assigned to a network found in a pool.
-
+*xe network-param-remove* removes a param-key value from a set/map parameter assigned to a network found in a pool.
+// What do you think of "removes a param-key value from a set or map writeable paramenter assigned to a network in a pool."
+// OR "removes a param-key value from a set or map parameter assigned to a network." etc. etc. --Christina
 
 REQUIRED PARAMETERS
 -------------------
 
 *uuid*::
-	UUID of network - Use *xe network-list* to obtain a list of network UUIDs.
+	Network UUID - Use *xe network-list* to obtain a list of network UUIDs.
+// Changed "UUID of network" to "Network UUID" --Christina
 	
 *param-name*::
 	Parameter that contains parameter keys (e.g. other-config).
@@ -48,16 +55,17 @@ SEE ALSO
 *xe-network-param-set*(1), *xe-network-list*(1), *xe-network-create*(1), *xe-network-param-list*(1), *xe-pif-list*(1), *xe-vif-list*(1)
 
 
-
 AUTHORS
 -------
+Manpage Author(s): ::
 Matthew Spah <spahmatthew@xenapiadmin.com>
+// Added "Manpage Author(s): ::" --Christina
 
 BUGS
 ----
 See http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP on how to send bug reports, send bugs to xen-devel@lists.xen.org.  General questions can be sent to xen-api@lists.xen.org.
 
-
+// Copyright date is 2012..should it be 2013? --Christina
 
 COPYRIGHT
 ---------

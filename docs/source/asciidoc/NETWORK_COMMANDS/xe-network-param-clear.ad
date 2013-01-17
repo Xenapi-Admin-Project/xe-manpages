@@ -11,40 +11,52 @@ xe-network-param-clear - Clears a specific writable parameter for a network.
 
 SYNOPSIS
 --------
-*xe network-param-clear* uuid=<network uuid> param-name=<parameter>
+*xe network-param-clear* uuid=<Network UUID> param-name=<Parameter>
+// Capitalized stuff between angle brackets --Christina
 
 DESCRIPTION
 -----------
 *xe network-param-clear* attempts to clear all values for a specific writable parameter for a network.
 
-
 REQUIRED PARAMETERS
 -------------------
 
 *uuid*::
-	Network UUID - Use *xe network-list* to see all network UUIDs
+	Network UUID - Use *xe network-list* to obtain network UUIDs.
+// Changed "see all network UUIDs" to "obtain network UUIDs." --Christina
+// Other ways of wording that: (1) "to display all networks present in a pool." OR
+// (2) "to obtain UUIDs of all networks present in a pool." OR
+// (3) "to obtain network UUIDs." 
 
 *param-name*::
-	Parameter to be cleared (e.g. name-description)
+	Parameter to be cleared for a network (e.g. name-description)
+// Added "for a network" ; for a network or for a specific network? --Christina
 
 EXAMPLES
 --------
 
-To clear all values found in the other-config parameter: ::
-	*xe network-param-clear* uuid=<network uuid> param-name="other-config"
+To clear all values found in the *other-config* parameter: ::
+	*xe network-param-clear* uuid=<Network UUID> param-name="other-config"
+// Bolded "other-config", I thought I saw it somewhere..is this right? --Christina
+// Capitalized stuff between angle brackets
 
-To clear the name-description parameter: ::
-	*xe network-param-clear* uuid=<network uuid> param-name="name-description"
+To clear the *name-description* parameter: ::
+	*xe network-param-clear* uuid=<Network UUID> param-name="name-description"
+// Bolded "name-description" --Christina
+// Capitalized stuff between angle brackets
 	
 SEE ALSO
 --------
 
-*xe-network-list*(1), *xe-network-param-list*(1), *xe-pif-list*(1), *xe-vif-list*(1)
-*xe-network-param-set*(1), *xe-network-param-remove*(1)
+*xe-network-list*(1), *xe-network-param-list*(1), *xe-pif-list*(1), *xe-vif-list*(1), *xe-network-param-set*(1), *xe-network-param-remove*(1)
+// Removed manual line break and added comma between xe-vif-list and xe-network-param- --Christina
 
 AUTHORS
 -------
+Manpage Author(s): ::
 Matthew Spah <spahmatthew@xenapiadmin.com>
+// Added "Manpage Author(s): ::"
+
 
 BUGS
 ----

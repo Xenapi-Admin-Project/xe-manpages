@@ -6,7 +6,7 @@ XE(1)
 :man manual:   xe network-param-list manual
 
 NAME
------
+----
 xe-network-param-list - Lists all parameters for a network. 
 
 SYNOPSIS
@@ -22,8 +22,10 @@ REQUIRED PARAMETERS
 -------------------
 
 *uuid*::
-	UUID of Network - *xe network-list* will display all networks present in a pool
-
+	UUID of Network - Use *xe network-list* to display all networks present in a pool.
+// Changed "*xe network-list* will display.." to "Use *xe network-list* to display..." --Christina
+// "to display all networks present in a pool" or "to obtain UUIDs of all networks present in a pool" ?? --Christina 
+// OR "to obtain network UUIDs."??
 
 EXAMPLES
 --------
@@ -37,7 +39,9 @@ SEE ALSO
 
 AUTHORS
 -------
+Manpage Author(s): ::
 Matthew Spah <spahmatthew@xenapiadmin.com>
+// Added "Manpage Author(s): ::" --Christina
 
 BUGS
 ----
