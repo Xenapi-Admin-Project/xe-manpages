@@ -7,11 +7,13 @@ XE(1)
 
 NAME
 ----
-xe-network-param-add  - Add a key to a parameter for a network.
+xe-network-param-add - Add a key to a parameter for a network.
+// Removed extra space before the hyphen --Christina
 
 SYNOPSIS
 --------
-*xe network-param-add* uuid=<Network UUID> param-name=<Parameter> [ param-key=<Parameter Key> ] [ <key>=<value> ]
+*xe network-param-add* uuid=<Network UUID> param-name=<Parameter> [ param-key=<Parameter Key> ] [ <key>=<Value> ]
+// Capitalized "Value" --Christina
 
 DESCRIPTION
 -----------
@@ -21,7 +23,8 @@ REQUIRED PARAMETERS
 -------------------
 
 *uuid*::
-	UUID of PIF interface - Use *xe network-list* to obtain list of network UUIDs
+	UUID of PIF interface - Use *xe network-list* to obtain network UUIDs.
+// Replaced "to obtain list of" with "to obtain" and added a period --Christina
 
 *param-name*::
 	Parameter to have key added for a network.
@@ -36,8 +39,9 @@ OPTIONAL PARAMETERS
 EXAMPLES
 --------
 
-To add a key to the tag parameter: ::
+To add a key to the *tag* parameter: ::
 	*xe network-param-add* uuid=<Network UUID> param-name="tag" param-key=<Key>
+// Enclosed tag in astericks.....this is right, right? --Christina
 
 SEE ALSO
 --------
@@ -47,12 +51,13 @@ SEE ALSO
 
 AUTHORS
 -------
+Manpage Author(s)::
 Matthew Spah <spahmatthew@xenapiadmin.com>
+// Added "Manpage Author(s)::"
 
 BUGS
 ----
 See http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP on how to send bug reports, send bugs to xen-devel@lists.xen.org.  General questions can be sent to xen-api@lists.xen.org.
-
 
 
 COPYRIGHT
