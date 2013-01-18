@@ -1,49 +1,56 @@
 XE(1)
 =======
 :doctype: manpage
-:man source:   xe 
+:man source:   xe patch-apply
 :man version:  {1}
-:man manual:   xe manual
+:man manual:   xe patch-apply manual
 
 
 NAME
 ----
-xe patch-apply - Apply a patch
+xe-patch-apply - Apply a patch to a host
 
 
 SYNOPSIS
 --------
-eohaoashfa 
+*xe patch-apply* uuid=<Patch File UUID> host-uuid=<Host UUID>
 
 
 DESCRIPTION
 -----------
+*xe patch-apply* attempts(??) to apply a patch file stored on the server to a specified host. Use *xe patch-upload* to upload a patch to the server.
+Patch must be uploaded to server first?
 
 
 REQUIRED PARAMETERS
 -------------------
+*uuid*::
+UUID of a patch - Use *xe patch-list* to obtain patch UUIDs.
 
-
-OPTIONAL PARAMETERS
--------------------
+*host-uuid*::
+UUID of a host - Use *xe host-list* to obtain host UUIDs.
 
 
 EXAMPLES
 --------
+To apply a patch to a host: ::
+*xe patch-apply* uuid=<Patch File UUID> host-uuid=<Host UUID>
 
 
 SEE ALSO
 --------
+*xe patch-upload*(1), *xe patch-clean*(1), *xe patch-destroy*(1), *xe patch-list*(1), *xe host-list*(1)
 
 
 AUTHORS
 -------
-Christina Mitchell <ariami27@gmail.com>
+Manpage Author(s): ::
+Christina Mitchell <christinam@xenapiadmin.com>
 
 
 BUGS
 ----
-See http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP on how to send bug reports, Send bugs to xen-devel@lists.xen.org. General questions can be sent to xen-api@lists.xen.org.
+To report a bug, see http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP. General questions can be sent to xen-api@lists.xen.org. 
 
 
 COPYRIGHT
