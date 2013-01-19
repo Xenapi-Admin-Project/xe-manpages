@@ -16,6 +16,8 @@ SYNOPSIS
 DESCRIPTION
 -----------
 
+*xe bond-list* lists bond interfaces and their parameters found in a pool. Output can be filtered by supplying params=<parameter>. Multiple parameters can be displayed by separating each parameter with a comma (e.g. params=uuid,name-label).
+
 
 OPTIONAL PARAMETERS
 -------------------
@@ -24,14 +26,20 @@ OPTIONAL PARAMETERS
 	UUID of Bond.
 
 *mode*::
-
+	Bonding mode for interface. Balance-slb, Active-backup, LACP 
+	// I will add more when I know more later ;)
+	
 *links-up*::
+	// not a ton of information on this paramter...
 
 *master*::
+	Master Bond PIF interface UUID.
 
 *primary-slave*::
+	// I know this is the primary PIF interface in the bond
 
 *slaves*::
+	// seconardy PIF interface in the bond.
 
 *properties*::
 

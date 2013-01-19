@@ -22,16 +22,17 @@ SYNOPSIS
 DESCRIPTION
 -----------
 
-// description
-
+There are three different bonding modes balance-slb, active-backup, and LACP. They all serve different purposes depending on their use. 
 
 
 REQUIRED PARAMETERS
 -------------------
 
 *network-uuid*::
+	UUID of Network
 
 *pif-uuids*::
+	UUIDs of PIF interfaces to be included in the bond
 
 OPTIONAL PARAMETERS
 -------------------
@@ -39,6 +40,7 @@ OPTIONAL PARAMETERS
 *mac*::
 
 *mode*::
+	Balance-slb, active-backup, LACP 
 
 *properties*::
 
