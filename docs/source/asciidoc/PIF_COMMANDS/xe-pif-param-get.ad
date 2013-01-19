@@ -39,10 +39,10 @@ OPTIONAL PARAMETERS
 EXAMPLES
 --------
 
-To display the management parameter for a PIF interface: ::
+To display the *management* parameter for a PIF interface: ::
 	*xe pif-param-get* uuid=<PIF UUID> param-name="management"
 
-To display the map parameter ethtool-speed: ::
+To display the map parameter *ethtool-speed*: ::
 	*xe pif-param-get* uuid=<PIF UUID> param-name="other-config" param-key="ethtool-speed"
 
 	
@@ -54,13 +54,13 @@ SEE ALSO
 
 AUTHORS
 -------
-Manpage Author(s)::
+Manpage Author(s):: :
 Matthew Spah <spahmatthew@xenapiadmin.com>
 Lisa Nguyen <lisa@xenapiadmin.com>
 
 BUGS
 ----
-See http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP on how to send bug reports, send bugs and general questions to xen-api@lists.xen.org.
+See http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP on how to send bug reports and send general questions to xen-api@lists.xen.org.
 
 COPYRIGHT
 ---------

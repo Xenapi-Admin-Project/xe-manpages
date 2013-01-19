@@ -8,12 +8,12 @@ XE(1)
 NAME
 ----
 xe-network-param-add - Add a key to a parameter for a network.
-// Removed extra space before the hyphen --Christina
+
 
 SYNOPSIS
 --------
 *xe network-param-add* uuid=<Network UUID> param-name=<Parameter> [ param-key=<Parameter Key> ] [ <key>=<Value> ]
-// Capitalized "Value" --Christina
+
 
 DESCRIPTION
 -----------
@@ -24,7 +24,7 @@ REQUIRED PARAMETERS
 
 *uuid*::
 	UUID of PIF interface - Use *xe network-list* to obtain network UUIDs.
-// Replaced "to obtain list of" with "to obtain" and added a period --Christina
+
 
 *param-name*::
 	Parameter to have key added for a network.
@@ -41,7 +41,7 @@ EXAMPLES
 
 To add a key to the *tag* parameter: ::
 	*xe network-param-add* uuid=<Network UUID> param-name="tag" param-key=<Key>
-// Enclosed tag in astericks.....this is right, right? --Christina
+
 
 SEE ALSO
 --------
@@ -53,17 +53,15 @@ AUTHORS
 -------
 Manpage Author(s)::
 Matthew Spah <spahmatthew@xenapiadmin.com>
-// Added "Manpage Author(s)::"
 
 BUGS
 ----
-See http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP on how to send bug reports, send bugs to xen-devel@lists.xen.org.  General questions can be sent to xen-api@lists.xen.org.
+See http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP on how to send bug reports, send bugs and general questions to xen-api@lists.xen.org.
 
 
 COPYRIGHT
 ---------
-Copyright \(C) 1995-2003 Jens Schweikhardt + 
-Copyright \(C) 2006 Daniel Leidert
+Copyright \(C) 2012 - Matthew Spah
 
 The Howto containing this example, was offered under the following conditions:
 
@@ -74,16 +72,11 @@ met:
 . Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
 . Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
 
-
-.List
-.  Item one
-.  Item two
-
-
 THIS SOFTWARE IS PROVIDED BY THE AUTHOR "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
 WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT,
 INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
 SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
 STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 POSSIBILITY OF SUCH DAMAGE.
+
 

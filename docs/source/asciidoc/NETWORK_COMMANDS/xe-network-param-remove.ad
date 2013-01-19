@@ -15,6 +15,10 @@ xe-network-param-remove - Removes a param-key from a network.
 // Y'know whattamean? The former sounds more like a TITLE or a NAME, whereas the latter sounds more like..well, a DESCRIPTION
 // Also, is the param-key writeable? --Christina
 
+// I'm not to sure about this one... this might be one for the grammar book :) - Matt
+// removes -   3rd person singular present, plural of re·move
+// I think it's Remove because we are removing a signal parameter.
+
 SYNOPSIS
 --------
 
@@ -27,12 +31,13 @@ DESCRIPTION
 // What do you think of "removes a param-key value from a set or map writeable paramenter assigned to a network in a pool."
 // OR "removes a param-key value from a set or map parameter assigned to a network." etc. etc. --Christina
 
+// I'm thinking it's remove but I need to look into this more. God damn english language! - Matt
+
 REQUIRED PARAMETERS
 -------------------
 
 *uuid*::
 	Network UUID - Use *xe network-list* to obtain a list of network UUIDs.
-// Changed "UUID of network" to "Network UUID" --Christina
 	
 *param-name*::
 	Parameter that contains parameter keys (e.g. other-config).
@@ -43,12 +48,11 @@ REQUIRED PARAMETERS
 EXAMPLES
 --------
 
-To remove a specific key in the tag parameter: ::
+To remove a specific key in the *tag* parameter: ::
 	*xe network-param-remove* uuid=<Network UUID> param-name="tags" param-key=<Key to be removed>
 	
-To remove static routes from a network: ::
+To remove *static-routes* from a network: ::
 	*xe network-param-remove* uuid=<Network UUID> param-name="other-config" param-key="static-routes"
-	
 
 SEE ALSO
 --------
@@ -59,17 +63,14 @@ AUTHORS
 -------
 Manpage Author(s): ::
 Matthew Spah <spahmatthew@xenapiadmin.com>
-// Added "Manpage Author(s): ::" --Christina
 
 BUGS
 ----
-See http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP on how to send bug reports, send bugs to xen-devel@lists.xen.org.  General questions can be sent to xen-api@lists.xen.org.
-
-// Copyright date is 2012..should it be 2013? --Christina
+See http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP on how to send bug reports, send bugs and general questions to xen-api@lists.xen.org.
 
 COPYRIGHT
 ---------
-Copyright \(C) 2012 - Matthew Spah
+Copyright \(C) 2013 - Matthew Spah
 
 The Howto containing this example, was offered under the following conditions:
 
@@ -81,9 +82,6 @@ met:
 . Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
 
 
-.List
-.  Item one
-.  Item two
 
 
 THIS SOFTWARE IS PROVIDED BY THE AUTHOR "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED

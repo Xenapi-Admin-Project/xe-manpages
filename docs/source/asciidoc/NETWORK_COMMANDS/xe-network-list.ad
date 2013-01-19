@@ -12,18 +12,13 @@ xe-network-list - will list networks and their paramters present in a pool
 SYNOPSIS
 --------
 
-*xe network-list*
-
-*xe network-list* [ uuid=<Network UUID> ]  [ name-label=<Name Label> ] [ name-description=<Description> ] [ VIF-uuids=<VIF UUIDS> ] 
-				  [ MTU=<MTU Size> ] [ bridge=<Bridge Name> ] [ blobs= ] [ tags= ] [ other-config:static-routes=<Network Address/<Subnet Mask>/<Next hop address> ] 
-				  [ other-config:ethtool-autoneg=<on | off> ] [ other-config:ethtool-rx=<on | off> ] [ other-config:ethtool-tx=<on | off> ] 
-				  [ other-config:ethtool-sg=<on | off> ] [ other-config:ethtool-tso=<on | off> ] [ other-config:ethtool-ufo=<on | off> ] [ other-config:ethtool-gso=<on | off> ]
+*xe network-list*  [ params=<parameter> ]
 
 
 DESCRIPTION
 -----------
 
-*xe network-list* will list the networks present in a pool and their parameters.  
+*xe network-list* lists networks and their parameters found in a pool. Output can be filtered by supplying params=<parameter>. Multiple parameters can be displayed by separating each parameter with a comma (e.g. params=uuid,name-label).
 
 
 OPTIONAL PARAMETERS
@@ -48,43 +43,43 @@ OPTIONAL PARAMETERS
 	MTU value of a network
 	
 *bridge*::
-	name of the bridge on the host
+	Name of the bridge on the host.
 
 *blobs*::
-	Binary data store 
+	Binary data store .
 
 *tags*::
-	<I don't know what to put here>
+	Writable tag paramter. 
 
 *other-config:static-routes*::
 	Comma seperated list of Static routes present on network.  <Network Address>/<Subnet Mask>/<Next hop address> 
 
 *other-config:ethtool-autoneg*::
-	Ethernet Autonegotiation status 
+	Ethernet Autonegotiation status. 
 
 *other-config:ethtool-rx*:: 
-	Receive checksum status 
+	Receive checksum status.
 
 *other-config:ethtool-tx*::
-	Transmit checksum status
+	Transmit checksum status.
 
 *other-config:ethtool-sg*:: 
-	Scatter gather status 
+	Scatter gather status.
 
 *other-config:ethtool-tso*::
-	TCP segmentation offload status 
+	TCP segmentation offload status. 
 
 *other-config:ethtool-ufo*::
-	UDP fragment offload
+	UDP fragment offload status.
 
 *other-config:ethtool-gso*::
-	Generic segmentation offload
+	Generic segmentation offload status.
 
 
 EXAMPLES
 --------
 
-To display the name-label and UUID of all networks with a MTU of 1500: ::
+To display the *name-label* and *UUID* of all networks with a *MTU of 1500*: ::
 	*xe network-list* MTU="1500" params="name-label,uuid"
 
 To display all paramters for a specific network type: ::
@@ -93,32 +88,29 @@ To display all paramters for a specific network type: ::
 To display all parameters for all networks in a pool type: ::
 	*xe network-list* params="all"
 	
-To display VIF-uuids for a specific network type: ::
+To display *VIF-uuids* for a specific network type: ::
 	*xe network-list* uuid=<NETWORK UUID> params="VIF-uuids"
 
 
 SEE ALSO
 --------
-
-*xe-network-create*(1), *xe-network-destroy*(1), *xe-network-param-set*(1), *xe-pif-list*(1), *xe-pool-vlan-create*(1)
-
-
+*xe-network-create*(1), *xe-network-destroy*(1), *xe-network-param-set*(1), *xe-network-param-add*(1), *xe-network-param-clear*(1), *xe-pif-list*(1), *xe-pool-vlan-create*(1)
 
 
 AUTHORS
 -------
+Manpage Author(s): ::
 Matthew Spah <spahmatthew@xenapiadmin.com>
 
 BUGS
 ----
-See http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP on how to send bug reports, send bugs to xen-devel@lists.xen.org.  General questions can be sent to xen-api@lists.xen.org.
+See http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP on how to send bug reports, send bugs and general questions to xen-api@lists.xen.org.
 
 
 
 COPYRIGHT
 ---------
-Copyright \(C) 1995-2003 Jens Schweikhardt + 
-Copyright \(C) 2006 Daniel Leidert
+Copyright \(C) 2012 - Matthew Spah, Lisa Nguyen
 
 The Howto containing this example, was offered under the following conditions:
 
@@ -130,15 +122,9 @@ met:
 . Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
 
 
-.List
-.  Item one
-.  Item two
-
-
 THIS SOFTWARE IS PROVIDED BY THE AUTHOR "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
 WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT,
 INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
 SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
 STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 POSSIBILITY OF SUCH DAMAGE.
-

@@ -15,12 +15,13 @@ SYNOPSIS
 
 DESCRIPTION
 -----------
-
 *xe pif-list* lists PIF interfaces and their parameters found in a pool. Output can be filtered by supplying params=<parameter>. Multiple parameters can be displayed by separating each parameter with a comma (e.g. params=uuid,name-label).
 
 
 OPTIONAL PARAMETERS
 -------------------
+// update everything!
+
 
 *device*::
 	Name of the machine-readable interface (e.g. eth0)
@@ -55,34 +56,34 @@ OPTIONAL PARAMETERS
     Attached Network UUID 
 
 *network-name-label*::
-    Name of Network associated to PIF
+    Name of Network associated to PIF interface.
 
 *host-uuid*:: 
-    UUID of host PIF is present on
+    UUID of host PIF interface is present on.
 
 *host-name-label*:: 
-    Name of host PIF is present on
+    Name of host PIF interface is present on.
 
 *IP-configuration-mode*:: 
-    DHCP or Static network addressing used
+    DHCP or Static network addressing used.
 
 *IP*:: 
-    IP address of a PIF
+    IP address of the PIF interface.
 
 *netmask*:: 
-    Netmask of a PIF
+    Netmask of the PIF interface.
 
 *gateway*:: 
-    Gateway address of the PIF
+    Gateway address of the PIF interface.
 
 *DNS*::
-    DNS address of the PIF
+    DNS address of the PIF interface.
 
 *io_read_kbs*:: 
-    Average receive rate in kB/s for the device 
+    Average receive rate in kB/s for the device. 
 
 *io_write_kbs*::
-    Average transmit rate in kB/s for the device
+    Average transmit rate in kB/s for the device.
 
 *carrier*:: 
 	link state for this device 
@@ -104,10 +105,10 @@ OPTIONAL PARAMETERS
     Ethernet speed of the interface. 10/100/1000 Mpbs
 
 *duplex*:: 
-    full or half duplex
+    Duplex setting for PIF interface. *[ full | half ]*
     
 *disallow-unplug*:: 
-	true or false.
+	Disallow-unplug protection setting for interface. *[ true | false ]*
 
 *pci-bus-path*::
 	PCI bus path address 
@@ -155,7 +156,7 @@ EXAMPLES
 To display all parameters for a specific PIF interface: ::
 	*xe pif-list* uuid=<PIF UUID> params=all
 	
-To display all physical PIF interfaces and all their parameters: ::
+To display all *physical* PIF interfaces and all their parameters: ::
 	*xe pif-list* physical=true params=all
 	
 SEE ALSO

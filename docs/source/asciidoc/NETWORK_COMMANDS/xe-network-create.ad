@@ -12,7 +12,7 @@ xe-network-create - Create a network
 SYNOPSIS
 --------
 
-*xe network-create* name-label=<network name> [ MTU=<MTU Size> ] [ name-description=<description> ] 
+*xe network-create* name-label=<Network Name> [ MTU=<MTU Size> ] [ name-description=<description> ] 
 
 
 DESCRIPTION
@@ -38,10 +38,10 @@ OPTIONAL PARAMETER
 EXAMPLES
 --------
 
-To create a network with a name description: ::
+To create a network with a *name-description*: ::
 	*xe network-create* name-label="Example Network" name-description="This is an Example Network"
 
-To create a network with a custom MTU: ::
+To create a network with a custom *MTU*: ::
 	*xe network-create* name-label="MTU Example Network" MTU="9000"
 
 SEE ALSO
@@ -51,13 +51,14 @@ SEE ALSO
 
 AUTHORS
 -------
-Manpage Author(s)::
+Manpage Author(s):: :
 Matthew Spah <spahmatthew@xenapiadmin.com>
 
 
 BUGS
 ----
 See http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP on how to send bug reports, send bugs and general questions to xen-api@lists.xen.org.
+// discuss Christinas new BUG message with the group
 
 COPYRIGHT
 ---------
@@ -71,7 +72,6 @@ met:
 [options="compact"]
 . Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
 . Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
-
 
 
 THIS SOFTWARE IS PROVIDED BY THE AUTHOR "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED

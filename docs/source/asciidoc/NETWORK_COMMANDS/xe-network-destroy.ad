@@ -7,45 +7,43 @@ XE(1)
 
 NAME
 -----
-xe-network-destroy - will erase a network from a pool
+xe-network-destroy - Erase a Network
 
 SYNOPSIS
 --------
 
-*xe network-destroy* uuid=<network uuid>
+*xe network-destroy* uuid=<Network UUID>
 
 
 DESCRIPTION
 -----------
-*xe network-destroy* will destroy a network that contains no active PIF interfaces, VIF interfaces, and VLANS. Please see *xe vlan-destory*, *xe pif-unplug*, and *xe vif-unplug* to disable any requirements.
+*xe network-destroy* will destroy a network that contains no active PIF interfaces, VIF interfaces, and VLANS. To disable PIF and VIF interfaces use *xe pif-unplug* and *xe vif-unplug*. // add something on how to remove VLANs
 
 
 REQUIRED PARAMETERS
 -------------------
 
 *uuid*::
-	UUID of Network to erase
+	UUID of Network to be erased.
 
 EXAMPLES
 --------
 
-To erase a network from a pool type,
-	*xe network-destroy* uuid=<NETWORK UUID>
+To erase a network from a pool type: ::
+	*xe network-destroy* uuid=<Network UUID>
 
 SEE ALSO
 --------
-
 *xe-network-create*(1), *xe-network-list*(1), *xe pif-unplug*(1), *xe vif-unplug*(1), *xe vlan-destroy*(1)
-
-
 
 AUTHORS
 -------
+Manpage Author(s): ::
 Matthew Spah <spahmatthew@xenapiadmin.com>
 
 BUGS
 ----
-See http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP on how to send bug reports, send bugs to xen-devel@lists.xen.org.  General questions can be sent to xen-api@lists.xen.org.
+See http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP on how to send bug reports, send bugs and general questions to xen-api@lists.xen.org.
 
 COPYRIGHT
 ---------
@@ -54,11 +52,6 @@ Copyright \(C) 2012 - Matthew Spah
 [options="compact"]
 . Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
 . Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
-
-
-.List
-.  Item one
-.  Item two
 
 
 THIS SOFTWARE IS PROVIDED BY THE AUTHOR "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
