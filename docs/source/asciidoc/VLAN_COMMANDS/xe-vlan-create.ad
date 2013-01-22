@@ -17,15 +17,14 @@ SYNOPSIS
 DESCRIPTION
 -----------
 
-// This needs be works 
-// This needs verifying with the new hosts
-
 *xe vlan-create* creates a virtual VLAN PIF interface on a host in a pool and assigns it to the target network. VLAN ID tags must be between 0 and 4094.
 The virtual PIF interface is assigned to the target physical PIF interface. The resulting VLAN UUID is returned. 
 
 The physical PIF associated with new pseudo PIF now supports 802.1Q and must be interfaced with a trunk port.
 Use native VLAN 1 as default.
 
+*xe vlan-create* will assign a VLAN tag to a specified network, create a pseudo PIF interface, and enable 802.1Q tagging on the physical PIF interface specified. The resulting VLAN UUID is returned. 
+// this command only works on the host...
 
 REQUIRED PARAMETERS
 -------------------
@@ -37,7 +36,7 @@ REQUIRED PARAMETERS
     Network to be assigned VLAN - Use *xe network-list* to obtain a list of networks found in a pool.
     
 *vlan*::
-    VLAN number
+    VLAN tag.
 
 SEE ALSO
 --------

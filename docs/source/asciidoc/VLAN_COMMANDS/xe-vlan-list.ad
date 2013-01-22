@@ -6,15 +6,11 @@ XE(1)
 :man manual:   xe vlan-list manual
 
 NAME
------
-
+----
 xe-vlan-list - Display all the vlans present in a pool.
 
 SYNOPSIS
 --------
-
-*xe vlan-list*
-
 *xe vlan-list* [ params=<parameter> ]
 
 DESCRIPTION
@@ -33,10 +29,10 @@ OPTIONAL PARAMETERS
 	VLAN ID 0 to 4094          
 
 *tagged-PIF*::
-	The physical PIF interface UUID connected to the VLAN. 802.1Q Tagging occurs on this interface
+	The physical 802.1Q tagging PIF interface UUID.
 	
 *untagged-PIF*::  
-	The pseudo PIF UUID connected to the VLAN. 
+	The pseudo PIF interface UUID.
 	
 
 EXAMPLES

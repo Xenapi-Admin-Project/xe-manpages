@@ -8,17 +8,17 @@ XE(1)
 NAME
 ----
 
-xe-vlan-param-get - Returns a parameter for a VLAN
+xe-vlan-param-get - Returns a parameter for a VLAN.
 
 SYNOPSIS
 --------
 
-*xe vlan-param-get* param-name=<Parameter Name> uuid=<VLAN UUID> [ param-key=<Key> ]
+*xe vlan-param-get* uuid=<VLAN UUID> param-name=<Parameter Name> [ param-key=<Key> ]
 
 DESCRIPTION
 -----------
 
-*xe vlan-param-get* returns a parameter or a key value for a specific PIF interface.
+*xe vlan-param-get* returns a parameter or a key value for a specific VLAN.
 
 
 REQUIRED PARAMETERS

@@ -7,7 +7,7 @@ XE(1)
 
 NAME
 ----
-xe-vlan-param-list - Lists all parameters for a VLAN
+xe-vlan-param-list - Lists all parameters for a VLAN.
 
 
 SYNOPSIS
@@ -32,7 +32,6 @@ To list all the parameters for a specific VLAN: ::
                  
 SEE ALSO
 --------
-
 *xe-vlan-list*(1), *xe-vlan-param-get*(1), *xe-pool-vlan-create*(1), *xe-vlan-create*(1), *xe-network-list*(1), *xe-pif-list*(1)
 
 AUTHORS
