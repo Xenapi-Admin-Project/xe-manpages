@@ -24,6 +24,8 @@ The physical PIF interface now performs 802.1Q VLAN tagging/untagging. Use nativ
 
 NOTE: Primary Management Interfaces cannot be assigned a VLAN.
 
+// THIS IS BUNK AKA CRAP
+
 
 REQUIRED PARAMETERS
 -------------------
@@ -35,14 +37,14 @@ REQUIRED PARAMETERS
     Network to be assigned VLAN - Use *xe network-list* to obtain a list of networks found in a pool.
     
 *vlan*::
-    VLAN number
+    VLAN tag.
     
     
 EXAMPLES
 --------
 
-To create a VLAN with the tag 2 on a network, type;
-	*xe vlan-create* network-uuid=2177a448-d2c6-27f9-ca64-b3899d1cbe98 pif-uuid=3e558a35-b5ff-c58c-eee2-388bae80cdc6 vlan=2
+To create a *VLAN* with the tag *2* on a network: ::
+	*xe vlan-create* network-uuid=<Network UUID> pif-uuid=<PIF UUID> vlan="2"
 
 
 AUTHORS

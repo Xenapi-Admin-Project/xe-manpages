@@ -24,7 +24,14 @@ The physical PIF associated with new pseudo PIF now supports 802.1Q and must be 
 Use native VLAN 1 as default.
 
 *xe vlan-create* will assign a VLAN tag to a specified network, create a pseudo PIF interface, and enable 802.1Q tagging on the physical PIF interface specified. The resulting VLAN UUID is returned. 
-// this command only works on the host...
+
+
+*xe vlan-create* will create a VLAN on a host. First the VLAN is assigned to the specified network, a pseudo PIF interface is created that is assoisted with the physical PIF interface, and finally 802.1Q tagging is performed on the physical PIF interface specified. VLAN ID tags must be between 0 and 4094. The resulting VLAN UUID is returned.
+
+Use native VLAN 1 as default.
+
+
+// THIS IS ALL BUNK AKA CRAP
 
 REQUIRED PARAMETERS
 -------------------
