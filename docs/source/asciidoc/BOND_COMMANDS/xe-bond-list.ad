@@ -27,13 +27,18 @@ OPTIONAL PARAMETERS
 
 *mode*::
 	Bonding mode for interface. Balance-slb, Active-backup, LACP 
-	// I will add more when I know more later ;)
+	//Balance-slb = Active/Active
+	
+	//Active-backup = Active/Passive
+	
+	//LACP = well it's obviously LACP bonding ;)
+	
 	
 *links-up*::
-	// not a ton of information on this paramter...
+	// I would imagine this is the layer 2 status of the link
 
 *master*::
-	Master Bond PIF interface UUID.
+	Master Bond PIF interface UUID. 
 
 *primary-slave*::
 	// I know this is the primary PIF interface in the bond

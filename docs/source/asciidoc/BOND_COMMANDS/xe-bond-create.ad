@@ -22,7 +22,12 @@ SYNOPSIS
 DESCRIPTION
 -----------
 
-There are three different bonding modes balance-slb, active-backup, and LACP. They all serve different purposes depending on their use. 
+// bond-create creates a active/active (balance-slb) bond by default
+// If you are using the older bridge networking module you are limited to two PIF interfaces per bond
+// the new openvswitch allows four PIF interfaces
+
+
+// when you create a bond,  the PIF interfaces used in the bond are unplugged from their default poolwide networks.
 
 
 REQUIRED PARAMETERS
@@ -38,9 +43,15 @@ OPTIONAL PARAMETERS
 -------------------
 
 *mac*::
+	48-bit MAC Address. // If a MAC address isn't specified the bond will inherit the MAC of one the management interfaces.
+						// If none of the NICS are management interfaces the MAC address is inherited from the first named PIF interface.
 
-*mode*::
-	Balance-slb, active-backup, LACP 
+*mode=*::
+	Balance-slb
+	
+	active-backup
+	
+	LACP 
 
 *properties*::
 
