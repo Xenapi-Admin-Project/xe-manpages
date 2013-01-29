@@ -22,7 +22,7 @@ DESCRIPTION
 REQUIRED PARAMETERS
 -------------------
 *uuid*::
-	VIF Interface UUID - Use *xe vif-list* to obtain VIF interface UUIDs.
+	UUID of VIF Interface. Use *xe vif-list* to obtain VIF interfaces UUIDs.
 
 *param-name*::
 	Parameter to be cleared for a VIF interface.
@@ -34,7 +34,7 @@ EXAMPLES
 To clear all allowed IPv4 addresses configured to a VIF: ::
 	*xe vif-param-clear* uuid=<VIF UUID> param-name="ipv4-allowed"
 	
-To clear all keys in other-config on a VIF interface: :
+To clear all keys in other-config on a VIF interface: ::
 	*xe vif-param-clear* uuid=<VIF UUID> param-name="other-config"
 
 SEE ALSO

@@ -16,12 +16,13 @@ SYNOPSIS
 
 DESCRIPTION
 -----------
+*xe vif-param-add* will add a key/value to a set or map parameter for a VIF interface.
 
 
 REQUIRED PARAMETERS
 -------------------
 *uuid*::
-	VIF UUID - Use *xe vif-list* to see list of VIF UUIDs
+	UUID of VIF Interface. Use *xe vif-list* to obtain VIF interfaces UUIDs.
 
 *param-name*::
 	Parameter to be added
@@ -35,6 +36,8 @@ OPTIONAL PARAMETERS
 
 EXAMPLES
 --------
+
+// add examples 
 
 SEE ALSO
 --------

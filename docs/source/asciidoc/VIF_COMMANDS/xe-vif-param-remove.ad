@@ -23,7 +23,7 @@ DESCRIPTION
 REQUIRED PARAMETERS
 -------------------
 *uuid*::
-	UUID of VIF interface - Use *xe vif-list* to obtain VIF interface UUIDs.
+	UUID of VIF Interface. Use *xe vif-list* to obtain VIF interfaces UUIDs.
 
 *param-name*::
 	Parameter that contains parameter keys (e.g. other-config)

@@ -23,13 +23,13 @@ REQUIRED PARAMETERS
 -------------------
 
 *uuid*::
-	UUID of VIF interface - *xe vif-list params=all* will display VIF interfaces and their parameters.
+	UUID of VIF Interface. Use *xe vif-list* to obtain VIF interfaces UUIDs.
 
 EXAMPLES
 --------
 // maybe I add how to tell if the VIF is plugged in or not
 
-To detach a VIF interface from a running VM type,
+To detach a VIF interface from a running VM: ::
 	*xe vif-unplug* uuid=<VIF UUID>
 
 SEE ALSO

@@ -27,16 +27,18 @@ REQUIRED PARAMETERS
 -------------------
 
 *uuid*::
-	UUID of VIF interface to be destroyed. *xe vif-list* will display VIF interface present in a pool.
+	UUID of VIF Interface. Use *xe vif-list* to obtain VIF interfaces UUIDs.
 
 
 
 EXAMPLES
 --------
 
-To destroy a VIF interface attached to a running VM type,
+To destroy a VIF interface attached to a running VM: ::
 	*xe vif-unplug* uuid=<VIF UUID>
 	*xe vif-destroy* uuid=<VIF UUID>
+	
+To destroy a VIF
 	
 
 

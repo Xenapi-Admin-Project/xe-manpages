@@ -22,7 +22,7 @@ DESCRIPTION
 REQUIRED PARAMETERS
 -------------------
 *uuid*::
-	VIF UUID - Use *xe vif-list* to obtain VIF UUIDs
+	UUID of VIF Interface. Use *xe vif-list* to obtain VIF interfaces UUIDs.
 
 EXAMPLES
 --------

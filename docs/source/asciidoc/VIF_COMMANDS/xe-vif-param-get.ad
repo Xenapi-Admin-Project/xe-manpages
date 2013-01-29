@@ -27,7 +27,7 @@ REQUIRED PARAMETERS
 	UUID of VIF Interface. Use *xe vif-list* to obtain VIF interfaces UUIDs.
 
 *param-name*::
-	Parameter for a VIF.
+	Parameter for a VIF interface.
 
 
 OPTIONAL PARAMETERS
@@ -40,10 +40,10 @@ OPTIONAL PARAMETERS
 EXAMPLES
 --------
 
-To display the UUID of the VM assigned the VIF interface type: ::
+To display the *UUID* of the VM assigned the VIF interface type: ::
 	*xe vif-param-get* uuid=<VIF UUID> param-name="vm-uuid"
 	
-To display the status of the map parameter other-config:promiscous: ::
+To display the status of the map parameter *other-config:promiscous*: ::
 	*xe vif-param-get* uuid=<VIF UUID> param-name="other-config" param-key="promiscous"
 
 SEE ALSO

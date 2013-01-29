@@ -22,13 +22,13 @@ DESCRIPTION
 REQUIRED PARAMETERS
 -------------------
 *uuid*::
-	VIF UUID - Use *xe vif-list* to see list of VIF UUIDs
+	UUID of VIF Interface. Use *xe vif-list* to obtain VIF interfaces UUIDs.
 
 OPTIONAL PARAMETERS
 -------------------
 
 *locking-mode:default*::
-	VIF interface applies filtering level of the networks default-locking-mode parameter.
+	VIF interface applies filtering level of the network default-locking-mode parameter.
 	
 *locking-mode:locked*::
 	Set locking-mode to *locked* to only allow permitted MAC and IP addresses to send and receive traffic on VIF interface.
@@ -70,10 +70,10 @@ OPTIONAL PARAMETERS
 	Enable generic segmentation offload. Set *on* to enable, *off* to disable. (e.g. *ethtool-gso="on"*)
 	
 *other-config:mtu*::
-	Set MTU size for VIF interface.
+	Set MTU size.
 	
 *other-config:promiscuous*::
-	Enable promiscuous mode on a VIF interface. Set *true* to enable, *false* to disable. (e.g. *other-config:promiscuous=true*)
+	Enable promiscuous mode. Set *true* to enable, and *false* to disable. (e.g. *other-config:promiscuous=true*)
 
 EXAMPLES
 --------
@@ -82,7 +82,7 @@ To set the maximum transmit rate of 100 kBps/s on a VIF: ::
 	xe vif-param-set uuid=<VIF UUID> qos_algorithm_type=ratelimit
     xe vif-param-set uuid=<VIF UUID> qos_algorithm_params:kbps=100
     
-To set the locking mode to locked and restrict a specific IP address: ::
+To set the switch-port locking mode to locked and allow a specific IP address: ::
 	xe vif-param-set uuid=<VIF UUID> locking-mode="locked"
 	xe vif-param-set uuid=<VIF UUID> ipv4-allowed=<IPv4 Address to be allowed>
 
