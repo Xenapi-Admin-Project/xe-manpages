@@ -8,7 +8,7 @@ XE(1)
 NAME
 ----
 
-xe-bond-destroy - // add description
+xe-bond-destroy - Destroy a Bond.
 
 
 SYNOPSIS
@@ -18,17 +18,20 @@ SYNOPSIS
 
 DESCRIPTION
 -----------
- 
-// add description
 
+*xe bond-destroy* will remove a bond from a pool. // lots more :P
+ 
 
 REQUIRED PARAMETERS
 -------------------
 
 *uuid*::
-
+	UUID of Bond. Use *xe bond-list* to obtain a list of bond UUIDs.
+	
 EXAMPLES
 --------
+
+To destroy a bond: ::
 
 
 SEE ALSO

@@ -29,15 +29,17 @@ DESCRIPTION
 
 // when you create a bond,  the PIF interfaces used in the bond are unplugged from their default poolwide networks.
 
+// balance-slb and active-backup require no switchside configuration
+
 
 REQUIRED PARAMETERS
 -------------------
 
 *network-uuid*::
-	UUID of Network
+	UUID of Network.
 
 *pif-uuids*::
-	UUIDs of PIF interfaces to be included in the bond
+	UUIDs of PIF interfaces to be included in the bond.
 
 OPTIONAL PARAMETERS
 -------------------
@@ -46,14 +48,36 @@ OPTIONAL PARAMETERS
 	48-bit MAC Address. // If a MAC address isn't specified the bond will inherit the MAC of one the management interfaces.
 						// If none of the NICS are management interfaces the MAC address is inherited from the first named PIF interface.
 
-*mode=*::
-	Balance-slb
+*mode*::
+
 	
-	active-backup
+	Balance-slb::
 	
-	LACP 
+	// Source Level Balancing 
+	// Traffic is load-balanced based on its source MAC address
+	// This is only supported on VM networks and is only effictive when multiple VIF interfaces our present because of the way it handles load balancing  
+	
+	active-backup::
+	
+	// One PIF interface in the bond is the primary interface for traffic. Traffic is only routed on that interface.
+	
+	
+	
+	LACP::
+	
+	// Dynamic LAG is the only one supported.
+	
+	//fallback to balance-slb
+	//if LACP negotian fails, the server will fall back to balance-slb. The server will still listen for LACP frames, so if a handshake is succesfull LACP is enabled.
 
 *properties*::
+	hashing-algorithm
+	// tcpudp_ports
+	// default
+	// Traffic is load-balanced from the hashes that are created from the MAC/IP/TCPorUDP 
+	
+	// src_mac
+	//
 
 
 EXAMPLES

@@ -14,7 +14,7 @@ xe-bond-set-mode - // add description
 SYNOPSIS
 --------
 
-*xe set-mode* uuid=<Bond UUID> mode=<Bond mode> // lol
+*xe set-mode* uuid=<Bond UUID> mode=<Bond mode>
 
 DESCRIPTION
 -----------
@@ -27,9 +27,27 @@ REQUIRED PARAMETERS
 -------------------
 
 *uuid*::
-	NIC Bond UUID. Use *xe bond-list* to obtain a list of bond UUIDs.
+	UUID of Bond. Use *xe bond-list* to obtain a list of bond UUIDs.
 
 *mode*::
+		Balance-slb::
+	
+	// Source Level Balancing 
+	// Traffic is load-balanced based on its source MAC address
+	// This is only supported on VM networks and is only effictive when multiple VIF interfaces our present because of the way it handles load balancing  
+	
+	active-backup::
+	
+	// One PIF interface in the bond is the primary interface for traffic. Traffic is only routed on that interface.
+	
+	
+	
+	LACP::
+	
+	// Dynamic LAG is the only one supported.
+	
+	//fallback to balance-slb
+	//if LACP negotian fails, the server will fall back to balance-slb. The server will still listen for LACP frames, so if a handshake is succesfull LACP is enabled.
 	
 
 EXAMPLES
