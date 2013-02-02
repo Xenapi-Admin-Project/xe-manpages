@@ -1,0 +1,97 @@
+XE(1)
+=======
+:doctype: manpage
+:man source:   xe
+:man version:  {1}
+:man manual:   xe manual
+
+NAME
+----
+*xe vdi-clone* - Clones a virtual disk image
+
+SYNOPSIS
+--------
+*xe vdi-clone* uuid=<VDI UUID> [ driver-params=<???> new-name-label=<Name> new-name-description=<Description> ]
+
+
+DESCRIPTION
+-----------
+*xe vdi-clone* clones a VDI and will be stored in the same SR where the original VDI resides. Highly recommended to give the clone a name and brief description. 
+//what is the default name for the clone? Description parameter is left blank if no description is given. 
+// I'll clone a couple and report the output now - Matt	
+// 
+// Okay Lisa So I created a 2 MiB VDI named TestVDI on my remote software iSCSI SR
+// xe vdi-create virtual-size=2MiB sr-uuid=dc1f0fea-0264-d222-6230-a5779f4a0437 name-label=TestVDI type=user sharable=true
+// That created a VDI named TestVDI.. no shit right?
+// Anyway I cloned it... and to my surprise two new VDIs showed up
+// a VDI named "base copy" and a second VDI named "TestVDI"..
+// That gives us 2 "TestVDIs" and a "base copy".. I couldn't destroy the base copy 
+// it returned this error..bah nevermind I lost the error
+// The base copy disapeared after I destroyed the "TestVDI" clone.. I'm curious if the base copy is how they accomplish high speed clones?
+// If this is too much crap let me know and I'll post it on google+ next time
+
+
+
+
+REQUIRED PARAMETERS
+-------------------
+*uuid*
+	Virtual disk image UUID - Use *xe vdi-list* to see list of VDI UUIDs
+
+
+OPTIONAL PARAMETERS
+-------------------
+//look up what this parameter is
+*driver-params*::
+
+//"The optional driver-params map parameter can be used for passing extra vendor-specific configuration information
+//to the back end storage driver that the VDI is based on. See the storage vendor driver documentation  for details" This is from the 6.0 xenserver manual.. - Matt
+
+
+
+*new-name-label*::
+	Name label for the VDI clone
+
+*new-name-description*::
+	Description for the VDI clone
+
+EXAMPLES
+--------
+To clone an existing VDI and name it
+		xe vdi-clone uuid=<VDI UUID> new-name-label=<Name Label>
+	
+
+SEE ALSO
+--------
+*xe-vdi-list*(1)
+
+
+AUTHORS
+-------
+Lisa Nguyen <ltn821@hotmail.com> 
+
+
+BUGS
+----
+Send bugs to xen-devel@lists.xen.org, see http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP on how to send bug reports. General questions can be sent to xen-api@lists.xen.org.
+
+
+COPYRIGHT
+---------
+Copyright \(C) 2012 - Lisa Nguyen
+
+The Howto containing this example, was offered under the following conditions:
+
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are
+met:
+
+[options="compact"]
+. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+
+THIS SOFTWARE IS PROVIDED BY THE AUTHOR "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT,
+INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
+STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+POSSIBILITY OF SUCH DAMAGE.

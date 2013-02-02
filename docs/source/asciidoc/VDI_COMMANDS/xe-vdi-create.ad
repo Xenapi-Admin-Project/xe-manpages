@@ -1,0 +1,108 @@
+XE(1)
+=======
+:doctype: manpage
+:man source:   xe
+:man version:  {1}
+:man manual:   xe manual
+
+NAME
+----
+*xe vdi-create* - Creates a new virtual disk image
+
+SYNOPSIS
+--------
+*xe vdi-create* sr-uuid=<SR UUID> name-label=<Name> type=<user|system|suspend|crashdump> virtual-size=<Size> [ sm-config:<Parameter>=<Key> sharable=<???> tags=<String> ]
+
+
+DESCRIPTION
+-----------
+*xe vdi-create* creates a new VDI. New VDIs cannot be smaller than 2 MB and no bigger than 8388607 TB. 
+//documentation says that max size can range between 2 TB to 15 TB depending on the storage type.
+
+Four VDI types are available to choose from:
+	User - a disk that is always preserved on upgrade
+	System - a disk that may be replaced on upgrade
+	Suspend - a disk that stores a suspend image if the VM is in suspended mode
+	Crashdump - a disk that stores VM crashdump information
+
+//find more info about raw VDIs
+	
+Custom tags can be added to filter output. For example, running the command *xe vdi-list tags=system* will list all VDIs that have the "system" tag. 
+
+
+REQUIRED PARAMETERS
+-------------------
+*sr-uuid*::
+	Storage repository UUID - Use *xe sr-list* to see a list of SRs. SR type must be lvm to create a VDI. 
+	//check if a VDI can also be created from an ext3, NetApp, EqualLogic, and/or ONTAP storage type... or so says the XenServer 6.0 admin guide
+	
+*name-label*::
+	VDI name. Left blank by default if no name is given.
+	
+*type*::
+	VDI type. Type options are user, system, suspend, or crashdump.
+
+*virtual-size*::
+	VDI size in bytes by default. Can use the abbreviations KiB, MiB, GiB, or TiB when assigning a size for a new VDI.
+	
+	
+OPTIONAL PARAMETERS
+-------------------
+*sm-config*::
+	Storage manager plug-in configuration settings
+	
+*sharable*::
+	True if the VDI is sharable. False if it is not sharable. Set to false by default.
+
+*tags*::
+	Information set by the user.
+	
+EXAMPLES
+--------
+To create a user VDI with a size of 1 GB
+	xe vdi-create sr-uuid=<SR UUID> name-label=<Name> type=user virtual-size=1GiB
+
+To create a system VDI with a "system" tag
+	xe vdi-create sr-uuid=<SR UUID> name-label=<Name> type=system virtual-size=<Size> tag="system"
+	
+//one example of creating a crashdump VDI
+//one example of creating a suspended VDI
+
+//find more info, example from admin guide
+To create a raw user VDI
+	xe vdi-create sr-uuid=<SR UUID> type=user virtual-size=<Size> name-label=<Name> sm-config:type=raw
+
+SEE ALSO
+--------
+*xe sr-list*(1), *xe vdi-list*(1)
+
+
+AUTHORS
+-------
+Lisa Nguyen <ltn821@hotmail.com> 
+
+
+BUGS
+----
+Send bugs to xen-devel@lists.xen.org, see http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP on how to send bug reports. General questions can be sent to xen-api@lists.xen.org.
+
+
+COPYRIGHT
+---------
+Copyright \(C) 2012 - Lisa Nguyen
+
+The Howto containing this example, was offered under the following conditions:
+
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are
+met:
+
+[options="compact"]
+. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+
+THIS SOFTWARE IS PROVIDED BY THE AUTHOR "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT,
+INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
+STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+POSSIBILITY OF SUCH DAMAGE.

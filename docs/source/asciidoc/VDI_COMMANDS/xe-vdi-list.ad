@@ -1,0 +1,144 @@
+XE(1)
+=======
+:doctype: manpage
+:man source:   xe
+:man version:  {1}
+:man manual:   xe manual
+
+NAME
+----
+*xe vdi-list* - Lists all virtual disk images
+
+SYNOPSIS
+--------
+*xe vdi-list*
+
+
+DESCRIPTION
+-----------
+*xe vdi-list* 
+
+//make note of entries that say <not in database>
+//make note of entries that say <expensive field> 
+
+PARAMETERS
+-----------
+*uuid*::
+	Virtual disk image UUID
+	
+*name-label*::
+	Virtual disk image name
+       
+*name-description*::
+	Virtual disk image description
+	
+*is-a-snapshot*::
+	True if the virtual disk image is a snapshot. False if the virtual disk image is not a snapshot.
+	
+*snapshot-of*::
+             
+*snapshots*::
+
+*snapshot-time*:: //make note of format
+         
+*allowed-operations*::
+	List of operations allowed on the virtual disk image
+	
+*current-operations*::
+	List of currently running operations on the virtual disk image
+
+*sr-uuid*::
+	Storage repository UUID where the virtual disk image resides
+	
+*sr-name-label*::
+	Name of the storage repository where the virtual disk image resides
+                 
+*vbd-uuids*::
+	List of virtual block devices that are connected to the virtual disk image
+               
+*crashdump-uuids*::
+	
+*virtual-size*::
+	Virtual disk image size in bytes
+	
+*physical-utilisation*::
+
+*location*::
+
+*type*::
+	Virtual disk image type
+	
+*sharable*::
+	True if the virtual disk image is sharable. False if it is not.
+
+*read-only*::
+	True if the virtual disk image is read-only. False if it is not.
+	
+*storage-lock*::
+
+*managed*::
+
+*parent*::
+	Information if the virtual disk image is a clone.
+	
+*missing*::
+	True if the VDI is not detected by the *xe sr-scan* command, so it is not in the Xen Cloud Platform database. False if it is listed in the database.
+
+*other-config*::
+	Additional configuration settings
+
+*xenstore-data*::
+
+*sm-config*::
+	Storage manager plug-in configuration settings
+	
+*on-boot*::
+
+*allow-caching*::
+
+*metadata-latest*::
+
+*metadata-pool*::
+
+*tags*::
+	Information defined by the user.
+	
+EXAMPLES
+--------
+//one example for using params=parameter
+//one example for using parameter=value
+	
+
+SEE ALSO
+--------
+*xe vdi-clone*(1), *xe vdi-copy*(1), *xe vdi-create*(1), *xe vdi-destroy*(1), *xe vdi-forget*(1), *xe vdi-import*(1), *xe vdi-introduce*(1), *xe vdi-param-add*(1), *xe vdi-param-clear*(1), *xe vdi-param-get*(1), *xe vdi-param-list*(1), *xe vdi-param-remove*(1), *xe vdi-param-set*(1), *xe vdi-pool-migrate*(1), *xe vdi-resize*(1), *xe vdi-snapshot*(1), *xe vdi-unlock*(1), *xe vdi-update*(1)
+
+AUTHORS
+-------
+Lisa Nguyen <ltn821@hotmail.com> 
+
+
+BUGS
+----
+Send bugs to xen-devel@lists.xen.org, see http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP on how to send bug reports. General questions can be sent to xen-api@lists.xen.org.
+
+
+COPYRIGHT
+---------
+Copyright \(C) 2012 - Lisa Nguyen
+
+The Howto containing this example, was offered under the following conditions:
+
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are
+met:
+
+[options="compact"]
+. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+
+THIS SOFTWARE IS PROVIDED BY THE AUTHOR "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT,
+INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
+STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+POSSIBILITY OF SUCH DAMAGE.
