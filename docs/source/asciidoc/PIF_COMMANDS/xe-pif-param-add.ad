@@ -11,7 +11,6 @@ xe-pif-param-add - Add a key to a parameter for a PIF
 
 SYNOPSIS
 --------
-// ask group how they think we should handle the key
 
 *xe pif-param-add* uuid=<PIF UUID> param-name=<Parameter> [ param-key=<Parameter Key> ] [ <key>=<value> ]
 
