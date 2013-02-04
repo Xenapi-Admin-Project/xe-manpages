@@ -17,14 +17,22 @@ SYNOPSIS
 DESCRIPTION
 -----------
 
-*xe pool-vlan-create* creates a virtual VLAN PIF interface on all hosts in a pool and assigns it to the target network. VLAN ID tags must be between 0 and 4094.
-The virtual PIF interface is assigned to the target physical PIF interface. The resulting VLAN UUID is returned. 
+*xe pool-vlan-create* 
 
-The physical PIF interface now performs 802.1Q VLAN tagging/untagging. Use native VLAN 1 as a default.
 
-NOTE: Primary Management Interfaces cannot be assigned a VLAN.
+1. What does the command do (in laymans terms)
+2. What does the admin NEED to know (caveats with management interfaces, default VLANs etc..)
+3. How does the Admin use it
+4. Technical details e.g. why are there two pifs etc..
 
-// THIS IS BUNK AKA CRAP
+ So for number
+
+1: It connects a virtual network to a physical VLAN using a physical PIF. That's what it does. Because it always uses a physical PIF (as far as I know) we're always connecting to a physical VLAN correct? The VLAN tag number will be the same as what we're using in the physical VLAN config so it has to match.
+
+2: You would know more of what the caveats are here than I. If I remember right there's issues with the management interface and VLANs and when to use VLAN 1 etc..
+
+3: Examples obviously
+4: Anything else you think is relevant. What comes to mind for me is why you have a pseudo pif and a physical pif. One has all traffic on the physical NIC and the other only carries VLAN tagged traffic (I'm guessing). 
 
 
 REQUIRED PARAMETERS
