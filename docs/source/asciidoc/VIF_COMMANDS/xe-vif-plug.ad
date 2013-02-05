@@ -16,8 +16,13 @@ SYNOPSIS
 
 DESCRIPTION
 -----------
-*xe vif-plug* will attach a VIF interface to a running VM. VIF interfaces will be attached 
-when you start a VM. 
+*xe vif-plug* will attach a VIF interface to a running VM. VIF interfaces will be attached when you start a VM.
+
+*xe vif-plug* will attach a VIF to a VM. VIFs will be automatically attached when you start a VM. 
+
+*xe vif-plug* will attach a VIF interface to a VM. VIF interfaces will be automatically attached when you start a VM.
+
+*xe vif-plug* will attach a VIF to a VM.
 
 
 REQUIRED PARAMETERS

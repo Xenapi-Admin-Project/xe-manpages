@@ -8,7 +8,9 @@ XE(1)
 NAME
 ----
 
-xe-bond-set-mode - // add description
+xe-bond-set-mode - Set bonding mode for a bond
+				 - Change bond type for a bond
+				 - Set mode for a bond
 
 
 SYNOPSIS
@@ -27,8 +29,7 @@ REQUIRED PARAMETERS
 -------------------
 
 *uuid*::
-	UUID of Bond. Use *xe bond-list* to obtain a list of bond UUIDs.
-
+	Bond UUID - Use *xe bond-list* to obtain a list of bonds.
 *mode*::
 		Balance-slb::
 	

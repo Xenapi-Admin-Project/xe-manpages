@@ -7,7 +7,7 @@ XE(1)
 
 NAME
 -----
-xe-network-list - will list networks and their paramters present in a pool
+xe-network-list - Lists all networks and their paramters.
 
 SYNOPSIS
 --------
@@ -25,7 +25,7 @@ OPTIONAL PARAMETERS
 -------------------
 
 *uuid*::
-	UUID of the network.
+	Network UUID.
 
 *name-label*::
 	name-label of the network.
@@ -40,13 +40,13 @@ OPTIONAL PARAMETERS
  	PIF interfaces attached to the network. 
 
 *MTU*::
-	MTU value of a network
+	MTU value of a network.
 	
 *bridge*::
 	Name of the bridge on the host.
 
 *blobs*::
-	Binary data store .
+	Binary data store.
 
 *tags*::
 	Writable tag paramter. 

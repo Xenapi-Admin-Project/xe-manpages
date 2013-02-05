@@ -7,7 +7,7 @@ XE(1)
 
 NAME
 ----
-xe-vif-param-clear - Clears a specific writable parameter for a VIF
+xe-vif-param-clear - Clears a specific writable parameter for a virtual interface.
 
 SYNOPSIS
 --------

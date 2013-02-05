@@ -8,7 +8,7 @@ XE(1)
 NAME
 ----
 
-xe-bond-create - // add description
+xe-bond-create - Create a Interface Bond.
 
 
 SYNOPSIS
@@ -17,10 +17,12 @@ SYNOPSIS
 *xe bond-create* network-uuid=<Network UUID> pif-uuids=<PIF UUID>,<PIF UUID>,
 				[ mac=<Mac Address] [ mode=<Bond Mode>] [ properties=<umm stuff>]
 				
-				// gotta look into these!
 
 DESCRIPTION
 -----------
+
+*xe 
+
 
 // bond-create creates a active/active (balance-slb) bond by default
 // If you are using the older bridge networking module you are limited to two PIF interfaces per bond
@@ -36,10 +38,12 @@ REQUIRED PARAMETERS
 -------------------
 
 *network-uuid*::
-	UUID of Network.
+	Network UUID - Use *xe network-list* to obtain a list of network UUIDs.
+
 
 *pif-uuids*::
-	UUIDs of PIF interfaces to be included in the bond.
+	PIF UUIDs - Use *xe pif-list* to obtain a list of PIF UUIDs.
+	// Grant used a great word here... applicable?
 
 OPTIONAL PARAMETERS
 -------------------
@@ -83,6 +87,8 @@ OPTIONAL PARAMETERS
 EXAMPLES
 --------
 
+To create a two PIF active/active (balance-slb) bond for a VM network: ::
+	*xe bond-create* network-uuid=<Network UUID> pif-uuids=<PIF UUID>,<PIF UUID>
 
 SEE ALSO
 --------

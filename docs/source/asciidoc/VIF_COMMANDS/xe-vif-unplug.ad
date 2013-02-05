@@ -16,8 +16,7 @@ SYNOPSIS
 
 DESCRIPTION
 -----------
-*xe vif-unplug* will detach a VIF interface from a running VM.
-// add more info you newb
+*xe vif-unplug* will detach a VIF from a running VM.
 
 REQUIRED PARAMETERS
 -------------------
@@ -27,7 +26,10 @@ REQUIRED PARAMETERS
 
 EXAMPLES
 --------
-// maybe I add how to tell if the VIF is plugged in or not
+
+To return the currently-attached parameter for a VIF: ::
+	*xe vif-param-get* uuid=<VIF UUID> param-name="currently-attached"
+
 
 To detach a VIF interface from a running VM: ::
 	*xe vif-unplug* uuid=<VIF UUID>

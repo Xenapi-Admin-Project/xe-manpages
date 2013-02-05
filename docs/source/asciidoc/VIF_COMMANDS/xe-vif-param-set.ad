@@ -40,10 +40,10 @@ OPTIONAL PARAMETERS
 	Set locking-mode to *disabled* to deny all traffic.
 	
 *ipv4-allowed*::
-	Set permitted IPv4 addresses used when Switch Port Locking is enabled. Use a comma to separate multiple IPv4 addresses.
+	Set permitted IPv4 addresses used when switch port locking is enabled. Use a comma to separate multiple IPv4 addresses.
 	
 *ipv6-allowed*::
-	Set permitted IPv6 addresses used when Switch Port Locking is enabled. Use a comma to separate multiple IPv6 addresses. 
+	Set permitted IPv6 addresses used when switch port locking is enabled. Use a comma to separate multiple IPv6 addresses. 
 	
 *qos_algorithm_type*::
 	Set type of QoS algorithm used by the VIF interface.
@@ -64,13 +64,13 @@ OPTIONAL PARAMETERS
 	Enable TCP segmentation offload. Set *on* to enable, *off* to disable. (e.g. *ethtool-tso="on"*)
 
 *other-config:ethtool-ufo*::
-	Enable UDP fragment offload. Set *on* to enable,  *off* to disable. (e.g. *ethtool-ufo="on"*)
+	Enable UDP fragment offload. Set *on* to enable, *off* to disable. (e.g. *ethtool-ufo="on"*)
 
 *other-config:ethtool-gso*::
 	Enable generic segmentation offload. Set *on* to enable, *off* to disable. (e.g. *ethtool-gso="on"*)
 	
 *other-config:mtu*::
-	Set MTU size.
+	Set MTU size for VIF.
 	
 *other-config:promiscuous*::
 	Enable promiscuous mode. Set *true* to enable, and *false* to disable. (e.g. *other-config:promiscuous=true*)
@@ -78,11 +78,11 @@ OPTIONAL PARAMETERS
 EXAMPLES
 --------
 
-To set the maximum transmit rate of 100 kBps/s on a VIF: ::
-	xe vif-param-set uuid=<VIF UUID> qos_algorithm_type=ratelimit
-    xe vif-param-set uuid=<VIF UUID> qos_algorithm_params:kbps=100
+
+To turn on promiscuous mode: :
+	*xe vif-param-set* uuid=<VIF UUID> other-config:promiscous=true
     
-To set the switch-port locking mode to locked and allow a specific IP address: ::
+To set the switch-port locking mode to locked and allow a specific IPv4 address: ::
 	xe vif-param-set uuid=<VIF UUID> locking-mode="locked"
 	xe vif-param-set uuid=<VIF UUID> ipv4-allowed=<IPv4 Address to be allowed>
 

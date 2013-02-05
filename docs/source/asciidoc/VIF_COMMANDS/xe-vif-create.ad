@@ -8,7 +8,7 @@ XE(1)
 NAME
 ----
 
-xe-vif-create - Create a VIF interface.
+xe-vif-create - Create a Virtual Interface.
 
 SYNOPSIS
 --------
@@ -19,7 +19,11 @@ SYNOPSIS
 DESCRIPTION
 -----------
 
-*xe vif-create* will create a VIF interface for a VM mapped to a network. VIF interfaces created on a running VM need to be attached using *xe vif-plug*. The MTU size of the VIF interface is inherited from the network. The resulting VIF UUID will be returned.
+*xe vif-create* will create a VIF interface on a VM and connect it to a network. VIF interfaces created on a running VM need to be attached using *xe vif-plug*. The MTU size of the VIF interface is inherited from the network. The resulting VIF UUID will be returned.
+
+//
+
+*xe vif-create* will create a VIF interface on a VM and connect it to a network. If a VIF interfaces is created on a running VM, then attach it using *xe vif-plug*. The MTU size of the VIF interface is inherited from the network. The resulting VIF UUID will be returned.
 
 REQUIRED PARAMETERS
 -------------------
@@ -42,7 +46,7 @@ OPTIONAL PARAMETERS
 
 EXAMPLES
 --------
-
+// change this example
 To check the allowed VIF devices for a VM: ::
 	*xe vm-param-get* uuid=<VM UUID> param-name="allowed-VIF-devices"
 

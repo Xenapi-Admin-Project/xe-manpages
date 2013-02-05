@@ -7,7 +7,7 @@ XE(1)
 
 NAME
 ----
-xe-vif-destroy - Destroy a VIF interface
+xe-vif-destroy - Destroy a Virtual Interface.
 
 SYNOPSIS
 --------
@@ -20,6 +20,14 @@ DESCRIPTION
 
 *xe vif-destroy* will destroy a VIF interface attached to a halted VM. Use *xe vif-unplug* before
 destroying a VIF interface from a running VM.
+
+// Also could write as..
+// *xe vif-destroy* will destroy a detached VIF interface. Use *xe vif-unplug* to detach a VIF interface from a VM.
+
+// *xe vif-destroy* will destroy a unplugged VIF interface. Use *xe vif-unplug* to unplugged a VIF interface from a VM.
+
+// *xe vif-destroy* will destroy a VIF interface. If the VIF interface is currently-attached, then use *xe vif-unplug*.
+
 
 
 
@@ -38,7 +46,8 @@ To destroy a VIF interface attached to a running VM: ::
 	*xe vif-unplug* uuid=<VIF UUID>
 	*xe vif-destroy* uuid=<VIF UUID>
 	
-To destroy a VIF
+To destroy a VIF interface: ::
+	*xe vif-destroy* uuid=<VIF UUID>
 	
 
 

@@ -25,7 +25,7 @@ REQUIRED PARAMETERS
 -------------------
 
 *uuid*::
-	Network UUID - Use *xe network-list* to see list of network UUIDs.
+	Network UUID - Use *xe network-list* to obtain a list of network UUIDs.
 
 
 *param-name*::

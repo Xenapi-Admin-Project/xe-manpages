@@ -23,7 +23,7 @@ REQUIRED PARAMETERS
 -------------------
 
 *uuid*::
-	UUID of PIF interface - Use *xe network-list* to obtain network UUIDs.
+	Network UUID - Use *xe network-list* to obtain a list of network UUIDs.
 
 
 *param-name*::

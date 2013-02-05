@@ -7,7 +7,7 @@ XE(1)
 
 NAME
 ----
-xe-vif-param-list - Lists all parameters for a VIF interface
+xe-vif-param-list - Lists all parameters for a virtual interface.
 
 SYNOPSIS
 --------
