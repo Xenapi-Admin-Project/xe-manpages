@@ -8,7 +8,7 @@ XE(1)
 
 NAME
 ----
-xe-patch-apply - Apply a patch to a host
+xe-patch-apply - Apply a patch to a host.
 
 
 SYNOPSIS
@@ -25,16 +25,16 @@ Patch must be uploaded to server first?
 REQUIRED PARAMETERS
 -------------------
 *uuid*::
-UUID of a patch - Use *xe patch-list* to obtain patch UUIDs.
+	Patch UUID - Use *xe patch-list* to obtain a list of patches.
 
 *host-uuid*::
-UUID of a host - Use *xe host-list* to obtain host UUIDs.
+	Host UUID - Use *xe host-list* to obtain a list of hosts.
 
 
 EXAMPLES
 --------
 To apply a patch to a host: ::
-*xe patch-apply* uuid=<Patch File UUID> host-uuid=<Host UUID>
+*xe patch-apply* uuid=<Patch UUID> host-uuid=<Host UUID>
 
 
 SEE ALSO
@@ -50,7 +50,7 @@ Christina Mitchell <christinam@xenapiadmin.com>
 
 BUGS
 ----
-To report a bug, see http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP. General questions can be sent to xen-api@lists.xen.org. 
+See http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP on how to send bug reports, send bugs and general questions to xen-api@lists.xen.org.
 
 
 COPYRIGHT
