@@ -27,7 +27,7 @@ OPTIONAL PARAMETERS
 -------------------
 
 *uuid*:: 
-	UUID of VIF Interface.
+	VIF UUID.
 	
 *vm-uuid*:: 
 	VIF interface's VM UUID.
@@ -56,7 +56,6 @@ OPTIONAL PARAMETERS
 *currently-attached*::
 	*true* if VIF interface is attached to VM.
 	
-             
 *qos_algorithm_type*::
 	Type of QoS algorithm used for VIF interface (e.g. ratelimit).
 
@@ -91,32 +90,41 @@ OPTIONAL PARAMETERS
 	Additional configuration settings for VIF interface.
 
 *other-config:ethtool-rx*::
-	Receive checksum status.
+	Receive checksum status. *[ on | off ]*
 
 *other-config:ethtool-tx*::
-	Transmit checksum status. 
+	Transmit checksum status. *[ on | off ]*
 
 *other-config:ethtool-sg*::
-	Scatter gather status.
+	Scatter gather status. *[ on | off ]*
 
 *other-config:ethtool-tso*::
-	TCP segmentation offload status. 
+	TCP segmentation offload status. *[ on | off ]*
 
 *other-config:ethtool-ufo*::
-	UDP fragment offload.
+	UDP fragment offload status. *[ on | off ]*
 
 *other-config:ethtool-gso*::
-	Generic segmentation offload.
+	Generic segmentation offload status. *[ on | off ]*
 	
 *other-config:promiscous*::
 	Promiscuous status of VIF interface. If *promiscous=true*, then the VIF interface can see all traffic on bridge.
+	//
+	Promiscuous status of VIF interface. *[ true | false ]*
 
 
 EXAMPLES
 --------
 
+To create a list of currently-attached VIF interfaces with VIF UUIDs and Network UUIDs: ::
+	*xe vif-list* params="currently-attached,uuid,network-uuid"
+	
+To display VIFs with switch port locking set to *locked* for a specific network: ::
+	*xe vif-list* network-uuid=<Network UUID> locking-mode="locked"
+	
+To display VIFs present on a specific VM: ::
+	*xe vif-list* vm-uuid=<VM UUID>
 
-// need to come up with some examples
 
 
 

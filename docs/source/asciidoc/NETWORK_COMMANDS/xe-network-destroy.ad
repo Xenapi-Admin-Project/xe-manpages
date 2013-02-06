@@ -9,7 +9,6 @@ NAME
 -----
 xe-network-destroy - Erase a Network.
 
-// destroy or erase?
 
 SYNOPSIS
 --------
@@ -18,9 +17,10 @@ SYNOPSIS
 
 DESCRIPTION
 -----------
-*xe network-destroy* will destroy a network that contains no active PIFs, VIFs, or a VLAN. VIF interfaces associated with the network will also be erased. To disable PIF and VIF interfaces use *xe pif-unplug* and *xe vif-unplug*. To remove a VLAN see *xe vlan-destroy*.   
+*xe network-destroy* will destroy a network that contains no active PIFs, VIFs, or a VLAN. VIF interfaces associated with the network will also be erased. To detach PIF and VIF interfaces use *xe pif-unplug* and *xe vif-unplug*. To remove a VLAN see *xe vlan-destroy*.   
 
-*xe network-destroy* will destroy a network. To destroy a network, no active PIFs, VIFs,
+*xe network-destroy* will destroy a network. To destroy a network, VIFs and PIFs must be detached, and there can be no VLAN present. To detach PIFs and VIFs, see *xe pif-unplug* and *xe vif-unplug*. To remove a VLAN see *xe vlan-destroy*.
+
 
 // bah keep going with this
 

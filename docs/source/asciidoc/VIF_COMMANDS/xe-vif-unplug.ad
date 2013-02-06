@@ -18,11 +18,17 @@ DESCRIPTION
 -----------
 *xe vif-unplug* will detach a VIF from a running VM.
 
+//
+
+*xe vif-unplug* will attempt to detach a VIF from a running VM.
+
+
+
 REQUIRED PARAMETERS
 -------------------
 
 *uuid*::
-	UUID of VIF Interface. Use *xe vif-list* to obtain VIF interfaces UUIDs.
+	VIF UUID - Use *xe vif-list* to obtain a list of VIF UUIDs.
 
 EXAMPLES
 --------

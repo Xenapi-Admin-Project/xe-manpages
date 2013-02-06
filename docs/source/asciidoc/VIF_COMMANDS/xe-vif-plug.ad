@@ -18,18 +18,24 @@ DESCRIPTION
 -----------
 *xe vif-plug* will attach a VIF interface to a running VM. VIF interfaces will be attached when you start a VM.
 
+//
+
 *xe vif-plug* will attach a VIF to a VM. VIFs will be automatically attached when you start a VM. 
+
+//
 
 *xe vif-plug* will attach a VIF interface to a VM. VIF interfaces will be automatically attached when you start a VM.
 
-*xe vif-plug* will attach a VIF to a VM.
+//
+
+*xe vif-plug* will attach a VIF to a running VM. VIFs will be automatically attached when you start a VM.
 
 
 REQUIRED PARAMETERS
 -------------------
 
 *uuid*::
-	UUID of VIF Interface. Use *xe vif-list* to obtain VIF interfaces UUIDs.
+	VIF UUID - Use *xe vif-list* to obtain a list of VIF UUIDs.
 
 
 EXAMPLES

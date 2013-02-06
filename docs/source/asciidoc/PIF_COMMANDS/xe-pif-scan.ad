@@ -18,16 +18,31 @@ SYNOPSIS
 
 DESCRIPTION
 -----------
+ 
 
-*xe pif-scan* scans a host for new physical network devices. If new network devices are found on the host new PIF interfaces are created and assigned to the network devices.
-New pool wide networks are created and [ think of some way to say joined to those new PIF interfaces created ] 
+//
+
+*xe pif-scan* scans a host for new physical network devices, if found, a new PIF is created along with an external network associated with it.
+
+//
+
+*xe pif-scan* scans a host for a new physical network device; if found, a new PIF with an external network is created.
+
+//
+
+*xe pif-scan* scans the host for network devices that don't have a PIF associated with them; if found, a new PIF with an external network is created.
+
+//
+
+*xe pif-scan* scans the host for network devices without affiliated PIFs; if found, a new PIF with an external network is created.
+
 
 
 REQUIRED PARAMETERS
 -------------------
  
  *uuid*::
-	UUID of host - Use *xe host-list* to obtain host UUIDs. 
+	Host UUID - Use *xe host-list* to obtain a list of host UUIDs. 
 
 EXAMPLES
 --------

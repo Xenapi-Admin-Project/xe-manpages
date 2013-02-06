@@ -21,7 +21,11 @@ SYNOPSIS
 DESCRIPTION
 -----------
 
-*xe 
+*xe bond-create* will created a Bond from the supplied PIF interfaces and connect it to the specified network to create an external network. The default bond mode is a balance-slb configuration. You can specify the bond mode.
+
+If openvswitch is configured then a max of four PIF interfaces are allowed. If networking bridge mode is set then a max of four PIF interfaces are allowed.
+
+// err this one is going to take me some time!! Please don't take the above description seriously
 
 
 // bond-create creates a active/active (balance-slb) bond by default

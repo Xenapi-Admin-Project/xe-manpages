@@ -40,8 +40,10 @@ OPTIONAL PARAMETERS
     VLAN tag for the PIF interface. A tag of "-1" indicates no VLAN is assigned.
     
 *bond-master-of*:: 
+	// If the PIF is a bond, then its PIF UUID will be listed here.
               
 *bond-slave-of*:: 
+	// If the PIF is a member of a bond, then the master PIF UUID will be listed here. 
 
 *tunnel-access-PIF-of*:: 
 
