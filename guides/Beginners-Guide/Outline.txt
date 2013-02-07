@@ -1,0 +1,61 @@
+Introduction
+	About this Guide
+	Who should read this guide
+	Revision History
+	Contributors
+	Copyright Information
+	Conventions Used in this Document
+	Organization of this Document
+What is Xen Cloud Platform?
+	Xen
+		Hypervisor with limited management stack
+	Xapi
+		More powerful management stack
+	Xenserver
+		Xenserver uses Xen hypervisor and Xapi management stack
+	Xen Cloud Platform
+		XCP is open source version of Xenserver
+	Xen vs Xenserver/XCP
+	Xenserver vs XCP
+Installing Xen Cloud Platform
+	Requirements
+		VT/SVM for HVM
+			Enable in BIOS
+		Disk Size
+		Memory Size
+	Download ISO
+	Burn ISO
+	Create bootable USB
+	Walk through install
+Managing XCP
+	commandline via xe
+	xsconsole
+	Xencenter
+	XVP
+XCP concepts
+	PV vs HVM
+	Resource Pools
+	Storage Repositories
+	ext local non-shared
+	lvm local non-shared
+	nfs remote shared
+	iSCSI remote shared
+	ISO 
+	Shared vs Non-shared
+	File based vs LVM based
+	Snapshots
+Networks
+	Auto create network when NIC is plugged
+	How to find network information
+	Migration
+VM installation 
+	HVM Linux installation (local ISO repository with VNC)
+	HVM Windows installation (local ISO repository with VNC)
+	PV interactive Linux installation
+	PV automated Linux installation 
+Managing VMs
+	Start
+	Stop
+	Reboot
+	Console
+Conclusion
