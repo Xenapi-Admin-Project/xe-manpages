@@ -123,14 +123,14 @@ To display VIFs with switch port locking set to *locked* for a specific network:
 	*xe vif-list* network-uuid=<Network UUID> locking-mode="locked"
 	
 To display VIFs present on a specific VM: ::
-	*xe vif-list* vm-uuid=<VM UUID>
+	*xe vif-list* vm-uuid=<VM UUID> 
 
 
 
 
 SEE ALSO
 --------
-*xe vif-param-get*(1), *xe vif-create*(1), *xe vif-unplug*(1), *xe vif-plug*(1), *xe vif-param-set*(1), *xe network-list*(1)
+*xe-vif-param-get*(1), *xe-vif-create*(1), *xe-vif-unplug*(1), *xe-vif-plug*(1), *xe-vif-param-set*(1), *xe-network-list*(1)
 
 AUTHORS
 -------

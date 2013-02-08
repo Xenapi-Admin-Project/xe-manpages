@@ -7,16 +7,16 @@ XE(1)
 
 NAME
 ----
-xe-vif-param-add - Adds a parameter for a virtual interface.
+xe-vif-param-add - Adds a parameter for a virtual interface
 
 SYNOPSIS
 --------
-*xe vif-param-add* uuid=<VIF UUID> param-name=<Parameter Name> [ param-key=<Parameter Key> ]
+*xe vif-param-add* uuid=<VIF UUID> param-name=<Parameter name> [ param-key=<Parameter key> ]
 
 
 DESCRIPTION
 -----------
-*xe vif-param-add* will add a key/value to a set or map parameter for a VIF interface.
+*xe vif-param-add* will add a key/value to a set or map parameter for a VIF.
 
 
 REQUIRED PARAMETERS
@@ -41,7 +41,8 @@ EXAMPLES
 
 SEE ALSO
 --------
-*xe vif-list*(1)
+*xe-vif-list*(1), *xe vif-param-clear*(1), *xe-vif-param-set*(1), *xe-vif-create*(1), *xe-vif-plug*(1), *xe-vif-unplug*(1), *xe-network-list*(1)
+
 
 AUTHORS
 -------

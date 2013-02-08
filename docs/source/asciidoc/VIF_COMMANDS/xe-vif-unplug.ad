@@ -16,11 +16,11 @@ SYNOPSIS
 
 DESCRIPTION
 -----------
-*xe vif-unplug* will detach a VIF from a running VM.
+*xe vif-unplug* detaches a VIF from a running VM.
 
 //
 
-*xe vif-unplug* will attempt to detach a VIF from a running VM.
+*xe vif-unplug* attempts to detach a VIF from a running VM. VIF interface will retain its parameters while detached.
 
 
 

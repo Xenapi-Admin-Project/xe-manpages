@@ -7,7 +7,7 @@ XE(1)
 
 NAME
 ----
-xe-vif-destroy - Erase a Virtual Interface.
+xe-vif-destroy - Destroy a virtual interface
 
 SYNOPSIS
 --------
@@ -18,26 +18,7 @@ SYNOPSIS
 DESCRIPTION
 -----------
 
-// *xe vif-destroy* will erase a detached VIF interface from a halted VM. Use *xe vif-unplug* before
-// destroying a VIF interface from a running VM.
-
-//* *xe vif-destroy* will erase a detached VIF from a VM; if attached, use *xe vif-unplug*.
-
-// *xe vif-destroy* will erase a detached VIF from a VM; if attached, use *xe vif-unplug* before executing *xe vif-destroy*
-
-// *xe vif-destroy* will erase a detached VIF from a VM; if the VIF is attached, use *xe vif-unplug* before executing *xe vif-destroy*.
-
-// *xe vif-destroy* will erase a detached VIF from a VM; if the VIF is attached, then use *xe vif-unplug* to detach the VIF.
-
-
-// Also could write as..
-// *xe vif-destroy* will destroy a detached VIF interface. Use *xe vif-unplug* to detach a VIF interface from a VM.
-
-// *xe vif-destroy* will destroy a unplugged VIF interface. Use *xe vif-unplug* to unplugged a VIF interface from a VM.
-
-// *xe vif-destroy* will destroy a VIF interface. If the VIF interface is currently-attached, then use *xe vif-unplug*.
-
-// *xe vif-destroy will destory a detached VIF interface. If the VIF interface is currently-attached, then use *xe vif-unplug*. 
+*xe vif-destroy* destroys a detached VIF from a VM. To erase an attached VIF, first use *xe vif-unplug* then *xe vif-destroy*.
 
 
 REQUIRED PARAMETERS
@@ -51,23 +32,23 @@ REQUIRED PARAMETERS
 EXAMPLES
 --------
 
+
 To return the currently-attached parameter for a VIF: ::
 	*xe vif-param-get* uuid=<VIF UUID> param-name="currently-attached"
 
-To destroy a VIF interface attached to a running VM: ::
-	*xe vif-unplug* uuid=<VIF UUID>
-	*xe vif-destroy* uuid=<VIF UUID>
+To destroy a VIF interface attached to a running VM: :: 
+	*xe vif-unplug* uuid=<VIF UUID> + 
+	*xe vif-destroy* uuid=<VIF UUID> 
 	
 To destroy a VIF interface: ::
 	*xe vif-destroy* uuid=<VIF UUID>
-	
+
 
 
 SEE ALSO
 --------
 
-*xe-vif-list*(1), *xe-vif-create*(1), *xe-vif-unplug*(1), *xe-vif-unplug*(1), *xe-vif-param-set*(1),
-*xe-network-list*(1), *xe-vm-list*(1),
+*xe-vif-list*(1), *xe-vif-create*(1), *xe-vif-unplug*(1), *xe-vif-unplug*(1), *xe-vif-param-set*(1), *xe-network-list*(1), *xe-vm-list*(1)
 
 
 AUTHORS
