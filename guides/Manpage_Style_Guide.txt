@@ -1,0 +1,303 @@
+All manpages will include the following elements
+
+0. Steps to Reading a Manpage
+1. Manpage heading
+2. NAME section
+3. SYNOPSIS section
+4. DESCRIPTION section
+5. REQUIRED PARAMETERS (if any)
+6. OPTIONAL PARAMETERS (if any)
+7. EXAMPLES section
+8. SEE ALSO section
+9. AUTHORS section
+10. BUGS section
+11. COPYRIGHT section
+12. NOTES section (if needed)
+
+0. Steps to Reading a Manpage - a user should be able to quickly scan a manpage for information in the order that they need it. The manpage will answer the following questions top to bottom
+	1. What is the name of the command and briefly what does it do?
+	2. What is the Syntax of the command?
+	3. What more information do I need about the command?
+	4. What parameters do I HAVE to include when running it?
+	5. What optional parameters can I use?
+	6. How do I run it accomplish common tasks?
+	7. Who wrote this manpage?
+	8. What other commands might be useful?
+	9. Under what restrictions is it being distributed?
+	10. What should I do if I find a bug in the command/manpage?
+	11. Who owns the copyright to the manpage?
+	12. Is there and after thoughts?
+
+
+1. Manpage Heading
+
+The Manpage Heading shall include the following items
+	doctype
+	man source
+	man version
+	man manual
+
+ 
+2. NAME
+ 
+The NAME section will have the name of the command which can contain no spaces. (e.g. xe-cd-list) followed by a hyphen and a short one sentence description.
+ 
+	xe-cd-list - List CD images
+ 
+ 
+3. SYNOPSIS
+ 
+The SYNOPSIS section shows the command syntax. 
+* All commands that provide the --minimal and --multiple options should include them here even if xe help does not.
+* Parameters are encased in square brackets [] and parameter values in angle brackets <>
+* The command name should be bold.
+
+	*xe cd-list* [ params=<parameter> ] [--minimal]
+
+ 
+4. DESCRIPTION
+
+The DESCRIPTION is a description of the command and it's uses. This can be as short or long as necessary.
+When commands attempt to execute a function (*-param-clear) we will use the verbage - attempts.
+	
+	"xe pif-param-clear attempts to clear all values for a specific writable parameter for a PIF interface."
+
+
+ 
+5. REQUIRED PARAMETERS
+ 
+List all required Parameters here with a very short description. Refer to xe help (and double check) to determine required/optional parameters. 
+
+*uuid*
+	Display CD UUIDs
+
+
+ 
+6. OPTIONAL PARAMETERS
+
+All List commands should include the params=all option.
+
+*all*
+	Display all parameter values 
+ 
+
+
+7. EXAMPLES
+
+Quote the variables used in the examples. 
+If examples have multiple lines - insert a line break by finishing the line with a +  
+Include the following four example types if they're relevant to your comand. 
+ 
+1. Filtering results based on params=parameter 
+	xe vif-list params=uuid
+2. Filtering results based on parameter=value 
+	xe vif-list currently-attached="false"
+3. Getting more information on parameter=<expensive field> using a param-get command 
+	xe host-cpu-param-get uuid=<CPU UUID> param-name="utilisation"
+4. Setting a map parameter
+	xe vm-param-set uuid=<VM UUID> other-config:"install-repository=http://mirror.centos.org/centos/6/os/i386/"
+ 
+
+8. SEE ALSO
+ 
+List other commands that would be related and/or useful to the user. 
+Also list xe help <command> as a second source. 
+
+ 
+9. AUTHORS
+
+The AUTHORS section should specify all the authors that worked on the manpage.
+
+Manpage Author(s): 
+	[Author(s)]
+ 
+ 
+10. BUGS
+
+The BUGS sectin should include the following message. 
+ 
+For guidelines on submitting bug reports see http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP. Submit bugs and general questions to xen-api@lists.xen.org.
+ 
+
+11. COPYRIGHT
+The COPYRIGHT message should give way to the author of the manpage. 
+
+Copyright \(C)  2012 - Grant McWilliams
+ 
+Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License, Version 1.3 or any later version published by the Free Software Foundation; with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts. A copy of the license is included in the section entitled "GNU Free Documentation License".
+ 
+ 
+12. NOTES
+ 
+NOTES should contain anything that didn't fall into other categories. For instance if a command did not work on Xenserver, Kronos or Zeus etc.
+
+
+ 
+Example for List Commands
+ 
+XE(1)
+=======
+:doctype: manpage
+:man source: xe-cd-list
+:man version: {1}
+:man manual: xe cd-list Manual
+ 
+NAME
+-----
+xe-cd-list - List CD images
+ 
+SYNOPSIS
+--------
+*xe cd-list* [ params=<parameter> ] [--minimal]
+ 
+ 
+DESCRIPTION
+-----------
+*xe cd-list* displays available CD images on all available ISO storage repositories. 
+Output can be filtered by supplying params=<parameter>. Multiple parameters can be displayed by seperating each parameter with a comma (params=uuid,name-label).
+
+ 
+ 
+OPTIONAL PARAMETERS
+-------------------
+
+*all*::
+	Display all parameter values
+*uuid*::
+	Display CD UUIDs
+*name-label*::
+	List CD name labels
+*name-description*::
+	Display CD name descriptions
+*is-a-snapshot*::
+	Display if a CD is a snapshot [true|false]
+*snapshot-of*::
+	Display UUID of snapshotted CD
+*snapshots*::
+	Display how many snapshots the CD has
+*snapshot-time*::
+	Display the time of the snapshot
+*allowed-operations*::
+	Display allowed operations [destroy|clone|copy|snapshot]
+*current-operations*::
+	Display current operations [destroy|clone|copy|snapshot]
+*sr-uuid*::
+	Display Storage Repository UUID where the CD resides
+*sr-name-label*::
+	Display Storage Repository name-label where the CD resides
+
+ 
+EXAMPLES
+--------
+
+To display all CD name-labels: ::
+	*xe cd-list* params=name-label
+
+To display all parameters for a CD: ::
+	*xe cd-list* uuid=<CD UUID> params=all
+ 
+ 
+ 
+SEE ALSO
+--------
+*xe help cd-list*, xe-vm-cd-add*(1), *xe-vm-cd-eject*(1), *xe-vm-cd-insert*(1), *xe-vm-cd-remove*(1)
+ 
+AUTHORS
+-------
+Manpage Author(s)::
+	Grant McWilliams <grant@soundlinuxtraining.com>
+ 
+ 
+BUGS
+----
+For guidelines on submitting bug reports see http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP. Submit bugs and general questions to xen-api@lists.xen.org. 
+ 
+COPYRIGHT
+---------
+Copyright \(C)  2012 - Grant McWilliams
+Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License, Version 1.3 or any later version published by the Free Software Foundation; with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts. A copy of the license is included in the section entitled "GNU Free Documentation License".
+ 
+ 
+Example for Other Commands
+ 
+XE(1)
+=======
+:doctype: manpage
+:man source: xe-vif-create
+:man version: {1}
+:man manual: xe vif-create manual
+ 
+NAME
+----
+ 
+*xe vif-create* - Create a VIF interface
+ 
+SYNOPSIS
+--------
+ 
+*xe vif-create* vm-uuid=<VM UUID> network-uuid=<Network UUID> device=<Ethernet Device Number> [ mac=<MAC Address> ]
+ 
+ 
+DESCRIPTION
+-----------
+ 
+*xe vif-create* will create a new VIF interface for a VM on a network. A VIF interface created on a running VM needs to be attached to the VM using *xe vif-plug*. The resulting VIF interface UUID will be returned.
+ 
+ 
+REQUIRED PARAMETERS
+-------------------
+ 
+*vm-uuid*::
+VM for the VIF interface. Use *xe vm-list* to obtain a list of VMs.
+ 
+*network-uuid*::
+Network for the VIF interface. Use *xe network-list* to obtain a list of networks.
+ 
+*device*::
+Machine-readable network interface number. (e.g. eth0)
+ 
+ 
+ 
+OPTIONAL PARAMETERS
+-------------------
+ 
+*mac*::
+48-bit MAC Address. A MAC Address will be autogenerated if one isn't provided.
+ 
+ 
+EXAMPLES
+--------
+ 
+To check the allowed VIF devices for a VM: ::
+*xe vm-param-get* uuid=<VM UUID> param-name="allowed-VIF-devices"
+ 
+To create a VIF interface on a running VM: ::
+*xe vif-create* vm-uuid=<VM UUID> device=<Ethernet Device Number> network-uuid=<Network UUID>   +
+*xe vif-plug* uuid=<VIF UUID>
+ 
+To create a VIF interface on a halted VM: ::
+*xe vif-create* vm-uuid=<VM UUID> device=<Ethernet Device Number> network-uuid=<Network UUID>
+ 
+ 
+ 
+SEE ALSO
+--------
+ 
+*xe-vif-list*(1), *xe-vif-destroy*(1), *xe-vif-param-set*(1), *xe-network-list*(1), *xe-vm-list*(1)
+ 
+ 
+AUTHORS
+-------
+Manpage Author(s): ::
+Matthew Spah < spahmatthew@gmail.com>
+ 
+ 
+BUGS
+----
+See http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP on how to send bug reports, send bugs and general questions to xen-api@lists.xen.org.
+ 
+ 
+COPYRIGHT
+---------
+Copyright \(C)  2012 - Matthew Spah
+Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License, Version 1.3 or any later version published by the Free Software Foundation; with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts. A copy of the license is included in the section entitled "GNU Free Documentation License".
