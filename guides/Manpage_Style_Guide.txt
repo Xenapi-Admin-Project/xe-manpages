@@ -26,7 +26,7 @@ All manpages will include the following elements
 	9. Under what restrictions is it being distributed?
 	10. What should I do if I find a bug in the command/manpage?
 	11. Who owns the copyright to the manpage?
-	12. Is there and after thoughts?
+	12. Is there any after thoughts?
 
 
 1. Manpage Heading
@@ -58,7 +58,7 @@ The SYNOPSIS section shows the command syntax.
 4. DESCRIPTION
 
 The DESCRIPTION is a description of the command and it's uses. This can be as short or long as necessary.
-When commands attempt to execute a function (*-param-clear) we will use the verbage - attempts.
+* When commands attempt to execute a function (*-param-clear) we will use the verbage - attempts.
 	
 	"xe pif-param-clear attempts to clear all values for a specific writable parameter for a PIF interface."
 
@@ -84,9 +84,9 @@ All List commands should include the params=all option.
 
 7. EXAMPLES
 
-Quote the variables used in the examples. 
-If examples have multiple lines - insert a line break by finishing the line with a +  
-Include the following four example types if they're relevant to your comand. 
+* Quote the variables used in the examples. 
+* If examples have multiple lines - insert a line break by finishing the line with a +  
+* Include the following four example types if they're relevant to your comand. 
  
 1. Filtering results based on params=parameter 
 	xe vif-list params=uuid
