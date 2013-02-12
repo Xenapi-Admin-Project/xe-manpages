@@ -1,0 +1,58 @@
+About this Guide
+
+ This guide has been compiled, edited and revised by the Xenapi Admin Project (xenapiadmin.com). This guide is intended to provide a quick introduction to the open source Xen Cloud Platform - a free hypervisor designed to host virtual machines. Much of the specific content has been shaped by the paritcular needs of the beginning cloud administrator and the members of the Xenapi Admin Project members. We therefore make no claims about completeness or depth for more advanced Xen Cloud Topics or other cloud computing subjects. Many other more advanced sources exist for such topics.
+
+ 
+
+Who should read this guide
+
+This guide is primarily intended for those who are new to Cloud Computing and more specifically Xen Cloud Platform. This guide could also be used for those who are new to Citrix Xenserver as the two products share commonality. This guide provides necessary foundation knowledge and general familiarization of topics related to Cloud Computing and more specifically Xen Cloud Platform.
+
+ 
+
+Acknowledgments 
+
+Many of the topics covered in this guide stem from personal needs of The Xenapi Admin Project members in addition to questions raised on the xen-api mailing list at lists.xen.org/mailman/listinfo/xen-api. Information presented in this guide comes from Citrix Xenserver Administration guide, xen-api mailing lists and the Xenapi Admin Project's own manpage documents as well as Grant McWilliams installation tutorials at grantmcwilliams.com.
+
+ 
+
+Revision History
+
+Version 1 - February 2013
+
+ 
+
+Contributors
+
+The Xenapi Admin Project 
+
+Lisa Nguyen
+Mason Heller
+Mike Webber
+Matthew Spah
+Christina Mitchell
+Paul Maack
+Grant McWilliams
+ 
+
+Copyright Information
+
+Copyright (C)  Grant McWilliams
+    Permission is granted to copy, distribute and/or modify this document
+    under the terms of the GNU Free Documentation License, Version 1.3
+    or any later version published by the Free Software Foundation;
+    with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts.
+    A copy of the license is included in the section entitled "GNU
+    Free Documentation License".
+ 
+
+Conventions used in this document
+
+When this guide refers to other documents and tutorials it will either provide a link in hypertext or present the name of the item in italics.
+
+When this guide presents commands that need to entered it will present them in an indented breakout box. 
+
+For example:
+
+xe vm-list
+ 

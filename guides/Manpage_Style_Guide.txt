@@ -20,7 +20,7 @@ All manpages will include the following elements
 	3. What more information do I need about the command?
 	4. What parameters do I HAVE to include when running it?
 	5. What optional parameters can I use?
-	6. How do I run it accomplish common tasks?
+	6. How do I use it to accomplish common tasks?
 	7. Who wrote this manpage?
 	8. What other commands might be useful?
 	9. Under what restrictions is it being distributed?
