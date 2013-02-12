@@ -19,20 +19,18 @@ Virtual Machine
 
 Control Domain
 
-A Storage Repository (SR) is the main object used in XCP storage. They represent a storehouse for XCP to store Virtual Disk Images (VDIs).
-// This is crap.. someone want to write it? I have no idea what I'm talking about -Matt
-
-A Physical Block Device (PBD) is an object that represents the interface between a XCP host and a mapped Storage Repository. PBDs store all the configuration parameters required to connect to its Storage Repository. 
-// This is crap.. someone want to write it? I have no idea what I'm talking about -Matt 
-
 Virtual Disk Image
 
+A Storage Repository (SR) is the main object used in XCP storage. They represent a storehouse for XCP to store Virtual Disk Images (VDIs).
+
+A Physical Block Device (PBD) is an object that represents the interface between a XCP host and a mapped Storage Repository. PBDs store all the configuration parameters required to connect to its Storage Repository. 
+
 A Virtual Block Device (VBD) is similar to a PBD except it's an object that maps Virtual Disk Images and virtual machines together. VBDs also provide parameters for tuning their connections to a given VDI.
-// This is crap.. someone want to write it? I have no idea what I'm talking about -Matt
 
 Physical Interface (PIF) is associated with a Physical NIC on the host.
 
 Virtual Interface (VIF) is a Virtual Network Interface that allows a Virtual Machine to connect to a Network. 
+
 
 A Network is a logical switch that connects Virtual Interfaces, Physical Interfaces, and other devices together. 
 
