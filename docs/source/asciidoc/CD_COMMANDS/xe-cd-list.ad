@@ -12,7 +12,7 @@ xe-cd-list - Lists CD images
 
 SYNOPSIS
 --------
-*xe cd-list* [ params=<parameter> ]
+*xe cd-list* [ params=<parameter> ] [--minimal]
 
 
 DESCRIPTION
@@ -27,13 +27,13 @@ OPTIONAL PARAMETERS
 *all*::
 	Display all parameter values
 *uuid*::
-	Display all CD UUIDs
+	Display CD UUIDs
 *name-label*::
-	List all CD name labels
+	List CD name labels
 *name-description*::
-	Display all CD name descriptions
+	Display CD name descriptions
 *is-a-snapshot*::
-	Display if a CD is a snapshot (true|false)
+	Display if a CD is a snapshot [true|false]
 *snapshot-of*::
 	Display UUID of snapshotted CD
 *snapshots*::
@@ -41,14 +41,61 @@ OPTIONAL PARAMETERS
 *snapshot-time*::
 	Display the time of the snapshot
 *allowed-operations*::
-	Display allowed operations eg. destroy, clone, copy, snapshot
+	Display allowed operations [destroy|clone|copy|snapshot]
 *current-operations*::
-	Display current operations e.g. destroy, clone, copy, snapshot 
+	Display current operations [destroy|clone|copy|snapshot]
 *sr-uuid*::
 	Display Storage Repository UUID where the CD resides
 *sr-name-label*::
 	Display Storage Repository name-label where the CD resides
+*vbd-uuids*::
+	Display any Virtual Block Device UUIDs
+*crashdump-uuids*::
+	Display any crash dump UUIDs
+*virtual-size*::
+	Display the virtual size in bytes
+*physical-utilisation*::
+	Display utilised size in bytes
+*location*::
+	Display the CD filename
+*type*::
+	Display the CD type [ User | System ]
+*sharable*::
+	Display if the CD is sharable [ true | false ]
+*read-only*::
+	Display if the CD is read only [ true | false ]
+*storage-lock*::
+	Display if the disk is locked at the storage level [ true | false ]
+*managed*::
+	Display if managed [ true | false ]
+*parent*::
+	Display parent disk if CD is part of a chain
+*missing*::
+	Display if CD is missing on Storage Repository [ true | false ]
+*other-config*::
+	Display additional configuration parameter values for CD
+*xenstore-data*::
+	Display data to be inserted into xenstore tree
+*sm-config*::
+	Display storage manager device config keys
+*on-boot*::
+*allow-caching*::
+	Display if caching is allowed [ true | false ]
+*metadata-latest*::
+*metadata-of-pool*::
+*tags*::
+	Display tags
 
+	
+
+EXAMPLES
+--------
+
+To display all CD name-labels: ::
+	*xe cd-list* params=name-label
+
+To display all parameters for a CD: ::
+	*xe cd-list* uuid=<CD UUID> params=all
 
 SEE ALSO
 --------
