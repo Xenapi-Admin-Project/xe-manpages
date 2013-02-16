@@ -10,17 +10,23 @@ TOPICS
 	*Cent OS 6.3 via network repos
 	*Use Cent OS 6.0 64bit VM template
 	*Use Local SR. Should we explain to the user what a local SR is? 
+		// Perhaps just use the DEFAULT SR and avoid the conversation - Grant
 	*Explain the network configuration
+		// *Explain how to tab for UUID and/or copy paste otherwise people will be typing them in with errors - Grant
+
 	
 2) Create the Cent OS VM
 	* Create the Cent OS 6.3 VM via template
 		- $xe vm-install new-name-label="Cent_OS_VM" template=<Cent OS 64bit 6.0 template> sr-uuid=<SR UUID>
+			// assign the UUID to a variable so they don't have to keep typing it in. Sometimes we can use more friendly commands
+			// like xe vm-list name-label=CentOS6 but other times we HAVE to use the nasty UUID.
 	* Explain to the user how $xe vm-install operates
-		- It creates a VM object, VDI object, and a VBD object.
+		- It creates a VM object, VDI object, and a VBD object. // ie. creates a Computer, a Disk and connects them.
 	* Show the user how to use some low level commands to view the objects created by $xe vm-install 
 		- $xe vm-param-list uuid=<VM UUID> will display all the new VMs parameters.
 		- $xe vbd-param-list vm-uuid=<VM UUID> will display the VBD created and all the parameters
 		- $xe vdi-param-list uuid=<VDI UUID> will display the VDI created and all the parameters
+
 	
 	
 3) Hook up our new Cent OS VM to a network
@@ -28,8 +34,9 @@ TOPICS
 		- $xe network-list
 	* Once the network uuid is found, we create the VIF.
 		- $xe vif-create vm-uuid=<VM UUID> network-uuid=<Network UUID> device=0
-	* Should we show the user how to view the newly created VIF?
+	* Should we show the user how to view the newly created VIF? // yes - Grant
 		- $xe vm-vif-list uuid=<VM UUID> 
+
 
 4) Set the Cent OS install repo
 	* We need to set the VM to use the Cent OS 64bit 6.3 network repo for a network install to work correctly.
@@ -43,6 +50,7 @@ TOPICS
 
 6) Guide the user through the interactive Cent OS install
 	* Should we even bother with this? I mean any idiot should be able to install Cent OS.
+		// Probably not
 	
 
 7) Show the user how to start and shutdown the new VM.
@@ -52,6 +60,8 @@ TOPICS
 	
 8) Backing up the VM.
 	* Should we cover backing up a VM??
+		// xe vm-export?
+		// xe vm-snapshot?
 	
 	
 	
