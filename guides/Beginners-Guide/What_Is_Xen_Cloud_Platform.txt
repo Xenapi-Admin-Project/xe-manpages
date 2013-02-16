@@ -1,0 +1,25 @@
+Definition of Terms
+
+Hypervisor is a piece of computer software that creates and runs multiple virtual machines on the same computer hardware concurrently.
+Xen is a hypervisor providing services that allow multiple computer operating systems in the form of Virtual Machines to execute on the same computer hardware concurrently. The University of Cambridge Computer Laboratory developed the first versions of Xen but current versions of Xen are managed by the Xen Community. Simple management tools are included to manage Virtual Machines.
+Infrastructure as a Service (Iaas) Cloud computing is the use of computing resources (hardware and software) that are delivered as a service in the form of virtual machines. Pools of hypervisors within the cloud can support large numbers of virtual machines and the ability to scale services up and down according to customers' varying requirements.
+Xapi or XenAPI is a comprehensive management stack comprising of a software Application Programming Interface (API) for managing the Xen Hypervisor. Powerful cloud management tools can be easily built using Xapi. 
+Xenserver is a commercial Cloud Computing product utilizing the Xen hypervisor and Xapi produced by Citrix Corporation.
+Xen Cloud Platform is an open source community developed version of Citrix Xenserver.
+Resource Pool
+Virtual Machine
+Control Domain
+Storage Repository
+Virtual Disk Image
+Virtual Block Device
+Physical Block Device
+Physical Interface
+Virtual Interface
+Network
+ 
+
+What is Xen Cloud Platform?
+
+Xen Cloud Platform is the open source community driven version of Citrix Xenserver - a commercial Infrastructure as a Service Cloud Computing system. Xen Cloud Platform version 1.6 is nearly identical to Xenserver 6.1. The differences between Xen Cloud Platform and Xenserver are listed at http://wiki.xen.org/wiki/XCP/XenServer_Feature_Matrix. 
+
+
