@@ -71,7 +71,7 @@ OPTIONAL PARAMETERS
 *parent*::
 	Display parent disk if CD is part of a chain
 *missing*::
-	Display if CD is missing on Storage Repository [ true | false ]
+	Display if Storage Repository has reported CD missing [ true | false ]
 *other-config*::
 	Display additional configuration parameter values for CD
 *xenstore-data*::
