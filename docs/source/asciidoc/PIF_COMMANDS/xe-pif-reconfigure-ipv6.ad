@@ -5,12 +5,9 @@ XE(1)
 :man version:  {1}
 :man manual:   xe pif-reconfigure-ipv6 manual
 
-// draft 1 12/07/2012
-// still need to verify everything... I'm just creating the page now - Matt
-
 NAME
 -----
-xe-pif-reconfigure-ipv6 - Reconfigure the IPv6 address settings on a PIF interface.
+xe-pif-reconfigure-ipv6 - Configure PIF IPv6 addressing
 
 SYNOPSIS
 --------
@@ -22,40 +19,38 @@ SYNOPSIS
 DESCRIPTION
 -----------
 
-*xe pif-reconfigure-ipv6* configures IPv6 addressing settings for a specific PIF interface. 
+*xe pif-reconfigure-ipv6* configures IPv6 address settings for a specific PIF interface. 
 
 
 REQUIRED PARAMETERS
 -------------------
 
 *mode*::
-	Addressing mode for the PIF interface. Mode options are dhcp, static, autoconf, or none.
+	Addressing mode for the PIF. *[ dhcp | static | autoconf | none ]*
 
 *uuid*::
-	UUID of PIF interface - Use *xe pif-list* to obtain PIF interface UUIDs
+	PIF UUID- Use *xe pif-list* to obtain PIF interface UUIDs
 
 *IPv6*::
-	IPv6 Host address of PIF interface. Address is only required for static mode.
+	PIF IPv6 address. Address is only required for static mode.
 
 OPTIONAL PARAMETERS
 -------------------
 
 *DNS*::
-	Name server addresses. // I can't remember if DNS is any different in IPv6.. break out the network book
+	Name server addresses. 
 	
 *gateway*::
-	Gateway address
+	Gateway address.
 	
 EXAMPLES
 --------
-// add examples
-// I don't even know if these example work, but I'm making up something ... -lisa
-// To set the dhcp mode:
-//		*xe pif-reconfigure-ipv6* mode=dhcp uuid=<PIF UUID>
-// To set the static mode with a gateway address and one DNS:
-//		*xe pif-reconfigure-ipv6* mode=static uuid=<PIF UUID> IPv6=<IPv6 Address> gateway=<Gateway Address> DNS=<Name Server>
-// One example using static mode without gateway
-// Can you set up multiple name servers?
+
+To set dhcp mode: ::
+	*xe pif-reconfigure-ipv6* mode=dhcp uuid=<PIF UUID>
+
+To set the static mode with a gateway address and one DNS: ::
+		*xe pif-reconfigure-ipv6* mode=static uuid=<PIF UUID> IPv6=<IPv6 Address> gateway=<Gateway Address> DNS=<Name Server>
 
 
 SEE ALSO
@@ -66,12 +61,12 @@ SEE ALSO
 AUTHORS
 -------
 Manpage Author(s): ::
-Matthew Spah <spahmatthew@xenapiadmin.com>
+Matthew Spah <spahmatthew@xenapiadmin.com> +
 Lisa Nguyen <lisa@xenapiadmin.com>
 
 BUGS
 ----
-See http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP on how to send bug reports, send bugs and general questions to xen-api@lists.xen.org.
+For guidelines on submitting bug reports see http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP. Submit bugs and general questions to xen-api@lists.xen.org.
 
 
 COPYRIGHT

@@ -7,7 +7,7 @@ XE(1)
 
 NAME
 ----
-xe-vlan-destroy - Delete a VLAN from a network
+xe-vlan-destroy - Remove a VLAN from a network
 
 SYNOPSIS
 --------
@@ -17,18 +17,18 @@ SYNOPSIS
 DESCRIPTION
 -----------
 
-*xe vlan-destroy* will remove a VLAN and its pseudo PIF interface from a network. Active VIF interfaces attached to the VLAN need to be disabled before deletion. 
+*xe vlan-destroy* removes a VLAN and its pseudo PIF interface from a network. Active VIF interfaces attached to the VLAN need to be disabled before deletion. 
 
-*xe vlan-destroy* will remove a VLAN and its pseudo PIF interface from a network. Active VIF interfaces attached to the VLAN need to be disabled with *xe vif-unplug* before removal. 
+*xe vlan-destroy* removes a VLAN and its pseudo PIF interface from a network. Active VIF interfaces attached to the VLAN need to be disabled with *xe vif-unplug* before removal. 
 
-*xe vlan-destroy* will remove a VLAN and the pseudo PIF interface associated with that VLAN from a network. *xe vlan-destroy* requires that no active VIF interfaces be present on the VLAN. Use *xe vif-unplug* to disable and active VIF interfaces.
+*xe vlan-destroy* removes a VLAN and the pseudo PIF interface associated with that VLAN from a network. *xe vlan-destroy* requires that no active VIF interfaces be present on the VLAN. Use *xe vif-unplug* to disable and active VIF interfaces.
 
 
 
 REQUIRED PARAMETERS
 -------------------
 *uuid*::
-    UUID of the VLAN to delete - Use *xe vlan-list* to obtain a list of VLAN UUIDs.
+    VLAN UUID - Use *xe vlan-list* to obtain a list of VLAN UUIDs.
     
 EXAMPLES
 --------
@@ -46,7 +46,7 @@ Matthew Spah <spahmatthew@xenapiadmin.com>
 
 BUGS
 ----
-See http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP on how to send bug reports, send bugs and general questions to xen-api@lists.xen.org.
+For guidelines on submitting bug reports see http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP. Submit bugs and general questions to xen-api@lists.xen.org.
 
 
 COPYRIGHT

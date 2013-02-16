@@ -22,7 +22,7 @@ REQUIRED PARAMETERS
 -------------------
 
 *uuid*::
-	UUID of PIF interface - Use *xe pif-list* to obtain PIF interface UUIDs
+	PIF UUID - Use *xe pif-list* to obtain PIF UUIDs
 
 *param-name*::
 	Parameter to have key added for a PIF interface
@@ -39,14 +39,9 @@ OPTIONAL PARAMETERS
 EXAMPLES
 --------
 
-// there isn't a ton of ways to use pif-param-add... I feel like pif-param-set is the better command for PIF interfaces
-// the only map parameter is otherconfig which has many options that can be set with pif-param-set
-// actually after some reading I have an idea :| - Matt 
-
 To add a DNS search path ( DNS Suffix ) value for a PIF interface: ::
-	xe pif-param-add uuid=<PIF UUID> param-name=other-config domain=<DNS Suffix>
+	*xe pif-param-add* uuid=<PIF UUID> param-name=other-config domain=<DNS Suffix>
 	
-
 
 SEE ALSO
 --------
@@ -55,12 +50,12 @@ SEE ALSO
 AUTHORS
 -------
 Manpage Author(s): ::
-Matthew Spah <spahmatthew@xenapiadmin.com>
+Matthew Spah <spahmatthew@xenapiadmin.com> +
 Lisa Nguyen <lisa@xenapiadmin.com>
 
 BUGS
 ----
-See http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP on how to send bug reports, send bugs and general questions to xen-api@lists.xen.org.
+For guidelines on submitting bug reports see http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP. Submit bugs and general questions to xen-api@lists.xen.org.
 
 
 COPYRIGHT

@@ -1,0 +1,37 @@
+
+PV interactive Linux installation
+
+
+We are going to create a Cent OS 6.3 64bit VM from XCP's VM templates. The Cent OS VM will be a network install using the Cent OS repositories. This installation will require a XCP network with an Internet gateway, so we can access the repositories during the installation. We will be entering all the commands on the XCP host's command line.
+
+Our first step will to be to create the VM using XCP's VM templates. We are going to use the vm-install command. If you want to supply your own name-label for this virtual machine supply it using the new-name-label parameter (enclose the name in quotes if it contains spaces). 
+
+To create the VM type: 
+	xe vm-install new-name-label="Cent OS" template=CentOS\ 6\ \(64-bit\) 
+
+After the command is complete, the UUID of the VM will be returned. 
+
+
+Now that the virtual machine is created, we need to create a VIF interface to allow the VM to communicate with the Cent OS repositories. This requires the new VM's UUID and the UUID of the network with an Internet gateway. Also because the VM was recently created we are safe to supply the device parameter with a 0.
+
+To create the VIF type:
+	xe vif-create network-uuid=<Network UUID> vm-uuid=<VM UUID> device=0
+
+After the command is complete, the UUID of the VIF will be returned. 
+
+
+With the VM having network access we need to add the Cent OS repositories to the VM's parameters. The URL for the 64-bit repositories is:  http://mirror.centos.org/centos/6/os/x86_64/
+
+To add the install repositories to vm parameters type:
+	xe vm-param-set uuid=<VM UUID> other-config:install-repository=http://mirror.centos.org/centos/6/os/x86_64/
+
+
+Lets start up the VM, connect to the console, and proceed with the installation. 
+
+To start up the VM type: 
+	xe vm-start uuid=<VM UUID>
+
+To connect to the VM's console type:
+	xe console uuid=<VM UUID>
+
+You can now proceed with the Cent OS installation. When Cent OS is finished with the installation the VM will reboot. You can connect to the VM again using the xe console command to configure your VM. 

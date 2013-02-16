@@ -7,7 +7,7 @@ XE(1)
 
 NAME
 ----
-xe-vif-plug - Will plug in a VIF interface 
+xe-vif-plug - Plug in a VIF 
 
 SYNOPSIS
 --------
@@ -16,19 +16,7 @@ SYNOPSIS
 
 DESCRIPTION
 -----------
-*xe vif-plug* will attach a VIF interface to a running VM. VIF interfaces will be attached when you start a VM.
-
-//
-
-*xe vif-plug* will attach a VIF to a VM. VIFs will be automatically attached when you start a VM. 
-
-//
-
-*xe vif-plug* will attach a VIF interface to a VM. VIF interfaces will be automatically attached when you start a VM.
-
-//
-
-*xe vif-plug* will attach a VIF to a running VM. VIFs will be automatically attached when you start a VM.
+*xe vif-plug* attaches a VIF interface to a running VM. VIF interfaces are attached when you start a VM.
 
 
 REQUIRED PARAMETERS
@@ -54,7 +42,7 @@ Matthew Spah <spahmatthew@xenapiadmin.com>
 
 BUGS
 ----
-See http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP on how to send bug reports, send bugs and general questions to xen-api@lists.xen.org.
+For guidelines on submitting bug reports see http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP. Submit bugs and general questions to xen-api@lists.xen.org.
 
 
 COPYRIGHT

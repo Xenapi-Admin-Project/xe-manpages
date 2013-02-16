@@ -26,7 +26,7 @@ REQUIRED PARAMETERS
 -------------------
 
 *uuid*::
-	UUID of PIF interface - Use *xe pif-list* to obtain PIF interface UUIDs.
+	PIF UUID - Use *xe pif-list* to obtain PIF interface UUIDs.
 
 
 OPTIONAL PARAMETERS
@@ -34,36 +34,45 @@ OPTIONAL PARAMETERS
 
 *disallow-unplug*::
 	Enable disallow-unplug on a PIF interface. Set *true* to enable, or *false* to disable.  (e.g. *disallow-unplug="true"*)
+	Enable disallow-unplug on a PIF. *[ true | false ]*
 	
 *other-config:ethtool-speed*::
 	Speed of PIF interface in Mbps. (e.g. *ethtool-speed="100"*).
 
 *other-config:ethtool-autoneg*::
 	Enable autonegotiation on PIF interface. Set *on* to enable, *off* to disable. (e.g. *ethtool-autoneg="on"*)
-	
+	Enable autonegotiation on PIF. *[ on | off ]*
 *other-config:ethtool-duplex*::
 	Duplex mode of PIF interface. Set to *full* or *half*. (e.g. *ethtool-duplex="full"*)
+	Duplex mode of PIF. *[ full | half ]*
 
 *other-config:ethtool-rx*::
 	Enable receive checksum. Set *on* to enable, *off* to disable. (e.g. ethtool-rx="on")
+	Enable receive checksum. *[ on | half ]*
 
 *other-config:ethtool-tx*::
 	Enable transmit checksum. Set *on* to enable, *off* to disable. (e.g. *ethtool-tx="on"*)
+	Enable transmit checksum. *[ on | off ]*
 
 *other-config:ethtool-sg*::
 	Enable scatter gather. Set *on* to enable, *off* to disable. (e.g. *ethtool-sg="on"*)
+	Enable scatter gather. *[ on | off ]*
 
 *other-config:ethtool-tso*::
 	Enable TCP segmentation offload. Set *on* to enable, *off* to disable. (e.g. *ethtool-tso="on"*)
+	Enable TCP segmentation offload. *[ on | off ]*
 
 *other-config:ethtool-ufo*::
 	Enable UDP fragment offload. Set *on* to enable,  *off* to disable. (e.g. *ethtool-ufo="on"*)
+	Enable UDP fragment offload. *[ on | off ]*
 
 *other-config:ethtool-gso*::
 	Enable generic segmentation offload. Set *on* to enable, *off* to disable. (e.g. *ethtool-gso="on"*)
+	Enable generic segmentation offload. *[ on | off ]*
 
 *other-config:domain*::
 	Set the DNS search path ( DNS Suffix ). Use a comma as a field separator.
+	
 
 *other-config:bond-miimon*::
 	Set the time between link liveness checks, in milliseconds.
@@ -96,12 +105,12 @@ SEE ALSO
 AUTHORS
 -------
 Manpage Author(s): ::
-Matthew Spah <spahmatthew@xenapiadmin.com>
+Matthew Spah <spahmatthew@xenapiadmin.com> +
 Lisa Nguyen <lisa@xenapiadmin.com>
 
 BUGS
 ----
-See http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP on how to send bug reports, send bugs and general questions to xen-api@lists.xen.org.
+For guidelines on submitting bug reports see http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP. Submit bugs and general questions to xen-api@lists.xen.org.
 
 
 COPYRIGHT

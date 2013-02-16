@@ -1,0 +1,57 @@
+
+** Interactive Network Cent OS 6.3 install via xe console **
+
+DRAFT OUTLINE
+
+TOPICS
+
+1) Present an intro to the user about what we are going to cover.
+	*Interactive install (e.g. no kickstart install script)
+	*Cent OS 6.3 via network repos
+	*Use Cent OS 6.0 64bit VM template
+	*Use Local SR. Should we explain to the user what a local SR is? 
+	*Explain the network configuration
+	
+2) Create the Cent OS VM
+	* Create the Cent OS 6.3 VM via template
+		- $xe vm-install new-name-label="Cent_OS_VM" template=<Cent OS 64bit 6.0 template> sr-uuid=<SR UUID>
+	* Explain to the user how $xe vm-install operates
+		- It creates a VM object, VDI object, and a VBD object.
+	* Show the user how to use some low level commands to view the objects created by $xe vm-install 
+		- $xe vm-param-list uuid=<VM UUID> will display all the new VMs parameters.
+		- $xe vbd-param-list vm-uuid=<VM UUID> will display the VBD created and all the parameters
+		- $xe vdi-param-list uuid=<VDI UUID> will display the VDI created and all the parameters
+	
+	
+3) Hook up our new Cent OS VM to a network
+	* Instruct the user how to display networks present on the host. We need to select the one on the same subnet as the internet gateway.
+		- $xe network-list
+	* Once the network uuid is found, we create the VIF.
+		- $xe vif-create vm-uuid=<VM UUID> network-uuid=<Network UUID> device=0
+	* Should we show the user how to view the newly created VIF?
+		- $xe vm-vif-list uuid=<VM UUID> 
+
+4) Set the Cent OS install repo
+	* We need to set the VM to use the Cent OS 64bit 6.3 network repo for a network install to work correctly.
+		- $xe vm-param-set uuid=<VM UUID> other-config:install-repo=<URL>
+	* Should we show the user how to view if the parameter was set correctly?
+
+5) Start up the VM and connect to the console
+		* $xe vm-start uuid=<VM UUID>
+			- use $xe vm-list to show the user how to view the status of a VM
+		* $xe console uuid=<VM UUID>
+
+6) Guide the user through the interactive Cent OS install
+	* Should we even bother with this? I mean any idiot should be able to install Cent OS.
+	
+
+7) Show the user how to start and shutdown the new VM.
+	* $xe vm-start uuid=<VM UUID>
+	* $xe vm-shutdown uuid=<VM UUID>
+	* $xe console uuid=<VM UUID>
+	
+8) Backing up the VM.
+	* Should we cover backing up a VM??
+	
+	
+	

@@ -8,16 +8,9 @@ XE(1)
 NAME
 ----
 
-xe-network-param-remove - Removes a param-key from a network.
-// added an 's' after "Remove", added a period --Christina
-// Should it be "Remove a param-key from a network" as in "xe-network-param-remove - [How to] Remove a param-key"
-// OR "Removes a param-key from a network" as in "[The command] xe-network-param-remove Removes a param-key from a network."
-// Y'know whattamean? The former sounds more like a TITLE or a NAME, whereas the latter sounds more like..well, a DESCRIPTION
-// Also, is the param-key writeable? --Christina
+xe-network-param-remove - Removes a param-key from a network
 
-// I'm not to sure about this one... this might be one for the grammar book :) - Matt
-// removes -   3rd person singular present, plural of re·move
-// I think it's Remove because we are removing a signal parameter.
+// Christina you are right. It's removes  - Matt
 
 SYNOPSIS
 --------
@@ -28,10 +21,7 @@ DESCRIPTION
 -----------
 
 *xe network-param-remove* removes a param-key value from a set/map parameter assigned to a network found in a pool.
-// What do you think of "removes a param-key value from a set or map writeable paramenter assigned to a network in a pool."
-// OR "removes a param-key value from a set or map parameter assigned to a network." etc. etc. --Christina
 
-// I'm thinking it's remove but I need to look into this more. God damn english language! - Matt
 
 REQUIRED PARAMETERS
 -------------------
@@ -67,7 +57,7 @@ Matthew Spah <spahmatthew@xenapiadmin.com>
 
 BUGS
 ----
-See http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP on how to send bug reports, send bugs and general questions to xen-api@lists.xen.org.
+For guidelines on submitting bug reports see http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP. Submit bugs and general questions to xen-api@lists.xen.org.
 
 COPYRIGHT
 ---------

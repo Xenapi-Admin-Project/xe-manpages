@@ -11,40 +11,47 @@ xe-pif-unplug - Brings a PIF interface down
 
 SYNOPSIS
 --------
+
 *xe pif-unplug* uuid=<PIF UUID>
 
 DESCRIPTION
 -----------
-*xe pif-unplug* will bring down a specified PIF interface on a host if allowed. The PIF interface will retain its configuration. If successful, *xe pif-list* will show an unplugged pif as *currently-attached ( RO): false*.
+*xe pif-unplug* brings down a specified PIF interface on a host if . The PIF interface will retain its configuration. If successful, *xe pif-list* will show an unplugged pif as *currently-attached ( RO): false*.
+
+*xe pif-unplug* unplugs a PIF on a host. The *disallow-unplug* parameter controls the success of *xe pif-unplug*. A detached PIF will retain its configuration. Use *xe pif-plug* to attach a PIF. 
+
 
 REQUIRED PARAMETERS
 -------------------
 
 *uuid*::
-	UUID of PIF interface. - Use *xe pif-list* to obtain a list of PIF interface UUIDs.
+	PIF UUID - Use *xe pif-list* to obtain a list of PIF interface UUIDs.
 
 EXAMPLES
 --------
-To check if a PIF interface is unplugged: ::
+
+
+To check if a PIF can be unplugged: ::
+
+To check if a PIF is unplugged: ::
 	*xe pif-param-get* uuid=<PIF UUID> param-name="currently-attached"
 
-To unplug a PIF interface: ::
+To unplug a PIF: ::
 	*xe pif-unplug* uuid=<PIF UUID>
 
 SEE ALSO
 --------
-*xe-pif-scan*(1), *xe-pif-list*(1), *xe-pif-plug*(1), *xe-pif-param-set*(1), *xe-pif-param-list*(1), 
-*xe-pif-reconfigure-ip*(1), *xe-pif-param-get*(1), *xe-network-list*(1)
+*xe-pif-scan*(1), *xe-pif-list*(1), *xe-pif-plug*(1), *xe-pif-param-set*(1), *xe-pif-param-list*(1), *xe-pif-reconfigure-ip*(1), *xe-pif-param-get*(1), *xe-network-list*(1)
 
 AUTHORS
 -------
 Manpage Author(s): ::
-Matthew Spah <spahmatthew@xenapiadmin.com>
+Matthew Spah <spahmatthew@xenapiadmin.com> +
 Lisa Nguyen <lisa@xenapiadmin.com>
 
 BUGS
 ----
-See http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP on how to send bug reports, send bugs and general questions to xen-api@lists.xen.org.
+For guidelines on submitting bug reports see http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP. Submit bugs and general questions to xen-api@lists.xen.org.
 
 
 COPYRIGHT

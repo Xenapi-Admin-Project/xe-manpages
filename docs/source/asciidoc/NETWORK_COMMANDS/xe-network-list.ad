@@ -12,7 +12,7 @@ xe-network-list - Lists all networks and their paramters.
 SYNOPSIS
 --------
 
-*xe network-list*  [ params=<parameter> ]
+*xe network-list*  [ params=<parameter> ] [--minimal]
 
 
 DESCRIPTION
@@ -26,33 +26,53 @@ OPTIONAL PARAMETERS
 
 *uuid*::
 	Network UUID.
+	
+	Display network UUID.
 
 *name-label*::
 	name-label of the network.
+	
+	Display name-label of the network.
 
 *name-description*::
 	description of the network.
+	
+	Display description of the network.
 
 *VIF-uuids*::
 	VIF interfaces attached to the network.
 	
+	Display VIF interfaces attached to the network.
+	
 *PIF-uuids*::
  	PIF interfaces attached to the network. 
+ 	
+ 	Display PIF interfaces attached to the network.
 
 *MTU*::
 	MTU value of a network.
 	
+	Display MTU value of a network. 
+	
 *bridge*::
-	Name of the bridge on the host.
+	Name of the bridge.
+	
+	Display name of the bridge.
 
 *blobs*::
 	Binary data store.
+	
+	Display binary data store.
 
 *tags*::
-	Writable tag paramter. 
+	Writable tag parameter. 
+	
+	Display writable tag parameter.
 
 *other-config:static-routes*::
-	Comma seperated list of Static routes present on network.  <Network Address>/<Subnet Mask>/<Next hop address> 
+	Comma seperated list of Static routes present on network.  <Network Address>/<Subnet Mask>/<Next hop address>
+	
+	Display comma seperated list of Static routes present on network.  <Network Address>/<Subnet Mask>/<Next hop address> 
 
 *other-config:ethtool-autoneg*::
 	Ethernet Autonegotiation status. 
@@ -79,16 +99,16 @@ OPTIONAL PARAMETERS
 EXAMPLES
 --------
 
-To display the *name-label* and *UUID* of all networks with a *MTU of 1500*: ::
+To display the *name-label* and *UUID* parameters of all networks with a *MTU of 1500*: ::
 	*xe network-list* MTU="1500" params="name-label,uuid"
 
-To display all paramters for a specific network type: ::
+To display all paramters for a specific network: ::
 	*xe network-list* uuid=<NETWORK UUID> params="all"
 	
-To display all parameters for all networks in a pool type: ::
+To display all parameters for all networks in a pool: ::
 	*xe network-list* params="all"
 	
-To display *VIF-uuids* for a specific network type: ::
+To display *VIF-uuids* for a specific network: ::
 	*xe network-list* uuid=<NETWORK UUID> params="VIF-uuids"
 
 
@@ -105,7 +125,7 @@ Matthew Spah <spahmatthew@xenapiadmin.com>
 
 BUGS
 ----
-See http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP on how to send bug reports, send bugs and general questions to xen-api@lists.xen.org.
+For guidelines on submitting bug reports see http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP. Submit bugs and general questions to xen-api@lists.xen.org.
 
 COPYRIGHT
 ---------

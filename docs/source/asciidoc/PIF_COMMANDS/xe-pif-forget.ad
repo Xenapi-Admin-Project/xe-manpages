@@ -18,23 +18,23 @@ SYNOPSIS
 
 DESCRIPTION
 -----------
-*xe pif-forget* removes a PIF interface from the XCP database, so it will not be listed. Use *xe pif-list* to verify the removal process. 
-See *xe vlan-destroy* to erase a pseudo PIF interface connected to a VLAN.
-// Do we want to warn them NOT to use xe pif-scan at this point? This could be helpful information for some people. -Paul
-// Check to see if you can erase a physical PIF with an active PIF attached.
+*xe pif-forget* removes a PIF interface from the XCP database, so it will not be listed. Use *xe pif-list* to verify the removal process. See *xe vlan-destroy* to erase a pseudo PIF interface connected to a VLAN.
+
+*xe pif-forget* removes a PIF interface from a host. Use *xe vlan-destroy* to remove a pseudo PIF 
+
+
 
 REQUIRED PARAMETERS
 -------------------
 
-//edited sentence -lisa
 *uuid*::
-	UUID of PIF interface - Use *xe pif-list* to obtain PIF interface UUIDs.
+	PIF UUID - Use *xe pif-list* to obtain PIF interface UUIDs.
 	
 EXAMPLES
 ---------
-// added example -lisa
-// To delete a PIF interface:
-//		*xe pif-forget* uuid=<PIF UUID>
+
+To delete a PIF interface: :: 
+	*xe pif-forget* uuid=<PIF UUID>
 	
 	
 SEE ALSO
@@ -45,12 +45,12 @@ SEE ALSO
 AUTHORS
 -------
 Manpage Author(s): ::
-Matthew Spah <spahmatthew@xenapiadmin.com>
+Matthew Spah <spahmatthew@xenapiadmin.com> +
 Lisa Nguyen <lisa@xenapiadmin.com>
 
 BUGS
 ----
-See http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP on how to send bug reports, send bugs and general questions to xen-api@lists.xen.org.
+For guidelines on submitting bug reports see http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP. Submit bugs and general questions to xen-api@lists.xen.org.
 
 
 COPYRIGHT

@@ -108,7 +108,7 @@ Also list xe help <command> as a second source.
 
 The AUTHORS section should specify all the authors that worked on the manpage.
 
-Manpage Author(s): 
+Manpage Author(s):: 
 	[Author(s)]
  
  

@@ -26,24 +26,25 @@ DESCRIPTION
 
 REQUIRED PARAMETERS
 -------------------
-//edited descriptions -lisa
+
+
 *mode*::
-	Addressing mode for PIF interface. Mode options are dhcp, static, or none.
+	Addressing mode for PIF. *[ dhcp | static | none ]*
 
 *uuid*::
-	UUID of PIF interface - Use *xe pif-list* to obtain PIF interface UUIDs.
+	PIF UUID - Use *xe pif-list* to obtain PIF UUIDs.
 	
 *IP*::
-	IPv4 Host address of PIF interface. Address is only required for static mode.
+	IPv4 Host address of PIF. Address is required for static mode.
 
 *netmask*::
-	Netmask address of PIF interface
+	Netmask address of PIF.
 
 OPTIONAL PARAMETERS
 -------------------
 
 *DNS*::
-	Name server addresses. When configuring multiple name servers use a comma as a field separator.
+	Name server addresses, when configuring multiple name servers use a comma as a field separator.
 
 *gateway*::
 	Gateway address
@@ -51,11 +52,11 @@ OPTIONAL PARAMETERS
 EXAMPLES
 --------
 
-To set a PIF interface for DHCP:
-	*xe pif-reconfigure-ip* mode=dhcp uuid=<PIF UUID>
+To set a PIF interface for DHCP: ::
+	*xe pif-reconfigure-ip* mode="dhcp" uuid=<PIF UUID>
 	
-To set a PIF interface with a static IP address configuration:
-	*xe pif-reconfigure-ip* mode=static uuid=<PIF UUID> IP=192.168.1.2 netmask=255.255.255.0 gateway=192.168.1.1
+To set a PIF interface with a static IP address configuration: ::
+	*xe pif-reconfigure-ip* mode="static" uuid=<PIF UUID> IP="192.168.1.2" netmask="255.255.255.0" gateway="192.168.1.1"
 
 SEE ALSO
 --------
@@ -68,12 +69,12 @@ See http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP on how to send bug repor
 AUTHORS
 -------
 Manpage Author(s): ::
-Matthew Spah <spahmatthew@xenapiadmin.com>
+Matthew Spah <spahmatthew@xenapiadmin.com> +
 Lisa Nguyen <lisa@xenapiadmin.com>
 
 BUGS
 ----
-See http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP on how to send bug reports, send bugs and general questions to xen-api@lists.xen.org.
+For guidelines on submitting bug reports see http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP. Submit bugs and general questions to xen-api@lists.xen.org.
 
 
 COPYRIGHT

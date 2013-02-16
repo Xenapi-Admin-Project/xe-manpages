@@ -7,7 +7,7 @@ XE(1)
 
 NAME
 ----
-xe-network-param-get - Returns a parameter for a network.
+xe-network-param-get - Returns a parameter for a network
 
 SYNOPSIS
 --------
@@ -27,9 +27,8 @@ REQUIRED PARAMETERS
 *uuid*::
 	Network UUID - Use *xe network-list* to obtain a list of network UUIDs.
 
-
 *param-name*::
-	Parameter for the network.
+	Parameter for a network.
 	
 OPTIONAL PARAMETERS
 -------------------
@@ -48,12 +47,11 @@ To display the *static-routes* present on a network: ::
 	*xe network-param-get* uuid=<network uuid> param-name="other-config" param-key="static-routes"
 
 To display the *default-locking-mode* parameter on a network: ::
-	*Xe network-param-get* uuid=<network uuid> param-name="default-locking-mode"
+	*xe network-param-get* uuid=<network uuid> param-name="default-locking-mode"
 
 SEE ALSO
 --------
-*xe-network-list*(1), *xe-network-create*(1), *xe-network-param-list*(1), *xe-pif-list*(1), *xe-vif-list*(1)
-*xe-network-param-set*(1)
+*xe-network-list*(1), *xe-network-create*(1), *xe-network-param-list*(1), *xe-pif-list*(1), *xe-vif-list*(1), *xe-network-param-set*(1)
 
 
 AUTHORS
@@ -64,7 +62,7 @@ Matthew Spah <spahmatthew@xenapiadmin.com>
 
 BUGS
 ----
-See http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP on how to send bug reports, send bugs and general questions to xen-api@lists.xen.org.
+For guidelines on submitting bug reports see http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP. Submit bugs and general questions to xen-api@lists.xen.org.
 
 COPYRIGHT
 ---------

@@ -7,26 +7,21 @@ XE(1)
 
 NAME
 -----
-xe-network-param-set - Set parameters for a network.
+xe-network-param-set - Set parameters for a network
 
 SYNOPSIS
 --------
-
-*xe network-param-set* uuid=<NETWORK UUID>
-
 *xe network-param-set* uuid=<NETWORK UUID> [ name-label=<name label> ] [ name-description=<description> ] [ MTU=<MTU SIZE> ] [ default-locking-mode=<Locking mode> ]
 										   [ other-config:<Parameter Key>=<Key Value> ]
 	
 
 DESCRIPTION
 -----------
-
 *xe network-param-set* sets read/write parameters for a network.
 
 
 REQUIRED PARAMETERS
 -------------------
-
 *uuid*::
 	Network UUID - Use *xe network-list* to obtain a list of network UUIDs.
 
@@ -45,12 +40,15 @@ OPTIONAL PARAMETERS
 *default-locking-mode*::
 	Set to *disabled* to have VIF interfaces filter all traffic. Set to *unlocked* to remove all filtering rules associated with the VIF interfaces. Default is "unlocked".
 	
+	Set switchport locking mode *[ disabled | unlocked ]*
+	
 *other-config:static-routes*::
-	To create a static route for a network use the following syntax *<Network Address>/<Subnet Mask>/<Next Hop Address>*. 
-	Seperate multiple routes using a comma.
+	To create a static route for a network use the following syntax *<Network Address>/<Subnet Mask>/<Next Hop Address>*. Seperate multiple routes using a comma. (e.g. static-routes=192.168.1.0/24/192.168.1.1)
 		
 *other-config:ethtool-autoneg*::
 	Enable autonegotiation on a network. Set *on* to enable, *off* to disable. (e.g. *ethtool-autoneg="on"*)
+	
+	Enable autonegotiation on a network. ethtool-autoneg=[ on | off ]
 	
 *other-config:ethtool-rx*:: 
 	Enable receive checksum. Set *on* to enable, *off* to disable. (e.g. *ethtool-rx="on"*)
@@ -97,7 +95,7 @@ Matthew Spah <spahmatthew@xenapiadmin.com>
 
 BUGS
 ----
-See http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP on how to send bug reports, send bugs and general questions to xen-api@lists.xen.org.
+For guidelines on submitting bug reports see http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP. Submit bugs and general questions to xen-api@lists.xen.org.
 
 COPYRIGHT
 ---------

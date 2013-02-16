@@ -7,7 +7,7 @@ XE(1)
 
 NAME
 ----
-xe-pif-list - Lists PIF interfaces in a resource pool
+xe-pif-list - Displays PIFs and their parameters
 
 SYNOPSIS
 --------
@@ -15,17 +15,17 @@ SYNOPSIS
 
 DESCRIPTION
 -----------
-*xe pif-list* lists Physical Interfaces (PIF) and their parameters found in a pool. Output can be filtered by supplying params=<parameter>. Multiple parameters can be displayed by separating each parameter with a comma (e.g. params=uuid,name-label).
+*xe pif-list* displays Physical Interfaces (PIF) and their parameters found in a pool. Output can be filtered by supplying params=<parameter>. Multiple parameters can be displayed by separating each parameter with a comma (e.g. params=uuid,name-label).
 
 
 OPTIONAL PARAMETERS
 -------------------
 
 *device*::
-	Name of the machine-readable interface (e.g. eth0)
+	Display PIF's machine-readable interface (e.g. eth0)
 
 *MAC*::
-    MAC address of PIF interface.
+    Display MAC address of PIF interface.
 
 *physical*::
     If *true*, PIF is a physical interface on host.    
@@ -54,9 +54,12 @@ OPTIONAL PARAMETERS
     
 *network-uuid*:: 
     Attached Network UUID 
+    Display PIF's network UUID.
 
 *network-name-label*::
     Name of Network associated to PIF interface.
+    
+    Display PIF's network name-label.
 
 *host-uuid*:: 
     UUID of host PIF interface is present on.
@@ -175,7 +178,7 @@ Lisa Nguyen <lisa@xenapiadmin.com>
 
 BUGS
 ----
-See http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP on how to send bug reports, send bugs and general questions to xen-api@lists.xen.org.
+For guidelines on submitting bug reports see http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP. Submit bugs and general questions to xen-api@lists.xen.org.
 
 
 COPYRIGHT

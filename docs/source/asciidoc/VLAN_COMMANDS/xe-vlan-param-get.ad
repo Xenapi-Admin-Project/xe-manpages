@@ -25,7 +25,7 @@ REQUIRED PARAMETERS
 -------------------
 
 *uuid*::
-	UUID of VLAN - *xe vlan-list* lists all VLANs present in a pool.
+	VLAN UUID - Use *xe vlan-list* to obtain a list of VLAN UUIDs.
 
 *param-name*::
 	 Parameter for the VLAN.
@@ -56,7 +56,7 @@ Matthew Spah <spahmatthew@xenapiadmin.com>
 
 BUGS
 ----
-See http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP on how to send bug reports, send bugs and general questions to xen-api@lists.xen.org.
+For guidelines on submitting bug reports see http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP. Submit bugs and general questions to xen-api@lists.xen.org.
 
 
 COPYRIGHT

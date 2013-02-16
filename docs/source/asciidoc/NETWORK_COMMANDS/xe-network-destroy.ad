@@ -7,7 +7,7 @@ XE(1)
 
 NAME
 -----
-xe-network-destroy - Erase a Network.
+xe-network-destroy - Erase a network
 
 
 SYNOPSIS
@@ -17,12 +17,10 @@ SYNOPSIS
 
 DESCRIPTION
 -----------
-*xe network-destroy* will destroy a network that contains no active PIFs, VIFs, or a VLAN. VIF interfaces associated with the network will also be erased. To detach PIF and VIF interfaces use *xe pif-unplug* and *xe vif-unplug*. To remove a VLAN see *xe vlan-destroy*.   
 
-*xe network-destroy* will destroy a network. To destroy a network, VIFs and PIFs must be detached, and there can be no VLAN present. To detach PIFs and VIFs, see *xe pif-unplug* and *xe vif-unplug*. To remove a VLAN see *xe vlan-destroy*.
+*xe network-destroy* removes a network that contains no active PIFs, VIFs, or VLANs. VIF interfaces associated with the network are also removed. To detach PIF and VIF interfaces use *xe pif-unplug* and *xe vif-unplug*. To remove a VLAN use *xe vlan-destroy*.   
 
 
-// bah keep going with this
 
 
 REQUIRED PARAMETERS
@@ -40,7 +38,7 @@ To erase a network from a pool type: ::
 
 SEE ALSO
 --------
-*xe-network-create*(1), *xe-network-list*(1), *xe pif-unplug*(1), *xe vif-unplug*(1), *xe vlan-destroy*(1)
+*xe-network-create*(1), *xe-network-list*(1), *xe-pif-unplug*(1), *xe-vif-unplug*(1), *xe-vlan-destroy*(1)
 
 AUTHORS
 -------
@@ -50,7 +48,7 @@ Matthew Spah <spahmatthew@xenapiadmin.com>
 
 BUGS
 ----
-See http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP on how to send bug reports, send bugs and general questions to xen-api@lists.xen.org.
+For guidelines on submitting bug reports see http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP. Submit bugs and general questions to xen-api@lists.xen.org.
 
 COPYRIGHT
 ---------

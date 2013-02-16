@@ -8,7 +8,7 @@ XE(1)
 NAME
 ----
 
-xe-pif-scan - Scans for new physical interfaces on a host.
+xe-pif-scan - Scans for new network interfaces on a host
 
 
 SYNOPSIS
@@ -20,21 +20,10 @@ DESCRIPTION
 -----------
  
 
-//
+*xe pif-scan* scans a host for new physical network devices. If multiple devices are found, *xe pif-scan* creates a new PIF with a network for each one. Use *xe pif-plug* to attach the PIFs to the networks. Use extreme caution when adding new physical network devices to a pool. 
 
-*xe pif-scan* scans a host for new physical network devices, if found, a new PIF is created along with an external network associated with it.
+// We need to add something about the proper way to use *xe pif-scan*, my idea is to start 
 
-//
-
-*xe pif-scan* scans a host for a new physical network device; if found, a new PIF with an external network is created.
-
-//
-
-*xe pif-scan* scans the host for network devices that don't have a PIF associated with them; if found, a new PIF with an external network is created.
-
-//
-
-*xe pif-scan* scans the host for network devices without affiliated PIFs; if found, a new PIF with an external network is created.
 
 
 
@@ -47,7 +36,7 @@ REQUIRED PARAMETERS
 EXAMPLES
 --------
 
-To scan a host for new PIF interfaces:
+To scan a host for new PIF: ::
 	*xe-pif-scan* uuid=<Host UUID>
 
 SEE ALSO
@@ -60,12 +49,12 @@ SEE ALSO
 AUTHORS
 -------
 Manpage Author(s): ::
-Matthew Spah <spahmatthew@xenapiadmin.com>
+Matthew Spah <spahmatthew@xenapiadmin.com> +
 Lisa Nguyen <lisa@xenapiadmin.com>
 
 BUGS
 ----
-See http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP on how to send bug reports, send bugs and general questions to xen-api@lists.xen.org.
+For guidelines on submitting bug reports see http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP. Submit bugs and general questions to xen-api@lists.xen.org.
 
 
 COPYRIGHT
