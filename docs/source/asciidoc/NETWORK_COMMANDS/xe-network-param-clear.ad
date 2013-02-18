@@ -11,7 +11,7 @@ xe-network-param-clear - Clears a specific writable parameter for a network
 
 SYNOPSIS
 --------
-*xe network-param-clear* uuid=<Network UUID> param-name=<Parameter>
+*xe network-param-clear* uuid=<NETWORK UUID> param-name=<PARAMETER>
 
 DESCRIPTION
 -----------
@@ -31,10 +31,10 @@ EXAMPLES
 --------
 
 To clear all values found in the *other-config* parameter: ::
-	*xe network-param-clear* uuid=<Network UUID> param-name="other-config"
+	*xe network-param-clear* uuid=<NETWORK UUID> param-name="other-config"
 
 To clear the *name-description* parameter: ::
-	*xe network-param-clear* uuid=<Network UUID> param-name="name-description"
+	*xe network-param-clear* uuid=<NETWORK UUID> param-name="name-description"
 
 	
 SEE ALSO

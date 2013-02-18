@@ -12,7 +12,7 @@ xe-pif-param-add - Add a key to a parameter for a PIF
 SYNOPSIS
 --------
 
-*xe pif-param-add* uuid=<PIF UUID> param-name=<Parameter> [ param-key=<Parameter Key> ] [ <key>=<value> ]
+*xe pif-param-add* uuid=<PIF UUID> param-name=<PARAMETER> [ param-key=<PARAMETER KEY> ] [ <KEY>=<VALUE> ]
 
 DESCRIPTION
 -----------
@@ -40,7 +40,7 @@ EXAMPLES
 --------
 
 To add a DNS search path ( DNS Suffix ) value for a PIF interface: ::
-	*xe pif-param-add* uuid=<PIF UUID> param-name=other-config domain=<DNS Suffix>
+	*xe pif-param-add* uuid=<PIF UUID> param-name=other-config domain=<DNS SUFFIX>
 	
 
 SEE ALSO

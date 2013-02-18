@@ -14,7 +14,7 @@ xe-pif-scan - Scans for new network interfaces on a host
 SYNOPSIS
 --------
 
-*xe pif-scan* uuid=<Host UUID>
+*xe pif-scan* uuid=<HOST UUID>
 
 DESCRIPTION
 -----------
@@ -37,7 +37,7 @@ EXAMPLES
 --------
 
 To scan a host for new PIF: ::
-	*xe-pif-scan* uuid=<Host UUID>
+	*xe-pif-scan* uuid=<HOST UUID>
 
 SEE ALSO
 --------

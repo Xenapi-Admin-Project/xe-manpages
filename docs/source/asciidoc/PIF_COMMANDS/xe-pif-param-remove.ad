@@ -11,7 +11,7 @@ xe-pif-param-remove - Removes a writable parameter key for a PIF.
 
 SYNOPSIS
 --------
-*xe pif-param-remove* uuid=<PIF UUID> param-name=<Parameter> param-key=<Parameter Key>
+*xe pif-param-remove* uuid=<PIF UUID> param-name=<PARAMETER> param-key=<PARAMETER KEY>
 
 DESCRIPTION
 -----------

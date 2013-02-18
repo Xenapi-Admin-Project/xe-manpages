@@ -14,7 +14,7 @@ SYNOPSIS
 
 *xe pif-param-set* uuid=<PIF UUID> 
 
-*xe pif-param-set* uuid=<PIF UUID> [ disallow-unplug=<true | false> ] [ other-config:<parameter key>=<key value> ]
+*xe pif-param-set* uuid=<PIF UUID> [ disallow-unplug=<VALUE> ] [ other-config:<PARAMETER KEY>=<KEY VALUE> ]
 
 DESCRIPTION
 -----------
@@ -33,47 +33,38 @@ OPTIONAL PARAMETERS
 -------------------
 
 *disallow-unplug*::
-	Enable disallow-unplug on a PIF interface. Set *true* to enable, or *false* to disable.  (e.g. *disallow-unplug="true"*)
-	Enable disallow-unplug on a PIF. *[ true | false ]*
+	Set disallow-unplug on a PIF: *[ true | false ]*
 	
 *other-config:ethtool-speed*::
-	Speed of PIF interface in Mbps. (e.g. *ethtool-speed="100"*).
+	Set speed of PIF interface in Mbps: ethtool-speed=*[ 10 | 100 | 1000 ]*
 
 *other-config:ethtool-autoneg*::
-	Enable autonegotiation on PIF interface. Set *on* to enable, *off* to disable. (e.g. *ethtool-autoneg="on"*)
-	Enable autonegotiation on PIF. *[ on | off ]*
+	Set autonegotiation status on PIF: ethtool-autoneg=*[ on | off ]*
+	
 *other-config:ethtool-duplex*::
-	Duplex mode of PIF interface. Set to *full* or *half*. (e.g. *ethtool-duplex="full"*)
-	Duplex mode of PIF. *[ full | half ]*
+	Set duplex mode of PIF: ethtool-duplex=*[ full | half ]*
 
 *other-config:ethtool-rx*::
-	Enable receive checksum. Set *on* to enable, *off* to disable. (e.g. ethtool-rx="on")
-	Enable receive checksum. *[ on | half ]*
+	Enable receive checksum: ethtool-rx=*[ on | half ]*
 
 *other-config:ethtool-tx*::
-	Enable transmit checksum. Set *on* to enable, *off* to disable. (e.g. *ethtool-tx="on"*)
-	Enable transmit checksum. *[ on | off ]*
+	Enable transmit checksum: ethtool-tx=*[ on | off ]*
 
 *other-config:ethtool-sg*::
-	Enable scatter gather. Set *on* to enable, *off* to disable. (e.g. *ethtool-sg="on"*)
-	Enable scatter gather. *[ on | off ]*
+	Enable scatter gather:  ethtool-sg=*[ on | off ]*
 
 *other-config:ethtool-tso*::
-	Enable TCP segmentation offload. Set *on* to enable, *off* to disable. (e.g. *ethtool-tso="on"*)
-	Enable TCP segmentation offload. *[ on | off ]*
+	Enable TCP segmentation offload: ethtool-tso=*[ on | off ]*
 
 *other-config:ethtool-ufo*::
-	Enable UDP fragment offload. Set *on* to enable,  *off* to disable. (e.g. *ethtool-ufo="on"*)
-	Enable UDP fragment offload. *[ on | off ]*
+	Enable UDP fragment offload: ethtool-ufo=*[ on | off ]*
 
 *other-config:ethtool-gso*::
-	Enable generic segmentation offload. Set *on* to enable, *off* to disable. (e.g. *ethtool-gso="on"*)
-	Enable generic segmentation offload. *[ on | off ]*
+	Enable generic segmentation offload: ethtool-gso=*[ on | off ]*
 
 *other-config:domain*::
 	Set the DNS search path ( DNS Suffix ). Use a comma as a field separator.
 	
-
 *other-config:bond-miimon*::
 	Set the time between link liveness checks, in milliseconds.
 	

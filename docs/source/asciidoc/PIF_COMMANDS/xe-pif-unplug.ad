@@ -16,9 +16,10 @@ SYNOPSIS
 
 DESCRIPTION
 -----------
-*xe pif-unplug* brings down a specified PIF interface on a host if . The PIF interface will retain its configuration. If successful, *xe pif-list* will show an unplugged pif as *currently-attached ( RO): false*.
+*xe pif-unplug* detaches a PIF from a host. A detached PIF will retain its configuration. The *disallow-unplug* parameter controls the success of *xe pif-unplug*. 
 
-*xe pif-unplug* unplugs a PIF on a host. The *disallow-unplug* parameter controls the success of *xe pif-unplug*. A detached PIF will retain its configuration. Use *xe pif-plug* to attach a PIF. 
+Use *xe pif-unplug* and *xe pif-plug* to enable new PIF configuration parameters on a host.
+
 
 
 REQUIRED PARAMETERS

@@ -19,6 +19,8 @@ DESCRIPTION
 
 *xe pif-plug* attaches a PIF. If successful, *xe pif-list* will show a plugged pif as *currently-attached ( RO): true*.
 
+// add more information about when you use xe-pif-plug, xe-pif-unplug
+
 REQUIRED PARAMETERS
 -------------------
 

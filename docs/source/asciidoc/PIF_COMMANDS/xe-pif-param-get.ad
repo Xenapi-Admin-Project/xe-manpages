@@ -13,7 +13,7 @@ xe-pif-param-get - Returns a parameter for a PIF
 SYNOPSIS
 --------
 
-*xe pif-param-get* uuid=<PIF UUID> param-name=<Parameter> [ param-key=<Parameter Key> ]
+*xe pif-param-get* uuid=<PIF UUID> param-name=<PARAMETER> [ param-key=<PARAMETER KEY> ]
 
 DESCRIPTION
 -----------

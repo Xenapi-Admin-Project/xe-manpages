@@ -8,12 +8,12 @@ XE(1)
 NAME
 -----
 
-xe-pif-set-primary-address-type - Set primary address type used by a PIF interface
+xe-pif-set-primary-address-type - Set primary address type used by a PIF
 
 SYNOPSIS
 --------
 
-*xe pif-set-primary-address-type* uuid=<PIF UUID> primary_address_type=<ipv6 | ipv4>
+*xe pif-set-primary-address-type* uuid=<PIF UUID> primary_address_type=<ADDRESS TYPE>
 
 
 DESCRIPTION
@@ -30,7 +30,7 @@ REQUIRED PARAMETERS
 	PIF UUID - Use *xe pif-list* to obtain a list PIF UUIDs.
 
 *primary_address_type*::
-	Primary address type IPv4 or IPv6. // I can do way better than this
+	Primary address type: *[ IPV4 | IPV6 ]*
 	
 
 EXAMPLES

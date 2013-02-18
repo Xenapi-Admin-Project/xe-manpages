@@ -11,22 +11,22 @@ xe-pif-reconfigure-ipv6 - Configure PIF IPv6 addressing
 
 SYNOPSIS
 --------
-*xe pif-reconfigure-ipv6*	mode=<autoconf | dhcp | none>	uuid=<PIF UUID>
+*xe pif-reconfigure-ipv6*	mode=[autoconf | dhcp | none]	uuid=<PIF UUID>
 
-*xe pif-reconfigure-ipv6*	mode=<static> uuid=<PIF UUID> IPv6=<IPv6 Address> [ gateway=<Gateway Address> ]
-							DNS=<Name Server>
+*xe pif-reconfigure-ipv6*	mode=static uuid=<PIF UUID> IPV6=<IPv6 ADDRESS> [ gateway=<GATEWAY ADDRESS> ]
+							DNS=<NAME SERVER>
 
 DESCRIPTION
 -----------
 
-*xe pif-reconfigure-ipv6* configures IPv6 address settings for a specific PIF interface. 
+*xe pif-reconfigure-ipv6* configures IPv6 address settings for a specific PIF. Address changes are applied immediately upon command excution.
 
 
 REQUIRED PARAMETERS
 -------------------
 
 *mode*::
-	Addressing mode for the PIF. *[ dhcp | static | autoconf | none ]*
+	Addressing mode for the PIF: mode=*[ dhcp | static | autoconf | none ]*
 
 *uuid*::
 	PIF UUID- Use *xe pif-list* to obtain PIF interface UUIDs
@@ -50,7 +50,7 @@ To set dhcp mode: ::
 	*xe pif-reconfigure-ipv6* mode=dhcp uuid=<PIF UUID>
 
 To set the static mode with a gateway address and one DNS: ::
-		*xe pif-reconfigure-ipv6* mode=static uuid=<PIF UUID> IPv6=<IPv6 Address> gateway=<Gateway Address> DNS=<Name Server>
+		*xe pif-reconfigure-ipv6* mode=static uuid=<PIF UUID> IPv6=<IPV6 ADDRESS> gateway=<GATEWAY ADDRESS> DNS=<NAME SERVER>
 
 
 SEE ALSO

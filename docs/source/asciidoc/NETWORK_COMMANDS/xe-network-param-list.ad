@@ -7,11 +7,11 @@ XE(1)
 
 NAME
 ----
-xe-network-param-list - Lists all parameters for a network. 
+xe-network-param-list - Lists all parameters for a network 
 
 SYNOPSIS
 --------
-*xe network-param-list* uuid=<Network UUID>
+*xe network-param-list* uuid=<NETWORK UUID>
 
 DESCRIPTION
 -----------
@@ -27,7 +27,7 @@ REQUIRED PARAMETERS
 EXAMPLES
 --------
 To display all parameters for a specific network: ::
-	*xe network-param-list* uuid=<Network UUID>
+	*xe network-param-list* uuid=<NETWORK UUID>
 
 SEE ALSO
 --------

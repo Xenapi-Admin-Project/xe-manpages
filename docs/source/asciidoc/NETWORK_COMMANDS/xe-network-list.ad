@@ -12,7 +12,7 @@ xe-network-list - Lists all networks and their paramters.
 SYNOPSIS
 --------
 
-*xe network-list*  [ params=<parameter> ] [--minimal]
+*xe network-list*  [ params=<PARAMETER> ] [--minimal]
 
 
 DESCRIPTION
@@ -25,75 +25,55 @@ OPTIONAL PARAMETERS
 -------------------
 
 *uuid*::
-	Network UUID.
-	
 	Display network UUID.
 
-*name-label*::
-	name-label of the network.
-	
+*name-label*::	
 	Display name-label of the network.
 
-*name-description*::
-	description of the network.
-	
+*name-description*::	
 	Display description of the network.
 
-*VIF-uuids*::
-	VIF interfaces attached to the network.
+*VIF-uuids*::	
+	Display VIFs attached to the network.
 	
-	Display VIF interfaces attached to the network.
-	
-*PIF-uuids*::
- 	PIF interfaces attached to the network. 
- 	
- 	Display PIF interfaces attached to the network.
+*PIF-uuids*:: 	
+ 	Display PIFs attached to the network.
 
-*MTU*::
-	MTU value of a network.
-	
+*MTU*::	
 	Display MTU value of a network. 
 	
 *bridge*::
-	Name of the bridge.
-	
 	Display name of the bridge.
 
-*blobs*::
-	Binary data store.
-	
+*blobs*::	
 	Display binary data store.
 
-*tags*::
-	Writable tag parameter. 
-	
+*tags*::	
 	Display writable tag parameter.
 
-*other-config:static-routes*::
-	Comma seperated list of Static routes present on network.  <Network Address>/<Subnet Mask>/<Next hop address>
-	
-	Display comma seperated list of Static routes present on network.  <Network Address>/<Subnet Mask>/<Next hop address> 
+*other-config:static-routes*::	
+	Display comma seperated list of Static routes present on network: *[ <SOURCE NETWORK ADDRESS>/<CIDR MASK>/<NEXT HOP ADDRESS> ]* 
 
 *other-config:ethtool-autoneg*::
-	Ethernet Autonegotiation status. 
+	Display ethernet Autonegotiation status: *[ on | off ]*
 
 *other-config:ethtool-rx*:: 
-	Receive checksum status.
+	Display receive checksum status: *[ on | off ]*
 
 *other-config:ethtool-tx*::
-	Transmit checksum status.
+	Display transmit checksum status: *[ on | off ]*
 
 *other-config:ethtool-sg*:: 
-	Scatter gather status.
+	Display scatter gather status: *[ on | off ]*
 
 *other-config:ethtool-tso*::
-	TCP segmentation offload status. 
+	Display TCP segmentation offload status: *[ on | off ]* 
 
 *other-config:ethtool-ufo*::
-	UDP fragment offload status.
+	Display UDP fragment offload status: *[ on | off ]*
 
 *other-config:ethtool-gso*::
-	Generic segmentation offload status.
+	Display generic segmentation offload status: *[ on | off ]*
 
 
 EXAMPLES

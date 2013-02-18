@@ -11,7 +11,7 @@ xe-pif-list - Displays PIFs and their parameters
 
 SYNOPSIS
 --------
-*xe pif-list*  [ params=<parameter> ]
+*xe pif-list*  [ params=<PARAMETER> ]
 
 DESCRIPTION
 -----------

@@ -10,12 +10,11 @@ NAME
 
 xe-network-param-remove - Removes a param-key from a network
 
-// Christina you are right. It's removes  - Matt
 
 SYNOPSIS
 --------
 
-*xe network-param-remove* uuid=<Network UUID> param-name=<Parameter Name> param-key=<Parameter Key>
+*xe network-param-remove* uuid=<NETWORK UUID> param-name=<PARAMETER NAME> param-key=<PARAMETER KEY>
 
 DESCRIPTION
 -----------
@@ -39,10 +38,10 @@ EXAMPLES
 --------
 
 To remove a specific key in the *tag* parameter: ::
-	*xe network-param-remove* uuid=<Network UUID> param-name="tags" param-key=<Key to be removed>
+	*xe network-param-remove* uuid=<NETWORK UUID> param-name="tags" param-key=<KEY>
 	
 To remove *static-routes* from a network: ::
-	*xe network-param-remove* uuid=<Network UUID> param-name="other-config" param-key="static-routes"
+	*xe network-param-remove* uuid=<NETWORK UUID> param-name="other-config" param-key="static-routes"
 
 SEE ALSO
 --------

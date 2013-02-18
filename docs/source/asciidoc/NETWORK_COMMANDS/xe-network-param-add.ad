@@ -12,7 +12,7 @@ xe-network-param-add - Add a key to a parameter for a network
 
 SYNOPSIS
 --------
-*xe network-param-add* uuid=<Network UUID> param-name=<Parameter> [ param-key=<Parameter key> ] [ <key>=<value> ]
+*xe network-param-add* uuid=<NETWORK UUID> param-name=<PARAMETER> [ param-key=<PARAMETER KEY> ] [ <KEY>=<VALUE> ]
 
 
 DESCRIPTION
@@ -40,7 +40,7 @@ EXAMPLES
 --------
 
 To add a key to the *tag* parameter: ::
-	*xe network-param-add* uuid=<Network UUID> param-name="tag" param-key=<Key>
+	*xe network-param-add* uuid=<NETWORK UUID> param-name="tag" param-key=<KEY>
 
 
 SEE ALSO
