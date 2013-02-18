@@ -11,13 +11,13 @@ xe-vif-param-get - Return a parameter for a virtual interface.
 
 SYNOPSIS
 --------
-*xe vif-param-get* uuid=<VIF UUID> param-name=<Parameter Name> [ param-key=<key> ]
+*xe vif-param-get* uuid=<VIF UUID> param-name=<PARAMETER NAME> [ param-key=<KEY> ]
 
 
 DESCRIPTION
 -----------
 
-*xe vif-param-get* returns a parameter or key value for a specified VIF interface.
+*xe vif-param-get* returns a parameter or key value for a specified VIF.
 
 
 REQUIRED PARAMETERS
@@ -40,7 +40,7 @@ OPTIONAL PARAMETERS
 EXAMPLES
 --------
 
-To display the *UUID* of the VM assigned the VIF interface type: ::
+To display the *UUID* of the VM assigned the VIF type: ::
 	*xe vif-param-get* uuid=<VIF UUID> param-name="vm-uuid"
 	
 To display the status of the map parameter *other-config:promiscous*: ::

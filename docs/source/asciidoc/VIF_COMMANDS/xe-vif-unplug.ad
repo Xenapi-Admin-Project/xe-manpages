@@ -16,11 +16,7 @@ SYNOPSIS
 
 DESCRIPTION
 -----------
-*xe vif-unplug* detaches a VIF from a running VM.
-
-//
-
-*xe vif-unplug* attempts to detach a VIF from a running VM. VIF interfaces retain their parameters while detached.
+*xe vif-unplug* attempts to detach a VIF from a running VM. VIF interfaces retain their parameters while detached. Use *xe vif-plug* to attach a detached VIF.
 
 
 
@@ -52,7 +48,6 @@ Matthew Spah <spahmatthew@xenapiadmin.com>
 BUGS
 ----
 For guidelines on submitting bug reports see http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP. Submit bugs and general questions to xen-api@lists.xen.org.
-
 
 
 COPYRIGHT

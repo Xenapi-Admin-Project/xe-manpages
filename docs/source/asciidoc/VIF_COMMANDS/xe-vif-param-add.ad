@@ -11,7 +11,7 @@ xe-vif-param-add - Adds a parameter for a virtual interface
 
 SYNOPSIS
 --------
-*xe vif-param-add* uuid=<VIF UUID> param-name=<Parameter name> [ param-key=<Parameter key> ]
+*xe vif-param-add* uuid=<VIF UUID> param-name=<PARAMETER NAME> [ param-key=<PARAMETER KEY> ]
 
 
 DESCRIPTION

@@ -12,7 +12,7 @@ xe-vif-param-set - Sets read-write parameters for a VIF
 SYNOPSIS
 --------
 
-*xe vif-param-set* uuid=<VIF UUID> [ qos_algorithm_type=<Type> locking-mode=<Mode> ipv4-allowed=<IPv4 Address> ipv6-allowed=<IPv6 Address> qos_algorithm_params:<Parameter>=<Value> other-config:<Parameter>=<Key> ]
+*xe vif-param-set* uuid=<VIF UUID> [ qos_algorithm_type=<TYPE> locking-mode=<MODE> ipv4-allowed=<IPV4 ADDRESS> ipv6-allowed=<IPV6 ADDRESS> qos_algorithm_params:<PARAMETER>=<VALUE> other-config:<PARAMETER>=<KEY> ]
 
 
 DESCRIPTION

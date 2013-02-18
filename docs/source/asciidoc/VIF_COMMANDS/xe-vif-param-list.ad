@@ -16,7 +16,7 @@ SYNOPSIS
 
 DESCRIPTION
 -----------
-*xe vif-param-list* lists all parameters for a specific VIF interface.
+*xe vif-param-list* lists all parameters for a specific VIF.
 
 
 REQUIRED PARAMETERS

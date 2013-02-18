@@ -11,7 +11,7 @@ xe-vif-param-remove - Removes a writable parameter key for a virtual interface.
 
 SYNOPSIS
 --------
-*xe vif-param-remove* uuid=<VIF UUID> param-name=<Parameter> param-key=<Parameter Key>
+*xe vif-param-remove* uuid=<VIF UUID> param-name=<PARAMETER> param-key=<PARAMETER KEY>
 
 
 DESCRIPTION
@@ -42,7 +42,6 @@ To remove an allowed IPv4 address from a VIF: ::
 
 SEE ALSO
 --------
-
 *xe-vif-list*(1), *xe-vif-destroy*(1), *xe-vif-param-clear*(1), *xe-vif-param-set*(1), *xe-network-list*(1), *xe-vm-list*(1)
 
 
