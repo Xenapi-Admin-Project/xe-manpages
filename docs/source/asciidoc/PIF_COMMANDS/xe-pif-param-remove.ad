@@ -18,6 +18,8 @@ DESCRIPTION
 
 *xe pif-param-remove* removes a set or map writable parameter key assigned to a PIF. 
 
+Use *xe pif-list* and *xe pif-param-list* to identify set and map parameters. Set and map parameters will contain a S or M character in the parentheses next to the parameter name (e.g. other-config *(MRW)*:).
+
 
 REQUIRED PARAMETERS
 -------------------

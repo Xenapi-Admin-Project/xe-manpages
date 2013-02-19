@@ -7,7 +7,7 @@ XE(1)
 
 NAME
 ----
-xe-pif-param-set - Set parameters for a PIF interface.
+xe-pif-param-set - Set parameters for a physical interface
 
 SYNOPSIS
 --------
@@ -19,7 +19,7 @@ SYNOPSIS
 DESCRIPTION
 -----------
 
-*xe pif-param-set* sets read/write parameters for a PIF interface. Changes to the *other-config* fields of a PIF interface will only take effect after a reboot or use of *xe pif-unplug* and *xe pif-plug*. 
+*xe pif-param-set* sets read/write parameters for a PIF. Changes to the *other-config* fields of a PIF interface will only take effect after a reboot or use of *xe pif-unplug* and *xe pif-plug*. 
 
 
 REQUIRED PARAMETERS
@@ -33,7 +33,7 @@ OPTIONAL PARAMETERS
 -------------------
 
 *disallow-unplug*::
-	Set disallow-unplug on a PIF: *[ true | false ]*
+	Set disallow-unplug on a PIF: disallow-unplug=*[ true | false ]*
 	
 *other-config:ethtool-speed*::
 	Set speed of PIF interface in Mbps: ethtool-speed=*[ 10 | 100 | 1000 ]*
@@ -66,13 +66,13 @@ OPTIONAL PARAMETERS
 	Set the DNS search path ( DNS Suffix ). Use a comma as a field separator.
 	
 *other-config:bond-miimon*::
-	Set the time between link liveness checks, in milliseconds.
+	Set the time between link liveness checks on the bond, in milliseconds.
 	
 *other-config:bond-downdelay*::
-	Set number of milliseconds to wait after link is lost before considering the link down. Default is 200ms.
+	Set number of milliseconds the bond waits after the link is lost before considering the link down. Default is 200ms.
 	 
 *other-config:bond-updelay*::
-	Set number of milliseconds to wait after the link comes up before considering it up. Default is 31s.
+	Set number of milliseconds the bond waits after the link comes up before considering it up. Default is 31s.
 	
 	
 EXAMPLES
@@ -90,7 +90,7 @@ To set disallow-unplug on a PIF interface: ::
 
 SEE ALSO
 --------
-*xe pif-list*(1), *xe pif-param-list*(1), *xe host-list*(1), *xe pif-param-remove*(1), *xe pif-reconfigure-ip*(1)
+*xe help pif-param-set*, *xe pif-list*(1), *xe pif-param-list*(1), *xe host-list*(1), *xe pif-param-remove*(1), *xe pif-reconfigure-ip*(1)
 
 
 AUTHORS

@@ -94,7 +94,7 @@ To display *VIF-uuids* for a specific network: ::
 
 SEE ALSO
 --------
-*xe-network-create*(1), *xe-network-destroy*(1), *xe-network-param-set*(1), *xe-network-param-add*(1), *xe-network-param-clear*(1), *xe-pif-list*(1), *xe-pool-vlan-create*(1)
+*xe help network-list*, *xe-network-create*(1), *xe-network-destroy*(1), *xe-network-param-set*(1), *xe-network-param-add*(1), *xe-network-param-clear*(1), *xe-pif-list*(1), *xe-pool-vlan-create*(1)
 
 
 AUTHORS

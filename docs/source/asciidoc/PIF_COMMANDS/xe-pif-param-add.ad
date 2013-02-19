@@ -7,7 +7,7 @@ XE(1)
 
 NAME
 ----
-xe-pif-param-add - Add a key to a parameter for a PIF 
+xe-pif-param-add - Add a key/value to a parameter for a PIF 
 
 SYNOPSIS
 --------
@@ -16,7 +16,7 @@ SYNOPSIS
 
 DESCRIPTION
 -----------
-*xe pif-param-add* will add a key/value to a set or map parameter for a PIF interface.
+*xe pif-param-add* adds a key/value to a set or map parameter for a PIF.
 
 REQUIRED PARAMETERS
 -------------------

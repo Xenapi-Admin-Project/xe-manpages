@@ -18,10 +18,7 @@ SYNOPSIS
 DESCRIPTION
 -----------
 
-*xe pif-param-set* sets read/write parameters for a bond. 
-
-// Use 
-
+*xe pif-param-set* sets writable parameters for a bond. 
 
 
 REQUIRED PARAMETERS

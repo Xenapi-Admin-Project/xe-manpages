@@ -7,11 +7,11 @@ XE(1)
 
 NAME
 ----
-xe-bond-list -  Lists Bond in a resource pool
+xe-bond-list -  Dsiplay bonds and their parameters
 
 SYNOPSIS
 --------
-*xe bond-list* [ params=<parameters> ]
+*xe bond-list* [ params=<PARAMETERS> ]
 
 DESCRIPTION
 -----------
@@ -23,38 +23,44 @@ OPTIONAL PARAMETERS
 -------------------
 
 *uuid*::
-	UUID of Bond.
+	Display UUID of the bond.
 
 *mode*::
-	Bonding mode for interface. Balance-slb, Active-backup, and LACP our supported.
-	
+	Display mode for bond [balance-slb|active-backup|lacp]
 	
 *links-up*::
-	// Number of links up in the Bond.
+	Display Nmber of links up in the bond.
 
 *master*::
-	Master Bond PIF interface UUID. 
+	Display master bond PIF UUID. 
 
 *primary-slave*::
-	// I know this is the primary PIF interface in the bond
+	Display primary-slave PIF UUID.
 
 *slaves*::
-	// seconardy PIF interface in the bond.
-
-*properties*::
-	// properties for the bond
+	Display slave PIF UUIDs.
 	
+*properties*::
+	Display additional properties for the bond.
 	
 
 EXAMPLES
 --------
 
+To display all bonds and all their parameters: ::
+	*xe bond-list* params=all
+	
+To display active-backup bonds and all their parameters: ::
+	*xe bond-list* mode=active-backup params=all
+	
+To display a specific bond with the slaves and links-up parameters: ::
+	*xe bond-list* uuid=<BOND UUID> params=slaves,links-up
 
 
 SEE ALSO
 --------
 
-*xe-bond-create*(1), *xe-bond-destroy*(1), *xe-bond-set-mode*(1), *xe-bond-param-get*(1), *xe-bond-param-set*(1), *xe-pif-list*(1)
+*xe help bond-list*, *xe-bond-create*(1), *xe-bond-destroy*(1), *xe-bond-set-mode*(1), *xe-bond-param-get*(1), *xe-bond-param-set*(1), *xe-pif-list*(1)
 
 AUTHORS
 -------
