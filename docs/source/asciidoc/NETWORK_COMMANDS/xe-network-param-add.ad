@@ -17,7 +17,7 @@ SYNOPSIS
 
 DESCRIPTION
 -----------
-*xe network-param-add* will add a key/value to a set or map parameter for a network.
+*xe network-param-add* adds a key or key/value pair to a set or map parameter for a network. Use xe *-list and xe *-param-list to identify writable set or map parameters (SRW, MRW).﻿
 
 REQUIRED PARAMETERS
 -------------------

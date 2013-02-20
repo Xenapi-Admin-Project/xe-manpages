@@ -63,7 +63,17 @@ The SYNOPSIS section shows the command syntax.
 The DESCRIPTION section describes the command and its uses. This can be as short or long as necessary. If there is ambiguity concerning the command more clarification is needed.
 * When commands attempt to execute a function (*-param-clear) we will use the verbage - attempts.
 	
-	"xe pif-param-clear attempts to clear all values for a specific writable parameter for a PIF."
+	e.g xe pif-param-clear attempts to clear all values for a specific writable parameter for a PIF.
+	
+* Low level sub-commands are universal commands, so the same style can be applied to each set of commands (param-clear, param-remove, param-set, param-add, param-list, and param-get). Use the style provided below for each sub-command. 
+
+	*-param-clear*:
+		"*param-clear attempts to clear any writable parameter. Use xe *-list and xe *-param-list to identify writable parameters (RW, SRW, MRW)".
+		
+	*-param-remove*:
+		"*param-remove removes any writable set or map parameter. Use xe *-list and xe *-param-list to identify writable set or map parameters (SRW, MRW)".﻿
+		
+	
 
 
  
