@@ -15,7 +15,7 @@ SYNOPSIS
 
 DESCRIPTION
 -----------
-*xe network-param-clear* attempts to clear all values for a specific writable parameter for a network.
+*xe network-param-clear* attempts to clear any writable parameter. Use *xe network-list* and *xe network-param-list* to identify writable parameters (RW, SRW, MRW).
 
 REQUIRED PARAMETERS
 -------------------

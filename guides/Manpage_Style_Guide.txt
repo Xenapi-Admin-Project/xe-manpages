@@ -65,13 +65,27 @@ The DESCRIPTION section describes the command and its uses. This can be as short
 	
 	e.g xe pif-param-clear attempts to clear all values for a specific writable parameter for a PIF.
 	
-* Low level sub-commands are universal commands, so the same style can be applied to each set of commands (param-clear, param-remove, param-set, param-add, param-list, and param-get). Use the style provided below for each sub-command. 
+* Low level sub-commands are universal commands, so the same style can be applied to each set of commands (param-clear, param-remove, param-set, param-add, param-list, param-get). Use the style provided below for each sub-command. 
 
 	*-param-clear*:
-		"*param-clear attempts to clear any writable parameter. Use xe *-list and xe *-param-list to identify writable parameters (RW, SRW, MRW)".
+		- xe *-param-clear attempts to clear any writable parameter. Use xe *-list and xe *-param-list to identify writable parameters (RW, SRW, MRW)".
 		
 	*-param-remove*:
-		"*param-remove removes any writable set or map parameter. Use xe *-list and xe *-param-list to identify writable set or map parameters (SRW, MRW)".﻿
+		- xe *-param-remove removes any writable set or map parameter. Use xe *-list and xe *-param-list to identify writable set or map parameters (SRW, MRW)".﻿
+		
+	*-param-set*:
+		- xe *-param-set sets writable parameters. Use xe *-list and xe *-param-list to identify writable parameters (RW, SRW, MRW).
+		
+	*-param-add*:
+		- xe *-param-add* adds a key or key/value pair to a writable set or map parameter. If Use xe *-list and xe *-param-list to identify writable set or map parameters (SRW, MRW).﻿
+
+	
+	*-param-list*:
+		- xe *-param-list* displays all parameters for a specific *. 
+
+	
+	*-param-get*:
+		- xe *-param-get* returns a parameter or a key value for a specific *.
 		
 	
 
@@ -106,6 +120,7 @@ The DESCRIPTION section describes the command and its uses. This can be as short
 * If examples have multiple lines - insert a line break by finishing the line with a space and a +  
 * Include the following four example types if they're relevant to your comand. 
 * Parameters between <> should be capitalized. 
+* The param-add command should contain an example of setting a map parameter and an example of setting a set parameter.
  
 1. Filtering results based on params=parameter 
 	xe vif-list params=uuid
@@ -115,6 +130,7 @@ The DESCRIPTION section describes the command and its uses. This can be as short
 	xe host-cpu-param-get uuid=<CPU UUID> param-name="utilisation"
 4. Setting a map parameter
 	xe vm-param-set uuid=<VM UUID> other-config:"install-repository=http://mirror.centos.org/centos/6/os/i386/"
+
  
 
 8. SEE ALSO

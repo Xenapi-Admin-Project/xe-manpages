@@ -16,12 +16,13 @@ SYNOPSIS
 
 DESCRIPTION
 -----------
-*xe vif-param-remove* removes a set or map writable parameter key assigned to a VIF interface. 
+*xe vif-param-remove* removes any writable set or map parameter. Use *xe vif-list* and *xe vif-param-list* to identify writable set or map parameters (SRW, MRW).﻿
 
 
 
 REQUIRED PARAMETERS
 -------------------
+
 *uuid*::
 	VIF UUID - Use *xe vif-list* to obtain a list of VIF UUIDs.
 

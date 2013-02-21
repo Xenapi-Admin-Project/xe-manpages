@@ -19,7 +19,7 @@ SYNOPSIS
 DESCRIPTION
 -----------
 
-*xe network-param-remove* removes a param-key value from a set/map parameter assigned to a network found in a pool.
+*xe network-param-remove* removes any writable set or map parameter. Use *xe network-list* and *xe network-param-list* to identify writable set or map parameters (SRW, MRW).﻿
 
 
 REQUIRED PARAMETERS

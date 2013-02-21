@@ -16,7 +16,7 @@ SYNOPSIS
 
 DESCRIPTION
 -----------
-*xe pif-param-clear* attempts to clear all values for a specific writable parameter for a PIF interface. Use *xe pif-list* and *xe pif-param-list* to identify writable parameters. Writable parameters will contain a W character in the parentheses next to the parameter name (e.g. other-config *(MRW)*:).
+*xe pif-param-clear* attempts to clear any writable parameter. Use *xe pif-list* and *xe pif-param-list* to identify writable parameters (RW, SRW, MRW).
 
 REQUIRED PARAMETERS
 -------------------

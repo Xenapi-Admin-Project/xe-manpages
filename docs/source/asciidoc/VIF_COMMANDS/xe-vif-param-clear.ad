@@ -16,7 +16,7 @@ SYNOPSIS
 
 DESCRIPTION
 -----------
-*xe vif-param-clear* attempts to clear all values for a specific writable paramter for a VIF.
+*xe vif-param-clear* attempts to clear any writable parameter. Use *xe vif-list* and *xe vif-param-list* to identify writable parameters (RW, SRW, MRW).
 
 
 REQUIRED PARAMETERS

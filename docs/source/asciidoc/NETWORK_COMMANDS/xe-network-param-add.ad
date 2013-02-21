@@ -17,7 +17,12 @@ SYNOPSIS
 
 DESCRIPTION
 -----------
-*xe network-param-add* adds a key or key/value pair to a set or map parameter for a network. Use xe *-list and xe *-param-list to identify writable set or map parameters (SRW, MRW).﻿
+*xe network-param-add* adds a key or key/value pair to a set or map parameter. If Use xe *-list and xe *-param-list to identify writable set or map parameters (SRW, MRW).﻿
+
+If the parameter is a set, then use specify the parameter with param-name and supply the key using param-key.
+
+ If the parameter is a set, use param-key=<key to add>. If the parameter is a map, pass the values to add as 'key=value' pairs.
+
 
 REQUIRED PARAMETERS
 -------------------
@@ -32,6 +37,8 @@ REQUIRED PARAMETERS
 
 OPTIONAL PARAMETERS
 -------------------
+
+*KEY*::
 
 *param-key*::
 	Parameter key value required if the other-config parameter will be modified. 

@@ -17,7 +17,7 @@ SYNOPSIS
 
 DESCRIPTION
 -----------
-*xe *-param-set* sets writable parameters for a *. Use xe *-list and xe *-param-list to identify writable parameters (RW, SRW, MRW).
+*xe network-param-set* sets writable parameters. Use xe *-list and xe *-param-list to identify writable parameters (RW, SRW, MRW).
 
 
 
