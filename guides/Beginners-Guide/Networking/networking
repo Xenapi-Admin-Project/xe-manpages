@@ -1,0 +1,87 @@
+XCP Networking
+
+
+XCP
+Default networking configuration.
+PIF and External network creation on boot
+Getting your XCP machine online.
+Primary Management Interface
+???
+Remotely managing your XCP machine.
+
+
+NETWORKS
+What is a network?
+Types of networks
+How to create a network?
+How to remove a network?
+
+PIFS
+What is a PIF?
+PIF interface types PMI, Management, VM?
+How to create a PIF?
+
+VIFS
+What is a VIF?
+How to create a VIF?
+How to remove a VIF?
+How to plug – unplug a VIF?
+
+external networks are networks that provide a connection to the outside world through a PIF.
+
+
+Networks 
+
+What is a network?
+
+A network is a virtual ethernet switch on a XCP host.
+
+Types of networks
+
+	* single-server private networks - is an internal network that allows virtual machines to communicate on a XCP host with no connection to the outside world.
+	* cross-server private networks - functions much like a single-server private network, but allows VMs on different hosts to commuciate with no connection to the outside world. 
+	* external networks - are networks that provide a connection to the outside world through a PIF.
+	* vlans
+	* bonded networks - are networks that provide a redudant connection to the outside world through a bond.
+
+How to create a network?
+
+	* xe network-create creates a internal network that is not connected to a PIF.
+	
+How to remove a network?
+
+	* xe network-destroy will destroy a network.
+	
+	
+PIFs
+
+What is a PIF?
+
+	* A physical interface (PIF) represents a physical NIC on a XCP host. The PIF has a name, a description, a unique UUID, and parameters that contain information about its network and host.
+
+Types of PIFs
+
+We classify PIFs based on their configuration.
+
+	*	Primary management interface (PIF) - This PIF is designated when you first install XCP. It allows your XCP host to connect to your network and carries management traffic for communicating to 		other hosts in your pool.
+	
+	*	Management - A management PIF is a PIF with IP addressing configured.
+	
+How to create a PIF?
+	
+	* PIFs are assosiated with physical NICs. When you first install XCP, PIFs with a network are created for every physical NIC found on the XCP host. 
+	
+	To add a new PIF: Install the phsyical NIC, restart the server, run the xe pif-scan command, and a new PIF and network will be created.
+
+
+VIFS
+
+What is a VIF?
+	
+	A virtual interface (VIF) is assoisated with a VM and a network, which allows a VM to commuciate with other hosts.
+	
+How to create a VIF?
+
+	xe vif-create will create a new VIF and connect it to a VM and a network. If the VM is running, you need to attach it (plug in) to the VM using xe vif-plug. VIFs created to a halted VM will be started on boot. You can also use xe vif-unplug to detach a VIF from a VM. 
+	
+	

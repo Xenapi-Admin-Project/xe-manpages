@@ -2,6 +2,152 @@
 PV interactive Linux installation
 
 
+
+
+
+1. Getting the network info
+
+This line gets the Network UUID for xenbr0. If you're using a different bridge you will want to insert it here. Get a list of XCP networks with xe network-list. This network is connected to the outside interface. This tutorial requires there to be a DHCP server on this network answering requests and providing network access to the Internet.
+
+
+
+NETUUID=$(xe network-list bridge=xenbr0 --minimal)
+
+
+
+2. Creating the VM and setting parameters
+
+Here we create the VM from the RHEL6 template, create a network interface and add it to our network from step one. Additional settings are for configuring the install repository and specifying the kickstart file from my site. The last setting turns off VNC so we can watch the install via a text console (very important in my environment).  Even if you can't see all the text below just highlight and paste. The text is there even if it's not visible.
+
+
+We need to grab the UUID of the Red Hat 6 64-bit template. To grab the template UUID:
+	TMPLUUID=$(xe template-list | grep -B1 'name-label.*Red Hat.* 6.*64-bit' | awk -F: '/uuid/{print $2}'| tr -d " ")
+
+Now that we have the UUID of the template, we can create our VM. To create the VM:
+	VMUUID=$(xe vm-install new-name-label="CentOS6" template=${TMPLUUID})
+
+
+With the VM created, we need to add a virtual interface (VIF) to the VM, so the VM has network connectivity and access to the internet. The VIF will be attached to network specified in step one. 
+
+To create the VIF:
+	xe vif-create vm-uuid=$VMUUID network-uuid=$NETUUID mac=random device=0
+	
+vif-create will return the UUID of the new VIF. We can use xe vif-param-list to view the parameters of the VIF. Please note, the xe command supports tab completion, so you don't need to try and type the entire UUID. 
+
+To list the VIF parameters:
+	xe vif-param-list uuid=<YOUR VIF UUID>
+
+Let's set the install repository for the VM, so we can begin the network installation.
+
+To set the install-repository:
+	xe vm-param-set uuid=$VMUUID other-config:install-repository=http://mirror.centos.org/centos/6/os/x86_64
+	
+		
+3. Starting the VM and installing CentOS
+	
+With all the parameters set, it's time to begin the installation. 
+
+To start up the VM:
+	xe vm-start uuid=$VMUUID
+	
+Now that the VM is started, let's connect to the console and proceed with the interactive install
+
+To connect to the VM's console:
+	xe console uuid=$VMUUID
+	
+5. Shutting down the VM 
+
+
+To shutdown the VM:
+xe vm-shutdown uuid=$VMUUID
+
+
+6. Export our VM for safe keeping
+
+To back up the CentOS machine:
+
+xe vm-export uuid=$VMUUID filename=CentOS6-base.xva
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// This is the crap I wrote before, It's useless but didn't want to dispose of it. -matt
+
 We are going to create a Cent OS 6.3 64bit VM from XCP's VM templates. The Cent OS VM will be a network install using the Cent OS repositories. This installation will require a XCP network with an Internet gateway, so we can access the repositories during the installation. We will be entering all the commands on the XCP host's command line.
 
 Our first step will to be to create the VM using XCP's VM templates. We are going to use the vm-install command. If you want to supply your own name-label for this virtual machine supply it using the new-name-label parameter (enclose the name in quotes if it contains spaces). 
