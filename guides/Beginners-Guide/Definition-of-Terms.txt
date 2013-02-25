@@ -31,8 +31,7 @@ Physical Interface (PIF) is associated with a Physical NIC on the host.
 
 Virtual Interface (VIF) is a Virtual Network Interface that allows a Virtual Machine to connect to a Network. 
 
-
-A Network is a logical switch that connects Virtual Interfaces, Physical Interfaces, and other devices together. 
+A Network is a virtual switch that connects Virtual Interfaces, Physical Interfaces, and other devices together. 
 
 
 What is Xen Cloud Platform?

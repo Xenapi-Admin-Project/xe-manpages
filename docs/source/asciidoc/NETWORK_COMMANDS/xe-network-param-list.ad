@@ -15,7 +15,7 @@ SYNOPSIS
 
 DESCRIPTION
 -----------
-*xe network-param-list* lists all parameters for a specific network. 
+*xe network-param-list* displays all parameters for a specific network. 
 
 
 REQUIRED PARAMETERS
