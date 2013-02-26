@@ -43,6 +43,7 @@ OPTIONAL PARAMETERS
 	
 *other-config:static-routes*::
 	Create a static route for a network. Seperate multiple routes using a comma. static-routes=*[ <SOURCE NETWORK ADDRESS>/<CIDR MASK>/<NEXT HOP ADDRESS> ]* 
+	static-routes=*<SOURCE ADDRESS>/<NETMASK>/<NEXT HOP ADDRESS>*
 		
 *other-config:ethtool-autoneg*::
 	Enable autonegotiation on a network: ethtool-autoneg=*[ on | off ]*

@@ -12,13 +12,17 @@ xe-cd-list - Lists CD images
 
 SYNOPSIS
 --------
-*xe cd-list* [ params=<parameter> ] [--minimal]
+
+*xe cd-list* [ params=<PARAMETER> ] [--minimal]
 
 
 DESCRIPTION
 -----------
-*xe cd-list* displays available CD images on all available ISO storage repositories. 
-Output can be filtered by supplying params=<parameter>. Multiple parameters can be displayed by seperating each parameter with a comma (params=uuid,name-label).
+*xe cd-list* displays available CD images on all accessible ISO storage repositories. Output can be filtered multiple ways.
+
+Output can be filtered by supplying the *params* parameter and a value eg. params=name-label.
+Separate multiple parameters with commas eg. params=uuid,name-label,sr-uuid. 
+Filter using parameter values by specifying the parameter name and the desired value eg. name-label=xs-tools.iso.
 
 
 OPTIONAL PARAMETERS
@@ -79,10 +83,13 @@ OPTIONAL PARAMETERS
 *sm-config*::
 	Display storage manager device config keys
 *on-boot*::
+	Display on-boot config
 *allow-caching*::
 	Display if caching is allowed [ true | false ]
 *metadata-latest*::
+	Display latest CD metadata
 *metadata-of-pool*::
+	Display pool metadata
 *tags*::
 	Display tags
 
