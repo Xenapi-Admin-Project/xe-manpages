@@ -7,26 +7,19 @@ XE(1)
 
 NAME
 -----
-xe-pif-introduce - Creates a new PIF interface
+xe-pif-introduce - Creates a new PIF
 
 SYNOPSIS
 --------
-*xe pif-introduce* host-uuid=<Host UUID> device=<Network Device> [ mac=<Mac Address> ] 
+*xe pif-introduce* host-uuid=<HOST UUID> device=<NIC> [ mac=<MAC ADDRESS> ] 
 
 
 DESCRIPTION
 -----------
-// Do you mean... *xe pif-introduce* creates a new PIF interface associated with a network device (e.g. eth0) found on a specific host.
-// The PIF interface inherits the MAC address of the physical device (e.g. ?) unless it is manually configured(?).
-// *xe pif-introduce* generates a PIF UUID for the new PIF interface.
-//
-// I kept your original description in case I misunderstood you. 
-// I have a hard time picturing things in my head and examples would help to see things clearer -lisa
+*xe pif-introduce* creates a new PIF object associated with a NIC found on the specified host. The PIF interface inherit the 
+MAC address of the NIC unless specified. The resulting new PIF UUID is returned. 
 
-*xe pif-introduce* creates a new PIF interface associated with an unassigned network device (e.g. eth0) found on the specified host. The PIF interface will inherit the 
-MAC address of the physical network device (e.g. eth0) unless specified. The resulting PIF UUID is returned. 
-
-*xe pif-introduce* will create a new PIF interface by
+Use *xe pif-plug* to attach the PIF to the pool-wide network created. // This needs to get put in there somewhere...
 
 
 REQUIRED PARAMETERS
@@ -37,18 +30,25 @@ REQUIRED PARAMETERS
 	UUID of host - Use *xe host-list* to obtain host UUIDs.
 
 *device*::
-	Physical network device (e.g. eth0) - Use *ifconfig -a* on your control domain to list network devices present on the host.
+	Network interface card (e.g. eth0).
 
 OPTIONAL PARAMETERS
 -------------------
 
 *mac*::
-	MAC Address for PIF interface.
+	MAC Address for PIF.
 	
 EXAMPLES
 --------
-
-*xe pif-introduce* host-uuid=<Host UUID> device=eth1 
+To introduce a new PIF associated with eth2: ::
+	*xe pif-introduce* host-uuid=<HOST UUID> device="eth2"
+	
+To introduce a new PIF associated with eth2 and attach it to its network: ::
+	*xe pif-introduce* host-uuid=<HOST UUID> device="eth2"
+	*xe pif-plug* uuid=<NEW PIF UUID>
+	
+	
+	// I would also like to show how to plug in the new PIF
 
 
 SEE ALSO

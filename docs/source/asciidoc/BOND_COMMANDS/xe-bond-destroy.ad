@@ -14,7 +14,7 @@ xe-bond-destroy - Destroy a Bond.
 SYNOPSIS
 --------
 
-*xe bond-destroy* uuid=<Bond UUID>
+*xe bond-destroy* uuid=<BOND UUID>
 
 DESCRIPTION
 -----------

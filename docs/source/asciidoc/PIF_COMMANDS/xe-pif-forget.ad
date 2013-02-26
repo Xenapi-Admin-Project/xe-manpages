@@ -5,12 +5,10 @@ XE(1)
 :man version:  {1}
 :man manual:   xe pif-forget manual
 
-//don't forget to verify when your new NICs arrive! -lisa
 
 NAME
 ----
-//added brief description -lisa
-xe-pif-forget - Removes a PIF interface from the Xen Cloud Platform database
+xe-pif-forget - Removes a PIF from a host
 
 SYNOPSIS
 --------
@@ -18,9 +16,7 @@ SYNOPSIS
 
 DESCRIPTION
 -----------
-*xe pif-forget* removes a PIF interface from the XCP database, so it will not be listed. Use *xe pif-list* to verify the removal process. See *xe vlan-destroy* to erase a pseudo PIF interface connected to a VLAN.
-
-*xe pif-forget* removes a PIF interface from a host. Use *xe vlan-destroy* to remove a pseudo PIF 
+*xe pif-forget* removes a physical PIF object from a host. If a VLAN exists on the physical PIF, use *xe vlan-destroy* to remove the VLAN before removing the physical PIF. Also use *xe vif-unplug* to detach active VIFs on the network connected to the physical PIF. After removal, the network connected to the PIF remains on the host.
 
 
 
@@ -33,7 +29,7 @@ REQUIRED PARAMETERS
 EXAMPLES
 ---------
 
-To delete a PIF interface: :: 
+To remove a PIF: :: 
 	*xe pif-forget* uuid=<PIF UUID>
 	
 	

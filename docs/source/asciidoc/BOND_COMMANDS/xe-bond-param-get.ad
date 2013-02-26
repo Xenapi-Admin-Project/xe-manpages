@@ -7,12 +7,12 @@ XE(1)
 
 NAME
 ----
-xe-bond-param-get - Returns a parameter for a bond.
+xe-bond-param-get - Returns a parameter for a bond
 
 SYNOPSIS
 --------
 
-*xe bond-param-get* uuid=<Bond UUID> param-name=<Parameter> [ param-key=<Parameter Key> ]
+*xe bond-param-get* uuid=<BOND UUID> param-name=<PARAMETER> [ param-key=<PARAMETER KEY> ]
 
 DESCRIPTION
 -----------
@@ -32,11 +32,17 @@ OPTIONAL PARAMETERS
 -------------------
 
 *param-key*::
-	// see what keys are available 
+	Name of key in a map or set parameter.
 
 
 EXAMPLES
 --------
+
+To return the mode parameter from a specific bond: ::
+	*xe bond-param-get* uuid=<BOND UUID> param-name="mode"
+	
+To return the value from the a parameter key found in the properties parameter: ::
+	*xe bond-param-get* uuid=<BOND UUID> param-name="properties" param-key=<PARAMETER KEY>
 
 
 SEE ALSO

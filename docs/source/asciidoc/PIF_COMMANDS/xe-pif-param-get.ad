@@ -7,7 +7,6 @@ XE(1)
 
 NAME
 ----
-
 xe-pif-param-get - Returns a parameter for a PIF
 
 SYNOPSIS
@@ -34,7 +33,7 @@ OPTIONAL PARAMETERS
 -------------------
 
 *param-key*::
-	Name of key in other-config parameter (e.g. ethtool-speed). 
+	Name of key in a map or set parameter (e.g. ethtool-speed). 
 
 EXAMPLES
 --------

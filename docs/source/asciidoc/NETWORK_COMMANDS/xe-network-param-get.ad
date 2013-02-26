@@ -34,7 +34,7 @@ OPTIONAL PARAMETERS
 -------------------
 
 *param-key*::
-	Name of key in other-config parameter (e.g. static-routes). 
+	Name of key in a map or set parameter (e.g. static-routes). 
 
 
 EXAMPLES

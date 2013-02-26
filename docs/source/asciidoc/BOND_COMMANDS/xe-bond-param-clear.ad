@@ -12,11 +12,11 @@ xe-bond-param-clear - Clears a specific writable parameter for a bond.
 
 SYNOPSIS
 --------
-*xe bond-param-clear* uuid=<Bond UUID> param-name=<Parameter>
+*xe bond-param-clear* uuid=<BOND UUID> param-name=<PARAMETER>
 
 DESCRIPTION
 -----------
-*xe bond-param-clear* attempts to clear all values for a specific writable parameter for a bond.
+*xe bond-param-clear* attempts to clear all values for a specific writable parameter for a bond. Use xe bond-list and xe bond-param-list to identify writable parameters (RW, SRW, MRW).
 
 
 REQUIRED PARAMETERS
@@ -32,6 +32,7 @@ REQUIRED PARAMETERS
 EXAMPLES
 --------
 
+// there aren't any writable parameters..
 
 SEE ALSO
 --------

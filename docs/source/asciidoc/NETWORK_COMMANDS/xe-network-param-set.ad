@@ -71,13 +71,16 @@ EXAMPLES
 --------
 
 To create a static route that would route traffic from 192.168.1.0/24 to the gateway of 192.168.0.1: ::
-	*xe network-param-set* uuid=<Network UUID> other-config="static-routes=192.168.1.0/24/192.168.0.1"
+	*xe network-param-set* uuid=<NETWORK UUID> other-config:"static-routes=192.168.1.0/24/192.168.0.1"
 
 To set the MTU size for a network: ::
-	*xe network-param-set* uuid=<Network UUID> MTU=<MTU Size>
+	*xe network-param-set* uuid=<NETWORK UUID> MTU=<MTU Size>
 
 To set the network default-locking-mode to *disabled*: ::
-	*xe network-param-set* uuid=<Network UUID> default-locking-mode="disabled"
+	*xe network-param-set* uuid=<NETWORK UUID> default-locking-mode="disabled"
+	
+To enable scatter gather on a network: ::
+	*xe network-param-set* uuid=<NETWORK UUID> other-config:"ethtool-sg=on"
 
 SEE ALSO
 --------

@@ -8,32 +8,32 @@ XE(1)
 NAME
 ----
 
-xe-bond-param-list -  Lists all parameters for a bond.
+xe-bond-param-list -  Displays all parameters for a bond
 
 
 SYNOPSIS
 --------
 
-*xe bond-param-list* uuid=<Bond UUID>
+*xe bond-param-list* uuid=<BOND UUID>
 
 DESCRIPTION
 -----------
 
-*xe bond-param-list* lists all parameters for a specific bond.
+*xe bond-param-list* displays all parameters for a specific bond.
 
 
 REQUIRED PARAMETERS
 -------------------
 
 *uuid*::
-	UUID of Bond.
+	Bond UUID - Use *xe bond-list* to obtain a list of bonds.
 
 
 EXAMPLES
 --------
 
 To display parameters for a bond: ::
-	*xe bond-param-list* uuid=<Bond UUID>
+	*xe bond-param-list* uuid=<BOND UUID>
 
 
 SEE ALSO

@@ -26,10 +26,10 @@ OPTIONAL PARAMETERS
 	Display UUID of the bond.
 
 *mode*::
-	Display mode for bond [balance-slb|active-backup|lacp]
+	Display type of bond [balance-slb|active-backup|lacp]
 	
 *links-up*::
-	Display Nmber of links up in the bond.
+	Display number of links up in the bond.
 
 *master*::
 	Display master bond PIF UUID. 
@@ -59,7 +59,6 @@ To display a specific bond with the slaves and links-up parameters: ::
 
 SEE ALSO
 --------
-
 *xe help bond-list*, *xe-bond-create*(1), *xe-bond-destroy*(1), *xe-bond-set-mode*(1), *xe-bond-param-get*(1), *xe-bond-param-set*(1), *xe-pif-list*(1)
 
 AUTHORS
