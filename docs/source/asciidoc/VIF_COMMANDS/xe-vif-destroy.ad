@@ -11,19 +11,16 @@ xe-vif-destroy - Destroy a virtual interface
 
 SYNOPSIS
 --------
-
 *xe vif-destroy* uuid=<VIF UUID>
 
 
 DESCRIPTION
 -----------
-
-*xe vif-destroy* destroys a detached VIF from a VM. To erase an attached VIF, first use *xe vif-unplug* then *xe vif-destroy*.
+*xe vif-destroy* destroys a detached VIF. To erase an attached VIF, first use *xe vif-unplug* then *xe vif-destroy*.
 
 
 REQUIRED PARAMETERS
 -------------------
-
 *uuid*::
 	VIF UUID - Use *xe vif-list* to obtain a list of VIF UUIDs.
 
@@ -31,8 +28,6 @@ REQUIRED PARAMETERS
 
 EXAMPLES
 --------
-
-
 To return the currently-attached parameter for a VIF: ::
 	*xe vif-param-get* uuid=<VIF UUID> param-name="currently-attached"
 
@@ -47,7 +42,6 @@ To destroy a VIF interface: ::
 
 SEE ALSO
 --------
-
 *xe-vif-list*(1), *xe-vif-create*(1), *xe-vif-unplug*(1), *xe-vif-unplug*(1), *xe-vif-param-set*(1), *xe-network-list*(1), *xe-vm-list*(1)
 
 
