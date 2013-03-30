@@ -20,10 +20,8 @@ DESCRIPTION
 
 REQUIRED PARAMETERS
 -------------------
-
 *uuid*::
-	UUID of VLAN - Use *xe vlan-list* to obtain a list of a VLAN UUIDs.
-
+	VLAN UUID - Use *xe vlan-list* to obtain a list of a VLAN UUIDs.
 
 EXAMPLES
 --------

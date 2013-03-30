@@ -17,6 +17,18 @@ SYNOPSIS
 DESCRIPTION
 -----------
 
+*xe vlan-create* creates a vlan, and attaches it to the desired physical PIF in the pool. A new virtual PIF is created and attached to the desired network. The UUID of the virtual PIF will be returned. 
+
+The phsyical PIF now supports 802.1q VLAN tagging. 
+
+
+
+
+
+
+
+
+
 *xe pool-vlan-create* 
 
 

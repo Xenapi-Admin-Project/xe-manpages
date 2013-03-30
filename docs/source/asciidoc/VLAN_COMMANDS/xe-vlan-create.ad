@@ -17,6 +17,17 @@ SYNOPSIS
 DESCRIPTION
 -----------
 
+*xe vlan-create* creates a vlan, and attaches it to the desired physical PIF and network. A new virtual PIF is created and attached to the desired VLAN. The UUID of the virtual PIF will be returned. 
+
+The phsyical PIF now supports 802.1q VLAN tagging. 
+
+
+
+
+
+
+
+
 1. What does the command do (in laymans terms)
 2. What does the admin NEED to know (caveats with management interfaces, default VLANs etc..)
 3. How does the Admin use it

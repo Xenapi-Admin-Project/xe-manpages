@@ -11,27 +11,33 @@ xe-vlan-list - Display all VLANS.
 
 SYNOPSIS
 --------
-*xe vlan-list* [ params=<parameter> ]
+*xe vlan-list* [ params=<parameter> ] [--minimal]
 
 DESCRIPTION
 -----------
 
-*xe vlan-list* lists all VLANs and their parameters on a host. Citrix also recommends using *xe pif-list* to display VLANs. Output can be filtered by supplying params=<parameter>. Multiple parameters can be displayed by seperating each parameter with a comma (params=uuid,name-label).
+*xe vlan-list* lists all VLANs and their parameters. Citrix also recommends using *xe pif-list* to display VLANs. Output can be filtered using the *params* parameter and a value  (xe vlan-list params=tagged-PIF), separating multiple parameters with commas (xe vlan-list params=tagged-PIF,tag,sr-uuid) or parameter values by specifying the parameter name and the desired value (xe vlan-list tag=100). 
+
+Display minimal information by adding the --minimal option. The --minimal option displays the first item in the resulting list delimited by commas. For example: *xe vlan-list params=tagged-PIF,uuid,untagged-PIF* --minimal would display all tagged-PIF uuids delimited by commas.
 
 
 OPTIONAL PARAMETERS
 -------------------
-       
-*tag*::
-	VLAN ID 0 to 4094          
 
+*all*:: 
+	Display all parameter values
+	
+*uuid*::
+	Display VLAN UUIDs
+
+*tag*::
+	Display VLAN IDs [ 0 - 4094 ] 
+	
 *tagged-PIF*::
-	The physical 802.1Q tagging PIF interface UUID.
-	
-	Physical PIF interface UUID. 802.1Q tagging occurs on this interface.
-	
+	Display physical PIF UUIDs
+
 *untagged-PIF*::  
-	Pseudo PIF interface UUID.
+	Display virtual PIF interface UUIDs
 	
 
 EXAMPLES

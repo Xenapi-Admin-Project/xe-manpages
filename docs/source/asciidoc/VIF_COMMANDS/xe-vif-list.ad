@@ -25,13 +25,13 @@ OPTIONAL PARAMETERS
 -------------------
 
 *uuid*:: 
-	Display VIF UUID.
+	Display VIF UUIDs
 	
 *vm-uuid*:: 
-	Display VIF interface's VM UUID.
+	Display VIF interface's VM UUIDs
 	
 *vm-name-label*::
-	Display VIF's VM name-label.
+	Display VIFs VM name-labels
 
 *allowed-operations*:: 
 	Display list of operations allowed on VIF.

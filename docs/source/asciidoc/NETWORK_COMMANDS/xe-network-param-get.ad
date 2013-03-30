@@ -11,35 +11,30 @@ xe-network-param-get - Returns a parameter for a network
 
 SYNOPSIS
 --------
-
 *xe network-param-get* uuid=<NETWORK UUID> param-name=<PARAMETER> [ param-key=<PARAMETER KEY> ]
 
 
 DESCRIPTION
 -----------
-
 *xe network-param-get* returns a parameter or a key value for a specified network. 
 
 
 REQUIRED PARAMETERS
 -------------------
-
 *uuid*::
 	Network UUID - Use *xe network-list* to obtain a list of network UUIDs.
 
 *param-name*::
-	Parameter for a network.
+	The network parameter to return.
 	
 OPTIONAL PARAMETERS
 -------------------
-
 *param-key*::
-	Name of key in a map or set parameter (e.g. static-routes). 
+	The network key to return.  
 
 
 EXAMPLES
 --------
-
 To display the *VIF-uuids* attached to a network: ::
 	*xe network-param-get* uuid=<NETWORK UUID> param-name="VIF-uuids"
 	
@@ -53,12 +48,10 @@ SEE ALSO
 --------
 *xe-network-list*(1), *xe-network-create*(1), *xe-network-param-list*(1), *xe-pif-list*(1), *xe-vif-list*(1), *xe-network-param-set*(1)
 
-
 AUTHORS
 -------
 Manpage Author(s): ::
 Matthew Spah <spahmatthew@xenapiadmin.com>
-
 
 BUGS
 ----

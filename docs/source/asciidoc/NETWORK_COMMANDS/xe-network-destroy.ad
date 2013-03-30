@@ -18,21 +18,16 @@ SYNOPSIS
 DESCRIPTION
 -----------
 
-*xe network-destroy* removes a network that contains no active PIFs, VIFs, or VLANs. VIF interfaces associated with the network are also removed. To detach PIF and VIF interfaces use *xe pif-unplug* and *xe vif-unplug*. To remove a VLAN use *xe vlan-destroy*.   
-
-
+*xe network-destroy* removes a network that contains no attached PIFs, VIFs, or active VLANs. VIF interfaces associated with the network are also removed. To detach PIF and VIF interfaces use *xe pif-unplug* and *xe vif-unplug*. To remove a VLAN use *xe vlan-destroy*.   
 
 
 REQUIRED PARAMETERS
 -------------------
-
 *uuid*::
 	Network UUID - Use *xe network-list* to obtain a list of network UUIDs.
 
-
 EXAMPLES
 --------
-
 To erase a network from a pool type: ::
 	*xe network-destroy* uuid=<Network UUID>
 

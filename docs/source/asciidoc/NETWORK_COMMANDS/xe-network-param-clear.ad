@@ -25,7 +25,7 @@ REQUIRED PARAMETERS
  
 
 *param-name*::
-	Parameter to be cleared for a network (e.g. name-description).
+	Writable parameter to be cleared (e.g. name-description).
 
 EXAMPLES
 --------

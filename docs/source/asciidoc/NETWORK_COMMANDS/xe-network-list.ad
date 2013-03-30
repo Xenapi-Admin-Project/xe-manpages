@@ -7,7 +7,7 @@ XE(1)
 
 NAME
 -----
-xe-network-list - Lists all networks and their paramters.
+xe-network-list - Lists all networks and their parameters.
 
 SYNOPSIS
 --------
@@ -18,62 +18,67 @@ SYNOPSIS
 DESCRIPTION
 -----------
 
-*xe network-list* lists networks and their parameters found in a pool. Output can be filtered by supplying params=<parameter>. Multiple parameters can be displayed by separating each parameter with a comma (e.g. params=uuid,name-label).
+*xe network-list* lists networks and their parameters found in a pool. Output can be filtered using the *params* parameter and a value  (xe network-list params=PIF-uuids), separating multiple parameters with commas (xe network-list params=PIF-uuids,VIF-uuids,name-label,name-description) or parameter values by specifying the parameter name and the desired value (xe network-list bridge=xapi0). 
+
+Display minimal information by adding the --minimal option. The --minimal option displays the first item in the resulting list delimited by commas. For example: *xe network-list params=PIF-uuids,VIF-uuids,name-label* --minimal would display all PIF uuids delimited by commas.
 
 
 OPTIONAL PARAMETERS
 -------------------
 
+*all*::
+	Display all parameter values
+
 *uuid*::
-	Display network UUID.
+	Display network UUIDs
 
 *name-label*::	
-	Display name-label of the network.
-
+	Display network name-labels
+	
 *name-description*::	
-	Display description of the network.
+	Display network descriptions
 
 *VIF-uuids*::	
-	Display VIFs attached to the network.
+	Display VIFs attached to networks
 	
 *PIF-uuids*:: 	
- 	Display PIFs attached to the network.
+ 	Display PIFs attached to networks
 
 *MTU*::	
-	Display MTU value of a network. 
+	Display network MTU values
 	
 *bridge*::
-	Display name of the bridge.
+	Display network bridge names
 
 *blobs*::	
-	Display binary data store.
+	Display binary data stores
 
 *tags*::	
-	Display writable tag parameter.
+	Display writable tag parameters
 
 *other-config:static-routes*::	
-	Display comma seperated list of Static routes present on network: *[ <SOURCE NETWORK ADDRESS>/<CIDR MASK>/<NEXT HOP ADDRESS> ]* 
+	Display comma seperated list of Static routes present on network [ <SOURCE NETWORK ADDRESS>/<CIDR MASK>/<NEXT HOP ADDRESS> ] 
 
 *other-config:ethtool-autoneg*::
-	Display ethernet Autonegotiation status: *[ on | off ]*
+	Display ethernet Autonegotiation status [ on | off ]
 
 *other-config:ethtool-rx*:: 
-	Display receive checksum status: *[ on | off ]*
+	Display receive checksum status [ on | off ]
 
 *other-config:ethtool-tx*::
-	Display transmit checksum status: *[ on | off ]*
+	Display transmit checksum status [ on | off ]
 
 *other-config:ethtool-sg*:: 
-	Display scatter gather status: *[ on | off ]*
+	Display scatter gather status [ on | off ]
 
 *other-config:ethtool-tso*::
-	Display TCP segmentation offload status: *[ on | off ]* 
+	Display TCP segmentation offload status [ on | off ]
 
 *other-config:ethtool-ufo*::
-	Display UDP fragment offload status: *[ on | off ]*
+	Display UDP fragment offload status [ on | off ]
 
 *other-config:ethtool-gso*::
-	Display generic segmentation offload status: *[ on | off ]*
+	Display generic segmentation offload status [ on | off ]
 
 
 EXAMPLES
