@@ -7,7 +7,7 @@ XE(1)
 
 NAME
 -----
-xe-network-list - Lists all networks and their parameters.
+xe-network-list - Displays all networks and their parameters.
 
 SYNOPSIS
 --------
@@ -18,9 +18,18 @@ SYNOPSIS
 DESCRIPTION
 -----------
 
-*xe network-list* lists networks and their parameters found in a pool. Output can be filtered using the *params* parameter and a value  (xe network-list params=PIF-uuids), separating multiple parameters with commas (xe network-list params=PIF-uuids,VIF-uuids,name-label,name-description) or parameter values by specifying the parameter name and the desired value (xe network-list bridge=xapi0). 
+*xe network-list* displays networks and their parameters.
 
-Display minimal information by adding the --minimal option. The --minimal option displays the first item in the resulting list delimited by commas. For example: *xe network-list params=PIF-uuids,VIF-uuids,name-label* --minimal would display all PIF uuids delimited by commas.
+Output can be filtered by using the *params* parameter and a value (separate multiple parameters with commas): ::
+	*xe network-list params=PIF-uuids* +
+	*xe network-list params=PIF-uuids,VIF-uuids,name-label,name-description*
+
+Output can be filtered by using parameter values and the desired value: ::
+	*xe network-list bridge=xapi0*
+
+Append --minimal to display values for one parameter on a single line separated by commas: ::
+	*xe network-list params="MTU" --minimal*
+
 
 
 OPTIONAL PARAMETERS
@@ -79,28 +88,29 @@ OPTIONAL PARAMETERS
 
 *other-config:ethtool-gso*::
 	Display generic segmentation offload status [ on | off ]
-
+	
+*--minimal*::
+	Specify --minimal to only show minimal output.
 
 EXAMPLES
 --------
 
-To display the *name-label* and *UUID* parameters of all networks with a *MTU of 1500*: ::
-	*xe network-list* MTU="1500" params="name-label,uuid"
+To display all parameters for all networks in a pool: ::
+	*xe network-list* params="all"
 
 To display all paramters for a specific network: ::
 	*xe network-list* uuid=<NETWORK UUID> params="all"
 	
-To display all parameters for all networks in a pool: ::
-	*xe network-list* params="all"
-	
 To display *VIF-uuids* for a specific network: ::
 	*xe network-list* uuid=<NETWORK UUID> params="VIF-uuids"
+	
+To display the *name-label* and *UUID* parameters of all networks with a *MTU* of 1500: ::
+	*xe network-list* MTU="1500" params="name-label,uuid"
 
 
 SEE ALSO
 --------
-*xe help network-list*, *xe-network-create*(1), *xe-network-destroy*(1), *xe-network-param-set*(1), *xe-network-param-add*(1), *xe-network-param-clear*(1), *xe-pif-list*(1), *xe-pool-vlan-create*(1)
-
+*xe help network-list*, *xe-network-create*(1), *xe-network-destroy*(1), *xe-network-param-set*(1), *xe-network-param-add*(1), *xe-network-param-clear*(1), *xe-pif-list*(1)
 
 AUTHORS
 -------

@@ -18,10 +18,15 @@ SYNOPSIS
 
 DESCRIPTION
 -----------
-*xe cd-list* displays available CD images on all accessible ISO type storage repositories. Output can be filtered using the *params* parameter and a value  (xe cd-list params=name-label), separating multiple parameters with commas (xe cd-list params=uuid,name-label,sr-uuid) or parameter values by specifying the parameter name and the desired value (xe cd-list name-label=xs-tools.iso). 
 
-Display minimal information by adding the --minimal option. The --minimal option displays the first item in the resulting list delimited by commas. For example: *xe cd-list params=uuid,name-label,location* --minimal would display all CD uuids delimited by commas.
+*xe cd-list* displays cds and their parameters.
 
+Output can be filtered by using the *params* parameter and a value (separate multiple parameters with commas): ::
+	*xe cd-list params=uuid* +
+	*xe cd-list params=uuid,name-label,name-description*
+
+Append --minimal to display values for one parameter on a single line separated by commas: ::
+	*xe cd-list params="name-label" --minimal*
 
 
 OPTIONAL PARAMETERS
@@ -32,11 +37,11 @@ OPTIONAL PARAMETERS
 *uuid*::
 	Display CD UUIDs
 *name-label*::
-	List CD name labels
+	Display CD name labels
 *name-description*::
 	Display CD name descriptions
 *is-a-snapshot*::
-	Display if a CD is a snapshot [true|false]
+	Display if a CD is a snapshot [ true | false ]
 *snapshot-of*::
 	Display UUID of snapshotted CD
 *snapshots*::
@@ -44,13 +49,13 @@ OPTIONAL PARAMETERS
 *snapshot-time*::
 	Display the time of the snapshot
 *allowed-operations*::
-	Display allowed operations [destroy|clone|copy|snapshot]
+	Display allowed operations 
 *current-operations*::
-	Display current operations [destroy|clone|copy|snapshot]
+	Display current operations 
 *sr-uuid*::
-	Display Storage Repository UUID where the CD resides
+	Display UUID of the ISO Storage Repository where the CD resides
 *sr-name-label*::
-	Display Storage Repository name-label where the CD resides
+	Display name-label of the ISO Storage Repository where the CD resides
 *vbd-uuids*::
 	Display any Virtual Block Device UUIDs
 *crashdump-uuids*::
@@ -66,7 +71,7 @@ OPTIONAL PARAMETERS
 *sharable*::
 	Display if the CD is sharable [ true | false ]
 *read-only*::
-	Display if the CD is read only [ true | false ]
+	Display if the CD is read-only [ true | false ]
 *storage-lock*::
 	Display if the disk is locked at the storage level [ true | false ]
 *managed*::
@@ -74,7 +79,7 @@ OPTIONAL PARAMETERS
 *parent*::
 	Display parent disk if CD is part of a chain
 *missing*::
-	Display if Storage Repository has reported CD missing [ true | false ]
+	Display if the ISO Storage Repository has reported CD missing [ true | false ]
 *other-config*::
 	Display additional configuration parameter values for CD
 *xenstore-data*::
@@ -91,6 +96,8 @@ OPTIONAL PARAMETERS
 	Display pool metadata
 *tags*::
 	Display tags
+*--minimal*::
+	Specify --minimal to only show minimal output.
 
 	
 
@@ -98,10 +105,10 @@ EXAMPLES
 --------
 
 To display all CD name-labels: ::
-	*xe cd-list* params=name-label
+	*xe cd-list* params="name-label"
 
 To display all parameters for all CDs: ::
-	*xe cd-list* params=all
+	*xe cd-list* params="all"
 	
 To display minimal output for all CDs: ::
 	*xe cd-list* --minimal
@@ -110,7 +117,7 @@ To display minimal output for all CDs: ::
 
 SEE ALSO
 --------
-*xe-vm-cd-add*(1), *xe-vm-cd-eject*(1), *xe-vm-cd-insert*(1), *xe-vm-cd-list*(1), *xe-vm-cd-remove*(1)
+*xe help cd-list*, *xe-vm-cd-add*(1), *xe-vm-cd-eject*(1), *xe-vm-cd-insert*(1), *xe-vm-cd-list*(1), *xe-vm-cd-remove*(1)
 
 
 AUTHORS
@@ -121,7 +128,7 @@ Grant McWilliams <grant@soundlinuxtraining.com>
 
 BUGS
 ----
-See http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP on how to send bug reports, send bugs and general questions to xen-api@lists.xen.org.
+For guidelines on submitting bug reports see http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP. Submit bugs and general questions to xen-api@lists.xen.org.
 
 
 COPYRIGHT

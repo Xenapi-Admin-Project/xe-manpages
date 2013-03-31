@@ -11,12 +11,12 @@ xe-vlan-list - Display all VLANS.
 
 SYNOPSIS
 --------
-*xe vlan-list* [ params=<parameter> ] [--minimal]
+*xe vlan-list* [ params=<PARAMETER> ] [--minimal]
 
 DESCRIPTION
 -----------
 
-*xe vlan-list* lists all VLANs and their parameters. Citrix also recommends using *xe pif-list* to display VLANs. Output can be filtered using the *params* parameter and a value  (xe vlan-list params=tagged-PIF), separating multiple parameters with commas (xe vlan-list params=tagged-PIF,tag,sr-uuid) or parameter values by specifying the parameter name and the desired value (xe vlan-list tag=100). 
+*xe vlan-list* lists all VLANs and their parameters. Use *xe pif-list* to display VLANs and related PIFs. Output can be filtered using the *params* parameter and a value  (xe vlan-list params=tagged-PIF), separating multiple parameters with commas (xe vlan-list params=tagged-PIF,tag,sr-uuid) or parameter values by specifying the parameter name and the desired value (xe vlan-list tag=100). 
 
 Display minimal information by adding the --minimal option. The --minimal option displays the first item in the resulting list delimited by commas. For example: *xe vlan-list params=tagged-PIF,uuid,untagged-PIF* --minimal would display all tagged-PIF uuids delimited by commas.
 
@@ -37,21 +37,21 @@ OPTIONAL PARAMETERS
 	Display physical PIF UUIDs
 
 *untagged-PIF*::  
-	Display virtual PIF interface UUIDs
+	Display pseudo PIF UUIDs
 	
 
 EXAMPLES
 --------
 
-To display only the tagged-PIF and tag parameters for VLANs type: ::
+To display only the tagged-PIF and tag parameters for VLANs: ::
 	*xe vlan-list* params="tag,tagged-PIF"
 
-To display all the VLANS associated with a physical PIF interface: :
-	*xe vlan-list* tagged-PIF=<Physical PIF UUID> params="all"
+To display all the VLANS associated with a physical PIF interface: ::
+	*xe vlan-list* tagged-PIF=<PHYSICAL PIF UUID> params="all"
 
 SEE ALSO
 --------
-*xe-pool-vlan-create*(1), *xe-pif-list*(1), *xe-vlan-destroy*(1), *xe-network-list*(1)
+*xe-pool-vlan-create*(1), *xe-vlan-create*(1), *xe-pif-list*(1), *xe-vlan-destroy*(1), *xe-network-list*(1)
 
 AUTHORS
 -------

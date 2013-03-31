@@ -61,6 +61,7 @@ The SYNOPSIS section shows the command syntax.
 4. DESCRIPTION
 
 The DESCRIPTION section describes the command and its uses. This can be as short or long as necessary. If there is ambiguity concerning the command more clarification is needed.
+
 * When commands attempt to execute a function (*-param-clear) we will use the verbage - attempts.
 	
 	e.g xe pif-param-clear attempts to clear all values for a specific writable parameter for a PIF.
@@ -87,7 +88,7 @@ The DESCRIPTION section describes the command and its uses. This can be as short
 	*-param-get*:
 		- xe *-param-get* returns a parameter or a key value for a specific *.
 		
-	
+* All commands that provide the --minimal and --multiple options should should mention it here even if xe help does not.	
 
 
  
@@ -105,12 +106,13 @@ The DESCRIPTION section describes the command and its uses. This can be as short
 6. OPTIONAL PARAMETERS
 
 * List all optional parameters here with a very short description.
-* All List commands should include the params=all option.
+* All commands that use the --multiple and/or --minimal options should include those options here
 * Parameter option syntax will use square brackets with each possible option separated by pipes.
 	ethtool-autoneg=[ on | off ]
-
-*all*
-	Display all parameter values 
+	
+* All List commands should include the params=all option.
+	*all*
+		Display all parameter values 
  
 
 

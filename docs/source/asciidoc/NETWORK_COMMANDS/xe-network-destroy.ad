@@ -7,18 +7,18 @@ XE(1)
 
 NAME
 -----
-xe-network-destroy - Erase a network
+xe-network-destroy - Remove a network
 
 
 SYNOPSIS
 --------
-*xe network-destroy* uuid=<Network UUID>
+*xe network-destroy* uuid=<NETWORK UUID>
 
 
 DESCRIPTION
 -----------
 
-*xe network-destroy* removes a network that contains no attached PIFs, VIFs, or active VLANs. VIF interfaces associated with the network are also removed. To detach PIF and VIF interfaces use *xe pif-unplug* and *xe vif-unplug*. To remove a VLAN use *xe vlan-destroy*.   
+*xe network-destroy* removes a network that contains no attached PIFs, VIFs, or VLANs. To detach PIF and VIF interfaces use *xe pif-unplug* and *xe vif-unplug*. To remove VLANs use *xe vlan-destroy*.   
 
 
 REQUIRED PARAMETERS
@@ -28,12 +28,12 @@ REQUIRED PARAMETERS
 
 EXAMPLES
 --------
-To erase a network from a pool type: ::
-	*xe network-destroy* uuid=<Network UUID>
+To remove a network: ::
+	*xe network-destroy* uuid=<NETWORK UUID>
 
 SEE ALSO
 --------
-*xe-network-create*(1), *xe-network-list*(1), *xe-pif-unplug*(1), *xe-vif-unplug*(1), *xe-vlan-destroy*(1)
+*xe help network-destroy*, *xe-network-create*(1), *xe-network-list*(1), *xe-pif-unplug*(1), *xe-vif-unplug*(1), *xe-vlan-destroy*(1)
 
 AUTHORS
 -------
