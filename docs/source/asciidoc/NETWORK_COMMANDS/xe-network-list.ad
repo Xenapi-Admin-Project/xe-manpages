@@ -90,7 +90,7 @@ OPTIONAL PARAMETERS
 	Display generic segmentation offload status [ on | off ]
 	
 *--minimal*::
-	Specify --minimal to only show minimal output.
+	Specify --minimal to only show minimal output
 
 EXAMPLES
 --------

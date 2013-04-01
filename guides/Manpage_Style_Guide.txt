@@ -62,6 +62,23 @@ The SYNOPSIS section shows the command syntax.
 
 The DESCRIPTION section describes the command and its uses. This can be as short or long as necessary. If there is ambiguity concerning the command more clarification is needed.
 
+
+* When writing a description for a *-list command, use the following structure. 
+
+
+	*xe network-list* displays networks and their parameters.
+
+	Output can be filtered by using the *params* parameter and a value (separate multiple parameters with commas): ::
+		*xe network-list params=PIF-uuids* +
+		*xe network-list params=PIF-uuids,VIF-uuids,name-label,name-description*
+
+	Output can be filtered by using parameter values and the desired value: ::
+		*xe network-list bridge=xapi0*
+
+	Append --minimal to display values for one parameter on a single line separated by commas: ::
+		*xe network-list params="MTU" --minimal*
+
+
 * When commands attempt to execute a function (*-param-clear) we will use the verbage - attempts.
 	
 	e.g xe pif-param-clear attempts to clear all values for a specific writable parameter for a PIF.
@@ -175,26 +192,34 @@ Example for List Commands
 XE(1)
 =======
 :doctype: manpage
-:man source: xe-cd-list
-:man version: {1}
-:man manual: xe cd-list Manual
- 
+:man source:   	xe-cd-list 
+:man version:  	{1}
+:man manual:   	xe cd-list Manual
+
+
 NAME
------
-xe-cd-list - List CD images
- 
+----
+xe-cd-list - Lists CD images
+
 SYNOPSIS
 --------
+
 *xe cd-list* [ params=<PARAMETER> ] [--minimal]
- 
- 
+
+
 DESCRIPTION
 -----------
-*xe cd-list* displays available CD images on all available ISO storage repositories. 
-Output can be filtered by supplying params=<parameter>. Multiple parameters can be displayed by seperating each parameter with a comma (params=uuid,name-label).
 
- 
- 
+*xe cd-list* displays cds and their parameters.
+
+Output can be filtered by using the *params* parameter and a value (separate multiple parameters with commas): ::
+	*xe cd-list params=uuid* +
+	*xe cd-list params=uuid,name-label,name-description*
+
+Append --minimal to display values for one parameter on a single line separated by commas: ::
+	*xe cd-list params="name-label" --minimal*
+
+
 OPTIONAL PARAMETERS
 -------------------
 
@@ -203,11 +228,11 @@ OPTIONAL PARAMETERS
 *uuid*::
 	Display CD UUIDs
 *name-label*::
-	List CD name labels
+	Display CD name labels
 *name-description*::
 	Display CD name descriptions
 *is-a-snapshot*::
-	Display if a CD is a snapshot [true|false]
+	Display if a CD is a snapshot [ true | false ]
 *snapshot-of*::
 	Display UUID of snapshotted CD
 *snapshots*::
@@ -215,45 +240,229 @@ OPTIONAL PARAMETERS
 *snapshot-time*::
 	Display the time of the snapshot
 *allowed-operations*::
-	Display allowed operations [destroy|clone|copy|snapshot]
+	Display allowed operations 
 *current-operations*::
-	Display current operations [destroy|clone|copy|snapshot]
+	Display current operations 
 *sr-uuid*::
-	Display Storage Repository UUID where the CD resides
+	Display UUID of the ISO Storage Repository where the CD resides
 *sr-name-label*::
-	Display Storage Repository name-label where the CD resides
+	Display name-label of the ISO Storage Repository where the CD resides
+*vbd-uuids*::
+	Display any Virtual Block Device UUIDs
+*crashdump-uuids*::
+	Display any crash dump UUIDs
+*virtual-size*::
+	Display the virtual size in bytes
+*physical-utilisation*::
+	Display utilised size in bytes
+*location*::
+	Display the CD filename
+*type*::
+	Display the CD type [ User | System ]
+*sharable*::
+	Display if the CD is sharable [ true | false ]
+*read-only*::
+	Display if the CD is read-only [ true | false ]
+*storage-lock*::
+	Display if the disk is locked at the storage level [ true | false ]
+*managed*::
+	Display if managed [ true | false ]
+*parent*::
+	Display parent disk if CD is part of a chain
+*missing*::
+	Display if the ISO Storage Repository has reported CD missing [ true | false ]
+*other-config*::
+	Display additional configuration parameter values for CD
+*xenstore-data*::
+	Display data to be inserted into xenstore tree
+*sm-config*::
+	Display storage manager device config keys
+*on-boot*::
+	Display on-boot config
+*allow-caching*::
+	Display if caching is allowed [ true | false ]
+*metadata-latest*::
+	Display latest CD metadata
+*metadata-of-pool*::
+	Display pool metadata
+*tags*::
+	Display tags
+*--minimal*::
+	Specify --minimal to only show minimal output.
 
- 
+	
+
 EXAMPLES
 --------
 
 To display all CD name-labels: ::
-	*xe cd-list* params=name-label
+	*xe cd-list* params="name-label"
 
-To display all parameters for a CD: ::
-	*xe cd-list* uuid=<CD UUID> params=all
- 
- 
- 
+To display all parameters for all CDs: ::
+	*xe cd-list* params="all"
+	
+To display minimal output for all CDs: ::
+	*xe cd-list* --minimal
+
+
+
 SEE ALSO
 --------
-*xe help cd-list*, xe-vm-cd-add*(1), *xe-vm-cd-eject*(1), *xe-vm-cd-insert*(1), *xe-vm-cd-remove*(1)
- 
+*xe help cd-list*, *xe-vm-cd-add*(1), *xe-vm-cd-eject*(1), *xe-vm-cd-insert*(1), *xe-vm-cd-list*(1), *xe-vm-cd-remove*(1)
+
+
 AUTHORS
 -------
-Manpage Author(s)::
-	Grant McWilliams <grant@soundlinuxtraining.com>
- 
- 
+Manpage Author(s): ::
+Grant McWilliams <grant@soundlinuxtraining.com>
+
+
 BUGS
 ----
-For guidelines on submitting bug reports see http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP. Submit bugs and general questions to xen-api@lists.xen.org. 
- 
+For guidelines on submitting bug reports see http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP. Submit bugs and general questions to xen-api@lists.xen.org.
+
+
 COPYRIGHT
 ---------
-Copyright \(C)  2012 - Grant McWilliams
-Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License, Version 1.3 or any later version published by the Free Software Foundation; with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts. A copy of the license is included in the section entitled "GNU Free Documentation License".
+Copyright \(C) 2012 - Grant McWilliams
+
+Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License, Version 1.3 or any later version published by the Free Software Foundation; with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts. A copy of the license is included in the section entitled "GNU Free Documentation License"
+
+
  
+XE(1)
+=======
+:doctype: manpage
+:man source:   xe network-list
+:man version:  {1}
+:man manual:   xe network-list manual
+
+NAME
+-----
+xe-network-list - Displays all networks and their parameters.
+
+SYNOPSIS
+--------
+
+*xe network-list*  [ params=<PARAMETER> ] [--minimal]
+
+
+DESCRIPTION
+-----------
+
+*xe network-list* displays networks and their parameters.
+
+Output can be filtered by using the *params* parameter and a value (separate multiple parameters with commas): ::
+	*xe network-list params=PIF-uuids* +
+	*xe network-list params=PIF-uuids,VIF-uuids,name-label,name-description*
+
+Output can be filtered by using parameter values and the desired value: ::
+	*xe network-list bridge=xapi0*
+
+Append --minimal to display values for one parameter on a single line separated by commas: ::
+	*xe network-list params="MTU" --minimal*
+
+
+
+OPTIONAL PARAMETERS
+-------------------
+
+*all*::
+	Display all parameter values
+
+*uuid*::
+	Display network UUIDs
+
+*name-label*::	
+	Display network name-labels
+	
+*name-description*::	
+	Display network descriptions
+
+*VIF-uuids*::	
+	Display VIFs attached to networks
+	
+*PIF-uuids*:: 	
+ 	Display PIFs attached to networks
+
+*MTU*::	
+	Display network MTU values
+	
+*bridge*::
+	Display network bridge names
+
+*blobs*::	
+	Display binary data stores
+
+*tags*::	
+	Display writable tag parameters
+
+*other-config:static-routes*::	
+	Display comma seperated list of Static routes present on network [ <SOURCE NETWORK ADDRESS>/<CIDR MASK>/<NEXT HOP ADDRESS> ] 
+
+*other-config:ethtool-autoneg*::
+	Display ethernet Autonegotiation status [ on | off ]
+
+*other-config:ethtool-rx*:: 
+	Display receive checksum status [ on | off ]
+
+*other-config:ethtool-tx*::
+	Display transmit checksum status [ on | off ]
+
+*other-config:ethtool-sg*:: 
+	Display scatter gather status [ on | off ]
+
+*other-config:ethtool-tso*::
+	Display TCP segmentation offload status [ on | off ]
+
+*other-config:ethtool-ufo*::
+	Display UDP fragment offload status [ on | off ]
+
+*other-config:ethtool-gso*::
+	Display generic segmentation offload status [ on | off ]
+	
+*--minimal*::
+	Specify --minimal to only show minimal output.
+
+EXAMPLES
+--------
+
+To display all parameters for all networks in a pool: ::
+	*xe network-list* params="all"
+
+To display all paramters for a specific network: ::
+	*xe network-list* uuid=<NETWORK UUID> params="all"
+	
+To display *VIF-uuids* for a specific network: ::
+	*xe network-list* uuid=<NETWORK UUID> params="VIF-uuids"
+	
+To display the *name-label* and *UUID* parameters of all networks with a *MTU* of 1500: ::
+	*xe network-list* MTU="1500" params="name-label,uuid"
+
+
+SEE ALSO
+--------
+*xe help network-list*, *xe-network-create*(1), *xe-network-destroy*(1), *xe-network-param-set*(1), *xe-network-param-add*(1), *xe-network-param-clear*(1), *xe-pif-list*(1)
+
+AUTHORS
+-------
+Manpage Author(s): ::
+Matthew Spah <spahmatthew@xenapiadmin.com>
+
+
+BUGS
+----
+For guidelines on submitting bug reports see http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP. Submit bugs and general questions to xen-api@lists.xen.org.
+
+COPYRIGHT
+---------
+Copyright \(C)  2012 - Matthew Spah
+Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License, Version 1.3 or any later version published by the Free Software Foundation; with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts. A copy of the license is included in the section entitled "GNU Free Documentation License"
+
+
+ 
+ 
+
  
 Example for Other Commands
  
@@ -341,6 +550,7 @@ Copyright \(C)  2012 - Matthew Spah
 Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License, Version 1.3 or any later version published by the Free Software Foundation; with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts. A copy of the license is included in the section entitled "GNU Free Documentation License".
 
 
+Examples of the low level commands
 
 XE(1)
 =======
@@ -441,4 +651,122 @@ COPYRIGHT
 ---------
 Copyright \(C)  2012 - Matthew Spah
 Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License, Version 1.3 or any later version published by the Free Software Foundation; with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts. A copy of the license is included in the section entitled "GNU Free Documentation License"
+
+XE(1)
+=======
+:doctype: manpage
+:man source:   xe network-param-list
+:man version:  {1}
+:man manual:   xe network-param-list manual
+
+NAME
+----
+xe-network-param-list - Lists all parameters for a network 
+
+SYNOPSIS
+--------
+*xe network-param-list* uuid=<NETWORK UUID>
+
+DESCRIPTION
+-----------
+*xe network-param-list* displays all parameters for a specific network. 
+
+
+REQUIRED PARAMETERS
+-------------------
+
+*uuid*::
+	Network UUID - Use *xe network-list* to obtain a list of network UUIDs.
+	
+EXAMPLES
+--------
+To display all parameters for a specific network: ::
+	*xe network-param-list* uuid=<NETWORK UUID>
+
+SEE ALSO
+--------
+*xe-network-create*(1), *xe-network-destroy*(1), *xe-network-param-remove*(1), *xe-network-param-set*(1), *xe-pif-list*(1), *xe-pool-vlan-create*(1)
+
+
+AUTHORS
+-------
+Manpage Author(s): ::
+Matthew Spah <spahmatthew@xenapiadmin.com>
+
+
+BUGS
+----
+For guidelines on submitting bug reports see http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP. Submit bugs and general questions to xen-api@lists.xen.org.
+
+
+COPYRIGHT
+---------
+Copyright \(C) 2012 - Matthew Spah
+Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License, Version 1.3 or any later version published by the Free Software Foundation; with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts. A copy of the license is included in the section entitled "GNU Free Documentation License"
+
+
+XE(1)
+=======
+:doctype: manpage
+:man source:   xe network-param-get
+:man version:  {1}
+:man manual:   xe network-param-get manual
+
+NAME
+----
+xe-network-param-get - Returns a parameter for a network
+
+SYNOPSIS
+--------
+*xe network-param-get* uuid=<NETWORK UUID> param-name=<PARAMETER> [ param-key=<PARAMETER KEY> ]
+
+
+DESCRIPTION
+-----------
+*xe network-param-get* returns a parameter or a key value for a specified network. 
+
+
+REQUIRED PARAMETERS
+-------------------
+*uuid*::
+	Network UUID - Use *xe network-list* to obtain a list of network UUIDs.
+
+*param-name*::
+	The network parameter to return.
+	
+OPTIONAL PARAMETERS
+-------------------
+*param-key*::
+	The network key to return.  
+
+
+EXAMPLES
+--------
+To display the *VIF-uuids* attached to a network: ::
+	*xe network-param-get* uuid=<NETWORK UUID> param-name="VIF-uuids"
+	
+To display the *static-routes* present on a network: ::
+	*xe network-param-get* uuid=<NETWORK UUID> param-name="other-config" param-key="static-routes"
+
+To display the *default-locking-mode* parameter on a network: ::
+	*xe network-param-get* uuid=<NETWORK UUID> param-name="default-locking-mode"
+
+SEE ALSO
+--------
+*xe-network-list*(1), *xe-network-create*(1), *xe-network-param-list*(1), *xe-pif-list*(1), *xe-vif-list*(1), *xe-network-param-set*(1)
+
+AUTHORS
+-------
+Manpage Author(s): ::
+Matthew Spah <spahmatthew@xenapiadmin.com>
+
+BUGS
+----
+For guidelines on submitting bug reports see http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP. Submit bugs and general questions to xen-api@lists.xen.org.
+
+COPYRIGHT
+---------
+Copyright \(C)  2012 - Matthew Spah
+Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License, Version 1.3 or any later version published by the Free Software Foundation; with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts. A copy of the license is included in the section entitled "GNU Free Documentation License"
+
 
