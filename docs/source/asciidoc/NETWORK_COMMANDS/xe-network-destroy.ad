@@ -17,8 +17,9 @@ SYNOPSIS
 
 DESCRIPTION
 -----------
+*xe network-destroy* removes a network that contains no attached PIFs, VIFs, or VLANs. To detach PIF and VIF interfaces use *xe pif-unplug* and *xe vif-unplug*. To remove VLANs use *xe vlan-destroy*. 
 
-*xe network-destroy* removes a network that contains no attached PIFs, VIFs, or VLANs. To detach PIF and VIF interfaces use *xe pif-unplug* and *xe vif-unplug*. To remove VLANs use *xe vlan-destroy*.   
+Detached PIFs will remain in the database after the network is removed, but detached VIFs assoiciated with the network are removed. 
 
 
 REQUIRED PARAMETERS
@@ -39,7 +40,6 @@ AUTHORS
 -------
 Manpage Author(s): ::
 Matthew Spah <spahmatthew@xenapiadmin.com>
-
 
 BUGS
 ----

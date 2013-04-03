@@ -12,7 +12,7 @@ xe-network-param-set - Set parameters for a network
 SYNOPSIS
 --------
 *xe network-param-set* uuid=<NETWORK UUID> [ name-label=<NAME LABEL> ] [ name-description=<DESCRIPTION> ] [ MTU=<MTU SIZE> ] [ default-locking-mode=<LOCKING MODE> ]
-										   [ other-config:<PARAMETER NAME>=<KEY VALUE> ]
+										   [ other-config:<KEY>=<VALUE> ]
 	
 DESCRIPTION
 -----------
@@ -39,28 +39,28 @@ OPTIONAL PARAMETERS
 	Set switchport locking mode: default-lockingmode=[ disabled | unlocked ]
 	
 *other-config:static-routes*::
-	Create a static route for a network. Seperate multiple routes using a comma. static-routes=[ <SOURCE NETWORK ADDRESS>/<CIDR MASK>/<NEXT HOP ADDRESS> ]
+	Set a static route. Seperate multiple routes using a comma. static-routes=[ <SOURCE NETWORK ADDRESS>/<CIDR MASK>/<NEXT HOP ADDRESS> ]
 		
 *other-config:ethtool-autoneg*::
-	Set to enable autonegotiation on a network: ethtool-autoneg=[ on | off ]
+	Set to enable autonegotiation: ethtool-autoneg=[ on | off ]
 	
 *other-config:ethtool-rx*:: 
-	Set to enable receive checksum on a network: ethtool-rx=[ on | off ]
+	Set to enable receive checksum: ethtool-rx=[ on | off ]
 	
 *other-config:ethtool-tx*::
-	Set to enable transmit checksum on a network: ethtool-tx=[ on | off ]
+	Set to enable transmit checksum: ethtool-tx=[ on | off ]
 	
 *other-config:ethtool-sg*:: 
-	Set to enable scatter gather on a network: ethtool-sg=[ on | off ]
+	Set to enable scatter gather: ethtool-sg=[ on | off ]
 	
 *other-config:ethtool-tso*::
-	Set to enable TCP segmentation offload on a network: ethtool-tso=[ on | off ]
+	Set to enable TCP segmentation offload: ethtool-tso=[ on | off ]
 	
 *other-config:ethtool-ufo*::
-	Set to enable UDP fragment offload on a network: ethtool-ufo=[ on | off ]
+	Set to enable UDP fragment offload: ethtool-ufo=[ on | off ]
 	
 *other-config:ethtool-gso*::
-	Set to enable generic segmentation offload on a network: ethtool-gso=[ on | off ]
+	Set to enable generic segmentation offload: ethtool-gso=[ on | off ]
 	
 
 EXAMPLES

@@ -17,6 +17,8 @@ DESCRIPTION
 -----------
 *xe network-param-remove* removes a key from a writable set parameter and key/value pair from a writable map parameter. Use *xe network-list* and *xe network-param-list* to identify writable set or map parameters (SRW, MRW).﻿
 
+*xe network-param-remove* removes a key or key/value pair from writable set and map parameters. Use *xe network-list* and *xe network-param-list* to identify writable set or map parameters (SRW, MRW).
+
 
 REQUIRED PARAMETERS
 -------------------

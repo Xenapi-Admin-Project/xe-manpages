@@ -16,7 +16,7 @@ SYNOPSIS
 
 DESCRIPTION
 -----------
-*xe pif-forget* removes a physical PIF object from a host. If a VLAN exists on the physical PIF, use *xe vlan-destroy* to remove the VLAN before removing the physical PIF. Also use *xe vif-unplug* to detach active VIFs on the network connected to the physical PIF. After removal, the network connected to the PIF remains on the host.
+*xe pif-forget* removes a physical interface (PIF) from a host.  If a VLAN exists on the PIF, use *xe vlan-destroy* to remove the VLAN before removing the PIF. Also use *xe vif-unplug* to detach active VIFs on the network connected to the physical PIF. After removal, the network connected to the PIF remains on the host.
 
 
 

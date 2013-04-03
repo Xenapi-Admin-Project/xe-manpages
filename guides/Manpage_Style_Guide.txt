@@ -140,6 +140,7 @@ The DESCRIPTION section describes the command and its uses. This can be as short
 * Include the following four example types if they're relevant to your comand. 
 * Parameters between <> should be capitalized. 
 * The param-add command should contain an example of setting a map parameter and an example of setting a set parameter.
+* Order examples from least complicated to most complicated.
  
 1. Filtering results based on params=parameter 
 	xe vif-list params=uuid

@@ -11,155 +11,128 @@ xe-pif-list - Displays physical interfaces and their parameters
 
 SYNOPSIS
 --------
-*xe pif-list*  [ params=<PARAMETER> ]
+*xe pif-list*  [ params=<PARAMETER> ] [ --minimal ]
 
 DESCRIPTION
 -----------
-*xe pif-list* displays physical interfaces (PIF) and their parameters found in a pool. Output can be filtered by supplying params=<parameter>. Multiple parameters can be displayed by separating each parameter with a comma (e.g. params=uuid,name-label).
+*xe pif-list* displays physical interfaces (PIF) and their parameters.
 
+Output can be filtered by using the *params* parameter and a value (separate multiple parameters with commas): ::
+	*xe pif-list params=IP* +
+	*xe pif-list params=device,uuid,IP,netmask*
+
+Output can be filtered by using parameter values and the desired value: ::
+	*xe pif-list host-uuid=<HOST UUID>*
+
+Append --minimal to display values for one parameter on a single line separated by commas: ::
+	*xe pif-list params="uuid" --minimal*
 
 OPTIONAL PARAMETERS
 -------------------
-
+*all*::
+	Display all parameter values
+*uuid*::
+	Display PIF UUIDs
 *device*::
-	Display PIF's machine-readable interface (e.g. eth0)
-
+	Display machine-readable interfaces (e.g. eth0)
 *MAC*::
-    Display MAC address of PIF.
-
-*physical*::    
-    Display physical status of a PIF [true|false]
-    
+    Display MAC addresses 
+*physical*::     
+    Display the physical status of PIFs [ true | false ]  
 *currently-attached*::
-	Display currently-attach status of a PIF [true|false]
-	
+	Display the currently-attach status of PIFs [true| false ]	
 *MTU*::
-    Display MTU value for the PIF.
-
+    Display MTU values
 *VLAN*:: 
-    VLAN tag for the PIF interface. A tag of "-1" indicates no VLAN is assigned.
-    
+	Display VLAN tags	
 *bond-master-of*:: 
-	Display the bond UUID this PIF is the master of.
-	
+	Display bond master UUIDs
 *bond-slave-of*:: 
-	Display the bond UUID this PIF is a slave of.
-	
+	Display bond slave UUIDs
 *tunnel-access-PIF-of*:: 
 	// add
 *tunnel-transport-PIF-of*:: 
 	// add
 *management*:: 
-	Display the management status of the PIF [true|false]
-	
+	Display management status [ true | false ]
 *network-uuid*:: 
-    Display PIF's network UUID.
-
+    Display network UUIDs
 *network-name-label*::    
-    Display PIF's network name-label.
-
+    Display network name-labels
 *host-uuid*:: 
-    Display UUID of host PIF is present on.
-
+    Display host UUIDs
 *host-name-label*:: 
-    Display name of host PIF is present on.
-
+    Display host name-labels
 *IP-configuration-mode*:: 
-	Display IP configuration mode status [DHCP|static]
-	
+	Display IP configuration mode status [ DHCP | static ]
 *IP*:: 
-    Display IP address of the PIF.
-
+    Display IP addresses
 *netmask*:: 
-    Display netmask of the PIF.
-
+    Display netmasks
 *gateway*:: 
-    Display gateway address of the PIF.
-
+    Display gateway addresses 
 *DNS*::
-    Display DNS address of the PIF.
-
+    Display DNS addresses
 *io_read_kbs*:: 
-	Display the average receive rate in kB/s for the device. 
-
+	Display the average receive rate in kB/s
 *io_write_kbs*::
-    Display the average transmit rate in kB/s for the device.
-
+    Display the average transmit rate in kB/s
 *carrier*:: 
-	Display the link state for this device.
-
+	Display link state
 *vendor-id*:: 
-    Display the ID of the NIC's vender.
-
+    Display NIC vender IDs
 *vendor-name*:: 
-    Display the NIC vendor's name
-
+    Display NIC vendor names
 *device-id*::
-    Display device-id number assigned by the vender of the NIC model.
-
+    Display NIC vender device-id numbers
 *device-name*:: 
-	Display device-name assigned by the vender of the NIC model.
-
+	Display NIC vender device-name
 *speed*::
-    Display speed of the PIF. 
-
+    Display NIC speeds
 *duplex*:: 
-    Display duplex setting for PIF interface [full|half]
-    
+    Display duplex settings [ full | half ]
 *disallow-unplug*:: 
-	Display disallow-unplug protection setting for the PIF [true|false]
-
+	Display disallow-unplug protection settings [ true | false ]
 *pci-bus-path*::
-	Display PCI bus path address.
-
+	Display PCI bus path addresses
 *other-config:ethtool-speed*::
-	Speed of PIF interface in Mbps.
-
+	Display speed of PIF interface in Mbps.
 *other-config:ethtool-autoneg*::
-	Display ethernet Autonegotiation status [on|off]
-	
+	Display ethernet Autonegotiation status [ on | off ]
 *other-config:ethtool-rx*::
-	Display receive checksum status [on|off]
-
+	Display receive checksum status [ on | off ]
 *other-config:ethtool-tx*::
-	Display transmit checksum status [on|off]
-
+	Display transmit checksum status [ on | off ]
 *other-config:ethtool-sg*::
-	Display scatter gather status [on|off]
-
+	Display scatter gather status [ on | off]
 *other-config:ethtool-tso*::
-	Display TCP segmentation offload status [on|off]
-
+	Display TCP segmentation offload status [ on | off ]
 *other-config:ethtool-ufo*::
-	Display UDP fragment offload [on|off]
-
+	Display UDP fragment offload [ on | off ]
 *other-config:ethtool-gso*::
-	Display generic segmentation offload [on|off]
-
+	Display generic segmentation offload [ on | off ]
 *other-config:domain*::
 	Display DNS search path ( DNS suffix ).
-
 *other-config:bond-miimon*::
 	Display the time between link liveness checks, in milliseconds.
-
 *other-config:bond-downdelay*::
 	Display the number of milliseconds the bond waits after the link is lost before considering the link down. Default is 200ms.
-
 *other-config:bond-updelay*::
 	Display the number of milliseconds the bond waits after the link comes up before considering it up. Default is 31s.
+*--minimal*::
+	Specify --minimal to only show minimal output
 
 EXAMPLES
 --------
+To display all parameters for all PIFs: ::
+	*xe pif-list* params="all"
+To display all paramters for a specific PIF: ::
+	*xe pif-list* uuid=<PIF UUID> params="all"
+To display *network-uuid* for a specific PIF: ::
+	*xe pif-list* uuid=<PIF UUID> params="network-uuid"
+To display the *device* and *UUID* parameters of all PIFs on a specific host: ::
+	*xe pif-list* host-uuid=<HOST UUID> params="uuid,device"
 
-
-To display all parameters for a specific PIF: ::
-	*xe pif-list* uuid=<PIF UUID> params=all
-	
-To display all *physical* PIFs and all their parameters: ::
-	*xe pif-list* physical=true params=all
-	
-To display all the management PIFs and all their parameters: 
-	*xe pif-list* management=true params=all
 	
 SEE ALSO
 --------

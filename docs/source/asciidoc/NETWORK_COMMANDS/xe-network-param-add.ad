@@ -47,6 +47,10 @@ EXAMPLES
 To add a key to the *tag* parameter: ::
 	*xe network-param-add* uuid=<NETWORK UUID> param-name="tag" param-key=<KEY>
 
+To add a key=value pair to the *other-config* parameter: ::
+	*xe network-param-add* uuid=<NETWORK UUID> param-name="other-config" <KEY>=<VALUE>
+
+
 
 SEE ALSO
 --------
