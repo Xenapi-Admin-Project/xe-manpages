@@ -89,7 +89,7 @@ The DESCRIPTION section describes the command and its uses. This can be as short
 		- xe *-param-clear attempts to clear any writable parameter. Use xe *-list and xe *-param-list to identify writable parameters (RW, SRW, MRW)".
 		
 	*-param-remove*:
-		- xe *-param-remove removes any writable set or map parameter. Use xe *-list and xe *-param-list to identify writable set or map parameters (SRW, MRW)".﻿
+		- xe *-param-remove removes a key from a set parameter or key/value pairs from a map parameter. Use xe *-list and xe *-param-list to identify writable set or map parameters (SRW, MRW)".﻿
 		
 	*-param-set*:
 		- xe *-param-set sets writable parameters. Use xe *-list and xe *-param-list to identify writable parameters (RW, SRW, MRW).
@@ -123,13 +123,25 @@ The DESCRIPTION section describes the command and its uses. This can be as short
 6. OPTIONAL PARAMETERS
 
 * List all optional parameters here with a very short description.
-* All commands that use the --multiple and/or --minimal options should include those options here
+
 * Parameter option syntax will use square brackets with each possible option separated by pipes.
 	ethtool-autoneg=[ on | off ]
-	
+
+* All List commands should use the word "Display" in their description. 
+	*name-label*::
+		Display CD name labels
+	*name-description*::
+		Display CD name descriptions
+	*is-a-snapshot*::
+		Display if a CD is a snapshot [ true | false ]
+
 * All List commands should include the params=all option.
-	*all*
+	*all*::
 		Display all parameter values 
+
+ * All commands that use the --multiple and/or --minimal options should include those options here
+	*--minimal*::
+	Specify --minimal to only show minimal output.
  
 
 
@@ -344,7 +356,6 @@ xe-network-list - Displays all networks and their parameters.
 
 SYNOPSIS
 --------
-
 *xe network-list*  [ params=<PARAMETER> ] [--minimal]
 
 
@@ -370,58 +381,40 @@ OPTIONAL PARAMETERS
 
 *all*::
 	Display all parameter values
-
 *uuid*::
 	Display network UUIDs
-
 *name-label*::	
-	Display network name-labels
-	
+	Display network name-labels	
 *name-description*::	
 	Display network descriptions
-
 *VIF-uuids*::	
 	Display VIFs attached to networks
-	
 *PIF-uuids*:: 	
  	Display PIFs attached to networks
-
 *MTU*::	
-	Display network MTU values
-	
+	Display network MTU values	
 *bridge*::
 	Display network bridge names
-
 *blobs*::	
 	Display binary data stores
-
 *tags*::	
 	Display writable tag parameters
-
 *other-config:static-routes*::	
 	Display comma seperated list of Static routes present on network [ <SOURCE NETWORK ADDRESS>/<CIDR MASK>/<NEXT HOP ADDRESS> ] 
-
 *other-config:ethtool-autoneg*::
 	Display ethernet Autonegotiation status [ on | off ]
-
 *other-config:ethtool-rx*:: 
 	Display receive checksum status [ on | off ]
-
 *other-config:ethtool-tx*::
 	Display transmit checksum status [ on | off ]
-
 *other-config:ethtool-sg*:: 
 	Display scatter gather status [ on | off ]
-
 *other-config:ethtool-tso*::
 	Display TCP segmentation offload status [ on | off ]
-
 *other-config:ethtool-ufo*::
 	Display UDP fragment offload status [ on | off ]
-
 *other-config:ethtool-gso*::
-	Display generic segmentation offload status [ on | off ]
-	
+	Display generic segmentation offload status [ on | off ]	
 *--minimal*::
 	Specify --minimal to only show minimal output.
 
@@ -476,19 +469,17 @@ XE(1)
  
 NAME
 ----
- 
 *xe vif-create* - Create a virtual interface
  
 SYNOPSIS
 --------
- 
 *xe vif-create* vm-uuid=<VM UUID> network-uuid=<NETWORK UUID> device=<ETHERNET DEVICE NUMBER> [ mac=<MAC ADDRESS> ]
  
  
 DESCRIPTION
 -----------
  
-*xe vif-create* will create a new VIF interface for a VM on a network. A VIF interface created on a running VM needs to be attached to the VM using *xe vif-plug*. The resulting VIF interface UUID will be returned.
+*xe vif-create* create a new VIF interface for a VM on a network. A VIF interface created on a running VM needs to be attached to the VM using *xe vif-plug*. The resulting VIF interface UUID will be returned.
  
  
 REQUIRED PARAMETERS

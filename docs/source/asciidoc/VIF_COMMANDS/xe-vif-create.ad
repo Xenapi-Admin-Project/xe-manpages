@@ -19,17 +19,15 @@ SYNOPSIS
 DESCRIPTION
 -----------
 
-*xe vif-create* creates a VIF on a VM and connects it to a network. If a VIF is created on a running VM, then attach it using *xe vif-plug*. The MTU size of the VIF interface is inherited from the network. The resulting VIF UUID is returned.
+*xe vif-create* creates a VIF for a VM and connects it to a network. If a VIF is created on a running VM, then attach it using *xe vif-plug*. The MTU size of the VIF interface is inherited from the network. The resulting VIF UUID is returned.
 
 REQUIRED PARAMETERS
 -------------------
 
 *vm-uuid*::
 	VM for the VIF. Use *xe vm-list* to obtain a list of VMs.
-
 *network-uuid*::
 	Network for the VIF. Use *xe network-list* to obtain a list of networks.
-
 *device*::
 	Machine-readable interface number. (e.g. eth0)
 			
