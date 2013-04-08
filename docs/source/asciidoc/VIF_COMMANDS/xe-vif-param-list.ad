@@ -13,11 +13,9 @@ SYNOPSIS
 --------
 *xe vif-param-list* uuid=<VIF UUID> 
 
-
 DESCRIPTION
 -----------
 *xe vif-param-list* lists all parameters for a specific VIF.
-
 
 REQUIRED PARAMETERS
 -------------------
@@ -42,7 +40,6 @@ Lisa Nguyen <lisa@xenapiadmin.com>
 BUGS
 ----
 For guidelines on submitting bug reports see http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP. Submit bugs and general questions to xen-api@lists.xen.org.
-
 
 COPYRIGHT
 ---------
