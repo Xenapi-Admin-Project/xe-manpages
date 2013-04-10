@@ -13,24 +13,20 @@ SYNOPSIS
 --------
 *xe pif-param-clear* uuid=<PIF UUID> param-name=<PARAMETER> 
 
-
 DESCRIPTION
 -----------
 *xe pif-param-clear* attempts to clear any writable parameter. Use *xe pif-list* and *xe pif-param-list* to identify writable parameters (RW, SRW, MRW).
 
 REQUIRED PARAMETERS
 -------------------
-
 *uuid*::
 	PIF UUID - Use *xe pif-list* to obtain PIF UUIDs.
-	
 *param-name*::
-	Parameter to be cleared for a PIF interface (e.g. other-config). 
+	Writable parameter to be cleared. (e.g. other-config). 
 
 EXAMPLES
 --------
-
-To clear all values found in the *other-config* parameter: ::
+To clear all key/value pairs from the *other-config* parameter: ::
 	*xe pif-param-clear* uuid=<PIF UUID> param-name="other-config"
 
 SEE ALSO

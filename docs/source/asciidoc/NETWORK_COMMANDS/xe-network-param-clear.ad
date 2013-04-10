@@ -19,7 +19,6 @@ DESCRIPTION
 
 REQUIRED PARAMETERS
 -------------------
-
 *uuid*::
 	Network UUID - Use *xe network-list* to obtain network UUIDs.
 

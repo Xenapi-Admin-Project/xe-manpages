@@ -14,55 +14,40 @@ SYNOPSIS
 --------
 *xe network-param-add* uuid=<NETWORK UUID> param-name=<PARAMETER> [ param-key=<PARAMETER KEY> ] [ <KEY>=<VALUE> ]
 
-
 DESCRIPTION
 -----------
 *xe network-param-add* adds a key to a set parameter or a key/value pair to a map parameter. Use *xe network-list* and *xe network-param-list* to identify writable set or map parameters (SRW, MRW).﻿
 
-
-
 REQUIRED PARAMETERS
 -------------------
-
 *uuid*::
 	Network UUID - Use *xe network-list* to obtain a list of network UUIDs.
-
-
 *param-name*::
 	Parameter to have key or key/value pair added.
 
-
 OPTIONAL PARAMETERS
 -------------------
-
 *param-key*::
-	Key required if the parameter is a set.
-
+	Key to be added if the parameter is a set.
 *<KEY>*::
-	Key=value pair to be added if parameter is a map. 
+	Key/value pair to be added if parameter is a map. 
 
 EXAMPLES
 --------
-
 To add a key to the *tag* parameter: ::
 	*xe network-param-add* uuid=<NETWORK UUID> param-name="tag" param-key=<KEY>
 
-To add a key=value pair to the *other-config* parameter: ::
+To add a key/value pair to the *other-config* parameter: ::
 	*xe network-param-add* uuid=<NETWORK UUID> param-name="other-config" <KEY>=<VALUE>
-
-
 
 SEE ALSO
 --------
-
 *xe-network-param-set*(1), *xe-network-param-list*(1), *xe-network-param-remove*(1), *xe-network-list*(1), *xe-network-create*(1)
-
 
 AUTHORS
 -------
 Manpage Author(s): ::
 Matthew Spah <spahmatthew@xenapiadmin.com>
-
 
 BUGS
 ----

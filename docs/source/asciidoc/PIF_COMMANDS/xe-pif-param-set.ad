@@ -11,73 +11,53 @@ xe-pif-param-set - Set parameters for a physical interface
 
 SYNOPSIS
 --------
-
-*xe pif-param-set* uuid=<PIF UUID> 
-
-*xe pif-param-set* uuid=<PIF UUID> [ disallow-unplug=<VALUE> ] [ other-config:<PARAMETER KEY>=<KEY VALUE> ]
+*xe pif-param-set* uuid=<PIF UUID> [ disallow-unplug=<VALUE> ] [ other-config:<KEY>=<VALUE> ]
 
 DESCRIPTION
 -----------
+*xe pif-param-set* sets writable parameters for a PIF. Use xe *-list and xe *-param-list to identify writable parameters (RW, SRW, MRW).
 
-*xe pif-param-set* sets read/write parameters for a PIF. Changes to the *other-config* fields of a PIF interface will only take effect after a reboot or use of *xe pif-unplug* and *xe pif-plug*. 
+Changes to the *other-config* fields of a PIF interface will only take effect after a reboot or use of *xe pif-unplug* and *xe pif-plug*. 
 
 
 REQUIRED PARAMETERS
 -------------------
-
 *uuid*::
 	PIF UUID - Use *xe pif-list* to obtain PIF interface UUIDs.
 
-
 OPTIONAL PARAMETERS
 -------------------
-
 *disallow-unplug*::
-	Set disallow-unplug on a PIF: disallow-unplug=*[ true | false ]*
-	
+	Set disallow-unplug on a PIF: disallow-unplug=[ true | false ]
 *other-config:ethtool-speed*::
-	Set speed of PIF interface in Mbps: ethtool-speed=*[ 10 | 100 | 1000 ]*
-
+	Set speed of PIF interface in Mbps: ethtool-speed=[ 10 | 100 | 1000 ]
 *other-config:ethtool-autoneg*::
-	Set autonegotiation status on PIF: ethtool-autoneg=*[ on | off ]*
-	
+	Set autonegotiation status on PIF: ethtool-autoneg=[ on | off ]
 *other-config:ethtool-duplex*::
-	Set duplex mode of PIF: ethtool-duplex=*[ full | half ]*
-
+	Set duplex mode of PIF: ethtool-duplex=[ full | half ]
 *other-config:ethtool-rx*::
-	Enable receive checksum: ethtool-rx=*[ on | half ]*
-
+	Enable receive checksum: ethtool-rx=[ on | half ]
 *other-config:ethtool-tx*::
-	Enable transmit checksum: ethtool-tx=*[ on | off ]*
-
+	Enable transmit checksum: ethtool-tx=[ on | off ]
 *other-config:ethtool-sg*::
-	Enable scatter gather:  ethtool-sg=*[ on | off ]*
-
+	Enable scatter gather:  ethtool-sg=[ on | off ]
 *other-config:ethtool-tso*::
-	Enable TCP segmentation offload: ethtool-tso=*[ on | off ]*
-
+	Enable TCP segmentation offload: ethtool-tso=[ on | off ]
 *other-config:ethtool-ufo*::
-	Enable UDP fragment offload: ethtool-ufo=*[ on | off ]*
-
+	Enable UDP fragment offload: ethtool-ufo=[ on | off ]
 *other-config:ethtool-gso*::
-	Enable generic segmentation offload: ethtool-gso=*[ on | off ]*
-
+	Enable generic segmentation offload: ethtool-gso=[ on | off ]
 *other-config:domain*::
 	Set the DNS search path ( DNS Suffix ). Use a comma as a field separator.
-	
 *other-config:bond-miimon*::
-	Set the time between link liveness checks on the bond, in milliseconds.
-	
+	Set the time between link liveness checks on the bond, in milliseconds.	
 *other-config:bond-downdelay*::
-	Set number of milliseconds the bond waits after the link is lost before considering the link down. Default is 200ms.
-	 
+	Set number of milliseconds the bond waits after the link is lost before considering the link down. Default is 200ms. 
 *other-config:bond-updelay*::
 	Set number of milliseconds the bond waits after the link comes up before considering it up. Default is 31s.
 	
-	
 EXAMPLES
 --------
-
 To set the speed and duplex settings of a PIF interface, turn off autonegotiation first: ::
 	*xe pif-param-set* uuid=<PIF UUID> other-config:ethtool-autoneg="off"
 
@@ -92,7 +72,6 @@ SEE ALSO
 --------
 *xe help pif-param-set*, *xe pif-list*(1), *xe pif-param-list*(1), *xe host-list*(1), *xe pif-param-remove*(1), *xe pif-reconfigure-ip*(1)
 
-
 AUTHORS
 -------
 Manpage Author(s): ::
@@ -102,7 +81,6 @@ Lisa Nguyen <lisa@xenapiadmin.com>
 BUGS
 ----
 For guidelines on submitting bug reports see http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP. Submit bugs and general questions to xen-api@lists.xen.org.
-
 
 COPYRIGHT
 ---------

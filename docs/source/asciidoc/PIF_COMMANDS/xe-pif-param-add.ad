@@ -11,40 +11,35 @@ xe-pif-param-add - Add a key/value to a parameter for a PIF
 
 SYNOPSIS
 --------
-
 *xe pif-param-add* uuid=<PIF UUID> param-name=<PARAMETER> [ param-key=<PARAMETER KEY> ] [ <KEY>=<VALUE> ]
 
 DESCRIPTION
 -----------
 *xe pif-param-add* adds a key/value to a set or map parameter for a PIF. Use *xe pif-list* and *xe network-param-list* to identify writable set or map parameters (SRW, MRW).
 
-
 REQUIRED PARAMETERS
 -------------------
-
 *uuid*::
 	PIF UUID - Use *xe pif-list* to obtain PIF UUIDs
-
 *param-name*::
-	Parameter to have key added for a PIF interface
-
+	Parameter to have key or key/value pair added.
 
 OPTIONAL PARAMETERS
 -------------------
-
 *param-key*::
-	Parameter key value required if the other-config parameter will be modified. 
-	// fix this description
-
+	Key to be added if the parameter is a set. 
 	
-
+	Key for a set parameter.
+*<KEY>*::
+	Key/value pair to be added if parameter is a map.
+	
+	Key/value pair for a map parameter.
+	
 EXAMPLES
 --------
-
 To add a DNS search path ( DNS Suffix ) value for a PIF interface: ::
 	*xe pif-param-add* uuid=<PIF UUID> param-name=other-config domain=<DNS SUFFIX>
 	
-
 SEE ALSO
 --------
 *xe pif-list*(1),*xe pif-param-list*(1), *xe pif-param-get*(1), *xe pif-param-set*(1), *xe pif-param-remove*(1), *xe pif-param-clear*(1), *xe network-list*(1)

@@ -16,9 +16,9 @@ SYNOPSIS
 
 DESCRIPTION
 -----------
-*xe pif-introduce* creates a new PIF and network for the NIC specified. The PIF inherits the MAC address of the NIC unless specified. The resulting PIF UUID is returned.
+*xe pif-introduce* creates a new PIF and an external network for the NIC specified. The PIF inherits the MAC address of the NIC unless specified. The resulting PIF UUID is returned.
 
-When adding new PIFs to an existing pool, use *xe pif-introduce* on the pool master, then configure each host to match the pool masters network configuration. 
+When adding new PIFs to an existing pool, use *xe pif-introduce* on the pool master, then each host to match the pool masters network configuration. 
 
 
 REQUIRED PARAMETERS

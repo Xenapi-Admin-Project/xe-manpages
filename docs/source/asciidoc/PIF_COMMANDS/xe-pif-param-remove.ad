@@ -15,12 +15,10 @@ SYNOPSIS
 
 DESCRIPTION
 -----------
-*xe pif-param-remove* removes a key from a set parameter or key/value pairs from a map parameter.. Use *xe pif-list* and *xe pif-param-list* to identify writable set or map parameters (SRW, MRW).
-
+xe pif-param-remove removes a key from a set parameter or key/value pairs from a map parameter. Use *xe pif-list* and *xe pif-param-list* to identify writable set or map parameters (SRW, MRW).
 
 REQUIRED PARAMETERS
 -------------------
-
 *uuid*::
 	PIF UUID - Use *xe pif-list* to obtain PIF UUIDs.
 *param-name*::
@@ -30,7 +28,6 @@ REQUIRED PARAMETERS
 
 EXAMPLES
 --------
-
 To remove the *ethtool-speed* value: ::
 	*xe pif-param-remove* uuid=<PIF UUID> param-name="other-config" param-key="ethtool-speed"
 

@@ -16,27 +16,22 @@ SYNOPSIS
 
 DESCRIPTION
 -----------
-*xe pif-forget* removes a physical interface (PIF) from a host.  If a VLAN exists on the PIF, use *xe vlan-destroy* to remove the VLAN before removing the PIF. Also use *xe vif-unplug* to detach active VIFs on the network connected to the physical PIF. After removal, the network connected to the PIF remains on the host.
-
-
+*xe pif-forget* removes a physical interface (PIF) from a host. The network associated with the PIF will remain on the host after the PIF is removed.
 
 REQUIRED PARAMETERS
 -------------------
-
 *uuid*::
 	PIF UUID - Use *xe pif-list* to obtain PIF interface UUIDs.
 	
 EXAMPLES
 ---------
-
-To remove a PIF: :: 
+To detach and remove a PIF: ::
+	*xe pif-unplug* uuid=<PIF UUID> +
 	*xe pif-forget* uuid=<PIF UUID>
-	
-	
+		
 SEE ALSO
 --------
 *xe-pif-list*(1), *xe-pif-introduce*(1), *xe-vlan-destroy*(1), *xe-pif-plug*(1), *xe-pif-unplug*(1)
-
 
 AUTHORS
 -------
@@ -47,7 +42,6 @@ Lisa Nguyen <lisa@xenapiadmin.com>
 BUGS
 ----
 For guidelines on submitting bug reports see http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP. Submit bugs and general questions to xen-api@lists.xen.org.
-
 
 COPYRIGHT
 ---------

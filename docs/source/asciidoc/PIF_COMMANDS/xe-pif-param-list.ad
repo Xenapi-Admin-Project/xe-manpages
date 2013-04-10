@@ -17,24 +17,19 @@ DESCRIPTION
 -----------
 *xe pif-param-list* displays all parameters for a specific PIF.
 
-
 REQUIRED PARAMETERS
 -------------------
 *uuid*::
 	PIF UUID - Use *xe pif-list* to obtain PIF UUIDs.
 	
-
 EXAMPLES
 --------
-
-To display parameters for a PIF: ::
+To display all parameters for a specific PIF: ::
 	*xe pif-param-list* uuid=<PIF UUID>
-
 
 SEE ALSO
 --------
-*xe-pif-list*(1), *xe-pif-param-clear*(1), *xe-pif-scan*(1), *xe-pif-introduce*(1), *xe-network-list*(1)
-
+*xe help pif-param-list*, *xe-pif-list*(1), *xe-pif-param-clear*(1), *xe-pif-scan*(1), *xe-pif-introduce*(1), *xe-network-list*(1)
 
 AUTHORS
 -------
