@@ -11,12 +11,14 @@ xe-vm-cd-add - Adds a CD to the Virtual Machines(s)
 
 SYNOPSIS
 --------
-*xe vm-cd-add* cd-name=<CD NAME> device=<DEVICE NUMBER> [ vm selectors ]
+*xe vm-cd-add* cd-name=<CD NAME> device=<DEVICE NUMBER> [ vm selectors ] [--multiple]
 
 
 DESCRIPTION
 -----------
-*xe vm-cd-add* will add a CD to a Virtual Machine or to multiple Virtual Machines. 
+*xe vm-cd-add* adds a CD to a Virtual Machine or to multiple Virtual Machines. Select VM(s) by using one or more parameters displayed by xe vm-list params=all. If no VM(s) are selected then the CD is added to all VMs. Append --multiple if more than one VM is selected. 
+
+Use xe cd-list to display all available CDs in Storage Repositories of type ISO.
 
 
 REQUIRED PARAMETERS
@@ -31,32 +33,34 @@ REQUIRED PARAMETERS
 OPTIONAL PARAMETERS
 -------------------
 
-*<vm selectors*::
+*<vm selectors>*::
 	Parameters to select VM(s) - use *xe vm-list params=all* to get a list of VMs and VM parameters to filter on. 
+
+*--multiple* ::
+	Append --multiple if you want to match more than one VM.
 	
 
 EXAMPLES
 --------
 To add a CD to a specified VM: ::
-	xe vm-cd-add cd-name=<CD NAME> device=<DEVICE> uuid=<VM UUID>
+	*xe vm-cd-add* cd-name=<CD NAME> device=<DEVICE> uuid=<VM UUID>
 
 To add a CD to all VMs resident on a host: ::
-	xe vm-cd-add cd-name=<CD NAME> device=<DEVICE> resident-on=<HOST UUID>
+	*xe vm-cd-add* cd-name=<CD NAME> device=<DEVICE> resident-on=<HOST UUID> --multiple
 
 To add a CD to all running VMs that are not control domains: ::
-	xe vm-cd-add cd-name=<CD NAME> device=<DEVICE> power-state=running is-control-domain=false
-	
+	*xe vm-cd-add* cd-name=<CD NAME> device=<DEVICE> power-state=running is-control-domain=false --multiple
 
 
 SEE ALSO
 --------
 *xe help vm-cd-add*, *xe-cd-list*(1), *xe-vm-cd-eject*(1), *xe-vm-cd-insert*(1), *xe-vm-cd-list*(1), *xe-vm-cd-remove*(1)
 
+
 AUTHORS
 -------
 Manpage Author(s): ::
-Grant McWilliams <grant@soundlinuxtraining.com>
-
+Grant McWilliams <grant@xenapiadmin.com>
 
 
 BUGS

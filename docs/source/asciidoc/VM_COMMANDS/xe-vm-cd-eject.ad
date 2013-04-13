@@ -1,22 +1,22 @@
 XE(1)
 =======
 :doctype: manpage
-:man source:   xe vm-cd-remove
+:man source:   xe vm-cd-eject
 :man version:  {1}
-:man manual:   xe vm-cd-remove manual
+:man manual:   xe vm-cd-eject manual
 
 NAME
 ----
-xe-vm-cd-remove - Removes a CD from the Virtual Machines(s)
+xe-vm-cd-eject - Eject a CD from the Virtual Machines(s)
 
 SYNOPSIS
 --------
-*xe vm-cd-remove* cd-name=<CD NAME> [ vm selectors ] [--multiple]
+*xe vm-cd-eject* cd-name=<CD NAME> [ vm selectors ] [--multiple]
 
 
 DESCRIPTION
 -----------
-*xe vm-cd-remove* removes a CD from a Virtual Machine or from multiple Virtual Machines. Select VM(s) by using one or more parameters displayed by xe vm-list params=all. If no VM(s) are selected then the CD is removed from all VMs. Append --multiple if more than one VM is selected. 
+*xe vm-cd-eject* will eject a CD from a Virtual Machine or from multiple Virtual Machines. Select VMs by using one or more parameters displayed by xe vm-list params=all.  Append --multiple if more than one VM matches. 
 
 
 REQUIRED PARAMETERS
@@ -27,22 +27,22 @@ REQUIRED PARAMETERS
 
 OPTIONAL PARAMETERS
 -------------------
-*<vm selectors>*::
+*<vm selectors*::
 	Parameters to select VM(s) - use *xe vm-list params=all* to get a list of VM parameters to filter on. 
 *--multiple* ::
-	Append --multiple if you want to match more than one VM.
+	Specify --multiple if you want to match more than one VM.
 	
 
 EXAMPLES
 --------
 To remove a CD from a specified VM: ::
-	*xe vm-cd-remove* cd-name=<CD NAME> uuid=<VM UUID>
+	xe vm-cd-remove cd-name=<CD NAME> uuid=<VM UUID>
 
 To remove a CD from all VMs resident on a host: ::
-	*xe vm-cd-remove* cd-name=<CD NAME> resident-on=<HOST UUID> --multiple
+	xe vm-cd-remove cd-name=<CD NAME> resident-on=<HOST UUID> --multiple
 	
 To remove a CD from all running VMs that are not control domains: ::
-	*xe vm-cd-remove* cd-name=<CD NAME> power-state=running is-control-domain=false --multiple
+	xe vm-cd-remove cd-name=<CD NAME> power-state=running is-control-domain=false --multiple
 
 
 SEE ALSO
@@ -53,7 +53,7 @@ SEE ALSO
 AUTHORS
 -------
 Manpage Author(s): ::
-Grant McWilliams <grant@xenapiadmin.com>
+Grant McWilliams <grant@soundlinuxtraining.com>
 
 
 
