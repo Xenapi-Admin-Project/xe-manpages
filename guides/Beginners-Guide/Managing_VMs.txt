@@ -1,6 +1,6 @@
 ﻿There are options available to managing virtual machines including starting, pausing, recovering, and deleting them. 
 
-*Address the universal –force and –multiple options
+*Address the universal –force and –multiple options; move this down towards the bottom
 
 Option	         Description
 --force          Forces the operation to be performed on the VM and bypasses system warnings
@@ -12,6 +12,8 @@ To see a list of virtual machines, use the xe vm-list command. The list can be f
 
 Starting VMs
 To start a virtual machine, use the vm-start command.
+*Example of how to start a vm with a uuid
+*Example of how to start a vm with a parameter condition e.g. power-state=halted
 Options:
 on=
 paused=
@@ -31,12 +33,13 @@ Recovering VMs
 Consoling into VMs
 *use xe console on the command line
 xe console vm=<name or UUID>
+*How to for versions 1.0/1.1 and 1.5/1.6; look at tutorials
 *list other methods
 
 Deleting VMs
 *use vm-destroy
 *explain what happens when the virtual machine gets destroyed; can no longer be recovered. What happens to its virtual disks?
-*difference between vm-uninstall and vm-destroy
+*difference between vm-uninstall and vm-destroy; focus on uninstall for now
 xe vm-uninstall will delete the VDIs attached to the virtual machine.
 xe vm-destroy deletes the VM but its VDIs will be stored in the storage repository.
 
