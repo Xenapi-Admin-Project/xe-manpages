@@ -1,25 +1,14 @@
 ﻿There are options available to managing virtual machines including starting, pausing, recovering, and deleting them. 
 
-
 *Address the universal –force and –multiple options
 
-
-Option
-	Description
-	--force 
-	forces the operation to be performed on the VM and bypasses system warnings
-	--multiple 
-	perform the operation on multiple VMs
+Option	         Description
+--force          Forces the operation to be performed on the VM and bypasses system warnings
+--multiple       Perform the operation on multiple VMs
 	
+(Test to see if the multiple option applies to ALL virtual machines or certain ones)
 
-(do you need uuids for multiple virtual machines? test to see if the multiple option applies to ALL virtual machines or certain ones)
-
-
-To see a list of virtual machines, use the xe vm-list command. The list can be filtered based on parameter values. 
-
-
-For example, xe vm-list power-state=halted will only display a list of virtual machines that are halted. Another example would be xe vm-list params=name-label, power-state to get the name and its power state of each virtual machine.
-
+To see a list of virtual machines, use the xe vm-list command. The list can be filtered based on parameter values. For example, xe vm-list power-state=halted will only display a list of virtual machines that are halted. Another example would be xe vm-list params=name-label, power-state to get the name and its power state of each virtual machine.
 
 Starting VMs
 To start a virtual machine, use the vm-start command.
@@ -28,27 +17,21 @@ on=
 paused=
 vm=<VM UUID or VM name>
 
-
 Pausing VMs
-*check into vm-pause
+*use vm-pause
 *difference between pausing and suspending; something having to do with “releasing” memory
 *what happens if you don't provide a UUID (xe help says no UUID is required)
 
-
 Rebooting VMs
-*check into vm-reboot
-
+*use vm-reboot
 
 Recovering VMs
-*check into xe vm-recover
-*when would you want to recover a virtual machine
-
+*use xe vm-recover
 
 Consoling into VMs
 *use xe console on the command line
 xe console vm=<name or UUID>
 *list GUIs ?
-
 
 Deleting VMs
 *use vm-destroy
@@ -57,26 +40,22 @@ Deleting VMs
 xe vm-uninstall will delete the VDIs attached to the virtual machine.
 xe vm-destroy deletes the VM but its VDI will be stored in its storage repository.
 
-
 Importing/Exporting VMs
 *use vm-import or vm-export
 *consider server type? (xe help mentioned server type)
 
-
 Shutting down VMs
 *use xe vm-shutdown
-
 
 Troubleshooting VMs
 *what if the vm is “stuck”
 
-
 Snapshotting VMs
 *check in xe vm-snapshot
-
+*difference between checkpoint and snapshot
 
 Configuring VMs
 *how to change parameters using the parameter commands
 
 
-*difference between checkpoint and snapshot?
+
