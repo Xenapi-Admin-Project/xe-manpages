@@ -31,14 +31,14 @@ Recovering VMs
 Consoling into VMs
 *use xe console on the command line
 xe console vm=<name or UUID>
-*list GUIs ?
+*list other methods
 
 Deleting VMs
 *use vm-destroy
 *explain what happens when the virtual machine gets destroyed; can no longer be recovered. What happens to its virtual disks?
 *difference between vm-uninstall and vm-destroy
 xe vm-uninstall will delete the VDIs attached to the virtual machine.
-xe vm-destroy deletes the VM but its VDI will be stored in its storage repository.
+xe vm-destroy deletes the VM but its VDIs will be stored in the storage repository.
 
 Importing/Exporting VMs
 *use vm-import or vm-export
