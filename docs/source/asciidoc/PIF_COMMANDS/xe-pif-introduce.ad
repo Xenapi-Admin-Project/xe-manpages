@@ -13,13 +13,11 @@ SYNOPSIS
 --------
 *xe pif-introduce* host-uuid=<HOST UUID> device=<NIC> [ mac=<MAC ADDRESS> ] 
 
-
 DESCRIPTION
 -----------
-*xe pif-introduce* creates a new PIF and an external network for the NIC specified. The PIF inherits the MAC address of the NIC unless specified. The resulting PIF UUID is returned.
+*xe pif-introduce* creates a new physical interface (PIF) and an external network for the NIC specified. The PIF inherits the MAC address of the NIC unless specified. The resulting PIF UUID is returned.
 
-When adding new PIFs to an existing pool, use *xe pif-introduce* on the pool master, then each host to match the pool masters network configuration. 
-
+When adding new PIFs to an existing pool, use *xe pif-introduce* on the pool master, then on each host to match the pool masters network configuration. 
 
 REQUIRED PARAMETERS
 -------------------
@@ -38,7 +36,7 @@ EXAMPLES
 To introduce a new PIF associated with eth2: ::
 	*xe pif-introduce* host-uuid=<HOST UUID> device="eth2"
 To introduce a new PIF associated with eth2 and then attach it to its network: ::
-	*xe pif-introduce* host-uuid=<HOST UUID> device="eth2"
+	*xe pif-introduce* host-uuid=<HOST UUID> device="eth2" +
 	*xe pif-plug* uuid=<NEW PIF UUID>
 
 SEE ALSO

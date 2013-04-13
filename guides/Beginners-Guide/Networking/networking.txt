@@ -20,14 +20,15 @@ How to create a network?
 	
 How to remove a network?
 
-	* xe network-destroy destroys a network. In order to successfully remove a network, all PIFs, VIFs, and VLANs must be detached or removed. Use xe pif-unplug, xe vif-unplug to detach VIFs and PIFs, and use xe vlan-destroy to remove a VLAN from a network. 
+	* xe network-destroy destroys a network. In order to successfully remove a network, active PIFS must be removed, VIFs detached, and VLANs removed. Use *xe pif-forget* to remove PIFs, *xe vif-unplug* to detach VIFs, and *xe vlan-destroy* to remove VLANs. 
 	
 	
-PIFs
-
+PIFS	
+	
+	
 What is a PIF?
 
-	* A physical interface (PIF) represents a physical NIC on a XCP host. The PIF has a name, a description, a unique UUID, and other parameters that contain information about its network and host.
+	* A physical interface (PIF) represents a physical NIC on a XCP host. A PIF has a name, a description, a unique UUID, and other parameters that contain information about its network and host.
 
 Types of PIFs
 
@@ -39,7 +40,7 @@ We classify PIFs based on their configuration.
 	
 How to create a PIF?
 	
-	* PIFs are assosiated with physical NICs, so when you first install XCP, for every physical NIC found on the XCP host a PIF with a network is created. 
+	* PIFs are assosiated with physical NICs, so when you first install XCP, for every physical NIC found on the XCP host a PIF with a network is created. 	
 	
 	* To add a new PIF: Install the physical NIC, restart the server, run the xe pif-scan command, and a new PIF and network will be created.
 
@@ -48,7 +49,7 @@ VIFS
 
 What is a VIF?
 	
-	A virtual interface (VIF) is virtual NIC that allows a VM to connect a network.
+	A virtual interface (VIF) is virtual NIC that allows a VM to connect to a network.
 	
 How to create a VIF?
 

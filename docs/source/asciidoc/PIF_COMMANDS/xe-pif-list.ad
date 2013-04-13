@@ -50,9 +50,9 @@ OPTIONAL PARAMETERS
 *bond-slave-of*:: 
 	Display bond slave UUIDs
 *tunnel-access-PIF-of*:: 
-	// add
+	Display tunnel-access UUID
 *tunnel-transport-PIF-of*:: 
-	// add
+	Display tunnel-transport UUID
 *management*:: 
 	Display management status [ true | false ]
 *network-uuid*:: 
@@ -133,11 +133,9 @@ To display *network-uuid* for a specific PIF: ::
 To display the *device* and *UUID* parameters of all PIFs on a specific host: ::
 	*xe pif-list* host-uuid=<HOST UUID> params="uuid,device"
 
-	
 SEE ALSO
 --------
 *xe help pif-list*, *xe-network-list*(1), *xe-vlan-list*(1), *xe-pif-introduce*(1), *xe-pif-forget*(1), *xe-pif-reconfige-ip*(1), *xe-pif-param-add*(1),
-
 
 AUTHORS
 -------
@@ -145,11 +143,9 @@ Manpage Author(s): ::
 Matthew Spah <spahmatthew@xenapiadmin.com> +
 Lisa Nguyen <lisa@xenapiadmin.com>
 
-
 BUGS
 ----
 For guidelines on submitting bug reports see http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP. Submit bugs and general questions to xen-api@lists.xen.org.
-
 
 COPYRIGHT
 ---------

@@ -13,25 +13,19 @@ SYNOPSIS
 --------
 *xe vif-unplug* uuid=<VIF UUID>
 
-
 DESCRIPTION
 -----------
 *xe vif-unplug* attempts to detach a VIF from a running VM. VIF interfaces retain their parameters while detached. Use *xe vif-plug* to attach a detached VIF.
 
-
-
 REQUIRED PARAMETERS
 -------------------
-
 *uuid*::
 	VIF UUID - Use *xe vif-list* to obtain a list of VIF UUIDs.
 
 EXAMPLES
 --------
-
 To return the currently-attached parameter for a VIF: ::
 	*xe vif-param-get* uuid=<VIF UUID> param-name="currently-attached"
-
 
 To detach a VIF interface from a running VM: ::
 	*xe vif-unplug* uuid=<VIF UUID>
@@ -48,7 +42,6 @@ Matthew Spah <spahmatthew@xenapiadmin.com>
 BUGS
 ----
 For guidelines on submitting bug reports see http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP. Submit bugs and general questions to xen-api@lists.xen.org.
-
 
 COPYRIGHT
 ---------

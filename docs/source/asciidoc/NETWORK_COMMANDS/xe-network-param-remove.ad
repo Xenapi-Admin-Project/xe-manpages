@@ -28,7 +28,6 @@ REQUIRED PARAMETERS
 
 EXAMPLES
 --------
-
 To remove a specific key in the *tag* parameter: ::
 	*xe network-param-remove* uuid=<NETWORK UUID> param-name="tags" param-key=<KEY>
 To remove *static-routes* from a network: ::
@@ -38,14 +37,12 @@ SEE ALSO
 --------
 *xe-network-param-set*(1), *xe-network-list*(1), *xe-network-create*(1), *xe-network-param-list*(1), *xe-pif-list*(1), *xe-vif-list*(1)
 
-
 AUTHORS
 -------
 Manpage Author(s): ::
 Matthew Spah <spahmatthew@xenapiadmin.com>
 
-
-BUGS
+BUoGS
 ----
 For guidelines on submitting bug reports see http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP. Submit bugs and general questions to xen-api@lists.xen.org.
 

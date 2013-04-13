@@ -7,7 +7,6 @@ XE(1)
 
 NAME
 ----
-
 xe-pif-plug - Attach a physical interface
 
 SYNOPSIS
@@ -16,13 +15,10 @@ SYNOPSIS
 
 DESCRIPTION
 -----------
-
 *xe pif-plug* attaches a PIF. If successful, *xe pif-list* will show a plugged pif as *currently-attached ( RO): true*. Use *xe pif-unplug* and *xe pif-plug* to enable changes to the *other-config* fields of a PIF.
-
 
 REQUIRED PARAMETERS
 -------------------
-
 *uuid*::
 	PIF UUID - Use *xe pif-list* to obtain PIF interface UUIDs.
 
@@ -30,13 +26,10 @@ EXAMPLES
 --------
 To plug in a PIF interface: ::
 	*xe pif-plug* uuid=<PIF UUID>
-	
-	
+		
 SEE ALSO
 --------
-
 *xe-pif-scan*(1), *xe-pif-list*(1), *xe-pif-unplug*(1) , *xe-pif-param-set*(1), *xe-pif-reconfigure-ip*(1), *xe-network-list*(1)
-
 
 AUTHORS
 -------
@@ -47,7 +40,6 @@ Lisa Nguyen <lisa@xenapiadmin.com>
 BUGS
 ----
 For guidelines on submitting bug reports see http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP. Submit bugs and general questions to xen-api@lists.xen.org.
-
 
 COPYRIGHT
 ---------

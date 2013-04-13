@@ -11,13 +11,10 @@ xe-network-list - Displays all networks and their parameters.
 
 SYNOPSIS
 --------
-
 *xe network-list*  [ params=<PARAMETER> ] [--minimal]
-
 
 DESCRIPTION
 -----------
-
 *xe network-list* displays networks and their parameters.
 
 Output can be filtered by using the *params* parameter and a value (separate multiple parameters with commas): ::
@@ -30,11 +27,8 @@ Output can be filtered by using parameter values and the desired value: ::
 Append --minimal to display values for one parameter on a single line separated by commas: ::
 	*xe network-list params="MTU" --minimal*
 
-
-
 OPTIONAL PARAMETERS
 -------------------
-
 *all*::
 	Display all parameter values
 *uuid*::
@@ -76,7 +70,6 @@ OPTIONAL PARAMETERS
 
 EXAMPLES
 --------
-
 To display all parameters for all networks: ::
 	*xe network-list* params="all"
 To display all paramters for a specific network: ::
@@ -86,7 +79,6 @@ To display *VIF-uuids* for a specific network: ::
 To display the *name-label* and *UUID* parameters of all networks with a *MTU* of 1500: ::
 	*xe network-list* MTU="1500" params="name-label,uuid"
 
-
 SEE ALSO
 --------
 *xe help network-list*, *xe-network-create*(1), *xe-network-destroy*(1), *xe-network-param-set*(1), *xe-network-param-add*(1), *xe-network-param-clear*(1), *xe-pif-list*(1)
@@ -95,7 +87,6 @@ AUTHORS
 -------
 Manpage Author(s): ::
 Matthew Spah <spahmatthew@xenapiadmin.com>
-
 
 BUGS
 ----

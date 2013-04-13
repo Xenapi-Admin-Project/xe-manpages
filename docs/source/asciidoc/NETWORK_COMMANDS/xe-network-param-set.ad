@@ -6,16 +6,17 @@ XE(1)
 :man manual:   xe network-param-set manual
 
 NAME
------
+----
 xe-network-param-set - Set parameters for a network
 
 SYNOPSIS
 --------
-*xe network-param-set* uuid=<NETWORK UUID> [ name-label=<NAME LABEL> ] [ name-description=<DESCRIPTION> ] [ MTU=<MTU SIZE> ] [ default-locking-mode=<LOCKING MODE> ]
-										   [ other-config:<KEY>=<VALUE> ]	
+*xe network-param-set* uuid=<NETWORK UUID> [ <PARAMETER>=<VALUE> ] [ <MAP PARAMETER>:<MAP PARAMETER KEY>=<VALUE> ]
+	
+
 DESCRIPTION
 -----------
-*xe network-param-set* sets writable parameters. Use xe network-list and xe network-param-list to identify writable parameters (RW, SRW, MRW).
+*xe network-param-set* sets writable parameters. Use xe network-list and xe network-param-list to identify writable parameters (RW, MRW). To add a value to a set parameter, use *xe network-param-add*. 
 
 REQUIRED PARAMETERS
 -------------------
@@ -51,14 +52,14 @@ OPTIONAL PARAMETERS
 
 EXAMPLES
 --------
-To create a static route that would route traffic from 192.168.1.0/24 to the gateway of 192.168.0.1: ::
-	*xe network-param-set* uuid=<NETWORK UUID> other-config:"static-routes=192.168.1.0/24/192.168.0.1"
 To set the MTU size for a network: ::
 	*xe network-param-set* uuid=<NETWORK UUID> MTU=<MTU Size>
 To set the network default-locking-mode to *disabled*: ::
 	*xe network-param-set* uuid=<NETWORK UUID> default-locking-mode="disabled"	
 To enable scatter gather on a network: ::
 	*xe network-param-set* uuid=<NETWORK UUID> other-config:"ethtool-sg=on"
+To create a static route that would route traffic from 192.168.1.0/24 to the gateway of 192.168.0.1: ::
+	*xe network-param-set* uuid=<NETWORK UUID> other-config:"static-routes=192.168.1.0/24/192.168.0.1"
 
 SEE ALSO
 --------

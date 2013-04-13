@@ -9,16 +9,13 @@ NAME
 -----
 xe-network-destroy - Remove a network
 
-
 SYNOPSIS
 --------
 *xe network-destroy* uuid=<NETWORK UUID>
 
-
 DESCRIPTION
 -----------
 *xe network-destroy* removes a network that contains no active PIFs, attached VIFs, or VLANs. To remove active PIFs from a network use *xe pif-forget*, unless the PIFs are a bond, then use *xe bond-destroy*. To detach VIF interfaces use *xe vif-unplug*. To remove VLANs use *xe vlan-destroy*. 
-
 
 REQUIRED PARAMETERS
 -------------------

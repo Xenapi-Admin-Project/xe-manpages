@@ -9,10 +9,9 @@ NAME
 ----
 xe-network-param-add - Add a key to a parameter for a network
 
-
 SYNOPSIS
 --------
-*xe network-param-add* uuid=<NETWORK UUID> param-name=<PARAMETER> [ param-key=<PARAMETER KEY> ] [ <KEY>=<VALUE> ]
+*xe network-param-add* uuid=<NETWORK UUID> param-name=<PARAMETER> [ param-key=<SET PARAMETER KEY> ] [ <MAP PARAMETER KEY>=<VALUE> ]
 
 DESCRIPTION
 -----------
@@ -23,26 +22,25 @@ REQUIRED PARAMETERS
 *uuid*::
 	Network UUID - Use *xe network-list* to obtain a list of network UUIDs.
 *param-name*::
-	Parameter to have key or key/value pair added.
+	Parameter to have key or key/value pair added - Use *xe network-param-list* to obtain a list of network parameters.
 
 OPTIONAL PARAMETERS
 -------------------
 *param-key*::
-	Key to be added if the parameter is a set.
-*<KEY>*::
-	Key/value pair to be added if parameter is a map. 
+	Key to be added to a set parameter (SRW).
+*<MAP PARAMETER KEY>*::
+	Key/value pair to be added to a map parameter (MRW). 
 
 EXAMPLES
 --------
-To add a key to the *tag* parameter: ::
-	*xe network-param-add* uuid=<NETWORK UUID> param-name="tag" param-key=<KEY>
-
-To add a key/value pair to the *other-config* parameter: ::
-	*xe network-param-add* uuid=<NETWORK UUID> param-name="other-config" <KEY>=<VALUE>
+To add a set parameter key to the *tag* parameter: ::
+	*xe network-param-add* uuid=<NETWORK UUID> param-name="tag" param-key=<SET PARAMETER KEY>
+To add a map parameter key/value pair to the *other-config* parameter: ::
+	*xe network-param-add* uuid=<NETWORK UUID> param-name="other-config" <MAP PARAMETER KEY>=<VALUE>
 
 SEE ALSO
 --------
-*xe-network-param-set*(1), *xe-network-param-list*(1), *xe-network-param-remove*(1), *xe-network-list*(1), *xe-network-create*(1)
+*xe help network-param-add*, *xe-network-param-set*(1), *xe-network-param-list*(1), *xe-network-param-remove*(1), *xe-network-list*(1), *xe-network-create*(1)
 
 AUTHORS
 -------

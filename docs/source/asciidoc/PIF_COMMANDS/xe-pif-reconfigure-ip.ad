@@ -7,54 +7,40 @@ XE(1)
 
 NAME
 ----
-
 xe-pif-reconfigure-ip - Configures the IPv4 address settings on a PIF interface.
 
 SYNOPSIS
 --------
-
 *xe pif-reconfigure-ip*	mode=[ dhcp | none ] uuid=<PIF UUID> 
 
-*xe pif-reconfigure-ip*	mode=static uuid=<PIF UUID> IP=<IP ADDRESS> netmask=<NETMASK> 	
-						[ DNS=<NAME SERVERS> ] [ gateway=<GATEWAY> ]
+*xe pif-reconfigure-ip*	mode=static uuid=<PIF UUID> IP=<IP ADDRESS> netmask=<NETMASK> [ DNS=<NAME SERVERS> ] [ gateway=<GATEWAY> ]
 
 DESCRIPTION
 -----------
-
 *xe pif-reconfigure-ip* changes IPv4 addressing settings for a specific PIF. Address changes are applied immediately upon command excution.
-
 
 REQUIRED PARAMETERS
 -------------------
-
-
 *mode*::
-	Addressing mode for PIF: mode=*[ dhcp | static | none ]*
-
+	Addressing mode for PIF: mode=[ dhcp | static | none ]
 *uuid*::
-	PIF UUID - Use *xe pif-list* to obtain PIF UUIDs.
-	
+	PIF UUID - Use *xe pif-list* to obtain PIF UUIDs
 *IP*::
-	IPv4 Host address of PIF. Address is required for static mode.
-
+	IPv4 Host address of PIF. Address is required for static mode
 *netmask*::
-	Netmask address of PIF.
+	Netmask address of PIF
 
 OPTIONAL PARAMETERS
 -------------------
-
 *DNS*::
 	Name server addresses, when configuring multiple name servers use a comma as a field separator.
-
 *gateway*::
 	Gateway address
 
 EXAMPLES
 --------
-
 To set a PIF interface for DHCP: ::
 	*xe pif-reconfigure-ip* mode="dhcp" uuid=<PIF UUID>
-	
 To set a PIF interface with a static IP address configuration: ::
 	*xe pif-reconfigure-ip* mode="static" uuid=<PIF UUID> IP=<HOST IP ADDRESS> netmask=<SUBNET MASK> gateway=<GATEWAY ADDRESS>
 

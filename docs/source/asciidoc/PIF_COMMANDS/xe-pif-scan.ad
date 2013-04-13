@@ -13,37 +13,28 @@ xe-pif-scan - Scans for new network interfaces on a host
 
 SYNOPSIS
 --------
-
 *xe pif-scan* uuid=<HOST UUID>
 
 DESCRIPTION
 -----------
- 
-
 *xe pif-scan* scans a host for new physical network devices. If multiple devices are found, *xe pif-scan* creates a new PIF and a network for each one. Use *xe pif-plug* to attach the PIFs to the networks. 
 
 When adding new PIFs to an existing resource pool, run *xe pif-scan* on the pool master, then restart all the member hosts in the pool. Use *xe pif-introduce* to configure each host manually. 
 
-
-
 REQUIRED PARAMETERS
 -------------------
- 
- *uuid*::
+*uuid*::
 	Host UUID - Use *xe host-list* to obtain a list of host UUIDs. 
 
 EXAMPLES
 --------
-
 To scan a host for new PIF: ::
 	*xe-pif-scan* uuid=<HOST UUID>
 
 SEE ALSO
 --------
-
 *xe-pif-list*(1), *xe-pif-unplug*(1), *xe-pif-introduce*(1), *xe-host-list*(1), *xe-pif-forget*(1), *xe-pif-introduce*(1),
 *xe-network-list*(1)
-
 
 AUTHORS
 -------
