@@ -44,7 +44,7 @@ To delete a VM and its disk(s), type xe vm-uninstall uuid=<VM UUID>.
 
 Importing/Exporting VMs
 
-To export an existing VM, type xe vm-export uuid=<VM UUID> filename=<PATH TO FILE>. A new filename must be given and is saved in the current directory. XCP will display errors if an existing file is used for exporting VMs. Citrix recommends to have the file use the .xva extension.
+To export an existing VM, type xe vm-export uuid=<VM UUID> filename=<PATH TO FILE>. A new filename must be given, and by default, it is saved in the current directory unless a filepath is given. XCP displays errors if an existing file is used for exporting VMs. Citrix recommends to have the file use the .xva extension.
 
 To import a VM using a file, type xe vm-import filename=<PATH TO FILE>. The UUID for the imported VM is returned. Use the xe vm-list command to confirm the import process.
 
@@ -52,7 +52,6 @@ To import a VM using a file, type xe vm-import filename=<PATH TO FILE>. The UUID
 
 Shutting down VMs
 To shutdown a VM, type xe vm-shutdown uuid=<VM UUID>
-
 
 The options, force and multiple, can be used in conjunction with the vm-* commands:
 
