@@ -1,47 +1,47 @@
-﻿There are options available to managing virtual machines including starting, pausing, recovering, and deleting them. 
+﻿Managing VMs
 
-*Address the universal –force and –multiple options; move this down towards the bottom
+There are options available to managing virtual machines including starting, pausing, recovering, and deleting them. 
 
-Option	         Description
---force          Forces the operation to be performed on the VM and bypasses system warnings
---multiple       Perform the operation on multiple VMs
-	
-(Test to see if the multiple option applies to ALL virtual machines or certain ones)
-
-To see a list of virtual machines, use the xe vm-list command. The list can be filtered based on parameter values. For example, xe vm-list power-state=halted will only display a list of virtual machines that are halted. Another example would be xe vm-list params=name-label, power-state to get the name and its power state of each virtual machine.
+To see a list of virtual machines, use the xe vm-list command. The list can be filtered based on parameter values. For example, xe vm-list power-state=halted will only display a list of virtual machines that are halted. Another example would be xe vm-list params=name-label, power-state to get the name and its power state of each virtual machine. All VMs are uniquely identified by their UUIDs.
 
 Starting VMs
-To start a virtual machine, use the vm-start command.
-*Example of how to start a vm with a uuid
-*Example of how to start a vm with a parameter condition e.g. power-state=halted
-Options:
-on=
-paused=
-vm=<VM UUID or VM name>
+To start a VM, type xe vm-start uuid=<VM UUID>.
 
-Pausing VMs
-*use vm-pause
-*difference between pausing and suspending; something having to do with “releasing” memory
-*what happens if you don't provide a UUID (xe help says no UUID is required)
+To start all VMs based on a parameter value (e.g. power-state=halted), type xe vm-start power-state=halted --multiple
+
+Pausing/Unpausing VMs
+Pausing a VM is not the same as suspending a VM. Pausing will not free (or release) the memory used by the VM(s). 
+
+To pause a VM, type xe vm-pause uuid=<VM UUID>.
+
+To unpause and start the VM again, type xe vm-unpause uuid=<VM UUID>.
 
 Rebooting VMs
-*use vm-reboot
+A VM will be rebooted if its power state is running. To check the power state of all VMs, type xe vm-list params=uuid,power-state.
+
+To reboot a VM, type xe-reboot uuid=<VM UUID>
 
 Recovering VMs
 *use xe vm-recover
 
 Consoling into VMs
-*use xe console on the command line
+
+First, check to see if the VM is running before the console command can be used.
+
+For versions 1.0/1.1:
+xe vm-start uuid=<VM UUID>
+
+
+For versions 1.5/1.6:
+xe vm-start uuid=<VM UUID>
 xe console vm=<name or UUID>
+
 *How to for versions 1.0/1.1 and 1.5/1.6; look at tutorials
 *list other methods
 
 Deleting VMs
-*use vm-destroy
-*explain what happens when the virtual machine gets destroyed; can no longer be recovered. What happens to its virtual disks?
-*difference between vm-uninstall and vm-destroy; focus on uninstall for now
-xe vm-uninstall will delete the VDIs attached to the virtual machine.
-xe vm-destroy deletes the VM but its VDIs will be stored in the storage repository.
+
+To delete the VM and its disks, type xe vm-uninstall uuid=<VM UUID>.
 
 Importing/Exporting VMs
 *use vm-import or vm-export
@@ -60,5 +60,8 @@ Snapshotting VMs
 Configuring VMs
 *how to change parameters using the parameter commands
 
+The options, force and multiple, can be used in conjunction with the vm-* commands:
 
-
+Option	         Description
+--force          Forces the operation to be performed on the VM and bypasses system warnings
+--multiple       Perform the operation on multiple VMs
