@@ -1,6 +1,6 @@
 ﻿Managing VMs
 
-There are options available to managing virtual machines including starting, pausing, recovering, and deleting them. 
+There are options available to managing virtual machines including starting, pausing, rebooting, and deleting them. 
 
 To see a list of virtual machines, use the xe vm-list command. The list can be filtered based on parameter values. For example, xe vm-list power-state=halted will only display a list of virtual machines that are halted. Another example would be xe vm-list params=name-label, power-state to get the name and its power state of each virtual machine. All VMs are uniquely identified by their UUIDs.
 
@@ -17,48 +17,38 @@ To pause a VM, type xe vm-pause uuid=<VM UUID>.
 To unpause and start the VM again, type xe vm-unpause uuid=<VM UUID>.
 
 Rebooting VMs
-A VM will be rebooted if its power state is running. To check the power state of all VMs, type xe vm-list params=uuid,power-state.
+A VM will reboot if its power state is running. To check the power state of all VMs, type xe vm-list params=uuid,power-state.
 
 To reboot a VM, type xe-reboot uuid=<VM UUID>
 
-Recovering VMs
-*use xe vm-recover
-
 Consoling into VMs
-
-First, check to see if the VM is running before the console command can be used.
+First, check to see if the VM is running before a console command can be used.
 
 For versions 1.0/1.1:
+1. Start the VM
 xe vm-start uuid=<VM UUID>
-
+2. Get the VM's domain ID
+DOMID=$(xe vm-list uuid=<VMUUID> params=dom-id --minimal)
+3. Use the xenconsole command
+/usr/lib/xen/bin/xenconsole ${DOMID}
 
 For versions 1.5/1.6:
+1. Start the VM
 xe vm-start uuid=<VM UUID>
+2. Use the xe console command
 xe console vm=<name or UUID>
-
-*How to for versions 1.0/1.1 and 1.5/1.6; look at tutorials
-*list other methods
 
 Deleting VMs
 
-To delete the VM and its disks, type xe vm-uninstall uuid=<VM UUID>.
+To delete a VM and its disk(s), type xe vm-uninstall uuid=<VM UUID>.
 
 Importing/Exporting VMs
 *use vm-import or vm-export
 *consider server type? (xe help mentioned server type)
 
 Shutting down VMs
-*use xe vm-shutdown
+To shutdown a VM, type xe vm-shutdown uuid=<VM UUID>
 
-Troubleshooting VMs
-*what if the vm is “stuck”
-
-Snapshotting VMs
-*check in xe vm-snapshot
-*difference between checkpoint and snapshot
-
-Configuring VMs
-*how to change parameters using the parameter commands
 
 The options, force and multiple, can be used in conjunction with the vm-* commands:
 
