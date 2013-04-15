@@ -7,11 +7,11 @@ XE(1)
 
 NAME
 ----
-xe-vif-param-add - Adds a parameter for a virtual interface
+xe-vif-param-add - Adds a key to a parameter for a virtual interface
 
 SYNOPSIS
 --------
-*xe vif-param-add* uuid=<VIF UUID> param-name=<PARAMETER NAME> [ param-key=<PARAMETER KEY> ]
+*xe vif-param-add* uuid=<VIF UUID> param-name=<PARAMETER NAME> [ param-key=<PARAMETER KEY> ] [ param-key=<SET PARAMETER KEY> ] [ <MAP PARAMETER KEY>=<VALUE> ]
 
 
 DESCRIPTION
@@ -19,30 +19,26 @@ DESCRIPTION
 *xe vif-param-add* will add a key/value to a set or map parameter for a VIF.
 
 
-REQUIRED PARAMETERS
--------------------
 *uuid*::
-	VIF UUID - Use *xe vif-list* to obtain a list of VIF UUIDs.
-
+	VIF UUID - Use *xe vif-list* to obtain a list of vif UUIDs
 *param-name*::
-	Parameter to be added
-
+	Parameter to have key or key/value pair added - Use *xe vif-param-list* to obtain a list of network parameters.
 
 OPTIONAL PARAMETERS
 -------------------
 *param-key*::
-	Key needed if adding settings to the other-config parameter.
+	Key to be added to a set parameter (SRW).
+*<MAP PARAMETER KEY>*::
+	Key/value pair to be added to a map parameter (MRW). 
 	
 
 EXAMPLES
 --------
 
-// add examples 
 
 SEE ALSO
 --------
-*xe-vif-list*(1), *xe vif-param-clear*(1), *xe-vif-param-set*(1), *xe-vif-create*(1), *xe-vif-plug*(1), *xe-vif-unplug*(1), *xe-network-list*(1)
-
+*xe help vif-param-add*, *xe-vif-list*(1), *xe vif-param-clear*(1), *xe-vif-param-set*(1), *xe-vif-create*(1), *xe-vif-plug*(1), *xe-vif-unplug*(1), *xe-network-list*(1)
 
 AUTHORS
 -------

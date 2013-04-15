@@ -7,21 +7,18 @@ XE(1)
 
 NAME
 ----
-xe-vif-param-set - Sets read-write parameters for a VIF
+xe-vif-param-set - Sets writable parameters for a VIF
 
 SYNOPSIS
 --------
-
-*xe vif-param-set* uuid=<VIF UUID> [ qos_algorithm_type=<TYPE> locking-mode=<MODE> ipv4-allowed=<IPV4 ADDRESS> ipv6-allowed=<IPV6 ADDRESS> qos_algorithm_params:<PARAMETER>=<VALUE> other-config:<KEY>=<VALUE> ]
-
+*xe vif-param-set* uuid=<VIF UUID>  [ <PARAMETER>=<VALUE> ] [ <SET PARAMETER>=<VALUE> ] [ <MAP PARAMETER>:<MAP PARAMETER KEY>=<VALUE> ]
 
 DESCRIPTION
 -----------
-*xe vif-param-set* sets values to read-write parameters for a VIF interface.
+*xe vif-param-set* sets writable parameters for a VIF. Use xe vif-list and xe vif-param-list to identify writable parameters (RW, SRW, MRW).
 
 REQUIRED PARAMETERS
 -------------------
-
 *uuid*::
 	VIF UUID - Use *xe vif-list* to obtain a list of VIF UUIDs.
 
@@ -62,16 +59,13 @@ OPTIONAL PARAMETERS
 
 EXAMPLES
 --------
-
 To set a permitted IPv4 address: ::
 	*xe vif-param-set* uuid=<VIF UUID> ipv4-allowed=<IP ADDRESS>
 To turn on promiscuous mode: ::
 	*xe vif-param-set* uuid=<VIF UUID> other-config:promiscous=true    
 To set the switch-port locking mode to locked and allow a specific IPv4 address: ::
-	xe vif-param-set uuid=<VIF UUID> locking-mode="locked"
+	xe vif-param-set uuid=<VIF UUID> locking-mode="locked" +
 	xe vif-param-set uuid=<VIF UUID> ipv4-allowed=<IPv4 Address to be allowed>
-
-
 
 AUTHORS
 -------

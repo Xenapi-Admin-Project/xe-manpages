@@ -15,7 +15,7 @@ SYNOPSIS
 
 DESCRIPTION
 -----------
-*xe pif-plug* attaches a PIF. If successful, *xe pif-list* will show a plugged pif as *currently-attached ( RO): true*. Use *xe pif-unplug* and *xe pif-plug* to enable changes to the *other-config* fields of a PIF.
+*xe pif-plug* attaches a PIF to its external network. If successful, *xe pif-list* will show a plugged pif as *currently-attached ( RO): true*. Use *xe pif-unplug* and *xe pif-plug* to enable changes to the *other-config* fields of a PIF.
 
 REQUIRED PARAMETERS
 -------------------

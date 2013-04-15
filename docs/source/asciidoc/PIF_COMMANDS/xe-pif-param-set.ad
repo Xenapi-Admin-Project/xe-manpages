@@ -11,7 +11,7 @@ xe-pif-param-set - Set parameters for a physical interface
 
 SYNOPSIS
 --------
-*xe pif-param-set* uuid=<PIF UUID> [ disallow-unplug=<VALUE> ] [ other-config:<KEY>=<VALUE> ]
+*xe pif-param-set* uuid=<PIF UUID> [ <PARAMETER>=<VALUE> ] [ <SET PARAMETER>=<VALUE> ] [ <MAP PARAMETER>:<MAP PARAMETER KEY>=<VALUE> ]
 
 DESCRIPTION
 -----------

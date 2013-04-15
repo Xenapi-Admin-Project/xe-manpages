@@ -26,7 +26,7 @@ REQUIRED PARAMETERS
 *uuid*::
 	PIF UUID - Use *xe pif-list* to obtain PIF UUIDs
 *IP*::
-	IPv4 Host address of PIF. Address is required for static mode
+	IPv4 Host address of PIF. Address is required for static mode.
 *netmask*::
 	Netmask address of PIF
 

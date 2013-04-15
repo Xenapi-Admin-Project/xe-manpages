@@ -13,28 +13,24 @@ SYNOPSIS
 --------
 *xe vif-plug* uuid=<VIF UUID>
 
-
 DESCRIPTION
 -----------
 *xe vif-plug* attaches a VIF interface to a running VM. VIF interfaces automatically attach when you start a VM. Use *xe vif-unplug* to detach a VIF.
 
-
 REQUIRED PARAMETERS
 -------------------
-
 *uuid*::
 	VIF UUID - Use *xe vif-list* to obtain a list of VIF UUIDs.
 
 
 EXAMPLES
 --------
-
 To attach a VIF interface to a running VM type: ::
 	*xe vif-plug* uuid=<VIF UUID>
 
 SEE ALSO
 --------
-*xe-vif-list*(1), *xe-vif-unplug*(1), *xe-vif-create*(1), *xe-vif-destroy*, *xe-vm-list*(1), *xe-network-list*(1)
+*xe help vif-plug*, *xe-vif-list*(1), *xe-vif-unplug*(1), *xe-vif-create*(1), *xe-vif-destroy*, *xe-vm-list*(1), *xe-network-list*(1)
 
 AUTHORS
 -------

@@ -15,7 +15,9 @@ SYNOPSIS
 
 DESCRIPTION
 -----------
-*xe pif-unplug* detaches a physical interface (PIF) from a host. If successful, *xe pif-list* will show a detached PIF as *currently-attached ( RO): false*. A detached PIF will retain its configuration, and the *disallow-unplug* parameter controls the success of *xe pif-unplug*. Use *xe pif-unplug* and *xe pif-plug* to enable changes to the *other-config* fields of a PIF.
+*xe pif-unplug* detaches a physical interface (PIF) from a external network. If successful, *xe pif-list* will show a detached PIF as *currently-attached ( RO): false*. A detached PIF will retain its configuration, and the *disallow-unplug* parameter controls the success of *xe pif-unplug*. 
+
+Use *xe pif-unplug* and *xe pif-plug* to enable changes to the *other-config* fields of a PIF.
 
 REQUIRED PARAMETERS
 -------------------

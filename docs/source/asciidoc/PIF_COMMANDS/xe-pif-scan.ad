@@ -17,9 +17,9 @@ SYNOPSIS
 
 DESCRIPTION
 -----------
-*xe pif-scan* scans a host for new physical network devices. If multiple devices are found, *xe pif-scan* creates a new PIF and a network for each one. Use *xe pif-plug* to attach the PIFs to the networks. 
+*xe pif-scan* scans a host for new physical network devices. If multiple devices are found, *xe pif-scan* creates a new PIF and an external network for each one. Use *xe pif-plug* to attach the PIFs to the networks. 
 
-When adding new PIFs to an existing resource pool, run *xe pif-scan* on the pool master, then restart all the member hosts in the pool. Use *xe pif-introduce* to configure each host manually. 
+When adding new PIFs to an existing resource pool, run *xe pif-scan* on the pool master, and then on each slave host. 
 
 REQUIRED PARAMETERS
 -------------------

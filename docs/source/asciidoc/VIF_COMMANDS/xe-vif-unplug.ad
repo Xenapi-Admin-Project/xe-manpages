@@ -15,7 +15,7 @@ SYNOPSIS
 
 DESCRIPTION
 -----------
-*xe vif-unplug* attempts to detach a VIF from a running VM. VIF interfaces retain their parameters while detached. Use *xe vif-plug* to attach a detached VIF.
+*xe vif-unplug* attempts to detach a VIF from a running VM. If successful, the VIF interface retains its parameters while detached. Use *xe vif-plug* to attach a detached VIF.
 
 REQUIRED PARAMETERS
 -------------------
@@ -32,7 +32,7 @@ To detach a VIF interface from a running VM: ::
 
 SEE ALSO
 --------
-*xe-vif-list*(1), *xe-vif-plug*(1), *xe-vif-param-set*(1), *xe-vif-destroy*(1), *xe-network-list*(1)
+*xe help vif-unplug*, *xe-vif-list*(1), *xe-vif-plug*(1), *xe-vif-param-set*(1), *xe-vif-destroy*(1), *xe-network-list*(1)
 
 AUTHORS
 -------
