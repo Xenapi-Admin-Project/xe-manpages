@@ -13,17 +13,9 @@ SYNOPSIS
 --------
 *xe vlan-destroy* uuid=<VLAN UUID>
 
-
 DESCRIPTION
 -----------
-
-*xe vlan-destroy* removes a VLAN and its pseudo PIF interface from a network. Active VIF interfaces attached to the VLAN need to be disabled before deletion. 
-
-*xe vlan-destroy* removes a VLAN and its pseudo PIF interface from a network. Active VIF interfaces attached to the VLAN need to be disabled with *xe vif-unplug* before removal. 
-
-*xe vlan-destroy* removes a VLAN and the pseudo PIF interface associated with that VLAN from a network. *xe vlan-destroy* requires that no active VIF interfaces be present on the VLAN. Use *xe vif-unplug* to disable and active VIF interfaces.
-
-
+*xe vlan-destroy* removes a VLAN amd the associated pseudo PIF from a network. *xe vlan-destroy* requires that no attached VIF interfaces be present on the VLAN. Use *xe vif-unplug* to detach VIFs.
 
 REQUIRED PARAMETERS
 -------------------

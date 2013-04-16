@@ -1,39 +1,40 @@
 XE(1)
 =======
 :doctype: manpage
-:man source:   xe bond-destroy
+:man source:   xe <OBJECT>-param-clear
 :man version:  {1}
-:man manual:   xe bond-destroy manual
+:man manual:   xe <OBJECT>-param-clear manual
 
 NAME
 ----
-xe-bond-destroy - Destroy a Bond.
+xe-<OBJECT>-param-clear - Clears a specific writable parameter for a <OBJECT>
 
 SYNOPSIS
 --------
-*xe bond-destroy* uuid=<BOND UUID>
+*xe <OBJECT>-param-clear* uuid=<OBJECT UUID> param-name=<PARAMETER>
 
 DESCRIPTION
 -----------
-*xe bond-destroy* removes a bond 
- 
+*xe <OBJECT>-param-clear* attempts to clear any writable parameter. Use *xe <OBJECT>-list* and *xe <OBJECT>-param-list* to identify writable parameters (RW, SRW, MRW).
+
 REQUIRED PARAMETERS
 -------------------
 *uuid*::
-	Bond UUID - Use *xe bond-list* to obtain a list of bond UUIDs.
-	
+	<OBJECT> UUID - Use *xe <OBJECT>-list* to obtain <OBJECT> UUIDs.
+
+*param-name*::
+	Writable parameter to be cleared (e.g. <WRITABLE PARAMETER>).
+
 EXAMPLES
 --------
-To destroy a bond: ::
 
+	
 SEE ALSO
 --------
-*xe-bond-create*(1), *xe-bond-list*(1), *xe-bond-set-mode*(1), *xe-bond-param-get*(1), *xe-bond-param-set*(1), *xe-pif-list*(1)
 
 AUTHORS
 -------
 Manpage Author(s): ::
-Matthew Spah <spahmatthew@xenapiadmin.com>
 
 BUGS
 ----
@@ -41,5 +42,5 @@ For guidelines on submitting bug reports see http://wiki.xen.org/wiki/Reporting_
 
 COPYRIGHT
 ---------
-Copyright \(C)  2012 - Matthew Spah
+Copyright \(C)  2012 - Manpage Author
 Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License, Version 1.3 or any later version published by the Free Software Foundation; with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts. A copy of the license is included in the section entitled "GNU Free Documentation License"

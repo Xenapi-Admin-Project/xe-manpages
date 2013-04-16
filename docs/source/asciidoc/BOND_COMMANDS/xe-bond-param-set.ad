@@ -9,17 +9,13 @@ NAME
 ----
 xe-bond-param-set -  Set parameters for a Bond. 
 
-
 SYNOPSIS
 --------
-
 *xe bond-param-set* uuid=<Bond UUID> properties:<Ummm stuff>
 
 DESCRIPTION
 -----------
-
 *xe pif-param-set* sets writable parameters for a bond. 
-
 
 REQUIRED PARAMETERS
 -------------------

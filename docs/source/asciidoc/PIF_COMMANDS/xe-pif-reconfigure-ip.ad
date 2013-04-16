@@ -41,6 +41,8 @@ EXAMPLES
 --------
 To set a PIF interface for DHCP: ::
 	*xe pif-reconfigure-ip* mode="dhcp" uuid=<PIF UUID>
+To remove a addressing configuration from a PIF: ::
+	*Xe pif-reconfigure-ip* uuid=<PIF UUID> mode="none"
 To set a PIF interface with a static IP address configuration: ::
 	*xe pif-reconfigure-ip* mode="static" uuid=<PIF UUID> IP=<HOST IP ADDRESS> netmask=<SUBNET MASK> gateway=<GATEWAY ADDRESS>
 

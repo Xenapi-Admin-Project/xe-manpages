@@ -13,12 +13,12 @@ SYNOPSIS
 --------
 *xe vif-param-add* uuid=<VIF UUID> param-name=<PARAMETER NAME> [ param-key=<PARAMETER KEY> ] [ param-key=<SET PARAMETER KEY> ] [ <MAP PARAMETER KEY>=<VALUE> ]
 
-
 DESCRIPTION
 -----------
-*xe vif-param-add* will add a key/value to a set or map parameter for a VIF.
+*xe vif-param-add* adds a key to a set parameter or a key/value pair to a map parameter. Use *xe vif-list* and *xe vif-param-list* to identify writable set or map parameters (SRW, MRW).﻿
 
-
+REQUIRED PARAMETERS
+-------------------
 *uuid*::
 	VIF UUID - Use *xe vif-list* to obtain a list of vif UUIDs
 *param-name*::
@@ -31,10 +31,12 @@ OPTIONAL PARAMETERS
 *<MAP PARAMETER KEY>*::
 	Key/value pair to be added to a map parameter (MRW). 
 	
-
 EXAMPLES
 --------
-
+To add an IPv4 address to the *ipv4-allowed* parameter: ::
+	*xe vif-param-add uuid=<VIF UUID> param-name="ipv4-allowed" param-key=<IPv4 HOST ADDRESS>
+To add a Key/value pair to a map parameter: ::
+	*xe vif-param-add uuid=<VIF UUID> param-name=<MAP PARAMETER NAME> <MAP PARAMETER KEY>=<VALUE>
 
 SEE ALSO
 --------
@@ -49,7 +51,6 @@ Lisa Nguyen <lisa@xenapiadmin.com>
 BUGS
 ----
 For guidelines on submitting bug reports see http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP. Submit bugs and general questions to xen-api@lists.xen.org.
-
 
 COPYRIGHT
 ---------

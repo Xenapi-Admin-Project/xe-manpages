@@ -7,31 +7,22 @@ XE(1)
 
 NAME
 ----
-
 xe-bond-create - Create a Interface Bond.
-
 
 SYNOPSIS
 --------
-
-*xe bond-create* network-uuid=<NETWORK UUID> pif-uuids=<PIF UUID>,<PIF UUID>,
-				[ mac=<MAC ADDRESS> ] [ mode=<BOND MODE>] [ properties=<BOND PROPERTIES>]
+*xe bond-create* network-uuid=<NETWORK UUID> pif-uuids=<PIF UUIDs> [ mac=<MAC ADDRESS> ] [ mode=<BOND MODE>] [ properties=<BOND PROPERTIES>]
 				
-
 DESCRIPTION
------------
-
-*xe bond-create* creates a bond from the supplied PIFs and connects it to a network. The default bond mode is an active-active configuration. Four PIFs per bond are supported when using openvswitch and two PIFs per bond are supported when using the legacy linux bridge. 
+----------
+*xe bond-create* creates a bond using the selected PIFs and connects it to a network. The default bond mode is an active-active configuration. Four PIFs per bond are supported when using openvswitch and two PIFs per bond are supported when using the legacy linux bridge. 
 
 When creating NIC bonds in a resource pool, configure the bond on the pool master, and then restart each member of the pool to inherit the bond from the pool master.
 
-
 REQUIRED PARAMETERS
 -------------------
-
 *network-uuid*::
 	Network UUID - Use *xe network-list* to obtain a list of network UUIDs.
-
 
 *pif-uuids*::
 	PIF UUIDs - Use *xe pif-list* to obtain a list of PIF UUIDs.
@@ -41,32 +32,10 @@ OPTIONAL PARAMETERS
 
 *mac*::
 	Specify the MAC Address to be used by the bond. If no MAC address is specified, *xe bond-create* will use the MAC of the PMI, if it is one of the interfaces in the bond. If the PMI is not part of the bond, but a management interface is, then the bond uses the MAC address of that management interface. 
-	
 
 *mode*::
 	Specify the type of bond to created. Balance-slb, active-backup and LACP are supported when using openvswitch. Balance-slb and active-backup are supported when using the Linux bridge.
 	
-	
-	
-	
-	Balance-slb::
-	
-	// Source Level Balancing 
-	// Traffic is load-balanced based on its source MAC address
-	// This is only supported on VM networks and is only effictive when multiple VIF interfaces our present because of the way it handles load balancing  
-	
-	active-backup::
-	
-	// One PIF interface in the bond is the primary interface for traffic. Traffic is only routed on that interface.
-	
-	
-	
-	LACP::
-	
-	// Dynamic LAG is the only one supported.
-	
-	//fallback to balance-slb
-	//if LACP negotian fails, the server will fall back to balance-slb. The server will still listen for LACP frames, so if a handshake is succesfull LACP is enabled.
 
 *properties*::
 	Additional bond properties - 
@@ -83,7 +52,6 @@ OPTIONAL PARAMETERS
 
 EXAMPLES
 --------
-
 To create a two PIF active-active (balance-slb) bond for a VM network: ::
 	*xe bond-create* network-uuid=<NETWORK UUID> pif-uuids=<PIF UUID>,<PIF UUID>
 	
@@ -92,8 +60,7 @@ To create a two PIF active-passive bond for a VM network: ::
 
 SEE ALSO
 --------
-
-*xe-bond-destroy*(1), *xe-bond-list*(1), *xe-bond-set-mode*(1), *xe-bond-param-set*(1), *xe-network-list*(1), *xe-pif-list*(1)
+*xe help bond-create*, *xe-bond-destroy*(1), *xe-bond-list*(1), *xe-bond-set-mode*(1), *xe-bond-param-set*(1), *xe-network-list*(1), *xe-pif-list*(1)
 
 
 AUTHORS

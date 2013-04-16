@@ -7,67 +7,37 @@ XE(1)
 
 NAME
 ----
-
 xe-bond-set-mode - Set bond type
 
 
 SYNOPSIS
 --------
-
-*xe set-mode* uuid=<Bond UUID> mode=<Bond mode>
+*xe bond-set-mode* uuid=<Bond UUID> mode=<Bond mode>
 
 DESCRIPTION
 -----------
-
-// description
-
-
+*xe bond-set-mode* changes the bond mode of the selected bond. Bond mode changes are applied immediately upon command excution.
 
 REQUIRED PARAMETERS
 -------------------
-
 *uuid*::
 	Bond UUID - Use *xe bond-list* to obtain a list of bonds.
-	
-	
 *mode*::
 	Set bond type: mode=*[ balance-slb | active-backup | lacp ] 
-	
-		Balance-slb::
-	
-	// Source Level Balancing 
-	// Traffic is load-balanced based on its source MAC address
-	// This is only supported on VM networks and is only effictive when multiple VIF interfaces our present because of the way it handles load balancing  
-	
-	active-backup::
-	
-	// One PIF interface in the bond is the primary interface for traffic. Traffic is only routed on that interface.
-	
-	
-	
-	LACP::
-	
-	// Dynamic LAG is the only one supported.
-	
-	//fallback to balance-slb
-	//if LACP negotian fails, the server will fall back to balance-slb. The server will still listen for LACP frames, so if a handshake is succesfull LACP is enabled.
-	
 
 EXAMPLES
 --------
-
+To change the bond mode to balance-slb: ::
+	*xe bond-set-mode uuid=<BOND UUID> mode="balance-slb"
 
 SEE ALSO
 --------
-
 *xe-bond-destroy*(1), *xe-bond-list*(1), *xe-bond-set-mode*(1), *xe-bond-param-set*(1), *xe-network-list*(1), *xe-pif-list*(1)
-
 
 AUTHORS
 -------
 Manpage Author(s): ::
 Matthew Spah <spahmatthew@xenapiadmin.com>
-
 
 BUGS
 ----

@@ -11,51 +11,51 @@ xe-bond-list -  Dsiplay bonds and their parameters
 
 SYNOPSIS
 --------
-*xe bond-list* [ params=<PARAMETERS> ]
+*xe bond-list* [ params=<PARAMETERS> ] [ --minimal ]
 
 DESCRIPTION
 -----------
+*xe bond-list* displays bonds and their parameters.
 
-*xe bond-list* lists bond interfaces and their parameters found in a pool. Output can be filtered by supplying params=<parameter>. Multiple parameters can be displayed by separating each parameter with a comma (e.g. params=uuid,name-label).
+Output can be filtered by using the *params* parameter and a value (separate multiple parameters with commas): ::
+	*xe bond-list params=master* +
+	*xe bond-list params=master,slave,uuid*
 
+Output can be filtered by using parameter values and the desired value: ::
+	*xe bond-list mode=<BOND MODE>*
+
+Append --minimal to display values for one parameter on a single line separated by commas: ::
+	*xe bond-list params="uuid" --minimal*
 
 OPTIONAL PARAMETERS
 -------------------
-
+*all*::
+	Display all parameter values
 *uuid*::
-	Display UUID of the bond.
-
+	Display bond UUIDs
 *mode*::
-	Display type of bond [balance-slb|active-backup|lacp]
-	
+	Display bond modes [ balance-slb | active-backup |lacp ]
 *links-up*::
-	Display number of links up in the bond.
-
+	Display number of links up in bonds
 *master*::
-	Display master bond PIF UUID. 
-
+	Display master bond PIF UUIDs 
 *primary-slave*::
-	Display primary-slave PIF UUID.
-
+	Display primary-slave PIF UUIDs
 *slaves*::
-	Display slave PIF UUIDs.
-	
+	Display slave PIF UUIDs
 *properties*::
-	Display additional properties for the bond.
-	
+	Display additional properties for bonds
+*--minimal*::
+	Specify --minimal to only show minimal output
 
 EXAMPLES
 --------
-
 To display all bonds and all their parameters: ::
 	*xe bond-list* params=all
-	
 To display active-backup bonds and all their parameters: ::
-	*xe bond-list* mode=active-backup params=all
-	
-To display a specific bond with the slaves and links-up parameters: ::
+	*xe bond-list* mode=active-backup params=all	
+To display a specific bond and the slaves and links-up parameters: ::
 	*xe bond-list* uuid=<BOND UUID> params=slaves,links-up
-
 
 SEE ALSO
 --------
@@ -65,7 +65,6 @@ AUTHORS
 -------
 Manpage Author(s): ::
 Matthew Spah <spahmatthew@xenapiadmin.com>
-
 
 BUGS
 ----

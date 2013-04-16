@@ -53,7 +53,7 @@ OPTIONAL PARAMETERS
 *qos_algorithm_type*::
 	Display type of QoS algorithm used for VIF.
 *qos_algorithm_params*::
-	Display parameters for the Qos algorithms supported by VIF (e.g. kbps).
+	Display parameters for the QoS algorithms supported by VIF (e.g. kbps).
 *qos_supported_algorithms*::
 	Display supported QoS algorithms for VIF.
 *network-uuid*::
@@ -76,37 +76,26 @@ OPTIONAL PARAMETERS
 	Display receive checksum status [ on | off ]
 *other-config:ethtool-tx*::
 	Display transmit checksum status [ on | off ]
-
 *other-config:ethtool-sg*::
 	Display scatter gather status [ on | off ]
-
 *other-config:ethtool-tso*::
 	Display TCP segmentation offload status [ on | off ]
-
 *other-config:ethtool-ufo*::
 	Display UDP fragment offload status [ on | off ]
-
 *other-config:ethtool-gso*::
 	Display generic segmentation offload status [ on | off ]
-	
 *other-config:promiscous*::
 	Display promiscuous status of VIF interface [ true | false ]
 
 
 EXAMPLES
 --------
-
 To create a list of currently-attached VIF interfaces with VIF UUIDs and Network UUIDs: ::
 	*xe vif-list* params="currently-attached,uuid,network-uuid"
-	
 To display VIFs with switch port locking set to *locked* for a specific network: ::
 	*xe vif-list* network-uuid=<NETWORK UUID> locking-mode="locked"
-	
 To display VIFs present on a specific VM: ::
 	*xe vif-list* vm-uuid=<VM UUID> 
-
-
-
 
 SEE ALSO
 --------

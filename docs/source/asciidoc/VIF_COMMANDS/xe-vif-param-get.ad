@@ -11,11 +11,11 @@ xe-vif-param-get - Return a parameter for a virtual interface.
 
 SYNOPSIS
 --------
-*xe vif-param-get* uuid=<VIF UUID> param-name=<PARAMETER NAME> [ param-key=<KEY> ]
+*xe vif-param-get* uuid=<VIF UUID> param-name=<PARAMETER NAME> [ param-key=<PARAMETER KEY> ]
 
 DESCRIPTION
 -----------
-*xe vif-param-get* returns a parameter or key value for a specified VIF.
+*xe vif-param-get* returns a parameter value or key value for a specified VIF.
 
 REQUIRED PARAMETERS
 -------------------
@@ -38,8 +38,7 @@ To display the status of the map parameter *other-config:promiscous*: ::
 
 SEE ALSO
 --------
-*xe-vif-create*(1), *xe-vif-list*(1), *xe-vif-param-set*(1), , *xe-vif-param-list*(1), *xe-vif-param-remove*(1), *xe-network-list*(1)
-
+*xe help vif-param-get*, *xe-vif-create*(1), *xe-vif-list*(1), *xe-vif-param-set*(1), , *xe-vif-param-list*(1), *xe-vif-param-remove*(1), *xe-network-list*(1)
 
 AUTHORS
 -------
@@ -49,7 +48,6 @@ Matthew Spah <spahmatthew@xenapiadmin.com>
 BUGS
 ----
 For guidelines on submitting bug reports see http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP. Submit bugs and general questions to xen-api@lists.xen.org.
-
 
 COPYRIGHT
 ---------

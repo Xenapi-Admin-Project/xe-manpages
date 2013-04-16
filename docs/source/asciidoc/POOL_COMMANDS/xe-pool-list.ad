@@ -1,0 +1,113 @@
+XE(1)
+=======
+:doctype: manpage
+:man source:   xe <OBJECT>-list
+:man version:  {1}
+:man manual:   xe <OBJECT>-list manual
+
+NAME
+-----
+xe-pool-list - Displays pools and all their  parameters.
+
+SYNOPSIS
+--------
+*xe pool-list*  [ params=<PARAMETER> ] [--minimal]
+
+DESCRIPTION
+-----------
+*xe pool-list* displays pools and their parameters.
+
+Output can be filtered by using the *params* parameter and a value (separate multiple parameters with commas): ::
+	*xe pool-list params=<ONE PARAMETER>* +
+	*xe pool-list params=<MULTIPLE PARAMETERS>*
+
+Output can be filtered by using parameter values and the desired value: ::
+	*xe pool-list <PARAMETER>=<VALUE>*
+
+Append --minimal to display values for one parameter on a single line separated by commas: ::
+	*xe pool-list params="<PARAMETER>" --minimal*
+
+OPTIONAL PARAMETERS
+-------------------
+*all*::
+	Display all parameter values
+*uuid*::
+
+*name-label*::
+
+*name-description*::
+ 
+*master*::
+
+*default-SR*:: 
+
+*crash-dump-SR*:: 
+
+*suspend-image-SR*::
+
+*supported-sr-types*::
+
+*other-config*::
+
+*ha-enabled*::
+
+*ha-configuration*:: 
+
+*ha-statefiles*::
+
+*ha-host-failures-to-tolerate*:: 
+
+*ha-plan-exists-for*::
+
+
+*ha-allow-overcommit*::
+
+*ha-overcommitted*::
+
+*blobs*::
+
+*wlb-url*::
+
+*wlb-username*::
+
+*wlb-enabled*::
+
+*wlb-verify-cert*:: 
+
+*gui-config*::
+
+*restrictions*::
+
+*tags*::
+
+
+*--minimal*::
+	Specify --minimal to only show minimal output
+
+EXAMPLES
+--------
+To display all parameters for all pools: ::
+	*xe pool-list* params="all"
+To display all paramters for a specific : ::
+	*xe <OBJECT>-list* uuid=<OBJECT UUID> params="all"
+To display <PARAMETER> for a specific <OBJECT>: ::
+	*xe <OBJECT>-list* uuid=<NETWORK UUID> params="VIF-uuids"
+To display the <PARAMETER> and <PARAMETER> parameters of all <OBJECT> with a <PARAMETER> of <VALUE>: ::
+	*xe <OBJECT>-list* <PARAMETER>=<VALUE> params="<MULTIPLE PAMETERS>"
+
+SEE ALSO
+--------
+*xe help <OBJECT>-list*,
+
+AUTHORS
+-------
+Manpage Author(s): ::
+
+BUGS
+----
+For guidelines on submitting bug reports see http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP. Submit bugs and general questions to xen-api@lists.xen.org.
+
+COPYRIGHT
+---------
+Copyright \(C)  2012 - Manpage Author
+Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License, Version 1.3 or any later version published by the Free Software Foundation; with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts. A copy of the license is included in the section entitled "GNU Free Documentation License"

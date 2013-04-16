@@ -13,34 +13,27 @@ SYNOPSIS
 --------
 *xe vif-param-clear* uuid=<VIF UUID> param-name=<PARAMETER>
 
-
 DESCRIPTION
 -----------
 *xe vif-param-clear* attempts to clear any writable parameter. Use *xe vif-list* and *xe vif-param-list* to identify writable parameters (RW, SRW, MRW).
-
 
 REQUIRED PARAMETERS
 -------------------
 *uuid*::
 	VIF UUID - Use *xe vif-list* to obtain a list of VIF UUIDs.
-
 *param-name*::
-	Parameter to be cleared for a VIF interface.
-
+	Writable parameter to be cleared. (e.g. *ipv4-allowed*). 
 
 EXAMPLES
 --------
-
-To clear all allowed IPv4 addresses configured to a VIF: ::
+To clear all allowed IPv4 addresses: ::
 	*xe vif-param-clear* uuid=<VIF UUID> param-name="ipv4-allowed"
-	
-To clear all keys in other-config on a VIF interface: ::
+To clear all key/value pairs in *other-config*: ::
 	*xe vif-param-clear* uuid=<VIF UUID> param-name="other-config"
 
 SEE ALSO
 --------
 *xe-vif-list*(1), *xe-vif-param-set*(1), *xe-vif-plug*(1), *xe-vif-unplug*(1), *xe-vif-create*(1), *xe-network-list*(1), *xe-vm-list*(1)
-
 
 AUTHORS
 -------
@@ -50,7 +43,6 @@ Matthew Spah <spahmatthew@xenapiadmin.com>
 BUGS
 ----
 For guidelines on submitting bug reports see http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP. Submit bugs and general questions to xen-api@lists.xen.org.
-
 
 COPYRIGHT
 ---------

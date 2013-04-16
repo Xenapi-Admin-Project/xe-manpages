@@ -35,7 +35,7 @@ To remove a key/value pair from other-config: ::
 	
 SEE ALSO
 --------
-*xe-vif-list*(1), *xe-vif-destroy*(1), *xe-vif-param-clear*(1), *xe-vif-param-set*(1), *xe-network-list*(1), *xe-vm-list*(1)
+*xe help vif-param-remove*, *xe-vif-list*(1), *xe-vif-destroy*(1), *xe-vif-param-clear*(1), *xe-vif-param-set*(1), *xe-network-list*(1), *xe-vm-list*(1)
 
 AUTHORS
 -------

@@ -22,7 +22,6 @@ REQUIRED PARAMETERS
 *uuid*::
 	VIF UUID - Use *xe vif-list* to obtain a list of VIF UUIDs.
 
-
 EXAMPLES
 --------
 To attach a VIF interface to a running VM type: ::

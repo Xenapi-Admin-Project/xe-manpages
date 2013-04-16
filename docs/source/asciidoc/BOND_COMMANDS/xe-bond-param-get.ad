@@ -11,50 +11,39 @@ xe-bond-param-get - Returns a parameter for a bond
 
 SYNOPSIS
 --------
-
 *xe bond-param-get* uuid=<BOND UUID> param-name=<PARAMETER> [ param-key=<PARAMETER KEY> ]
 
 DESCRIPTION
 -----------
 *xe bond-param-get* returns a parameter or a key value for a specific bond.
 
-
 REQUIRED PARAMETERS
 -------------------
 *uuid*::
 	UUID of bond. Use *xe bond-list* to obtain a list of bonds.
-
 *param-name*::
-	Parameter for the bond.
-
+	The bond parameter to return.
 
 OPTIONAL PARAMETERS
 -------------------
-
 *param-key*::
-	Name of key in a map or set parameter.
-
+	The bond key to return
 
 EXAMPLES
 --------
-
 To return the mode parameter from a specific bond: ::
 	*xe bond-param-get* uuid=<BOND UUID> param-name="mode"
-	
 To return the value from the a parameter key found in the properties parameter: ::
 	*xe bond-param-get* uuid=<BOND UUID> param-name="properties" param-key=<PARAMETER KEY>
 
-
 SEE ALSO
 --------
-*xe-bond-create*(1), *xe-bond-destroy*(1), *xe-bond-set-mode*(1), *xe-bond-param-list*(1) *xe-bond-param-get*(1), *xe-bond-param-set*(1), *xe-pif-list*(1)
-
+*xe help bond-param-get*, *xe-bond-create*(1), *xe-bond-destroy*(1), *xe-bond-set-mode*(1), *xe-bond-param-list*(1) *xe-bond-param-get*(1), *xe-bond-param-set*(1), *xe-pif-list*(1)
 
 AUTHORS
 -------
 Manpage Author(s): ::
 Matthew Spah <spahmatthew@xenapiadmin.com>
-
 
 BUGS
 ----

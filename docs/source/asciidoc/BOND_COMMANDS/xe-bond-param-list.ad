@@ -7,45 +7,34 @@ XE(1)
 
 NAME
 ----
-
 xe-bond-param-list -  Displays all parameters for a bond
-
 
 SYNOPSIS
 --------
-
 *xe bond-param-list* uuid=<BOND UUID>
 
 DESCRIPTION
 -----------
-
 *xe bond-param-list* displays all parameters for a specific bond.
-
 
 REQUIRED PARAMETERS
 -------------------
-
 *uuid*::
 	Bond UUID - Use *xe bond-list* to obtain a list of bonds.
 
-
 EXAMPLES
 --------
-
 To display parameters for a bond: ::
 	*xe bond-param-list* uuid=<BOND UUID>
 
-
 SEE ALSO
 --------
-
-*xe-bond-create*(1), *xe-bond-destroy*(1), *xe-bond-set-mode*(1), *xe-bond-param-get*(1), *xe-bond-param-set*(1), *xe-pif-list*(1)
+*xe help bond-param-list*, *xe-bond-create*(1), *xe-bond-destroy*(1), *xe-bond-set-mode*(1), *xe-bond-param-get*(1), *xe-bond-param-set*(1), *xe-pif-list*(1)
 
 AUTHORS
 -------
 Manpage Author(s): ::
 Matthew Spah <spahmatthew@xenapiadmin.com>
-
 
 BUGS
 ----
