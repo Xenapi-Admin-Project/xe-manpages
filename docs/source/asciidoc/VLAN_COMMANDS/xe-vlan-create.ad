@@ -16,17 +16,9 @@ SYNOPSIS
 
 DESCRIPTION
 -----------
+*xe vlan-create* creates a virtual PIF for the desired VLAN tag, and connects the new pseudo PIF to the network specified. The virtual PIF is assoisated with the selected physical PIF, and is created on the host of the physical PIF. The UUID of the virtual PIF is returned.
 
-*xe vlan-create* creates a vlan, and attaches it to the desired physical PIF and network. A new virtual PIF is created and attached to the desired VLAN. The UUID of the virtual PIF will be returned. 
-
-The phsyical PIF now supports 802.1q VLAN tagging. 
-
-
-
-
-
-
-
+The physical PIF now performs 802.1Q VLAN tagging, and can be connected to a trunk port. Management interfaces cannot be assigned to a VLAN, and must be placed on the native VLAN. 
 
 1. What does the command do (in laymans terms)
 2. What does the admin NEED to know (caveats with management interfaces, default VLANs etc..)
@@ -44,19 +36,15 @@ The phsyical PIF now supports 802.1q VLAN tagging.
 
 REQUIRED PARAMETERS
 -------------------
-
 *pif-uuid*::
     Physical PIF that the pseudo PIF will be associated with. - Use *xe pif-list* to obtain a list of PIF interfaces.
-
 *network-uuid*::
-    Network to be assigned VLAN - Use *xe network-list* to obtain a list of networks found in a pool.
-    
+    Network to be connected to new pseudo PIF - Use *xe network-list* to obtain a list of networks found in a pool.
 *vlan*::
-    VLAN tag.
+    Desired VLAN tag
 
 SEE ALSO
 --------
-
 *xe-pool-vlan-create(1), *xe-vlan-destroy*(1), *xe-vlan-list*(1), *xe-pif-list*(1), *xe-network-list*(1), *xe-vif-list*(1)
 
 AUTHORS

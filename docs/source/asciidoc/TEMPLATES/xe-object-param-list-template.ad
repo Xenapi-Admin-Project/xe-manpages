@@ -1,0 +1,48 @@
+XE(1)
+=======
+:doctype: manpage
+:man source:   xe <OBJECT>-param-list
+:man version:  {1}
+:man manual:   xe <OBJECT>-param-list manual
+NAME
+----
+xe-<OBJECT>-param-list - Displays all parameters for a <OBJECT> 
+
+SYNOPSIS
+--------
+*xe <OBJECT>-param-list* uuid=<OBJECT UUID>
+
+DESCRIPTION
+-----------
+*xe <OBJECT>-param-list* displays all parameters for a specific <OBJECT>. 
+
+
+REQUIRED PARAMETERS
+-------------------
+*uuid*::
+	<OBJECT> UUID - Use *xe <OBJECT>-list* to obtain a list of <OBJECT> UUIDs.
+	
+EXAMPLES
+--------
+To display all parameters for a specific <OBJECT>: ::
+	*xe <OBJECT>-param-list* uuid=<NETWORK UUID>
+
+SEE ALSO
+--------
+
+AUTHORS
+-------
+Manpage Author(s): ::
+
+
+BUGS
+----
+For guidelines on submitting bug reports see http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP. Submit bugs and general questions to xen-api@lists.xen.org.
+
+
+COPYRIGHT
+---------
+Copyright \(C) 2012 - 
+Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License, Version 1.3 or any later version published by the Free Software Foundation; with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts. A copy of the license is included in the section entitled "GNU Free Documentation License"
+
+
