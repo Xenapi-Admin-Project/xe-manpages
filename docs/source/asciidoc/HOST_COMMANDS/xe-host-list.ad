@@ -1,0 +1,130 @@
+XE(1)
+=======
+:doctype: manpage
+:man source:   xe <OBJECT>-list
+:man version:  {1}
+:man manual:   xe <OBJECT>-list manual
+
+NAME
+-----
+xe-host-list - Displays hosts and all parameters.
+
+SYNOPSIS
+--------
+*xe host-list*  [ params=<PARAMETER> ] [--minimal]
+
+DESCRIPTION
+-----------
+*xe host-list* displays hosts and their parameters.
+
+Output can be filtered by using the *params* parameter and a value (separate multiple parameters with commas): ::
+	*xe host-list params=name-descriptions* +
+	*xe host-list params=uuid,name-label,enabled*
+
+Output can be filtered by using parameter values and the desired value: ::
+	*xe host-list enabled="true"*
+
+Append --minimal to display values for one parameter on a single line separated by commas: ::
+	*xe host-list params="uuid" --minimal*
+
+OPTIONAL PARAMETERS
+-------------------
+*all*::
+	Display all parameter values
+*uuid*::
+	Display host UUIDs
+*name-label*::
+	Display host name-labels
+*name-description*::
+	Display host name-descriptions
+*enabled*::
+	Display host's enabled status [ true | false ]
+*API-version-major*::
+	Display API major version number
+*API-version-minor*::
+	Display API minor version number
+*API-version-vendor*::
+	Display identification of API vendor
+*API-version-vendor-implementation*::
+	Display details of vendor implementation
+*logging*::
+	Display logging configuration
+*suspend-image-sr-uuid*::
+	Display the Storage Repository UUID for suspended images
+*crash-dump-sr-uuid*::
+	Display the Storage Repository UUID for crash dumps
+*software-version*::
+	Display software-version parameters
+*capabilities*::
+	Display a list of Xen versions that the XCP host can run
+*chipset-info*::
+	Display chipset-info map parameter key/values 
+*hostname*::
+	Display XCP host hostnames
+*address*::
+	Display XCP host IP addresses 
+*license-server*::
+	Display license-server map parameter key/values 
+*supported-bootloaders*::
+	Display a list of bootloaders supported by XCP hosts
+*memory-total*::
+	Display total amount of physical RAM on the XCP host, in bytes.
+*memory-free*:: 
+	Display total amount of un-allocated physical RAM on the XCP host, in bytes.
+*host-metrics-live*::
+	Display host operational status [ true | false ]
+*allowed-operations*::
+	Display allowed-operations for XCP hosts
+*current-operations*::
+	Display current-operations for XCP hosts
+*patches*::
+	Display sets of host patches
+*blobs*::
+	Display binary data stores
+*memory-free-computed*::
+	Display a conservative estimate of the maximum amount of memory free on a XCP host
+*ha-statefiles*::
+	Display HA statefile UUIDs
+*ha-network-peers*::
+	Display host UUIDs that could host the VMs on this host in case of failure.
+*external-auth-type*::
+	Display external authentication type
+*external-auth-service-name*::
+	Display names of external authentication services 
+*external-auth-configuration*::
+	Display external authentication configurations
+*other-config*::
+	Display other-config map parameter key/value pairs
+*--minimal*::
+	Specify --minimal to only show minimal output
+
+EXAMPLES
+--------
+To display all parameters for all *: ::
+	*xe host-list* params="all"
+To display all paramters for a specific *: ::
+	*xe host-list* uuid=<HOST UUID> params="all"
+To display ha-network-peers for a specific host: ::
+	*xe host-list* uuid=<HOST UUID> params="ha-network-peers"
+To display the uuid and name-label parameters of all hosts that are enabled: ::
+	*xe host-list* enabled="true" params="uuid,name-label"
+
+SEE ALSO
+--------
+*xe help host-list*, 
+
+// add host commands
+
+AUTHORS
+-------
+Manpage Author(s): ::
+Matthew Spah <spahmatthew@xenapiadmin.com>
+
+BUGS
+----
+For guidelines on submitting bug reports see http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP. Submit bugs and general questions to xen-api@lists.xen.org.
+
+COPYRIGHT
+---------
+Copyright \(C)  2012 - Matthew Spah
+Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License, Version 1.3 or any later version published by the Free Software Foundation; with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts. A copy of the license is included in the section entitled "GNU Free Documentation License"

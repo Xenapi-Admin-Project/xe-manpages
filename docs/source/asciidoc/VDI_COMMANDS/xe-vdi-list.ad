@@ -7,125 +7,122 @@ XE(1)
 
 NAME
 ----
-*xe vdi-list* - Lists all virtual disk images
+*xe vdi-list* - Display all virtual disk images
 
 SYNOPSIS
 --------
-*xe vdi-list*
+*xe list-list*  [ params=<PARAMETER> ] [--minimal]
 
 
 DESCRIPTION
 -----------
-*xe vdi-list* 
+*xe vdi-list* displays Virtual Disk Images (VDI) and their parameters.
 
-//make note of entries that say <not in database>
-//make note of entries that say <expensive field> 
+Output can be filtered by using the *params* parameter and a value (separate multiple parameters with commas): ::
+	*xe vdi-list params="sr-uuid"* +
+	*xe vdi-list params="uuid,sr-uuid,name-label"*
 
+Output can be filtered by using parameter values and the desired value: ::
+	*xe vdi-list is-a-snapshot="true"*
+
+Append --minimal to display values for one parameter on a single line separated by commas: ::
+	*xe vdi-list params="uuid" --minimal*
+	
 PARAMETERS
------------
+----------
+*all*::
+	Display all parameter values
 *uuid*::
-	Virtual disk image (VDI) UUID.
-	
+	Display VDI UUIDs
 *name-label*::
-	Virtual disk image name
-       
+	Display VDI names
 *name-description*::
-	Virtual disk image description
-	
+	Display VDI name-descriptions
 *is-a-snapshot*::
-	True if the virtual disk image is a snapshot. False if the virtual disk image is not a snapshot.
-	
+	Display VDI snapshot status [ true | false ] 
 *snapshot-of*::
-             
+	// description
 *snapshots*::
-
-*snapshot-time*:: //make note of format
-         
+	// description
+*snapshot-time*::
+	// description
 *allowed-operations*::
-	List of operations allowed on the virtual disk image
-	
+	Display allowed VDI operations
 *current-operations*::
-	List of currently running operations on the virtual disk image
-
+	Display currently running VDI operations 
 *sr-uuid*::
-	Storage repository UUID where the virtual disk image resides
-	
+	Display VDI's Storage Repository UUIDs
 *sr-name-label*::
-	Name of the storage repository where the virtual disk image resides
-                 
+    Display VDI's Storage Repostiory name labels 
 *vbd-uuids*::
-	List of virtual block devices that are connected to the virtual disk image
-               
+	Display a list of connected VBD UUIDs 
 *crashdump-uuids*::
-	
+	Display a list of crash dumps 
 *virtual-size*::
-	Virtual disk image size in bytes
-	
+	Display VDI size in bytes
 *physical-utilisation*::
-
+	Display VDI physical-utilisation in bytes
 *location*::
-
+	Display location information
 *type*::
-	Virtual disk image type
-	
+	Display VDI type [ <ADD TYPES ] 
 *sharable*::
-	True if the virtual disk image is sharable. False if it is not.
-
+	Display VDI sharable status [ true | false ]
 *read-only*::
-	True if the virtual disk image is read-only. False if it is not.
-	
+	Display VDI read-only status [ true | false ] 
 *storage-lock*::
-
+	Display storage-lock status [ true | false ] 
 *managed*::
-
+	Display managed VDI status [ true | false ]
 *parent*::
-	Information if the virtual disk image is a clone.
-	
+	Display parent VDI if VDI is part of a chain
 *missing*::
-	True if the VDI is not detected by the *xe sr-scan* command, so it is not in the Xen Cloud Platform database. False if it is listed in the database.
-
-*other-config*::
-	Additional configuration settings
-
+	Display VDI missing status [ true | false ] 
 *xenstore-data*::
-
+	Display xenstore-data
 *sm-config*::
-	Storage manager plug-in configuration settings
-	
+	Display storage manager plug-in configuration settings
 *on-boot*::
-
+	// description
 *allow-caching*::
-
+	// description
 *metadata-latest*::
-
+	// description
 *metadata-pool*::
-
+	// description
 *tags*::
 	Information defined by the user.
-	
+*other-config*::
+	// description and find map parameter key and value pairs
+*--minimal*::
+	Specify --minimal to only show minimal output
+
 EXAMPLES
 --------
-//one example for using params=parameter
-//one example for using parameter=value
-	
+To display all parameters for all VDIs: ::
+	*xe vdi-list* params="all"
+To display all paramters for a specific *: ::
+	*xe vdi-list* uuid=<VDI UUID> params="all"
+To display the Storage Repository UUID for a specific VDI: ::
+	*xe vdi-list* uuid=<VDI UUID> params="sr-uuid"
+To display the uuid and sr-uuid parameters of all VDIs that are missing from a Storage Repository: ::
+	*xe vdi-list* missing="true" params="uuid,sr-uuid"
 
 SEE ALSO
 --------
-*xe vdi-clone*(1), *xe vdi-copy*(1), *xe vdi-create*(1), *xe vdi-destroy*(1), *xe vdi-forget*(1), *xe vdi-import*(1), *xe vdi-introduce*(1), *xe vdi-param-add*(1), *xe vdi-param-clear*(1), *xe vdi-param-get*(1), *xe vdi-param-list*(1), *xe vdi-param-remove*(1), *xe vdi-param-set*(1), *xe vdi-pool-migrate*(1), *xe vdi-resize*(1), *xe vdi-snapshot*(1), *xe vdi-unlock*(1), *xe vdi-update*(1)
+*xe-vdi-clone*(1), *xe-vdi-copy*(1), *xe-vdi-create*(1), *xe-vdi-destroy*(1), *xe-vdi-forget*(1), *xe-vdi-import*(1), *xe-vdi-introduce*(1), *xe-vdi-param-add*(1), *xe-vdi-param-clear*(1), *xe-vdi-param-get*(1), *xe-vdi-param-list*(1), *xe-vdi-param-remove*(1), *xe-vdi-param-set*(1), *xe-vdi-pool-migrate*(1), *xe-vdi-resize*(1), *xe-vdi-snapshot*(1), *xe-vdi-unlock*(1), *xe-vdi-update*(1)
 
 AUTHORS
 -------
 Manpage Author(s): ::
 Lisa Nguyen <lisa@xenapiadmin.com>
-
+Matthew Spah <spahmatthew@xenapiadmin.com>
 
 BUGS
 ----
-See http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP on how to send bug reports, send bugs and general questions to xen-api@lists.xen.org.
-
+For guidelines on submitting bug reports see http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP. Submit bugs and general questions to xen-api@lists.xen.org.
 
 COPYRIGHT
 ---------
-Copyright \(C) 2012 - Lisa Nguyen
-
+Copyright \(C)  2012 - Lisa Nguyen, Matthew Spah
 Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License, Version 1.3 or any later version published by the Free Software Foundation; with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts. A copy of the license is included in the section entitled "GNU Free Documentation License"

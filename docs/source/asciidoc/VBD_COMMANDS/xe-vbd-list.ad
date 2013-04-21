@@ -7,77 +7,97 @@ XE(1)
 
 NAME
 ----
-*xe vbd-list* - Lists all virtual block devices
+*xe vbd-list* - Lists all virtual block devices and their parameters
 
 SYNOPSIS
 --------
-
-*xe vbd-list* [ params=<parameter> ]
-
+*xe vbd-list*  [ params=<PARAMETER> ] [--minimal]
 
 DESCRIPTION
 -----------
-*xe vbd-list* lists Virtual Block Devices (VBD) and their parameters found in a pool. Output can be filtered by supplying params=<parameter>. Multiple parameters can be displayed by separating each parameter with a comma (e.g. params=uuid,name-label).
+*xe vbd-list* displays Virtual Block Devices (VBD) and their parameters.
 
+Output can be filtered by using the *params* parameter and a value (separate multiple parameters with commas): ::
+	*xe vbd-list params="vdi-name-label"* +
+	*xe vbd-list params="vdi-uuid,vdi-name-label"*
+
+Output can be filtered by using parameter values and the desired value: ::
+	*xe vbd-list bootable="true"*
+
+Append --minimal to display values for one parameter on a single line separated by commas: ::
+	*xe vbd-list params="uuid" --minimal*
 
 OPTIONAL PARAMETERS
 -------------------
-
+*all*::
+	Display all parameter values
+*uuid*::
+	Display VBD UUIDs
 *vm-uuid*::
- 
+	Display VBD's Virtual Machine UUIDs
 *vm-name-label*::
- 
+	Display VBD's Virtual Machine name-labels 
 *vdi-uuid*::
- 
+	Display VBD's Virtual Block Device UUIDs
 *vdi-name-label*::
-
+	Display VBD's Virtual Block Device name-labels 
 *allowed-operations*::
- 
+	Display VBD's allowed operations 
 *current-operations*::
- 
+	Display VBD's currently running operations
 *empty*::
-
+	Display VBD empty status [ true | false ]
 *device*::
- 
+	Display device names (e.g. hda1) // change example
 *userdevice*::
- 
+	Display user-friendly device names
 *bootable*::
-
+	Display bootable status [ true | false ]
 *mode*::
- 
+	Display VBD mounted mode // modes possible?
 *type*::
- 
+	Display VBD type [ CD | disk ] // more types?
 *unpluggable*::
- 
+	Display hot-unplug status [ true | false ]
 *currently-attached*::
- 
+	Display currently-attached status [ true | false ] 
 *attachable*::
- 
+	Display attachable status [ true | false ] 
 *storage-lock*::
- 
+	Display storage-level lock status [ true | false ]
 *status-code*::
-
+	Display error/success codes associated with last attach 
 *status-detail*::
-
+	Display error/success statuses associated with last attach
 *qos_algorithm_type*::
-
+	Display QoS algorithms
 *qos_algorithm_params*::
-
+	Display QoS algorithm parameters 
 *qos_supported_algorithms*::
-
+	Display supported QoS algorithms
 *io_read_kbs*::
-
+	Display average read rate in kB per second
 *io_write_kbs*::
-
+	Display average write rate in kB per second
+*other-config*:: 
+	Display other-config map parameters keys // Find a list of keys
+*--minimal*::
+	Specify --minimal to only show minimal output
 
 EXAMPLES
 --------
-
+To display all parameters for all VBDs: ::
+	*xe vbd-list* params="all"
+To display all paramters for a specific *: ::
+	*xe vbd-list* uuid=<VBD UUID> params="all"
+To display the Virtual Machine UUID for a specific VBD: ::
+	*xe vbd-list* uuid=<VBD UUID> params="vm-uuid"
+To display the vdi-uuid and vm-uuid parameters of all VDIs with a VBD type of disk: ::
+	*xe vbd-list* type="disk" params="vm-uuid,vdi-uuid"
 
 SEE ALSO
 --------
-*xe-*(1)
-
+*xe help vbd-list*, *xe-vbd-create*(1), *xe-vbd-param-add*(1), *xe-vbd-param-set*(1), *xe-vbd-destroy*(1),  *xe-vbd-param-clear*(1),   *xe-vbd-plug*(1), *xe-vbd-eject*(1), *xe-vbd-param-get*(1),     *xe-vbd-unplug*(1), *xe-vbd-insert*(1), *xe-vbd-param-list*(1), *xe-vbd-list*(1), *xe-vbd-param-remove*(1)
 
 AUTHORS
 -------
@@ -85,15 +105,11 @@ Manpage Author(s): ::
 Lisa Nguyen <lisa@xenapiadmin.com>
 Matthew Spah <spahmatthew@xenapiadmin.com>
 
-
-
 BUGS
 ----
-See http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP on how to send bug reports, send bugs and general questions to xen-api@lists.xen.org.
-
+For guidelines on submitting bug reports see http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP. Submit bugs and general questions to xen-api@lists.xen.org.
 
 COPYRIGHT
 ---------
-Copyright \(C) 2012 - Lisa Nguyen
-
+Copyright \(C)  2012 - Lisa Nguyen, Matthew Spah
 Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License, Version 1.3 or any later version published by the Free Software Foundation; with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts. A copy of the license is included in the section entitled "GNU Free Documentation License"
