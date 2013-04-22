@@ -46,7 +46,7 @@ Importing/Exporting VMs
 
 To export an existing VM, type xe vm-export uuid=<VM UUID> filename=<PATH TO FILE>. A new filename must be given, and by default, it is saved in the current directory unless a filepath is given. XCP displays errors if an existing file is used for exporting VMs. Citrix recommends to have the file use the .xva extension.
 
-To import a VM using a file, type xe vm-import filename=<PATH TO FILE>. The UUID for the imported VM is returned. Use the xe vm-list command to confirm the import process.
+To import a VM using a file, type xe vm-import filename=<PATH TO FILE>. XCP assigns a new UUID for the imported VM. Use the xe vm-list command to confirm the import process.
 
 *consider server type? (xe help mentioned server type)
 
