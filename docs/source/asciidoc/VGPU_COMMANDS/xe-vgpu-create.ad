@@ -7,7 +7,7 @@ XE(1)
 
 NAME
 ----
-xe-vgpu-create - Create a virtual GPU for a VM.
+xe-vgpu-create - Creates a virtual GPU for a VM.
 
 SYNOPSIS
 --------
