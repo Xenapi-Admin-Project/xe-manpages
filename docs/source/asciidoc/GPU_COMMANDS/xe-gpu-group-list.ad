@@ -44,8 +44,8 @@ OPTIONAL PARAMETERS
 *name-description*::
 	Display GPU group name description
 
-*VPGU-uuids*::
-	Display list of virtual GPUs UUIDs
+*VGPU-uuids*::
+	Display list of virtual GPU UUIDs
 	
 *PGPU-uuids*::
 	Display list of physical GPU UUIDs
@@ -63,6 +63,9 @@ To display minimal output for all GPU groups: ::
 	
 To display the names of all GPU groups: ::
 	*xe gpu-group-list* params="name-label"
+	
+To display the VGPU-uuids and PGPU-uuids for a specific GPU group: ::
+	*xe gpu-group-list* params="VPGU-uuids,PGPU-uuids" uuid=<GPU GROUP UUID>
 	
 SEE ALSO
 --------

@@ -18,14 +18,14 @@ DESCRIPTION
 *xe sr-list* displays Storage Repositories (SR) and their parameters.
 
 Output can be filtered by using the *params* parameter and a value (separate multiple parameters with commas): ::
-	*xe sr-list params=<ONE PARAMETER>* +
-	*xe sr-list params=<MULTIPLE PARAMETERS>*
+	*xe sr-list params=uuid* +
+	*xe sr-list params=uuid,name-label,type,physical-utilisation*
 
 Output can be filtered by using parameter values and the desired value: ::
-	*xe <OBJECT>-list <PARAMETER>=<VALUE>*
+	*xe sr-list type="lvmoiscsi"*
 
 Append --minimal to display values for one parameter on a single line separated by commas: ::
-	*xe <OBJECT>-list params="<PARAMETER>" --minimal*
+	*xe sr-list params="uuid" --minimal*
 
 OPTIONAL PARAMETERS
 -------------------
@@ -43,29 +43,55 @@ OPTIONAL PARAMETERS
 	Display current-operations for SRs
 *VDIs*::
 	Display VDIs present on the SR
-
+*PBDs*::
+	Display PBDs connected to the SR
+*virtual-allocation*::
+	Display the size of all the VDIs present on the SR, in bytes.
+*physical-utilisation*::
+	Display the physical space currently utilized on the SR, in bytes.
+*physical-size*::
+	Display the total physical size of the SR, in bytes. 
+*type*::
+	Display SR type [ dummy | ext | file | hba | iscsi | iso | lvm  | lvmohba | lvmoiscsi | nfs | udev ]    
+*content-type*:: 
+	Display SR content-type 
+*shared*::
+	Display shared support status [ true | false ]
+*introduced-by*::
+	Display which drtask (if any) introduced the SR.
+*blobs*::
+	Display binary data store 
+*local-cache-enabled*::
+	Display local-cache-enabled status [ true | false ]
+*tags*::
+	Display tags
+*sm-config*::
+	Display SM dependent data 
+other-config*::
+	// add other config parameters...
 
 *--minimal*::
 	Specify --minimal to only show minimal output
 
 EXAMPLES
 --------
-To display all parameters for all *: ::
-	*xe <OBJECT>-list* params="all"
-To display all paramters for a specific *: ::
-	*xe <OBJECT>-list* uuid=<OBJECT UUID> params="all"
-To display <PARAMETER> for a specific <OBJECT>: ::
-	*xe <OBJECT>-list* uuid=<NETWORK UUID> params="VIF-uuids"
-To display the <PARAMETER> and <PARAMETER> parameters of all <OBJECT> with a <PARAMETER> of <VALUE>: ::
-	*xe <OBJECT>-list* <PARAMETER>=<VALUE> params="<MULTIPLE PAMETERS>"
+To display all parameters for all Storage Repositories : ::
+	*xe sr-list* params="all"
+To display all paramters for a specific Storage Repositories: ::
+	*xe sr-list* uuid=<SR UUID> params="all"
+To display the VDIS found on a specific Storage Repository: ::
+	*xe sr-list* uuid=<SR UUID> params="VDIs"
+To display the *VDIs* and *PBDs* parameters on all Storage Repositories with *type* nfs: ::
+	*xe sr-list* type="nfs" params="VDIs,PBDs"
 
 SEE ALSO
 --------
-*xe help <OBJECT>-list*,
-
+*xe help sr-list*, *xe-sr-create*(1),  *xe-sr-enable-database-replication*(1), *xe-sr-list*(1), *xe-sr-param-get*(1), *xe-sr-param-set*(1), *xe-sr-update*(1), *xe-sr-destroy*(1), *xe-sr-forget*(1), *xe-sr-param-add*(1), *xe-sr-param-list*(1), *xe-sr-probe*(1), *xe-sr-disable-database-replication*(1), *xe-sr-introduce*(1), *xe-sr-param-clear*(1), *xe-sr-param-remove*(1), *xe-sr-scan*(1) 
+                        
 AUTHORS
 -------
 Manpage Author(s): ::
+Matthew Spah <spahmatthew@xenapiadmin.com>
 
 BUGS
 ----
@@ -73,5 +99,5 @@ For guidelines on submitting bug reports see http://wiki.xen.org/wiki/Reporting_
 
 COPYRIGHT
 ---------
-Copyright \(C)  2012 - Manpage Author
+Copyright \(C)  2013 - Matthew Spah
 Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License, Version 1.3 or any later version published by the Free Software Foundation; with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts. A copy of the license is included in the section entitled "GNU Free Documentation License"

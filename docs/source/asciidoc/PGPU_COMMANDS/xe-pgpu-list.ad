@@ -68,6 +68,18 @@ OPTIONAL PARAMETERS
 EXAMPLES
 --------
 
+To display all parameters for all PGPUs: ::
+	*xe pgpu-list* params="all"
+	
+To display all parameters for a specific PGPU: ::
+	*xe pgpu-list* params="all" uuid=<PHYSICAL GPU UUID>
+	
+To display all PGPUs in a specific GPU group: ::
+	*xe pgpu-list* params="all" gpu-group-uuid=<GPU GROUP UUID>
+	
+To display the *uuid* and *device-name* parameters for PGPUs on a specific host: ::
+	*xe pgpu-list* host-uuid=<HOST UUID> params="uuid,device-name"
+
 
 SEE ALSO
 --------

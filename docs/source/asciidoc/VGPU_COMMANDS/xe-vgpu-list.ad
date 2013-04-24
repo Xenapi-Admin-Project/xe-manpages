@@ -36,22 +36,22 @@ OPTIONAL PARAMETERS
 	Specify --minimal to only show minimal output
 	
 *uuid*::
-	Display Virtual GPU UUID
+	Display Virtual GPU UUIDs
 
 *vm-uuid*::
-	Display VM UUID
+	Display VM UUIDs
 
 *vm-name-label*::
-	Display VM name
+	Display VM names
 
 *gpu-group-uuid*::
-	Display GPU group UUID
+	Display GPU group UUIDs
 	
 *gpu-group-name-label*::
-	Display GPU group name
+	Display GPU group names
 
 *currently-attached*::
-
+	Display currently-attached status [ true | false ] 
 
 *other-config*::
 	Display additional configuration parameter values for virtual GPU
@@ -59,7 +59,17 @@ OPTIONAL PARAMETERS
 EXAMPLES
 --------
 
+To display all parameters for all virtual GPUs: ::
+	*xe vgpu-list* params=all
 
+To display all parameters for a specific virtual GPU: ::
+	*xe vgpu-list* uuid=<VIRTUAL GPU UUID>  params=all
+	
+To display the uuid and name-label parameters of all VMs with virtual GPUs: :
+	*xe vgpu-list* params="vm-uuid,vm-name-label"
+	
+To display the VGPU UUID and currently-attached status of a VGPU on a specific VM: :
+	*xe vgpu-list* vm-uuid=<VM UUID> params="uuid,currently-attached"
 
 SEE ALSO
 --------
