@@ -37,6 +37,8 @@ OPTIONAL PARAMETERS
 	Display SR name-labels
 *name-description*::
 	Display SR name-descriptions
+*host*::
+	Display SR host name 
 *allowed-operations*::
 	Display allowed-operations for SRs
 *current-operations*:: 
@@ -59,17 +61,16 @@ OPTIONAL PARAMETERS
 	Display shared support status [ true | false ]
 *introduced-by*::
 	Display which drtask (if any) introduced the SR.
+*sm-config*::
+	Display SM dependent data 	
 *blobs*::
 	Display binary data store 
 *local-cache-enabled*::
 	Display local-cache-enabled status [ true | false ]
 *tags*::
 	Display tags
-*sm-config*::
-	Display SM dependent data 
 other-config*::
 	// add other config parameters...
-
 *--minimal*::
 	Specify --minimal to only show minimal output
 

@@ -31,89 +31,141 @@ OPTIONAL PARAMETERS
 -------------------
 *all*::
 	Display all parameter values
+	
 *uuid*::
 	Display host UUIDs
+	
 *name-label*::
 	Display host name-labels
+	
 *name-description*::
 	Display host name-descriptions
-*enabled*::
-	Display host's enabled status [ true | false ]
-*API-version-major*::
-	Display API major version number
-*API-version-minor*::
-	Display API minor version number
-*API-version-vendor*::
-	Display identification of API vendor
-*API-version-vendor-implementation*::
-	Display details of vendor implementation
-*logging*::
-	Display logging configuration
-*suspend-image-sr-uuid*::
-	Display the Storage Repository UUID for suspended images
-*crash-dump-sr-uuid*::
-	Display the Storage Repository UUID for crash dumps
-*software-version*::
-	Display software-version parameters
-*capabilities*::
-	Display a list of Xen versions that the XCP host can run
-*chipset-info*::
-	Display chipset-info map parameter key/values 
-*hostname*::
-	Display XCP host hostnames
-*address*::
-	Display XCP host IP addresses 
-*license-server*::
-	Display license-server map parameter key/values 
-*supported-bootloaders*::
-	Display a list of bootloaders supported by XCP hosts
-*memory-total*::
-	Display total amount of physical RAM on the XCP host, in bytes.
-*memory-free*:: 
-	Display total amount of un-allocated physical RAM on the XCP host, in bytes.
-*host-metrics-live*::
-	Display host operational status [ true | false ]
+	
 *allowed-operations*::
 	Display allowed-operations for XCP hosts
+	
 *current-operations*::
 	Display current-operations for XCP hosts
-*patches*::
-	Display sets of host patches
+	
+*enabled*::
+	Display host's enabled status [ true | false ]
+	
+*API-version-major*::
+	Display API major version number
+	
+*API-version-minor*::
+	Display API minor version number
+	
+*API-version-vendor*::
+	Display identification of API vendor
+	
+*API-version-vendor-implementation*::
+	Display details of vendor implementation
+	
+*logging*::
+	Display logging configuration
+	
+*suspend-image-sr-uuid*::
+	Display the Storage Repository UUID for suspended images
+	
+*crash-dump-sr-uuid*::
+	Display the Storage Repository UUID for crash dumps
+	
+*software-version*::
+	Display software-version parameters
+	
+*capabilities*::
+	Display a list of Xen versions that the XCP host can run
+	
+*cpu_info*::
+	Display cpu-info for XCP hosts
+	
+*chipset-info*::
+	Display chipset-info map parameter key/values
+		
+*hostname*::
+	Display XCP host hostnames
+	
+*address*::
+	Display XCP host IP addresses 
+	
+*supported-bootloaders*::
+	Display a list of bootloaders supported by XCP hosts
+	
 *blobs*::
 	Display binary data stores
+	
+*memory-overhead*::
+	Dispaly memory overhead due to virtualization, in bytes.
+
+*memory-total*::
+	Display total amount of physical RAM on the XCP host, in bytes.
+	
+*memory-free*:: 
+	Display total amount of un-allocated physical RAM on the XCP host, in bytes.
+	
 *memory-free-computed*::
 	Display a conservative estimate of the maximum amount of memory free on a XCP host
+	
+*host-metrics-live*::
+	Display host operational status [ true | false ]
+		
+*patches*::
+	Display sets of host patches
+	
 *ha-statefiles*::
 	Display HA statefile UUIDs
+	
 *ha-network-peers*::
 	Display host UUIDs that could host the VMs on this host in case of failure.
+	
 *external-auth-type*::
 	Display external authentication type
+	
 *external-auth-service-name*::
 	Display names of external authentication services 
+	
 *external-auth-configuration*::
 	Display external authentication configurations
+	
+*edition*::
+	Dispaly edition information 
+	
+*tags*::
+	Display writable tag parameters
+	
+*license-server*::
+	Display license-server map parameter key/values 
+	
+*power-on-mode*::
+	Display Host Power On mode
+	
+*power-on-config*::
+	Display Host Power On configuration parameters
+	
+*local-cache-sr*::
+	Display the Storage Repository UUID for local cache (IntelliCache)
+	
 *other-config*::
 	Display other-config map parameter key/value pairs
+	
 *--minimal*::
 	Specify --minimal to only show minimal output
 
 EXAMPLES
 --------
-To display all parameters for all *: ::
+To display all parameters for all hosts: ::
 	*xe host-list* params="all"
-To display all paramters for a specific *: ::
+To display all paramters for a specific host: ::
 	*xe host-list* uuid=<HOST UUID> params="all"
-To display ha-network-peers for a specific host: ::
+To display *ha-network-peers* for a specific host: ::
 	*xe host-list* uuid=<HOST UUID> params="ha-network-peers"
-To display the uuid and name-label parameters of all hosts that are enabled: ::
+To display the *uuid* and *name-label* parameters of all hosts that are enabled: ::
 	*xe host-list* enabled="true" params="uuid,name-label"
 
 SEE ALSO
 --------
-*xe help host-list*, 
-
-// add host commands
+*xe help host-list*, *xe-host-enable*(1), *xe-host-reboot*(1), *xe-host-restore*(1), *xe-host-shutdown*(1), *xe-host-param-clear*(1), *xe-host-param-get*(1), *xe-host-param-list*(1), *xe-host-param-remove*(1), *xe-host-param-set*(1)
 
 AUTHORS
 -------
