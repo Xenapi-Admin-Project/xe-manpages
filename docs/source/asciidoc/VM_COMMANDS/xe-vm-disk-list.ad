@@ -1,0 +1,63 @@
+XE(1)
+=======
+:doctype: manpage
+:man source:   xe vm-vif-list
+:man version:  {1}
+:man manual:   xe vm-vif-list manual
+
+NAME
+----
+xe-vm-disk-list - Display VBD and VDI information for VMs 
+
+SYNOPSIS
+--------
+*xe-vm-disk-list* [ vbd-params=<VBD PARAMETERS> ] [ vdi-params=<VDI PARAMETERS> ] [ vm selectors ] [ --multiple ]
+
+DESCRIPTION
+-----------
+*xe vm-disk-list* displays VBD and VDI information for a Virtual Machine or for multiple Virtual Machines. Select VMs by using one or more parameters displayed by xe vm-list params=all.  Append --multiple if more than one VM matches. Use the vbd-params and vdi-params options to specify which VBD and VDI parameters to display (separate multiple parameters with commas).
+
+OPTIONAL PARAMETERS
+-------------------
+*<vm selectors*::
+	Parameters to select VM(s) - Use *xe vm-list params=all* to get a list of VM parameters to filter on.
+*vdb-params*::
+	Virtual block device parameters to display - Use *xe vbd-list* & *xe vbd-param-list* to obtain a list of VBD parameters.
+*vdi-params*::
+	Virtual disk image parameters to display - Use *xe vdi-list* & *xe vdi-param-list* to obtain a list of VDI parameters.
+*--multiple* ::
+	Specify --multiple if you want to match more than one VM.
+	
+EXAMPLES
+--------
+To display default VBD and VDI information for all VMs: ::
+	*xe vm-disk-list* --multiple
+To display default VBD and VDI information for a specific VM: ::
+	*xe vm-disk-list* uuid=<VM UUID>
+To display default VBD and VDI infromation for all running VMs: :
+	*xe vm-disk-list* power-state="running" --multiple
+To display the VDI *name-label* and VBD *userdevice* parameters for a specific VM: ::
+	*xe vm-disk-list* vdi-params="name-label" vbd-params="userdevice" uuid=<VM UUID>
+	
+SEE ALSO
+--------
+*xe help vm-vif-list*, *xe-vm-create*(1), *xe-vif-list*(1), *xe-vif-param-list*(1), *xe-network-list*(1) 
+
+AUTHORS
+-------
+Matthew Spah <spahmatthew@gmail.com>
+
+AUTHORS
+-------
+Manpage Author(s): ::
+Matthew Spah <spahmatthew@xenapiadmin.com>
+
+BUGS
+----
+For guidelines on submitting bug reports see http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP. Submit bugs and general questions to xen-api@lists.xen.org.
+
+COPYRIGHT
+---------
+Copyright \(C) 2012 - Matthew Spah
+
+Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License, Version 1.3 or any later version published by the Free Software Foundation; with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts. A copy of the license is included in the section entitled "GNU Free Documentation License"

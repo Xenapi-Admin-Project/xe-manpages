@@ -9,7 +9,6 @@ NAME
 ----
 xe-vlan-param-list - Lists all parameters for a VLAN.
 
-
 SYNOPSIS
 --------
 *xe vlan-param-list* uuid=<VLAN UUID>

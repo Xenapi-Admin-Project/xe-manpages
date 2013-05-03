@@ -16,14 +16,25 @@ SYNOPSIS
 DESCRIPTION
 -----------
 
-// add description 
+*xe tunnel-list* displays tunnels and their parameters.
 
+Output can be filtered by using the *params* parameter and a value (separate multiple parameters with commas): ::
+	*xe tunnel-list params="uuid"* +
+	*xe tunnel-list params="uuid,access-PIF,status"*
+
+Output can be filtered by using parameter values and the desired value: ::
+	*xe tunnel-list status=<VALUE>*
+
+Append --minimal to display values for one parameter on a single line separated by commas: ::
+	*xe tunnel-list params="uuid" --minimal*
 
 REQUIRED PARAMETERS
 -------------------
 
+*all*::
+	Display all parameter values
 *uuid*::
-
+	Display tunnel UUIDs
 *access-PIF::
 
 *transport-PIF*::
@@ -31,6 +42,10 @@ REQUIRED PARAMETERS
 *status*::
 
 *other-config*:: 
+
+*--minimal*::
+	Specify --minimal to only show minimal output
+
 
 EXAMPLES
 --------
