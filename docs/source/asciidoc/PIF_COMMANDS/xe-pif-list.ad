@@ -40,7 +40,7 @@ OPTIONAL PARAMETERS
 *physical*::     
     Display the physical status of PIFs [ true | false ]  
 *currently-attached*::
-	Display the currently-attach status of PIFs [true| false ]	
+	Display the currently-attach status of PIFs [ true | false ]	
 *MTU*::
     Display MTU values
 *VLAN*:: 
@@ -50,9 +50,9 @@ OPTIONAL PARAMETERS
 *bond-slave-of*:: 
 	Display bond slave UUIDs
 *tunnel-access-PIF-of*:: 
-	Display tunnel-access UUID
+	Display tunnel-access UUIDs
 *tunnel-transport-PIF-of*:: 
-	Display tunnel-transport UUID
+	Display tunnel-transport UUIDs
 *management*:: 
 	Display management status [ true | false ]
 *network-uuid*:: 

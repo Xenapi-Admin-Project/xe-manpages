@@ -24,7 +24,7 @@ When adding new PIFs to an existing pool, use *xe pif-introduce* on the pool mas
 REQUIRED PARAMETERS
 -------------------
 *host-uuid*::
-	Host UUID - Use *xe host-list* to obtain host UUIDs.
+	Host UUID - Use *xe host-list* to obtain a list of host UUIDs.
 *device*::
 	The host's physical network interface card (e.g. eth0).
 
@@ -43,8 +43,7 @@ To introduce a new PIF associated with eth2 and then attach it to its network: :
 
 SEE ALSO
 --------
-*xe-pif-list*(1), *xe-pif-scan*(1), *xe-pif-forget*(1), *xe-host-list*(1), *ifconfig*(1), *xe-network-list*(1)
-
+*xe help pif-introduce*, *xe-pif-list*(1), *xe-pif-scan*(1), *xe-pif-forget*(1), *xe-host-list*(1), *ifconfig*(1), *xe-network-list*(1)
 
 AUTHORS
 -------
@@ -55,7 +54,6 @@ Lisa Nguyen <lisa@xenapiadmin.com>
 BUGS
 ----
 For guidelines on submitting bug reports see http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP. Submit bugs and general questions to xen-api@lists.xen.org.
-
 
 COPYRIGHT
 ---------

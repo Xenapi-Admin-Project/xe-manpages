@@ -19,7 +19,6 @@ DESCRIPTION
 
 Changes to the *other-config* fields of a PIF interface will only take effect after a reboot or use of *xe pif-unplug* and *xe pif-plug*. 
 
-
 REQUIRED PARAMETERS
 -------------------
 *uuid*::
@@ -60,14 +59,11 @@ EXAMPLES
 --------
 To set the speed and duplex settings of a PIF interface, turn off autonegotiation first: ::
 	*xe pif-param-set* uuid=<PIF UUID> other-config:ethtool-autoneg="off"
-
 To set ethernet speed for a PIF interface: ::
 	*xe pif-param-set* uuid=<PIF UUID> other-config:ethtool-speed="1000"
-
 To set disallow-unplug on a PIF interface: ::
 	*xe pif-param-set* uuid=<PIF UUID> disallow-unplug="true"
 	
-
 SEE ALSO
 --------
 *xe help pif-param-set*, *xe pif-list*(1), *xe pif-param-list*(1), *xe host-list*(1), *xe pif-param-remove*(1), *xe pif-reconfigure-ip*(1)

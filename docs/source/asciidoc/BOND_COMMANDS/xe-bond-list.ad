@@ -34,7 +34,7 @@ OPTIONAL PARAMETERS
 *uuid*::
 	Display bond UUIDs
 *mode*::
-	Display bond modes [ balance-slb | active-backup |lacp ]
+	Display bond modes [ balance-slb | active-backup | lacp ]
 *links-up*::
 	Display number of links up in bonds
 *master*::
@@ -52,10 +52,10 @@ EXAMPLES
 --------
 To display all bonds and all their parameters: ::
 	*xe bond-list* params=all
-To display active-backup bonds and all their parameters: ::
+To display *active-backup* bonds and all their parameters: ::
 	*xe bond-list* mode=active-backup params=all	
-To display a specific bond and the slaves and links-up parameters: ::
-	*xe bond-list* uuid=<BOND UUID> params=slaves,links-up
+To display a specific bond and the *slaves* and *links-up* parameters: ::
+	*xe bond-list* uuid=<BOND UUID> params="slaves,links-up"
 
 SEE ALSO
 --------

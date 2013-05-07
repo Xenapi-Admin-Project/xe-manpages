@@ -21,9 +21,8 @@ REQUIRED PARAMETERS
 -------------------
 *uuid*::
 	PIF UUID - Use *xe pif-list* to obtain a list PIF UUIDs.
-
 *primary_address_type*::
-	Primary address type: *[ IPV4 | IPV6 ]*
+	Primary address type: primary_address_type=*[ IPV4 | IPV6 ]*
 	
 EXAMPLES
 --------
@@ -34,7 +33,7 @@ To set the primary address type to IPv6: ::
 
 SEE ALSO
 --------
-*xe-pif-reconfigure-ip*(1), *xe-pif-reconfigure-ipv6*(1), *xe-pif-list*(1), *xe-pif-param-set*(1), *xe-network-list*(1), *xe-vif-list*(1)
+*xe help set-primary-address-type*, *xe-pif-reconfigure-ip*(1), *xe-pif-reconfigure-ipv6*(1), *xe-pif-list*(1), *xe-pif-param-set*(1), *xe-network-list*(1), *xe-vif-list*(1)
 
 AUTHORS
 -------
@@ -45,7 +44,6 @@ Lisa Nguyen <lisa@xenapiadmin.com>
 BUGS
 ----
 For guidelines on submitting bug reports see http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP. Submit bugs and general questions to xen-api@lists.xen.org.
-
 
 COPYRIGHT
 ---------

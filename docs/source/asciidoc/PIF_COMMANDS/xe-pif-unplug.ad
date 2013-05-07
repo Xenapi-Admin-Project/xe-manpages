@@ -35,7 +35,7 @@ To detach a PIF: ::
 
 SEE ALSO
 --------
-*xe-pif-scan*(1), *xe-pif-list*(1), *xe-pif-plug*(1), *xe-pif-param-set*(1), *xe-pif-param-list*(1), *xe-pif-reconfigure-ip*(1), *xe-pif-param-get*(1), *xe-network-list*(1)
+*xe help pif-unplug*, *xe-pif-scan*(1), *xe-pif-list*(1), *xe-pif-plug*(1), *xe-pif-param-set*(1), *xe-pif-param-list*(1), *xe-pif-reconfigure-ip*(1), *xe-pif-param-get*(1), *xe-network-list*(1)
 
 AUTHORS
 -------

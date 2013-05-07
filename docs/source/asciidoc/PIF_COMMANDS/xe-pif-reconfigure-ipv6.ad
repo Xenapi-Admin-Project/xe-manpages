@@ -11,7 +11,7 @@ xe-pif-reconfigure-ipv6 - Configure PIF IPv6 addressing
 
 SYNOPSIS
 --------
-*xe pif-reconfigure-ipv6*	mode=[autoconf | dhcp | none]	uuid=<PIF UUID>
+*xe pif-reconfigure-ipv6*	mode=[ autoconf | dhcp | none ]	uuid=<PIF UUID>
 
 *xe pif-reconfigure-ipv6*	mode=static uuid=<PIF UUID> IPV6=<IPv6 ADDRESS> [ gateway=<GATEWAY ADDRESS> ] [ DNS=<NAME SERVER> ]
 
@@ -24,28 +24,27 @@ REQUIRED PARAMETERS
 *mode*::
 	Addressing mode for the PIF: mode=*[ dhcp | static | autoconf | none ]*
 *uuid*::
-	PIF UUID- Use *xe pif-list* to obtain PIF interface UUIDs
+	PIF UUID - Use *xe pif-list* to obtain PIF interface UUIDs
 *IPv6*::
 	PIF IPv6 address. Address is only required for static mode.
 
 OPTIONAL PARAMETERS
 -------------------
 *DNS*::
-	Name server addresses. 
+	Name server addresses - Use a comma to seperate multiple name servers 
 *gateway*::
-	Gateway address.
+	Gateway address
 	
 EXAMPLES
 --------
 To set dhcp mode: ::
-	*xe pif-reconfigure-ipv6* mode=dhcp uuid=<PIF UUID>
-
-To set the static mode with a gateway address and one DNS: ::
-		*xe pif-reconfigure-ipv6* mode=static uuid=<PIF UUID> IPv6=<IPV6 ADDRESS> gateway=<GATEWAY ADDRESS> DNS=<NAME SERVER>
+	*xe pif-reconfigure-ipv6* mode="dhcp" uuid=<PIF UUID>
+To set the address mode to static with a gateway address and one DNS server: ::
+	*xe pif-reconfigure-ipv6* mode="static" uuid=<PIF UUID> IPv6=<IPV6 ADDRESS> gateway=<GATEWAY ADDRESS> DNS=<NAME SERVER>
 
 SEE ALSO
 --------
-*xe-pif-list*(1), *xe-pif-reconfigure-ip*(1), *xe-pif-param-set*(1), *xe-set-primary-address-type*(1), *xe-network-list*(1), *xe-vif-list*(1)
+*xe help pif-reconfig-ipv6*, *xe-pif-list*(1), *xe-pif-reconfigure-ip*(1), *xe-pif-param-set*(1), *xe-set-primary-address-type*(1), *xe-network-list*(1), *xe-vif-list*(1)
 
 AUTHORS
 -------
@@ -56,7 +55,6 @@ Lisa Nguyen <lisa@xenapiadmin.com>
 BUGS
 ----
 For guidelines on submitting bug reports see http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP. Submit bugs and general questions to xen-api@lists.xen.org.
-
 
 COPYRIGHT
 ---------

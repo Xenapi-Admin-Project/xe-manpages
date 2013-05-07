@@ -15,7 +15,7 @@ SYNOPSIS
 
 DESCRIPTION
 -----------
-*xe vif-param-remove* removes a key from a set parameter or key/value pairs from a map parameter.. Use *xe vif-list* and *xe vif-param-list* to identify writable set or map parameters (SRW, MRW).
+*xe vif-param-remove* removes a key from a set parameter or key/value pairs from a map parameter. Use *xe vif-list* and *xe vif-param-list* to identify writable set or map parameters (SRW, MRW).
 
 REQUIRED PARAMETERS
 -------------------
@@ -30,7 +30,7 @@ EXAMPLES
 --------
 To remove an allowed IPv4 address from a VIF: ::
 	*xe vif-param-remove* uuid=<VIF UUID> param-name="ipv4-allowed" param-key=<IPv4 address to be removed>
-To remove a key/value pair from other-config: ::
+To remove a key/value pair from *other-config*: ::
 	*xe vif-param-remove* uuid=<VIF UUID> param-name="other-config" param-key=<KEY/VALUE PAIR>
 	
 SEE ALSO

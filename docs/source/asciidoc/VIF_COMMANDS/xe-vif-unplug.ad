@@ -26,7 +26,6 @@ EXAMPLES
 --------
 To return the currently-attached parameter for a VIF: ::
 	*xe vif-param-get* uuid=<VIF UUID> param-name="currently-attached"
-
 To detach a VIF interface from a running VM: ::
 	*xe vif-unplug* uuid=<VIF UUID>
 

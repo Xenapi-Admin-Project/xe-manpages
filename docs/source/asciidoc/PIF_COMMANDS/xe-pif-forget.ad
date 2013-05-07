@@ -30,7 +30,7 @@ To detach and remove a PIF: ::
 		
 SEE ALSO
 --------
-*xe-pif-list*(1), *xe-pif-introduce*(1), *xe-vlan-destroy*(1), *xe-pif-plug*(1), *xe-pif-unplug*(1)
+*xe help pif-forget*, *xe-pif-list*(1), *xe-pif-introduce*(1), *xe-vlan-destroy*(1), *xe-pif-plug*(1), *xe-pif-unplug*(1)
 
 AUTHORS
 -------

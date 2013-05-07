@@ -7,9 +7,7 @@ XE(1)
 
 NAME
 ----
-
 xe-pif-scan - Scans for new network interfaces on a host
-
 
 SYNOPSIS
 --------
@@ -33,8 +31,7 @@ To scan a host for new PIF: ::
 
 SEE ALSO
 --------
-*xe-pif-list*(1), *xe-pif-unplug*(1), *xe-pif-introduce*(1), *xe-host-list*(1), *xe-pif-forget*(1), *xe-pif-introduce*(1),
-*xe-network-list*(1)
+*xe help pif-scan*, *xe-pif-list*(1), *xe-pif-unplug*(1), *xe-pif-introduce*(1), *xe-host-list*(1), *xe-pif-forget*(1), *xe-pif-introduce*(1), *xe-network-list*(1)
 
 AUTHORS
 -------
@@ -45,7 +42,6 @@ Lisa Nguyen <lisa@xenapiadmin.com>
 BUGS
 ----
 For guidelines on submitting bug reports see http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP. Submit bugs and general questions to xen-api@lists.xen.org.
-
 
 COPYRIGHT
 ---------

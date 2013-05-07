@@ -7,7 +7,7 @@ XE(1)
 
 NAME
 ----
-xe-vif-destroy - Destroy a virtual interface
+xe-vif-destroy - Remove a virtual interface
 
 SYNOPSIS
 --------

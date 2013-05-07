@@ -11,30 +11,26 @@ xe-pif-param-add - Add a key/value to a parameter for a PIF
 
 SYNOPSIS
 --------
-*xe pif-param-add* uuid=<PIF UUID> param-name=<PARAMETER> [ param-key=<PARAMETER KEY> ] [ <KEY>=<VALUE> ]
+*xe pif-param-add* uuid=<PIF UUID> param-name=<PARAMETER> [ param-key=<SET PARAMETER KEY> ] [ <MAP PARAMETER KEY>=<VALUE> ]
 
 DESCRIPTION
 -----------
-*xe pif-param-add* adds a key/value to a set or map parameter for a PIF. Use *xe pif-list* and *xe network-param-list* to identify writable set or map parameters (SRW, MRW).
+*xe pif-param-add* adds a key/value to a set or map parameter for a PIF. Use *xe pif-list* and *xe pif-param-list* to identify writable set or map parameters (SRW, MRW).
 
 REQUIRED PARAMETERS
 -------------------
 *uuid*::
-	PIF UUID - Use *xe pif-list* to obtain PIF UUIDs
+	PIF UUID - Use *xe pif-list* to obtain a list of PIF UUIDs.
 *param-name*::
-	Parameter to have key or key/value pair added.
+	Parameter to have key or key/value pair added - Use *xe pif-param-list* to obtain a list of PIF parameters.
 
 OPTIONAL PARAMETERS
 -------------------
 *param-key*::
-	Key to be added if the parameter is a set. 
-	
-	Key for a set parameter.
-*<KEY>*::
-	Key/value pair to be added if parameter is a map.
-	
-	Key/value pair for a map parameter.
-	
+	Key to be added to a set parameter (SRW).
+*<MAP PARAMETER KEY>*::
+	Key/value pair to be added to a map parameter (MRW). 
+
 EXAMPLES
 --------
 To add a DNS search path ( DNS Suffix ) value for a PIF interface: ::
@@ -42,7 +38,7 @@ To add a DNS search path ( DNS Suffix ) value for a PIF interface: ::
 	
 SEE ALSO
 --------
-*xe pif-list*(1),*xe pif-param-list*(1), *xe pif-param-get*(1), *xe pif-param-set*(1), *xe pif-param-remove*(1), *xe pif-param-clear*(1), *xe network-list*(1)
+*xe help pif-param-add*, *xe pif-list*(1),*xe pif-param-list*(1), *xe pif-param-get*(1), *xe pif-param-set*(1), *xe pif-param-remove*(1), *xe pif-param-clear*(1), *xe network-list*(1)
 
 AUTHORS
 -------
@@ -53,7 +49,6 @@ Lisa Nguyen <lisa@xenapiadmin.com>
 BUGS
 ----
 For guidelines on submitting bug reports see http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP. Submit bugs and general questions to xen-api@lists.xen.org.
-
 
 COPYRIGHT
 ---------

@@ -33,7 +33,7 @@ To remove the *ethtool-speed* value: ::
 
 SEE ALSO
 --------
-*xe-pif-param-set*(1), *xe-pif-param-add*(1), *xe-pif-list*(1), *xe-pif-introduce*(1), *xe-network-list*(1), *xe-vif-list*(1)
+*xe help pif-param-remove*, *xe-pif-param-set*(1), *xe-pif-param-add*(1), *xe-pif-list*(1), *xe-pif-introduce*(1), *xe-network-list*(1), *xe-vif-list*(1)
 
 AUTHORS
 -------

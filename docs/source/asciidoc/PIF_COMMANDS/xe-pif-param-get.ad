@@ -33,13 +33,12 @@ EXAMPLES
 --------
 To display the *management* parameter for a PIF: ::
 	*xe pif-param-get* uuid=<PIF UUID> param-name="management"
-
 To display the value for *ethtool-speed*: ::
 	*xe pif-param-get* uuid=<PIF UUID> param-name="other-config" param-key="ethtool-speed"
 
 SEE ALSO
 --------
-*xe-pif-list*(1), *xe-pif-param-clear*(1), *xe-pif-param-get*(1), *xe-pif-param-remove*(1), *xe-pif-param-set*(1), *xe-pif-param-add*(1)
+*xe help pif-param-get*, *xe-pif-list*(1), *xe-pif-param-clear*(1), *xe-pif-param-get*(1), *xe-pif-param-remove*(1), *xe-pif-param-set*(1), *xe-pif-param-add*(1)
 
 AUTHORS
 -------
@@ -50,7 +49,6 @@ Lisa Nguyen <lisa@xenapiadmin.com>
 BUGS
 ----
 For guidelines on submitting bug reports see http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP. Submit bugs and general questions to xen-api@lists.xen.org.
-
 
 COPYRIGHT
 ---------

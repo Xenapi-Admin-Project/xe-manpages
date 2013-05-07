@@ -11,22 +11,22 @@ xe-vif-create - Create a virtual interface
 
 SYNOPSIS
 --------
-*xe vif-create* vm-uuid=<VM UUID> network-uuid=<Network UUID> device=<ethernet device number> [ mac=<MAC address> ]
+*xe vif-create* vm-uuid=<VM UUID> network-uuid=<NETWORK UUID> device=<VIF DEVICE NUMBER> [ mac=<MAC ADDRESS> ]
 
 DESCRIPTION
 -----------
-*xe vif-create* creates a VIF for the device specified and assoisates it with the selected VM and network. The MTU size of the VIF is inherited from the network, and the MAC address is randomly generated unless one is specfied. The resulting VIF UUID is returned.
+*xe vif-create* creates a VIF for the specified device and associates it with the selected VM and network. The MTU size of the VIF is inherited from the network, and the MAC address is randomly generated unless one is specified. The resulting VIF UUID is returned.
 
-Use *xe vif-plug* to attach newly created VIFs to their VMs.
+Use *xe vif-plug* to attach newly created VIFs to running VMs. VIFs automatically attach when you start a VM. 
 
 REQUIRED PARAMETERS
 -------------------
 *vm-uuid*::
-	VM for the VIF. Use *xe vm-list* to obtain a list of VMs.
+	Target VM for the VIF. Use *xe vm-list* to obtain a list of VMs.
 *network-uuid*::
-	Network for the VIF. Use *xe network-list* to obtain a list of networks.
+	Target network for the VIF. Use *xe network-list* to obtain a list of networks.
 *device*::
-	Machine-readable interface number. (e.g. eth0)
+	VM Machine-readable interface number. (e.g. eth0)
 			
 OPTIONAL PARAMETERS
 -------------------
@@ -38,10 +38,10 @@ EXAMPLES
 To check the allowed VIF devices for a VM: ::
 	xe vm-param-get uuid=<VM UUID> param-name="allowed-VIF-devices"
 To create a VIF interface on a running VM: ::
-	*xe vif-create* vm-uuid=<VM UUID> device=<Ethernet Device Number> network-uuid=<Network UUID> +
+	*xe vif-create* vm-uuid=<VM UUID> device=<VIF DEVICE NUMBER> network-uuid=<NETWORK UUID> +
 	*xe vif-plug* uuid=<VIF UUID>
 To create a VIF interface on a halted VM: ::
-	*xe vif-create* vm-uuid=<VM UUID> device=<Ethernet Device Number> network-uuid=<Network UUID>
+	*xe vif-create* vm-uuid=<VM UUID> device=<VIF DEVICE NUMBER> network-uuid=<NETWORK UUID>
 	
 SEE ALSO
 --------

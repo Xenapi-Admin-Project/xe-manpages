@@ -15,9 +15,11 @@ SYNOPSIS
 				
 DESCRIPTION
 ----------
-*xe bond-create* creates a bond using the selected PIFs and connects it to a network. The default bond mode is an active-active configuration. Four PIFs per bond are supported when using openvswitch and two PIFs per bond are supported when using the legacy linux bridge. 
+*xe bond-create* creates a bond using the selected physical PIFs and connects it the specified network. *xe bond-create* requires the referenced PIFs be present on the same host, and no VLAN tag configured. The referenced PIFs will be detached from their associated networks. The bond UUID will be returned. 
 
-When creating NIC bonds in a resource pool, configure the bond on the pool master, and then restart each member of the pool to inherit the bond from the pool master.
+The default bond mode is an active-active configuration. Four PIFs per bond are supported when using openvswitch and two PIFs per bond are supported when using the legacy linux bridge. 
+
+When creating NIC bonds in a resource pool, configure the bond on the pool master, and then configure each member of the pool to match the pool master.
 
 REQUIRED PARAMETERS
 -------------------
@@ -62,12 +64,10 @@ SEE ALSO
 --------
 *xe help bond-create*, *xe-bond-destroy*(1), *xe-bond-list*(1), *xe-bond-set-mode*(1), *xe-bond-param-set*(1), *xe-network-list*(1), *xe-pif-list*(1)
 
-
 AUTHORS
 -------
 Manpage Author(s): ::
 Matthew Spah <spahmatthew@xenapiadmin.com>
-
 
 BUGS
 ----
