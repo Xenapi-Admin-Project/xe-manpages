@@ -7,38 +7,37 @@ XE(1)
 
 NAME
 ----
-xe-tunnel-param-get
+xe-tunnel-param-get - Returns a parameter for a tunnel
 
 SYNOPSIS
 --------
-*xe tunnel-param-get* uuid=<Tunnel UUID> param-name=<Parameter Name> [ param-key=<Key>]
+*xe tunnel-param-get* uuid=<TUNNEL UUID> param-name=<PARAMETER> [ param-key=<PARAMETER KEY> ]
 
 DESCRIPTION
 -----------
-// add description 
-
+*xe tunnel-param-get* returns a parameter or a key value for a specified tunnel. 
 
 REQUIRED PARAMETERS
 -------------------
-
 *uuid*::
+	Tunnel UUID - Use *xe tunnel-list* to obtain a list of tunnel UUIDs.
 
 *param-name*::
-
+	The tunnel parameter to return.
+	
 OPTIONAL PARAMETERS
 -------------------
-
 *param-key*::
-
+	The tunnel key to return.  
 
 EXAMPLES
 --------
-// add examples
-
+To return the *access-PIF* parameter: ::
+	*xe tunnel-param-get* uuid=<TUNNEL UUID> param-name="access-PIF"
 
 SEE ALSO
 --------
-*xe-tunnel-create*(1), *xe-tunnel-list*(1), *xe-tunnel-param-set*(1), *xe-tunnel-param-remove*(1) *xe-pif-list*(1), *xe-network-list*(1)
+*xe help tunnel-param-get*, *xe-tunnel-create*(1), *xe-tunnel-list*(1), *xe-tunnel-param-set*(1), *xe-tunnel-param-remove*(1) *xe-pif-list*(1), *xe-network-list*(1)
 
 AUTHORS
 -------
