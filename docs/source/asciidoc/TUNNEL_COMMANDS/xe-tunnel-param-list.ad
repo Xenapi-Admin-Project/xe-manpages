@@ -7,41 +7,38 @@ XE(1)
 
 NAME
 ----
-xe-tunnel-param-list
+xe-tunnel-param-list - Displays all parameters for a tunnel 
 
 SYNOPSIS
 --------
-*xe tunnel-param-list* uuid=<Tunnel UUID> 
+*xe tunnel-param-list* uuid=<TUNNEL UUID>
 
 DESCRIPTION
 -----------
-// add description 
-
+*xe tunnel-param-list* displays all parameters for a specific tunnel. 
 
 REQUIRED PARAMETERS
 -------------------
-
 *uuid*::
-
-
+	Tunnel UUID - Use *xe tunnel-list* to obtain a list of tunnel UUIDs.
+	
 EXAMPLES
 --------
-// add examples
-
-
+To display all parameters for a specific tunnel: ::
+	*xe tunnel-param-list* uuid=<TUNNEL UUID>
+	
 SEE ALSO
 --------
-*xe-tunnel-create*(1), *xe-tunnel-list*(1), *xe-tunnel-param-set*(1), *xe-tunnel-param-remove*(1) *xe-pif-list*(1), *xe-network-list*(1)
+*xe help tunnel-param-list*, *xe-tunnel-create*(1), *xe-tunnel-list*(1), *xe-tunnel-param-set*(1), *xe-tunnel-param-remove*(1) *xe-pif-list*(1), *xe-network-list*(1)
 
 AUTHORS
 -------
 Manpage Author(s): ::
-Matthew Spah <spahmatthew@xenapiadmin.com>
+Matthew Spah <spahmatthew@xenapiadmin.como>
 
 BUGS
 ----
 See http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP on how to send bug reports, send bugs and general questions to xen-api@lists.xen.org.
-
 
 COPYRIGHT
 ---------
