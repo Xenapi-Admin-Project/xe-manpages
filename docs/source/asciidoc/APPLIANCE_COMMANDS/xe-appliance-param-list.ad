@@ -1,34 +1,34 @@
 XE(1)
 =======
 :doctype: manpage
-:man source:   xe vbd-param-list
+:man source:   xe appliance-param-list
 :man version:  {1}
-:man manual:   xe vbd-param-list manual
+:man manual:   xe appliance-param-list manual
 NAME
 ----
-xe-vbd-param-list - Displays all parameters for a vbd 
+xe-appliance-param-list - Displays all parameters for a appliance 
 
 SYNOPSIS
 --------
-*xe vbd-param-list* uuid=<VBD UUID>
+*xe appliance-param-list* uuid=<APPLIANCE UUID>
 
 DESCRIPTION
 -----------
-*xe vbd-param-list* displays all parameters for a specific vbd.
+*xe appliance-param-list* displays all parameters for a specific appliance.
 
 REQUIRED PARAMETERS
 -------------------
 *uuid*::
-	vbd UUID - Use *xe vbd-list* to obtain a list of vbd UUIDs.
+	appliance UUID - Use *xe appliance-list* to obtain a list of appliance UUIDs.
 
 EXAMPLES
 --------
-To display all parameters for a specific vbd: ::
-	*xe vbd-param-list* uuid=<VBD UUID>
+To display all parameters for a specific appliance: ::
+	*xe appliance-param-list* uuid=<APPLIANCE UUID>
 
 SEE ALSO
 --------
-*xe help vbd-param-list*, 
+*xe help appliance-param-list*, 
 
 AUTHORS
 -------

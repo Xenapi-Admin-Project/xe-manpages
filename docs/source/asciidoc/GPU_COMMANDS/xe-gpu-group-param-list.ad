@@ -1,34 +1,34 @@
 XE(1)
 =======
 :doctype: manpage
-:man source:   xe vbd-param-list
+:man source:   xe gpu-group-param-list
 :man version:  {1}
-:man manual:   xe vbd-param-list manual
+:man manual:   xe gpu-group-param-list manual
 NAME
 ----
-xe-vbd-param-list - Displays all parameters for a vbd 
+xe-gpu-group-param-list - Displays all parameters for a gpu-group 
 
 SYNOPSIS
 --------
-*xe vbd-param-list* uuid=<VBD UUID>
+*xe gpu-group-param-list* uuid=<GPU-GROUP UUID>
 
 DESCRIPTION
 -----------
-*xe vbd-param-list* displays all parameters for a specific vbd.
+*xe gpu-group-param-list* displays all parameters for a specific gpu-group.
 
 REQUIRED PARAMETERS
 -------------------
 *uuid*::
-	vbd UUID - Use *xe vbd-list* to obtain a list of vbd UUIDs.
+	gpu-group UUID - Use *xe gpu-group-list* to obtain a list of gpu-group UUIDs.
 
 EXAMPLES
 --------
-To display all parameters for a specific vbd: ::
-	*xe vbd-param-list* uuid=<VBD UUID>
+To display all parameters for a specific gpu-group: ::
+	*xe gpu-group-param-list* uuid=<GPU-GROUP UUID>
 
 SEE ALSO
 --------
-*xe help vbd-param-list*, 
+*xe help gpu-group-param-list*, 
 
 AUTHORS
 -------

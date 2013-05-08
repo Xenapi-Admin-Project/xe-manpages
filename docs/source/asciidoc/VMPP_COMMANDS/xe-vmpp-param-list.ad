@@ -1,34 +1,34 @@
 XE(1)
 =======
 :doctype: manpage
-:man source:   xe vbd-param-list
+:man source:   xe vmpp-param-list
 :man version:  {1}
-:man manual:   xe vbd-param-list manual
+:man manual:   xe vmpp-param-list manual
 NAME
 ----
-xe-vbd-param-list - Displays all parameters for a vbd 
+xe-vmpp-param-list - Displays all parameters for a vmpp 
 
 SYNOPSIS
 --------
-*xe vbd-param-list* uuid=<VBD UUID>
+*xe vmpp-param-list* uuid=<VMPP UUID>
 
 DESCRIPTION
 -----------
-*xe vbd-param-list* displays all parameters for a specific vbd.
+*xe vmpp-param-list* displays all parameters for a specific vmpp.
 
 REQUIRED PARAMETERS
 -------------------
 *uuid*::
-	vbd UUID - Use *xe vbd-list* to obtain a list of vbd UUIDs.
+	vmpp UUID - Use *xe vmpp-list* to obtain a list of vmpp UUIDs.
 
 EXAMPLES
 --------
-To display all parameters for a specific vbd: ::
-	*xe vbd-param-list* uuid=<VBD UUID>
+To display all parameters for a specific vmpp: ::
+	*xe vmpp-param-list* uuid=<VMPP UUID>
 
 SEE ALSO
 --------
-*xe help vbd-param-list*, 
+*xe help vmpp-param-list*, 
 
 AUTHORS
 -------

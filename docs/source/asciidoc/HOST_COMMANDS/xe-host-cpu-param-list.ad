@@ -1,34 +1,34 @@
 XE(1)
 =======
 :doctype: manpage
-:man source:   xe vbd-param-list
+:man source:   xe host-cpu-param-list
 :man version:  {1}
-:man manual:   xe vbd-param-list manual
+:man manual:   xe host-cpu-param-list manual
 NAME
 ----
-xe-vbd-param-list - Displays all parameters for a vbd 
+xe-host-cpu-param-list - Displays all parameters for a host-cpu 
 
 SYNOPSIS
 --------
-*xe vbd-param-list* uuid=<VBD UUID>
+*xe host-cpu-param-list* uuid=<HOST-CPU UUID>
 
 DESCRIPTION
 -----------
-*xe vbd-param-list* displays all parameters for a specific vbd.
+*xe host-cpu-param-list* displays all parameters for a specific host-cpu.
 
 REQUIRED PARAMETERS
 -------------------
 *uuid*::
-	vbd UUID - Use *xe vbd-list* to obtain a list of vbd UUIDs.
+	host-cpu UUID - Use *xe host-cpu-list* to obtain a list of host-cpu UUIDs.
 
 EXAMPLES
 --------
-To display all parameters for a specific vbd: ::
-	*xe vbd-param-list* uuid=<VBD UUID>
+To display all parameters for a specific host-cpu: ::
+	*xe host-cpu-param-list* uuid=<HOST-CPU UUID>
 
 SEE ALSO
 --------
-*xe help vbd-param-list*, 
+*xe help host-cpu-param-list*, 
 
 AUTHORS
 -------
