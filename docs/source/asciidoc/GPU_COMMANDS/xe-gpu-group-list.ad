@@ -36,22 +36,22 @@ OPTIONAL PARAMETERS
 	Specify --minimal to only show minimal output
 	
 *uuid*::
-	Display GPU group UUID
+	Display a GPU group UUID
 	
 *name-label*::
-	Display GPU group name
+	Display a GPU group name
  
 *name-description*::
-	Display GPU group name description
+	Display a GPU group name description
 
 *VGPU-uuids*::
-	Display list of virtual GPU UUIDs
+	Display a list of virtual GPU UUIDs
 	
 *PGPU-uuids*::
-	Display list of physical GPU UUIDs
+	Display a list of physical GPU UUIDs
 
 *other-config*::
-    Display additional configuration parameter values for GPU group
+    Display additional configuration parameter values for the GPU group
     
 EXAMPLES
 ---------
@@ -64,7 +64,7 @@ To display minimal output for all GPU groups: ::
 To display the names of all GPU groups: ::
 	*xe gpu-group-list* params="name-label"
 	
-To display the VGPU-uuids and PGPU-uuids for a specific GPU group: ::
+To display the VGPUs and PGPUs associated with a specific GPU group: ::
 	*xe gpu-group-list* params="VPGU-uuids,PGPU-uuids" uuid=<GPU GROUP UUID>
 	
 SEE ALSO
