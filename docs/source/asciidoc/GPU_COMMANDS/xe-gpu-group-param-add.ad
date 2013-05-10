@@ -34,7 +34,7 @@ OPTIONAL PARAMETERS
 EXAMPLES
 --------
 To add a tag for the other-config parameter: ::
-xe gpu-group-param-add uuid=0574e721-9f1b-d08f-3d71-19ec41016b80 param-name=other-config tag=<TEXT>
+xe gpu-group-param-add uuid=<GPU GROUP UUID> param-name=other-config tag=<TEXT>
 
 SEE ALSO
 --------
