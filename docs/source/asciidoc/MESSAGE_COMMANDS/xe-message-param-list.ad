@@ -28,7 +28,7 @@ To display all parameters for a specific message: ::
 
 SEE ALSO
 --------
-*xe help message-param-list*, 
+*xe help message-param-list*, *xe-message-create*(1), *xe-message-destroy*(1), *xe-message-list*(1), *xe-message-param-get*(1)
 
 AUTHORS
 -------

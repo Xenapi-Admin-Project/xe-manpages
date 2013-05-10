@@ -28,7 +28,8 @@ To display all parameters for a specific patch: ::
 
 SEE ALSO
 --------
-*xe help patch-param-list*, 
+*xe help patch-param-list*, *xe-patch-apply*(1), *xe-patch-clean*(1), *xe-patch-destroy*(1), *xe-patch-list*(1), *xe-patch-param-clear*(1), *xe-patch-param-get*(1), *xe-patch-pool-apply*(1), *xe-patch-pool-clean*(1), *xe-patch-precheck*(1), *xe-patch-upload*(1)
+
 
 AUTHORS
 -------

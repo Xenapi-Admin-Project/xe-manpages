@@ -28,7 +28,7 @@ To display all parameters for a specific role: ::
 
 SEE ALSO
 --------
-*xe help role-param-list*, 
+*xe help role-param-list*, *xe-role-list*(1), *xe-role-param-get*(1)   
 
 AUTHORS
 -------

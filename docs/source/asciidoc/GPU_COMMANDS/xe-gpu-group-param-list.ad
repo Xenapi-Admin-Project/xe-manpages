@@ -28,7 +28,7 @@ To display all parameters for a specific gpu-group: ::
 
 SEE ALSO
 --------
-*xe help gpu-group-param-list*, 
+*xe help gpu-group-param-list*, *xe-gpu-group-list*(1), *xe-gpu-group-param-add*(1), *xe-gpu-group-param-clear*(1), *xe-gpu-group-param-get*(1), *xe-gpu-group-param-remove*(1), *xe-gpu-group-param-set*(1)      
 
 AUTHORS
 -------

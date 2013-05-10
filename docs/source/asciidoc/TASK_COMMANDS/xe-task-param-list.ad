@@ -28,7 +28,7 @@ To display all parameters for a specific task: ::
 
 SEE ALSO
 --------
-*xe help task-param-list*, 
+*xe help task-param-list*, *xe-task-cancel*(1), *xe-task-list*(1), *xe-task-param-add*(1), *xe-task-param-clear*(1), *xe-task-param-get*(1), *xe-task-param-list*(1), *xe-task-param-remove*(1), *xe-task-param-set*(1)      
 
 AUTHORS
 -------

@@ -6,7 +6,7 @@ XE(1)
 :man manual:   xe vdi-param-list manual
 NAME
 ----
-xe-vdi-param-list - Displays all parameters for a vdi 
+xe-vdi-param-list - Displays all parameters for a VDI 
 
 SYNOPSIS
 --------
@@ -14,12 +14,12 @@ SYNOPSIS
 
 DESCRIPTION
 -----------
-*xe vdi-param-list* displays all parameters for a specific vdi.
+*xe vdi-param-list* displays all parameters for a specific VDI.
 
 REQUIRED PARAMETERS
 -------------------
 *uuid*::
-	vdi UUID - Use *xe vdi-list* to obtain a list of vdi UUIDs.
+	VDI UUID - Use *xe vdi-list* to obtain a list of VDI UUIDs.
 
 EXAMPLES
 --------
@@ -28,7 +28,8 @@ To display all parameters for a specific vdi: ::
 
 SEE ALSO
 --------
-*xe help vdi-param-list*, 
+*xe help vdi-param-list*, *xe-vdi-list*(1), *xe-vdi-clone*(1), *xe-vdi-create*(1), *xe-vdi-forget*(1), *xe-vdi-introduce*(1), *xe-vdi-param-add*(1), *xe-vdi-param-get*(1), *xe-vdi-param-remove*(1), *xe-vdi-pool-migrate*(1)     
+
 
 AUTHORS
 -------

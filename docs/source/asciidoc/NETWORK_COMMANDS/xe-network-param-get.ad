@@ -32,7 +32,6 @@ OPTIONAL PARAMETERS
 *param-key*::
 	The network key to return.  
 
-
 EXAMPLES
 --------
 To display the *VIF-uuids* attached to a network: ::
