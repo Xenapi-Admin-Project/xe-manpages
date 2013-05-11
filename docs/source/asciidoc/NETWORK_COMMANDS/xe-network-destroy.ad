@@ -17,11 +17,12 @@ DESCRIPTION
 -----------
 *xe network-destroy* removes a network that contains no active PIFs, attached VIFs, or VLANs. 
 
-To remove/detach::
-	PIFs use *xe pif-forget* +
-	Bonds use *xe bond-destroy* + 
-	VIF interfaces use *xe vif-unplug* +
-	VLANs use *xe vlan-destroy* +
+To remove/detach
+
+- PIFs use *xe pif-forget* 
+- Bonds use *xe bond-destroy* 
+- VIF interfaces use *xe vif-unplug* 
+- VLANs use *xe vlan-destroy* 
 
 REQUIRED PARAMETERS
 -------------------
