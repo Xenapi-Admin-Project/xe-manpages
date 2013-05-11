@@ -6,7 +6,7 @@ XE(1)
 :man manual:   xe vgpu-param-list manual
 NAME
 ----
-xe-vgpu-param-list - Displays all parameters for a vgpu 
+xe-vgpu-param-list - Displays all parameters for a virtual GPU.
 
 SYNOPSIS
 --------
@@ -14,26 +14,27 @@ SYNOPSIS
 
 DESCRIPTION
 -----------
-*xe vgpu-param-list* displays all parameters for a specific vgpu.
+*xe vgpu-param-list* displays all parameters for a specific virtual GPU.
 
 REQUIRED PARAMETERS
 -------------------
 *uuid*::
-	vgpu UUID - Use *xe vgpu-list* to obtain a list of vgpu UUIDs.
+	VGPU UUID - Use *xe vgpu-list* to obtain a list of VGPU UUIDs.
 
 EXAMPLES
 --------
-To display all parameters for a specific vgpu: ::
+To display all parameters for a specific VGPU: ::
 	*xe vgpu-param-list* uuid=<VGPU UUID>
 
 SEE ALSO
 --------
-*xe help vgpu-param-list*, 
+*xe help vgpu-param-list*, *xe vgpu-list*(1)
 
 AUTHORS
 -------
 Manpage Author(s): ::
 Matthew Spah <spahmatthew@xenapiadmin.com>
+Lisa Nguyen <lisa@xenapiadmin.com>
 
 BUGS
 ----
@@ -41,5 +42,5 @@ For guidelines on submitting bug reports see http://wiki.xen.org/wiki/Reporting_
 
 COPYRIGHT
 ---------
-Copyright \(C) 2012 - Matthew Spah
+Copyright \(C) 2013 - Matthew Spah, Lisa Nguyen
 Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License, Version 1.3 or any later version published by the Free Software Foundation; with no Invariant Sections, no Front-Cover Texts, and no Back- Cover Texts. A copy of the license is included in the section entitled "GNU Free Documentation License"
