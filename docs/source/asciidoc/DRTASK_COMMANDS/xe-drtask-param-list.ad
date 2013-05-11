@@ -28,7 +28,7 @@ To display all parameters for a specific drtask: ::
 
 SEE ALSO
 --------
-*xe help drtask-param-list*, 
+*xe help drtask-param-list*, *xe-drtask-create*(1), *xe-drtask-destroy*(1), *xe-drtask-list*(1), *xe-drtask-param-get*(1), *xe-drtask-param-list*(1)   
 
 AUTHORS
 -------

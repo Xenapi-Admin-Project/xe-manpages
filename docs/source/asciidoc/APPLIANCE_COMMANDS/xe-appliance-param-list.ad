@@ -6,7 +6,7 @@ XE(1)
 :man manual:   xe appliance-param-list manual
 NAME
 ----
-xe-appliance-param-list - Displays all parameters for a appliance 
+xe-appliance-param-list - Displays all parameters for an appliance 
 
 SYNOPSIS
 --------
@@ -28,7 +28,7 @@ To display all parameters for a specific appliance: ::
 
 SEE ALSO
 --------
-*xe help appliance-param-list*, 
+*xe help appliance-param-list*, *xe-appliance-assert-can-be-recovered*(1), *xe-appliance-destroy*(1), *xe-appliance-param-clear*(1), *xe-appliance-param-list*(1), *xe-appliance-recover*(1), xe-appliance-start*(1), *xe-appliance-create*(1), *xe-appliance-list*(1), *xe-appliance-param-get*(1), *xe-appliance-param-set*(1), *xe-appliance-shutdown*(1),                  
 
 AUTHORS
 -------

@@ -28,7 +28,7 @@ To display all parameters for a specific console: ::
 
 SEE ALSO
 --------
-*xe help console-param-list*, 
+*xe help console-param-list*, *xe-console-list*(1), *xe-console-param-add*(1), *xe-console-param-clear*(1), *xe-console-param-get*(1), *xe-console-param-list*(1), *xe-console-param-remove*(1), *xe-console-param-set*(1)
 
 AUTHORS
 -------

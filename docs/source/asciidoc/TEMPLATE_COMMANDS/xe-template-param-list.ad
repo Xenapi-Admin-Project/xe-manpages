@@ -28,7 +28,7 @@ To display all parameters for a specific template: ::
 
 SEE ALSO
 --------
-*xe help template-param-list*, 
+*xe help template-param-list*, *xe-template-export*(1), *xe-template-list*(1), *xe-template-param-add*(1), *xe-template-param-clear*(1), *xe-template-param-get*(1), *xe-template-param-list*(1),     *xe-template-param-remove*(1), *xe-template-param-set*(1), *xe-template-uninstall*(1) 
 
 AUTHORS
 -------
