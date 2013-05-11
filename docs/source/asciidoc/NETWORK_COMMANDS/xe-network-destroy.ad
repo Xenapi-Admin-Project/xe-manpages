@@ -6,7 +6,7 @@ XE(1)
 :man manual:   xe network-destroy manual
 
 NAME
------
+----
 xe-network-destroy - Remove a network
 
 SYNOPSIS
@@ -15,7 +15,13 @@ SYNOPSIS
 
 DESCRIPTION
 -----------
-*xe network-destroy* removes a network that contains no active PIFs, attached VIFs, or VLANs. To remove active PIFs from a network use *xe pif-forget*, unless the PIFs are a bond, then use *xe bond-destroy*. To detach VIF interfaces use *xe vif-unplug*. To remove VLANs use *xe vlan-destroy*. 
+*xe network-destroy* removes a network that contains no active PIFs, attached VIFs, or VLANs. 
+
+To remove/detach::
+	PIFs use *xe pif-forget* +
+	Bonds use *xe bond-destroy* + 
+	VIF interfaces use *xe vif-unplug* +
+	VLANs use *xe vlan-destroy* +
 
 REQUIRED PARAMETERS
 -------------------
@@ -29,7 +35,7 @@ To remove a network: ::
 
 SEE ALSO
 --------
-*xe help network-destroy*, *xe-network-create*(1), *xe-network-list*(1), *xe-pif-unplug*(1), *xe-vif-unplug*(1), *xe-vlan-destroy*(1)
+*xe help network-destroy*, *xe-network-list*(1), *xe-pif-forget*(1), *xe-vif-unplug*(1), *xe-vlan-destroy*(1), *xe-bond-destroy*(1)
 
 AUTHORS
 -------
