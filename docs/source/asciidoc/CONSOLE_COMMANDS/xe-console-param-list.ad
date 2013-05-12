@@ -4,6 +4,7 @@ XE(1)
 :man source:   xe console-param-list
 :man version:  {1}
 :man manual:   xe console-param-list manual
+
 NAME
 ----
 xe-console-param-list - Displays all parameters for a console 
@@ -23,17 +24,19 @@ REQUIRED PARAMETERS
 
 EXAMPLES
 --------
-To display all parameters for a specific console: ::
-	*xe console-param-list* uuid=<CONSOLE UUID>
+To display all parameters for a specific console:
+
+- *xe console-param-list* uuid=<CONSOLE UUID>
 
 SEE ALSO
 --------
-*xe help console-param-list*, *xe-console-list*(1), *xe-console-param-add*(1), *xe-console-param-clear*(1), *xe-console-param-get*(1), *xe-console-param-list*(1), *xe-console-param-remove*(1), *xe-console-param-set*(1)
+*xe help console-param-list*, *xe-console-list*(1), *xe-console-param-add*(1), *xe-console-param-clear*(1), *xe-console-param-remove*(1), *xe-console-param-set*(1)
 
 AUTHORS
 -------
-Manpage Author(s): ::
-Matthew Spah <spahmatthew@xenapiadmin.com>
+Manpage Author(s):
+
+- Matthew Spah <spahmatthew@xenapiadmin.com>
 
 BUGS
 ----

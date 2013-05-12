@@ -4,6 +4,7 @@ XE(1)
 :man source:   xe snapshot-param-list
 :man version:  {1}
 :man manual:   xe snapshot-param-list manual
+
 NAME
 ----
 xe-snapshot-param-list - Displays all parameters for a snapshot 
@@ -28,7 +29,7 @@ To display all parameters for a specific snapshot: ::
 
 SEE ALSO
 --------
-*xe help snapshot-param-list*, *xe-snapshot-clone*(1), *xe-snapshot-disk-list*(1), *xe-snapshot-param-add*(1), *xe-snapshot-reset-powerstate*(1), *xe-snapshot-copy*(1), *xe-snapshot-export-to-template*(1), *xe-snapshot-param-clear*(1), *xe-snapshot-param-remove*(1), *xe-snapshot-revert*(1), *xe-snapshot-destroy*(1), *xe-snapshot-list*(1), *xe-snapshot-param-get*(1),     *xe-snapshot-param-set*(1), *xe-snapshot-uninstall*(1)  
+*xe help snapshot-param-list*, *xe-snapshot-disk-list*(1), *xe-snapshot-param-add*(1), *xe-snapshot-param-clear*(1), *xe-snapshot-param-remove*(1), *xe-snapshot-list*(1), *xe-snapshot-param-set*(1), 
 
 AUTHORS
 -------

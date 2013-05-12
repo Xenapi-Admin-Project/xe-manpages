@@ -19,12 +19,13 @@ DESCRIPTION
 REQUIRED PARAMETERS
 -------------------
 *uuid*::
-	role UUID - Use *xe role-list* to obtain a list of role UUIDs.
+	Role UUID - Use *xe role-list* to obtain a list of role UUIDs.
 
 EXAMPLES
 --------
-To display all parameters for a specific role: ::
-	*xe role-param-list* uuid=<ROLE UUID>
+To display all parameters for a specific role:
+	
+- *xe role-param-list* uuid=<ROLE UUID>
 
 SEE ALSO
 --------
@@ -32,8 +33,9 @@ SEE ALSO
 
 AUTHORS
 -------
-Manpage Author(s): ::
-Matthew Spah <spahmatthew@xenapiadmin.com>
+Manpage Author(s):
+
+- Matthew Spah <spahmatthew@xenapiadmin.com>
 
 BUGS
 ----

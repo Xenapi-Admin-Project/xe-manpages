@@ -4,9 +4,10 @@ XE(1)
 :man source:   xe vmpp-param-list
 :man version:  {1}
 :man manual:   xe vmpp-param-list manual
+
 NAME
 ----
-xe-vmpp-param-list - Displays all parameters for a vmpp 
+xe-vmpp-param-list - Displays all parameters for a VMPP 
 
 SYNOPSIS
 --------
@@ -14,21 +15,22 @@ SYNOPSIS
 
 DESCRIPTION
 -----------
-*xe vmpp-param-list* displays all parameters for a specific Virtual Machine Protection Policie (VMPP).
+*xe vmpp-param-list* displays all parameters for a specific Virtual Machine Protection Policy (VMPP).
 
 REQUIRED PARAMETERS
 -------------------
 *uuid*::
-	vmpp UUID - Use *xe vmpp-list* to obtain a list of  VMPP UUIDs.
+	VMPP UUID - Use *xe vmpp-list* to obtain a list of  VMPP UUIDs.
 
 EXAMPLES
 --------
-To display all parameters for a specific vmpp: ::
-	*xe vmpp-param-list* uuid=<VMPP UUID>
+To display all parameters for a specific vmpp:
+
+- *xe vmpp-param-list* uuid=<VMPP UUID>
 
 SEE ALSO
 --------
-*xe help vmpp-param-list*, *xe-vmpp-create*(1), *xe-vmpp-destroy*(1), *xe-vmpp-list*(1), *xe-vmpp-param-add*(1), *xe-vmpp-param-clear*(1), *xe-vmpp-param-get*(1), *xe-vmpp-param-list*(1),     *xe-vmpp-param-remove*(1), *xe-vmpp-param-set*(1)      
+*xe help vmpp-param-list*, *xe-vmpp-create*(1), *xe-vmpp-destroy*(1), *xe-vmpp-list*(1), *xe-vmpp-param-add*(1), *xe-vmpp-param-clear*(1), *xe-vmpp-param-remove*(1), *xe-vmpp-param-set*(1)      
 
 AUTHORS
 -------

@@ -4,6 +4,7 @@ XE(1)
 :man source:   xe vdi-param-list
 :man version:  {1}
 :man manual:   xe vdi-param-list manual
+
 NAME
 ----
 xe-vdi-param-list - Displays all parameters for a VDI 
@@ -23,18 +24,21 @@ REQUIRED PARAMETERS
 
 EXAMPLES
 --------
-To display all parameters for a specific vdi: ::
-	*xe vdi-param-list* uuid=<VDI UUID>
+To display all parameters for a specific vdi:
+
+- *xe vdi-param-list* uuid=<VDI UUID>
 
 SEE ALSO
 --------
-*xe help vdi-param-list*, *xe-vdi-list*(1), *xe-vdi-clone*(1), *xe-vdi-create*(1), *xe-vdi-forget*(1), *xe-vdi-introduce*(1), *xe-vdi-param-add*(1), *xe-vdi-param-get*(1), *xe-vdi-param-remove*(1), *xe-vdi-pool-migrate*(1)     
-
+*xe help vdi-param-list*, *xe-vdi-list*(1), *xe-vdi-clone*(1), *xe-vdi-create*(1), *xe-vdi-forget*(1), *xe-vdi-param-add*(1), *xe-vdi-param-remove*(1), *xe-vdi-pool-migrate*(1)     
 
 AUTHORS
 -------
-Manpage Author(s): ::
-Matthew Spah <spahmatthew@xenapiadmin.com>
+Manpage Author(s):
+
+- Matthew Spah <spahmatthew@xenapiadmin.com>
+- Christina Nguyen <christinam@xenapiadmin.com>
+
 
 BUGS
 ----

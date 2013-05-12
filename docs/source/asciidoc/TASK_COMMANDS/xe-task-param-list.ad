@@ -4,6 +4,7 @@ XE(1)
 :man source:   xe task-param-list
 :man version:  {1}
 :man manual:   xe task-param-list manual
+
 NAME
 ----
 xe-task-param-list - Displays all parameters for a task 
@@ -19,21 +20,23 @@ DESCRIPTION
 REQUIRED PARAMETERS
 -------------------
 *uuid*::
-	task UUID - Use *xe task-list* to obtain a list of task UUIDs.
+	Task UUID - Use *xe task-list* to obtain a list of task UUIDs.
 
 EXAMPLES
 --------
-To display all parameters for a specific task: ::
-	*xe task-param-list* uuid=<TASK UUID>
+To display all parameters for a specific task:
+
+- *xe task-param-list* uuid=<TASK UUID>
 
 SEE ALSO
 --------
-*xe help task-param-list*, *xe-task-cancel*(1), *xe-task-list*(1), *xe-task-param-add*(1), *xe-task-param-clear*(1), *xe-task-param-get*(1), *xe-task-param-list*(1), *xe-task-param-remove*(1), *xe-task-param-set*(1)      
+*xe help task-param-list*, *xe-task-list*(1), *xe-task-param-add*(1), *xe-task-param-clear*(1), *xe-task-param-remove*(1), *xe-task-param-set*(1)      
 
 AUTHORS
 -------
-Manpage Author(s): ::
-Matthew Spah <spahmatthew@xenapiadmin.com>
+Manpage Author(s):
+
+- Matthew Spah <spahmatthew@xenapiadmin.com>
 
 BUGS
 ----

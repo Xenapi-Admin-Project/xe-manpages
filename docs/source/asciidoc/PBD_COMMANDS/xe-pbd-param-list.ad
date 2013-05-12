@@ -4,6 +4,7 @@ XE(1)
 :man source:   xe pbd-param-list
 :man version:  {1}
 :man manual:   xe pbd-param-list manual
+
 NAME
 ----
 xe-pbd-param-list - Displays all parameters for a PBD 
@@ -14,7 +15,7 @@ SYNOPSIS
 
 DESCRIPTION
 -----------
-*xe pbd-param-list* displays all parameters for a specific physical block device (PBD).
+*xe pbd-param-list* displays all parameters for a specific Physical Block Device (PBD).
 
 REQUIRED PARAMETERS
 -------------------
@@ -23,16 +24,16 @@ REQUIRED PARAMETERS
 
 EXAMPLES
 --------
-To display all parameters for a specific PBD: ::
-	*xe pbd-param-list* uuid=<PBD UUID>
+To display all parameters for a specific PBD:
+
+- *xe pbd-param-list* uuid=<PBD UUID>
 
 SEE ALSO
 --------
-*xe help pbd-param-list*, *xe-pbd-create*(1), *xe-pbd-destroy*(1), *xe-pbd-list*(1), *xe-pbd-param-add*(1), *xe-pbd-param-clear*(1), *xe-pbd-param-get*(1), *xe-pbd-param-list*(1), *xe-pbd-param-remove*(1), *xe-pbd-param-set*(1), *xe-pbd-plug*(1),  *xe-pbd-unplug*(1)         
-
+*xe help pbd-param-list*, *xe-pbd-list*(1), *xe-pbd-param-add*(1), *xe-pbd-param-clear*(1), *xe-pbd-param-remove*(1), *xe-pbd-param-set*(1)
 AUTHORS
 -------
-Manpage Author(s): ::
+Manpage Author(s):
 Matthew Spah <spahmatthew@xenapiadmin.com>
 
 BUGS

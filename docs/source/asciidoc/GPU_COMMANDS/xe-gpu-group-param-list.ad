@@ -24,18 +24,20 @@ REQUIRED PARAMETERS
 
 EXAMPLES
 --------
-To display all parameters for a specific GPU group: ::
-	*xe gpu-group-param-list* uuid=<GPU GROUP UUID>
+To display all parameters for a specific GPU group:
+
+- *xe gpu-group-param-list* uuid=<GPU GROUP UUID>
 
 SEE ALSO
 --------
-*xe help gpu-group-param-list*, *xe-gpu-group-list*(1), *xe-gpu-group-param-add*(1), *xe-gpu-group-param-clear*(1), *xe-gpu-group-param-get*(1), *xe-gpu-group-param-remove*(1), *xe-gpu-group-param-set*(1)      
+*xe help gpu-group-param-list*, *xe-gpu-group-list*(1), *xe-gpu-group-param-add*(1), *xe-gpu-group-param-clear*(1), *xe-gpu-group-param-remove*(1), *xe-gpu-group-param-set*(1)      
 
 AUTHORS
 -------
-Manpage Author(s): ::
-Matthew Spah <spahmatthew@xenapiadmin.com>
-Lisa Nguyen <lisa@xenapiadmin.com>
+Manpage Author(s):
+
+- Matthew Spah <spahmatthew@xenapiadmin.com>
+- Lisa Nguyen <lisa@xenapiadmin.com>
 
 BUGS
 ----

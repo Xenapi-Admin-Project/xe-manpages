@@ -4,6 +4,7 @@ XE(1)
 :man source:   xe sm-param-list
 :man version:  {1}
 :man manual:   xe sm-param-list manual
+
 NAME
 ----
 xe-sm-param-list - Displays all parameters for a SM 
@@ -14,7 +15,7 @@ SYNOPSIS
 
 DESCRIPTION
 -----------
-*xe sm-param-list* displays all parameters for a specific storage manager (SM).
+*xe sm-param-list* displays all parameters for a specific Storage Manager (SM).
 
 REQUIRED PARAMETERS
 -------------------
@@ -23,8 +24,9 @@ REQUIRED PARAMETERS
 
 EXAMPLES
 --------
-To display all parameters for a specific SM: ::
-	*xe sm-param-list* uuid=<SM UUID>
+To display all parameters for a specific SM:
+
+- *xe sm-param-list* uuid=<SM UUID>
 
 SEE ALSO
 --------

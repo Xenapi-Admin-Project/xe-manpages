@@ -23,8 +23,9 @@ REQUIRED PARAMETERS
 	
 EXAMPLES
 --------
-To display all parameters for a specific pool: ::
-	*xe pool-param-list* uuid=<POOL UUID>
+To display all parameters for a specific pool:
+
+- *xe pool-param-list* uuid=<POOL UUID>
 
 SEE ALSO
 --------
@@ -32,8 +33,9 @@ SEE ALSO
 
 AUTHORS
 -------
-Manpage Author(s): ::
-Matthew Spah <spahmatthew@xenapiadmin.com>
+Manpage Author(s):
+
+- Matthew Spah <spahmatthew@xenapiadmin.com>
 
 BUGS
 ----

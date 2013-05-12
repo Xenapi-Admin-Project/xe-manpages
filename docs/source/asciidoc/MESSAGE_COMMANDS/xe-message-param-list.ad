@@ -4,6 +4,7 @@ XE(1)
 :man source:   xe message-param-list
 :man version:  {1}
 :man manual:   xe message-param-list manual
+
 NAME
 ----
 xe-message-param-list - Displays all parameters for a message 
@@ -19,12 +20,13 @@ DESCRIPTION
 REQUIRED PARAMETERS
 -------------------
 *uuid*::
-	message UUID - Use *xe message-list* to obtain a list of message UUIDs.
+	Message UUID - Use *xe message-list* to obtain a list of message UUIDs.
 
 EXAMPLES
 --------
-To display all parameters for a specific message: ::
-	*xe message-param-list* uuid=<MESSAGE UUID>
+To display all parameters for a specific message:
+
+- *xe message-param-list* uuid=<MESSAGE UUID>
 
 SEE ALSO
 --------
@@ -32,8 +34,9 @@ SEE ALSO
 
 AUTHORS
 -------
-Manpage Author(s): ::
-Matthew Spah <spahmatthew@xenapiadmin.com>
+Manpage Author(s):
+
+- Matthew Spah <spahmatthew@xenapiadmin.com>
 
 BUGS
 ----

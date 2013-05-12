@@ -4,6 +4,7 @@ XE(1)
 :man source:   xe drtask-param-list
 :man version:  {1}
 :man manual:   xe drtask-param-list manual
+
 NAME
 ----
 xe-drtask-param-list - Displays all parameters for a drtask 
@@ -23,8 +24,9 @@ REQUIRED PARAMETERS
 
 EXAMPLES
 --------
-To display all parameters for a specific drtask: ::
-	*xe drtask-param-list* uuid=<DRTASK UUID>
+To display all parameters for a specific drtask: 
+
+- *xe drtask-param-list* uuid=<DRTASK UUID>
 
 SEE ALSO
 --------
@@ -32,8 +34,9 @@ SEE ALSO
 
 AUTHORS
 -------
-Manpage Author(s): ::
-Matthew Spah <spahmatthew@xenapiadmin.com>
+Manpage Author(s):
+
+- Matthew Spah <spahmatthew@xenapiadmin.com>
 
 BUGS
 ----

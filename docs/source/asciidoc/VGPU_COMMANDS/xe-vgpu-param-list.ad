@@ -4,6 +4,7 @@ XE(1)
 :man source:   xe vgpu-param-list
 :man version:  {1}
 :man manual:   xe vgpu-param-list manual
+
 NAME
 ----
 xe-vgpu-param-list - Displays all parameters for a virtual GPU.
@@ -23,18 +24,20 @@ REQUIRED PARAMETERS
 
 EXAMPLES
 --------
-To display all parameters for a specific VGPU: ::
-	*xe vgpu-param-list* uuid=<VGPU UUID>
+To display all parameters for a specific VGPU:
+
+- *xe vgpu-param-list* uuid=<VGPU UUID>
 
 SEE ALSO
 --------
-*xe help vgpu-param-list*, *xe vgpu-list*(1)
+*xe help vgpu-param-list*, *xe vgpu-list*(1), *xe-vgpu-param-clear*(1), *xe-vgpu-param-add*(1), *xe-vgpu-param-remove*(1)
 
 AUTHORS
 -------
-Manpage Author(s): ::
-Matthew Spah <spahmatthew@xenapiadmin.com>
-Lisa Nguyen <lisa@xenapiadmin.com>
+Manpage Author(s):
+
+- Matthew Spah <spahmatthew@xenapiadmin.com>
+- Lisa Nguyen <lisa@xenapiadmin.com>
 
 BUGS
 ----

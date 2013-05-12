@@ -4,6 +4,7 @@ XE(1)
 :man source:   xe sr-param-list
 :man version:  {1}
 :man manual:   xe sr-param-list manual
+
 NAME
 ----
 xe-sr-param-list - Displays all parameters for a storage repository 
@@ -14,7 +15,7 @@ SYNOPSIS
 
 DESCRIPTION
 -----------
-*xe sr-param-list* displays all parameters for a specific storage repository. 
+*xe sr-param-list* displays all parameters for a specific Storage Repository (SR). 
 
 REQUIRED PARAMETERS
 -------------------
@@ -23,8 +24,9 @@ REQUIRED PARAMETERS
 	
 EXAMPLES
 --------
-To display all parameters for a specific SR: ::
-	*xe sr-param-list* uuid=<SR UUID>
+To display all parameters for a specific SR:
+
+- *xe sr-param-list* uuid=<SR UUID>
 
 SEE ALSO
 --------
@@ -32,8 +34,9 @@ SEE ALSO
 
 AUTHORS
 -------
-Manpage Author(s): ::
-Matthew Spah <spahmatthew@xenapiadmin.com>
+Manpage Author(s):
+
+- Matthew Spah <spahmatthew@xenapiadmin.com>
 
 BUGS
 ----

@@ -4,6 +4,7 @@ XE(1)
 :man source:   xe appliance-param-list
 :man version:  {1}
 :man manual:   xe appliance-param-list manual
+
 NAME
 ----
 xe-appliance-param-list - Displays all parameters for an appliance 
@@ -19,21 +20,23 @@ DESCRIPTION
 REQUIRED PARAMETERS
 -------------------
 *uuid*::
-	appliance UUID - Use *xe appliance-list* to obtain a list of appliance UUIDs.
+	Appliance UUID - Use *xe appliance-list* to obtain a list of appliance UUIDs.
 
 EXAMPLES
 --------
-To display all parameters for a specific appliance: ::
-	*xe appliance-param-list* uuid=<APPLIANCE UUID>
+To display all parameters for a specific appliance:
+
+- *xe appliance-param-list* uuid=<APPLIANCE UUID>
 
 SEE ALSO
 --------
-*xe help appliance-param-list*, *xe-appliance-assert-can-be-recovered*(1), *xe-appliance-destroy*(1), *xe-appliance-param-clear*(1), *xe-appliance-param-list*(1), *xe-appliance-recover*(1), xe-appliance-start*(1), *xe-appliance-create*(1), *xe-appliance-list*(1), *xe-appliance-param-get*(1), *xe-appliance-param-set*(1), *xe-appliance-shutdown*(1),                  
+*xe help appliance-param-list*, *xe-appliance-list*(1), *xe-appliance-param-clear*(1), *xe-appliance-param-list*(1), *xe-appliance-param-get*(1), *xe-appliance-param-set*(1),              
 
 AUTHORS
 -------
-Manpage Author(s): ::
-Matthew Spah <spahmatthew@xenapiadmin.com>
+Manpage Author(s):
+
+- Matthew Spah <spahmatthew@xenapiadmin.com>
 
 BUGS
 ----

@@ -19,22 +19,23 @@ DESCRIPTION
 REQUIRED PARAMETERS
 -------------------
 *uuid*::
-	patch UUID - Use *xe patch-list* to obtain a list of patch UUIDs.
+	Patch UUID - Use *xe patch-list* to obtain a list of patch UUIDs.
 
 EXAMPLES
 --------
-To display all parameters for a specific patch: ::
-	*xe patch-param-list* uuid=<PATCH UUID>
+To display all parameters for a specific patch:
+
+- *xe patch-param-list* uuid=<PATCH UUID>
 
 SEE ALSO
 --------
-*xe help patch-param-list*, *xe-patch-apply*(1), *xe-patch-clean*(1), *xe-patch-destroy*(1), *xe-patch-list*(1), *xe-patch-param-clear*(1), *xe-patch-param-get*(1), *xe-patch-pool-apply*(1), *xe-patch-pool-clean*(1), *xe-patch-precheck*(1), *xe-patch-upload*(1)
-
+*xe help patch-param-list*, *xe-patch-apply*(1), *xe-patch-clean*(1), *xe-patch-destroy*(1), *xe-patch-list*(1), *xe-patch-param-clear*(1)
 
 AUTHORS
 -------
-Manpage Author(s): ::
-Matthew Spah <spahmatthew@xenapiadmin.com>
+Manpage Author(s):
+
+- Matthew Spah <spahmatthew@xenapiadmin.com>
 
 BUGS
 ----

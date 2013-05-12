@@ -6,7 +6,7 @@ XE(1)
 :man manual:   xe pgpu-param-list manual
 NAME
 ----
-xe-pgpu-param-list - Displays all parameters for a pgpu 
+xe-pgpu-param-list - Displays all parameters for a PGPU 
 
 SYNOPSIS
 --------
@@ -14,26 +14,29 @@ SYNOPSIS
 
 DESCRIPTION
 -----------
-*xe pgpu-param-list* displays all parameters for a specific pgpu.
+*xe pgpu-param-list* displays all parameters for a specific physical GPU (PGPU).
 
 REQUIRED PARAMETERS
 -------------------
 *uuid*::
-	pgpu UUID - Use *xe pgpu-list* to obtain a list of pgpu UUIDs.
+	PGPU UUID - Use *xe pgpu-list* to obtain a list of pgpu UUIDs.
 
 EXAMPLES
 --------
-To display all parameters for a specific pgpu: ::
-	*xe pgpu-param-list* uuid=<PGPU UUID>
+To display all parameters for a specific PGPU:
+
+- *xe pgpu-param-list* uuid=<PGPU UUID>
 
 SEE ALSO
 --------
-*xe help pgpu-param-list*, 
+*xe help pgpu-param-list*, *xe-pgpu-list*(1), *xe-pgpu-param-add*(1), *xe-pgpu-param-clear*(1), *xe-pgpu-param-remove*(1), *xe-pgpu-param-set*(1)
 
 AUTHORS
 -------
-Manpage Author(s): ::
-Matthew Spah <spahmatthew@xenapiadmin.com>
+Manpage Author(s):
+
+- Lisa Nguyen <lisa@xenapiadmin.com>
+- Matthew Spah <spahmatthew@xenapiadmin.com>
 
 BUGS
 ----

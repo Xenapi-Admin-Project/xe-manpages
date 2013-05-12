@@ -4,6 +4,7 @@ XE(1)
 :man source:   xe template-param-list
 :man version:  {1}
 :man manual:   xe template-param-list manual
+
 NAME
 ----
 xe-template-param-list - Displays all parameters for a template 
@@ -19,21 +20,23 @@ DESCRIPTION
 REQUIRED PARAMETERS
 -------------------
 *uuid*::
-	template UUID - Use *xe template-list* to obtain a list of template UUIDs.
+	Template UUID - Use *xe template-list* to obtain a list of template UUIDs.
 
 EXAMPLES
 --------
-To display all parameters for a specific template: ::
-	*xe template-param-list* uuid=<TEMPLATE UUID>
+To display all parameters for a specific template:
+
+- *xe template-param-list* uuid=<TEMPLATE UUID>
 
 SEE ALSO
 --------
-*xe help template-param-list*, *xe-template-export*(1), *xe-template-list*(1), *xe-template-param-add*(1), *xe-template-param-clear*(1), *xe-template-param-get*(1), *xe-template-param-list*(1),     *xe-template-param-remove*(1), *xe-template-param-set*(1), *xe-template-uninstall*(1) 
+*xe help template-param-list*, *xe-template-export*(1), *xe-template-list*(1), *xe-template-param-add*(1), *xe-template-param-clear*(1), *xe-template-param-remove*(1), *xe-template-param-set*(1)
 
 AUTHORS
 -------
-Manpage Author(s): ::
-Matthew Spah <spahmatthew@xenapiadmin.com>
+Manpage Author(s):
+
+- Matthew Spah <spahmatthew@xenapiadmin.com>
 
 BUGS
 ----

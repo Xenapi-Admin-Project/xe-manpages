@@ -6,7 +6,7 @@ XE(1)
 :man manual:   xe vbd-param-list manual
 NAME
 ----
-xe-vbd-param-list - Displays all parameters for a vbd 
+xe-vbd-param-list - Displays all parameters for a VBD 
 
 SYNOPSIS
 --------
@@ -14,26 +14,30 @@ SYNOPSIS
 
 DESCRIPTION
 -----------
-*xe vbd-param-list* displays all parameters for a specific vbd.
+*xe vbd-param-list* displays all parameters for a specific Virtual Block Device (VBD).
 
 REQUIRED PARAMETERS
 -------------------
 *uuid*::
-	vbd UUID - Use *xe vbd-list* to obtain a list of vbd UUIDs.
+	VBD UUID - Use *xe vbd-list* to obtain a list of vbd UUIDs.
 
 EXAMPLES
 --------
-To display all parameters for a specific vbd: ::
-	*xe vbd-param-list* uuid=<VBD UUID>
+To display all parameters for a specific vbd:
+
+- *xe vbd-param-list* uuid=<VBD UUID>
 
 SEE ALSO
 --------
-*xe help vbd-param-list*, 
+*xe help vbd-param-list*, *xe-vbd-param-set*(1), *xe-vbd-param-add*(1), *xe-vbd-list*(1), *xe-vbd-param-remove*(1)
 
 AUTHORS
 -------
-Manpage Author(s): ::
-Matthew Spah <spahmatthew@xenapiadmin.com>
+Manpage Author(s):
+
+- Matthew Spah <spahmatthew@xenapiadmin.com>
+- Christina Nguyen <christinam@xenapiadmin.com>
+
 
 BUGS
 ----
