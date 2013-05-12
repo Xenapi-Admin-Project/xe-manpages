@@ -51,9 +51,9 @@ OPTIONAL PARAMETERS
 EXAMPLES
 --------
 To display all bonds and all their parameters: ::
-	*xe bond-list* params=all
+	*xe bond-list* params="all"
 To display *active-backup* bonds and all their parameters: ::
-	*xe bond-list* mode=active-backup params=all	
+	*xe bond-list* mode="active-backup" params="all"	
 To display a specific bond and the *slaves* and *links-up* parameters: ::
 	*xe bond-list* uuid=<BOND UUID> params="slaves,links-up"
 

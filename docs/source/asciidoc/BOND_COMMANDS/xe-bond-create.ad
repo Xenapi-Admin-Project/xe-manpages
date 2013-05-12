@@ -11,7 +11,7 @@ xe-bond-create - Create a Interface Bond.
 
 SYNOPSIS
 --------
-*xe bond-create* network-uuid=<NETWORK UUID> pif-uuids=<PIF UUIDs> [ mac=<MAC ADDRESS> ] [ mode=<BOND MODE>] [ properties=<BOND PROPERTIES>]
+*xe bond-create* network-uuid=<NETWORK UUID> pif-uuids=<PIF UUIDs> [ mac=<MAC ADDRESS> ] [ mode=<BOND MODE> ] [ properties=<BOND PROPERTIES> ]
 				
 DESCRIPTION
 ----------
