@@ -11,22 +11,24 @@ NAME
 
 SYNOPSIS
 --------
-*xe list-list*  [ params=<PARAMETER> ] [--minimal]
-
+*xe vdi-list*  [ params=<PARAMETER> ] [--minimal]
 
 DESCRIPTION
 -----------
 *xe vdi-list* displays Virtual Disk Images (VDI) and their parameters.
 
-Output can be filtered by using the *params* parameter and a value (separate multiple parameters with commas): ::
-	*xe vdi-list params="sr-uuid"* +
-	*xe vdi-list params="uuid,sr-uuid,name-label"*
+Output can be filtered by using the *params* parameter and a value (separate multiple parameters with commas):
 
-Output can be filtered by using parameter values and the desired value: ::
-	*xe vdi-list is-a-snapshot="true"*
+- *xe vdi-list params="sr-uuid"*
+- *xe vdi-list params="uuid,sr-uuid,name-label"*
 
-Append --minimal to display values for one parameter on a single line separated by commas: ::
-	*xe vdi-list params="uuid" --minimal*
+Output can be filtered by using parameter values and the desired value:
+	
+- *xe vdi-list is-a-snapshot="true"*
+
+Append --minimal to display values for one parameter on a single line separated by commas:
+
+- *xe vdi-list params="uuid" --minimal*
 	
 PARAMETERS
 ----------
@@ -99,14 +101,21 @@ PARAMETERS
 
 EXAMPLES
 --------
-To display all parameters for all VDIs: ::
-	*xe vdi-list* params="all"
-To display all paramters for a specific *: ::
-	*xe vdi-list* uuid=<VDI UUID> params="all"
-To display the Storage Repository UUID for a specific VDI: ::
-	*xe vdi-list* uuid=<VDI UUID> params="sr-uuid"
-To display the uuid and sr-uuid parameters of all VDIs that are missing from a Storage Repository: ::
-	*xe vdi-list* missing="true" params="uuid,sr-uuid"
+To display all parameters for all VDIs:
+
+- *xe vdi-list* params="all"
+
+To display all paramters for a specific VDI:
+
+- *xe vdi-list* uuid=<VDI UUID> params="all"
+
+To display the Storage Repository UUID for a specific VDI:
+
+- *xe vdi-list* uuid=<VDI UUID> params="sr-uuid"
+
+To display the uuid and sr-uuid parameters of all VDIs that are missing from a Storage Repository:
+
+- *xe vdi-list* missing="true" params="uuid,sr-uuid"
 
 SEE ALSO
 --------
@@ -114,9 +123,10 @@ SEE ALSO
 
 AUTHORS
 -------
-Manpage Author(s): ::
-Lisa Nguyen <lisa@xenapiadmin.com>
-Matthew Spah <spahmatthew@xenapiadmin.com>
+Manpage Author(s):
+
+- Lisa Nguyen <lisa@xenapiadmin.com>
+- Matthew Spah <spahmatthew@xenapiadmin.com>
 
 BUGS
 ----

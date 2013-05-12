@@ -17,15 +17,18 @@ DESCRIPTION
 -----------
 *xe pif-list* displays physical interfaces (PIF) and their parameters.
 
-Output can be filtered by using the *params* parameter and a value (separate multiple parameters with commas): ::
-	*xe pif-list params=IP* +
-	*xe pif-list params=device,uuid,IP,netmask*
+Output can be filtered by using the *params* parameter and a value (separate multiple parameters with commas):
+	
+- *xe pif-list params="IP"* 
+- *xe pif-list params="device,uuid,IP,netmask"*
 
-Output can be filtered by using parameter values and the desired value: ::
-	*xe pif-list host-uuid=<HOST UUID>*
+Output can be filtered by using parameter values and the desired value:
+	
+- *xe pif-list host-uuid=<HOST UUID>*
 
-Append --minimal to display values for one parameter on a single line separated by commas: ::
-	*xe pif-list params="uuid" --minimal*
+Append --minimal to display values for one parameter on a single line separated by commas:
+
+- *xe pif-list params="uuid" --minimal*
 
 OPTIONAL PARAMETERS
 -------------------
@@ -124,14 +127,21 @@ OPTIONAL PARAMETERS
 
 EXAMPLES
 --------
-To display all parameters for all PIFs: ::
-	*xe pif-list* params="all"
-To display all paramters for a specific PIF: ::
-	*xe pif-list* uuid=<PIF UUID> params="all"
-To display *network-uuid* for a specific PIF: ::
-	*xe pif-list* uuid=<PIF UUID> params="network-uuid"
-To display the *device* and *UUID* parameters of all PIFs on a specific host: ::
-	*xe pif-list* host-uuid=<HOST UUID> params="uuid,device"
+To display all parameters for all PIFs:
+
+- *xe pif-list* params="all"
+	
+To display all paramters for a specific PIF:
+
+- *xe pif-list* uuid=<PIF UUID> params="all"
+	
+To display *network-uuid* for a specific PIF:
+
+- *xe pif-list* uuid=<PIF UUID> params="network-uuid"
+	
+To display the *device* and *UUID* parameters of all PIFs on a specific host:
+
+- *xe pif-list* host-uuid=<HOST UUID> params="uuid,device"
 
 SEE ALSO
 --------
@@ -139,9 +149,10 @@ SEE ALSO
 
 AUTHORS
 -------
-Manpage Author(s): ::
-Matthew Spah <spahmatthew@xenapiadmin.com> +
-Lisa Nguyen <lisa@xenapiadmin.com>
+Manpage Author(s):
+
+- Matthew Spah <spahmatthew@xenapiadmin.com> 
+- Lisa Nguyen <lisa@xenapiadmin.com>
 
 BUGS
 ----

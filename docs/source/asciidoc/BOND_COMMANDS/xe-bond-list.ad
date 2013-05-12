@@ -17,15 +17,18 @@ DESCRIPTION
 -----------
 *xe bond-list* displays bonds and their parameters.
 
-Output can be filtered by using the *params* parameter and a value (separate multiple parameters with commas): ::
-	*xe bond-list params=master* +
-	*xe bond-list params=master,slave,uuid*
+Output can be filtered by using the *params* parameter and a value (separate multiple parameters with commas):
 
-Output can be filtered by using parameter values and the desired value: ::
-	*xe bond-list mode=<BOND MODE>*
+- *xe bond-list params=master*
+- *xe bond-list params=master,slave,uuid*
 
-Append --minimal to display values for one parameter on a single line separated by commas: ::
-	*xe bond-list params="uuid" --minimal*
+Output can be filtered by using parameter values and the desired value:
+
+- *xe bond-list mode=<BOND MODE>*
+
+Append --minimal to display values for one parameter on a single line separated by commas:
+
+- *xe bond-list params="uuid" --minimal*
 
 OPTIONAL PARAMETERS
 -------------------
@@ -50,12 +53,17 @@ OPTIONAL PARAMETERS
 
 EXAMPLES
 --------
-To display all bonds and all their parameters: ::
-	*xe bond-list* params="all"
-To display *active-backup* bonds and all their parameters: ::
-	*xe bond-list* mode="active-backup" params="all"	
-To display a specific bond and the *slaves* and *links-up* parameters: ::
-	*xe bond-list* uuid=<BOND UUID> params="slaves,links-up"
+To display all bonds and all their parameters:
+
+- *xe bond-list* params="all"
+
+To display *active-backup* bonds and all their parameters:
+
+- *xe bond-list* mode="active-backup" params="all"	
+
+To display a specific bond and the *slaves* and *links-up* parameters:
+
+- *xe bond-list* uuid=<BOND UUID> params="slaves,links-up"
 
 SEE ALSO
 --------
@@ -63,8 +71,9 @@ SEE ALSO
 
 AUTHORS
 -------
-Manpage Author(s): ::
-Matthew Spah <spahmatthew@xenapiadmin.com>
+Manpage Author(s):
+
+- Matthew Spah <spahmatthew@xenapiadmin.com>
 
 BUGS
 ----

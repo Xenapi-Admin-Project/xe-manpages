@@ -17,15 +17,18 @@ DESCRIPTION
 -----------
 *xe pool-list* displays pools and their parameters.
 
-Output can be filtered by using the *params* parameter and a value (separate multiple parameters with commas): ::
-	*xe pool-list params="default-SR"* +
-	*xe pool-list params="uuid,name-label,master,default-SR"*
+Output can be filtered by using the *params* parameter and a value (separate multiple parameters with commas):
 
-Output can be filtered by using parameter values and the desired value: ::
-	*xe pool-list ha-enabled="true"*
+- *xe pool-list params="default-SR"*
+- *xe pool-list params="uuid,name-label,master,default-SR"*
 
-Append --minimal to display values for one parameter on a single line separated by commas: ::
-	*xe pool-list params="uuid" --minimal*
+Output can be filtered by using parameter values and the desired value:
+
+- *xe pool-list ha-enabled="true"*
+
+Append --minimal to display values for one parameter on a single line separated by commas:
+
+- *xe pool-list params="uuid" --minimal*
 
 OPTIONAL PARAMETERS
 -------------------
@@ -88,14 +91,21 @@ OPTIONAL PARAMETERS
 
 EXAMPLES
 --------
-To display all parameters for all pools: ::
-	*xe pool-list* params="all"
-To display all parameters for a specific : ::
-	*xe pool-list* uuid=<POOL UUID> params="all"
-To display the default Storage Repository for a specific pool: ::
-	*xe pool-list* uuid=<POOL UUID> params="default-SR"
-To display the *default-SR* and *master* parameters of all pools with HA-enabled: ::
-	*xe pool-list* HA-enabled="true" params="default-SR,master"
+To display all parameters for all pools:
+
+- *xe pool-list* params="all"
+	
+To display all parameters for a specific PIF:
+
+- *xe pool-list* uuid=<POOL UUID> params="all"
+
+To display the default Storage Repository for a specific pool:
+
+- *xe pool-list* uuid=<POOL UUID> params="default-SR"
+
+To display the *default-SR* and *master* parameters of all pools with HA-enabled:
+
+- *xe pool-list* HA-enabled="true" params="default-SR,master"
 
 SEE ALSO
 --------
@@ -103,8 +113,9 @@ SEE ALSO
 
 AUTHORS
 -------
-Manpage Author(s): ::
-Matthew Spah <spahmatthew@xenapiadmin.com>
+Manpage Author(s):
+
+- Matthew Spah <spahmatthew@xenapiadmin.com>
 
 BUGS
 ----

@@ -13,11 +13,9 @@ SYNOPSIS
 --------
 *xe network-param-get* uuid=<NETWORK UUID> param-name=<PARAMETER> [ param-key=<PARAMETER KEY> ]
 
-
 DESCRIPTION
 -----------
-*xe network-param-get* returns a parameter or a key value for a specified network. 
-
+*xe network-param-get* returns the value(s) of a parameter or a key for a specified network. 
 
 REQUIRED PARAMETERS
 -------------------
@@ -25,12 +23,12 @@ REQUIRED PARAMETERS
 	Network UUID - Use *xe network-list* to obtain a list of network UUIDs.
 
 *param-name*::
-	The network parameter to return.
+	The network parameter value to return.
 	
 OPTIONAL PARAMETERS
 -------------------
 *param-key*::
-	The network key to return.  
+	The network key value to return.  
 
 EXAMPLES
 --------
@@ -45,7 +43,7 @@ To display the *default-locking-mode* parameter on a network: ::
 
 SEE ALSO
 --------
-*xe-network-list*(1), *xe-network-create*(1), *xe-network-param-list*(1), *xe-pif-list*(1), *xe-vif-list*(1), *xe-network-param-set*(1)
+*xe help network-param-get*, *xe-network-list*(1), *xe-network-create*(1), *xe-network-param-list*(1), *xe-pif-list*(1), *xe-vif-list*(1), *xe-network-param-set*(1)
 
 AUTHORS
 -------

@@ -1,9 +1,9 @@
 XE(1)
 =======
 :doctype: manpage
-:man source:   xe <OBJECT>-list
+:man source:   xe host-list
 :man version:  {1}
-:man manual:   xe <OBJECT>-list manual
+:man manual:   xe host-list manual
 
 NAME
 -----
@@ -17,15 +17,18 @@ DESCRIPTION
 -----------
 *xe host-list* displays hosts and their parameters.
 
-Output can be filtered by using the *params* parameter and a value (separate multiple parameters with commas): ::
-	*xe host-list params=name-descriptions* +
-	*xe host-list params=uuid,name-label,enabled*
+Output can be filtered by using the *params* parameter and a value (separate multiple parameters with commas):
 
-Output can be filtered by using parameter values and the desired value: ::
-	*xe host-list enabled="true"*
+- *xe host-list params=name-descriptions*
+- *xe host-list params=uuid,name-label,enabled*
 
-Append --minimal to display values for one parameter on a single line separated by commas: ::
-	*xe host-list params="uuid" --minimal*
+Output can be filtered by using parameter values and the desired value:
+
+- *xe host-list enabled="true"*
+
+Append --minimal to display values for one parameter on a single line separated by commas:
+
+- *xe host-list params="uuid" --minimal
 
 OPTIONAL PARAMETERS
 -------------------
@@ -154,14 +157,21 @@ OPTIONAL PARAMETERS
 
 EXAMPLES
 --------
-To display all parameters for all hosts: ::
-	*xe host-list* params="all"
-To display all paramters for a specific host: ::
-	*xe host-list* uuid=<HOST UUID> params="all"
-To display *ha-network-peers* for a specific host: ::
-	*xe host-list* uuid=<HOST UUID> params="ha-network-peers"
-To display the *uuid* and *name-label* parameters of all hosts that are enabled: ::
-	*xe host-list* enabled="true" params="uuid,name-label"
+To display all parameters for all hosts:
+
+- *xe host-list* params="all"
+
+To display all paramters for a specific host:
+
+- *xe host-list* uuid=<HOST UUID> params="all"
+
+To display *ha-network-peers* for a specific host:
+
+- *xe host-list* uuid=<HOST UUID> params="ha-network-peers"
+
+To display the *uuid* and *name-label* parameters of all hosts that are enabled:
+
+- *xe host-list* enabled="true" params="uuid,name-label"
 
 SEE ALSO
 --------
@@ -169,8 +179,9 @@ SEE ALSO
 
 AUTHORS
 -------
-Manpage Author(s): ::
-Matthew Spah <spahmatthew@xenapiadmin.com>
+Manpage Author(s):
+
+- Matthew Spah <spahmatthew@xenapiadmin.com>
 
 BUGS
 ----

@@ -15,26 +15,29 @@ SYNOPSIS
 
 DESCRIPTION
 -----------
-*xe pif-param-get* returns a parameter or a key value for a specific PIF.
+*xe pif-param-get* returns the value(s) of a parameter or a key for a specific PIF.
 
 REQUIRED PARAMETERS
 -------------------
 *uuid*::
 	PIF UUID - Use *xe pif-list* to obtain PIF UUIDs.
 *param-name*::
-	The PIF parameter to return	
+	The PIF parameter value to return	
 
 OPTIONAL PARAMETERS
 -------------------
 *param-key*::
-	The PIF key to return
+	The PIF key value to return
 	
 EXAMPLES
 --------
-To display the *management* parameter for a PIF: ::
-	*xe pif-param-get* uuid=<PIF UUID> param-name="management"
-To display the value for *ethtool-speed*: ::
-	*xe pif-param-get* uuid=<PIF UUID> param-name="other-config" param-key="ethtool-speed"
+To display the *management* parameter for a PIF:
+
+- *xe pif-param-get* uuid=<PIF UUID> param-name="management"
+
+To display the value for *ethtool-speed*:
+
+- *xe pif-param-get* uuid=<PIF UUID> param-name="other-config" param-key="ethtool-speed"
 
 SEE ALSO
 --------
@@ -42,9 +45,10 @@ SEE ALSO
 
 AUTHORS
 -------
-Manpage Author(s): ::
-Matthew Spah <spahmatthew@xenapiadmin.com> +
-Lisa Nguyen <lisa@xenapiadmin.com>
+Manpage Author(s): 
+
+- Matthew Spah <spahmatthew@xenapiadmin.com> 
+- Lisa Nguyen <lisa@xenapiadmin.com>
 
 BUGS
 ----

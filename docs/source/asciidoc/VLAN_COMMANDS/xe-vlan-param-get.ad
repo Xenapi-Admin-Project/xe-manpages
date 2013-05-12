@@ -15,23 +15,20 @@ SYNOPSIS
 
 DESCRIPTION
 -----------
-*xe vlan-param-get* returns a parameter for a specific VLAN. 
-
+*xe vlan-param-get* returns the value(s) of a parameter or a key for a specific VLAN. 
 
 REQUIRED PARAMETERS
 -------------------
-
 *uuid*::
 	VLAN UUID - Use *xe vlan-list* to obtain a list of VLAN UUIDs.
-
 *param-name*::
-	The VLAN parameter to return.
+	The VLAN parameter value to return.
 		
 EXAMPLES
 --------
-To display the tagged-PIF parameter for a VLAN: ::
-	*xe vlan-param-get* uuid=<VLAN UUID> param-name="tagged-PIF"  
+To display the tagged-PIF parameter for a VLAN:
 
+- *xe vlan-param-get* uuid=<VLAN UUID> param-name="tagged-PIF"  
 
 SEE ALSO
 --------
@@ -39,13 +36,13 @@ SEE ALSO
 
 AUTHORS
 -------
-Manpage Author(s): ::
-Matthew Spah <spahmatthew@xenapiadmin.com>
+Manpage Author(s):
+
+- Matthew Spah <spahmatthew@xenapiadmin.com>
 
 BUGS
 ----
 For guidelines on submitting bug reports see http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP. Submit bugs and general questions to xen-api@lists.xen.org.
-
 
 COPYRIGHT
 ---------

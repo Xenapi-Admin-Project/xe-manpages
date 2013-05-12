@@ -17,15 +17,18 @@ DESCRIPTION
 -----------
 *xe sr-list* displays Storage Repositories (SR) and their parameters.
 
-Output can be filtered by using the *params* parameter and a value (separate multiple parameters with commas): ::
-	*xe sr-list params=uuid* +
-	*xe sr-list params=uuid,name-label,type,physical-utilisation*
+Output can be filtered by using the *params* parameter and a value (separate multiple parameters with commas):
 
-Output can be filtered by using parameter values and the desired value: ::
-	*xe sr-list type="lvmoiscsi"*
+- *xe sr-list params=uuid*
+- *xe sr-list params=uuid,name-label,type,physical-utilisation*
 
-Append --minimal to display values for one parameter on a single line separated by commas: ::
-	*xe sr-list params="uuid" --minimal*
+Output can be filtered by using parameter values and the desired value:
+
+- *xe sr-list type="lvmoiscsi"*
+
+Append --minimal to display values for one parameter on a single line separated by commas:
+
+- *xe sr-list params="uuid" --minimal*
 
 OPTIONAL PARAMETERS
 -------------------
@@ -76,14 +79,21 @@ other-config*::
 
 EXAMPLES
 --------
-To display all parameters for all Storage Repositories : ::
-	*xe sr-list* params="all"
-To display all paramters for a specific Storage Repositories: ::
-	*xe sr-list* uuid=<SR UUID> params="all"
-To display the VDIS found on a specific Storage Repository: ::
-	*xe sr-list* uuid=<SR UUID> params="VDIs"
-To display the *VDIs* and *PBDs* parameters on all Storage Repositories with *type* nfs: ::
-	*xe sr-list* type="nfs" params="VDIs,PBDs"
+To display all parameters for all Storage Repositories:
+
+- *xe sr-list* params="all"
+
+To display all paramters for a specific Storage Repositories:
+
+- *xe sr-list* uuid=<SR UUID> params="all"
+
+To display the VDIS found on a specific Storage Repository:
+
+- *xe sr-list* uuid=<SR UUID> params="VDIs"
+
+To display the *VDIs* and *PBDs* parameters on all Storage Repositories with *type* nfs:
+
+- *xe sr-list* type="nfs" params="VDIs,PBDs"
 
 SEE ALSO
 --------
@@ -91,8 +101,9 @@ SEE ALSO
                         
 AUTHORS
 -------
-Manpage Author(s): ::
-Matthew Spah <spahmatthew@xenapiadmin.com>
+Manpage Author(s):
+
+- Matthew Spah <spahmatthew@xenapiadmin.com>
 
 BUGS
 ----

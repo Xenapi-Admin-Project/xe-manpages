@@ -17,15 +17,18 @@ DESCRIPTION
 -----------
 *xe vbd-list* displays Virtual Block Devices (VBD) and their parameters.
 
-Output can be filtered by using the *params* parameter and a value (separate multiple parameters with commas): ::
-	*xe vbd-list params="vdi-name-label"* +
-	*xe vbd-list params="vdi-uuid,vdi-name-label"*
+Output can be filtered by using the *params* parameter and a value (separate multiple parameters with commas):
 
-Output can be filtered by using parameter values and the desired value: ::
-	*xe vbd-list bootable="true"*
+- *xe vbd-list params="vdi-name-label"*
+- *xe vbd-list params="vdi-uuid,vdi-name-label"*
 
-Append --minimal to display values for one parameter on a single line separated by commas: ::
-	*xe vbd-list params="uuid" --minimal*
+Output can be filtered by using parameter values and the desired value:
+
+- *xe vbd-list bootable="true"*
+
+Append --minimal to display values for one parameter on a single line separated by commas:
+
+- *xe vbd-list params="uuid" --minimal*
 
 OPTIONAL PARAMETERS
 -------------------
@@ -86,14 +89,21 @@ OPTIONAL PARAMETERS
 
 EXAMPLES
 --------
-To display all parameters for all VBDs: ::
-	*xe vbd-list* params="all"
-To display all paramters for a specific *: ::
-	*xe vbd-list* uuid=<VBD UUID> params="all"
-To display the Virtual Machine UUID for a specific VBD: ::
-	*xe vbd-list* uuid=<VBD UUID> params="vm-uuid"
-To display the vdi-uuid and vm-uuid parameters of all VDIs with a VBD type of disk: ::
-	*xe vbd-list* type="disk" params="vm-uuid,vdi-uuid"
+To display all parameters for all VBDs:
+
+- *xe vbd-list* params="all"
+
+To display all paramters for a specific VBD:
+
+- *xe vbd-list* uuid=<VBD UUID> params="all"
+
+To display the Virtual Machine UUID for a specific VBD:
+
+- *xe vbd-list* uuid=<VBD UUID> params="vm-uuid"
+
+To display the vdi-uuid and vm-uuid parameters of all VDIs with a VBD type of disk:
+
+- *xe vbd-list* type="disk" params="vm-uuid,vdi-uuid"
 
 SEE ALSO
 --------
@@ -101,9 +111,10 @@ SEE ALSO
 
 AUTHORS
 -------
-Manpage Author(s): ::
-Lisa Nguyen <lisa@xenapiadmin.com>
-Matthew Spah <spahmatthew@xenapiadmin.com>
+Manpage Author(s):
+
+- Lisa Nguyen <lisa@xenapiadmin.com>
+- Matthew Spah <spahmatthew@xenapiadmin.com>
 
 BUGS
 ----

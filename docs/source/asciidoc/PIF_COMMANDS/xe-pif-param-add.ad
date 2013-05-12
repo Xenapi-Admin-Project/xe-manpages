@@ -15,7 +15,7 @@ SYNOPSIS
 
 DESCRIPTION
 -----------
-*xe pif-param-add* adds a key/value to a set or map parameter for a PIF. Use *xe pif-list* and *xe pif-param-list* to identify writable set or map parameters (SRW, MRW).
+*xe pif-param-add* adds a key to a set or a key/value pair to a map parameter. Use *xe pif-list* and *xe pif-param-list* to identify writable set or map parameters (SRW, MRW).
 
 REQUIRED PARAMETERS
 -------------------
@@ -33,8 +33,9 @@ OPTIONAL PARAMETERS
 
 EXAMPLES
 --------
-To add a DNS search path ( DNS Suffix ) value for a PIF interface: ::
-	*xe pif-param-add* uuid=<PIF UUID> param-name=other-config domain=<DNS SUFFIX>
+To add a DNS search path ( DNS Suffix ) value for a PIF interface:
+	
+- *xe pif-param-add* uuid=<PIF UUID> param-name=other-config domain=<DNS SUFFIX>
 	
 SEE ALSO
 --------
@@ -43,8 +44,9 @@ SEE ALSO
 AUTHORS
 -------
 Manpage Author(s): ::
-Matthew Spah <spahmatthew@xenapiadmin.com> +
-Lisa Nguyen <lisa@xenapiadmin.com>
+
+- Matthew Spah <spahmatthew@xenapiadmin.com> 
+- Lisa Nguyen <lisa@xenapiadmin.com>
 
 BUGS
 ----

@@ -15,7 +15,7 @@ SYNOPSIS
 
 DESCRIPTION
 -----------
-*xe vlan-destroy* removes a VLAN amd the associated pseudo PIF from a network. *xe vlan-destroy* requires that no attached VIF interfaces be present on the VLAN. Use *xe vif-unplug* to detach VIFs.
+*xe vlan-destroy* removes a VLAN and the associated pseudo PIF from a network. *xe vlan-destroy* requires that no attached VIF interfaces be present on the VLAN. Use *xe vif-unplug* to detach VIFs.
 
 REQUIRED PARAMETERS
 -------------------
@@ -24,22 +24,23 @@ REQUIRED PARAMETERS
     
 EXAMPLES
 --------
-To delete a VLAN: ::
-	*xe vlan-destroy* uuid=<VLAN UUID>
+To delete a VLAN:
+
+- *xe vlan-destroy* uuid=<VLAN UUID>
 
 SEE ALSO
 --------
-*xe-vlan-list*(1), *xe-pool-vlan-create*(1), *xe-pif-list*(1), *xe-vif-list*(1), *xe-vif-unplug*(1), *xe-vif-destroy*(1)
+*xe help vlan-destroy*, *xe-vlan-list*(1), *xe-pool-vlan-create*(1), *xe-pif-list*(1), *xe-vif-list*(1), *xe-vif-unplug*(1), *xe-vif-destroy*(1)
 
 AUTHORS
 -------
-Manpage Author(s): ::
-Matthew Spah <spahmatthew@xenapiadmin.com>
+Manpage Author(s):
+
+- Matthew Spah <spahmatthew@xenapiadmin.com>
 
 BUGS
 ----
 For guidelines on submitting bug reports see http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP. Submit bugs and general questions to xen-api@lists.xen.org.
-
 
 COPYRIGHT
 ---------

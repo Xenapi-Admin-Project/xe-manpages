@@ -16,7 +16,7 @@ SYNOPSIS
 
 DESCRIPTION
 -----------
-*xe <OBJECT>-param-get* returns a parameter or a key value for a specified <OBJECT>. 
+*xe <OBJECT>-param-get* returns the value(s) of a parameter or a key for a specified <OBJECT>. 
 
 
 REQUIRED PARAMETERS
@@ -25,12 +25,12 @@ REQUIRED PARAMETERS
 	<OBJECT> UUID - Use *xe <OBJECT>-list* to obtain a list of <OBJECT> UUIDs.
 
 *param-name*::
-	The <OBJECT> parameter to return.
+	The <OBJECT> parameter value to return.
 	
 OPTIONAL PARAMETERS
 -------------------
 *param-key*::
-	The <OBJECT> key to return.  
+	The <OBJECT> key value to return.  
 
 EXAMPLES
 --------

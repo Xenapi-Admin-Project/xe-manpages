@@ -17,15 +17,18 @@ DESCRIPTION
 -----------
 *xe vif-list* displays virtual interfaces (VIF) and their parameters.
 
-Output can be filtered by using the *params* parameter and a value (separate multiple parameters with commas): ::
-	*xe vif-list params=vm-uuid* +
-	*xe vif-list params=uuid,vm-uuid,device,currently-attached,*
+Output can be filtered by using the *params* parameter and a value (separate multiple parameters with commas):
 
-Output can be filtered by using parameter values and the desired value: ::
-	*xe vif-list network-uuid=<NETWORK UUID>*
+- *xe vif-list params=vm-uuid* 
+- *xe vif-list params=uuid,vm-uuid,device,currently-attached,*
 
-Append --minimal to display values for one parameter on a single line separated by commas: ::
-	*xe vif-list params="uuid" --minimal*
+Output can be filtered by using parameter values and the desired value:
+	
+- *xe vif-list network-uuid=<NETWORK UUID>*
+
+Append --minimal to display values for one parameter on a single line separated by commas:
+
+- *xe vif-list params="uuid" --minimal*
 
 
 OPTIONAL PARAMETERS
@@ -89,14 +92,21 @@ OPTIONAL PARAMETERS
 
 EXAMPLES
 --------
-To display all parameters for all VIFs: ::
-	*xe vif-list* params="all"
-To display all parameters for a specific VIF: ::
-	*xe vif-list* uuid=<VIF UUID> params="all"
-To display the *vm-uuid* for a specific VIF: ::
-	*xe vif-list* uuid=<VIF UUID> params="vm-uuid"
-To display the *vm-uuid* and *network-uuid* for a specific VIF: ::
-	*xe vif-list* uuid=<VIF UUID> params="vm-uuid,network-uuid" 
+To display all parameters for all VIFs:
+
+- *xe vif-list* params="all"
+
+To display all parameters for a specific VIF:
+
+- *xe vif-list* uuid=<VIF UUID> params="all"
+
+To display the *vm-uuid* for a specific VIF:
+
+- *xe vif-list* uuid=<VIF UUID> params="vm-uuid"
+
+To display the *vm-uuid* and *network-uuid* for a specific VIF:
+
+- *xe vif-list* uuid=<VIF UUID> params="vm-uuid,network-uuid" 
 
 SEE ALSO
 --------
@@ -104,9 +114,10 @@ SEE ALSO
 
 AUTHORS
 -------
-Manpage Author(s): ::
-Matthew Spah <spahmatthew@xenapiadmin.com> +
-Lisa Nguyen <lisa@xenapiadmin.com>
+Manpage Author(s):
+
+- Matthew Spah <spahmatthew@xenapiadmin.com>
+- Lisa Nguyen <lisa@xenapiadmin.com>
 
 BUGS
 ----

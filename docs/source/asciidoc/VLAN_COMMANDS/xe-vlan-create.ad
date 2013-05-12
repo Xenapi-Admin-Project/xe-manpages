@@ -45,7 +45,7 @@ REQUIRED PARAMETERS
 
 SEE ALSO
 --------
-*xe-pool-vlan-create(1), *xe-vlan-destroy*(1), *xe-vlan-list*(1), *xe-pif-list*(1), *xe-network-list*(1), *xe-vif-list*(1)
+*xe help vlan-create*(1), *xe-pool-vlan-create(1), *xe-vlan-destroy*(1), *xe-vlan-list*(1), *xe-pif-list*(1), *xe-network-list*(1), *xe-vif-list*(1)
 
 AUTHORS
 -------

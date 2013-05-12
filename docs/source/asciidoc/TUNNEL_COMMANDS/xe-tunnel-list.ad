@@ -18,15 +18,18 @@ DESCRIPTION
 
 *xe tunnel-list* displays tunnels and their parameters.
 
-Output can be filtered by using the *params* parameter and a value (separate multiple parameters with commas): ::
-	*xe tunnel-list params="uuid"* +
-	*xe tunnel-list params="uuid,access-PIF,status"*
+Output can be filtered by using the *params* parameter and a value (separate multiple parameters with commas):
 
-Output can be filtered by using parameter values and the desired value: ::
-	*xe tunnel-list status=<VALUE>*
+- *xe tunnel-list params="uuid"* +
+- *xe tunnel-list params="uuid,access-PIF,status"*
 
-Append --minimal to display values for one parameter on a single line separated by commas: ::
-	*xe tunnel-list params="uuid" --minimal*
+Output can be filtered by using parameter values and the desired value:
+
+- *xe tunnel-list status=<VALUE>*
+
+Append --minimal to display values for one parameter on a single line separated by commas:
+
+- *xe tunnel-list params="uuid" --minimal*
 
 REQUIRED PARAMETERS
 -------------------
@@ -58,13 +61,13 @@ SEE ALSO
 
 AUTHORS
 -------
-Manpage Author(s): ::
-Matthew Spah <spahmatthew@xenapiadmin.com>
+Manpage Author(s):
+
+- Matthew Spah <spahmatthew@xenapiadmin.com>
 
 BUGS
 ----
 See http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP on how to send bug reports, send bugs and general questions to xen-api@lists.xen.org.
-
 
 COPYRIGHT
 ---------

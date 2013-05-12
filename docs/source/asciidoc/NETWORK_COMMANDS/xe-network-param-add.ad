@@ -33,10 +33,13 @@ OPTIONAL PARAMETERS
 
 EXAMPLES
 --------
-To add a set parameter key to the *tag* parameter: ::
-	*xe network-param-add* uuid=<NETWORK UUID> param-name="tag" param-key=<SET PARAMETER KEY>
-To add a map parameter key/value pair to the *other-config* parameter: ::
-	*xe network-param-add* uuid=<NETWORK UUID> param-name="other-config" <MAP PARAMETER KEY>=<VALUE>
+To add a set parameter key to the *tag* parameter:
+	
+- *xe network-param-add* uuid=<NETWORK UUID> param-name="tag" param-key=<SET PARAMETER KEY>
+
+To add a map parameter key/value pair to the *other-config* parameter:
+
+- *xe network-param-add* uuid=<NETWORK UUID> param-name="other-config" <MAP PARAMETER KEY>=<VALUE>
 
 SEE ALSO
 --------
@@ -44,8 +47,9 @@ SEE ALSO
 
 AUTHORS
 -------
-Manpage Author(s): ::
-Matthew Spah <spahmatthew@xenapiadmin.com>
+Manpage Author(s):
+
+- Matthew Spah <spahmatthew@xenapiadmin.com>
 
 BUGS
 ----
