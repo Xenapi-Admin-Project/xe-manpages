@@ -7,7 +7,7 @@ XE(1)
 
 NAME
 ----
-xe-sr-param-clear - Clears a specific writable parameter for a storage repository
+xe-sr-param-clear - Clears a specific writable parameter for a storage repository (SR)
 
 SYNOPSIS
 --------
@@ -15,7 +15,7 @@ SYNOPSIS
 
 DESCRIPTION
 -----------
-*xe sr-param-clear* attempts to clear any writable parameter. Use *xe sr-list* and *xe sr-param-list* to identify writable parameters (RW, SRW, MRW).
+*xe sr-param-clear* attempts to clear any writable parameter for a SR. Use *xe sr-list* and *xe sr-param-list* to identify writable parameters (RW, SRW, MRW).
 
 REQUIRED PARAMETERS
 -------------------
@@ -45,5 +45,5 @@ For guidelines on submitting bug reports see http://wiki.xen.org/wiki/Reporting_
 
 COPYRIGHT
 ---------
-Copyright \(C)  2012 - <MANPAGE AUTHOR>
-Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License, Version 1.3 or any later version published by the Free Software Foundation; with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts. A copy of the license is included in the section entitled "GNU Free Documentation License"
+Copyright \(C) 2013 - Matthew Spah
+Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License, Version 1.3 or any later version published by the Free Software Foundation; with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts. A copy of the license is included in the section entitled "GNU Free Documentation License".
