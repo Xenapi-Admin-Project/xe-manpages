@@ -30,7 +30,7 @@ To display all parameters for a specific <OBJECT>:
 
 SEE ALSO
 --------
-*xe help <OBJECT>-param-list*, *xe-<OBJECT>-list*(1) 
+*xe help <OBJECT>-param-list*, *xe-<OBJECT>-list*(1)
 
 AUTHORS
 -------
