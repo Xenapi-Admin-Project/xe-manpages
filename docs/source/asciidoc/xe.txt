@@ -404,28 +404,28 @@ vm-vif-list - List the VIFs presvm-start ent on selected VM.
 
 
 SEE ALSO
-xe-audit-log-get
-xe-bond-create
-xe-bond-destroy
-xe-bond-list
-xe-bond-param-get
-xe-bond-param-list
-xe-cd-list
-xe-console-list
-xe-console-param-add
-xe-console-param-clear
-xe-console-param-get
-xe-console-param-list
-xe-console-param-remove
-xe-console-param-set
+xe-audit-log-get - Return a parameter for an audit log
+xe-bond-create - Create a bond
+xe-bond-destroy - Destroy a bond
+xe-bond-list - List all bonds
+xe-bond-param-get - Return a parameter for a bond
+xe-bond-param-list - List all parameters for a bond
+xe-cd-list - List all CDs
+xe-console-list - List all consoles
+xe-console-param-add - Add a parameter for a console
+xe-console-param-clear - Clear a parameter for a console
+xe-console-param-get - Return a parameter for a console
+xe-console-param-list - List all parameters for a console
+xe-console-param-remove - Remove a parameter for a console
+xe-console-param-set - Set a parameter for a console
 xe-diagnostic-compact
 xe-diagnostic-db-log
 xe-diagnostic-db-stats
 xe-diagnostic-gc-stats
 xe-diagnostic-license-status
 xe-diagnostic-timing-stats
-xe-diagnostic-vdi-status
-xe-diagnostic-vm-status
+xe-diagnostic-vdi-status - View status of all VDIs
+xe-diagnostic-vm-status - View status of all VMs
 xe-event-wait
 xe-host-apply-edition
 xe-host-backup
@@ -433,28 +433,28 @@ xe-host-bugreport-upload
 xe-host-call-plugin
 xe-host-compute-free-memory
 xe-host-compute-memory-overhead
-xe-host-cpu-info
-xe-host-cpu-list
-xe-host-cpu-param-get
-xe-host-cpu-param-list
+xe-host-cpu-info - View CPU information for a host
+xe-host-cpu-list - List CPUs for all hosts
+xe-host-cpu-param-get - Return a CPU parameter for a host
+xe-host-cpu-param-list - List all parameters for a CPU
 xe-host-crashdump-destroy
-xe-host-crashdump-list
-xe-host-crashdump-param-get
-xe-host-crashdump-param-list
+xe-host-crashdump-list - List all crashdumps for a host
+xe-host-crashdump-param-get - Return a parameter for a crashdump
+xe-host-crashdump-param-list - List all parameters for a crashdump
 xe-host-crashdump-upload
 xe-host-data-source-forget
 xe-host-data-source-list
 xe-host-data-source-query
 xe-host-data-source-record
-xe-host-disable
+xe-host-disable - Disable a host
 xe-host-disable-local-storage-caching
-xe-host-dmesg
+xe-host-dmesg - Display system messages for a host
 xe-host-emergency-ha-disable
 xe-host-emergency-management-reconfigure
-xe-host-enable
+xe-host-enable - Enable a host
 xe-host-enable-local-storage-caching
 xe-host-evacuate
-xe-host-forget
+xe-host-forget - Forget a host
 xe-host-get-cpu-features
 xe-host-get-server-certificate
 xe-host-get-system-status
@@ -462,28 +462,28 @@ xe-host-get-system-status-capabilities
 xe-host-get-uncooperative-vms
 xe-host-get-vms-which-prevent-evacuation
 xe-host-is-in-emergency-mode
-xe-host-license-add
+xe-host-license-add - Add a license to a host
 xe-host-license-view
-xe-host-list
+xe-host-list - List all hosts
 xe-host-logs-download
 xe-host-management-disable
 xe-host-management-reconfigure
-xe-host-param-add
-xe-host-param-clear
-xe-host-param-get
-xe-host-param-list
-xe-host-param-remove
-xe-host-param-set
+xe-host-param-add - Add a parameter for a host
+xe-host-param-clear - Clear a parameter for a host
+xe-host-param-get - Return a parameter for a host
+xe-host-param-list - List all parameters for a host
+xe-host-param-remove - Remove a parameter for a host
+xe-host-param-set - Set a parameter for a host
 xe-host-power-on
-xe-host-reboot
+xe-host-reboot - Reboot a host
 xe-host-reset-cpu-features
-xe-host-restore
+xe-host-restore - Restore a host
 xe-host-retrieve-wlb-evacuate-recommendations
 xe-host-send-debug-keys
 xe-host-set-cpu-features
 xe-host-set-hostname-live
 xe-host-set-power-on-mode
-xe-host-shutdown
+xe-host-shutdown - Shutdown a host
 xe-host-shutdown-agent
 xe-host-sync-data
 xe-host-syslog-reconfigure
@@ -491,18 +491,18 @@ xe-log-get
 xe-log-get-keys
 xe-log-reopen
 xe-log-set-output
-xe-message-create
-xe-message-destroy
-xe-message-list
-xe-message-param-get
-xe-message-param-list
-xe-network-create
-xe-network-destroy
-xe-network-list
-xe-network-param-add
-xe-network-param-clear
-xe-network-param-get
-xe-network-param-list
+xe-message-create - Create a message
+xe-message-destroy - Destroy a message
+xe-message-list - List all messages
+xe-message-param-get - Return a parameter for a message
+xe-message-param-list - List all parameters for a message
+xe-network-create - Create a network
+xe-network-destroy - Destroy a network
+xe-network-list - List all networks
+xe-network-param-add - Add a parameter for a network
+xe-network-param-clear - Clear a parameter for a network
+xe-network-param-get - Return a parameter for a network
+xe-network-param-list - List all parameters for a network
 xe-network-param-remove
 xe-network-param-set
 xe-patch-apply
@@ -770,4 +770,5 @@ xe-vm-vif-list
 
 AUTHORS
 
-Grant McWilliams
+Grant McWilliams <grant@xenapiadmin.com>
+Lisa Nguyen <lisa@xenapiadmin.com>
