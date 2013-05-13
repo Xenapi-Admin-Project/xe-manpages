@@ -7,7 +7,7 @@ XE(1)
 
 NAME
 ----
-xe-pbd-param-list - Displays all parameters for a physical block device (PBD).
+xe-pbd-param-list - Displays all parameters for a PBD.
 
 SYNOPSIS
 --------
@@ -15,7 +15,7 @@ SYNOPSIS
 
 DESCRIPTION
 -----------
-*xe pbd-param-list* displays all parameters for a specific PBD.
+*xe pbd-param-list* displays all parameters for a specific Physical Block Device (PBD).
 
 REQUIRED PARAMETERS
 -------------------
