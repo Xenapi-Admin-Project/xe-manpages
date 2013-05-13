@@ -26,7 +26,7 @@ REQUIRED PARAMETERS
 
 EXAMPLES
 --------
-To see the status of a VDI, type:: :
+To see the status of a VDI ::
 	*xe diagnostic-vdi-status uuid=<VDI UUID>*
 
 SEE ALSO
