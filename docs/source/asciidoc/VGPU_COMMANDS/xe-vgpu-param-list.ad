@@ -7,7 +7,7 @@ XE(1)
 
 NAME
 ----
-xe-vgpu-param-list - Displays all parameters for a virtual GPU.
+xe-vgpu-param-list - Displays all parameters for a VGPU.
 
 SYNOPSIS
 --------
@@ -15,7 +15,7 @@ SYNOPSIS
 
 DESCRIPTION
 -----------
-*xe vgpu-param-list* displays all parameters for a specific virtual GPU.
+*xe vgpu-param-list* displays all parameters for a specific Virtual Graphics Processing Unit (VGPU).
 
 REQUIRED PARAMETERS
 -------------------
