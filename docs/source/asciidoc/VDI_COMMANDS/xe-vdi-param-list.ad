@@ -7,7 +7,7 @@ XE(1)
 
 NAME
 ----
-xe-vdi-param-list - Displays all parameters for a virtual disk image (VDI)
+xe-vdi-param-list - Displays all parameters for a VDI
 
 SYNOPSIS
 --------
@@ -15,7 +15,7 @@ SYNOPSIS
 
 DESCRIPTION
 -----------
-*xe vdi-param-list* displays all parameters for a specific VDI.
+*xe vdi-param-list* displays all parameters for a specific Virtual Disk Image (VDI).
 
 REQUIRED PARAMETERS
 -------------------
@@ -24,7 +24,7 @@ REQUIRED PARAMETERS
 
 EXAMPLES
 --------
-To display all parameters for a specific vdi:
+To display all parameters for a specific VDI:
 
 - *xe vdi-param-list* uuid=<VDI UUID>
 
