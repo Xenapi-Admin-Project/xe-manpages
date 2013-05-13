@@ -7,7 +7,7 @@ XE(1)
 
 NAME
 ----
-xe-drtask-param-list - Displays all parameters for a drtask 
+xe-drtask-param-list - Displays all parameters for a disaster recovery task (DR task)
 
 SYNOPSIS
 --------
@@ -15,16 +15,16 @@ SYNOPSIS
 
 DESCRIPTION
 -----------
-*xe drtask-param-list* displays all parameters for a specific drtask.
+*xe drtask-param-list* displays all parameters for a specific DR task.
 
 REQUIRED PARAMETERS
 -------------------
 *uuid*::
-	drtask UUID - Use *xe drtask-list* to obtain a list of drtask UUIDs.
+	DR task UUID - Use *xe drtask-list* to obtain a list of DR task UUIDs.
 
 EXAMPLES
 --------
-To display all parameters for a specific drtask: 
+To display all parameters for a specific DR task: 
 
 - *xe drtask-param-list* uuid=<DRTASK UUID>
 
@@ -44,5 +44,5 @@ For guidelines on submitting bug reports see http://wiki.xen.org/wiki/Reporting_
 
 COPYRIGHT
 ---------
-Copyright \(C) 2012 - Matthew Spah
+Copyright \(C) 2013 - Matthew Spah
 Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License, Version 1.3 or any later version published by the Free Software Foundation; with no Invariant Sections, no Front-Cover Texts, and no Back- Cover Texts. A copy of the license is included in the section entitled "GNU Free Documentation License"
