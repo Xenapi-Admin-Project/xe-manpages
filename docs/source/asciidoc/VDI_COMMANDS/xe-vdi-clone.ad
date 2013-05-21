@@ -7,32 +7,21 @@ XE(1)
 
 NAME
 ----
-*xe vdi-clone* - Clones a virtual disk image
+*xe vdi-clone* - Clones a VDI
 
 SYNOPSIS
 --------
-*xe vdi-clone* uuid=<VDI UUID> [ driver-params=<???> new-name-label=<Name> new-name-description=<Description> ]
+*xe vdi-clone* uuid=<VDI UUID> [ driver-params=<???> new-name-label=<NAME> new-name-description=<DESCRIPTION> ]
 
 
 DESCRIPTION
 -----------
-*xe vdi-clone* clones a VDI and will be stored in the same SR where the original VDI resides. Highly recommended to give the clone a name and brief description. 
-//what is the default name for the clone? Description parameter is left blank if no description is given. 
-// I'll clone a couple and report the output now - Matt	
-// 
-// Okay Lisa So I created a 2 MiB VDI named TestVDI on my remote software iSCSI SR
-// xe vdi-create virtual-size=2MiB sr-uuid=dc1f0fea-0264-d222-6230-a5779f4a0437 name-label=TestVDI type=user sharable=true
-// That created a VDI named TestVDI.. no shit right?
-// Anyway I cloned it... and to my surprise two new VDIs showed up
-// a VDI named "base copy" and a second VDI named "TestVDI"..
-// That gives us 2 "TestVDIs" and a "base copy".. I couldn't destroy the base copy 
-// it returned this error..bah nevermind I lost the error
-// The base copy disapeared after I destroyed the "TestVDI" clone.. I'm curious if the base copy is how they accomplish high speed clones?
-// If this is too much crap let me know and I'll post it on google+ next time
+*xe vdi-clone* clones a VDI and will be stored in the same SR where the original VDI resides. Highly recommended to give the clone a name and brief description.
 
+If the description parameter is left alone, then it is blank.
 
-
-
+A base copy of the VDI may appear on the VDI list after the cloning process ends.
+ 
 REQUIRED PARAMETERS
 -------------------
 *uuid*::
@@ -41,13 +30,7 @@ REQUIRED PARAMETERS
 
 OPTIONAL PARAMETERS
 -------------------
-//look up what this parameter is
 *driver-params*::
-
-//"The optional driver-params map parameter can be used for passing extra vendor-specific configuration information
-//to the back end storage driver that the VDI is based on. See the storage vendor driver documentation  for details" This is from the 6.0 xenserver manual.. - Matt
-
-
 
 *new-name-label*::
 	Name label for the VDI clone
@@ -57,29 +40,25 @@ OPTIONAL PARAMETERS
 
 EXAMPLES
 --------
-To clone an existing VDI and name it
-		xe vdi-clone uuid=<VDI UUID> new-name-label=<Name Label>
+To clone an existing VDI and name it:
+- xe vdi-clone uuid=<VDI UUID> new-name-label=<Name Label>
 	
-
 SEE ALSO
 --------
-*xe-vdi-list*(1)
-
+*xe help vdi-clone*, *xe-vdi-list*(1), *xe-vdi-destroy*(1)
 
 AUTHORS
 -------
-Manpage Author(s): ::
-Lisa Nguyen <lisa@xenapiadmin.com>
-
+Manpage Author(s):
+- Lisa Nguyen <lisa@xenapiadmin.com>
+- Matthew Spah <spahmatthew@xenapiadmin.com>
 
 BUGS
 ----
 See http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP on how to send bug reports, send bugs and general questions to xen-api@lists.xen.org.
 
-
-
 COPYRIGHT
 ---------
-Copyright \(C) 2012 - Lisa Nguyen
+Copyright \(C) 2012-2013 - Lisa Nguyen, Matthew Spah
 
-Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License, Version 1.3 or any later version published by the Free Software Foundation; with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts. A copy of the license is included in the section entitled "GNU Free Documentation License"
+Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License, Version 1.3 or any later version published by the Free Software Foundation; with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts. A copy of the license is included in the section entitled "GNU Free Documentation License".
