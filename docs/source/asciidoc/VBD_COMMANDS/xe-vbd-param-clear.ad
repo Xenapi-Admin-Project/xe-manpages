@@ -7,11 +7,7 @@ XE(1)
 
 NAME
 ----
-*xe vbd-param-clear* - Clears a parameter for a virtual block device
-
-NAME
-----
-xe-vbd-param-clear - Clears a specific writable parameter for a VBD.
+*xe-vbd-param-clear* - Clears a specific writable parameter for a VBD.
 
 SYNOPSIS
 --------
@@ -26,12 +22,12 @@ REQUIRED PARAMETERS
 *uuid*::
 	VBD UUID - Use *xe vbd-list* to obtain VBD UUIDs.
 *param-name*::
-	Writable parameter to be cleared. (e.g. other-config). 
+	Writable parameter to be cleared (e.g. other-config). 
 
 EXAMPLES
 --------
-To clear all key/value pairs from the *other-config* parameter: ::
-	*xe vbd-param-clear* uuid=<VBD UUID> param-name="other-config"
+To clear all key/value pairs from the *other-config* parameter: 
+- *xe vbd-param-clear* uuid=<VBD UUID> param-name="other-config"
 
 SEE ALSO
 --------
@@ -39,9 +35,9 @@ SEE ALSO
 
 AUTHORS
 -------
-Manpage Author(s): ::
-Matthew Spah <spahmatthew@xenapiadmin.com> +
-Lisa Nguyen <lisa@xenapiadmin.com>
+Manpage Author(s):
+- Matthew Spah <spahmatthew@xenapiadmin.com> 
+- Lisa Nguyen <lisa@xenapiadmin.com>
 
 BUGS
 ----
@@ -49,6 +45,6 @@ For guidelines on submitting bug reports see http://wiki.xen.org/wiki/Reporting_
 
 COPYRIGHT
 ---------
-Copyright \(C) 2012 - Matthew Spah, Lisa Nguyen
+Copyright \(C) 2012, 2013 - Matthew Spah, Lisa Nguyen
 
-Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License, Version 1.3 or any later version published by the Free Software Foundation; with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts. A copy of the license is included in the section entitled "GNU Free Documentation License"
+Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License, Version 1.3 or any later version published by the Free Software Foundation; with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts. A copy of the license is included in the section entitled "GNU Free Documentation License".
