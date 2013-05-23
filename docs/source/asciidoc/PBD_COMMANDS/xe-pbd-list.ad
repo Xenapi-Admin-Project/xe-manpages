@@ -7,7 +7,7 @@ XE(1)
 
 NAME
 -----
-xe-pbd-list - Displays Physical Block Devices and all their parameters
+xe-pbd-list - Displays all PBDs and their parameters
 
 SYNOPSIS
 --------
@@ -17,15 +17,15 @@ DESCRIPTION
 -----------
 *xe pbd-list* displays Physical Block Devices (PBD) and their parameters.
 
-Output can be filtered by using the *params* parameter and a value (separate multiple parameters with commas): ::
-	*xe pbd-list params="sr-uuid"* +
-	*xe pbd-list params="uuid,host-uuid,sr-uuid"*
+Output can be filtered by using the *params* parameter and a value (separate multiple parameters with commas):
+- *xe pbd-list params="sr-uuid"* 
+- *xe pbd-list params="uuid,host-uuid,sr-uuid"*
 
-Output can be filtered by using parameter values and the desired value: ::
-	*xe pbd-list currently-attached="true"*
+Output can be filtered by using parameter values and the desired value:
+- *xe pbd-list currently-attached="true"*
 
-Append --minimal to display values for one parameter on a single line separated by commas: ::
-	*xe pbd-list params="uuid" --minimal*
+Append --minimal to display values for one parameter on a single line separated by commas:
+- *xe pbd-list params="uuid" --minimal*
 
 OPTIONAL PARAMETERS
 -------------------
@@ -48,14 +48,14 @@ OPTIONAL PARAMETERS
 
 EXAMPLES
 --------
-To display all parameters for all *: ::
-	*xe pbd-list* params="all"
-To display all paramters for a specific *: ::
-	*xe pbd-list* uuid=<PBD UUID> params="all"
-To display host-uuid for a specific PBD: ::
-	*xe pbd-list* uuid=<PBD UUID> params="host-uuid"
-To display the uuid and host-uuid parameters of all PBDs that are currently-attached: ::
-	*xe pbd-list* currently-attached="true" params="uuid,host-uuid"
+To display all parameters for all *: 
+- *xe pbd-list* params="all"
+To display all paramters for a specific *:
+- *xe pbd-list* uuid=<PBD UUID> params="all"
+To display host-uuid for a specific PBD:
+- *xe pbd-list* uuid=<PBD UUID> params="host-uuid"
+To display the uuid and host-uuid parameters of all PBDs that are currently-attached:
+- *xe pbd-list* currently-attached="true" params="uuid,host-uuid"
 
 SEE ALSO
 --------
@@ -63,8 +63,8 @@ SEE ALSO
 
 AUTHORS
 -------
-Manpage Author(s): ::
-Matthew Spah <spahmatthew@xenapiadmin.com>
+Manpage Author(s):
+- Matthew Spah <spahmatthew@xenapiadmin.com>
 
 BUGS
 ----
@@ -72,5 +72,6 @@ For guidelines on submitting bug reports see http://wiki.xen.org/wiki/Reporting_
 
 COPYRIGHT
 ---------
-Copyright \(C)  2012 - Matthew Spah
-Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License, Version 1.3 or any later version published by the Free Software Foundation; with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts. A copy of the license is included in the section entitled "GNU Free Documentation License"
+Copyright \(C)  2012, 2013 - Matthew Spah
+
+Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License, Version 1.3 or any later version published by the Free Software Foundation; with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts. A copy of the license is included in the section entitled "GNU Free Documentation License".
