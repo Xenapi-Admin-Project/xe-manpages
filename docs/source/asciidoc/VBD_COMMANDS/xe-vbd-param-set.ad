@@ -7,25 +7,23 @@ XE(1)
 
 NAME
 ----
-*xe vbd-param-set* - 
+*xe vbd-param-set* - Sets parameters for a VBD. 
 
 SYNOPSIS
 --------
 
-*xe vbd-param-set* uuid=<VBD UUID> [ userdevice=<???> bootable=<???> mode=<???> type=<???> unpluggable=<???> qos_algorithm_type=<???> qos_algorithm_params:<???> other-config:<???> ]
+*xe vbd-param-set* uuid=<VBD UUID> [  ]
 
 DESCRIPTION
 -----------
-*xe vbd-param-set* sets read/write parameters for a VBD. Highly recommended to use one or more optional parameters.
+*xe vbd-param-set* sets read/write parameters for a Virtual Block Device (VBD).
 
 
 REQUIRED PARAMETERS
 -------------------
-
 *uuid*::
-	UUID of VBD. Use *xe vbd-list* to obtain a list of VBDs.
+	VBD UUID - Use *xe vbd-list* to obtain a list of VBD UUIDs.
 	
-
 OPTIONAL PARAMETERS
 -------------------
 *userdevice*::
@@ -49,11 +47,6 @@ OPTIONAL PARAMETERS
 
 EXAMPLES
 --------
-//one example using uuid, bootable, mode
-//one example setting qos algorithm stuff
-	
-	
-
 
 SEE ALSO
 --------
@@ -62,18 +55,16 @@ SEE ALSO
 
 AUTHORS
 -------
-Manpage Author(s): ::
-Lisa Nguyen <lisa@xenapiadmin.com>
+Manpage Author(s):
+- Lisa Nguyen <lisa@xenapiadmin.com>
 
 
 BUGS
 ----
 See http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP on how to send bug reports, send bugs and general questions to xen-api@lists.xen.org.
 
-
-
 COPYRIGHT
 ---------
-Copyright \(C) 2012 - Lisa Nguyen
+Copyright \(C) 2012, 2013 - Lisa Nguyen
 
-Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License, Version 1.3 or any later version published by the Free Software Foundation; with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts. A copy of the license is included in the section entitled "GNU Free Documentation License"
+Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License, Version 1.3 or any later version published by the Free Software Foundation; with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts. A copy of the license is included in the section entitled "GNU Free Documentation License".

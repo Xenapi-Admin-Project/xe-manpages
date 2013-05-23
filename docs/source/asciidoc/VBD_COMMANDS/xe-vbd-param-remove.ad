@@ -11,7 +11,7 @@ xe-vbd-param-remove - Removes a writable parameter key for a VBD.
 
 SYNOPSIS
 --------
-*xe vbd-param-remove* uuid=<VBD UUID> param-name=<Parameter> param-key=<Parameter Key>
+*xe vbd-param-remove* uuid=<VBD UUID> param-name=<PARAMETER> param-key=<KEY>
 
 DESCRIPTION
 -----------
@@ -28,8 +28,9 @@ REQUIRED PARAMETERS
 
 EXAMPLES
 --------
-To remove a map parameter key from *qos_algorithm_type*: ::
-	*xe vbd-param-remove* uuid=<VBD UUID> param-name="qos_algorithm_type" param-key=<MAP PARAMETER KEY>
+To remove a map parameter key from *qos_algorithm_type*:
+
+- *xe vbd-param-remove* uuid=<VBD UUID> param-name="qos_algorithm_type" param-key=<MAP PARAMETER KEY>
 
 SEE ALSO
 --------
@@ -37,9 +38,9 @@ SEE ALSO
 
 AUTHORS
 -------
-Manpage Author(s): ::
-Matthew Spah <spahmatthew@xenapiadmin.com>
-Lisa Nguyen <lisa@xenapiadmin.com>
+Manpage Author(s):
+- Matthew Spah <spahmatthew@xenapiadmin.com>
+- Lisa Nguyen <lisa@xenapiadmin.com>
 
 BUGS
 ----
@@ -47,7 +48,6 @@ For guidelines on submitting bug reports see http://wiki.xen.org/wiki/Reporting_
 
 COPYRIGHT
 ---------
-Copyright \(C) 2012 - Matthew Spah, Lisa Nguyen
+Copyright \(C) 2012, 2013 - Matthew Spah, Lisa Nguyen
 
-Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License, Version 1.3 or any later version published by the Free Software Foundation; with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts. A copy of the license is included in the section entitled "GNU Free Documentation License"
-
+Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License, Version 1.3 or any later version published by the Free Software Foundation; with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts. A copy of the license is included in the section entitled "GNU Free Documentation License".
