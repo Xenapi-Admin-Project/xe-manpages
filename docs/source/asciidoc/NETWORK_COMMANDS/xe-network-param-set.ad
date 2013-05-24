@@ -51,14 +51,21 @@ OPTIONAL PARAMETERS
 
 EXAMPLES
 --------
-To set the MTU size to 9000 for a network: ::
-	*xe network-param-set* uuid=<NETWORK UUID> MTU="9000"
-To enable scatter gather on a network: ::
-	*xe network-param-set* uuid=<NETWORK UUID> other-config:"ethtool-sg=on"
-To create a static route that would route traffic from 192.168.1.0/24 to the gateway of 192.168.0.1: ::
-	*xe network-param-set* uuid=<NETWORK UUID> other-config:"static-routes=192.168.1.0/24/192.168.0.1"
-To create multiple static routes: ::
-	*xe network-param-set* uuid=<NETWORK UUID> other-config:"static-routes=192.168.1.0/24/192.168.0.1,192.168.2.0/24/192.168.0.2"
+To set the MTU size to 9000 for a network:
+
+- *xe network-param-set* uuid=<NETWORK UUID> MTU="9000"
+
+To enable scatter gather on a network:
+
+- *xe network-param-set* uuid=<NETWORK UUID> other-config:"ethtool-sg=on"
+
+To create a static route that would route traffic from 192.168.1.0/24 to the gateway of 192.168.0.1:
+
+- *xe network-param-set* uuid=<NETWORK UUID> other-config:"static-routes=192.168.1.0/24/192.168.0.1"
+
+To create multiple static routes:
+	
+- *xe network-param-set* uuid=<NETWORK UUID> other-config:"static-routes=192.168.1.0/24/192.168.0.1,192.168.2.0/24/192.168.0.2"
 
 SEE ALSO
 --------
@@ -66,8 +73,9 @@ SEE ALSO
 
 AUTHORS
 -------
-Manpage Author(s): ::
-Matthew Spah <spahmatthew@xenapiadmin.com>
+Manpage Author(s)
+
+- Matthew Spah <spahmatthew@xenapiadmin.com>
 
 BUGS
 ----

@@ -21,8 +21,9 @@ To remove/detach
 
 - PIFs use *xe pif-forget* 
 - Bonds use *xe bond-destroy* 
-- VIF interfaces use *xe vif-unplug* 
+- VIFs use *xe vif-unplug* 
 - VLANs use *xe vlan-destroy* 
+
 
 REQUIRED PARAMETERS
 -------------------
@@ -31,8 +32,9 @@ REQUIRED PARAMETERS
 
 EXAMPLES
 --------
-To remove a network: ::
-	*xe network-destroy* uuid=<NETWORK UUID>
+To remove a network:
+
+- *xe network-destroy* uuid=<NETWORK UUID>
 
 SEE ALSO
 --------
@@ -40,8 +42,9 @@ SEE ALSO
 
 AUTHORS
 -------
-Manpage Author(s): ::
-Matthew Spah <spahmatthew@xenapiadmin.com>
+Manpage Author(s):
+
+ - Matthew Spah <spahmatthew@xenapiadmin.com>
 
 BUGS
 ----

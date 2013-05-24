@@ -27,7 +27,17 @@ All manpages will include the following elements
 	10. What should I do if I find a bug in the command/manpage?
 	11. Who owns the copyright to the manpage?
 	12. Is there any after thoughts?
-
+	
+	
+1. Asciidoc tricks
+		
+		To create unordered list preceed each item with a hyphen, blank lines are required before and after the list: 
+			
+			- Apple
+			- Orange
+			- Banana 
+			- Cat
+			- Tac
 
 1. Manpage Heading
 
@@ -53,8 +63,6 @@ The SYNOPSIS section shows the command syntax.
 * Parameters between <> should be capitalized. 
 * The command name should be bolded where ever it is used!
 
-
-
 	*xe cd-list* [ params=<PARAMETER> ] [--minimal]
 
  
@@ -68,9 +76,10 @@ The DESCRIPTION section describes the command and its uses. This can be as short
 
 	*xe network-list* displays networks and their parameters.
 
-	Output can be filtered by using the *params* parameter and a value (separate multiple parameters with commas): ::
-		*xe network-list params=PIF-uuids* +
-		*xe network-list params=PIF-uuids,VIF-uuids,name-label,name-description*
+	Output can be filtered by using the *params* parameter and a value (separate multiple parameters with commas):
+		
+		- *xe network-list params=PIF-uuids* 
+		- *xe network-list params=PIF-uuids,VIF-uuids,name-label,name-description*
 
 	Output can be filtered by using parameter values and the desired value: ::
 		*xe network-list bridge=xapi0*
@@ -174,8 +183,10 @@ Also list xe help <command> as a second source.
 
 The AUTHORS section should specify all the authors that worked on the manpage.
 
-Manpage Author(s):: 
+Manpage Author(s)
 	[Author(s)]
+	- Authors
+	- Authors
  
  
 10. BUGS

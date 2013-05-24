@@ -32,14 +32,17 @@ OPTIONAL PARAMETERS
 
 EXAMPLES
 --------
-To display the *VIF-uuids* attached to a network: ::
-	*xe network-param-get* uuid=<NETWORK UUID> param-name="VIF-uuids"
-	
-To display the *static-routes* present on a network: ::
-	*xe network-param-get* uuid=<NETWORK UUID> param-name="other-config" param-key="static-routes"
+To display the *VIF-uuids* attached to a network:
 
-To display the *default-locking-mode* parameter on a network: ::
-	*xe network-param-get* uuid=<NETWORK UUID> param-name="default-locking-mode"
+- *xe network-param-get* uuid=<NETWORK UUID> param-name="VIF-uuids"
+	
+To display the *static-routes* present on a network:
+
+- *xe network-param-get* uuid=<NETWORK UUID> param-name="other-config" param-key="static-routes"
+
+To display the *default-locking-mode* parameter on a network:
+
+- *xe network-param-get* uuid=<NETWORK UUID> param-name="default-locking-mode"
 
 SEE ALSO
 --------
@@ -47,8 +50,9 @@ SEE ALSO
 
 AUTHORS
 -------
-Manpage Author(s): ::
-Matthew Spah <spahmatthew@xenapiadmin.com>
+Manpage Author(s):
+
+- Matthew Spah <spahmatthew@xenapiadmin.com>
 
 BUGS
 ----

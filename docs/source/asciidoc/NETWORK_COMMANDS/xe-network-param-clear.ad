@@ -27,11 +27,13 @@ REQUIRED PARAMETERS
 
 EXAMPLES
 --------
-To clear all values found in the *other-config* parameter: ::
-	*xe network-param-clear* uuid=<NETWORK UUID> param-name="other-config"
+To clear all values found in the *other-config* parameter:
+
+- *xe network-param-clear* uuid=<NETWORK UUID> param-name="other-config"
 
 To clear the *name-description* parameter: ::
-	*xe network-param-clear* uuid=<NETWORK UUID> param-name="name-description"
+
+- *xe network-param-clear* uuid=<NETWORK UUID> param-name="name-description"
 
 SEE ALSO
 --------
@@ -39,8 +41,9 @@ SEE ALSO
 
 AUTHORS
 -------
-Manpage Author(s): ::
-Matthew Spah <spahmatthew@xenapiadmin.com>
+Manpage Author(s):
+
+- Matthew Spah <spahmatthew@xenapiadmin.com>
 
 BUGS
 ----

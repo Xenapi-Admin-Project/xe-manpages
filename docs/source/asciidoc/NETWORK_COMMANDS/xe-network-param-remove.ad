@@ -15,7 +15,7 @@ SYNOPSIS
 
 DESCRIPTION
 -----------
-*xe network-param-remove* removes a key from a set parameter or key/value pairs from a map parameter.. Use *xe network-list* and *xe network-param-list* to identify writable set or map parameters (SRW, MRW).﻿
+*xe network-param-remove* removes a key from a set parameter or key/value pairs from a map parameter. Use *xe network-list* and *xe network-param-list* to identify writable set or map parameters (SRW, MRW).﻿
 
 REQUIRED PARAMETERS
 -------------------
@@ -28,10 +28,13 @@ REQUIRED PARAMETERS
 
 EXAMPLES
 --------
-To remove a specific key in the *tag* parameter: ::
-	*xe network-param-remove* uuid=<NETWORK UUID> param-name="tags" param-key=<KEY>
-To remove *static-routes* from a network: ::
-	*xe network-param-remove* uuid=<NETWORK UUID> param-name="other-config" param-key="static-routes"
+To remove a specific key in the *tag* parameter:
+
+- *xe network-param-remove* uuid=<NETWORK UUID> param-name="tags" param-key=<KEY>
+
+To remove *static-routes* from a network:
+
+- *xe network-param-remove* uuid=<NETWORK UUID> param-name="other-config" param-key="static-routes"
 
 SEE ALSO
 --------
@@ -39,8 +42,9 @@ SEE ALSO
 
 AUTHORS
 -------
-Manpage Author(s): ::
-Matthew Spah <spahmatthew@xenapiadmin.com>
+Manpage Author(s)
+
+- Matthew Spah <spahmatthew@xenapiadmin.com>
 
 BUoGS
 ----
