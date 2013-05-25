@@ -1,0 +1,117 @@
+'\" t
+.\"     Title: xe
+.\"    Author: [see the "AUTHORS" section]
+.\" Generator: DocBook XSL Stylesheets v1.78.1 <http://docbook.sf.net/>
+.\"      Date: 05/11/2013
+.\"    Manual: xe network-destroy manual
+.\"    Source: xe network-destory
+.\"  Language: English
+.\"
+.TH "XE" "1" "05/11/2013" "xe network\-destory" "xe network\-destroy manual"
+.\" -----------------------------------------------------------------
+.\" * Define some portability stuff
+.\" -----------------------------------------------------------------
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.\" http://bugs.debian.org/507673
+.\" http://lists.gnu.org/archive/html/groff/2009-02/msg00013.html
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.ie \n(.g .ds Aq \(aq
+.el       .ds Aq '
+.\" -----------------------------------------------------------------
+.\" * set default formatting
+.\" -----------------------------------------------------------------
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
+.ad l
+.\" -----------------------------------------------------------------
+.\" * MAIN CONTENT STARTS HERE *
+.\" -----------------------------------------------------------------
+.SH "NAME"
+xe-network-destroy \- Remove a network
+.SH "SYNOPSIS"
+.sp
+\fBxe network\-destroy\fR uuid=<NETWORK UUID>
+.SH "DESCRIPTION"
+.sp
+\fBxe network\-destroy\fR removes a network that contains no active PIFs, attached VIFs, or VLANs\&.
+.sp
+To remove/detach
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.sp -1
+.IP \(bu 2.3
+.\}
+PIFs use
+\fBxe pif\-forget\fR
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.sp -1
+.IP \(bu 2.3
+.\}
+Bonds use
+\fBxe bond\-destroy\fR
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.sp -1
+.IP \(bu 2.3
+.\}
+VIF interfaces use
+\fBxe vif\-unplug\fR
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.sp -1
+.IP \(bu 2.3
+.\}
+VLANs use
+\fBxe vlan\-destroy\fR
+.RE
+.SH "REQUIRED PARAMETERS"
+.PP
+\fBuuid\fR
+.RS 4
+Network UUID \- Use
+\fBxe network\-list\fR
+to obtain a list of network UUIDs\&.
+.RE
+.SH "EXAMPLES"
+.PP
+To remove a network:
+.RS 4
+\fBxe network\-destroy\fR
+uuid=<NETWORK UUID>
+.RE
+.SH "SEE ALSO"
+.sp
+\fBxe help network\-destroy\fR, \fBxe\-network\-list\fR(1), \fBxe\-pif\-forget\fR(1), \fBxe\-vif\-unplug\fR(1), \fBxe\-vlan\-destroy\fR(1), \fBxe\-bond\-destroy\fR(1)
+.SH "AUTHORS"
+.PP
+Manpage Author(s):
+.RS 4
+Matthew Spah <spahmatthew@xenapiadmin\&.com>
+.RE
+.SH "BUGS"
+.sp
+For guidelines on submitting bug reports see http://wiki\&.xen\&.org/wiki/Reporting_Bugs_against_XCP\&. Submit bugs and general questions to xen\-api@lists\&.xen\&.org\&.
+.SH "COPYRIGHT"
+.sp
+Copyright (C) 2012 \- Matthew Spah Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License, Version 1\&.3 or any later version published by the Free Software Foundation; with no Invariant Sections, no Front\-Cover Texts, and no Back\-Cover Texts\&. A copy of the license is included in the section entitled "GNU Free Documentation License"
