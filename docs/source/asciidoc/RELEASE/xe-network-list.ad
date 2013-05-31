@@ -19,12 +19,12 @@ DESCRIPTION
 
 Output can be filtered by using the *params* parameter and a value (separate multiple parameters with commas):
 
-- *xe network-list params=PIF-uuids* +
+- *xe network-list params="PIF-uuids"*
 - *xe network-list params=PIF-uuids,VIF-uuids,name-label,name-description*
 
 Output can be filtered by using parameter values and the desired value:
 	
-- *xe network-list bridge=xapi0*
+- *xe network-list bridge="xapi0"*
 
 Append --minimal to display values for one parameter on a single line separated by commas:
 	

@@ -9,7 +9,6 @@ NAME
 ----
 xe-bond-set-mode - Set bond type
 
-
 SYNOPSIS
 --------
 *xe bond-set-mode* uuid=<BOND UUID> mode=<BOND MODE>
@@ -19,6 +18,12 @@ DESCRIPTION
 *xe bond-set-mode* changes the bond mode of the selected bond. Bond mode changes are applied immediately upon command excution. Use *xe-bond-param-set* to set bond configuration parameters. 
 
 LACP bonding is only available with the network backend set to openvswitch, whereas balance-slb and active-backup are available for openvswitch and the linux bridge. 
+ 
+// Create a list of which modes are avaible for each noetworking back end  
+// Show how to display the networking backend, and how to switch between the two
+// xe-get-network-backend - to list type
+// xe-switch-network-backend -
+
 
 REQUIRED PARAMETERS
 -------------------

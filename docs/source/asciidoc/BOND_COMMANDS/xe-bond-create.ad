@@ -38,6 +38,7 @@ OPTIONAL PARAMETERS
 *mode*::
 	Specify the type of bond to created. Balance-slb, active-backup and LACP are supported when using openvswitch. Balance-slb and active-backup are supported when using the Linux bridge.
 	
+	// Create a list to describe the different bond modes and their linux modes
 
 *properties*::
 	Additional bond properties - 
