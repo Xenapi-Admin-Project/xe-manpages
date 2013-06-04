@@ -7,7 +7,7 @@ XE(1)
 
 NAME
 -----
-xe-snapshot-unistall - Remove a snapshot and it's attached VDI's.
+xe-snapshot-unistall - Remove a snapshot.
 
 SYNOPSIS
 --------

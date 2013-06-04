@@ -7,7 +7,7 @@ XE(1)
 
 NAME
 -----
-xe-snapshot-destroy - Remove a snapshot
+xe-snapshot-destroy - Destroy a snapshot
 
 SYNOPSIS
 --------
@@ -15,7 +15,7 @@ SYNOPSIS
 
 DESCRIPTION
 -----------
-*xe snapshot-destroy* removes a snapshot
+*xe snapshot-destroy* destroys a snapshot but leaves attached VDIs.
 
 REQUIRED PARAMETERS
 -------------------
@@ -24,12 +24,13 @@ REQUIRED PARAMETERS
 
 EXAMPLES
 --------
-To remove a snapshot:
+To destory a snapshot:
 
-- *xe snapshot-destroy* uuid=<NETWORK UUID>
+- *xe snapshot-destroy* uuid=<SNAPSHOT UUID>
 
 SEE ALSO
 --------
+*xe help snapshot-destroy*, *xe vm-list*(1)
 
 AUTHORS
 -------
