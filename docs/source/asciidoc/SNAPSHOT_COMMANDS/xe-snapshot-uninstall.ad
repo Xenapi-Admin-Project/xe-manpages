@@ -20,7 +20,7 @@ DESCRIPTION
 REQUIRED PARAMETERS
 -------------------
 *uuid*::
-  Snapshot UUID - Use *xe snapshot-list* to obtain a list of snapshot UUID's.
+  Snapshot UUID - Use *xe snapshot-list* to obtain a list of snapshot UUIDs.
 
 EXAMPLES
 --------
@@ -30,7 +30,7 @@ To uninstall a snapshot:
 
 SEE ALSO
 --------
-*xe help snapshot-uninstall*, xe vm-list*(1)
+*xe help snapshot-uninstall*, *xe snapshot-list*, xe vm-list*(1)
 
 AUTHORS
 -------
