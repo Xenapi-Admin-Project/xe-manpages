@@ -37,10 +37,13 @@ OPTIONAL PARAMETERS
 	
 EXAMPLES
 --------
-To set dhcp mode: ::
-	*xe pif-reconfigure-ipv6* mode="dhcp" uuid=<PIF UUID>
-To set the address mode to static with a gateway address and one DNS server: ::
-	*xe pif-reconfigure-ipv6* mode="static" uuid=<PIF UUID> IPv6=<IPV6 ADDRESS> gateway=<GATEWAY ADDRESS> DNS=<NAME SERVER>
+To set dhcp mode:
+
+- *xe pif-reconfigure-ipv6* mode="dhcp" uuid=<PIF UUID>
+
+To set the address mode to static with a gateway address and one DNS server:
+
+- *xe pif-reconfigure-ipv6* mode="static" uuid=<PIF UUID> IPv6=<IPV6 ADDRESS> gateway=<GATEWAY ADDRESS> DNS=<NAME SERVER>
 
 SEE ALSO
 --------
@@ -48,9 +51,10 @@ SEE ALSO
 
 AUTHORS
 -------
-Manpage Author(s): ::
-Matthew Spah <spahmatthew@xenapiadmin.com> +
-Lisa Nguyen <lisa@xenapiadmin.com>
+Manpage Author(s):
+
+- Matthew Spah <spahmatthew@xenapiadmin.com>
+- Lisa Nguyen <lisa@xenapiadmin.com>
 
 BUGS
 ----

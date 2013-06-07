@@ -15,7 +15,7 @@ SYNOPSIS
 
 DESCRIPTION
 -----------
-*xe pif-param-add* adds a key to a set or a key/value pair to a map parameter. Use *xe pif-list* and *xe pif-param-list* to identify writable set or map parameters (SRW, MRW).
+*xe pif-param-add* adds a key to a set parameter or a key/value pair to a map parameter. Use *xe pif-list* and *xe pif-param-list* to identify writable set or map parameters (SRW, MRW).﻿
 
 REQUIRED PARAMETERS
 -------------------

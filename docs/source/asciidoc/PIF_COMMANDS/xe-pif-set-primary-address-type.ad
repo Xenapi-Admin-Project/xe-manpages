@@ -26,10 +26,13 @@ REQUIRED PARAMETERS
 	
 EXAMPLES
 --------
-To set the primary address type to IPv4: ::
-	*xe pif-set-primary-address-type* uuid=<PIF UUID> primary_address_type="ipv4"
-To set the primary address type to IPv6: ::
-	*xe pif-set-primary-address-type* uuid=<PIF UUID> primary_address_type="ipv6"
+To set the primary address type to IPv4:
+
+- *xe pif-set-primary-address-type* uuid=<PIF UUID> primary_address_type="ipv4"
+
+To set the primary address type to IPv6:
+
+- *xe pif-set-primary-address-type* uuid=<PIF UUID> primary_address_type="ipv6"
 
 SEE ALSO
 --------
@@ -37,9 +40,10 @@ SEE ALSO
 
 AUTHORS
 -------
-Manpage Author(s): ::
-Matthew Spah <spahmatthew@xenapiadmin.com> +
-Lisa Nguyen <lisa@xenapiadmin.com>
+Manpage Author(s):
+
+- Matthew Spah <spahmatthew@xenapiadmin.com>
+- Lisa Nguyen <lisa@xenapiadmin.com>
 
 BUGS
 ----

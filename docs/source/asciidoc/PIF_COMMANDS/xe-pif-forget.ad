@@ -24,9 +24,10 @@ REQUIRED PARAMETERS
 	
 EXAMPLES
 ---------
-To detach and remove a PIF: ::
-	*xe pif-unplug* uuid=<PIF UUID> +
-	*xe pif-forget* uuid=<PIF UUID>
+To detach and remove a PIF:
+// do we need to even unplug it anymore? -matt 
+- *xe pif-unplug* uuid=<PIF UUID>
+- *xe pif-forget* uuid=<PIF UUID>
 		
 SEE ALSO
 --------

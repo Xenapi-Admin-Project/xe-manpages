@@ -19,7 +19,10 @@ DESCRIPTION
 
 Use *xe pif-plug* to attach the new PIF to its external network. 
 
-When adding new PIFs to an existing pool, use *xe pif-introduce* on the pool master, then on each slave host to match the pool masters network configuration. 
+When adding new PIFs to an existing pool:
+
+- use *xe pif-introduce* on the pool master
+- on each slave host excute *xe pif-introduce* to match the pool masters network configuration. 
 
 REQUIRED PARAMETERS
 -------------------
@@ -35,11 +38,14 @@ OPTIONAL PARAMETERS
 	
 EXAMPLES
 --------
-To introduce a new PIF associated with eth2: ::
-	*xe pif-introduce* host-uuid=<HOST UUID> device="eth2"
-To introduce a new PIF associated with eth2 and then attach it to its network: ::
-	*xe pif-introduce* host-uuid=<HOST UUID> device="eth2" +
-	*xe pif-plug* uuid=<NEW PIF UUID>
+To introduce a new PIF associated with eth2:
+
+- *xe pif-introduce* host-uuid=<HOST UUID> device="eth2"
+
+To introduce a new PIF associated with eth2 and then attach it to its network:
+
+- *xe pif-introduce* host-uuid=<HOST UUID> device="eth2"
+- *xe pif-plug* uuid=<NEW PIF UUID>
 
 SEE ALSO
 --------
@@ -47,9 +53,10 @@ SEE ALSO
 
 AUTHORS
 -------
-Manpage Author(s): ::
-Matthew Spah <spahmatthew@xenapiadmin.com> +
-Lisa Nguyen <lisa@xenapiadmin.com>
+Manpage Author(s):
+
+- Matthew Spah <spahmatthew@xenapiadmin.com> 
+- Lisa Nguyen <lisa@xenapiadmin.com>
 
 BUGS
 ----

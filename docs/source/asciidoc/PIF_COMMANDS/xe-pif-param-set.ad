@@ -15,7 +15,7 @@ SYNOPSIS
 
 DESCRIPTION
 -----------
-*xe pif-param-set* sets writable parameters for a PIF. Use xe *-list and xe *-param-list to identify writable parameters (RW, SRW, MRW).
+*xe pif-param-set* sets writable parameters. Use *xe pif-list* and *xe pif-param-list to identify writable parameters (RW, MRW). To append a value to a writable set or map (SRW, MRW) parameter use *xe pif-param-add*. 
 
 Changes to the *other-config* fields of a PIF interface will only take effect after a reboot or use of *xe pif-unplug* and *xe pif-plug*. 
 
@@ -57,12 +57,17 @@ OPTIONAL PARAMETERS
 	
 EXAMPLES
 --------
-To set the speed and duplex settings of a PIF interface, turn off autonegotiation first: ::
-	*xe pif-param-set* uuid=<PIF UUID> other-config:ethtool-autoneg="off"
-To set ethernet speed for a PIF interface: ::
-	*xe pif-param-set* uuid=<PIF UUID> other-config:ethtool-speed="1000"
-To set disallow-unplug on a PIF interface: ::
-	*xe pif-param-set* uuid=<PIF UUID> disallow-unplug="true"
+To set the speed and duplex settings of a PIF interface, turn off autonegotiation first:
+
+- *xe pif-param-set* uuid=<PIF UUID> other-config:ethtool-autoneg="off"
+
+To set ethernet speed for a PIF interface:
+	
+- *xe pif-param-set* uuid=<PIF UUID> other-config:ethtool-speed="1000"
+
+To set disallow-unplug on a PIF interface:
+
+- *xe pif-param-set* uuid=<PIF UUID> disallow-unplug="true"
 	
 SEE ALSO
 --------
@@ -70,9 +75,10 @@ SEE ALSO
 
 AUTHORS
 -------
-Manpage Author(s): ::
-Matthew Spah <spahmatthew@xenapiadmin.com> +
-Lisa Nguyen <lisa@xenapiadmin.com>
+Manpage Author(s):
+
+- Matthew Spah <spahmatthew@xenapiadmin.com>
+- Lisa Nguyen <lisa@xenapiadmin.com>
 
 BUGS
 ----

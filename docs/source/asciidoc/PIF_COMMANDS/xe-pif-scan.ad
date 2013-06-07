@@ -26,8 +26,9 @@ REQUIRED PARAMETERS
 
 EXAMPLES
 --------
-To scan a host for new PIF: ::
-	*xe-pif-scan* uuid=<HOST UUID>
+To scan a host for new PIF:
+
+- *xe-pif-scan* uuid=<HOST UUID>
 
 SEE ALSO
 --------
@@ -35,9 +36,10 @@ SEE ALSO
 
 AUTHORS
 -------
-Manpage Author(s): ::
-Matthew Spah <spahmatthew@xenapiadmin.com> +
-Lisa Nguyen <lisa@xenapiadmin.com>
+Manpage Author(s):
+
+- Matthew Spah <spahmatthew@xenapiadmin.com> 
+- Lisa Nguyen <lisa@xenapiadmin.com>
 
 BUGS
 ----
