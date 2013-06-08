@@ -31,7 +31,7 @@ OPTIONAL PARAMETERS
 
 EXAMPLES
 --------
-// shouldn't this be host=<name-label | uuid> ? 
+// shouldn't this be host=<name-label | uuid> ? Please verify.
 
 To shut down a host specified by hostname: ::
 	*xe host-shutdown* host=<HOSTNAME>
