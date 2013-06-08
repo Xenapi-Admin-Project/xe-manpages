@@ -15,7 +15,7 @@ SYNOPSIS
 
 DESCRIPTION
 -----------
-*xe network-param-get* returns the value(s) of a parameter or a key for a specified network. 
+*xe network-param-get* returns the value(s) of a parameter or a map parameter key value for a specified network. 
 
 REQUIRED PARAMETERS
 -------------------

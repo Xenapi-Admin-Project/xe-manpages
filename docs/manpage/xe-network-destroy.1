@@ -1,13 +1,13 @@
 '\" t
 .\"     Title: xe
 .\"    Author: [see the "AUTHORS" section]
-.\" Generator: DocBook XSL Stylesheets v1.78.1 <http://docbook.sf.net/>
-.\"      Date: 05/11/2013
+.\" Generator: DocBook XSL Stylesheets v1.76.1 <http://docbook.sf.net/>
+.\"      Date: 06/07/2013
 .\"    Manual: xe network-destroy manual
-.\"    Source: xe network-destory
+.\"    Source: xe network-destroy
 .\"  Language: English
 .\"
-.TH "XE" "1" "05/11/2013" "xe network\-destory" "xe network\-destroy manual"
+.TH "XE" "1" "06/07/2013" "xe network\-destroy" "xe network\-destroy manual"
 .\" -----------------------------------------------------------------
 .\" * Define some portability stuff
 .\" -----------------------------------------------------------------
@@ -36,7 +36,7 @@ xe-network-destroy \- Remove a network
 .sp
 \fBxe network\-destroy\fR removes a network that contains no active PIFs, attached VIFs, or VLANs\&.
 .sp
-To remove/detach
+To remove/detach the following:
 .sp
 .RS 4
 .ie n \{\
@@ -70,7 +70,7 @@ Bonds use
 .sp -1
 .IP \(bu 2.3
 .\}
-VIF interfaces use
+VIFs use
 \fBxe vif\-unplug\fR
 .RE
 .sp
@@ -94,9 +94,18 @@ Network UUID \- Use
 to obtain a list of network UUIDs\&.
 .RE
 .SH "EXAMPLES"
-.PP
+.sp
 To remove a network:
+.sp
 .RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.sp -1
+.IP \(bu 2.3
+.\}
+
 \fBxe network\-destroy\fR
 uuid=<NETWORK UUID>
 .RE
@@ -104,9 +113,17 @@ uuid=<NETWORK UUID>
 .sp
 \fBxe help network\-destroy\fR, \fBxe\-network\-list\fR(1), \fBxe\-pif\-forget\fR(1), \fBxe\-vif\-unplug\fR(1), \fBxe\-vlan\-destroy\fR(1), \fBxe\-bond\-destroy\fR(1)
 .SH "AUTHORS"
-.PP
+.sp
 Manpage Author(s):
+.sp
 .RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.sp -1
+.IP \(bu 2.3
+.\}
 Matthew Spah <spahmatthew@xenapiadmin\&.com>
 .RE
 .SH "BUGS"

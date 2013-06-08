@@ -15,7 +15,7 @@ SYNOPSIS
 
 DESCRIPTION
 -----------
-*xe pif-param-get* returns the value(s) of a parameter or a key for a specific PIF.
+*xe pif-param-get* returns the value(s) of a parameter or a map parameter key value for a specific PIF. 
 
 REQUIRED PARAMETERS
 -------------------
@@ -27,7 +27,7 @@ REQUIRED PARAMETERS
 OPTIONAL PARAMETERS
 -------------------
 *param-key*::
-	The PIF key value to return
+	The PIF map parameter key value to return
 	
 EXAMPLES
 --------
