@@ -7,7 +7,7 @@ XE(1)
 
 NAME
 ----
-*xe vdi-import* - Imports a VDI 
+xe-vdi-import - Import a Virtual Disk Image (VDI)
 
 SYNOPSIS
 --------
@@ -16,7 +16,7 @@ SYNOPSIS
 
 DESCRIPTION
 -----------
-*xe vdi-import* imports a Virtual Disk Image (VDI). Use the complete file path for the filename parameter.
+*xe vdi-import* imports a VDI. Use the complete file path for the filename parameter.
 
 
 REQUIRED PARAMETERS
@@ -31,7 +31,8 @@ REQUIRED PARAMETERS
 EXAMPLES
 --------
 To import a VDI:
-- *xe vdi-import uuid=<VDI UUID> filename=<FILE>*
+
+- *xe vdi-import* uuid=<VDI UUID> filename=<FILE>
 
 
 SEE ALSO
@@ -42,6 +43,7 @@ SEE ALSO
 AUTHORS
 -------
 Manpage Author(s):
+
 - Lisa Nguyen <lisa@xenapiadmin.com>
 
 BUGS

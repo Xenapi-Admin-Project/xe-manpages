@@ -7,7 +7,7 @@ XE(1)
 
 NAME
 ----
-*xe vdi-create* - Creates a new virtual disk image
+xe-vdi-create - Create a new Virtual Disk Image (VDI)
 
 SYNOPSIS
 --------
@@ -16,13 +16,14 @@ SYNOPSIS
 
 DESCRIPTION
 -----------
-*xe vdi-create* creates a new Virtual Disk Image (VDI). New VDIs cannot be smaller than 2 MB and up to 15 TB, depending on the storage type. 
+*xe vdi-create* creates a new VDI. New VDIs cannot be smaller than 2 MB and up to 15 TB, depending on the storage type. 
 
 Four VDI types are available to choose from:
-	User - a disk that is always preserved on upgrade
-	System - a disk that may be replaced on upgrade
-	Suspend - a disk that stores a suspend image if the VM is in suspended mode
-	Crashdump - a disk that stores VM crashdump information
+
+- User - a disk that is always preserved on upgrade
+- System - a disk that may be replaced on upgrade
+- Suspend - a disk that stores a suspend image if the VM is in suspended mode
+- Crashdump - a disk that stores VM crashdump information
 
 
 REQUIRED PARAMETERS
@@ -53,14 +54,16 @@ OPTIONAL PARAMETERS
 	
 EXAMPLES
 --------
-To create a user VDI with a size of 1 GB:
+To create a user VDI with a size of 1 GB: 
 
 - xe vdi-create sr-uuid=<SR UUID> name-label=<Name> type=user virtual-size=1GiB
 
 To create a system VDI with a "system" tag:
+
 - xe vdi-create sr-uuid=<SR UUID> name-label=<Name> type=system virtual-size=<Size> tag="system"
 	
-To create a raw user VDI:
+To create a raw user VDI: 
+
 - xe vdi-create sr-uuid=<SR UUID> type=user virtual-size=<Size> name-label=<Name> sm-config:type=raw
 
 SEE ALSO
@@ -69,7 +72,7 @@ SEE ALSO
 
 AUTHORS
 -------
-Manpage Author(s):
+Manpage Author(s): 
 - Lisa Nguyen <lisa@xenapiadmin.com>
 - Matthew Spah <spahmatthew@xenapiadmin.com>
 

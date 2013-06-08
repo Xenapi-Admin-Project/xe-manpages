@@ -7,7 +7,7 @@ XE(1)
 
 NAME
 ----
-xe-vbd-param-get - Returns a parameter for a virtual block device (VBD)
+xe-vbd-param-get - Return a parameter for a Virtual Block Device (VBD)
 
 SYNOPSIS
 --------
@@ -31,10 +31,13 @@ OPTIONAL PARAMETERS
 
 EXAMPLES
 --------
-To display the *currently-attached* parameter for a VBD: ::
-	*xe vbd-param-get uuid=<VBD UUID> param-name="currently-attached"
-To display the value for *owner*: ::
-	*xe vbd-param-get* uuid=<VBD UUID> param-name="other-config" param-key="owner"
+To display the *currently-attached* parameter for a VBD: 
+
+- *xe vbd-param-get uuid=<VBD UUID> param-name="currently-attached"
+
+To display the value for *owner*: 
+
+- *xe vbd-param-get* uuid=<VBD UUID> param-name="other-config" param-key="owner"
 	
 SEE ALSO
 --------
@@ -42,9 +45,10 @@ SEE ALSO
 
 AUTHORS
 -------
-Manpage Author(s): ::
-Lisa Nguyen <lisa@xenapiadmin.com>
-Christina Nguyen <christinam@xenapiadmin.com>
+Manpage Author(s):
+
+- Lisa Nguyen <lisa@xenapiadmin.com>
+- Christina Mitchell <christinam@xenapiadmin.com>
 
 BUGS
 ----

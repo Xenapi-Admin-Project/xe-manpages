@@ -7,18 +7,15 @@ XE(1)
 
 NAME
 ----
-
-*xe vdi-forget* - Removes a VDI from the XCP database
+xe-vdi-forget - Remove a Virtual Disk Image (VDI) from the XCP database
 
 SYNOPSIS
 --------
-
 *xe vdi-forget* uuid=<VDI UUID>
-
 
 DESCRIPTION
 -----------
-*xe vdi-forget* removes a Virtual Disk Image (VDI) from the XCP database and will not appear on the VDI list.
+*xe vdi-forget* removes a VDI from the XCP database and will not appear on the VDI list.
 
 Use *xe sr-scan*  to re-add the VDI back to the XCP database. Use *xe vdi-list* command to confirm the forgetting process.
 
@@ -35,7 +32,8 @@ SEE ALSO
 
 AUTHORS
 -------
-Manpage Author(s):
+Manpage Author(s): 
+
 - Lisa Nguyen <lisa@xenapiadmin.com>
 
 
