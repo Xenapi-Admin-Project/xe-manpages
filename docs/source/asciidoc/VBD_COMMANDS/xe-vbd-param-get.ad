@@ -7,7 +7,7 @@ XE(1)
 
 NAME
 ----
-xe-vbd-param-get - Returns a parameter for a virtual block devie (VBD)
+xe-vbd-param-get - Returns a parameter for a virtual block device (VBD)
 
 SYNOPSIS
 --------
