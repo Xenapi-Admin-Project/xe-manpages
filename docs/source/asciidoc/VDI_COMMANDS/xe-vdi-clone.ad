@@ -7,7 +7,7 @@ XE(1)
 
 NAME
 ----
-*xe vdi-clone* - Clones a VDI
+xe-vdi-clone - Clone a Virtual Disk Image (VDI)
 
 SYNOPSIS
 --------
@@ -41,6 +41,7 @@ OPTIONAL PARAMETERS
 EXAMPLES
 --------
 To clone an existing VDI and name it:
+
 - xe vdi-clone uuid=<VDI UUID> new-name-label=<Name Label>
 	
 SEE ALSO
@@ -50,6 +51,7 @@ SEE ALSO
 AUTHORS
 -------
 Manpage Author(s):
+
 - Lisa Nguyen <lisa@xenapiadmin.com>
 - Matthew Spah <spahmatthew@xenapiadmin.com>
 

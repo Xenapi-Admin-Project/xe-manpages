@@ -7,8 +7,7 @@ XE(1)
 
 NAME
 ----
-
-*xe vdi-destroy* - Destroys a VDI on a local host
+xe-vdi-destroy - Destroy a Virtual Disk Image (VDI) on a local host
 
 SYNOPSIS
 --------
@@ -17,7 +16,7 @@ SYNOPSIS
 
 DESCRIPTION
 -----------
-*xe vdi-destroy* attempts to destroy a Virtual Disk Image (VDI) on a local host. It cannot destroy a VDI that resides on a remote SR if the remote host is not online. Use *xe vdi-list* to confirm the deletion process.
+*xe vdi-destroy* attempts to destroy a VDI on a local host. It cannot destroy a VDI that resides on a remote SR if the remote host is not online. Use *xe vdi-list* to confirm the deletion process.
 
 
 REQUIRED PARAMETERS
@@ -27,19 +26,20 @@ REQUIRED PARAMETERS
 	
 EXAMPLES
 --------
-To destroy a VDI:
+To destroy a VDI: 
 
 - xe vdi-destroy uuid=<VDI UUID>
 
 
 SEE ALSO
 --------
-*xe-vdi-list*(1)
+*xe help vdi-destroy*, *xe-vdi-list*(1)
 
 
 AUTHORS
 -------
-Manpage Author(s):
+Manpage Author(s): 
+
 - Lisa Nguyen <lisa@xenapiadmin.com>
 
 

@@ -7,7 +7,7 @@ XE(1)
 
 NAME
 ----
-*xe vdi-introduce* - Introduces a VDI
+xe-vdi-introduce - Introduce a Virtual Disk Image (VDI)
 
 SYNOPSIS
 --------
@@ -16,7 +16,7 @@ SYNOPSIS
 
 DESCRIPTION
 -----------
-*xe vdi-introduce* introduces a Virtual Disk Image (VDI) to the XCP database that is not currently listed under the *xe vdi-list* command. 
+*xe vdi-introduce* introduces a VDI to the XCP database that is not currently listed under the *xe vdi-list* command. 
 
 
 REQUIRED PARAMETERS
@@ -62,12 +62,13 @@ EXAMPLES
 	
 SEE ALSO
 --------
-*xe help vdi-introduce*,*xe vdi-list*(1), *xe sr-list*(1)
+*xe help vdi-introduce*, *xe vdi-list*(1), *xe sr-list*(1)
 
 
 AUTHORS
 -------
 Manpage Author(s):
+
 - Lisa Nguyen <lisa@xenapiadmin.com>
 
 

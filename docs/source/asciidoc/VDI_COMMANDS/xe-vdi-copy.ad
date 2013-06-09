@@ -7,7 +7,7 @@ XE(1)
 
 NAME
 ----
-*xe vdi-copy* - Copies a VDI to an SR
+xe-vdi-copy - Copy a Virtual Disk Image (VDI) to a Storage Repository (SR)
 
 SYNOPSIS
 --------
@@ -16,7 +16,7 @@ SYNOPSIS
 
 DESCRIPTION
 -----------
-*xe vdi-copy* makes a copy of a Virtual Disk Image (VDI) and saves it in a different Storage Repository (SR) where the original VDI does not reside in. 
+*xe vdi-copy* makes a copy of a VDI and saves it in a different SR where the original VDI does not reside in. 
 
 REQUIRED PARAMETERS
 -------------------
@@ -29,6 +29,7 @@ REQUIRED PARAMETERS
 EXAMPLES
 --------
 To copy a VDI:
+
 - xe vdi-copy uuid=<VDI UUID> sr-uuid=<SR UUID>
 
 SEE ALSO
@@ -38,7 +39,8 @@ SEE ALSO
 
 AUTHORS
 -------
-Manpage Author(s):
+Manpage Author(s): 
+
 - Lisa Nguyen <lisa@xenapiadmin.com>
 
 BUGS
