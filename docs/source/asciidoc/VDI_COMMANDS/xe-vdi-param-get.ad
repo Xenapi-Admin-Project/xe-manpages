@@ -7,7 +7,7 @@ XE(1)
 
 NAME
 ----
-xe-vdi-param-get - Returns a parameter for a virtual disk image (VDI)
+xe-vdi-param-get - Return a parameter for a Virtual Disk Image (VDI)
 
 SYNOPSIS
 --------
@@ -31,7 +31,13 @@ OPTIONAL PARAMETERS
 
 EXAMPLES
 --------
+To display the *allowed-operations* parameter value for a VDI: 
 
+- *xe vdi-param-get uuid=<VDI UUID> param-name="allowed-operations"
+
+To display the map parameter key value for *vhd_type*: 
+
+- *xe vdi-param-get* uuid=<VDI UUID> param-name="sm-config" param-key="vdi_type"
 	
 SEE ALSO
 --------
@@ -39,9 +45,10 @@ SEE ALSO
 
 AUTHORS
 -------
-Manpage Author(s): ::
-Lisa Nguyen <lisa@xenapiadmin.com>
-Christina Nguyen <christinam@xenapiadmin.com>
+Manpage Author(s): 
+
+- Lisa Nguyen <lisa@xenapiadmin.com>
+- Christina Mitchell <christinam@xenapiadmin.com>
 
 BUGS
 ----
