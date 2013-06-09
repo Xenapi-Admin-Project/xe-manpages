@@ -35,7 +35,7 @@ To display the *allowed-operations* parameter value for a VDI:
 
 - *xe vdi-param-get uuid=<VDI UUID> param-name="allowed-operations"
 
-To display the map parameter key value for *vhd_type*: 
+To display the map parameter key value for *vdi_type*: 
 
 - *xe vdi-param-get* uuid=<VDI UUID> param-name="sm-config" param-key="vdi_type"
 	
