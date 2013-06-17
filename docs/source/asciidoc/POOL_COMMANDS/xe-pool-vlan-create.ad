@@ -16,40 +16,15 @@ SYNOPSIS
 
 DESCRIPTION
 -----------
+*xe vlan-create* creates a new pseudo PIF, and assigns it the untagged-PIF for the desired VLAN tag. The untagged-PIF is connected it to the specified network. The pif-uuid specified is the tagged-PIF for the new VLAN on each host in the pool. The VLAN and the untagged-PIF are created on each host in the pool. The UUID of the untagged-PIFs are returned.
 
-*xe vlan-create* creates a vlan, and attaches it to the desired physical PIF in the pool. A new virtual PIF is created and attached to the desired network. The UUID of the virtual PIF will be returned. 
-
-The phsyical PIF now supports 802.1q VLAN tagging. 
-
+Xen Cloud Platform only supports 802.1Q VLAN tagging. Management interfaces can only be placed on a default (native) VLAN. 
 
 
 
-
-
-
-
-
-*xe pool-vlan-create* 
-
-
-1. What does the command do (in laymans terms)
-2. What does the admin NEED to know (caveats with management interfaces, default VLANs etc..)
-3. How does the Admin use it
-4. Technical details e.g. why are there two pifs etc..
-
- So for number
-
-1: It connects a virtual network to a physical VLAN using a physical PIF. That's what it does. Because it always uses a physical PIF (as far as I know) we're always connecting to a physical VLAN correct? The VLAN tag number will be the same as what we're using in the physical VLAN config so it has to match.
-
-2: You would know more of what the caveats are here than I. If I remember right there's issues with the management interface and VLANs and when to use VLAN 1 etc..
-
-3: Examples obviously
-4: Anything else you think is relevant. What comes to mind for me is why you have a pseudo pif and a physical pif. One has all traffic on the physical NIC and the other only carries VLAN tagged traffic (I'm guessing). 
-
-
+*xe pool-vlan-create* cc
 REQUIRED PARAMETERS
 -------------------
-
 *pif-uuid*::
     Physical PIF that the pseudo PIF will be associated with. - Use *xe pif-list* to obtain a list of PIF interfaces.
 
@@ -59,13 +34,11 @@ REQUIRED PARAMETERS
 *vlan*::
     VLAN tag.
     
-    
 EXAMPLES
 --------
+To create a pool-wide *VLAN* with the tag *2* on a network:
 
-To create a *VLAN* with the tag *2* on a network: ::
-	*xe vlan-create* network-uuid=<Network UUID> pif-uuid=<PIF UUID> vlan="2"
-
+-	*xe vlan-create* network-uuid=<Network UUID> pif-uuid=<PIF UUID> vlan="2"
 
 AUTHORS
 -------

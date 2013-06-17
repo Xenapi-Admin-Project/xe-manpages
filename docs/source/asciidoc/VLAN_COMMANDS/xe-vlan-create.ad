@@ -11,35 +11,20 @@ xe-vlan-create - Create a new VLAN on a host
 
 SYNOPSIS
 --------
-
 *xe vlan-create* pif-uuid=<PIF UUID> vlan=<VLAN ID> network-uuid=<Network UUID>
 
 DESCRIPTION
 -----------
-*xe vlan-create* creates a virtual PIF for the desired VLAN tag, and connects the new pseudo PIF to the network specified. The virtual PIF is assoisated with the selected physical PIF, and is created on the host of the physical PIF. The UUID of the virtual PIF is returned.
+*xe vlan-create* creates a new pseudo PIF, and assigns it the untagged-PIF for the desired VLAN tag. The untagged-PIF is connected it to the specified network. The pif-uuid specified is the tagged-PIF for the new VLAN on the host. The VLAN and the untagged-PIF are created on the the host of the specified physical tagged-PIF. The UUID of the untagged-PIF is returned.
 
-The physical PIF now performs 802.1Q VLAN tagging, and can be connected to a trunk port. Management interfaces cannot be assigned to a VLAN, and must be placed on the native VLAN. 
-
-1. What does the command do (in laymans terms)
-2. What does the admin NEED to know (caveats with management interfaces, default VLANs etc..)
-3. How does the Admin use it
-4. Technical details e.g. why are there two pifs etc..
-
- So for number
-
-1: It connects a virtual network to a physical VLAN using a physical PIF. That's what it does. Because it always uses a physical PIF (as far as I know) we're always connecting to a physical VLAN correct? The VLAN tag number will be the same as what we're using in the physical VLAN config so it has to match.
-
-2: You would know more of what the caveats are here than I. If I remember right there's issues with the management interface and VLANs and when to use VLAN 1 etc..
-
-3: Examples obviously
-4: Anything else you think is relevant. What comes to mind for me is why you have a pseudo pif and a physical pif. One has all traffic on the physical NIC and the other only carries VLAN tagged traffic (I'm guessing). 
+Xen Cloud Platform only supports 802.1Q VLAN tagging. Management interfaces can only be placed on a default (native) VLAN. 
 
 REQUIRED PARAMETERS
 -------------------
 *pif-uuid*::
-    Physical PIF that the pseudo PIF will be associated with. - Use *xe pif-list* to obtain a list of PIF interfaces.
+    Physical PIF . - Use *xe pif-list* to obtain a list of PIF interfaces.
 *network-uuid*::
-    Network to be connected to new pseudo PIF - Use *xe network-list* to obtain a list of networks found in a pool.
+    Network to be assigned VLAN untagged PIF - Use *xe network-list* to obtain a list of networks found in a pool.
 *vlan*::
     Desired VLAN tag
 
@@ -49,8 +34,9 @@ SEE ALSO
 
 AUTHORS
 -------
-Manpage Author(s): ::
-Matthew Spah <spahmatthew@xenapiadmin.com>
+Manpage Author(s):
+
+-	Matthew Spah <spahmatthew@xenapiadmin.com>
 
 BUGS
 ----
