@@ -35,13 +35,18 @@ OPTIONAL PARAMETERS
 
 EXAMPLES
 --------
-To check the allowed VIF devices for a VM: ::
-	xe vm-param-get uuid=<VM UUID> param-name="allowed-VIF-devices"
-To create a VIF interface on a running VM: ::
-	*xe vif-create* vm-uuid=<VM UUID> device=<VIF DEVICE NUMBER> network-uuid=<NETWORK UUID> +
-	*xe vif-plug* uuid=<VIF UUID>
-To create a VIF interface on a halted VM: ::
-	*xe vif-create* vm-uuid=<VM UUID> device=<VIF DEVICE NUMBER> network-uuid=<NETWORK UUID>
+To check the allowed VIF devices for a VM:
+
+- xe vm-param-get uuid=<VM UUID> param-name="allowed-VIF-devices"
+
+To create a VIF interface on a running VM:
+
+- *xe vif-create* vm-uuid=<VM UUID> device=<VIF DEVICE NUMBER> network-uuid=<NETWORK UUID>
+- *xe vif-plug* uuid=<VIF UUID>
+
+To create a VIF interface on a halted VM:
+
+- *xe vif-create* vm-uuid=<VM UUID> device=<VIF DEVICE NUMBER> network-uuid=<NETWORK UUID>
 	
 SEE ALSO
 --------
@@ -49,8 +54,9 @@ SEE ALSO
 
 AUTHORS
 -------
-Manpage Author(s): ::
-Matthew Spah <spahmatthew@xenapiadmin.com>
+Manpage Author(s):
+
+- Matthew Spah <spahmatthew@xenapiadmin.com>
 
 BUGS
 ----

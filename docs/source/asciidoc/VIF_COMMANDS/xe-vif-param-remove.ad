@@ -28,10 +28,13 @@ REQUIRED PARAMETERS
 
 EXAMPLES
 --------
-To remove an allowed IPv4 address from a VIF: ::
-	*xe vif-param-remove* uuid=<VIF UUID> param-name="ipv4-allowed" param-key=<IPv4 address to be removed>
-To remove a key/value pair from *other-config*: ::
-	*xe vif-param-remove* uuid=<VIF UUID> param-name="other-config" param-key=<KEY/VALUE PAIR>
+To remove an allowed IPv4 address from a VIF:
+
+- *xe vif-param-remove* uuid=<VIF UUID> param-name="ipv4-allowed" param-key=<IPv4 address to be removed>
+
+To remove a key/value pair from *other-config*:
+
+- *xe vif-param-remove* uuid=<VIF UUID> param-name="other-config" param-key=<KEY/VALUE PAIR>
 	
 SEE ALSO
 --------
@@ -39,8 +42,9 @@ SEE ALSO
 
 AUTHORS
 -------
-Manpage Author(s): ::
-Matthew Spah <spahmatthew@xenapiadmin.com>
+Manpage Author(s):
+
+- Matthew Spah <spahmatthew@xenapiadmin.com>
 
 BUGS
 ----
