@@ -19,6 +19,8 @@ DESCRIPTION
 -----------
 *xe pif-reconfigure-ipv6* configures IPv6 address settings for a specific PIF. Address changes are applied immediately upon command excution.
 
+The IPv6 ADDRESS must be followed by a slash and a decimal number which encodes the network prefix length.
+
 REQUIRED PARAMETERS
 -------------------
 *mode*::
