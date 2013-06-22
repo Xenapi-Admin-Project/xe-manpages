@@ -66,8 +66,10 @@ makepdf()
 {	
 	FILE="$1"
 	echo "Converting $FILE to pdf"
+	cp -f "$FILE" "$TMPDIR"
 	TMPFILE=$(basename "$FILE")
-	a2x -f pdf "${TMPDIR}/${TMPFILE}" -D "${MANDOCDIR}/"
+	a2x -f pdf --asciidoc-opts='-a lang=en -v -b  docbook -d manpage' "${TMPDIR}/${TMPFILE}" -D "${MANDOCDIR}/"
+	#a2x -f pdf -dbook --fop "${TMPDIR}/${TMPFILE}" -D "${MANDOCDIR}/"
 	echo ""
 }
 
