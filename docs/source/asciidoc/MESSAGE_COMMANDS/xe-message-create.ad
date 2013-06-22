@@ -1,0 +1,68 @@
+XE(1)
+=======
+:doctype: manpage
+:man source:   xe message-create
+:man version:  {1}
+:man manual:   xe message-create manual
+
+NAME
+------
+xe-message-create - Creates a message.
+
+SYNOPSIS
+--------
+*xe message-create* name=<NAME> priority=<PRIORITY> body=<BODY> [ vm-uuid=<VM UUID> ] [ host-uuid=<HOST UUID> ] [ sr-uuid=<SR UUID> ] [ pool-uuid=<POOL UUID> ]
+ 
+DESCRIPTION
+-----------
+*xe message-create* creates a message. One or more optional parameters must be used. Use *xe message-list* to confirm the creation process.
+
+REQUIRED PARAMETERS
+-------------------
+*name*::
+	Message name
+	
+*priority*::
+	Message priority
+	
+*body*::
+	Message body
+
+
+OPTIONAL PARAMETERS
+-------------------
+*vm-uuid*::
+	Virtual machine UUID - Use *xe vm-list* to obtain a list of VM UUIDs
+	
+*host-uuid*::
+	Host UUID - Use *xe host-list* to obtain a list of host UUIDs
+
+*sr-uuid*::
+	Storage repository UUID - Use *sr-list* to obtain a list of SR UUIDs
+	
+*pool-uuid*::
+	Resource pool UUID - Use *pool-list* to obtain a list of pool UUIDs
+	
+EXAMPLES
+---------
+To create a message for a specific VM:
+- *xe message-create* name="<NAME>" priority=<PRIORITY> body="<BODY>" vm-uuid=<VM UUID>
+
+SEE ALSO
+--------
+*xe help message-create*, *xe message-list*(1), *xe message-param-get*(1), *xe message-param-list*(1), *xe message-destroy*(1)
+
+AUTHORS
+-------
+Manpage Author(s):
+- Lisa Nguyen <lisa@xenapiadmin.com>
+
+BUGS
+----
+For guidelines on submitting bug reports see http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP. Submit bugs and general questions to xen-api@lists.xen.org.
+
+COPYRIGHT
+---------
+Copyright \(C)  2013 - Lisa Nguyen
+
+Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License, Version 1.3 or any later version published by the Free Software Foundation; with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts. A copy of the license is included in the section entitled "GNU Free Documentation License".
