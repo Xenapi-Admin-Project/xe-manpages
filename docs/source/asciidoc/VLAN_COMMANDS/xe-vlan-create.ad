@@ -15,15 +15,13 @@ SYNOPSIS
 
 DESCRIPTION
 -----------
-*xe vlan-create* creates an untagged pseudo PIF attached to the specified internal network. The specified physical PIF becomes the tagged-PIF for the external phyiscal network. The pseudo PIF (untagged-PIF) UUID is returned. 
+*xe vlan-create* creates an untagged pseudo PIF attached to the specified internal network. The specified physical PIF becomes the tagged-PIF for the external phyiscal network. XCP only supports 802.1Q frame tagging. The VLAN is created on the host where the physical PIF resides. To create a VLAN on every host in the pool use *xe pool-vlan-create*. The pseudo PIF (untagged-PIF) UUID is returned. 
 
 Untagged traffic on the internal network enters the pseudo PIF (untagged-PIF), is tagged with the specified VLAN ID, and exits via the physical PIF (tagged-PIF).
 
 Tagged traffic on the physical network enters the physical PIF (tagged-PIF), is forwarded to the appropriate pseudo PIF (untagged-PIF) based on the VLAN ID tag, then untagged and sent to the interal network.
 
-Xen Cloud Platform only supports 802.1Q VLAN tagging. Management interfaces can only be placed on a default (native) VLAN. // expand on this processs
-
-// verify what happens to untagged traffic entering a physical PIF, can it be seen by a VM attached to that physicals PIFs external network?
+Untagged traffic on the physical network enters the physical PIF (tagged-PIF), is forwarded to the physical PIF's internal network. Management interfaces can only be placed on a default (native) VLAN. 
 
 REQUIRED PARAMETERS
 -------------------
