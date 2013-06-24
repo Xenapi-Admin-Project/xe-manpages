@@ -11,20 +11,24 @@ xe-vlan-create - Create a new VLAN on a host
 
 SYNOPSIS
 --------
-*xe vlan-create* pif-uuid=<PIF UUID> vlan=<VLAN ID> network-uuid=<Network UUID>
+*xe vlan-create* pif-uuid=<PIF UUID> vlan=<VLAN ID> network-uuid=<NETWORK UUID>
 
 DESCRIPTION
 -----------
-*xe vlan-create* creates a new pseudo PIF, and assigns it the untagged-PIF for the desired VLAN tag. The untagged-PIF is connected it to the specified network. The pif-uuid specified is the tagged-PIF for the new VLAN on the host. The VLAN and the untagged-PIF are created on the the host of the specified physical tagged-PIF. The UUID of the untagged-PIF is returned.
+*xe vlan-create* creates an untagged pseudo PIF attached to the specified internal network. The specified physical PIF becomes the tagged-PIF for the external phyiscal network. XCP only supports 802.1Q frame tagging. The VLAN is created on the host where the physical PIF resides. To create a VLAN on every host in the pool use *xe pool-vlan-create*. The pseudo PIF (untagged-PIF) UUID is returned. 
 
-Xen Cloud Platform only supports 802.1Q VLAN tagging. Management interfaces can only be placed on a default (native) VLAN. 
+Untagged traffic on the internal network enters the pseudo PIF (untagged-PIF), is tagged with the specified VLAN ID, and exits via the physical PIF (tagged-PIF).
+
+Tagged traffic on the physical network enters the physical PIF (tagged-PIF), is forwarded to the appropriate pseudo PIF (untagged-PIF) based on the VLAN ID tag, then untagged and sent to the interal network.
+
+Untagged traffic on the physical network enters the physical PIF (tagged-PIF), is forwarded to the physical PIF's internal network. Management interfaces can only be placed on a default (native) VLAN. 
 
 REQUIRED PARAMETERS
 -------------------
 *pif-uuid*::
-    Physical PIF . - Use *xe pif-list* to obtain a list of PIF interfaces.
+    Physical PIF to be the tagged-PIF for the VLAN.The pseudo PIF (untagged-PIF) is assoistated with the physical PIF. - Use *xe pif-list* to obtain a list of PIF interfaces.
 *network-uuid*::
-    Network to be assigned VLAN untagged PIF - Use *xe network-list* to obtain a list of networks found in a pool.
+    Internal network to be connected to VLAN's untagged PIF - Use *xe network-list* to obtain a list of networks found in a pool.
 *vlan*::
     Desired VLAN tag
 

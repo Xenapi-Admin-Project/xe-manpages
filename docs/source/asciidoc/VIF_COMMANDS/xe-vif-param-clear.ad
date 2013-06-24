@@ -26,10 +26,13 @@ REQUIRED PARAMETERS
 
 EXAMPLES
 --------
-To clear all allowed IPv4 addresses: ::
-	*xe vif-param-clear* uuid=<VIF UUID> param-name="ipv4-allowed"
-To clear all key/value pairs in *other-config*: ::
-	*xe vif-param-clear* uuid=<VIF UUID> param-name="other-config"
+To clear all allowed IPv4 addresses:
+
+- *xe vif-param-clear* uuid=<VIF UUID> param-name="ipv4-allowed"
+
+To clear all key/value pairs in *other-config*:
+	
+- *xe vif-param-clear* uuid=<VIF UUID> param-name="other-config"
 
 SEE ALSO
 --------
@@ -37,8 +40,9 @@ SEE ALSO
 
 AUTHORS
 -------
-Manpage Author(s): ::
-Matthew Spah <spahmatthew@xenapiadmin.com>
+Manpage Author(s):
+
+- Matthew Spah <spahmatthew@xenapiadmin.com>
 
 BUGS
 ----

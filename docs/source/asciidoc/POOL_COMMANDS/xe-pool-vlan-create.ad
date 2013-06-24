@@ -16,23 +16,23 @@ SYNOPSIS
 
 DESCRIPTION
 -----------
-*xe vlan-create* creates a new pseudo PIF, and assigns it the untagged-PIF for the desired VLAN tag. The untagged-PIF is connected it to the specified network. The pif-uuid specified is the tagged-PIF for the new VLAN on each host in the pool. The VLAN and the untagged-PIF are created on each host in the pool. The UUID of the untagged-PIFs are returned.
+*xe pool-vlan-create* creates untagged pseudo PIFs attached to the specified internal network. The specified physical PIF becomes the tagged-PIF for the external phyiscal network on each host. Xen Cloud Platform only supports 802.1Q VLAN tagging. A VLAN and a pseudo PIF are created on each host where the physical PIF resides. The pseudo PIFs (untagged-PIF) UUIDs are returned. 
 
-Xen Cloud Platform only supports 802.1Q VLAN tagging. Management interfaces can only be placed on a default (native) VLAN. 
+Untagged traffic on the internal network enters the pseudo PIF (untagged-PIF), is tagged with the specified VLAN ID, and exits via the physical PIF (tagged-PIF).
+
+Tagged traffic on the physical network enters the physical PIF (tagged-PIF), is forwarded to the appropriate pseudo PIF (untagged-PIF) based on the VLAN ID tag, then untagged and sent to the interal network.
+
+Untagged traffic on the physical network enters the physical PIF (tagged-PIF), is forwarded to the physical PIF's internal network. Management interfaces can only be placed on a default (native) VLAN. 
 
 
-
-*xe pool-vlan-create* cc
 REQUIRED PARAMETERS
 -------------------
 *pif-uuid*::
-    Physical PIF that the pseudo PIF will be associated with. - Use *xe pif-list* to obtain a list of PIF interfaces.
-
+	Physical PIFs to be the tagged-PIFs for the VLAN. The pseudo PIFs (untagged-PIF) are assoistated with the physical PIFs. - Use *xe pif-list* to obtain a list of PIF interfaces.
 *network-uuid*::
-    Network to be assigned VLAN - Use *xe network-list* to obtain a list of networks found in a pool.
-    
+    Internal network to be connected to VLAN's untagged PIFs - Use *xe network-list* to obtain a list of networks found in a pool.
 *vlan*::
-    VLAN tag.
+    Desired VLAN tag
     
 EXAMPLES
 --------
@@ -42,8 +42,9 @@ To create a pool-wide *VLAN* with the tag *2* on a network:
 
 AUTHORS
 -------
-Manpage Author(s): ::
-Matthew Spah <spahmatthew@xenapiadmin.com>
+Manpage Author(s):
+
+- Matthew Spah <spahmatthew@xenapiadmin.com>
 
 BUGS
 ----
