@@ -15,7 +15,7 @@ SYNOPSIS
 
 DESCRIPTION
 -----------
-*xe vlan-destroy* removes a VLAN and the associated pseudo PIF (untagged-PIF) from a network. The pseudo PIF will automatically be removed from the pool after the completeion of *xe vlan-destroy*. The VLAN must be removed from each host it is present on. 
+*xe vlan-destroy* removes a VLAN and the associated pseudo PIF (untagged-PIF) from a network. The pseudo PIF will automatically be removed from the host after the completion of *xe vlan-destroy*. To remove all VLANS of a certain tag execute *xe vlan-destroy* on each each host the VLAN is present on. 
 
 *xe vlan-destroy* requires that no attached VIF interfaces be present on the VLAN. Use *xe vif-unplug* to detach VIFs.
 
@@ -49,4 +49,3 @@ COPYRIGHT
 Copyright \(C) 2012 - Matthew Spah
 
 Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License, Version 1.3 or any later version published by the Free Software Foundation; with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts. A copy of the license is included in the section entitled "GNU Free Documentation License"
-

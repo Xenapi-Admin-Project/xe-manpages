@@ -15,7 +15,7 @@ SYNOPSIS
 
 DESCRIPTION
 -----------
-*xe vif-create* creates a VIF for the specified device and associates it with the selected VM and network. The MTU size of the VIF is inherited from the network, and the MAC address is randomly generated unless one is specified. The resulting VIF UUID is returned.
+*xe vif-create* creates a VIF for the specified VM using the specified device number, and connects to the specified network. The MTU size of the VIF is inherited from the network, and the MAC address is randomly generated unless one is specified. The resulting VIF UUID is returned.
 
 Use *xe vif-plug* to attach newly created VIFs to running VMs. VIFs automatically attach when you start a VM. 
 
