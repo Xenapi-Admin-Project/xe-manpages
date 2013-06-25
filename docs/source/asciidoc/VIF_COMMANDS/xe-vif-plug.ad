@@ -24,8 +24,9 @@ REQUIRED PARAMETERS
 
 EXAMPLES
 --------
-To attach a VIF interface to a running VM type: ::
-	*xe vif-plug* uuid=<VIF UUID>
+To attach a VIF interface to a running VM type:
+
+- *xe vif-plug* uuid=<VIF UUID>
 
 SEE ALSO
 --------
@@ -33,8 +34,9 @@ SEE ALSO
 
 AUTHORS
 -------
-Manpage Author(s): ::
-Matthew Spah <spahmatthew@xenapiadmin.com>
+Manpage Author(s):
+
+- Matthew Spah <spahmatthew@xenapiadmin.com>
 
 BUGS
 ----

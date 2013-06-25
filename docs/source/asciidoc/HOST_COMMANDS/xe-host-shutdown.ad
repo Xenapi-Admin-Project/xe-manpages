@@ -32,11 +32,13 @@ OPTIONAL PARAMETERS
 EXAMPLES
 --------
 
-To shut down a host specified by its name-label: ::
-	*xe host-shutdown* host=<NAME-LABEL>
+To shut down a host specified by its name-label:
 
-To shut down all disabled hosts: ::
-	*xe host-shutdown* enabled=false --multiple
+- *xe host-shutdown* host=<NAME-LABEL>
+
+To shut down all disabled hosts:
+
+- *xe host-shutdown* enabled=false --multiple
 
 SEE ALSO
 --------
@@ -44,8 +46,9 @@ SEE ALSO
 
 AUTHORS
 -------
-Manpage Author(s): ::
-Jeff Loughridge <jeffl@alumni.duke.edu>
+Manpage Author(s):
+
+- Jeff Loughridge <jeffl@alumni.duke.edu>
 
 
 BUGS

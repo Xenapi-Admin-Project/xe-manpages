@@ -24,10 +24,13 @@ REQUIRED PARAMETERS
 
 EXAMPLES
 --------
-To return the currently-attached parameter for a VIF: ::
-	*xe vif-param-get* uuid=<VIF UUID> param-name="currently-attached"
+To return the currently-attached parameter for a VIF:
+
+- *xe vif-param-get* uuid=<VIF UUID> param-name="currently-attached"
+
 To detach a VIF interface from a running VM: ::
-	*xe vif-unplug* uuid=<VIF UUID>
+
+- *xe vif-unplug* uuid=<VIF UUID>
 
 SEE ALSO
 --------
@@ -35,8 +38,9 @@ SEE ALSO
 
 AUTHORS
 -------
-Manpage Author(s): ::
-Matthew Spah <spahmatthew@xenapiadmin.com>
+Manpage Author(s):
+
+- Matthew Spah <spahmatthew@xenapiadmin.com>
 
 BUGS
 ----

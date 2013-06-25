@@ -16,23 +16,26 @@ SYNOPSIS
 
 DESCRIPTION
 -----------
-*xe vlan-create* creates a new pseudo PIF, and assigns it the untagged-PIF for the desired VLAN tag. The untagged-PIF is connected it to the specified network. The pif-uuid specified is the tagged-PIF for the new VLAN on each host in the pool. The VLAN and the untagged-PIF are created on each host in the pool. The UUID of the untagged-PIFs are returned.
+// adjust this for pool-vlan-create
 
-Xen Cloud Platform only supports 802.1Q VLAN tagging. Management interfaces can only be placed on a default (native) VLAN. 
+*xe vlan-create* creates an untagged pseudo PIF attached to the specified internal network. The specified physical PIF becomes the tagged-PIF for the external phyiscal network. The pseudo PIF (untagged-PIF) UUID is returned. 
 
+Untagged traffic on the internal network enters the pseudo PIF (untagged-PIF), is tagged with the specified VLAN ID, and exits via the physical PIF (tagged-PIF).
 
+Tagged traffic on the physical network enters the physical PIF (tagged-PIF), is forwarded to the appropriate pseudo PIF (untagged-PIF) based on the VLAN ID tag, then untagged and sent to the interal network.
 
-*xe pool-vlan-create* cc
+Xen Cloud Platform only supports 802.1Q VLAN tagging. Management interfaces can only be placed on a default (native) VLAN. // expand on this processs
+
+// verify what happens to untagged traffic entering a physical PIF, can it be seen by a VM attached to that physicals PIFs external network?
+
 REQUIRED PARAMETERS
 -------------------
 *pif-uuid*::
-    Physical PIF that the pseudo PIF will be associated with. - Use *xe pif-list* to obtain a list of PIF interfaces.
-
+	Physical PIFs to be the tagged-PIFs for the VLAN. The pseudo PIFs (untagged-PIF) are assoistated with the physical PIFs. - Use *xe pif-list* to obtain a list of PIF interfaces.
 *network-uuid*::
-    Network to be assigned VLAN - Use *xe network-list* to obtain a list of networks found in a pool.
-    
+    Internal network to be connected to VLAN's untagged PIFs - Use *xe network-list* to obtain a list of networks found in a pool.
 *vlan*::
-    VLAN tag.
+    Desired VLAN tag
     
 EXAMPLES
 --------
