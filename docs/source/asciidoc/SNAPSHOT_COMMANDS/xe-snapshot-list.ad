@@ -1,0 +1,59 @@
+XE(1)
+=======
+:doctype: manpage
+:man source:   xe snapshot-list
+:man version:  {1}
+:man manual:   xe snapshot-list manual
+
+NAME
+-----
+xe-snapshot-list - Display Snapshots and their parameters
+
+SYNOPSIS
+--------
+*xe snapshot-list* [ params=<PARAMETERS> ] [ --minimal ]
+
+DESCRIPTION
+-----------
+*xe snapshot-list* Displays Snapshots and their parameters.
+
+Output can be filtered by using the *params* parameter and a value (separate multiple parameters with commas):
+
+- *xe snapshot-list params=name-label*
+- *xe snapshot-list params=name-label,start-time*
+
+Append --minimal to display values for one parameter on a single line:
+
+- *xe snapshot-list params="name-label" --minimal*
+OPTIONAL PARAMETERS
+-------------------
+*all*::
+      Display all parameter vlaues
+
+*uuid*::
+       Display snapshot UUIDs
+
+
+EXAMPLES
+--------
+To list snapshots:
+
+- *xe snapshot-list*
+
+SEE ALSO
+--------
+
+AUTHORS
+-------
+Manpage Author(s):
+
+ - Adam Sparks <adam@xenapiadmin.com>
+
+BUGS
+----
+See http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP on how to send bug reports, send bugs and general questions to xen-api@lists.xen.org.
+
+COPYRIGHT
+---------
+Copyright \(C)  2013 - Adam Sparks
+Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License, Version 1.3 or any later version published by the Free Software Foundation; with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts. A copy of the license is included in the section entitled "GNU Free Documentation License"

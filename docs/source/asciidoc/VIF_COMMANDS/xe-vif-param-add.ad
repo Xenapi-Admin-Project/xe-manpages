@@ -7,7 +7,7 @@ XE(1)
 
 NAME
 ----
-xe-vif-param-add - Adds a key to a parameter for a virtual interface
+xe-vif-param-add - Adds a key to a parameter for a virtual interface (VIF)
 
 SYNOPSIS
 --------
