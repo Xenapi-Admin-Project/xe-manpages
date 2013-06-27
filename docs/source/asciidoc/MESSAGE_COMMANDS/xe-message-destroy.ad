@@ -7,7 +7,7 @@ XE(1)
 
 NAME
 ------
-xe-message-destroys - Destroys a message.
+xe-message-destroy - Destroys a message.
 
 SYNOPSIS
 --------
