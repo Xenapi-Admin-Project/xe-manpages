@@ -15,15 +15,9 @@ SYNOPSIS
 
 DESCRIPTION
 -----------
-*xe bond-set-mode* changes the bond mode of the selected bond. Bond mode changes are applied immediately upon command excution. Use *xe-bond-param-set* to set bond configuration parameters. 
+*xe bond-set-mode* changes the mode of the specified bond. Bond mode changes are applied immediately upon command excution. Use *xe-bond-param-set* to set bond specific configuration parameters. 
 
-LACP bonding is only available with the network backend set to openvswitch, whereas balance-slb and active-backup are available for openvswitch and the linux bridge. 
- 
-// Create a list of which modes are avaible for each noetworking back end  
-// Show how to display the networking backend, and how to switch between the two
-// xe-get-network-backend - to list type
-// xe-switch-network-backend -
-
+LACP bonding is only available with the network backend set to openvswitch, whereas balance-slb and active-backup are available for openvswitch and the linux legacy bridge. Use *xe-get-network-backend* to display your current XenServer/XCP network backend. See *xe-switch-network-backend* for instructions on how to change your XenServer/XCP network backend. 
 
 REQUIRED PARAMETERS
 -------------------
@@ -34,17 +28,23 @@ REQUIRED PARAMETERS
 
 EXAMPLES
 --------
-To change the bond mode to balance-slb: ::
-	*xe bond-set-mode uuid=<BOND UUID> mode="balance-slb"
+To display the pools current network back end: 
+
+- *xe-get-network-backend*
+
+To change the bond mode to balance-slb:
+
+- *xe bond-set-mode uuid=<BOND UUID> mode="balance-slb"
 
 SEE ALSO
---------
+-------
 *xe help bond-set-mode*, *xe-bond-destroy*(1), *xe-bond-list*(1), *xe-bond-set-mode*(1), *xe-bond-create*(1), *xe-network-list*(1), *xe-pif-list*(1)
 
 AUTHORS
 -------
-Manpage Author(s): ::
-Matthew Spah <spahmatthew@xenapiadmin.com>
+Manpage Author(s):
+
+- Matthew Spah <spahmatthew@xenapiadmin.com>
 
 BUGS
 ----

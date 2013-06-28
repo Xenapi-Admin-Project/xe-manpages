@@ -19,8 +19,8 @@ DESCRIPTION
 
 Output can be filtered by using the *params* parameter and a value (separate multiple parameters with commas):
 
-- *xe bond-list params=master*
-- *xe bond-list params=master,slave,uuid*
+- *xe bond-list params="master"*
+- *xe bond-list params="master,slave,uuid"*
 
 Output can be filtered by using parameter values and the desired value:
 

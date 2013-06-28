@@ -15,9 +15,9 @@ SYNOPSIS
 				
 DESCRIPTION
 ----------
-*xe bond-create* creates a bond using the selected physical PIFs and connects it the specified network. *xe bond-create* requires the referenced PIFs be present on the same host, and no VLAN tag configured. The referenced PIFs will be detached from their associated networks. The bond UUID will be returned. 
+*xe bond-create* creates a bond using the selected physical PIFs and connects it the specified internal network. *xe bond-create* requires the referenced PIFs be present on the same host, and no VLAN tag configured. The referenced PIFs will be detached from their currently connected internal networks. The default bond mode is an active-active configuration, unless specified. The bond UUID will be returned. 
 
-The default bond mode is an active-active configuration. Four PIFs per bond are supported when using openvswitch and two PIFs per bond are supported when using the legacy linux bridge. 
+LACP bonding is only available with the network backend set to openvswitch, whereas balance-slb and active-backup are available for openvswitch and the linux legacy bridge. When using the OpenVswitch network backend for XCP/XenServer a bond supports up to four PIFs, whereas when using the legacy linux bridge backend for XCP/XenServer a bond supports only two PIFs. Use *xe-get-network-backend* to display your current XCP/XenServer network backend. 
 
 When creating NIC bonds in a resource pool, configure the bond on the pool master, and then configure each member of the pool to match the pool master.
 
