@@ -24,7 +24,7 @@ REQUIRED PARAMETERS
 *uuid*::
 	Bond UUID - Use *xe bond-list* to obtain a list of bonds
 *mode*::
-	Set bond type: mode=*[ balance-slb | active-backup | lacp ] 
+	Set bond type: mode=[ balance-slb | active-backup | lacp ] 
 
 EXAMPLES
 --------
