@@ -76,6 +76,34 @@ createparams(){
 				"name-description") echo -e "*$PARAMSTRING*:: \n\t${OBJECTUPPER} description" ;;
 				"other-config") echo -e "*$PARAMSTRING*:: \n\t${OBJECTUPPER} other-config parameters" ;;
 				"tags") echo -e "*$PARAMSTRING*:: \n\t${OBJECTUPPER} tags" ;;
+				"dom-id") echo -e "*$PARAMSTRING*:: \n\t${OBJECTUPPER} Domain ID" ;;
+				"allowed-operations") echo -e "*$PARAMSTRING*:: \n\t${OBJECTUPPER} allowed operations" ;;
+				"current-operations") echo -e "*$PARAMSTRING*:: \n\t${OBJECTUPPER} current operations" ;;
+				"blocked-operations") echo -e "*$PARAMSTRING*:: \n\t${OBJECTUPPER} blocked operations" ;;
+				"power-state") echo -e "*$PARAMSTRING*:: \n\t${OBJECTUPPER} power state" ;;
+				"xenstore-data") echo -e "*$PARAMSTRING*:: \n\tXenstore data" ;;
+				"sr-uuid") echo -e "*$PARAMSTRING*:: \n\tStorage Repository UUID" ;;
+				"sr-name-label") echo -e "*$PARAMSTRING*:: \n\tStorage Repository name label" ;;
+				"vm-uuid") echo -e "*$PARAMSTRING*:: \n\tVirtual Machine UUID" ;;
+				"vm-name-label") echo -e "*$PARAMSTRING*:: \n\tVirtual Machine name label" ;;
+				"vdi-uuid") echo -e "*$PARAMSTRING*:: \n\tVirtual Disk Image UUID" ;;
+				"vdi-name-label") echo -e "*$PARAMSTRING*:: \n\tVirtual Disk Image name label" ;;
+				"host-uuid") echo -e "*$PARAMSTRING*:: \n\tHost UUID" ;;
+				"host-name-label") echo -e "*$PARAMSTRING*:: \n\tHost name label" ;;
+				"network-uuid") echo -e "*$PARAMSTRING*:: \n\tNetwork UUID" ;;
+				"network-name-label") echo -e "*$PARAMSTRING*:: \n\tNetwork name label" ;;
+				"pool-uuid") echo -e "*$PARAMSTRING*:: \n\tPool UUID" ;;
+				"pool-name-label") echo -e "*$PARAMSTRING*:: \n\tPool name label" ;;
+				"VIF-uuids") echo -e "*$PARAMSTRING*:: \n\tVirtual Network Interface UUIDs" ;;
+				"PIF-uuids") echo -e "*$PARAMSTRING*:: \n\tPhysical Network Interface UUIDs" ;;
+				"MTU") echo -e "*$PARAMSTRING*:: \n\tNetwork Interface Maximum Transmission Unit" ;;
+				"MAC") echo -e "*$PARAMSTRING*:: \n\tNetwork Interface hardware address" ;;
+				"VLAN") echo -e "*$PARAMSTRING*:: \n\tVLAN tag ID" ;;
+				"IP") echo -e "*$PARAMSTRING*:: \n\tIP Address" ;;
+				"DNS") echo -e "*$PARAMSTRING*:: \n\tDomain Name Server Address" ;;
+				"netmask") echo -e "*$PARAMSTRING*:: \n\tNetwork Mask" ;;
+				"gateway") echo -e "*$PARAMSTRING*:: \n\tIPv4 Default Gateway" ;;
+				"IPv6-gateway") echo -e "*$PARAMSTRING*:: \n\tIPv6 Default Gateway" ;;
 				*) echo -e "*$PARAMSTRING*:: \n" ;;
 			esac
 		done
