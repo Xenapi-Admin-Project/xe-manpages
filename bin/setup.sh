@@ -3,12 +3,12 @@
 # Per his holiness's wishes Fedora AND Debian/Ubuntu now included
 echo ""
 PS3="Please select a Distro: "
-select option in Debian/Ubuntu Fedora Quit
+select option in Debian/Ubuntu/Mint RHEL/CentOs/Fedora Quit
 do
   case $option in
 
 # Debian systems
-    Debian/Ubuntu)
+    Debian/Ubuntu/Mint)
       echo "Debian go ==>" 
             sudo apt-get -y install docbook docbook-xsl docbook-xsl-doc-pdf \
             docbook-xsl-doc-html libservlet2.4-java docbook2odf docbook2x \
@@ -16,7 +16,7 @@ do
 
       break;;
 # Fedora systems
-      Fedora)
+      RHEL/CentOs/Fedora)
         echo "Fedora go ==>"
             sudo yum install -y docbook-dtds docbook-simple docbook-utils-pdf \
             docbook-style-dsssl docbook2x docbook-utils docbook-style-xsl \
