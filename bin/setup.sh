@@ -9,7 +9,7 @@ do
 
 # Debian systems
     Debian/Ubuntu/Mint)
-      echo "Debian go ==>" 
+      echo "Debian based install........" 
             sudo apt-get -y install docbook docbook-xsl docbook-xsl-doc-pdf \
             docbook-xsl-doc-html libservlet2.4-java docbook2odf docbook2x \
             xsltproc asciidoc git
@@ -17,7 +17,7 @@ do
       break;;
 # Fedora systems
       RHEL/CentOs/Fedora)
-        echo "Fedora go ==>"
+        echo "RHEL based install......."
             sudo yum install -y docbook-dtds docbook-simple docbook-utils-pdf \
             docbook-style-dsssl docbook2x docbook-utils docbook-style-xsl \
             xsltproc asciidoc git
