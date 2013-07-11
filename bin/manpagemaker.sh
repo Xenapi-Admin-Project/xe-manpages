@@ -32,14 +32,14 @@ createlistdescription()
 	echo ""	
 	echo "*xe ${XE_COMMAND}* displays ${OBJECTUPPER}s and their parameters."
 	echo ""
-	echo "Output can be filtered by using the *params* parameter and a value (separate multiple parameters with commas): ::"
+	echo "Output can be filtered by using the *params* parameter and a value (multiple parameters should be separated by commas): ::"
 	echo "	*xe ${XE_COMMAND} params=<PARAM1>* +"
 	echo "	*xe ${XE_COMMAND} params=<PARAM1,PARAM2,PARAM3>*"
 	echo ""
 	echo "Output can be filtered by using parameter values and the desired value: ::"
 	echo "	*xe ${XE_COMMAND} <PARAMETER>=<VALUE>*"
 	echo ""
-	echo "Append --minimal to display values for one parameter on a single line separated by commas: ::"
+	echo "Append --minimal to display values for one parameter outputted on a single line with results separated by commas: ::"
 	echo "	*xe ${XE_COMMAND} params=\"<PARAMETER>\" --minimal*"
 	echo ""
 }
@@ -48,7 +48,7 @@ createparams(){
 	echo ""
 	PARAMTYPES="reqd optional"
 	for TYPE in $PARAMTYPES ;do
-		PARAMS=$(xe help "$XE_COMMAND" | grep "$TYPE params" | sed -e 's/^.*optional params[ ]:[ ]//')
+		PARAMS=$(xe help "$XE_COMMAND" | grep "$TYPE params" | sed -e "s/^.*$TYPE params[ ]:[ ]//")
 		if [[ -z "$PARAMS" ]] ;then
 			continue
 		fi
@@ -191,7 +191,7 @@ createfooter()
 XE_COMMAND="$1"
 HELPDISPLAY=$(xe help "$XE_COMMAND")
 
-OBJECT=${XE_COMMAND%-*}
+OBJECT=${XE_COMMAND%%-*}
 OBJTYPE=${XE_COMMAND#*-}
 OBJECTUPPER=$(echo $OBJECT | tr 'a-z' 'A-Z')
 
