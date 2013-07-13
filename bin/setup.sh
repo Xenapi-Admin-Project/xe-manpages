@@ -19,7 +19,7 @@ do
       RHEL/CentOs/Fedora)
         echo "RHEL based install......."
             sudo yum install -y docbook-dtds docbook-simple docbook-utils-pdf \
-            docbook-style-dsssl docbook2x docbook-utils docbook-style-xsl \
+            docbook-style-dsssl docbook2X docbook-utils docbook-style-xsl \
             xsltproc asciidoc git
         break;;
 
