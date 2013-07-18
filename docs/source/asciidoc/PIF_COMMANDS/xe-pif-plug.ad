@@ -7,7 +7,7 @@ XE(1)
 
 NAME
 ----
-xe-pif-plug - Attach a physical interface
+xe-pif-plug - Attach a physical interface (PIF)
 
 SYNOPSIS
 --------
@@ -15,7 +15,7 @@ SYNOPSIS
 
 DESCRIPTION
 -----------
-*xe pif-plug* attaches a PIF to its assoisated network. If successful, *xe pif-list* will show a plugged pif as *currently-attached ( RO): true*. 
+*xe pif-plug* attaches a physical interface (PIF) to an external network. 
 
 Use *xe pif-unplug* and *xe pif-plug* to enable changes to the *other-config* fields of a PIF.
 

@@ -7,7 +7,7 @@ XE(1)
 
 NAME
 ----
-xe-vif-unplug - Unplug a VIF interface
+xe-vif-unplug - Unplug a virtual interface (VIF)
 
 SYNOPSIS
 --------
@@ -28,7 +28,7 @@ To return the currently-attached parameter for a VIF:
 
 - *xe vif-param-get* uuid=<VIF UUID> param-name="currently-attached"
 
-To detach a VIF interface from a running VM: ::
+To detach a VIF interface from a running VM: 
 
 - *xe vif-unplug* uuid=<VIF UUID>
 

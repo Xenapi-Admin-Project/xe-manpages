@@ -7,7 +7,7 @@ XE(1)
 
 NAME
 ----
-xe-vif-destroy - Remove a virtual interface
+xe-vif-destroy - Remove a virtual interface (VIF)
 
 SYNOPSIS
 --------
@@ -28,12 +28,12 @@ To check the currently-attached status for a VIF:
 
 - *xe vif-param-get* uuid=<VIF UUID> param-name="currently-attached"
 
-To destroy a VIF interface attached to a running VM:
+To remove a VIF interface attached to a running VM:
 
 - *xe vif-unplug* uuid=<VIF UUID> 
 - *xe vif-destroy* uuid=<VIF UUID> 
 	
-To destroy a detached VIF interface:
+To remove a detached VIF interface:
 	
 - *xe vif-destroy* uuid=<VIF UUID>
 

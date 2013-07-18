@@ -15,7 +15,20 @@ SYNOPSIS
 
 DESCRIPTION
 -----------
-*xe bond-destroy* removes a bond 
+*xe bond-destroy* removes a bond from a host. 
+
+f reverting a XenServer host to a non-bonded configuration, be aware that the bond-destroy command
+automatically configures the primary-slave as the interface to be used for the management interface.
+Consequently, all VIFs will be moved to the management interface.
+The term primary-slave refers to the PIF that the MAC and IP configuration was copied from when creating the
+bond. When bonding two NICs, the primary slave is:
+1. The management interface NIC (if the management interface is one of the bonded NICs).
+2. Any other NIC with an IP address (if the management interface was not part of the bond).
+3. The first named NIC. You can find out which one it is by running the following:
+xe bond-list params=all
+
+Use *xe bond-destroy* on each host in a pool to remove all bonds from an internal network.
+ 
  
 REQUIRED PARAMETERS
 -------------------
@@ -24,7 +37,9 @@ REQUIRED PARAMETERS
 	
 EXAMPLES
 --------
-To destroy a bond: ::
+To destroy a bond:
+
+- *xe bond-destroy* uuid=<BOND UUID>
 
 SEE ALSO
 --------

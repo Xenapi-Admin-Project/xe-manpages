@@ -35,7 +35,7 @@ To return the mode parameter from a specific bond:
 
 - *xe bond-param-get* uuid=<BOND UUID> param-name="mode"
 
-To return the value from the a parameter key found in the properties parameter: ::
+To return the value from the a parameter key found in the properties parameter:
 
 - *xe bond-param-get* uuid=<BOND UUID> param-name="properties" param-key=<PARAMETER KEY>
 

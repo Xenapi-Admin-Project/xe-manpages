@@ -7,15 +7,15 @@ XE(1)
 
 NAME
 ----
-xe-pif-unplug - Detach a physical interface
+xe-pif-unplug - Detach a physical interface (PIF)
 
 SYNOPSIS
 --------
 *xe pif-unplug* uuid=<PIF UUID>
 
 DESCRIPTION
------------
-*xe pif-unplug* detaches a physical interface (PIF) from an external network. If successful, *xe pif-list* will show a detached PIF as *currently-attached ( RO): false*. A detached PIF will retain its configuration, and the *disallow-unplug* parameter controls the success of *xe pif-unplug*. 
+----------- 
+*xe pif-unplug* detaches a physical interface (PIF) from an external network. The *disallow-unplug* parameter controls a PIFs ability to be detached. While detached, a PIF will retain its configuration. 
 
 Use *xe pif-unplug* and *xe pif-plug* to enable changes to the *other-config* fields of a PIF.
 

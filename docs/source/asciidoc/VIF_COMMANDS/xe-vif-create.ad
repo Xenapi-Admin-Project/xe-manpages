@@ -7,7 +7,7 @@ XE(1)
 
 NAME
 ----
-xe-vif-create - Create a virtual interface
+xe-vif-create - Create a virtual interface (VIF)
 
 SYNOPSIS
 --------
@@ -15,18 +15,20 @@ SYNOPSIS
 
 DESCRIPTION
 -----------
-*xe vif-create* creates a VIF for the specified VM using the specified device number, and connects to the specified network. The MTU size of the VIF is inherited from the network, and the MAC address is randomly generated unless one is specified. The resulting VIF UUID is returned.
+*xe vif-create* creates a VIF on the target VM using the given device number, and connects it to the specified network. The MTU size of the VIF is inherited from the network. The MAC address is randomly generated unless one is specified. The resulting VIF UUID is returned.
+
+When creating a VIF assure the device number is available by checking the "allowed-VIF-devices" VM parameter. 
 
 Use *xe vif-plug* to attach newly created VIFs to running VMs. VIFs automatically attach when you start a VM. 
 
 REQUIRED PARAMETERS
 -------------------
 *vm-uuid*::
-	Target VM for the VIF. Use *xe vm-list* to obtain a list of VMs.
+	VM for the VIF. Use *xe vm-list* to obtain a list of VMs.
 *network-uuid*::
-	Target network for the VIF. Use *xe network-list* to obtain a list of networks.
+	Network for the VIF. Use *xe network-list* to obtain a list of networks.
 *device*::
-	VM Machine-readable interface number. (e.g. eth0)
+	The available VM Machine-readable interface number. (e.g. eth0)
 			
 OPTIONAL PARAMETERS
 -------------------
@@ -67,4 +69,3 @@ COPYRIGHT
 Copyright \(C) 2012 - Matthew Spah
 
 Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License, Version 1.3 or any later version published by the Free Software Foundation; with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts. A copy of the license is included in the section entitled "GNU Free Documentation License"
-

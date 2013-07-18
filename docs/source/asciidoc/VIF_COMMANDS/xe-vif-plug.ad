@@ -7,7 +7,7 @@ XE(1)
 
 NAME
 ----
-xe-vif-plug - Plug in a VIF 
+xe-vif-plug - Plug in a virtual interface (VIF) 
 
 SYNOPSIS
 --------

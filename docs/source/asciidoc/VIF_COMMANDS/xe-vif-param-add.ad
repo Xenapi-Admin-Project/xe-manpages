@@ -37,7 +37,7 @@ To add an IPv4 address to the *ipv4-allowed* parameter:
 
 - *xe vif-param-add uuid=<VIF UUID> param-name="ipv4-allowed" param-key=<IPv4 HOST ADDRESS>
 
-To add a Key/value pair to a map parameter:
+To add a Key/value pair to a map parameter
 
 - *xe vif-param-add uuid=<VIF UUID> param-name=<MAP PARAMETER NAME> <MAP PARAMETER KEY>=<VALUE>
 

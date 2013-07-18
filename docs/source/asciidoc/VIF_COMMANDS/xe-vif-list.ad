@@ -19,8 +19,8 @@ DESCRIPTION
 
 Output can be filtered by using the *params* parameter and a value (separate multiple parameters with commas):
 
-- *xe vif-list params=vm-uuid* 
-- *xe vif-list params=uuid,vm-uuid,device,currently-attached,*
+- *xe vif-list params="vm-uuid"* 
+- *xe vif-list params="uuid,vm-uuid,device,currently-attached"*
 
 Output can be filtered by using parameter values and the desired value:
 	

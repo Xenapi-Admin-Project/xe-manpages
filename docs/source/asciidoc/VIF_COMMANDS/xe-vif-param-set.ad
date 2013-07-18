@@ -7,7 +7,7 @@ XE(1)
 
 NAME
 ----
-xe-vif-param-set - Sets writable parameters for a VIF
+xe-vif-param-set - Sets writable parameters for a virtual interface (VIF)
 
 SYNOPSIS
 --------

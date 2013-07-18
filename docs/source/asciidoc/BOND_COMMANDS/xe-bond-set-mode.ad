@@ -17,7 +17,7 @@ DESCRIPTION
 -----------
 *xe bond-set-mode* changes the mode of the specified bond. Bond mode changes are applied immediately upon command execution. Use *xe-bond-param-set* to set bond specific configuration parameters. 
 
-LACP bonding is only available with the network back-end set to Openvswitch, whereas balance-slb and active-backup are available for Openvswitch and the Linux legacy bridge modes. Use *xe-get-network-backend*to display your current XenServer/XCP network back-end. See *xe-switch-network-backend* for instructions on how to change your XenServer/XCP network back-end. 
+LACP bonding is only available with the network backend set to Openvswitch, whereas balance-slb and active-backup are available for Openvswitch and the Linux legacy bridge modes. Use *xe-get-network-backend* to display your current XenServer/XCP network back-end. See *xe-switch-network-backend* for instructions on how to change your XenServer/XCP network backend. 
 
 REQUIRED PARAMETERS
 -------------------
@@ -28,7 +28,7 @@ REQUIRED PARAMETERS
 
 EXAMPLES
 --------
-To display the pools current network back end: 
+To display the pools current network backend: 
 
 - *xe-get-network-backend*
 

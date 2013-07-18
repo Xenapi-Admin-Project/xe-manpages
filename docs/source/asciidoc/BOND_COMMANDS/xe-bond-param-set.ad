@@ -24,7 +24,8 @@ REQUIRED PARAMETERS
 	Bond UUID - Use *xe bond-list* to obtain a list of bonds.
 
 *properties:*::
-
+	// figure out properties fro a bond
+	
 
 EXAMPLES
 --------
