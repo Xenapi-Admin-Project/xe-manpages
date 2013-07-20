@@ -4,7 +4,7 @@
 
 oIFS=$IFS
 IFS="\n"
-SEP="^^"
+SEP="@#@"
 PARAMTABLE="$HOME/bin/xe-paramtable.txt"
 
 createheader()
@@ -47,43 +47,37 @@ createlistdescription()
 }
 
 createparams(){
-	echo ""
-	echo "REQUIRED PARAMETERS"
-	echo "-------------------"
-	echo ""
-
-	PARAMS=$(xe help "$XE_COMMAND" | grep "reqd params" | sed -e "s/^.*reqd params[ ]:[ ]//")
-	if [[ -z "$PARAMS" ]] ;then
-		continue
+	
+	PARAMS=$(xe help "$XE_COMMAND" | grep "reqd params" | sed -e "s/^.*reqd params[ \t]*:[ ]//")
+	if [[ ! -z "$PARAMS" ]] ;then
+		echo ""
+		echo "REQUIRED PARAMETERS"
+		echo "-------------------"
+		echo ""
+		IFS=","
+		for param in $PARAMS ;	do
+			local PARAMSTRING=$(echo "$param" | sed -e 's/^[ \t]*//')
+			DESC=$(grep "${XE_COMMAND}${SEP}${PARAMSTRING}${SEP}" "$PARAMTABLE" | awk -F${SEP} '{print $3}')
+			echo -e "*$PARAMSTRING*:: \n\t${DESC}" 
+		done
 	fi
-	IFS=","
-	for param in $PARAMS ;	do
-		local PARAMSTRING=$(echo "$param" | sed -e 's/^[ \t]*//')
-		DESC=$(grep "${XE_COMMAND}${SEP}${PARAMSTRING}${SEP}" "$PARAMTABLE" | awk -F${SEP} '{print $3}')
-		echo -e "*$PARAMSTRING*:: \n\t${DESC}" 
-	done
 	
-	
-	echo ""
-	echo "OPTIONAL PARAMETERS"
-	echo "-------------------"
-	echo "*all*::"
-	echo "	Display all parameter values"
-	echo ""
-	
-	PARAMS=$(xe help "$XE_COMMAND" | grep "optional params" | sed -e "s/^.*optional params[ ]:[ ]//")
-	if [[ -z "$PARAMS" ]] ;then
-		continue
+	PARAMS=$(xe help "$XE_COMMAND" | grep "optional params" | sed -e "s/^.*optional params[ \t]*:[ ]//")
+	if [[ ! -z "$PARAMS" ]] ;then
+		echo ""
+		echo "OPTIONAL PARAMETERS"
+		echo "-------------------"
+		echo ""
+		IFS=","
+		for param in $PARAMS ;	do
+			local PARAMSTRING=$(echo "$param" | sed -e 's/^[ \t]*//')
+			DESC=$(grep "${XE_COMMAND}${SEP}${PARAMSTRING}${SEP}" "$PARAMTABLE" | awk -F${SEP} '{print $3}')
+			echo -e "*$PARAMSTRING*:: \n\t${DESC}" 
+		done
+		echo ""
+		echo "*--minimal*::"
+		echo "	Specify --minimal to only show minimal output"
 	fi
-	IFS=","
-	for param in $PARAMS ;	do
-		local PARAMSTRING=$(echo "$param" | sed -e 's/^[ \t]*//')
-		DESC=$(grep "${XE_COMMAND}${SEP}${PARAMSTRING}${SEP}" "$PARAMTABLE" | awk -F${SEP} '{print $3}')
-		echo -e "*$PARAMSTRING*:: \n\t${DESC}" 
-	done
-	echo ""
-	echo "*--minimal*::"
-	echo "	Specify --minimal to only show minimal output"
 
 }
 
