@@ -11,7 +11,7 @@ xe-host-disable - Disable a host
 
 SYNOPSIS
 --------
-*xe host-disable <host-selectors>*
+*xe host-disable* [ host-selectors ] [--multiple]
 
 DESCRIPTION
 -----------
@@ -19,23 +19,18 @@ DESCRIPTION
 
 REQUIRED PARAMETERS
 -------------------
-
 <host-selectors>::
-	Parameters to select host(s) - use *xe host-list params=all* to get a list of host parameters to filter on. 
-
+	Parameters to select host(s) - Use *xe host-list params=all* to get a list of host parameters to filter on. 
 	
 EXAMPLES
 --------
-
 To disable a host using a UUID: 
 
 - *xe host-disable* uuid=<HOST UUID>
-
-
 		
 SEE ALSO
 --------
-*xe help host-disable*, *xe-host-enable*(1), *xe-host-list*(1), *xe-host-
+*xe help host-disable*, *xe-host-enable*(1), *xe-host-list*(1), *xe-host-param-list*(1), *xe-host-param-get*(1), *xe-host-param-set*(1)
 
 AUTHORS
 -------
