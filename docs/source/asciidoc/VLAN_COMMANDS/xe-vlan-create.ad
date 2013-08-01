@@ -15,7 +15,7 @@ SYNOPSIS
 
 DESCRIPTION
 -----------
-*xe vlan-create* creates an untagged pseudo PIF attached to the specified internal network. The specified physical PIF becomes the tagged-PIF for the external physical network. XCP only supports 802.1Q frame tagging. The VLAN is created on the host where the physical PIF resides. To create a VLAN on every host in the pool use *xe pool-vlan-create*. The pseudo PIF (untagged-PIF) UUID is returned. 
+*xe vlan-create* creates an untagged pseudo PIF attached to the specified internal network. The specified physical PIF becomes the tagged-PIF for the external physical network. XenServer only supports 802.1Q frame tagging. The VLAN is created on the host where the physical PIF resides. To create a VLAN on every host in the pool use *xe pool-vlan-create*. The pseudo PIF (untagged-PIF) UUID is returned. 
 
 Untagged traffic on the internal network enters the pseudo PIF (untagged-PIF), is tagged with the specified VLAN ID, and exits via the physical PIF (tagged-PIF).
 

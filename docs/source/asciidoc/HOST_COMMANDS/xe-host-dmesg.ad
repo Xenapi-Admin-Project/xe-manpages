@@ -18,11 +18,10 @@ DESCRIPTION
 -----------
 *xe host-dmesg* displays the Xen dmesg of a XenServer host or multiple XenServer hosts. Select host(s) by using one or more parameters displayed by xe host-list params=all. If no hosts(s) are selected then the Xen dmesg of all hosts is displayed. Append --multiple if more than one host is selected. 
 
-
 OPTIONAL PARAMETERS
 -------------------	
 *<host-selectors>*::
-		Parameters to select host(s) - use *xe host-list params=all* to get a list of host parameters to filter on. 
+	Parameters to select host(s) - use *xe host-list params=all* to get a list of host parameters to filter on. 
 *--multiple* ::
 	Append --multiple if you want to match more than one host.
 

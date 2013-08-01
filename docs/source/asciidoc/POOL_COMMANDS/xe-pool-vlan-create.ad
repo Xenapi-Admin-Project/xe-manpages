@@ -11,12 +11,11 @@ xe-pool-vlan-create - Create a new VLAN on all hosts in a pool.
 
 SYNOPSIS
 --------
-*xe pool-vlan-create* pif-uuid=<PIF UUID> network-uuid=<Network UUID> vlan=<tag id>
-
+*xe pool-vlan-create* pif-uuid=<PIF UUID> vlan=<VLAN ID> network-uuid=<NETWORK UUID>
 
 DESCRIPTION
 -----------
-*xe pool-vlan-create* creates untagged pseudo PIFs attached to the specified internal network. The specified physical PIF becomes the tagged-PIF for the external physical network on each host. Xen Cloud Platform only supports 802.1Q VLAN tagging. A VLAN and a pseudo PIF are created on each host where the physical PIF resides. The pseudo PIFs (untagged-PIF) UUIDs are returned. 
+*xe pool-vlan-create* creates untagged pseudo PIFs attached to the specified internal network. The specified physical PIF becomes the tagged-PIF for the external physical network on each host. XenServer only supports 802.1Q VLAN tagging. A VLAN and a pseudo PIF are created on each host where the physical PIF resides. The pseudo PIFs (untagged-PIF) UUIDs are returned. 
 
 Untagged traffic on the internal network enters the pseudo PIF (untagged-PIF), is tagged with the specified VLAN ID, and exits via the physical PIF (tagged-PIF).
 
