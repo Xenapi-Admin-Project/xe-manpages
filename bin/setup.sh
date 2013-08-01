@@ -47,7 +47,8 @@ do
        break;;
 
       Quit)
-       echo "\033[33m Quit \033[0m"
+       echo -e "\033[33m Quit \033[0m"
+       exit
        break;;
     esac
 
@@ -56,7 +57,6 @@ done
 sleep 2
 echo ""
 echo -e "\033[33m+++++Creating projects directory+++++\033[0m"
-echo ""
 mkdir ~/projects
 cd ~/projects
 sleep 2
