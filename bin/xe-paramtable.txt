@@ -352,8 +352,8 @@ host-restore@#@<host-selectors>@#@Parameters to select host(s) - use *xe host-li
 host-retrieve-wlb-evacuate-recommendations@#@uuid@#@
 host-send-debug-keys@#@host-uuid@#@
 host-send-debug-keys@#@keys@#@
-host-set-cpu-features@#@features@#@
-host-set-cpu-features@#@uuid@#@
+host-set-cpu-features@#@features@#@32-digit hexadecimal CPU feature mask
+host-set-cpu-features@#@uuid@#@Host UUID - Use *xe host-list* to obtain a list of host UUIDs
 host-set-hostname-live@#@host-name@#@
 host-set-hostname-live@#@<host-selectors>@#@Parameters to select host(s) - use *xe host-list params=all* to get a list of host parameters to filter on. 
 host-set-hostname-live@#@host-uuid@#@
