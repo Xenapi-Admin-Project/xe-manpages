@@ -54,6 +54,14 @@ The NAME section will have the name of the command which can contain no spaces. 
  
 	xe-cd-list - List CD images
  
+Acronyms 
+
+	In the name section list the full name followed by the acronym. Subsequently, use the acronym where ever else needed.
+	
+	NAME
+	----
+	xe-vif-create - Create a Virtual Interface (VIF)
+	
  
 3. SYNOPSIS
  

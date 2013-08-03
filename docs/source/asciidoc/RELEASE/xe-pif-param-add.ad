@@ -11,11 +11,11 @@ xe-pif-param-add - Add a key/value to a parameter for a PIF
 
 SYNOPSIS
 --------
-*xe pif-param-add* uuid=<PIF UUID> param-name=<PARAMETER> [ param-key=<SET PARAMETER KEY> ] [ <MAP PARAMETER KEY>=<VALUE> ]
+*xe pif-param-add* uuid=<PIF UUID> param-name=<PARAMETER> [ <MAP PARAMETER KEY>=<VALUE> ] [ param-key=<SET PARAMETER KEY> ] 
 
 DESCRIPTION
 -----------
-*xe pif-param-add* adds a key to a set parameter or a key/value pair to a map parameter. Use *xe pif-list* and *xe pif-param-list* to identify writable set or map parameters (SRW, MRW).﻿
+*xe pif-param-add* adds a key/value pair to a map parameter or a key to a set parameter. Use *xe pif-list* and *xe pif-param-list* to identify writable set or map parameters (SRW, MRW).﻿
 
 REQUIRED PARAMETERS
 -------------------
@@ -27,23 +27,23 @@ REQUIRED PARAMETERS
 OPTIONAL PARAMETERS
 -------------------
 *param-key*::
-	Key to be added to a set parameter (SRW).
+	Key to be added to a set parameter (SRW)
 *<MAP PARAMETER KEY>*::
-	Key/value pair to be added to a map parameter (MRW). 
+	Key/value pair to be added to a map parameter (MRW)
 
 EXAMPLES
 --------
-To add a DNS search path ( DNS Suffix ) value for a PIF interface:
-	
-- *xe pif-param-add* uuid=<PIF UUID> param-name=other-config domain=<DNS SUFFIX>
-	
+To add the key/value pair "management_purpose=Storage" to the map parameter *other-config*: 
+
+- *xe pif-param-add* uuid=<PIF UUID> param-name=other-config management_purpose=Storage
+
 SEE ALSO
 --------
 *xe help pif-param-add*, *xe pif-list*(1),*xe pif-param-list*(1), *xe pif-param-get*(1), *xe pif-param-set*(1), *xe pif-param-remove*(1), *xe pif-param-clear*(1), *xe network-list*(1)
 
 AUTHORS
 -------
-Manpage Author(s): ::
+Manpage Author(s):
 
 - Matthew Spah <spahmatthew@xenapiadmin.com> 
 - Lisa Nguyen <lisa@xenapiadmin.com>
@@ -54,9 +54,9 @@ For guidelines on submitting bug reports see http://wiki.xen.org/wiki/Reporting_
 
 COPYRIGHT
 ---------
-Copyright \(C) 2012 - Matthew Spah, Lisa Nguyen
+Copyright \(C) 2013 - Matthew Spah, Lisa Nguyen
 
-Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License, Version 1.3 or any later version published by the Free Software Foundation; with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts. A copy of the license is included in the section entitled "GNU Free Documentation License"
+Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License, Version 1.3 or any later version published by the Free Software Foundation; with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts. A copy of the license is included in the section entitled "GNU Free Documentation License."
 
 
 
