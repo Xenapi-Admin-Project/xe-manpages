@@ -1,9 +1,9 @@
 xe-host-cpu-info(1)
 =======
 :doctype: manpage
-:man source:   xe-host-cpu-info
-:man version:  {1}
-:man manual:   xe host-cpu-info Manual
+:man source: xe-host-cpu-info
+:man version: {1}
+:man manual: xe host-cpu-info Manual
 
 NAME
 -----
@@ -17,7 +17,7 @@ DESCRIPTION
 -----------
 *xe host-cpu-list* Will output information regarding the host's physical CPUs.::
  Information displayed: ::
- cpu_count 
+ cpu_count
  vendor
  speed
  modelname
@@ -33,9 +33,9 @@ DESCRIPTION
 OPTIONS
 -------
 *uuid=<Host UUID>*::
-	Use *xe host-list* to display Host UUID; then this UUID can be used to acquire specific host information.
+Use *xe host-list* to display Host UUID; then this UUID can be used to acquire specific host information.
 
-*--minimal* 
+*--minimal*
 
 
 BUGS
@@ -43,7 +43,7 @@ BUGS
 
 SEE ALSO
 --------
-*xe host-list*, 
+*xe host-list*,
 
 AUTHORS
 -------
@@ -56,4 +56,3 @@ Copyright \(C) 2012 - 2013 Michael R. Webber
 Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License, Version 1.3 or any later version published by the Free Software Foundation; with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts. A copy of the license is included in the section entitled "GNU Free Documentation License"
 
 POSSIBILITY OF SUCH DAMAGE.
-
