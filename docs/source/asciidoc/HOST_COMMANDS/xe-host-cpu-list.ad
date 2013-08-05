@@ -7,49 +7,88 @@ xe-host-cpu-list(1)
 
 NAME
 -----
-*xe host-cpu-list - displays lists of all the cpus on the host-machine.
+xe-host-cpu-list displays CPUs present on each XenServer host
 
 SYNOPSIS
 --------
-*xe host-cpu-list* [--minimal] [params | params=<all>] [params=<uuid>, <host-uuid>, <number>, <vendor>, <speed>, <model>, <family>, <modelname>, <stepping>, <flags>, <utilisation> ]
-[uuid=<uuid>] [host-uuid=<host uuid>] [number=<number>] [vendor=<vendor>] [speed=<speed>] [model=<model>] [family=<family>] [stepping=<stepping>]  
+*xe host-cpu-list* [ params=<PARAMETER> ] [--minimal]
 
 DESCRIPTION
 -----------
-*xe host-cpu-list*  will display a list all of the cpus on the host-machine. Output can be filtered by supplying params=<parameter>. 
-Multiple parameters can be displayed by seperating each parameter with a comma (params=uuid,vendor,speed).
+*xe host-cpu-list* displays CPUs and their parameters.
 
-<parameter> can be any of
+Output can be filtered by using the *params* parameter and a value (separate multiple parameters with commas):
 
+- *xe host-cpu-list params=speed*
+- *xe host-cpu-list params=uuid,host-uuid,speed*
+
+Output can be filtered by using parameter values and the desired value:
+
+- *xe host-cpu-list host-uuid="<HOST-UUID>"*
+
+Append --minimal to display values for one parameter on a single line separated by commas:
+
+- *xe host-cpu-list params="uuid" --minimal
+
+OPTIONAL PARAMETERS
+-------------------
 *all*::
-     Display all cpu(s) parameters
+	Display all parameter values
+
 *uuid*::
-     Display all cpu(s) UUIDs
+	Display CPU UUIDs
+
 *host-uuid*::
-     Display all cpu(s) host UUID
+	Display XenServer host UUIDs
+
 *number*::
-     Display 
+    Display host CPU numbers
+         
+*vendor*::
+	Display CPU venders
 
-OPTIONS
--------
+*speed*::
+	Display CPU speeds
 
-BUGS
------
-Send bugs to xen-devel@lists.xen.org, see http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP on how to send bug reports. 
-General questions can be sent to xen-api@lists.xen.org.
+*model*::
+	Display CPU models
 
+*family*::
+	Display CPU families 
+
+*modelname*:: 
+	Display CPU modelnames
+
+*stepping*::
+	Display CPU steppings
+
+*flags*::
+	Display CPU flags
+
+*utilisation*:: 
+	Display CPU utilisation - Use *xe host-cpu-param-list* or *xe host-cpu-param-get* to display CPU utilisation
+
+*--minimal*::
+	Specify --minimal to only show minimal output
+	
 SEE ALSO
 --------
- 
+*xe help host-cpu-list*, *xe host-cpu-info*(1), *xe host-list*(1), *xe host-cpu-param-list*(1), *xe host-cpu-param-get*(1)
 
 AUTHORS
 -------
-Michael R. Webber <mrwebberone@hotmail.com
+Manpage Author(s):
+
+- Matthew Spah <spahmatthew@xenapiadmin.com>
+- Michael R. Webber <mrwebberone@hotmail.com>
+
+BUGS
+----
+For guidelines on submitting bug reports see http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP. Submit bugs and general questions to xen-api@lists.xen.org.
 
 COPYRIGHT
 ---------
-Copyright \(C) 2012 - Michael R. Webber
-
+Copyright \(C) 2012 - Matthew Spah, Michael R. Webber
 Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License, Version 1.3 or any later version published by the Free Software Foundation; with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts. A copy of the license is included in the section entitled "GNU Free Documentation License"
 
 
