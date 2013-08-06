@@ -150,12 +150,13 @@
     </xsl:otherwise>
   </xsl:choose>
   <xsl:text>'</xsl:text>
+  <xsl:text>&#x20;&#x20;&#x20;&#x20;</xsl:text>
   <xsl:text>&#x2022;</xsl:text>
   <xsl:text>\h'+</xsl:text>
   <xsl:choose>
     <xsl:when test="not($list-indent = '')">
       <xsl:text>0</xsl:text>
-      <xsl:value-of select="$list-indent - 1"/>
+      <xsl:value-of select="$list-indent - 2.4"/>
     </xsl:when>
     <xsl:otherwise>
       <xsl:text>\n(INu-1</xsl:text>

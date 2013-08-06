@@ -31,11 +31,11 @@ OPTIONAL PARAMETERS
 
 EXAMPLES
 --------
-To display the *currently-attached* parameter for a VBD: 
+To display the *currently-attached* set parameter: 
 
-- *xe vbd-param-get uuid=<VBD UUID> param-name="currently-attached"
+- *xe vbd-param-get* uuid=<VBD UUID> param-name="currently-attached"
 
-To display the value for *owner*: 
+To display the value of the *owner* map parameter: 
 
 - *xe vbd-param-get* uuid=<VBD UUID> param-name="other-config" param-key="owner"
 	
@@ -58,5 +58,5 @@ COPYRIGHT
 ---------
 Copyright \(C) 2012-2013 - Lisa Nguyen, Christina Mitchell
 
-Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License, Version 1.3 or any later version published by the Free Software Foundation; with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts. A copy of the license is included in the section entitled "GNU Free Documentation License"
+Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License, Version 1.3 or any later version published by the Free Software Foundation; with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts. A copy of the license is included in the section entitled "GNU Free Documentation License."
 
