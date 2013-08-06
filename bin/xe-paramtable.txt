@@ -207,18 +207,18 @@ host-cpu-info@#@uuid@#@
 host-cpu-info@#@uuid=<Host UUID>@#@Use *xe host-list* to display Host UUID; then this UUID can be used to acquire specific host information.
 host-cpu-list@#@all@#@Display all cpu(s) parameters
 host-cpu-list@#@database@#@
-host-cpu-list@#@family@#@
-host-cpu-list@#@flags@#@
+host-cpu-list@#@family@#@Display CPU families 
+host-cpu-list@#@flags@#@Display CPU flags
 host-cpu-list@#@host-uuid@#@Display all cpu(s) host UUID
-host-cpu-list@#@model@#@
-host-cpu-list@#@modelname@#@
-host-cpu-list@#@number@#@Display 
+host-cpu-list@#@model@#@Display CPU models
+host-cpu-list@#@modelname@#@Display CPU modelnames
+host-cpu-list@#@number@#@Display host CPU numbers
 host-cpu-list@#@params@#@
-host-cpu-list@#@speed@#@
-host-cpu-list@#@stepping@#@
-host-cpu-list@#@utilisation@#@
+host-cpu-list@#@speed@#@Display CPU speeds
+host-cpu-list@#@stepping@#@Display CPU steppings
+host-cpu-list@#@utilisation@#@Display CPU utilisation - Use *xe host-cpu-param-list* or *xe host-cpu-param-get* to display CPU utilisation
 host-cpu-list@#@uuid@#@Display all cpu(s) UUIDs
-host-cpu-list@#@vendor@#@
+host-cpu-list@#@vendor@#@Display CPU venders
 host-cpu-param-get@#@database@#@
 host-cpu-param-get@#@param-key@#@
 host-cpu-param-get@#@param-name@#@

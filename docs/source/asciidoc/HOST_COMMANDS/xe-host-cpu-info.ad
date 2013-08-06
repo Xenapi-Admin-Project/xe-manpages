@@ -11,48 +11,49 @@ xe host-cpu-info - Displays information about host's physical CPUs.
 
 SYNOPSIS
 --------
-*xe host-cpu-info* [*uuid=<HOST UUID>*] [*--minimal*]
+*xe host-cpu-info* [ uuid=<HOST UUID> ] [ --minimal ]
 
 DESCRIPTION
 -----------
-*xe host-cpu-list* Will output information regarding the host's physical CPUs.::
- Information displayed: ::
- cpu_count
- vendor
- speed
- modelname
- family
- model
- stepping
- flags
- features
- features_after_reboot
- physical_features
- maskable
+*xe host-cpu-list* display information about a XenServer host's physical CPUs. Remote hosts can be specified using the optional UUID parameter. 
+ 
+The following CPU information is displayed:
 
-OPTIONS
--------
-*uuid=<Host UUID>*::
-Use *xe host-list* to display Host UUID; then this UUID can be used to acquire specific host information.
+- cpu_count - CPU cores on the physical die
+- socket_count - CPU socket number
+- vendor - CPU vendor name
+- speed - CPU speed in MHz
+- modelname - CPU modelname
+- family - CPU family number
+- model - CPU model number
+- stepping - CPU stepping
+- flags - CPU flags
+- features -	
+- features_after_reboot - 
+- physical_features - 
+- maskable -
 
-*--minimal*
-
-
-BUGS
------
+OPTIONAL PARAMETERS
+-------------------
+*uuid*::
+	Host UUID - Use *xe host-list* to display Host UUIDs
 
 SEE ALSO
 --------
-*xe host-list*,
+*xe help host-cpu-info*(1), *xe host-list*(1), *xe host-cpu-list*(1), *xe host-cpu-param-list*(1), *xe host-cpu-param-get*(1)
 
 AUTHORS
 -------
-Michael R. Webber <mrwebberone@hotmail.com>
+Manpage Author(s):
+
+- Matthew Spah <spahmatthew@xenapiadmin.com>
+- Michael R. Webber <mrwebberone@hotmail.com>
+
+BUGS
+----
+For guidelines on submitting bug reports see http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP. Submit bugs and general questions to xen-api@lists.xen.org.
 
 COPYRIGHT
 ---------
-Copyright \(C) 2012 - 2013 Michael R. Webber
-
+Copyright \(C) 2012 - Matthew Spah, Michael R. Webber
 Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License, Version 1.3 or any later version published by the Free Software Foundation; with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts. A copy of the license is included in the section entitled "GNU Free Documentation License"
-
-POSSIBILITY OF SUCH DAMAGE.
