@@ -7,7 +7,7 @@ XE(1)
 
 NAME
 ----
-xe-host-disable - Disable a host
+xe-host-disable - Disable a XenServer host
 
 SYNOPSIS
 --------
@@ -20,7 +20,12 @@ DESCRIPTION
 REQUIRED PARAMETERS
 -------------------
 <host-selectors>::
-	Parameters to select host(s) - Use *xe host-list params=all* to get a list of host parameters to filter on. 
+	Parameters to select host(s) - Use *xe host-list params=all* to get a list of host parameters to filter on.
+	
+OPTIONAL PARAMETERS
+-------------------
+*--multiple* ::
+	Specify --multiple if you want to match more than one host.
 	
 EXAMPLES
 --------
