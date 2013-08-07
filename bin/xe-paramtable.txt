@@ -262,10 +262,10 @@ host-get-cpu-features@#@uuid@#@
 host-get-server-certificate@#@<host-selectors>@#@
 host-get-sm-diagnostics@#@uuid@#@
 host-get-system-status-capabilities@#@<host-selectors>@#@
-host-get-system-status@#@entries@#@
-host-get-system-status@#@filename@#@
-host-get-system-status@#@<host-selectors>@#@
-host-get-system-status@#@output@#@
+host-get-system-status@#@entries@#@Comma-separated list of system status entries
+host-get-system-status@#@filename@#@Desired system status archive filename 
+host-get-system-status@#@<host-selectors>@#@Parameters to select host(s) - Use *xe host-list params=all* to get a list of host parameters to filter on
+host-get-system-status@#@output@#@Compression output for system status file  [ tar | tar.bz2 | zip ]
 host-get-thread-diagnostics@#@uuid@#@
 host-get-vms-which-prevent-evacuation@#@uuid@#@
 host-license-add@#@host-uuid@#@

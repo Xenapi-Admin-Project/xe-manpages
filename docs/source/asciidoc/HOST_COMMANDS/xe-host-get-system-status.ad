@@ -11,34 +11,82 @@ xe-host-get-system-status - Write XenServer(s) system status to a file
 
 SYNOPSIS
 --------
-*xe-host-get-system-status* filename=<OUTPUT FILENAME> [ entries=<ENTRIES> ] [ output=<OUTPUT> ] [ host-selectors ]
+*xe-host-get-system-status* filename=<OUTPUT FILENAME> [ entries=<ENTRIES> ] [ output=<OUTPUT> ] [ host-selectors ] [--multiple]
 
 DESCRIPTION
 -----------
+*xe host-get-system-status* archives the system status of XenServer host(s) into the the desired filename. Output may be archived into a *zip*, *tar, *tar.bz2* (the default). Select hosts by using one or more parameters displayed by xe host-list params=all.  Append --multiple if more than one host matches.
+
+By default *xe host-get-system-status* will populate the archive with all possible system status entries. Entries can be filtered by creating a comma-separated list for the *entries* parameter.
+
+Select from the following entries:
+
+- blobs
+- filesystem_summarise   
+- kernel-info            
+- pam                   
+- vncterm                
+- xen-info               
+- xenserver-install      
+- boot-loader            
+- firstboot              
+- loopback-devices       
+- process-list           
+- xapi                   
+- xenopsd                
+- xenserver-logs         
+- CVSM                   
+- hardware-info          
+- multipath              
+- system-logs            
+- xapi-debug             
+- xenserver-config       
+- xha-liveset            
+- device-model           
+- high-availability      
+- network-config         
+- system-services        
+- xapi-subprocess        
+- xenserver-databases    
+- yum                    
+- disk-info              
+- host-crashdump-logs    
+- network-status         
+- tapdisk-logs           
+- xcp-rrdd-plugins       
+- xenserver-domains    
 
 
-
-
-
-Download system status into <filename>.  Entries is a comma-separated list.  Output may be 'tar', 'tar.bz2' (the default) or 'zip'. The simplest way to select the host on which the operation is to be performed is by supplying the argument 'host=<name or uuid>'. Hosts can also be specified by filtering the full list of hosts on the values of fields. For example, specifying 'enabled=true' will select all hosts whose 'enabled' field is equal to 'true'. Where multiple hosts are matching, and the operation can be performed on multiple hosts, the option '--multiple' must be specified to perform the operation. The full list of fields that can be matched can be obtained by the command 'xe host-list params=all'. If no parameters to select hosts are given, the operation will be performed on all hosts.
 
 
 REQUIRED PARAMETERS
 -------------------
 *filename*:: 
-	
+	Desired system status archive filename 
 
 OPTIONAL PARAMETERS
 -------------------
 *entries*:: 
+	Comma-separated list of system status entries
 	
 *output*:: 
-	Compression output for system status file.  [ tar | tar.bz2 | zip ]
+	Compression output for system status file  [ tar | tar.bz2 | zip ]
 	
-*<host-selectors>*:: 
+<host-selectors>::
+	Parameters to select host(s) - Use *xe host-list params=all* to get a list of host parameters to filter on
+	
+*--multiple*::
+	Specify --multiple if you want to match more than one host.
 	
 EXAMPLES
 --------
+To archive all system status entries to a tar.bz2 file for a certain host:
+
+- *xe host-get-system-status* filename="Archive.tar.bz2" output="tar.bz2" uuid=<HOST UUID>
+
+To archive the kernel-info, xen-info entries into a *zip* for all hosts in the pool: 
+
+- *xe host-get-system-status* filename="Allhosts.zip" entries="kernel-info,xen-info" output="zip" --multiple
 
 
 SEE ALSO
