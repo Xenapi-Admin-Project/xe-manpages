@@ -5,7 +5,6 @@ XE(1)
 :man version:  {1}
 :man manual:   xe host-dmesg manual
 
-
 NAME
 ----
 xe-host-dmesg - Display the Xen dmesg of Xen host(s) 
@@ -43,8 +42,9 @@ SEE ALSO
 
 AUTHORS
 -------
-Manpage Author(s): ::
-	Matthew Spah <spahmatthew@xenapiadmin.com> 
+Manpage Author(s):
+
+- Matthew Spah <spahmatthew@xenapiadmin.com> 
 
 BUGS
 ----
