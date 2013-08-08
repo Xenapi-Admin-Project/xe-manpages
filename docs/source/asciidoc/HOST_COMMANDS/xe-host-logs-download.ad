@@ -22,7 +22,7 @@ DESCRIPTION
 OPTIONAL PARAMETERS
 -------------------
 *file-name*::
-	Desired file name for XenServe log(s)
+	Desired file name for XenServer log(s)
 	
 *<host-selectors>*::
 	Parameters to select host(s) - use *xe host-list params=all* to get a list of host parameters to filter on. 
@@ -47,7 +47,7 @@ To download a log named "host1.gz" from a single host:
 
 SEE ALSO
 --------
-*xe help host-logs-download*,
+*xe help host-logs-download*, *xe host-list*(1), *xe host-param-list*(1), *xe-host-get-system-status*(1)
 
 AUTHORS
 -------
