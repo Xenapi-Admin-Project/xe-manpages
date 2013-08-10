@@ -16,12 +16,13 @@ SYNOPSIS
 
 DESCRIPTION
 -----------
-*xe host-backup* creates a back up 
+*xe host-backup* creates a back up of a control domain.
 
 
 REQUIRED PARAMETERS
 -------------------
-*file-name*:: 
+*file-name*::
+	Desired filename for Dom0 back up
 	
 
 OPTIONAL PARAMETERS
