@@ -14,6 +14,23 @@ All manpages will include the following elements
 11. COPYRIGHT section
 12. NOTES section (if needed)
 
+Our Manpage Requirements: 
+
+All manpages will be required to have the following items.
+
+    Descriptive title
+    Synopsis following the Linux manpage style guide
+    Will list required parameters and a short description for each
+    Will list optional parameters and a short description for each
+    Will include an example for each variation on the command's usage
+    Will include a See-Also section of other relevant subcommands
+    Will include the manpage authors
+    Will include information on how to submit bugs
+    Will include license information
+    Will be written in asciidoc and be freely available
+    Will be offered online in both html and pdf formats
+
+
 0. Steps to Reading a Manpage - a user should be able to quickly scan a manpage for information in the order that they need it. The manpage will answer the following questions top to bottom
 	1. What is the name of the command and briefly what does it do?
 	2. What is the Syntax of the command?
