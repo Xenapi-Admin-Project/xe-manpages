@@ -26,6 +26,56 @@ createdescription()
 	echo ""	
 }
 
+createparamgetdescription()
+{
+	echo ""
+	echo "DESCRIPTION"
+	echo "-----------"
+	echo ""		
+	echo "*xe ${XE_COMMAND}* returns the value(s) of a parameter or a map parameter key value for a specified ${OBJECT}"
+	echo ""
+}
+
+createparamcleardescription()
+{
+	echo ""
+	echo "DESCRIPTION"
+	echo "-----------"
+	echo ""		
+	echo "*xe ${XE_COMMAND}* attempts to clear any writable parameter. Use *xe ${OBJECT}-list* and *xe ${OBJECT}-param-list* to identify writable parameters (RW, SRW, MRW)."
+	echo ""
+}
+
+createparamremovedescription()
+{
+	echo ""
+	echo "DESCRIPTION"
+	echo "-----------"
+	echo ""		
+	echo "*xe ${XE_COMMAND}* removes a key from a set parameter or key/value pair from a map parameter. Use *xe ${OBJECT}-list* and *xe ${OBJECT}-param-list* to identify writable set or map parameters (SRW, MRW).﻿"
+	echo ""
+}
+
+createparamadddescription()
+{
+	echo ""
+	echo "DESCRIPTION"
+	echo "-----------"
+	echo ""		
+	echo "*xe ${XE_COMMAND}* adds a key to a set parameter or a key/value pair to a map parameter. Use *xe ${OBJECT}-list* and *xe ${OBJECT}-param-list to identify writable parameters (RW, MRW)."
+	echo ""
+}
+
+createparamsetdescription()
+{
+	echo ""
+	echo "DESCRIPTION"
+	echo "-----------"
+	echo ""		
+	echo "*xe ${XE_COMMAND}* sets writable parameters. Use *xe ${OBJECT}-list* and *xe ${OBJECT}-param-list to identify writable parameters (RW, MRW). To append a value to a writable set or map (SRW, MRW) parameter use *xe ${OBJECT}-param-add*"
+	echo ""
+}
+
 createlistdescription()
 {
 	echo ""
@@ -96,6 +146,101 @@ createpage()
 	echo "--------"
 	createdescription
 	createparams
+	echo "EXAMPLES"
+	echo "--------"
+	echo ""
+	createseealso
+}
+
+createparamgetpage()
+{
+
+	echo "NAME"
+	echo "-----"
+	echo "xe-${XE_COMMAND} - Returns a parameter for a ${OBJECT}"	
+	echo ""
+	echo "SYNOPSIS"
+	echo "--------"
+	echo "*xe ${XE_COMMAND}*  uuid=<${OBJECTUPPER} UUID> param-name=<PARAMETER> [ param-key=<PARAMETER KEY> ]"
+	createparamgetdescription
+	createparams 
+	echo ""
+	echo "EXAMPLES"
+	echo "--------"
+	echo ""
+	createseealso
+}
+
+createparamaddpage()
+{
+
+	echo "NAME"
+	echo "-----"
+	echo "xe-${XE_COMMAND} - Add a key to a parameter for a ${OBJECT}"	
+	echo ""
+	echo "SYNOPSIS"
+	echo "--------"
+	echo "*xe ${XE_COMMAND}*  uuid=<${OBJECTUPPER} UUID> param-name=<PARAMETER> [ param-key=<SET PARAMETER KEY> ] [ <MAP PARAMETER KEY>=<VALUE> ]"
+	createparamadddescription
+	createparams 
+	echo ""
+	echo "EXAMPLES"
+	echo "--------"
+	echo ""
+	createseealso
+}
+
+createparamsetpage()
+{
+
+	echo "NAME"
+	echo "-----"
+	echo "xe-${XE_COMMAND} - Set parameters for a ${OBJECT}"	
+	echo ""
+	echo "SYNOPSIS"
+	echo "--------"
+	echo "*xe ${XE_COMMAND}*  uuid=<${OBJECTUPPER} UUID> [ <PARAMETER>=<VALUE> ] [ <MAP PARAMETER>:<MAP PARAMETER KEY>=<VALUE> ]"
+	createparamsetdescription
+	createparams 
+	echo ""
+	echo "EXAMPLES"
+	echo "--------"
+	echo ""
+	createseealso
+}
+
+createparamclearpage()
+{
+
+	echo "NAME"
+	echo "-----"
+	echo "xe-${XE_COMMAND} - Clears a specific writable parameter for a ${OBJECT}"	
+	echo ""
+	echo "SYNOPSIS"
+	echo "--------"
+	echo "*xe ${XE_COMMAND}* uuid=<${OBJECTUPPER} UUID> param-name=<PARAMETER NAME>"
+	createparamcleardescription
+	createparams 
+	echo ""
+	echo "EXAMPLES"
+	echo "--------"
+	echo ""
+	createseealso
+}
+
+createparamremovepage()
+{
+
+	echo "NAME"
+	echo "-----"
+	echo "xe-${XE_COMMAND} - Removes a key or key/value pair from a ${OBJECT}"	
+	echo ""
+	echo "SYNOPSIS"
+	echo "--------"
+	echo "*xe ${XE_COMMAND}* uuid=<${OBJECTUPPER} UUID> param-name=<PARAMETER NAME> param-key=<PARAMETER KEY>"
+	createparamremovedescription
+	createparams 
+	echo ""
 	echo "EXAMPLES"
 	echo "--------"
 	echo ""
@@ -181,6 +326,16 @@ fi
 createheader
 if [[ $OBJTYPE = "list" ]] ;then
 	createlistpage
+elif [[ $OBJTYPE = "param-set" ]] ;then
+	createparamsetpage
+elif [[ $OBJTYPE = "param-remove" ]] ;then
+	createparamremovepage
+elif [[ $OBJTYPE = "param-clear" ]] ;then
+	createparamclearpage
+elif [[ $OBJTYPE = "param-get" ]] ;then
+	createparamgetpage
+elif [[ $OBJTYPE = "param-add" ]] ;then
+	createparamaddpage
 else
 	createpage
 fi
