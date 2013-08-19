@@ -45,7 +45,7 @@ createlistdescription()
 	echo ""
 	echo "Append --minimal to display values for one parameter outputted on a single line with results separated by commas:"
 	echo ""
-	echo "-	*xe ${XE_COMMAND} params=\"<PARAMETER>\" --minimal*"
+	echo "- *xe ${XE_COMMAND} params=\"<PARAMETER>\" --minimal*"
 	echo ""
 }
 
@@ -117,21 +117,21 @@ createlistpage()
 	echo ""
 	echo "EXAMPLES"
 	echo "--------"
-	echo "To display all parameters for all ${OBJECTUPPER}s *:"
+	echo "To display all parameters for all ${OBJECTUPPER}s:"
 	echo ""
-	echo "-	*xe ${XE_COMMAND}* params=\"all\""
+	echo "- *xe ${XE_COMMAND}* params=\"all\""
 	echo ""
-	echo "To display all parameters for a specific ${OBJECTUPPER} *:"
+	echo "To display all parameters for a specific ${OBJECTUPPER}:"
 	echo ""
-	echo "-	*xe ${XE_COMMAND}* uuid=<${OBJECT} UUID> params=\"all\""
+	echo "- *xe ${XE_COMMAND}* uuid=<${OBJECT} UUID> params=\"all\""
 	echo ""
-	echo "To display <PARAMETER> for a specific ${OBJECTUPPER} :"
+	echo "To display <PARAMETER> for a specific ${OBJECTUPPER}:"
 	echo ""
-	echo "-	*xe ${XE_COMMAND}* uuid=<${OBJECT} UUID> params=\"VIF-uuids\""
+	echo "- *xe ${XE_COMMAND}* uuid=<${OBJECT} UUID> params=\"VIF-uuids\""
 	echo ""
 	echo "To display the <PARAMETER> and <PARAMETER> parameters of all ${OBJECTUPPER}s  with a <PARAMETER> of <VALUE>:"
 	echo ""
-	echo "-	*xe ${XE_COMMAND}* <PARAMETER>=<VALUE> params=\"<MULTIPLE PAMETERS>\""
+	echo "- *xe ${XE_COMMAND}* <PARAMETER>=<VALUE> params=\"<MULTIPLE PAMETERS>\""
 	createseealso
 }
 
