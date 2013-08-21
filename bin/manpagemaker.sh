@@ -94,7 +94,7 @@ createlistdescription()
 	echo ""
 	echo "- *xe ${XE_COMMAND} <PARAMETER>=<VALUE>*"
 	echo ""
-	echo "Append --minimal to display values for one parameter outputted on a single line with results separated by commas:"
+	echo "Append --minimal to display values for one parameter on a single line separated by commas:"
 	echo ""
 	echo "- *xe ${XE_COMMAND} params=\"<PARAMETER>\" --minimal*"
 	echo ""
