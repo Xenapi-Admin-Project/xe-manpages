@@ -155,10 +155,9 @@ createpage()
 
 createparamgetpage()
 {
-
 	echo "NAME"
 	echo "-----"
-	echo "xe-${XE_COMMAND} - Returns a parameter for a ${OBJECT}"	
+	echo "xe-${XE_COMMAND} - Return a parameter for a ${OBJECT}"	
 	echo ""
 	echo "SYNOPSIS"
 	echo "--------"
@@ -174,7 +173,6 @@ createparamgetpage()
 
 createparamaddpage()
 {
-
 	echo "NAME"
 	echo "-----"
 	echo "xe-${XE_COMMAND} - Add a key to a parameter for a ${OBJECT}"	
@@ -193,7 +191,6 @@ createparamaddpage()
 
 createparamsetpage()
 {
-
 	echo "NAME"
 	echo "-----"
 	echo "xe-${XE_COMMAND} - Set parameters for a ${OBJECT}"	
@@ -212,10 +209,9 @@ createparamsetpage()
 
 createparamclearpage()
 {
-
 	echo "NAME"
 	echo "-----"
-	echo "xe-${XE_COMMAND} - Clears a specific writable parameter for a ${OBJECT}"	
+	echo "xe-${XE_COMMAND} - Clear a specific writable parameter for a ${OBJECT}"	
 	echo ""
 	echo "SYNOPSIS"
 	echo "--------"
@@ -231,10 +227,9 @@ createparamclearpage()
 
 createparamremovepage()
 {
-
 	echo "NAME"
 	echo "-----"
-	echo "xe-${XE_COMMAND} - Removes a key or key/value pair from a ${OBJECT}"	
+	echo "xe-${XE_COMMAND} - Remove a key or key/value pair from a ${OBJECT}"	
 	echo ""
 	echo "SYNOPSIS"
 	echo "--------"
@@ -250,10 +245,9 @@ createparamremovepage()
 
 createlistpage()
 {
-
 	echo "NAME"
 	echo "-----"
-	echo "xe-${XE_COMMAND} - Displays ${OBJECTUPPER}s"	
+	echo "xe-${XE_COMMAND} - Display ${OBJECTUPPER}s"	
 	echo ""
 	echo "SYNOPSIS"
 	echo "--------"
@@ -283,7 +277,6 @@ createlistpage()
 
 createseealso()
 {
-	
 	echo ""
 	echo "SEE ALSO"
 	echo "--------"
@@ -305,7 +298,7 @@ createfooter()
 	echo "COPYRIGHT"
 	echo "---------"
 	echo "Copyright \(C)  $(date +"%Y") - $COPYNAME"
-	echo "Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License, Version 1.3 or any later version published by the Free Software Foundation; with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts. A copy of the license is included in the section entitled \"GNU Free Documentation License\""
+	echo "Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License, Version 1.3 or any later version published by the Free Software Foundation; with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts. A copy of the license is included in the section entitled \"GNU Free Documentation License\"."
 }
 
 XE_COMMAND="$1"
