@@ -1,7 +1,7 @@
 #!/bin/bash
 # Matthew Spah 08/27/2013
 # Fill in the common parameter desriptions found in xe-paramtable.txt
-
+set -x
 
 # Wish list
 # * add a function for list commands (e.g list(){} )
@@ -26,6 +26,13 @@ param-list(){
 		uuid)
 			echo "$OBJ UUID - Use *xe $OBJ-list* to obtain a list of $1 UUIDs."
 		;;
+		name-label)
+			echo "Set name of $OBJ"
+		;;
+		name-description)
+			echo "Set name-description of $OBJ"
+		;;
+		
 	esac
 	
 }
@@ -55,9 +62,7 @@ param-get(){
 
 # low level param-set commands (e.g xe-vif-param-set, xe-vid-param-set)
 param-set(){
-
 	OBJ=${1^^}
-
 
 	case "$2" in 
 		uuid)
@@ -70,9 +75,7 @@ param-set(){
 
 # low level param-add commands (e.g xe-network-param-add, xe-host-param-add)
 param-add(){
-
 	OBJ=${1^^}
-
 	
 	case "$2" in 
 		uuid)
@@ -92,7 +95,6 @@ param-add(){
 
 
 param-remove(){
-	
 	OBJ=${1^^}
 	
 	case "$2" in 
@@ -144,11 +146,37 @@ param-check(){
 		\<vm-selectors\>)
 			echo "Parameters to select VM(s) - use *xe vm-list params=all* to get a list of VM parameters to filter on."
 		;;
+		sr-uuid)
+			echo "Desired storage repository UUID - use *xe sr-list* to get a list of storage repositories"
+		;;
+		*)
+			return 1
+		;;
+
+	esac
+	
+}
+
+
+listcommand(){
+	OBJ=${1^^}
+	
+	case "$2" in 
+		uuid)
+			echo "Display $OBJ UUIDs"
+		;;
+		
+		name-label)
+			echo "Display $OBJ name-labels"
+		;;
+		
+		name-description)
+			echo "Display $OBJ name-descriptions"
+		;;
 		*)
 			return 1
 		;;
 	esac
-	
 }
 
 # loop through each line of $PARAMTABLE
@@ -166,40 +194,48 @@ for line in $(cat $PARAMTABLE) ; do
 	# it will return the parameter description, and then the new line is sent to STDOUT.
 	case "$COMMAND" in		
 		*-param-list)
-		NEWPARDESCRIPTION=$(param-list "${COMMAND%%-*}" "$PARAMTYPE")
-		echo "${COMMAND}@#@${PARAMNAME}#@#${NEWPARDESCRIPTION}"
+		NEWPARAMDESCRIPTION=$(param-list "${COMMAND%%-*}" "$PARAMNAME")
+		echo "${COMMAND}@#@${PARAMNAME}#@#${NEWPARAMDESCRIPTION}"
 		;;
 		
 		*-param-get)
-		NEWPARDESCRIPTION=$(param-get "${COMMAND%%-*}" "$PARAMTYPE")
-		echo "${COMMAND}@#@${PARAMNAME}#@#${NEWPARDESCRIPTION}"
+		NEWPARAMDESCRIPTION=$(param-get "${COMMAND%%-*}" "$PARAMNAME")
+		echo "${COMMAND}@#@${PARAMNAME}#@#${NEWPARAMDESCRIPTION}"
 		;;
 		
 		*-param-set)
-		NEWPARDESCRIPTION=$(param-set "${COMMAND%%-*}" "$PARAMTYPE")
-		echo "${COMMAND}@#@${PARAMNAME}#@#${NEWPARDESCRIPTION}"
+		NEWPARAMDESCRIPTION=$(param-set "${COMMAND%%-*}" "$PARAMNAME")
+		echo "${COMMAND}@#@${PARAMNAME}#@#${NEWPARAMDESCRIPTION}"
 		;;
 		
 		*-param-add)
-		NEWPARDESCRIPTION=$(param-add "${COMMAND%%-*}" "$PARAMTYPE")
-		echo "${COMMAND}@#@${PARAMNAME}#@#${NEWPARDESCRIPTION}"
+		NEWPARAMDESCRIPTION=$(param-add "${COMMAND%%-*}" "$PARAMNAME")
+		echo "${COMMAND}@#@${PARAMNAME}#@#${NEWPARAMDESCRIPTION}"
 		;;
 		
 		*-param-remove)
-		NEWPARDESCRIPTION=$(param-remove "${COMMAND%%-*}" "$PARAMTYPE")
-		echo "${COMMAND}@#@${PARAMNAME}#@#${NEWPARDESCRIPTION}"
+		NEWPARAMDESCRIPTION=$(param-remove "${COMMAND%%-*}" "$PARAMNAME")
+		echo "${COMMAND}@#@${PARAMNAME}#@#${NEWPARAMDESCRIPTION}"
 		;;
 		
 		*-param-clear)
-		NEWPARDESCRIPTION=$(param-clear "${COMMAND%%-*}" "$PARAMTYPE")
-		echo "${COMMAND}@#@${PARAMNAME}#@#${NEWPARDESCRIPTION}"
+		NEWPARAMDESCRIPTION=$(param-clear "${COMMAND%%-*}" "$PARAMNAME")
+		echo "${COMMAND}@#@${PARAMNAME}#@#${NEWPARAMDESCRIPTION}"
+		;;
+
+		*-list)
+		NEWPARAMDESCRIPTION=$(listcommand "${COMMAND%%-*}" "$PARAMNAME")
+		if [[ $? -eq 0 ]]; then
+			echo "${COMMAND}@#@${PARAMNAME}#@#${NEWPARAMDESCRIPTION}"
+		else
+			echo "$line"
+		fi		
 		;;
 		
-		# If $COMMAND can't be matched to any of the statements above, then it is passed to param-check. This is a general function that looks up the parameters found in high level XE commands (xe-pif-introduce, xe-vif-create)
 		*)
-		NEWPARDESCRIPTION=$(param-check "${COMMAND%%-*}" "$PARAMNAME")
+		NEWPARAMDESCRIPTION=$(param-check "${COMMAND%%-*}" "$PARAMNAME")
 		if [[ $? -eq 0 ]]; then
-			echo "${COMMAND}@#@${PARAMNAME}#@#${NEWPARDESCRIPTION}"
+			echo "${COMMAND}@#@${PARAMNAME}#@#${NEWPARAMDESCRIPTION}"
 		else
 			echo "$line"
 		fi
