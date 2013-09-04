@@ -149,6 +149,15 @@ param-check(){
 		sr-uuid)
 			echo "Desired storage repository UUID - use *xe sr-list* to get a list of storage repositories"
 		;;
+		host-uuid)
+			echo "Host UUID - Use *xe host-list* to obtain a list of host UUIDs."
+		;;
+		vm-uuid)
+			echo "Virtual machine UUID - Use *xe vm-list* to obtain a list of VM UUIDs"
+		;;
+		force)
+			echo "Force operation"
+		;;
 		*)
 			return 1
 		;;
@@ -232,6 +241,7 @@ for line in $(cat $PARAMTABLE) ; do
 		fi		
 		;;
 		
+		# if $COMMAND doesn't match any of the above
 		*)
 		NEWPARAMDESCRIPTION=$(param-check "${COMMAND%%-*}" "$PARAMNAME")
 		if [[ $? -eq 0 ]]; then
