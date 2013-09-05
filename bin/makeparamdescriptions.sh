@@ -1,10 +1,8 @@
 #!/bin/bash
 # Matthew Spah 08/27/2013
 # Fill in the common parameter desriptions found in xe-paramtable.txt
-set -x
 
 # Wish list
-# * add a function for list commands (e.g list(){} )
 # * interface this script with Grants makeparamtable.sh
 # * add more universal parameter descriptions to param-check, and param-set.
 
@@ -26,13 +24,6 @@ param-list(){
 		uuid)
 			echo "$OBJ UUID - Use *xe $OBJ-list* to obtain a list of $1 UUIDs."
 		;;
-		name-label)
-			echo "Set name of $OBJ"
-		;;
-		name-description)
-			echo "Set name-description of $OBJ"
-		;;
-		
 	esac
 	
 }
@@ -48,7 +39,7 @@ param-get(){
 		uuid)
 			echo "$OBJ UUID - Use *xe $OBJ-list* to obtain a list of $OBJ UUIDs."
 		;;
-		
+			
 		param-key)
 			echo "The $OBJ map parameter key value to return"
 		;;
@@ -68,7 +59,12 @@ param-set(){
 		uuid)
 			echo "$OBJ UUID - Use *xe $OBJ-list* to obtain a list of $OBJ UUIDs."
 		;;
-		
+		name-label)
+			echo "Set name of $OBJ"
+		;;
+		name-description)
+			echo "Set name-description of $OBJ"
+		;;
 	esac
 	
 }
@@ -158,6 +154,12 @@ param-check(){
 		force)
 			echo "Force operation"
 		;;
+		new-name-label)
+			echo "Desired new name-label for $OBJ"
+		;;
+		new-name-description)
+			echo "Desired new name-description for $OBJ"
+		;;
 		*)
 			return 1
 		;;
@@ -181,6 +183,12 @@ listcommand(){
 		
 		name-description)
 			echo "Display $OBJ name-descriptions"
+		;;
+		allowed-operations) 
+			echo "Display list of operations allowed on ${OBJ}s"
+		;;
+		current-operations)
+			echo "Display currently running operations on ${OBJ}s"
 		;;
 		*)
 			return 1
