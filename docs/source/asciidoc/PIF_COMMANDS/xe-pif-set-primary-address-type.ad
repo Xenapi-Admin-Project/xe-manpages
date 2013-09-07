@@ -21,9 +21,10 @@ REQUIRED PARAMETERS
 -------------------
 *uuid*::
 	PIF UUID - Use *xe pif-list* to obtain a list PIF UUIDs.
+
 *primary_address_type*::
 	Primary address type: primary_address_type=*[ IPV4 | IPV6 ]*
-	
+
 EXAMPLES
 --------
 To set the primary address type to IPv4:

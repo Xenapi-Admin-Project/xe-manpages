@@ -21,6 +21,7 @@ REQUIRED PARAMETERS
 -------------------
 *uuid*::
 	VIF UUID - Use *xe vif-list* to obtain a list of VIF UUIDs.
+	
 *param-name*::
 	Writable parameter to be cleared. (e.g. *ipv4-allowed*). 
 

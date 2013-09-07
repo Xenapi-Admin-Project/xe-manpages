@@ -34,20 +34,28 @@ OPTIONAL PARAMETERS
 -------------------
 *all*::
 	Display all parameter values
+
 *uuid*::
 	Display bond UUIDs
+
 *mode*::
 	Display bond modes [ balance-slb | active-backup | lacp ]
+
 *links-up*::
 	Display number of links up in bonds
+
 *master*::
 	Display master bond PIF UUIDs 
+
 *primary-slave*::
 	Display primary-slave PIF UUIDs
+
 *slaves*::
 	Display slave PIF UUIDs
+
 *properties*::
 	Display additional properties for bonds
+
 *--minimal*::
 	Specify --minimal to only show minimal output
 

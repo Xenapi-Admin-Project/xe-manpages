@@ -21,8 +21,10 @@ REQUIRED PARAMETERS
 -------------------
 *uuid*::
 	VIF UUID - Use *xe vif-list* to obtain a list of VIF UUIDs.
+	
 *param-name*::
 	Parameter that contains keys or key/value pairs. (e.g. other-config).
+	
 *param-key*::
 	Key or key/value pair to be removed.
 

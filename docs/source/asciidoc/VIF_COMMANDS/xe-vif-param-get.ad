@@ -20,7 +20,8 @@ DESCRIPTION
 REQUIRED PARAMETERS
 -------------------
 *uuid*::
-	VIF UUID - Use *xe vif-list* to obtain a list of VIF UUIDs.
+	VIF UUID - Use *xe vif-list* to obtain a list of VIF UUIDs
+	
 *param-name*::
 	The VIF parameter value to return.
 

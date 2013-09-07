@@ -21,6 +21,7 @@ REQUIRED PARAMETERS
 -------------------
 *uuid*::
 	UUID of bond. Use *xe bond-list* to obtain a list of bonds.
+
 *param-name*::
 	The bond parameter to return.
 

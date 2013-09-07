@@ -21,6 +21,7 @@ REQUIRED PARAMETERS
 -------------------
 *uuid*::
 	VIF UUID - Use *xe vif-list* to obtain a list of vif UUIDs
+	
 *param-name*::
 	Parameter to have key or key/value pair added - Use *xe vif-param-list* to obtain a list of network parameters.
 

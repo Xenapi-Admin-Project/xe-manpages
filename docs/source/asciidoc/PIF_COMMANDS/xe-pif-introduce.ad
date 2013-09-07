@@ -28,6 +28,7 @@ REQUIRED PARAMETERS
 -------------------
 *host-uuid*::
 	Host UUID - Use *xe host-list* to obtain a list of host UUIDs.
+	
 *device*::
 	The host's physical network interface card (e.g. eth0).
 

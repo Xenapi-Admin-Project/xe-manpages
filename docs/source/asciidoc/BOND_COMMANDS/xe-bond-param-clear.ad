@@ -21,6 +21,7 @@ REQUIRED PARAMETERS
 -------------------
 *uuid*::
 	UUID of Bond. Use *xe bond-list* to obtain a list of bond UUIDs.
+	
 *param-name*::
 	Writable parameter to be cleared. 
 

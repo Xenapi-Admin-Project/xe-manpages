@@ -19,14 +19,14 @@ DESCRIPTION
 -----------
 *xe pif-reconfigure-ipv6* configures IPv6 address settings for a specific PIF. The IPv6 address must be followed by a slash and a decimal number which encodes the network prefix length. Address changes are applied immediately upon command excution.
 
-
-
 REQUIRED PARAMETERS
 -------------------
 *mode*::
 	Addressing mode for the PIF: mode=*[ dhcp | static | autoconf | none ]*
+
 *uuid*::
 	PIF UUID - Use *xe pif-list* to obtain PIF interface UUIDs
+
 *IPv6*::
 	PIF IPv6 address. Address is only required for static mode.
 

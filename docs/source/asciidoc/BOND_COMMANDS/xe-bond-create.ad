@@ -21,10 +21,12 @@ LACP bonding is only available with the network backend set to OpenVswitch, wher
 
 There are two methods to adding new bonds to an existing pool.
 
+The first method:
+
 - Use *xe bond-create* on the pool master.
 - Restart other pool members.
 
-The second method doesn't involve restarting hosts.
+The second method:
 
 - Use *xe bond-create* on the pool master.
 - Then use *xe bond-create* on each pool member, so it matches the pool master. 

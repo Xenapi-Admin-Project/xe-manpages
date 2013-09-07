@@ -23,10 +23,13 @@ REQUIRED PARAMETERS
 -------------------
 *mode*::
 	Addressing mode for PIF: mode=[ dhcp | static | none ]
+
 *uuid*::
 	PIF UUID - Use *xe pif-list* to obtain PIF UUIDs
+
 *IP*::
 	IPv4 Host address of PIF. Address is required for static mode.
+
 *netmask*::
 	Netmask address of PIF
 
@@ -34,6 +37,7 @@ OPTIONAL PARAMETERS
 -------------------
 *DNS*::
 	Name server addresses - Use a comma to seperate multiple name servers 
+
 *gateway*::
 	Gateway address
 
