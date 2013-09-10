@@ -2,6 +2,7 @@
 # Matthew Spah 08/27/2013
 # Fill in the common parameter desriptions found in xe-paramtable.txt
 
+
 # Wish list
 # * interface this script with Grants makeparamtable.sh
 # * add more universal parameter descriptions to param-check, and param-set.
@@ -209,55 +210,58 @@ for line in $(cat $PARAMTABLE) ; do
 	# using horrible pattern matching to figure out the command type, this could use improving.
 	# If $COMMAND matches to one of the statements below,.the correct function is launched with command arugments passed to it
 	# it will return the parameter description, and then the new line is sent to STDOUT.
-	case "$COMMAND" in		
-		*-param-list)
-		NEWPARAMDESCRIPTION=$(param-list "${COMMAND%%-*}" "$PARAMNAME")
-		echo "${COMMAND}@#@${PARAMNAME}#@#${NEWPARAMDESCRIPTION}"
-		;;
-		
-		*-param-get)
-		NEWPARAMDESCRIPTION=$(param-get "${COMMAND%%-*}" "$PARAMNAME")
-		echo "${COMMAND}@#@${PARAMNAME}#@#${NEWPARAMDESCRIPTION}"
-		;;
-		
-		*-param-set)
-		NEWPARAMDESCRIPTION=$(param-set "${COMMAND%%-*}" "$PARAMNAME")
-		echo "${COMMAND}@#@${PARAMNAME}#@#${NEWPARAMDESCRIPTION}"
-		;;
-		
-		*-param-add)
-		NEWPARAMDESCRIPTION=$(param-add "${COMMAND%%-*}" "$PARAMNAME")
-		echo "${COMMAND}@#@${PARAMNAME}#@#${NEWPARAMDESCRIPTION}"
-		;;
-		
-		*-param-remove)
-		NEWPARAMDESCRIPTION=$(param-remove "${COMMAND%%-*}" "$PARAMNAME")
-		echo "${COMMAND}@#@${PARAMNAME}#@#${NEWPARAMDESCRIPTION}"
-		;;
-		
-		*-param-clear)
-		NEWPARAMDESCRIPTION=$(param-clear "${COMMAND%%-*}" "$PARAMNAME")
-		echo "${COMMAND}@#@${PARAMNAME}#@#${NEWPARAMDESCRIPTION}"
-		;;
-
-		*-list)
-		NEWPARAMDESCRIPTION=$(listcommand "${COMMAND%%-*}" "$PARAMNAME")
-		if [[ $? -eq 0 ]]; then
+	
+	if [[ -z "$PARAMDESCRIPTION" ]] ; then
+		case "$COMMAND" in		
+			*-param-list)
+			NEWPARAMDESCRIPTION=$(param-list "${COMMAND%%-*}" "$PARAMNAME")
 			echo "${COMMAND}@#@${PARAMNAME}#@#${NEWPARAMDESCRIPTION}"
-		else
-			echo "$line"
-		fi		
-		;;
-		
-		# if $COMMAND doesn't match any of the above
-		*)
-		NEWPARAMDESCRIPTION=$(param-check "${COMMAND%%-*}" "$PARAMNAME")
-		if [[ $? -eq 0 ]]; then
+			;;
+			
+			*-param-get)
+			NEWPARAMDESCRIPTION=$(param-get "${COMMAND%%-*}" "$PARAMNAME")
 			echo "${COMMAND}@#@${PARAMNAME}#@#${NEWPARAMDESCRIPTION}"
-		else
-			echo "$line"
-		fi
-		;;
-	esac 
-
+			;;
+			
+			*-param-set)
+			NEWPARAMDESCRIPTION=$(param-set "${COMMAND%%-*}" "$PARAMNAME")
+			echo "${COMMAND}@#@${PARAMNAME}#@#${NEWPARAMDESCRIPTION}"
+			;;
+			
+			*-param-add)
+			NEWPARAMDESCRIPTION=$(param-add "${COMMAND%%-*}" "$PARAMNAME")
+			echo "${COMMAND}@#@${PARAMNAME}#@#${NEWPARAMDESCRIPTION}"
+			;;
+			
+			*-param-remove)
+			NEWPARAMDESCRIPTION=$(param-remove "${COMMAND%%-*}" "$PARAMNAME")
+			echo "${COMMAND}@#@${PARAMNAME}#@#${NEWPARAMDESCRIPTION}"
+			;;
+		
+			*-param-clear)
+			NEWPARAMDESCRIPTION=$(param-clear "${COMMAND%%-*}" "$PARAMNAME")
+			echo "${COMMAND}@#@${PARAMNAME}#@#${NEWPARAMDESCRIPTION}"
+			;;
+			
+			*-list)
+			NEWPARAMDESCRIPTION=$(listcommand "${COMMAND%%-*}" "$PARAMNAME")
+			if [[ $? -eq 0 ]]; then
+				echo "${COMMAND}@#@${PARAMNAME}#@#${NEWPARAMDESCRIPTION}"
+			else
+				echo "$line"
+			fi
+			;;
+			# if $COMMAND doesn't match any of the above
+			*)
+			NEWPARAMDESCRIPTION=$(param-check "${COMMAND%%-*}" "$PARAMNAME")
+			if [[ $? -eq 0 ]]; then
+				echo "${COMMAND}@#@${PARAMNAME}#@#${NEWPARAMDESCRIPTION}"
+			else
+				echo "$line"
+			fi
+			;;
+		esac 
+	else
+		echo "$line"
+	fi
 done

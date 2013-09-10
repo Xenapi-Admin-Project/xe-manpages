@@ -21,7 +21,7 @@ appliance-param-get@#@param-key#@#The APPLIANCE map parameter key value to retur
 appliance-param-get@#@param-name#@#The APPLIANCE parameter to return
 appliance-param-get@#@uuid#@#APPLIANCE UUID - Use *xe APPLIANCE-list* to obtain a list of APPLIANCE UUIDs.
 appliance-param-list@#@database#@#
-appliance-param-list@#@uuid#@#APPLIANCE UUID - Use *xe APPLIANCE-list* to obtain a list of appliance UUIDs.
+appliance-param-list@#@uuid@#@Appliance UUID - Use *xe appliance-list* to obtain a list of appliance UUIDs.
 appliance-param-set@#@name-description#@#Set name-description of APPLIANCE
 appliance-param-set@#@name-label#@#Set name of APPLIANCE
 appliance-param-set@#@uuid#@#APPLIANCE UUID - Use *xe APPLIANCE-list* to obtain a list of APPLIANCE UUIDs.
@@ -36,10 +36,10 @@ audit-log-get@#@filename@#@
 audit-log-get@#@since@#@
 bond-create@#@mac@#@Specify the MAC Address to be used by the bond. If no MAC address is specified, *xe bond-create* will use the MAC of the PMI, if it is one of the interfaces in the bond. If the PMI is not part of the bond, but a management interface is, then the bond uses the MAC address of that management interface. 
 bond-create@#@mode@#@Specify the type of bond to created. Balance-slb, active-backup and LACP are supported when using openvswitch. Balance-slb and active-backup are supported when using the Linux bridge.
-bond-create@#@network-uuid@#@Network UUID - Use *xe network-list* to obtain a list of network UUIDs.
-bond-create@#@pif-uuids@#@PIF UUIDs - Use *xe pif-list* to obtain a list of PIF UUIDs.
+bond-create@#@network-uuid@#@Internal network UUID for the bond(s)- Use *xe network-list* to obtain a list of network UUIDs.
+bond-create@#@pif-uuids@#@PIF UUIDs for the bond(s)- Use *xe pif-list* to obtain a list of PIF UUIDs.
 bond-create@#@properties@#@Additional bond properties - 
-bond-destroy@#@uuid#@#BOND UUID - Use *xe BOND-list to obtain a list of BOND UUIDs.
+bond-destroy@#@uuid@#@Bond UUID - Use *xe bond-list* to obtain a list of bond UUIDs.
 bond-list@#@all@#@Display all parameter values
 bond-list@#@database@#@
 bond-list@#@links-up@#@Display number of links up in bonds
@@ -50,24 +50,25 @@ bond-list@#@params@#@
 bond-list@#@primary-slave@#@Display primary-slave PIF UUIDs
 bond-list@#@properties@#@Display additional properties for bonds
 bond-list@#@slaves@#@Display slave PIF UUIDs
-bond-list@#@uuid#@#Display BOND UUIDs
-bond-param-clear@#@param-name#@#Writable parameter to be cleared. (e.g. other-config).
-bond-param-clear@#@uuid#@#BOND UUID - Use *xe BOND-list* to obtain a list of BOND UUIDs.
+bond-list@#@uuid@#@Display bond UUIDs
+bond-param-clear@#@param-name@#@Writable parameter to be cleared. 
+bond-param-clear@#@uuid@#@UUID of Bond. Use *xe bond-list* to obtain a list of bond UUIDs.
 bond-param-get@#@database#@#
-bond-param-get@#@param-key#@#The BOND map parameter key value to return
-bond-param-get@#@param-name#@#The BOND parameter to return
-bond-param-get@#@uuid#@#BOND UUID - Use *xe BOND-list* to obtain a list of BOND UUIDs.
+bond-param-get@#@param-key@#@The bond key to return
+bond-param-get@#@param-name@#@The bond parameter to return.
+bond-param-get@#@uuid@#@UUID of bond. Use *xe bond-list* to obtain a list of bonds.
 bond-param-list@#@database#@#
-bond-param-list@#@uuid#@#BOND UUID - Use *xe BOND-list* to obtain a list of bond UUIDs.
+bond-param-list@#@uuid@#@Bond UUID - Use *xe bond-list* to obtain a list of bonds.
 bond-param-set@#@properties#@#
-bond-param-set@#@uuid#@#BOND UUID - Use *xe BOND-list* to obtain a list of BOND UUIDs.
+bond-param-set@#@properties:@#@// figure out properties fro a bond
+bond-param-set@#@uuid@#@Bond UUID - Use *xe bond-list* to obtain a list of bonds.
 bond-set-mode@#@mode@#@Set bond type: mode=[ balance-slb | active-backup | lacp ] 
-bond-set-mode@#@uuid#@#BOND UUID - Use *xe BOND-list to obtain a list of BOND UUIDs.
-cd-list@#@all@#@Display all parameter values - params=all
+bond-set-mode@#@uuid@#@Bond UUID - Use *xe bond-list* to obtain a list of bonds
+cd-list@#@all@#@Display all parameter values
 cd-list@#@allow-caching@#@Display if caching is allowed [ true | false ]
-cd-list@#@allowed-operations#@#Display list of operations allowed on CDs
+cd-list@#@allowed-operations@#@Display allowed operations 
 cd-list@#@crashdump-uuids@#@Display any crash dump UUIDs
-cd-list@#@current-operations#@#Display currently running operations on CDs
+cd-list@#@current-operations@#@Display current operations 
 cd-list@#@is-a-snapshot@#@Display if a CD is a snapshot [ true | false ]
 cd-list@#@location@#@Display the CD filename
 cd-list@#@managed@#@Display if managed [ true | false ]
@@ -75,11 +76,11 @@ cd-list@#@metadata-latest@#@Display latest CD metadata
 cd-list@#@metadata-of-pool@#@Display pool metadata
 cd-list@#@--minimal@#@Specify --minimal to only show minimal output.
 cd-list@#@missing@#@Display if the ISO Storage Repository has reported CD missing [ true | false ]
-cd-list@#@name-description#@#Display CD name-descriptions
-cd-list@#@name-label#@#Display CD name-labels
+cd-list@#@name-description@#@Display CD name descriptions
+cd-list@#@name-label@#@Display CD name labels
 cd-list@#@on-boot@#@Display on-boot config
 cd-list@#@other-config@#@Display additional configuration parameter values for CD
-cd-list@#@params@#@Filter by parameter name. Display all parameter values with params=all
+cd-list@#@params@#@
 cd-list@#@parent@#@Display parent disk if CD is part of a chain
 cd-list@#@physical-utilisation@#@Display utilised size in bytes
 cd-list@#@read-only@#@Display if the CD is read-only [ true | false ]
@@ -93,7 +94,7 @@ cd-list@#@sr-uuid@#@Display UUID of the ISO Storage Repository where the CD resi
 cd-list@#@storage-lock@#@Display if the disk is locked at the storage level [ true | false ]
 cd-list@#@tags@#@Display tags
 cd-list@#@type@#@Display the CD type [ User | System ]
-cd-list@#@uuid#@#Display CD UUIDs
+cd-list@#@uuid@#@Display CD UUIDs
 cd-list@#@vbd-uuids@#@Display any Virtual Block Device UUIDs
 cd-list@#@virtual-size@#@Display the virtual size in bytes
 cd-list@#@xenstore-data@#@Display data to be inserted into xenstore tree
@@ -102,7 +103,7 @@ console-list@#@location@#@URI for the console service.
 console-list@#@other-config@#@A list of key/value pairs that specify additional configuration parameters for the console.
 console-list@#@params@#@Specify which parameter(s) to display.
 console-list@#@protocol@#@Protocol that the console uses. Return values are VT100(VT100 terminal), RFB(Remote FrameBuffer protocol), or RDP(Remote Desktop Protocol).
-console-list@#@uuid#@#Display CONSOLE UUIDs
+console-list@#@uuid@#@Universally Unique IDentifier for the console. (Autocomplete by using the tab key twice after a reasonable number of characters.) 
 console-list@#@vm-name-label@#@User readable name associated with the virtual machine.
 console-list@#@vm-uuid@#@Display the Virtual Machine the console currently resides on.
 console-param-add@#@param-key#@#Key to be added to a set parameter (SRW).
@@ -115,7 +116,7 @@ console-param-get@#@param-key#@#The CONSOLE map parameter key value to return
 console-param-get@#@param-name#@#The CONSOLE parameter to return
 console-param-get@#@uuid#@#CONSOLE UUID - Use *xe CONSOLE-list* to obtain a list of CONSOLE UUIDs.
 console-param-list@#@database#@#
-console-param-list@#@uuid#@#CONSOLE UUID - Use *xe CONSOLE-list* to obtain a list of console UUIDs.
+console-param-list@#@uuid@#@Console UUID - Use *xe console-list* to obtain a list of console UUIDs.
 console-param-remove@#@param-key#@#Key or key/value pair to be removed.
 console-param-remove@#@param-name#@#Parameter that contains keys or key/value pairs. (e.g. other-config).
 console-param-remove@#@uuid#@#CONSOLE UUID - Use *xe CONSOLE-list* to obtain a list of CONSOLE UUIDs.
@@ -124,12 +125,12 @@ console-param-set@#@uuid#@#CONSOLE UUID - Use *xe CONSOLE-list* to obtain a list
 diagnostic-net-stats@#@method@#@
 diagnostic-net-stats@#@params@#@
 diagnostic-net-stats@#@uri@#@
-diagnostic-vdi-status@#@uuid#@#DIAGNOSTIC UUID - Use *xe DIAGNOSTIC-list to obtain a list of DIAGNOSTIC UUIDs.
-diagnostic-vm-status@#@uuid#@#DIAGNOSTIC UUID - Use *xe DIAGNOSTIC-list to obtain a list of DIAGNOSTIC UUIDs.
+diagnostic-vdi-status@#@uuid@#@VDI UUID - Use *xe vdi-list* to obtain a list of VDI UUIDs.
+diagnostic-vm-status@#@uuid@#@VM UUID - Use *xe vm-list* to obtain a list of VM UUIDs.
 drtask-create@#@device-config@#@Device configuration
 drtask-create@#@sr-whitelist@#@List of SR UUIDs
 drtask-create@#@type@#@
-drtask-destroy@#@uuid#@#DRTASK UUID - Use *xe DRTASK-list to obtain a list of DRTASK UUIDs.
+drtask-destroy@#@uuid@#@DR task UUID - use *xe drtask-list* to obtain a list of DR task UUIDs
 drtask-list@#@database@#@
 drtask-list@#@introduced-SRs@#@
 drtask-list@#@params@#@
@@ -139,61 +140,44 @@ drtask-param-get@#@param-key#@#The DRTASK map parameter key value to return
 drtask-param-get@#@param-name#@#The DRTASK parameter to return
 drtask-param-get@#@uuid#@#DRTASK UUID - Use *xe DRTASK-list* to obtain a list of DRTASK UUIDs.
 drtask-param-list@#@database#@#
-drtask-param-list@#@uuid#@#DRTASK UUID - Use *xe DRTASK-list* to obtain a list of drtask UUIDs.
 event-wait@#@class@#@
-example_manpage.1@#@-a@#@In addition to the baz segments, also parse the *blurfl*(3) headers.
-example_manpage.1@#@-b, --busy@#@Do not write “busy” to stdout while processing.
-example_manpage.1@#@FOOCONF@#@The full pathname for an alternate system wide configuration file *foo.conf*(5) (see also the section called “FILES”). Overridden by the
-example_manpage.1@#@-r@#@Recursive mode. Operates as fast as lightning at the expense of a megabyte of virtual memory.
 gpu-group-list@#@all@#@Display all parameter values
 gpu-group-list@#@database@#@
 gpu-group-list@#@--minimal@#@Specify --minimal to only show minimal output
-gpu-group-list@#@name-description#@#Display GPU name-descriptions
-gpu-group-list@#@name-label#@#Display GPU name-labels
+gpu-group-list@#@name-description@#@Display a GPU group name description
+gpu-group-list@#@name-label@#@Display a GPU group name
 gpu-group-list@#@other-config@#@Display additional configuration parameter values for the GPU group
 gpu-group-list@#@params@#@
 gpu-group-list@#@PGPU-uuids:contains@#@
 gpu-group-list@#@PGPU-uuids@#@Display a list of physical GPU UUIDs
-gpu-group-list@#@uuid#@#Display GPU UUIDs
+gpu-group-list@#@uuid@#@Display a GPU group UUID
 gpu-group-list@#@VGPU-uuids:contains@#@
 gpu-group-list@#@VGPU-uuids@#@Display a list of virtual GPU UUIDs
-gpu-group-param-add@#@<MAP PARAMETER KEY>#@#
-gpu-group-param-add@#@param-key#@#Key to be added to a set parameter (SRW).
-gpu-group-param-add@#@param-name#@#Parameter to have key or key/value pair added - Use *xe GPU-param-list* to obtain a list of gpu parameters.
-gpu-group-param-add@#@uuid#@#GPU UUID - Use *xe GPU-list* to obtain a list of GPU UUIDs.
-gpu-group-param-clear@#@param-name#@#Writable parameter to be cleared. (e.g. other-config).
-gpu-group-param-clear@#@uuid#@#GPU UUID - Use *xe GPU-list* to obtain a list of GPU UUIDs.
+gpu-group-param-add@#@<MAP PARAMETER KEY>@#@Key/value pair to be added to a map parameter (MRW). 
+gpu-group-param-add@#@param-key@#@Key to be added to a set parameter (SRW).
+gpu-group-param-add@#@param-name@#@Parameter to have a key or key/value pair added - Use *xe gpu-group-param-list* to obtain a list of GPU group parameters.
+gpu-group-param-add@#@uuid@#@GPU group UUID - Use *xe gpu-group-list* to obtain a list of GPU group UUIDs.
+gpu-group-param-clear@#@param-name@#@Writable parameter to be cleared (e.g. <WRITABLE PARAMETER>).
+gpu-group-param-clear@#@uuid@#@GPU group UUID - Use *xe gpu-group-list* to obtain GPU group UUIDs.
 gpu-group-param-get@#@database#@#
-gpu-group-param-get@#@param-key#@#The GPU map parameter key value to return
-gpu-group-param-get@#@param-name#@#The GPU parameter to return
-gpu-group-param-get@#@uuid#@#GPU UUID - Use *xe GPU-list* to obtain a list of GPU UUIDs.
+gpu-group-param-get@#@param-key@#@The GPU group key to return.  
+gpu-group-param-get@#@param-name@#@The GPU group parameter to return.
+gpu-group-param-get@#@uuid@#@GPU group UUID - Use *xe gpu-group-list* to obtain a list of GPU group UUIDs.
 gpu-group-param-list@#@database#@#
-gpu-group-param-list@#@uuid#@#GPU UUID - Use *xe GPU-list* to obtain a list of gpu UUIDs.
-gpu-group-param-remove@#@param-key#@#Key or key/value pair to be removed.
-gpu-group-param-remove@#@param-name#@#Parameter that contains keys or key/value pairs. (e.g. other-config).
-gpu-group-param-remove@#@uuid#@#GPU UUID - Use *xe GPU-list* to obtain a list of GPU UUIDs.
+gpu-group-param-list@#@uuid@#@GPU group UUID - Use *xe gpu-group-list* to obtain a list of GPU group UUIDs.
+gpu-group-param-remove@#@param-key@#@Key or key/value pair to be removed.
+gpu-group-param-remove@#@param-name@#@Parameter that contains keys or key/value pairs. (e.g. other-config).
+gpu-group-param-remove@#@uuid@#@GPU group UUID - Use *xe gpu-group-list* to obtain GPU group UUIDs.
 gpu-group-param-set@#@name-description#@#Set name-description of GPU
 gpu-group-param-set@#@name-label#@#Set name of GPU
 gpu-group-param-set@#@other-config#@#
-gpu-group-param-set@#@uuid#@#GPU UUID - Use *xe GPU-list* to obtain a list of GPU UUIDs.
-grants_template@#@all@#@Display all parameter values
-grants_template@#@allowed-operations@#@Display allowed operations [destroy|clone|copy|snapshot]
-grants_template@#@current-operations@#@Display current operations [destroy|clone|copy|snapshot]
-grants_template@#@is-a-snapshot@#@Display if a CD is a snapshot [true|false]
-grants_template@#@name-description@#@Display CD name descriptions
-grants_template@#@name-label@#@List CD name labels
-grants_template@#@snapshot-of@#@Display UUID of snapshotted CD
-grants_template@#@snapshots@#@Display how many snapshots the CD has
-grants_template@#@snapshot-time@#@Display the time of the snapshot
-grants_template@#@sr-name-label@#@Display Storage Repository name-label where the CD resides
-grants_template@#@sr-uuid#@#Desired storage repository UUID - use *xe sr-list* to get a list of storage repositories
-grants_template@#@uuid#@#GRANTS_TEMPLATE UUID - Use *xe GRANTS_TEMPLATE-list to obtain a list of GRANTS_TEMPLATE UUIDs.
+gpu-group-param-set@#@uuid@#@GPU group UUID - Use *xe gpu-group-list* to obtain a list of GPU group UUIDs.
 host-apply-edition@#@edition@#@
 host-apply-edition@#@host-uuid#@#Host UUID - Use *xe host-list* to obtain a list of host UUIDs.
 host-apply-edition@#@license-server-address@#@
 host-apply-edition@#@license-server-port@#@
-host-backup@#@file-name@#@
-host-backup@#@<host-selectors>#@#Parameters to select host(s) - use *xe host-list params=all* to get a list of host parameters to filter on.
+host-backup@#@file-name@#@Desired filename for Dom0 back up
+host-backup@#@<host-selectors>@#@Parameters to select host(s) - use *xe host-list params=all* to get a list of host parameters to filter on. 
 host-bugreport-upload@#@<host-selectors>#@#Parameters to select host(s) - use *xe host-list params=all* to get a list of host parameters to filter on.
 host-bugreport-upload@#@http_proxy@#@
 host-bugreport-upload@#@url@#@
@@ -201,15 +185,15 @@ host-call-plugin@#@args@#@
 host-call-plugin@#@fn@#@
 host-call-plugin@#@host-uuid#@#Host UUID - Use *xe host-list* to obtain a list of host UUIDs.
 host-call-plugin@#@plugin@#@
-host-compute-free-memory@#@<host-selectors>#@#Parameters to select host(s) - use *xe host-list params=all* to get a list of host parameters to filter on.
+host-compute-free-memory@#@<host-selectors>@#@Parameters to select a host - use *xe host-list params=all* to get a list of host parameters to filter on. 
 host-compute-memory-overhead@#@<host-selectors>#@#Parameters to select host(s) - use *xe host-list params=all* to get a list of host parameters to filter on.
-host-cpu-info@#@uuid#@#HOST UUID - Use *xe HOST-list to obtain a list of HOST UUIDs.
-host-cpu-info@#@uuid=<Host UUID>@#@Use *xe host-list* to display Host UUID; then this UUID can be used to acquire specific host information.
-host-cpu-list@#@all@#@Display all cpu(s) parameters
+host-cpu-info@#@uuid@#@Host UUID - Use *xe host-list* to display Host UUIDs
+host-cpu-list@#@all@#@Display all parameter values
 host-cpu-list@#@database@#@
 host-cpu-list@#@family@#@Display CPU families 
 host-cpu-list@#@flags@#@Display CPU flags
-host-cpu-list@#@host-uuid@#@Display all cpu(s) host UUID
+host-cpu-list@#@host-uuid@#@Display XenServer host UUIDs
+host-cpu-list@#@--minimal@#@Specify --minimal to only show minimal output
 host-cpu-list@#@model@#@Display CPU models
 host-cpu-list@#@modelname@#@Display CPU modelnames
 host-cpu-list@#@number@#@Display host CPU numbers
@@ -217,14 +201,14 @@ host-cpu-list@#@params@#@
 host-cpu-list@#@speed@#@Display CPU speeds
 host-cpu-list@#@stepping@#@Display CPU steppings
 host-cpu-list@#@utilisation@#@Display CPU utilisation - Use *xe host-cpu-param-list* or *xe host-cpu-param-get* to display CPU utilisation
-host-cpu-list@#@uuid#@#Display HOST UUIDs
+host-cpu-list@#@uuid@#@Display CPU UUIDs
 host-cpu-list@#@vendor@#@Display CPU venders
 host-cpu-param-get@#@database#@#
-host-cpu-param-get@#@param-key#@#The HOST map parameter key value to return
-host-cpu-param-get@#@param-name#@#The HOST parameter to return
-host-cpu-param-get@#@uuid#@#HOST UUID - Use *xe HOST-list* to obtain a list of HOST UUIDs.
+host-cpu-param-get@#@param-key@#@The CPU key value to return.  
+host-cpu-param-get@#@param-name@#@The CPU parameter value to return.
+host-cpu-param-get@#@uuid@#@CPU UUID - Use *xe host-cpu-list* to obtain a list of CPU UUIDs.
 host-cpu-param-list@#@database#@#
-host-cpu-param-list@#@uuid#@#HOST UUID - Use *xe HOST-list* to obtain a list of host UUIDs.
+host-cpu-param-list@#@uuid@#@Host CPU UUID - Use *xe host-cpu-list* to obtain a list of host CPU UUIDs.
 host-crashdump-destroy@#@uuid#@#HOST UUID - Use *xe HOST-list to obtain a list of HOST UUIDs.
 host-crashdump-list@#@database@#@
 host-crashdump-list@#@host-uuid@#@
@@ -237,7 +221,7 @@ host-crashdump-param-get@#@param-key#@#The HOST map parameter key value to retur
 host-crashdump-param-get@#@param-name#@#The HOST parameter to return
 host-crashdump-param-get@#@uuid#@#HOST UUID - Use *xe HOST-list* to obtain a list of HOST UUIDs.
 host-crashdump-param-list@#@database#@#
-host-crashdump-param-list@#@uuid#@#HOST UUID - Use *xe HOST-list* to obtain a list of host UUIDs.
+host-crashdump-param-list@#@uuid@#@host-crashdump UUID - Use *xe host-crashdump-list* to obtain a list of host-crashdump UUIDs.
 host-crashdump-upload@#@http_proxy@#@
 host-crashdump-upload@#@url@#@
 host-crashdump-upload@#@uuid#@#HOST UUID - Use *xe HOST-list to obtain a list of HOST UUIDs.
@@ -248,33 +232,35 @@ host-data-source-query@#@data-source@#@
 host-data-source-query@#@<host-selectors>#@#Parameters to select host(s) - use *xe host-list params=all* to get a list of host parameters to filter on.
 host-data-source-record@#@data-source@#@
 host-data-source-record@#@<host-selectors>#@#Parameters to select host(s) - use *xe host-list params=all* to get a list of host parameters to filter on.
+host-declare-dead@#@uuid#@#HOST UUID - Use *xe HOST-list to obtain a list of HOST UUIDs.
 host-disable@#@<host-selectors>#@#Parameters to select host(s) - use *xe host-list params=all* to get a list of host parameters to filter on.
 host-disable-local-storage-caching@#@<host-selectors>#@#Parameters to select host(s) - use *xe host-list params=all* to get a list of host parameters to filter on.
-host-dmesg@#@<host-selectors>#@#Parameters to select host(s) - use *xe host-list params=all* to get a list of host parameters to filter on.
+host-dmesg@#@<host-selectors>@#@Parameters to select host(s) - use *xe host-list params=all* to get a list of host parameters to filter on. 
 host-emergency-ha-disable@#@force#@#Force operation
 host-emergency-management-reconfigure@#@interface@#@
 host-enable@#@<host-selectors>#@#Parameters to select host(s) - use *xe host-list params=all* to get a list of host parameters to filter on.
 host-enable-local-storage-caching@#@<host-selectors>#@#Parameters to select host(s) - use *xe host-list params=all* to get a list of host parameters to filter on.
 host-enable-local-storage-caching@#@sr-uuid#@#Desired storage repository UUID - use *xe sr-list* to get a list of storage repositories
+host-enable@#@--multiple@#@Specify --multiple if you want to match more than one host.
 host-evacuate@#@<host-selectors>#@#Parameters to select host(s) - use *xe host-list params=all* to get a list of host parameters to filter on.
+host-evacuate@#@--multiple@#@Specify --multiple if you want to match more than one host.
 host-forget@#@uuid#@#HOST UUID - Use *xe HOST-list to obtain a list of HOST UUIDs.
-host-get-cpu-features@#@uuid#@#HOST UUID - Use *xe HOST-list to obtain a list of HOST UUIDs.
+host-get-cpu-features@#@uuid@#@Host UUID - Use *xe host-list* to obtain Host UUIDs.
 host-get-server-certificate@#@<host-selectors>#@#Parameters to select host(s) - use *xe host-list params=all* to get a list of host parameters to filter on.
 host-get-sm-diagnostics@#@uuid#@#HOST UUID - Use *xe HOST-list to obtain a list of HOST UUIDs.
 host-get-system-status-capabilities@#@<host-selectors>#@#Parameters to select host(s) - use *xe host-list params=all* to get a list of host parameters to filter on.
 host-get-system-status@#@entries@#@Comma-separated list of system status entries
 host-get-system-status@#@filename@#@Desired system status archive filename 
 host-get-system-status@#@<host-selectors>#@#Parameters to select host(s) - use *xe host-list params=all* to get a list of host parameters to filter on.
+host-get-system-status@#@--multiple@#@Specify --multiple if you want to match more than one host.
 host-get-system-status@#@output@#@Compression output for system status file  [ tar | tar.bz2 | zip ]
 host-get-thread-diagnostics@#@uuid#@#HOST UUID - Use *xe HOST-list to obtain a list of HOST UUIDs.
 host-get-vms-which-prevent-evacuation@#@uuid#@#HOST UUID - Use *xe HOST-list to obtain a list of HOST UUIDs.
-host-license-add@#@host-uuid#@#Host UUID - Use *xe host-list* to obtain a list of host UUIDs.
-host-license-add@#@license-file@#@
 host-license-view@#@host-uuid#@#Host UUID - Use *xe host-list* to obtain a list of host UUIDs.
 host-list@#@address@#@Display XCP host IP addresses 
 host-list@#@all@#@Display all parameter values
 host-list@#@allowed-operations:contains@#@
-host-list@#@allowed-operations#@#Display list of operations allowed on HOSTs
+host-list@#@allowed-operations@#@Display allowed-operations for XCP hosts
 host-list@#@API-version-major@#@Display API major version number
 host-list@#@API-version-minor@#@Display API minor version number
 host-list@#@API-version-vendor@#@Display identification of API vendor
@@ -286,13 +272,14 @@ host-list@#@chipset-info@#@Display chipset-info map parameter key/values
 host-list@#@cpu_info@#@Display cpu-info for XCP hosts
 host-list@#@crash-dump-sr-uuid@#@Display the Storage Repository UUID for crash dumps
 host-list@#@current-operations:contains@#@
-host-list@#@current-operations#@#Display currently running operations on HOSTs
+host-list@#@current-operations@#@Display current-operations for XCP hosts
 host-list@#@database@#@
 host-list@#@edition@#@Dispaly edition information 
 host-list@#@enabled@#@Display host's enabled status [ true | false ]
 host-list@#@external-auth-configuration@#@Display external authentication configurations
 host-list@#@external-auth-service-name@#@Display names of external authentication services 
 host-list@#@external-auth-type@#@Display external authentication type
+host-list@#@guest_VCPUs_params@#@
 host-list@#@ha-network-peers@#@Display host UUIDs that could host the VMs on this host in case of failure.
 host-list@#@ha-statefiles@#@Display HA statefile UUIDs
 host-list@#@host-metrics-live@#@Display host operational status [ true | false ]
@@ -305,8 +292,8 @@ host-list@#@memory-free@#@Display total amount of un-allocated physical RAM on t
 host-list@#@memory-overhead@#@Dispaly memory overhead due to virtualization, in bytes.
 host-list@#@memory-total@#@Display total amount of physical RAM on the XCP host, in bytes.
 host-list@#@--minimal@#@Specify --minimal to only show minimal output
-host-list@#@name-description#@#Display HOST name-descriptions
-host-list@#@name-label#@#Display HOST name-labels
+host-list@#@name-description@#@Display host name-descriptions
+host-list@#@name-label@#@Display host name-labels
 host-list@#@other-config@#@Display other-config map parameter key/value pairs
 host-list@#@params@#@
 host-list@#@patches:contains@#@
@@ -319,25 +306,26 @@ host-list@#@supported-bootloaders@#@Display a list of bootloaders supported by X
 host-list@#@suspend-image-sr-uuid@#@Display the Storage Repository UUID for suspended images
 host-list@#@tags:contains@#@
 host-list@#@tags@#@Display writable tag parameters
-host-list@#@uuid#@#Display HOST UUIDs
-host-logs-download@#@file-name@#@
-host-logs-download@#@<host-selectors>#@#Parameters to select host(s) - use *xe host-list params=all* to get a list of host parameters to filter on.
+host-list@#@uuid@#@Display host UUIDs
+host-logs-download@#@file-name@#@Desired file name for XenServer log(s)
+host-logs-download@#@<host-selectors>@#@Parameters to select host(s) - use *xe host-list params=all* to get a list of host parameters to filter on. 
 host-management-reconfigure@#@pif-uuid@#@
 host-param-add@#@param-key#@#Key to be added to a set parameter (SRW).
 host-param-add@#@param-name#@#Parameter to have key or key/value pair added - Use *xe HOST-param-list* to obtain a list of host parameters.
 host-param-add@#@uuid#@#HOST UUID - Use *xe HOST-list* to obtain a list of HOST UUIDs.
-host-param-clear@#@param-name#@#Writable parameter to be cleared. (e.g. other-config).
-host-param-clear@#@uuid#@#HOST UUID - Use *xe HOST-list* to obtain a list of HOST UUIDs.
+host-param-clear@#@param-name@#@Writable parameter to be cleared (e.g name-description).
+host-param-clear@#@uuid@#@Host UUID - Use *xe host-list* to obtain a list of host UUIDs.
 host-param-get@#@database#@#
 host-param-get@#@param-key#@#The HOST map parameter key value to return
 host-param-get@#@param-name#@#The HOST parameter to return
 host-param-get@#@uuid#@#HOST UUID - Use *xe HOST-list* to obtain a list of HOST UUIDs.
 host-param-list@#@database#@#
-host-param-list@#@uuid#@#HOST UUID - Use *xe HOST-list* to obtain a list of host UUIDs.
+host-param-list@#@uuid@#@Host UUID - Use *xe host-list* to obtain a list of host UUIDs.
 host-param-remove@#@param-key#@#Key or key/value pair to be removed.
 host-param-remove@#@param-name#@#Parameter that contains keys or key/value pairs. (e.g. other-config).
 host-param-remove@#@uuid#@#HOST UUID - Use *xe HOST-list* to obtain a list of HOST UUIDs.
 host-param-set@#@crash-dump-sr-uuid#@#
+host-param-set@#@guest_VCPUs_params#@#
 host-param-set@#@logging#@#
 host-param-set@#@name-description#@#Set name-description of HOST
 host-param-set@#@name-label#@#Set name of HOST
@@ -346,14 +334,14 @@ host-param-set@#@suspend-image-sr-uuid#@#
 host-param-set@#@uuid#@#HOST UUID - Use *xe HOST-list* to obtain a list of HOST UUIDs.
 host-power-on@#@<host-selectors>#@#Parameters to select host(s) - use *xe host-list params=all* to get a list of host parameters to filter on.
 host-reboot@#@<host-selectors>#@#Parameters to select host(s) - use *xe host-list params=all* to get a list of host parameters to filter on.
-host-reset-cpu-features@#@uuid#@#HOST UUID - Use *xe HOST-list to obtain a list of HOST UUIDs.
+host-reboot@#@--multiple@#@Specify --multiple if you want to match more than one host.
+host-reset-cpu-features@#@uuid@#@Host UUID - Use *xe host-list* to obtain a list of host UUIDs
 host-restore@#@file-name@#@
 host-restore@#@<host-selectors>#@#Parameters to select host(s) - use *xe host-list params=all* to get a list of host parameters to filter on.
-host-retrieve-wlb-evacuate-recommendations@#@uuid#@#HOST UUID - Use *xe HOST-list to obtain a list of HOST UUIDs.
 host-send-debug-keys@#@host-uuid#@#Host UUID - Use *xe host-list* to obtain a list of host UUIDs.
 host-send-debug-keys@#@keys@#@
 host-set-cpu-features@#@features@#@32-digit hexadecimal CPU feature mask
-host-set-cpu-features@#@uuid#@#HOST UUID - Use *xe HOST-list to obtain a list of HOST UUIDs.
+host-set-cpu-features@#@uuid@#@Host UUID - Use *xe host-list* to obtain a list of host UUIDs
 host-set-hostname-live@#@host-name@#@
 host-set-hostname-live@#@<host-selectors>#@#Parameters to select host(s) - use *xe host-list params=all* to get a list of host parameters to filter on.
 host-set-hostname-live@#@host-uuid#@#Host UUID - Use *xe host-list* to obtain a list of host UUIDs.
@@ -371,13 +359,13 @@ log-set-output@#@key@#@
 log-set-output@#@level@#@
 log-set-output@#@output@#@
 message-create@#@body@#@Message body
-message-create@#@host-uuid#@#Host UUID - Use *xe host-list* to obtain a list of host UUIDs.
+message-create@#@host-uuid@#@Host UUID - Use *xe host-list* to obtain a list of host UUIDs
 message-create@#@name@#@Message name
 message-create@#@pool-uuid@#@Resource pool UUID - Use *pool-list* to obtain a list of pool UUIDs
 message-create@#@priority@#@Message priority
-message-create@#@sr-uuid#@#Desired storage repository UUID - use *xe sr-list* to get a list of storage repositories
-message-create@#@vm-uuid#@#Virtual machine UUID - Use *xe vm-list* to obtain a list of VM UUIDs
-message-destroy@#@uuid#@#MESSAGE UUID - Use *xe MESSAGE-list to obtain a list of MESSAGE UUIDs.
+message-create@#@sr-uuid@#@Storage repository UUID - Use *sr-list* to obtain a list of SR UUIDs
+message-create@#@vm-uuid@#@Virtual machine UUID - Use *xe vm-list* to obtain a list of VM UUIDs
+message-destroy@#@uuid@#@Message UUID - use *xe message-list* to obtain a list of message UUIDs
 message-list@#@all@#@Display all parameter values
 message-list@#@body@#@Display body of message (description)
 message-list@#@class@#@
@@ -387,21 +375,17 @@ message-list@#@obj-uuid@#@
 message-list@#@params@#@
 message-list@#@priority@#@Display priority number
 message-list@#@timestamp@#@Display timestamp
-message-list@#@uuid#@#Display MESSAGE UUIDs
+message-list@#@uuid@#@Display message UUID
 message-param-get@#@database#@#
-message-param-get@#@param-key#@#The MESSAGE map parameter key value to return
-message-param-get@#@param-name#@#The MESSAGE parameter to return
-message-param-get@#@uuid#@#MESSAGE UUID - Use *xe MESSAGE-list* to obtain a list of MESSAGE UUIDs.
+message-param-get@#@param-key@#@The message key to return.  
+message-param-get@#@param-name@#@The message parameter to return.
+message-param-get@#@uuid@#@Message UUID - Use *xe message-list* to obtain a list of message UUIDs.
 message-param-list@#@database#@#
-message-param-list@#@uuid#@#MESSAGE UUID - Use *xe MESSAGE-list* to obtain a list of message UUIDs.
-Mikes_template.1@#@-a@#@In addition to the baz segments, also parse the *blurfl*(3) headers.
-Mikes_template.1@#@-b, --busy@#@Do not write “busy” to stdout while processing.
-Mikes_template.1@#@FOOCONF@#@The full pathname for an alternate system wide configuration file *foo.conf*(5) (see also the section called “FILES”). Overridden by the
-Mikes_template.1@#@-r@#@Recursive mode. Operates as fast as lightning at the expense of a megabyte of virtual memory.
+message-param-list@#@uuid@#@Message UUID - Use *xe message-list* to obtain a list of message UUIDs.
 network-create@#@MTU@#@MTU for the network. The MTU default is 1500.	
 network-create@#@name-description@#@Description of the network
 network-create@#@name-label@#@Name of the network
-network-destroy@#@uuid#@#NETWORK UUID - Use *xe NETWORK-list to obtain a list of NETWORK UUIDs.
+network-destroy@#@uuid@#@Network UUID - Use *xe network-list* to obtain a list of network UUIDs.
 network-list@#@all@#@Display all parameter values
 network-list@#@blobs@#@Display binary data stores
 network-list@#@bridge@#@Display network bridge names
@@ -409,8 +393,8 @@ network-list@#@database@#@
 network-list@#@default-locking-mode@#@
 network-list@#@--minimal@#@Specify --minimal to only show minimal output
 network-list@#@MTU@#@Display network MTU values
-network-list@#@name-description#@#Display NETWORK name-descriptions
-network-list@#@name-label#@#Display NETWORK name-labels
+network-list@#@name-description@#@Display network descriptions
+network-list@#@name-label@#@Display network name-labels
 network-list@#@other-config@#@
 network-list@#@other-config:ethtool-autoneg@#@Display ethernet Autonegotiation status [ on | off ]
 network-list@#@other-config:ethtool-gso@#@Display generic segmentation offload status [ on | off ]
@@ -425,52 +409,40 @@ network-list@#@PIF-uuids:contains@#@
 network-list@#@PIF-uuids@#@Display PIFs attached to networks
 network-list@#@tags:contains@#@
 network-list@#@tags@#@Display writable tag parameters
-network-list@#@uuid#@#Display NETWORK UUIDs
+network-list@#@uuid@#@Display network UUIDs
 network-list@#@VIF-uuids:contains@#@
 network-list@#@VIF-uuids@#@Display VIFs attached to networks
-network-param-add@#@<MAP PARAMETER KEY>#@#
-network-param-add@#@param-key#@#Key to be added to a set parameter (SRW).
-network-param-add@#@param-name#@#Parameter to have key or key/value pair added - Use *xe NETWORK-param-list* to obtain a list of network parameters.
-network-param-add@#@uuid#@#NETWORK UUID - Use *xe NETWORK-list* to obtain a list of NETWORK UUIDs.
-network-param-clear@#@param-name#@#Writable parameter to be cleared. (e.g. other-config).
-network-param-clear@#@uuid#@#NETWORK UUID - Use *xe NETWORK-list* to obtain a list of NETWORK UUIDs.
+network-param-add@#@<MAP PARAMETER KEY>@#@Key/value pair to be added to a map parameter (MRW). 
+network-param-add@#@param-key@#@Key to be added to a set parameter (SRW).
+network-param-add@#@param-name@#@Parameter to have key or key/value pair added - Use *xe network-param-list* to obtain a list of network parameters.
+network-param-add@#@uuid@#@Network UUID - Use *xe network-list* to obtain a list of network UUIDs.
+network-param-clear@#@param-name@#@Writable parameter to be cleared (e.g. name-description).
+network-param-clear@#@uuid@#@Network UUID - Use *xe network-list* to obtain a list of network UUIDs.
 network-param-get@#@database#@#
-network-param-get@#@param-key#@#The NETWORK map parameter key value to return
-network-param-get@#@param-name#@#The NETWORK parameter to return
-network-param-get@#@uuid#@#NETWORK UUID - Use *xe NETWORK-list* to obtain a list of NETWORK UUIDs.
+network-param-get@#@param-key@#@The network key value to return.  
+network-param-get@#@param-name@#@The network parameter value to return.
+network-param-get@#@uuid@#@Network UUID - Use *xe network-list* to obtain a list of network UUIDs.
 network-param-list@#@database#@#
-network-param-list@#@uuid#@#NETWORK UUID - Use *xe NETWORK-list* to obtain a list of network UUIDs.
-network-param-remove@#@param-key#@#Key or key/value pair to be removed.
-network-param-remove@#@param-name#@#Parameter that contains keys or key/value pairs. (e.g. other-config).
-network-param-remove@#@uuid#@#NETWORK UUID - Use *xe NETWORK-list* to obtain a list of NETWORK UUIDs.
-network-param-set@#@default-locking-mode#@#
-network-param-set@#@MTU#@#
-network-param-set@#@name-description#@#Set name-description of NETWORK
-network-param-set@#@name-label#@#Set name of NETWORK
+network-param-list@#@uuid@#@Network UUID - Use *xe network-list* to obtain a list of network UUIDs.
+network-param-remove@#@param-key@#@Key or key/value pair to be removed.
+network-param-remove@#@param-name@#@Parameter that contains keys or key/value pairs (e.g. other-config).
+network-param-remove@#@uuid@#@Network UUID - Use *xe network-list* to obtain a list of network UUIDs.
+network-param-set@#@default-locking-mode@#@Set switchport locking mode: default-locking-mode=[ disabled | unlocked ]	
+network-param-set@#@MTU@#@Set MTU size for a network
+network-param-set@#@name-description@#@Set description of network
+network-param-set@#@name-label@#@Set name of network
 network-param-set@#@other-config#@#
-network-param-set@#@other-config:ethtool-autoneg#@#
-network-param-set@#@other-config:ethtool-gso#@#
-network-param-set@#@other-config:ethtool-rx#@#
-network-param-set@#@other-config:ethtool-sg#@#
-network-param-set@#@other-config:ethtool-tso#@#
-network-param-set@#@other-config:ethtool-tx#@#
-network-param-set@#@other-config:ethtool-ufo#@#
-network-param-set@#@other-config:static-routes#@#
-network-param-set@#@uuid#@#NETWORK UUID - Use *xe NETWORK-list* to obtain a list of NETWORK UUIDs.
-object-list-template@#@all@#@Display all parameter values
-object-list-template@#@--minimal@#@Specify --minimal to only show minimal output
-object-param-add-template@#@<MAP PARAMETER KEY>@#@Key/value pair to be added to a map parameter (MRW). 
-object-param-add-template@#@param-key@#@Key to be added to a set parameter (SRW).
-object-param-add-template@#@param-name@#@Parameter to have a key or key/value pair added - Use *xe <OBJECT>-param-list* to obtain a list of network parameters.
-object-param-add-template@#@uuid#@#OBJECT UUID - Use *xe OBJECT-list to obtain a list of OBJECT UUIDs.
-object-param-clear-template@#@param-name@#@Writable parameter to be cleared (e.g. <WRITABLE PARAMETER>).
-object-param-clear-template@#@uuid#@#OBJECT UUID - Use *xe OBJECT-list to obtain a list of OBJECT UUIDs.
-object-param-get-template@#@param-key@#@The <OBJECT> key value to return.  
-object-param-get-template@#@param-name@#@The <OBJECT> parameter value to return.
-object-param-get-template@#@uuid#@#OBJECT UUID - Use *xe OBJECT-list to obtain a list of OBJECT UUIDs.
-object-param-list-template@#@uuid#@#OBJECT UUID - Use *xe OBJECT-list to obtain a list of OBJECT UUIDs.
-patch-apply@#@host-uuid#@#Host UUID - Use *xe host-list* to obtain a list of host UUIDs.
-patch-apply@#@uuid#@#PATCH UUID - Use *xe PATCH-list to obtain a list of PATCH UUIDs.
+network-param-set@#@other-config:ethtool-autoneg@#@Set to enable autonegotiation: ethtool-autoneg=[ on | off ]	
+network-param-set@#@other-config:ethtool-gso@#@Set to enable generic segmentation offload: ethtool-gso=[ on | off ]	
+network-param-set@#@other-config:ethtool-rx@#@Set to enable receive checksum: ethtool-rx=[ on | off ]	
+network-param-set@#@other-config:ethtool-sg@#@Set to enable scatter gather: ethtool-sg=[ on | off ]	
+network-param-set@#@other-config:ethtool-tso@#@Set to enable TCP segmentation offload: ethtool-tso=[ on | off ]	
+network-param-set@#@other-config:ethtool-tx@#@Set to enable transmit checksum: ethtool-tx=[ on | off ]	
+network-param-set@#@other-config:ethtool-ufo@#@Set to enable UDP fragment offload: ethtool-ufo=[ on | off ]	
+network-param-set@#@other-config:static-routes@#@Set one or more static routes (separate with commas): static-routes=[ <SOURCE NETWORK ADDRESS>/<CIDR MASK>/<NEXT HOP ADDRESS> ]		
+network-param-set@#@uuid@#@Network UUID - Use *xe network-list* to obtain a list of network UUIDs.
+patch-apply@#@host-uuid@#@Host UUID - Use *xe host-list* to obtain a list of hosts.
+patch-apply@#@uuid@#@Patch UUID - Use *xe patch-list* to obtain a list of patches.
 patch-clean@#@uuid#@#PATCH UUID - Use *xe PATCH-list to obtain a list of PATCH UUIDs.
 patch-destroy@#@uuid#@#PATCH UUID - Use *xe PATCH-list to obtain a list of PATCH UUIDs.
 patch-list@#@after-apply-guidance@#@
@@ -490,7 +462,7 @@ patch-param-get@#@param-key#@#The PATCH map parameter key value to return
 patch-param-get@#@param-name#@#The PATCH parameter to return
 patch-param-get@#@uuid#@#PATCH UUID - Use *xe PATCH-list* to obtain a list of PATCH UUIDs.
 patch-param-list@#@database#@#
-patch-param-list@#@uuid#@#PATCH UUID - Use *xe PATCH-list* to obtain a list of patch UUIDs.
+patch-param-list@#@uuid@#@Patch UUID - Use *xe patch-list* to obtain a list of patch UUIDs.
 patch-pool-apply@#@uuid#@#PATCH UUID - Use *xe PATCH-list to obtain a list of PATCH UUIDs.
 patch-pool-clean@#@uuid#@#PATCH UUID - Use *xe PATCH-list to obtain a list of PATCH UUIDs.
 patch-precheck@#@host-uuid#@#Host UUID - Use *xe host-list* to obtain a list of host UUIDs.
@@ -512,7 +484,7 @@ pbd-list@#@other-config@#@Display other-config map parameter key/value pairs // 
 pbd-list@#@params@#@
 pbd-list@#@sr-name-label@#@
 pbd-list@#@sr-uuid@#@Display PBD's Storage Repository
-pbd-list@#@uuid#@#Display PBD UUIDs
+pbd-list@#@uuid@#@Display PBD UUIDs
 pbd-param-add@#@param-key#@#Key to be added to a set parameter (SRW).
 pbd-param-add@#@param-name#@#Parameter to have key or key/value pair added - Use *xe PBD-param-list* to obtain a list of pbd parameters.
 pbd-param-add@#@uuid#@#PBD UUID - Use *xe PBD-list* to obtain a list of PBD UUIDs.
@@ -523,7 +495,7 @@ pbd-param-get@#@param-key#@#The PBD map parameter key value to return
 pbd-param-get@#@param-name#@#The PBD parameter to return
 pbd-param-get@#@uuid#@#PBD UUID - Use *xe PBD-list* to obtain a list of PBD UUIDs.
 pbd-param-list@#@database#@#
-pbd-param-list@#@uuid#@#PBD UUID - Use *xe PBD-list* to obtain a list of pbd UUIDs.
+pbd-param-list@#@uuid@#@PBD UUID - Use *xe pbd-list* to obtain a list of PBD UUIDs.
 pbd-param-remove@#@param-key#@#Key or key/value pair to be removed.
 pbd-param-remove@#@param-name#@#Parameter that contains keys or key/value pairs. (e.g. other-config).
 pbd-param-remove@#@uuid#@#PBD UUID - Use *xe PBD-list* to obtain a list of PBD UUIDs.
@@ -544,7 +516,7 @@ pgpu-list@#@--minimal@#@Specify --minimal to only show minimal output
 pgpu-list@#@other-config@#@Display additional configuration parameter values for physical GPU
 pgpu-list@#@params@#@
 pgpu-list@#@pci-id@#@PCI identifier
-pgpu-list@#@uuid#@#Display PGPU UUIDs
+pgpu-list@#@uuid@#@Display physical GPU UUID
 pgpu-list@#@vendor-name@#@Display physical GPU vendor name
 pgpu-param-add@#@param-key#@#Key to be added to a set parameter (SRW).
 pgpu-param-add@#@param-name#@#Parameter to have key or key/value pair added - Use *xe PGPU-param-list* to obtain a list of pgpu parameters.
@@ -556,25 +528,25 @@ pgpu-param-get@#@param-key#@#The PGPU map parameter key value to return
 pgpu-param-get@#@param-name#@#The PGPU parameter to return
 pgpu-param-get@#@uuid#@#PGPU UUID - Use *xe PGPU-list* to obtain a list of PGPU UUIDs.
 pgpu-param-list@#@database#@#
-pgpu-param-list@#@uuid#@#PGPU UUID - Use *xe PGPU-list* to obtain a list of pgpu UUIDs.
+pgpu-param-list@#@uuid@#@PGPU UUID - Use *xe pgpu-list* to obtain a list of PGPU UUIDs.
 pgpu-param-remove@#@param-key#@#Key or key/value pair to be removed.
 pgpu-param-remove@#@param-name#@#Parameter that contains keys or key/value pairs. (e.g. other-config).
 pgpu-param-remove@#@uuid#@#PGPU UUID - Use *xe PGPU-list* to obtain a list of PGPU UUIDs.
 pgpu-param-set@#@other-config#@#
 pgpu-param-set@#@uuid#@#PGPU UUID - Use *xe PGPU-list* to obtain a list of PGPU UUIDs.
-pif-forget@#@uuid#@#PIF UUID - Use *xe PIF-list to obtain a list of PIF UUIDs.
+pif-forget@#@uuid@#@PIF UUID - Use *xe pif-list* to obtain PIF interface UUIDs.
 pif-introduce@#@device@#@The host's physical network interface card (e.g. eth0).
-pif-introduce@#@host-uuid#@#Host UUID - Use *xe host-list* to obtain a list of host UUIDs.
+pif-introduce@#@host-uuid@#@Host UUID - Use *xe host-list* to obtain a list of host UUIDs.
 pif-introduce@#@mac@#@MAC Address for new PIF.
 pif-list@#@all@#@Display all parameter values
 pif-list@#@bond-master-of@#@Display bond master UUIDs
 pif-list@#@bond-slave-of@#@Display bond slave UUIDs
-pif-list@#@carrier@#@Display link state
-pif-list@#@currently-attached@#@Display the currently-attach status of PIFs [ true | false ]	
+pif-list@#@carrier@#@Display if Ethernet link is detected [ true | false ]
+pif-list@#@currently-attached@#@Display if the PIF is attached to the physical network interface [ true | false ]	
 pif-list@#@database@#@
-pif-list@#@device@#@Display machine-readable interfaces (e.g. eth0)
-pif-list@#@device-id@#@Display NIC vender device-id numbers
-pif-list@#@device-name@#@Display NIC vender device-name
+pif-list@#@device@#@Display physical network interfaces (e.g. eth0)
+pif-list@#@device-id@#@Display NIC vendor device-id numbers
+pif-list@#@device-name@#@Display NIC vendor device-name
 pif-list@#@disallow-unplug@#@Display disallow-unplug protection settings [ true | false ]
 pif-list@#@DNS@#@Display DNS addresses
 pif-list@#@duplex@#@Display duplex settings [ full | half ]
@@ -583,13 +555,13 @@ pif-list@#@host-name-label@#@Display host name-labels
 pif-list@#@host-uuid@#@Display host UUIDs
 pif-list@#@io_read_kbs@#@Display the average receive rate in kB/s
 pif-list@#@io_write_kbs@#@Display the average transmit rate in kB/s
-pif-list@#@IP-configuration-mode@#@Display IP configuration mode status [ DHCP | static ]
+pif-list@#@IP-configuration-mode@#@Display IP configuration mode [ DHCP | static ]
 pif-list@#@IP@#@Display IP addresses
 pif-list@#@IPv6@#@
 pif-list@#@IPv6-configuration-mode@#@
 pif-list@#@IPv6-gateway@#@
 pif-list@#@MAC@#@Display MAC addresses 
-pif-list@#@management@#@Display management status [ true | false ]
+pif-list@#@management@#@Display if PIF is a management interface  [ true | false ]
 pif-list@#@--minimal@#@Specify --minimal to only show minimal output
 pif-list@#@MTU@#@Display MTU values
 pif-list@#@netmask@#@Display netmasks
@@ -600,73 +572,77 @@ pif-list@#@other-config:bond-downdelay@#@Display the number of milliseconds the 
 pif-list@#@other-config:bond-miimon@#@Display the time between link liveness checks, in milliseconds.
 pif-list@#@other-config:bond-updelay@#@Display the number of milliseconds the bond waits after the link comes up before considering it up. Default is 31s.
 pif-list@#@other-config:domain@#@Display DNS search path ( DNS suffix ).
-pif-list@#@other-config:ethtool-autoneg@#@Display ethernet Autonegotiation status [ on | off ]
-pif-list@#@other-config:ethtool-gso@#@Display generic segmentation offload [ on | off ]
-pif-list@#@other-config:ethtool-rx@#@Display receive checksum status [ on | off ]
-pif-list@#@other-config:ethtool-sg@#@Display scatter gather status [ on | off]
-pif-list@#@other-config:ethtool-speed@#@Display speed of PIF interface in Mbps.
-pif-list@#@other-config:ethtool-tso@#@Display TCP segmentation offload status [ on | off ]
-pif-list@#@other-config:ethtool-tx@#@Display transmit checksum status [ on | off ]
-pif-list@#@other-config:ethtool-ufo@#@Display UDP fragment offload [ on | off ]
+pif-list@#@other-config:ethtool-autoneg@#@Display configured ethernet autonegotiation [ on | off ]
+pif-list@#@other-config:ethtool-gso@#@Display configured generic segmentation offload status [ on | off ]
+pif-list@#@other-config:ethtool-rx@#@Display configured receive checksum status [ on | off ]
+pif-list@#@other-config:ethtool-sg@#@Display configured scatter gather status [ on | off]
+pif-list@#@other-config:ethtool-speed@#@Display configured speed of PIF interface in Mbps.
+pif-list@#@other-config:ethtool-tso@#@Display configured TCP segmentation offload status [ on | off ]
+pif-list@#@other-config:ethtool-tx@#@Display configured transmit checksum status [ on | off ]
+pif-list@#@other-config:ethtool-ufo@#@Display configured UDP fragment offload status [ on | off ]
 pif-list@#@params@#@
 pif-list@#@pci-bus-path@#@Display PCI bus path addresses
-pif-list@#@physical@#@Display the physical status of PIFs [ true | false ]  
+pif-list@#@physical@#@Display if the PIF is a physical device [ true | false ]  
 pif-list@#@primary-address-type@#@
 pif-list@#@speed@#@Display NIC speeds
 pif-list@#@tunnel-access-PIF-of@#@Display tunnel-access UUIDs
 pif-list@#@tunnel-transport-PIF-of@#@Display tunnel-transport UUIDs
-pif-list@#@uuid#@#Display PIF UUIDs
-pif-list@#@vendor-id@#@Display NIC vender IDs
+pif-list@#@uuid@#@Display PIF UUIDs
+pif-list@#@vendor-id@#@Display NIC vendr IDs
 pif-list@#@vendor-name@#@Display NIC vendor names
 pif-list@#@VLAN@#@Display VLAN tags	
-pif-param-add@#@<MAP PARAMETER KEY>#@#
-pif-param-add@#@param-key#@#Key to be added to a set parameter (SRW).
-pif-param-add@#@param-name#@#Parameter to have key or key/value pair added - Use *xe PIF-param-list* to obtain a list of pif parameters.
-pif-param-add@#@uuid#@#PIF UUID - Use *xe PIF-list* to obtain a list of PIF UUIDs.
-pif-param-clear@#@param-name#@#Writable parameter to be cleared. (e.g. other-config).
-pif-param-clear@#@uuid#@#PIF UUID - Use *xe PIF-list* to obtain a list of PIF UUIDs.
+pif-param-add@#@<MAP PARAMETER KEY>@#@Key/value pair to be added to a map parameter (MRW)
+pif-param-add@#@param-key@#@Key to be added to a set parameter (SRW)
+pif-param-add@#@param-name@#@Parameter to have key or key/value pair added - Use *xe pif-param-list* to obtain a list of PIF parameters.
+pif-param-add@#@uuid@#@PIF UUID - Use *xe pif-list* to obtain a list of PIF UUIDs.
+pif-param-clear@#@param-name@#@Writable parameter to be cleared. (e.g. other-config). 
+pif-param-clear@#@uuid@#@PIF UUID - Use *xe pif-list* to obtain PIF UUIDs.
 pif-param-get@#@database#@#
-pif-param-get@#@param-key#@#The PIF map parameter key value to return
-pif-param-get@#@param-name#@#The PIF parameter to return
-pif-param-get@#@uuid#@#PIF UUID - Use *xe PIF-list* to obtain a list of PIF UUIDs.
+pif-param-get@#@param-key@#@The PIF map parameter key value to return
+pif-param-get@#@param-name@#@The PIF parameter value to return	
+pif-param-get@#@uuid@#@PIF UUID - Use *xe pif-list* to obtain PIF UUIDs.
 pif-param-list@#@database#@#
-pif-param-list@#@uuid#@#PIF UUID - Use *xe PIF-list* to obtain a list of pif UUIDs.
-pif-param-remove@#@param-key#@#Key or key/value pair to be removed.
-pif-param-remove@#@param-name#@#Parameter that contains keys or key/value pairs. (e.g. other-config).
-pif-param-remove@#@uuid#@#PIF UUID - Use *xe PIF-list* to obtain a list of PIF UUIDs.
-pif-param-set@#@disallow-unplug#@#
+pif-param-list@#@uuid@#@PIF UUID - Use *xe pif-list* to obtain PIF UUIDs.
+pif-param-remove@#@param-key@#@Key or key/value pair to be removed.
+pif-param-remove@#@param-name@#@Parameter that contains keys or key/value pairs. (e.g. other-config).
+pif-param-remove@#@uuid@#@PIF UUID - Use *xe pif-list* to obtain PIF UUIDs.
+pif-param-set@#@disallow-unplug@#@Set disallow-unplug on a PIF: disallow-unplug=[ true | false ]
 pif-param-set@#@other-config#@#
-pif-param-set@#@other-config:bond-downdelay#@#
-pif-param-set@#@other-config:bond-miimon#@#
-pif-param-set@#@other-config:bond-updelay#@#
-pif-param-set@#@other-config:domain#@#
-pif-param-set@#@other-config:ethtool-autoneg#@#
-pif-param-set@#@other-config:ethtool-duplex#@#
-pif-param-set@#@other-config:ethtool-gso#@#
-pif-param-set@#@other-config:ethtool-rx#@#
-pif-param-set@#@other-config:ethtool-sg#@#
-pif-param-set@#@other-config:ethtool-speed#@#
-pif-param-set@#@other-config:ethtool-tso#@#
-pif-param-set@#@other-config:ethtool-tx#@#
-pif-param-set@#@other-config:ethtool-ufo#@#
-pif-param-set@#@uuid#@#PIF UUID - Use *xe PIF-list* to obtain a list of PIF UUIDs.
-pif-plug@#@uuid#@#PIF UUID - Use *xe PIF-list to obtain a list of PIF UUIDs.
+pif-param-set@#@other-config:bond-downdelay@#@Set number of milliseconds the bond waits after the link is lost before considering the link down. Default is 200ms. 
+pif-param-set@#@other-config:bond-miimon@#@Set the time between link liveness checks on the bond, in milliseconds.	
+pif-param-set@#@other-config:bond-updelay@#@Set number of milliseconds the bond waits after the link comes up before considering it up. Default is 31s.
+pif-param-set@#@other-config:domain@#@Set the DNS search path (DNS Suffix). Use a comma as a field separator.
+pif-param-set@#@other-config:ethtool-autoneg@#@Set autonegotiation status on PIF: ethtool-autoneg=[ on | off ]
+pif-param-set@#@other-config:ethtool-duplex@#@Set duplex mode of PIF: ethtool-duplex=[ full | half ]
+pif-param-set@#@other-config:ethtool-gso@#@Enable generic segmentation offload: ethtool-gso=[ on | off ]
+pif-param-set@#@other-config:ethtool-rx@#@Enable receive checksum: ethtool-rx=[ on | half ]
+pif-param-set@#@other-config:ethtool-sg@#@Enable scatter gather:  ethtool-sg=[ on | off ]
+pif-param-set@#@other-config:ethtool-speed@#@Set speed of PIF interface in Mbps: ethtool-speed=[ 10 | 100 | 1000 ]
+pif-param-set@#@other-config:ethtool-tso@#@Enable TCP segmentation offload: ethtool-tso=[ on | off ]
+pif-param-set@#@other-config:ethtool-tx@#@Enable transmit checksum: ethtool-tx=[ on | off ]
+pif-param-set@#@other-config:ethtool-ufo@#@Enable UDP fragment offload: ethtool-ufo=[ on | off ]
+pif-param-set@#@uuid@#@PIF UUID - Use *xe pif-list* to obtain PIF interface UUIDs.
+pif-plug@#@uuid@#@PIF UUID - Use *xe pif-list* to obtain PIF interface UUIDs.
 pif-reconfigure-ip@#@DNS@#@Name server addresses - Use a comma to seperate multiple name servers 
 pif-reconfigure-ip@#@gateway@#@Gateway address
 pif-reconfigure-ip@#@IP@#@IPv4 Host address of PIF. Address is required for static mode.
 pif-reconfigure-ip@#@mode@#@Addressing mode for PIF: mode=[ dhcp | static | none ]
 pif-reconfigure-ip@#@netmask@#@Netmask address of PIF
-pif-reconfigure-ip@#@uuid#@#PIF UUID - Use *xe PIF-list to obtain a list of PIF UUIDs.
+pif-reconfigure-ip@#@uuid@#@PIF UUID - Use *xe pif-list* to obtain PIF UUIDs
 pif-reconfigure-ipv6@#@DNS@#@Name server addresses - Use a comma to seperate multiple name servers 
 pif-reconfigure-ipv6@#@gateway@#@Gateway address
 pif-reconfigure-ipv6@#@IPv6@#@PIF IPv6 address. Address is only required for static mode.
 pif-reconfigure-ipv6@#@mode@#@Addressing mode for the PIF: mode=*[ dhcp | static | autoconf | none ]*
-pif-reconfigure-ipv6@#@uuid#@#PIF UUID - Use *xe PIF-list to obtain a list of PIF UUIDs.
+pif-reconfigure-ipv6@#@uuid@#@PIF UUID - Use *xe pif-list* to obtain PIF interface UUIDs
 pif-scan@#@host-uuid#@#Host UUID - Use *xe host-list* to obtain a list of host UUIDs.
-pif-scan@#@uuid#@#PIF UUID - Use *xe PIF-list to obtain a list of PIF UUIDs.
+pif-scan@#@uuid@#@Host UUID - Use *xe host-list* to obtain a list of host UUIDs. 
 pif-set-primary-address-type@#@primary_address_type@#@Primary address type: primary_address_type=*[ IPV4 | IPV6 ]*
-pif-set-primary-address-type@#@uuid#@#PIF UUID - Use *xe PIF-list to obtain a list of PIF UUIDs.
-pif-unplug@#@uuid#@#PIF UUID - Use *xe PIF-list to obtain a list of PIF UUIDs.
+pif-set-primary-address-type@#@uuid@#@PIF UUID - Use *xe pif-list* to obtain a list PIF UUIDs.
+pif-unplug@#@uuid@#@PIF UUID - Use *xe pif-list* to obtain a list of PIF interface UUIDs.
+pool-apply-edition@#@edition@#@
+pool-apply-edition@#@license-server-address@#@
+pool-apply-edition@#@license-server-port@#@
+pool-apply-edition@#@uuid#@#POOL UUID - Use *xe POOL-list to obtain a list of POOL UUIDs.
 pool-certificate-install@#@filename@#@
 pool-certificate-uninstall@#@name@#@
 pool-crl-install@#@filename@#@
@@ -688,11 +664,6 @@ pool-ha-compute-hypothetical-max-host-failures-to-tolerate@#@restart-priority@#@
 pool-ha-compute-hypothetical-max-host-failures-to-tolerate@#@vm-uuid#@#Virtual machine UUID - Use *xe vm-list* to obtain a list of VM UUIDs
 pool-ha-enable@#@ha-config@#@
 pool-ha-enable@#@heartbeat-sr-uuids@#@
-pool-initialize-wlb@#@wlb_password@#@
-pool-initialize-wlb@#@wlb_url@#@
-pool-initialize-wlb@#@wlb_username@#@
-pool-initialize-wlb@#@xenserver_password@#@
-pool-initialize-wlb@#@xenserver_username@#@
 pool-join@#@force#@#Force operation
 pool-join@#@master-address@#@
 pool-join@#@master-password@#@
@@ -710,10 +681,11 @@ pool-list@#@ha-host-failures-to-tolerate@#@Display number of host failures neede
 pool-list@#@ha-overcommitted@#@Display overcommited statuses [ true | false ]
 pool-list@#@ha-plan-exists-for@#@Display number of host failures that can be handled
 pool-list@#@ha-statefiles@#@Display VDI UUIDs used by HA to determine storage health
+pool-list@#@license-state@#@
 pool-list@#@master@#@Display pool master UUIDs
 pool-list@#@--minimal@#@Specify --minimal to only show minimal output
-pool-list@#@name-description#@#Display POOL name-descriptions
-pool-list@#@name-label#@#Display POOL name-labels
+pool-list@#@name-description@#@Display pool name-descriptions 
+pool-list@#@name-label@#@Display pool name-labels
 pool-list@#@other-config:auto_poweron@#@Display pools VM auto power on status [ true | false ]
 pool-list@#@other-config:cpuid_feature_mask@#@Display pools cpuid feature masks
 pool-list@#@other-config@#@Display list of map parameter key/values for a pool
@@ -723,23 +695,23 @@ pool-list@#@supported-sr-types@#@Display supported Storage Repository types
 pool-list@#@suspend-image-SR@#@Display suspended VM Storage Repository UUIDs
 pool-list@#@tags:contains@#@
 pool-list@#@tags@#@Display tags
-pool-list@#@uuid#@#Display POOL UUIDs
+pool-list@#@uuid@#@Display pool UUIDs
 pool-list@#@wlb-enabled@#@Display WLB status [ true | false ]
 pool-list@#@wlb-url@#@Display URLs of WLB servers
 pool-list@#@wlb-username@#@Display WLB usernames
 pool-list@#@wlb-verify-cert@#@Display WLB certificate status requirement [ true | false ]
-pool-param-add@#@<MAP PARAMETER KEY>#@#
-pool-param-add@#@param-key#@#Key to be added to a set parameter (SRW).
-pool-param-add@#@param-name#@#Parameter to have key or key/value pair added - Use *xe POOL-param-list* to obtain a list of pool parameters.
-pool-param-add@#@uuid#@#POOL UUID - Use *xe POOL-list* to obtain a list of POOL UUIDs.
-pool-param-clear@#@param-name#@#Writable parameter to be cleared. (e.g. other-config).
-pool-param-clear@#@uuid#@#POOL UUID - Use *xe POOL-list* to obtain a list of POOL UUIDs.
+pool-param-add@#@<MAP PARAMETER KEY>@#@Key/value pair to be added to a map parameter (MRW). 
+pool-param-add@#@param-key@#@Key to be added to a set parameter (SRW).
+pool-param-add@#@param-name@#@Parameter to have key or key/value pair added - Use *xe pool-param-list* to obtain a list of network parameters.
+pool-param-add@#@uuid@#@Pool UUID - Use *xe pool-list* to obtain a list of pool UUIDs.
+pool-param-clear@#@param-name@#@Writable parameter to be cleared (e.g. *gui-config*).
+pool-param-clear@#@uuid@#@Pool UUID - Use *xe pool-list* to obtain pool UUIDs.
 pool-param-get@#@database#@#
 pool-param-get@#@param-key#@#The POOL map parameter key value to return
 pool-param-get@#@param-name#@#The POOL parameter to return
 pool-param-get@#@uuid#@#POOL UUID - Use *xe POOL-list* to obtain a list of POOL UUIDs.
 pool-param-list@#@database#@#
-pool-param-list@#@uuid#@#POOL UUID - Use *xe POOL-list* to obtain a list of pool UUIDs.
+pool-param-list@#@uuid@#@Pool UUID - Use *xe pool-list* to obtain a list of pool UUIDs.
 pool-param-remove@#@param-key#@#Key or key/value pair to be removed.
 pool-param-remove@#@param-name#@#Parameter that contains keys or key/value pairs. (e.g. other-config).
 pool-param-remove@#@uuid#@#POOL UUID - Use *xe POOL-list* to obtain a list of POOL UUIDs.
@@ -753,17 +725,14 @@ pool-param-set@#@name-label#@#Set name of POOL
 pool-param-set@#@other-config#@#
 pool-param-set@#@suspend-image-SR#@#
 pool-param-set@#@uuid#@#POOL UUID - Use *xe POOL-list* to obtain a list of POOL UUIDs.
-pool-param-set@#@wlb-enabled#@#
-pool-param-set@#@wlb-verify-cert#@#
 pool-restore-database@#@dry-run@#@
 pool-restore-database@#@file-name@#@
-pool-retrieve-wlb-diagnostics@#@filename@#@
-pool-retrieve-wlb-report@#@filename@#@
-pool-retrieve-wlb-report@#@report@#@
 pool-send-test-post@#@body@#@
 pool-send-test-post@#@dest-host@#@
 pool-send-test-post@#@dest-port@#@
-pool-send-wlb-configuration@#@config@#@
+pool-vlan-create@#@network-uuid@#@Internal network to be connected to VLAN's untagged PIFs - Use *xe network-list* to obtain a list of networks found in a pool.
+pool-vlan-create@#@pif-uuid@#@Physical PIFs to be the tagged-PIFs for the VLAN. The pseudo PIFs (untagged-PIF) are associated with the physical PIFs. - Use *xe pif-list* to obtain a list of PIF interfaces.
+pool-vlan-create@#@vlan@#@Desired VLAN tag
 role-list@#@database@#@
 role-list@#@description@#@
 role-list@#@name@#@
@@ -771,10 +740,10 @@ role-list@#@params@#@
 role-list@#@uuid#@#Display ROLE UUIDs
 role-param-get@#@database#@#
 role-param-get@#@param-key#@#The ROLE map parameter key value to return
-role-param-get@#@param-name#@#The ROLE parameter to return
-role-param-get@#@uuid#@#ROLE UUID - Use *xe ROLE-list* to obtain a list of ROLE UUIDs.
+role-param-get@#@param-name@#@The role parameter to return.
+role-param-get@#@uuid@#@Role UUID - Use *xe role-list* to obtain a list of role UUIDs.
 role-param-list@#@database#@#
-role-param-list@#@uuid#@#ROLE UUID - Use *xe ROLE-list* to obtain a list of role UUIDs.
+role-param-list@#@uuid@#@Role UUID - Use *xe role-list* to obtain a list of role UUIDs.
 secret-create@#@value@#@
 secret-destroy@#@uuid#@#SECRET UUID - Use *xe SECRET-list to obtain a list of SECRET UUIDs.
 secret-list@#@database@#@
@@ -788,7 +757,7 @@ secret-param-get@#@param-key#@#The SECRET map parameter key value to return
 secret-param-get@#@param-name#@#The SECRET parameter to return
 secret-param-get@#@uuid#@#SECRET UUID - Use *xe SECRET-list* to obtain a list of SECRET UUIDs.
 secret-param-list@#@database#@#
-secret-param-list@#@uuid#@#SECRET UUID - Use *xe SECRET-list* to obtain a list of secret UUIDs.
+secret-param-list@#@uuid@#@Secret UUID - Use *xe secret-list* to obtain a list of secret UUIDs.
 secret-param-set@#@uuid#@#SECRET UUID - Use *xe SECRET-list* to obtain a list of SECRET UUIDs.
 secret-param-set@#@value#@#
 session-subject-identifier-logout@#@subject-identifier@#@
@@ -797,6 +766,7 @@ sm-list@#@configuration@#@
 sm-list@#@copyright@#@
 sm-list@#@database@#@
 sm-list@#@driver-filename@#@
+sm-list@#@features@#@
 sm-list@#@name-description#@#Display SM name-descriptions
 sm-list@#@name-label#@#Display SM name-labels
 sm-list@#@params@#@
@@ -804,34 +774,46 @@ sm-list@#@required-api-version@#@
 sm-list@#@type@#@
 sm-list@#@uuid#@#Display SM UUIDs
 sm-list@#@vendor@#@
+sm-param-clear@#@param-name#@#Writable parameter to be cleared. (e.g. other-config).
+sm-param-clear@#@uuid#@#SM UUID - Use *xe SM-list* to obtain a list of SM UUIDs.
 sm-param-get@#@database#@#
 sm-param-get@#@param-key#@#The SM map parameter key value to return
 sm-param-get@#@param-name#@#The SM parameter to return
 sm-param-get@#@uuid#@#SM UUID - Use *xe SM-list* to obtain a list of SM UUIDs.
 sm-param-list@#@database#@#
-sm-param-list@#@uuid#@#SM UUID - Use *xe SM-list* to obtain a list of sm UUIDs.
+sm-param-list@#@uuid@#@SM UUID - Use *xe sm-list* to obtain a list of SM UUIDs.
+snapshot-clone@#@all@#@Display all parameter values
+snapshot-clone@#@--minimal@#@Specify --minimal to only show minimal output
 snapshot-clone@#@new-name-description#@#Desired new name-description for SNAPSHOT
 snapshot-clone@#@new-name-label#@#Desired new name-label for SNAPSHOT
 snapshot-clone@#@uuid#@#SNAPSHOT UUID - Use *xe SNAPSHOT-list to obtain a list of SNAPSHOT UUIDs.
+snapshot-copy@#@all@#@Display all parameter values
+snapshot-copy@#@--minimal@#@Specify --minimal to only show minimal output
 snapshot-copy@#@new-name-description#@#Desired new name-description for SNAPSHOT
 snapshot-copy@#@new-name-label#@#Desired new name-label for SNAPSHOT
 snapshot-copy@#@sr-uuid#@#Desired storage repository UUID - use *xe sr-list* to get a list of storage repositories
 snapshot-copy@#@uuid#@#SNAPSHOT UUID - Use *xe SNAPSHOT-list to obtain a list of SNAPSHOT UUIDs.
-snapshot-destroy@#@snapshot-uuid@#@
-snapshot-destroy@#@uuid#@#SNAPSHOT UUID - Use *xe SNAPSHOT-list to obtain a list of SNAPSHOT UUIDs.
+snapshot-destroy@#@all@#@Display all parameter values
+snapshot-destroy@#@--minimal@#@Specify --minimal to only show minimal output
+snapshot-destroy@#@snapshot-uuid@#@Snapshot UUID - Use *xe snapshot-list* to obtain a list of snapshot UUIDs.
+snapshot-destroy@#@uuid@#@UUID - Use *xe snapshot-list* to obtain a list of snapshot UUIDs.
+snapshot-disk-list@#@all@#@Display all parameter values
+snapshot-disk-list@#@--minimal@#@Specify --minimal to only show minimal output
 snapshot-disk-list@#@snapshot-uuid@#@
 snapshot-disk-list@#@uuid#@#Display SNAPSHOT UUIDs
 snapshot-disk-list@#@vbd-params@#@
 snapshot-disk-list@#@vdi-params@#@
 snapshot-disk-list@#@<vm-selectors>@#@
+snapshot-export-to-template@#@all@#@Display all parameter values
 snapshot-export-to-template@#@filename@#@
+snapshot-export-to-template@#@--minimal@#@Specify --minimal to only show minimal output
 snapshot-export-to-template@#@preserve-power-state@#@
 snapshot-export-to-template@#@snapshot-uuid@#@
 snapshot-list@#@actions-after-crash@#@
 snapshot-list@#@actions-after-reboot@#@
 snapshot-list@#@actions-after-shutdown@#@
 snapshot-list@#@affinity@#@
-snapshot-list@#@all@#@Display all parameter vlaues
+snapshot-list@#@all@#@Display all parameter values
 snapshot-list@#@allowed-operations#@#Display list of operations allowed on SNAPSHOTs
 snapshot-list@#@allowed-operations:contains@#@
 snapshot-list@#@allowed-VBD-devices@#@
@@ -850,6 +832,7 @@ snapshot-list@#@current-operations:contains@#@
 snapshot-list@#@database@#@
 snapshot-list@#@disks@#@
 snapshot-list@#@dom-id@#@
+snapshot-list@#@generation-id@#@
 snapshot-list@#@guest-metrics-last-updated@#@
 snapshot-list@#@ha-always-run@#@
 snapshot-list@#@ha-restart-priority@#@
@@ -860,7 +843,6 @@ snapshot-list@#@install-time@#@
 snapshot-list@#@is-a-snapshot@#@
 snapshot-list@#@is-a-template@#@
 snapshot-list@#@is-control-domain@#@
-snapshot-list@#@is-snapshot-from-vmpp@#@
 snapshot-list@#@last-boot-CPU-flags@#@
 snapshot-list@#@last-boot-record@#@
 snapshot-list@#@live@#@
@@ -872,6 +854,7 @@ snapshot-list@#@memory-overhead@#@
 snapshot-list@#@memory-static-max@#@
 snapshot-list@#@memory-static-min@#@
 snapshot-list@#@memory-target@#@
+snapshot-list@#@--minimal@#@Specify --minimal to only show minimal output
 snapshot-list@#@name-description#@#Display SNAPSHOT name-descriptions
 snapshot-list@#@name-label#@#Display SNAPSHOT name-labels
 snapshot-list@#@networks@#@
@@ -884,7 +867,6 @@ snapshot-list@#@parent@#@
 snapshot-list@#@platform@#@
 snapshot-list@#@possible-hosts@#@
 snapshot-list@#@power-state@#@
-snapshot-list@#@protection-policy@#@
 snapshot-list@#@PV-args@#@
 snapshot-list@#@PV-bootloader@#@
 snapshot-list@#@PV-bootloader-args@#@
@@ -918,14 +900,22 @@ snapshot-list@#@xenstore-data@#@
 snapshot-param-add@#@param-key#@#Key to be added to a set parameter (SRW).
 snapshot-param-add@#@param-name#@#Parameter to have key or key/value pair added - Use *xe SNAPSHOT-param-list* to obtain a list of snapshot parameters.
 snapshot-param-add@#@uuid#@#SNAPSHOT UUID - Use *xe SNAPSHOT-list* to obtain a list of SNAPSHOT UUIDs.
+snapshot-param-clear@#@all@#@Display all parameter values
+snapshot-param-clear@#@--minimal@#@Specify --minimal to only show minimal output
 snapshot-param-clear@#@param-name#@#Writable parameter to be cleared. (e.g. other-config).
 snapshot-param-clear@#@uuid#@#SNAPSHOT UUID - Use *xe SNAPSHOT-list* to obtain a list of SNAPSHOT UUIDs.
+snapshot-param-get@#@all@#@Display all parameter values
 snapshot-param-get@#@database#@#
+snapshot-param-get@#@--minimal@#@Specify --minimal to only show minimal output
 snapshot-param-get@#@param-key#@#The SNAPSHOT map parameter key value to return
 snapshot-param-get@#@param-name#@#The SNAPSHOT parameter to return
 snapshot-param-get@#@uuid#@#SNAPSHOT UUID - Use *xe SNAPSHOT-list* to obtain a list of SNAPSHOT UUIDs.
+snapshot-param-list@#@all@#@Display all parameter values
 snapshot-param-list@#@database#@#
+snapshot-param-list@#@--minimal@#@Specify --minimal to only show minimal output
 snapshot-param-list@#@uuid#@#SNAPSHOT UUID - Use *xe SNAPSHOT-list* to obtain a list of snapshot UUIDs.
+snapshot-param-remove@#@all@#@Display all parameter values
+snapshot-param-remove@#@--minimal@#@Specify --minimal to only show minimal output
 snapshot-param-remove@#@param-key#@#Key or key/value pair to be removed.
 snapshot-param-remove@#@param-name#@#Parameter that contains keys or key/value pairs. (e.g. other-config).
 snapshot-param-remove@#@uuid#@#SNAPSHOT UUID - Use *xe SNAPSHOT-list* to obtain a list of SNAPSHOT UUIDs.
@@ -933,6 +923,7 @@ snapshot-param-set@#@actions-after-crash#@#
 snapshot-param-set@#@actions-after-reboot#@#
 snapshot-param-set@#@actions-after-shutdown#@#
 snapshot-param-set@#@affinity#@#
+snapshot-param-set@#@all@#@Display all parameter values
 snapshot-param-set@#@appliance#@#
 snapshot-param-set@#@blocked-operations#@#
 snapshot-param-set@#@ha-always-run#@#
@@ -945,12 +936,12 @@ snapshot-param-set@#@memory-dynamic-max#@#
 snapshot-param-set@#@memory-dynamic-min#@#
 snapshot-param-set@#@memory-static-max#@#
 snapshot-param-set@#@memory-static-min#@#
+snapshot-param-set@#@--minimal@#@Specify --minimal to only show minimal output
 snapshot-param-set@#@name-description#@#Set name-description of SNAPSHOT
 snapshot-param-set@#@name-label#@#Set name of SNAPSHOT
 snapshot-param-set@#@order#@#
 snapshot-param-set@#@other-config#@#
 snapshot-param-set@#@platform#@#
-snapshot-param-set@#@protection-policy#@#
 snapshot-param-set@#@PV-args#@#
 snapshot-param-set@#@PV-bootloader#@#
 snapshot-param-set@#@PV-bootloader-args#@#
@@ -967,15 +958,21 @@ snapshot-param-set@#@VCPUs-at-startup#@#
 snapshot-param-set@#@VCPUs-max#@#
 snapshot-param-set@#@VCPUs-params#@#
 snapshot-param-set@#@xenstore-data#@#
+snapshot-reset-powerstate@#@all@#@Display all parameter values
 snapshot-reset-powerstate@#@force#@#Force operation
+snapshot-reset-powerstate@#@--minimal@#@Specify --minimal to only show minimal output
 snapshot-reset-powerstate@#@snapshot-uuid@#@
 snapshot-reset-powerstate@#@uuid#@#SNAPSHOT UUID - Use *xe SNAPSHOT-list to obtain a list of SNAPSHOT UUIDs.
 snapshot-reset-powerstate@#@<vm-selectors>#@#Parameters to select VM(s) - use *xe vm-list params=all* to get a list of VM parameters to filter on.
+snapshot-revert@#@all@#@Display all parameter values
+snapshot-revert@#@--minimal@#@Specify --minimal to only show minimal output
 snapshot-revert@#@snapshot-uuid@#@
 snapshot-revert@#@uuid#@#SNAPSHOT UUID - Use *xe SNAPSHOT-list to obtain a list of SNAPSHOT UUIDs.
-snapshot-uninstall@#@force#@#Force operation
-snapshot-uninstall@#@snapshot-uuid@#@
-snapshot-uninstall@#@uuid#@#SNAPSHOT UUID - Use *xe SNAPSHOT-list to obtain a list of SNAPSHOT UUIDs.
+snapshot-uninstall@#@all@#@Display all parameter values
+snapshot-uninstall@#@force@#@force - 
+snapshot-uninstall@#@--minimal@#@Specify --minimal to only show minimal output
+snapshot-uninstall@#@snapshot-uuid@#@Snapshot UUID - Use *xe snapshot-list* to obtain a list of snapshot UUIDs.
+snapshot-uninstall@#@uuid@#@UUID - Use *xe snapshot-list* to obtain a list of snapshot UUIDs.
 sr-create@#@content-type@#@
 sr-create@#@device-config@#@
 sr-create@#@host-uuid#@#Host UUID - Use *xe host-list* to obtain a list of host UUIDs.
@@ -995,18 +992,18 @@ sr-introduce@#@type@#@
 sr-introduce@#@uuid#@#SR UUID - Use *xe SR-list to obtain a list of SR UUIDs.
 sr-list@#@all@#@Display all parameter values
 sr-list@#@allowed-operations:contains@#@
-sr-list@#@allowed-operations#@#Display list of operations allowed on SRs
+sr-list@#@allowed-operations@#@Display allowed-operations for SRs
 sr-list@#@blobs@#@Display binary data store 
 sr-list@#@content-type@#@Display SR content-type 
 sr-list@#@current-operations:contains@#@
-sr-list@#@current-operations#@#Display currently running operations on SRs
+sr-list@#@current-operations@#@Display current-operations for SRs
 sr-list@#@database@#@
 sr-list@#@host@#@Display SR host name 
 sr-list@#@introduced-by@#@Display which drtask (if any) introduced the SR.
 sr-list@#@local-cache-enabled@#@Display local-cache-enabled status [ true | false ]
 sr-list@#@--minimal@#@Specify --minimal to only show minimal output
-sr-list@#@name-description#@#Display SR name-descriptions
-sr-list@#@name-label#@#Display SR name-labels
+sr-list@#@name-description@#@Display SR name-descriptions
+sr-list@#@name-label@#@Display SR name-labels
 sr-list@#@other-config@#@
 sr-list@#@params@#@
 sr-list@#@PBDs:contains@#@
@@ -1018,21 +1015,21 @@ sr-list@#@sm-config@#@Display SM dependent data
 sr-list@#@tags:contains@#@
 sr-list@#@tags@#@Display tags
 sr-list@#@type@#@Display SR type [ dummy | ext | file | hba | iscsi | iso | lvm  | lvmohba | lvmoiscsi | nfs | udev ]    
-sr-list@#@uuid#@#Display SR UUIDs
+sr-list@#@uuid@#@Display SR UUIDs
 sr-list@#@VDIs:contains@#@
 sr-list@#@VDIs@#@Display VDIs present on the SR
 sr-list@#@virtual-allocation@#@Display the size of all the VDIs present on the SR, in bytes.
 sr-param-add@#@param-key#@#Key to be added to a set parameter (SRW).
 sr-param-add@#@param-name#@#Parameter to have key or key/value pair added - Use *xe SR-param-list* to obtain a list of sr parameters.
 sr-param-add@#@uuid#@#SR UUID - Use *xe SR-list* to obtain a list of SR UUIDs.
-sr-param-clear@#@param-name#@#Writable parameter to be cleared. (e.g. other-config).
-sr-param-clear@#@uuid#@#SR UUID - Use *xe SR-list* to obtain a list of SR UUIDs.
+sr-param-clear@#@param-name@#@Writable parameter to be cleared (e.g. *tags*).
+sr-param-clear@#@uuid@#@SR UUID - Use *xe sr-list* to obtain storage repository UUIDs.
 sr-param-get@#@database#@#
-sr-param-get@#@param-key#@#The SR map parameter key value to return
-sr-param-get@#@param-name#@#The SR parameter to return
-sr-param-get@#@uuid#@#SR UUID - Use *xe SR-list* to obtain a list of SR UUIDs.
+sr-param-get@#@param-key@#@The storage repository key to return.  
+sr-param-get@#@param-name@#@The storage repository parameter to return.
+sr-param-get@#@uuid@#@SR UUID - Use *xe sr-list* to obtain a list of storage repository UUIDs.
 sr-param-list@#@database#@#
-sr-param-list@#@uuid#@#SR UUID - Use *xe SR-list* to obtain a list of sr UUIDs.
+sr-param-list@#@uuid@#@SR UUID - Use *xe sr-list* to obtain a list of storage repository UUIDs.
 sr-param-remove@#@param-key#@#Key or key/value pair to be removed.
 sr-param-remove@#@param-name#@#Parameter that contains keys or key/value pairs. (e.g. other-config).
 sr-param-remove@#@uuid#@#SR UUID - Use *xe SR-list* to obtain a list of SR UUIDs.
@@ -1098,7 +1095,7 @@ task-param-get@#@param-key#@#The TASK map parameter key value to return
 task-param-get@#@param-name#@#The TASK parameter to return
 task-param-get@#@uuid#@#TASK UUID - Use *xe TASK-list* to obtain a list of TASK UUIDs.
 task-param-list@#@database#@#
-task-param-list@#@uuid#@#TASK UUID - Use *xe TASK-list* to obtain a list of task UUIDs.
+task-param-list@#@uuid@#@Task UUID - Use *xe task-list* to obtain a list of task UUIDs.
 task-param-remove@#@param-key#@#Key or key/value pair to be removed.
 task-param-remove@#@param-name#@#Parameter that contains keys or key/value pairs. (e.g. other-config).
 task-param-remove@#@uuid#@#TASK UUID - Use *xe TASK-list* to obtain a list of TASK UUIDs.
@@ -1128,6 +1125,7 @@ template-list@#@current-operations:contains@#@
 template-list@#@database@#@
 template-list@#@disks@#@
 template-list@#@dom-id@#@
+template-list@#@generation-id@#@
 template-list@#@guest-metrics-last-updated@#@
 template-list@#@ha-always-run@#@
 template-list@#@ha-restart-priority@#@
@@ -1138,7 +1136,6 @@ template-list@#@install-time@#@
 template-list@#@is-a-snapshot@#@
 template-list@#@is-a-template@#@
 template-list@#@is-control-domain@#@
-template-list@#@is-snapshot-from-vmpp@#@
 template-list@#@last-boot-CPU-flags@#@
 template-list@#@last-boot-record@#@
 template-list@#@live@#@
@@ -1162,7 +1159,6 @@ template-list@#@parent@#@
 template-list@#@platform@#@
 template-list@#@possible-hosts@#@
 template-list@#@power-state@#@
-template-list@#@protection-policy@#@
 template-list@#@PV-args@#@
 template-list@#@PV-bootloader@#@
 template-list@#@PV-bootloader-args@#@
@@ -1203,7 +1199,7 @@ template-param-get@#@param-key#@#The TEMPLATE map parameter key value to return
 template-param-get@#@param-name#@#The TEMPLATE parameter to return
 template-param-get@#@uuid#@#TEMPLATE UUID - Use *xe TEMPLATE-list* to obtain a list of TEMPLATE UUIDs.
 template-param-list@#@database#@#
-template-param-list@#@uuid#@#TEMPLATE UUID - Use *xe TEMPLATE-list* to obtain a list of template UUIDs.
+template-param-list@#@uuid@#@Template UUID - Use *xe template-list* to obtain a list of template UUIDs.
 template-param-remove@#@param-key#@#Key or key/value pair to be removed.
 template-param-remove@#@param-name#@#Parameter that contains keys or key/value pairs. (e.g. other-config).
 template-param-remove@#@uuid#@#TEMPLATE UUID - Use *xe TEMPLATE-list* to obtain a list of TEMPLATE UUIDs.
@@ -1228,7 +1224,6 @@ template-param-set@#@name-label#@#Set name of TEMPLATE
 template-param-set@#@order#@#
 template-param-set@#@other-config#@#
 template-param-set@#@platform#@#
-template-param-set@#@protection-policy#@#
 template-param-set@#@PV-args#@#
 template-param-set@#@PV-bootloader#@#
 template-param-set@#@PV-bootloader-args#@#
@@ -1258,18 +1253,18 @@ tunnel-list@#@other-config@#@
 tunnel-list@#@params@#@
 tunnel-list@#@status@#@
 tunnel-list@#@transport-PIF@#@
-tunnel-list@#@uuid#@#Display TUNNEL UUIDs
+tunnel-list@#@uuid@#@Display tunnel UUIDs
 tunnel-param-add@#@param-key#@#Key to be added to a set parameter (SRW).
 tunnel-param-add@#@param-name#@#Parameter to have key or key/value pair added - Use *xe TUNNEL-param-list* to obtain a list of tunnel parameters.
 tunnel-param-add@#@uuid#@#TUNNEL UUID - Use *xe TUNNEL-list* to obtain a list of TUNNEL UUIDs.
 tunnel-param-clear@#@param-name#@#Writable parameter to be cleared. (e.g. other-config).
 tunnel-param-clear@#@uuid#@#TUNNEL UUID - Use *xe TUNNEL-list* to obtain a list of TUNNEL UUIDs.
 tunnel-param-get@#@database#@#
-tunnel-param-get@#@param-key#@#The TUNNEL map parameter key value to return
-tunnel-param-get@#@param-name#@#The TUNNEL parameter to return
-tunnel-param-get@#@uuid#@#TUNNEL UUID - Use *xe TUNNEL-list* to obtain a list of TUNNEL UUIDs.
+tunnel-param-get@#@param-key@#@The tunnel key to return.  
+tunnel-param-get@#@param-name@#@The tunnel parameter to return.
+tunnel-param-get@#@uuid@#@Tunnel UUID - Use *xe tunnel-list* to obtain a list of tunnel UUIDs.
 tunnel-param-list@#@database#@#
-tunnel-param-list@#@uuid#@#TUNNEL UUID - Use *xe TUNNEL-list* to obtain a list of tunnel UUIDs.
+tunnel-param-list@#@uuid@#@Tunnel UUID - Use *xe tunnel-list* to obtain a list of tunnel UUIDs.
 tunnel-param-remove@#@param-key#@#Key or key/value pair to be removed.
 tunnel-param-remove@#@param-name#@#Parameter that contains keys or key/value pairs. (e.g. other-config).
 tunnel-param-remove@#@uuid#@#TUNNEL UUID - Use *xe TUNNEL-list* to obtain a list of TUNNEL UUIDs.
@@ -1330,7 +1325,7 @@ vbd-param-get@#@param-key#@#The VBD map parameter key value to return
 vbd-param-get@#@param-name#@#The VBD parameter to return
 vbd-param-get@#@uuid#@#VBD UUID - Use *xe VBD-list* to obtain a list of VBD UUIDs.
 vbd-param-list@#@database#@#
-vbd-param-list@#@uuid#@#VBD UUID - Use *xe VBD-list* to obtain a list of vbd UUIDs.
+vbd-param-list@#@uuid@#@VBD UUID - Use *xe vbd-list* to obtain a list of VBD UUIDs.
 vbd-param-remove@#@param-key#@#Key or key/value pair to be removed.
 vbd-param-remove@#@param-name#@#Parameter that contains keys or key/value pairs. (e.g. other-config).
 vbd-param-remove@#@uuid#@#VBD UUID - Use *xe VBD-list* to obtain a list of VBD UUIDs.
@@ -1423,7 +1418,7 @@ vdi-param-get@#@param-key#@#The VDI map parameter key value to return
 vdi-param-get@#@param-name#@#The VDI parameter to return
 vdi-param-get@#@uuid#@#VDI UUID - Use *xe VDI-list* to obtain a list of VDI UUIDs.
 vdi-param-list@#@database#@#
-vdi-param-list@#@uuid#@#VDI UUID - Use *xe VDI-list* to obtain a list of vdi UUIDs.
+vdi-param-list@#@uuid@#@VDI UUID - Use *xe vdi-list* to obtain a list of VDI UUIDs.
 vdi-param-remove@#@param-key#@#Key or key/value pair to be removed.
 vdi-param-remove@#@param-name#@#Parameter that contains keys or key/value pairs. (e.g. other-config).
 vdi-param-remove@#@uuid#@#VDI UUID - Use *xe VDI-list* to obtain a list of VDI UUIDs.
@@ -1444,8 +1439,8 @@ vdi-unlock@#@force#@#Force operation
 vdi-unlock@#@uuid#@#VDI UUID - Use *xe VDI-list to obtain a list of VDI UUIDs.
 vdi-update@#@uuid#@#VDI UUID - Use *xe VDI-list to obtain a list of VDI UUIDs.
 vgpu-create@#@gpu-group-uuid@#@GPU group UUID - Use *xe gpu-group-list* to obtain a list of GPU group UUIDs.
-vgpu-create@#@vm-uuid#@#Virtual machine UUID - Use *xe vm-list* to obtain a list of VM UUIDs
-vgpu-destroy@#@uuid#@#VGPU UUID - Use *xe VGPU-list to obtain a list of VGPU UUIDs.
+vgpu-create@#@vm-uuid@#@VM UUID - Use *xe vm-list* to obtain a list of VM UUIDs.
+vgpu-destroy@#@uuid@#@Virtual GPU UUID - Use *xe vgpu-list* to obtain a list of Virtual GPU UUIDs.
 vgpu-list@#@all@#@Display all parameter values
 vgpu-list@#@currently-attached@#@Display currently-attached status [ true | false ] 
 vgpu-list@#@database@#@
@@ -1454,7 +1449,7 @@ vgpu-list@#@gpu-group-uuid@#@Display GPU group UUIDs
 vgpu-list@#@--minimal@#@Specify --minimal to only show minimal output
 vgpu-list@#@other-config@#@Display additional configuration parameter values for a virtual GPU
 vgpu-list@#@params@#@
-vgpu-list@#@uuid#@#Display VGPU UUIDs
+vgpu-list@#@uuid@#@Display a Virtual GPU UUID
 vgpu-list@#@vm-name-label@#@Display a VM name
 vgpu-list@#@vm-uuid@#@Display a VM UUID
 vgpu-param-add@#@param-key#@#Key to be added to a set parameter (SRW).
@@ -1467,22 +1462,22 @@ vgpu-param-get@#@param-key#@#The VGPU map parameter key value to return
 vgpu-param-get@#@param-name#@#The VGPU parameter to return
 vgpu-param-get@#@uuid#@#VGPU UUID - Use *xe VGPU-list* to obtain a list of VGPU UUIDs.
 vgpu-param-list@#@database#@#
-vgpu-param-list@#@uuid#@#VGPU UUID - Use *xe VGPU-list* to obtain a list of vgpu UUIDs.
+vgpu-param-list@#@uuid@#@VGPU UUID - Use *xe vgpu-list* to obtain a list of VGPU UUIDs.
 vgpu-param-remove@#@param-key#@#Key or key/value pair to be removed.
 vgpu-param-remove@#@param-name#@#Parameter that contains keys or key/value pairs. (e.g. other-config).
 vgpu-param-remove@#@uuid#@#VGPU UUID - Use *xe VGPU-list* to obtain a list of VGPU UUIDs.
 vgpu-param-set@#@other-config#@#
 vgpu-param-set@#@uuid#@#VGPU UUID - Use *xe VGPU-list* to obtain a list of VGPU UUIDs.
-vif-create@#@device@#@VM Machine-readable interface number. (e.g. eth0)
+vif-create@#@device@#@The available VM ethernet interface number (e.g. eth0)
 vif-create@#@mac@#@Specified 48-bit MAC Address
-vif-create@#@network-uuid@#@Target network for the VIF. Use *xe network-list* to obtain a list of networks.
-vif-create@#@vm-uuid#@#Virtual machine UUID - Use *xe vm-list* to obtain a list of VM UUIDs
-vif-destroy@#@uuid#@#VIF UUID - Use *xe VIF-list to obtain a list of VIF UUIDs.
+vif-create@#@network-uuid@#@Network UUID - Use *xe network-list* to obtain a list of networks.
+vif-create@#@vm-uuid@#@VM UUID - Use *xe vm-list* to obtain a list of VMs.
+vif-destroy@#@uuid@#@VIF UUID - Use *xe vif-list* to obtain a list of VIF UUIDs.
 vif-list@#@allowed-operations:contains@#@
-vif-list@#@allowed-operations#@#Display list of operations allowed on VIFs
-vif-list@#@currently-attached@#@Display currently-attached statuses of VIFs [ true | false]
+vif-list@#@allowed-operations@#@Display list of operations allowed on VIFs
+vif-list@#@currently-attached@#@Display if VIF is currently-attached [ true | false]
 vif-list@#@current-operations:contains@#@
-vif-list@#@current-operations#@#Display currently running operations on VIFs
+vif-list@#@current-operations@#@Display currently running operations on VIFs
 vif-list@#@database@#@
 vif-list@#@device@#@Display the device number of machine-readable interfaces (e.g. eth0).
 vif-list@#@io_read_kbs@#@Display read bandwidth in KB/s - Use *xe vif-param-get* to return parameter
@@ -1492,81 +1487,81 @@ vif-list@#@ipv4-allowed@#@Display a list of permitted IPv4 addresses when switch
 vif-list@#@ipv6-allowed:contains@#@
 vif-list@#@ipv6-allowed@#@Display a list of permitted IPv6 addresses when switch port locking is enabled
 vif-list@#@locking-mode@#@Display current switch port locking mode for VIFs [ default | locked | unlocked | disabled ]
-vif-list@#@MAC-autogenerated@#@Display MAC-autogenerated status of VIF [ true | false ]
+vif-list@#@MAC-autogenerated@#@Display if MAC is autogenerated [ true | false ]
 vif-list@#@MAC@#@Display 48-bit MAC address of VIFs
 vif-list@#@MTU@#@Display maximum transmission unit sizes
 vif-list@#@network-name-label@#@Display name of the network for VIFs
 vif-list@#@network-uuid@#@Display network UUID of the VIFs
 vif-list@#@other-config@#@Display additional configuration settings for VIFs
-vif-list@#@other-config:ethtool-gso@#@Display generic segmentation offload statuses [ on | off ]
-vif-list@#@other-config:ethtool-rx@#@Display receive checksum statuses [ on | off ]
-vif-list@#@other-config:ethtool-sg@#@Display scatter gather statuses [ on | off ]
-vif-list@#@other-config:ethtool-tso@#@Display TCP segmentation offload statuses [ on | off ]
-vif-list@#@other-config:ethtool-tx@#@Display transmit checksum statuses [ on | off ]
-vif-list@#@other-config:ethtool-ufo@#@Display UDP fragment offload statuses [ on | off ]
-vif-list@#@other-config:promiscous@#@Display promiscuous statuses of VIFs[ true | false ]
+vif-list@#@other-config:ethtool-gso@#@Display generic segmentation offload status [ on | off ]
+vif-list@#@other-config:ethtool-rx@#@Display receive checksum status [ on | off ]
+vif-list@#@other-config:ethtool-sg@#@Display scatter gather status [ on | off ]
+vif-list@#@other-config:ethtool-tso@#@Display TCP segmentation offload status [ on | off ]
+vif-list@#@other-config:ethtool-tx@#@Display transmit checksum status [ on | off ]
+vif-list@#@other-config:ethtool-ufo@#@Display UDP fragment offload status [ on | off ]
+vif-list@#@other-config:promiscuous@#@Display if VIF is promiscuous [ true | false ]
 vif-list@#@params@#@
 vif-list@#@qos_algorithm_params@#@Display parameters for the QoS algorithms supported by VIFs (e.g. kbps).
 vif-list@#@qos_algorithm_type@#@Display type of QoS algorithms used by VIFs
 vif-list@#@qos_supported_algorithms:contains@#@
 vif-list@#@qos_supported_algorithms@#@Display supported QoS algorithms for VIFs
-vif-list@#@uuid#@#Display VIF UUIDs
+vif-list@#@uuid@#@Display VIF UUIDs
 vif-list@#@vm-name-label@#@Display VIFs VM name-labels
 vif-list@#@vm-uuid@#@Display VIF interface's VM UUIDs
-vif-param-add@#@<MAP PARAMETER KEY>#@#
-vif-param-add@#@param-key#@#Key to be added to a set parameter (SRW).
-vif-param-add@#@param-name#@#Parameter to have key or key/value pair added - Use *xe VIF-param-list* to obtain a list of vif parameters.
-vif-param-add@#@uuid#@#VIF UUID - Use *xe VIF-list* to obtain a list of VIF UUIDs.
-vif-param-clear@#@param-name#@#Writable parameter to be cleared. (e.g. other-config).
-vif-param-clear@#@uuid#@#VIF UUID - Use *xe VIF-list* to obtain a list of VIF UUIDs.
+vif-param-add@#@<MAP PARAMETER KEY>@#@Key/value pair to be added to a map parameter (MRW). 
+vif-param-add@#@param-key@#@Key to be added to a set parameter (SRW).
+vif-param-add@#@param-name@#@Parameter to have key or key/value pair added - Use *xe vif-param-list* to obtain a list of network parameters.
+vif-param-add@#@uuid@#@VIF UUID - Use *xe vif-list* to obtain a list of vif UUIDs
+vif-param-clear@#@param-name@#@Writable parameter to be cleared. (e.g. *ipv4-allowed*). 
+vif-param-clear@#@uuid@#@VIF UUID - Use *xe vif-list* to obtain a list of VIF UUIDs.
 vif-param-get@#@database#@#
-vif-param-get@#@param-key#@#The VIF map parameter key value to return
-vif-param-get@#@param-name#@#The VIF parameter to return
-vif-param-get@#@uuid#@#VIF UUID - Use *xe VIF-list* to obtain a list of VIF UUIDs.
+vif-param-get@#@param-key@#@The VIF key value to return.
+vif-param-get@#@param-name@#@The VIF parameter value to return.
+vif-param-get@#@uuid@#@VIF UUID - Use *xe vif-list* to obtain a list of VIF UUIDs
 vif-param-list@#@database#@#
-vif-param-list@#@uuid#@#VIF UUID - Use *xe VIF-list* to obtain a list of vif UUIDs.
-vif-param-remove@#@param-key#@#Key or key/value pair to be removed.
-vif-param-remove@#@param-name#@#Parameter that contains keys or key/value pairs. (e.g. other-config).
-vif-param-remove@#@uuid#@#VIF UUID - Use *xe VIF-list* to obtain a list of VIF UUIDs.
-vif-param-set@#@ipv4-allowed#@#
-vif-param-set@#@ipv6-allowed#@#
+vif-param-list@#@uuid@#@VIF UUID - Use *xe vif-list* to obtain a list of VIF UUIDs.
+vif-param-remove@#@param-key@#@Key or key/value pair to be removed.
+vif-param-remove@#@param-name@#@Parameter that contains keys or key/value pairs. (e.g. other-config).
+vif-param-remove@#@uuid@#@VIF UUID - Use *xe vif-list* to obtain a list of VIF UUIDs.
+vif-param-set@#@ipv4-allowed@#@Set permitted IPv4 addresses used when switch port locking is enabled. Use a comma to separate multiple IPv4 addresses
+vif-param-set@#@ipv6-allowed@#@Set permitted IPv6 addresses used when switch port locking is enabled. Use a comma to separate multiple IPv6 addresses 	
 vif-param-set@#@locking-mode#@#
-vif-param-set@#@locking-mode:default#@#
-vif-param-set@#@locking-mode:disabled#@#
-vif-param-set@#@locking-mode:locked#@#
-vif-param-set@#@locking-mode:unlocked#@#
+vif-param-set@#@locking-mode:default@#@VIF interface applies filtering level of the network default-locking-mode parameter
+vif-param-set@#@locking-mode:disabled@#@Set locking-mode to *disabled* to deny all traffic
+vif-param-set@#@locking-mode:locked@#@Set locking-mode to *locked* to only allow permitted MAC and IP addresses to send and receive traffic on the VIF
+vif-param-set@#@locking-mode:unlocked@#@Set locking-mode to *unlocked* to permit all traffic
 vif-param-set@#@other-config#@#
-vif-param-set@#@other-config:ethtool-gso#@#
-vif-param-set@#@other-config:ethtool-rx#@#
-vif-param-set@#@other-config:ethtool-sg#@#
-vif-param-set@#@other-config:ethtool-tso#@#
-vif-param-set@#@other-config:ethtool-tx#@#
-vif-param-set@#@other-config:ethtool-ufo#@#
-vif-param-set@#@other-config:mtu#@#
-vif-param-set@#@other-config:promiscuous#@#
-vif-param-set@#@qos_algorithm_params#@#
-vif-param-set@#@qos_algorithm_type#@#
-vif-param-set@#@uuid#@#VIF UUID - Use *xe VIF-list* to obtain a list of VIF UUIDs.
-vif-plug@#@uuid#@#VIF UUID - Use *xe VIF-list to obtain a list of VIF UUIDs.
+vif-param-set@#@other-config:ethtool-gso@#@Set to enable generic segmentation offload: ethtool-gso=[ on | off ]
+vif-param-set@#@other-config:ethtool-rx@#@Set to enable receive checksum: ethtool-rx=[ on | off ]
+vif-param-set@#@other-config:ethtool-sg@#@Set to enable scatter gather: ethtool-sg=[ on | off ]
+vif-param-set@#@other-config:ethtool-tso@#@Set to enable TCP segmentation offload: ethtool-tso=[ on | off ]
+vif-param-set@#@other-config:ethtool-tx@#@Set to enable transmit checksum: ethtool-tx=[ on | off ]
+vif-param-set@#@other-config:ethtool-ufo@#@Set to enable UDP fragment offload: ethtool-ufo=[ on | off ]
+vif-param-set@#@other-config:mtu@#@Set MTU size for VIF
+vif-param-set@#@other-config:promiscuous@#@Set to enable promiscuous mode: promiscuous=[ true | false ]
+vif-param-set@#@qos_algorithm_params@#@Set parameters for the QoS algorithms supported by the VIF interface
+vif-param-set@#@qos_algorithm_type@#@Set type of QoS algorithm used by the VIF interface
+vif-param-set@#@uuid@#@VIF UUID - Use *xe vif-list* to obtain a list of VIF UUIDs
+vif-plug@#@uuid@#@VIF UUID - Use *xe vif-list* to obtain a list of VIF UUIDs.
 vif-unplug@#@force#@#Force operation
-vif-unplug@#@uuid#@#VIF UUID - Use *xe VIF-list to obtain a list of VIF UUIDs.
+vif-unplug@#@uuid@#@VIF UUID - Use *xe vif-list* to obtain a list of VIF UUIDs.
 vlan-create@#@network-uuid@#@Internal network to be connected to VLAN's untagged PIF - Use *xe network-list* to obtain a list of networks found in a pool.
 vlan-create@#@pif-uuid@#@Physical PIF to be the tagged-PIF for the VLAN. The pseudo PIF (untagged-PIF) is associated with the physical PIF. - Use *xe pif-list* to obtain a list of PIF interfaces.
 vlan-create@#@vlan@#@Desired VLAN tag
-vlan-destroy@#@uuid#@#VLAN UUID - Use *xe VLAN-list to obtain a list of VLAN UUIDs.
+vlan-destroy@#@uuid@#@VLAN UUID - Use *xe vlan-list* to obtain a list of VLAN UUIDs.
 vlan-list@#@all@#@Display all parameter values	
 vlan-list@#@database@#@
 vlan-list@#@params@#@
 vlan-list@#@tag@#@Display VLAN IDs [ 0 - 4094 ] 
 vlan-list@#@tagged-PIF@#@Display physical PIF UUIDs
 vlan-list@#@untagged-PIF@#@Display pseudo PIF UUIDs
-vlan-list@#@uuid#@#Display VLAN UUIDs
+vlan-list@#@uuid@#@Display VLAN UUIDs
 vlan-param-get@#@database#@#
 vlan-param-get@#@param-key#@#The VLAN map parameter key value to return
-vlan-param-get@#@param-name#@#The VLAN parameter to return
-vlan-param-get@#@uuid#@#VLAN UUID - Use *xe VLAN-list* to obtain a list of VLAN UUIDs.
+vlan-param-get@#@param-name@#@The VLAN parameter value to return.
+vlan-param-get@#@uuid@#@VLAN UUID - Use *xe vlan-list* to obtain a list of VLAN UUIDs.
 vlan-param-list@#@database#@#
-vlan-param-list@#@uuid#@#VLAN UUID - Use *xe VLAN-list* to obtain a list of vlan UUIDs.
+vlan-param-list@#@uuid@#@VLAN UUID - Use *xe vlan-list* to obtain a list of a VLAN UUIDs.
 vm-assert-can-be-recovered@#@database@#@
 vm-assert-can-be-recovered@#@uuid#@#VM UUID - Use *xe VM-list to obtain a list of VM UUIDs.
 vm-cd-add@#@cd-name@#@CD Name - Use *xe cd-list* to obtain a list of CD names.
@@ -1661,6 +1656,7 @@ vm-list@#@current-operations:contains@#@
 vm-list@#@database@#@
 vm-list@#@disks@#@
 vm-list@#@dom-id@#@
+vm-list@#@generation-id@#@
 vm-list@#@guest-metrics-last-updated@#@
 vm-list@#@ha-always-run@#@
 vm-list@#@ha-restart-priority@#@
@@ -1671,7 +1667,6 @@ vm-list@#@install-time@#@
 vm-list@#@is-a-snapshot@#@
 vm-list@#@is-a-template@#@
 vm-list@#@is-control-domain@#@
-vm-list@#@is-snapshot-from-vmpp@#@
 vm-list@#@last-boot-CPU-flags@#@
 vm-list@#@last-boot-record@#@
 vm-list@#@live@#@
@@ -1695,7 +1690,6 @@ vm-list@#@parent@#@
 vm-list@#@platform@#@
 vm-list@#@possible-hosts@#@
 vm-list@#@power-state@#@
-vm-list@#@protection-policy@#@
 vm-list@#@PV-args@#@
 vm-list@#@PV-bootloader@#@
 vm-list@#@PV-bootloader-args@#@
@@ -1788,7 +1782,6 @@ vm-param-set@#@name-label#@#Set name of VM
 vm-param-set@#@order#@#
 vm-param-set@#@other-config#@#
 vm-param-set@#@platform#@#
-vm-param-set@#@protection-policy#@#
 vm-param-set@#@PV-args#@#
 vm-param-set@#@PV-bootloader#@#
 vm-param-set@#@PV-bootloader-args#@#
@@ -1806,70 +1799,6 @@ vm-param-set@#@VCPUs-max#@#
 vm-param-set@#@VCPUs-params#@#
 vm-param-set@#@xenstore-data#@#
 vm-pause@#@<vm-selectors>#@#Parameters to select VM(s) - use *xe vm-list params=all* to get a list of VM parameters to filter on.
-vmpp-create@#@alarm-config@#@
-vmpp-create@#@archive-frequency@#@
-vmpp-create@#@archive-schedule@#@
-vmpp-create@#@archive-target-config@#@
-vmpp-create@#@archive-target-type@#@
-vmpp-create@#@backup-frequency@#@
-vmpp-create@#@backup-retention-value@#@
-vmpp-create@#@backup-schedule@#@
-vmpp-create@#@backup-type@#@
-vmpp-create@#@is-alarm-enabled@#@
-vmpp-create@#@is-policy-enabled@#@
-vmpp-create@#@name-description@#@
-vmpp-create@#@name-label@#@
-vmpp-destroy@#@uuid#@#VMPP UUID - Use *xe VMPP-list to obtain a list of VMPP UUIDs.
-vmpp-list@#@alarm-config@#@
-vmpp-list@#@archive-frequency@#@
-vmpp-list@#@archive-last-run-time@#@
-vmpp-list@#@archive-schedule@#@
-vmpp-list@#@archive-target-config@#@
-vmpp-list@#@archive-target-type@#@
-vmpp-list@#@backup-frequency@#@
-vmpp-list@#@backup-last-run-time@#@
-vmpp-list@#@backup-retention-value@#@
-vmpp-list@#@backup-schedule@#@
-vmpp-list@#@backup-type@#@
-vmpp-list@#@database@#@
-vmpp-list@#@is-alarm-enabled@#@
-vmpp-list@#@is-archive-running@#@
-vmpp-list@#@is-backup-running@#@
-vmpp-list@#@is-policy-enabled@#@
-vmpp-list@#@name-description#@#Display VMPP name-descriptions
-vmpp-list@#@name-label#@#Display VMPP name-labels
-vmpp-list@#@params@#@
-vmpp-list@#@uuid#@#Display VMPP UUIDs
-vmpp-list@#@VMs@#@
-vmpp-list@#@VMs:contains@#@
-vmpp-param-add@#@param-key#@#Key to be added to a set parameter (SRW).
-vmpp-param-add@#@param-name#@#Parameter to have key or key/value pair added - Use *xe VMPP-param-list* to obtain a list of vmpp parameters.
-vmpp-param-add@#@uuid#@#VMPP UUID - Use *xe VMPP-list* to obtain a list of VMPP UUIDs.
-vmpp-param-clear@#@param-name#@#Writable parameter to be cleared. (e.g. other-config).
-vmpp-param-clear@#@uuid#@#VMPP UUID - Use *xe VMPP-list* to obtain a list of VMPP UUIDs.
-vmpp-param-get@#@database#@#
-vmpp-param-get@#@param-key#@#The VMPP map parameter key value to return
-vmpp-param-get@#@param-name#@#The VMPP parameter to return
-vmpp-param-get@#@uuid#@#VMPP UUID - Use *xe VMPP-list* to obtain a list of VMPP UUIDs.
-vmpp-param-list@#@database#@#
-vmpp-param-list@#@uuid#@#VMPP UUID - Use *xe VMPP-list* to obtain a list of vmpp UUIDs.
-vmpp-param-remove@#@param-key#@#Key or key/value pair to be removed.
-vmpp-param-remove@#@param-name#@#Parameter that contains keys or key/value pairs. (e.g. other-config).
-vmpp-param-remove@#@uuid#@#VMPP UUID - Use *xe VMPP-list* to obtain a list of VMPP UUIDs.
-vmpp-param-set@#@alarm-config#@#
-vmpp-param-set@#@archive-frequency#@#
-vmpp-param-set@#@archive-schedule#@#
-vmpp-param-set@#@archive-target-config#@#
-vmpp-param-set@#@archive-target-type#@#
-vmpp-param-set@#@backup-frequency#@#
-vmpp-param-set@#@backup-retention-value#@#
-vmpp-param-set@#@backup-schedule#@#
-vmpp-param-set@#@backup-type#@#
-vmpp-param-set@#@is-alarm-enabled#@#
-vmpp-param-set@#@is-policy-enabled#@#
-vmpp-param-set@#@name-description#@#Set name-description of VMPP
-vmpp-param-set@#@name-label#@#Set name of VMPP
-vmpp-param-set@#@uuid#@#VMPP UUID - Use *xe VMPP-list* to obtain a list of VMPP UUIDs.
 vm-reboot@#@force#@#Force operation
 vm-reboot@#@<vm-selectors>#@#Parameters to select VM(s) - use *xe vm-list params=all* to get a list of VM parameters to filter on.
 vm-recover@#@database@#@
@@ -1880,7 +1809,6 @@ vm-reset-powerstate@#@<vm-selectors>#@#Parameters to select VM(s) - use *xe vm-l
 vm-resume@#@force#@#Force operation
 vm-resume@#@on@#@
 vm-resume@#@<vm-selectors>#@#Parameters to select VM(s) - use *xe vm-list params=all* to get a list of VM parameters to filter on.
-vm-retrieve-wlb-recommendations@#@<vm-selectors>#@#Parameters to select VM(s) - use *xe vm-list params=all* to get a list of VM parameters to filter on.
 vm-shutdown@#@force#@#Force operation
 vm-shutdown@#@<vm-selectors>#@#Parameters to select VM(s) - use *xe vm-list params=all* to get a list of VM parameters to filter on.
 vm-snapshot@#@new-name-description#@#Desired new name-description for VM
