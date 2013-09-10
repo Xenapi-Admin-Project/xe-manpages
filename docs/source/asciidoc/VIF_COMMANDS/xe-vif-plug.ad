@@ -11,7 +11,7 @@ xe-vif-plug - Plug in a virtual interface (VIF)
 
 SYNOPSIS
 --------
-*xe vif-plug* uuid=<VIF UUID>
+*xe vif-plug* uuid=<VIF UUID> [ force=<TRUE | FALSE> ]
 
 DESCRIPTION
 -----------
@@ -21,6 +21,11 @@ REQUIRED PARAMETERS
 -------------------
 *uuid*::
 	VIF UUID - Use *xe vif-list* to obtain a list of VIF UUIDs.
+
+OPTIONAL PARAMETERS
+-------------------
+*force*::
+	Force operation [ true | false ]
 
 EXAMPLES
 --------

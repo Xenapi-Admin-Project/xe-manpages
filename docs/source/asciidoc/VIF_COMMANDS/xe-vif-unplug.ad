@@ -11,7 +11,7 @@ xe-vif-unplug - Unplug a virtual interface (VIF)
 
 SYNOPSIS
 --------
-*xe vif-unplug* uuid=<VIF UUID>
+*xe vif-unplug* uuid=<VIF UUID> [ force=<TRUE | FALSE>
 
 DESCRIPTION
 -----------
@@ -22,6 +22,11 @@ REQUIRED PARAMETERS
 *uuid*::
 	VIF UUID - Use *xe vif-list* to obtain a list of VIF UUIDs.
 
+OPTIONAL PARAMETERS
+-------------------
+*force*::
+	Force operation [ true | false ]
+	
 EXAMPLES
 --------
 To return the currently-attached parameter for a VIF:

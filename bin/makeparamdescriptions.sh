@@ -153,7 +153,7 @@ param-check(){
 			echo "Virtual machine UUID - Use *xe vm-list* to obtain a list of VM UUIDs"
 		;;
 		force)
-			echo "Force operation"
+			echo "Force operation [ true | false ]"
 		;;
 		new-name-label)
 			echo "Desired new name-label for $OBJ"
