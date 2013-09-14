@@ -8,42 +8,37 @@ XE(1)
 
 NAME
 ----
-
 xe-snapshot-clone - Clone a snapshot
 
 SYNOPSIS
 --------
-*xe snap
+*xe snapshot-clone* uuid=<SNAPSHOT UUID> new-name-label=<NEW NAME>
 
 DESCRIPTION
 -----------
-
+Create a new template by cloning an existing snapshot, using storage-level fast disk clone operation where available.
 
 REQUIRED PARAMETERS
 -------------------
-
-*reqd params     : new-name-label*:: 
-	
+*new-name-label*:: 
+	Name of the clone
 
 OPTIONAL PARAMETERS
 -------------------
-*all*::
-	Display all parameter values
-
 *uuid*:: 
+	UUID of SNAPSHOT that is to be cloned. Use *xe snapshot-list* to get the UUID of the SNAPSHOT.
 	
 *new-name-description*:: 
-	
-
-*--minimal*::
-	Specify --minimal to only show minimal output
+	Desired description of cloned Snapshot.
 EXAMPLES
 --------
+To clone a VM:
 
+- *xe snapshot-clone* uuid=<SNAPSHOT UUID> new-name-label=<DEATH STAR>
 
 SEE ALSO
 --------
-*xe help snapshot-clone*,
+*xe help snapshot-clone*
 
 AUTHORS
 -------
