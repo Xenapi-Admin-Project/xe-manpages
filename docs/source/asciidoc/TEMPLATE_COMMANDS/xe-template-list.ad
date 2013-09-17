@@ -1,0 +1,247 @@
+XE(1)
+=======
+:doctype: manpage
+:man source:   xe template-list
+:man version:  {1}
+:man manual:   xe template-list manual
+
+NAME
+-----
+xe-template-list - Display TEMPLATEs
+
+SYNOPSIS
+--------
+*xe template-list*  [ params=<PARAMETER> ] [--minimal]
+
+DESCRIPTION
+-----------
+*xe template-list* displays TEMPLATEs and their parameters.
+
+Output can be filtered by using the *params* parameter and a value (multiple parameters should be separated by commas):
+
+- *xe template-list params=<PARAM1>*
+- *xe template-list params=<PARAM1,PARAM2,PARAM3>*
+
+Output can be filtered by using parameter values and the desired value:
+
+- *xe template-list <PARAMETER>=<VALUE>*
+
+Append --minimal to display values for one parameter on a single line separated by commas:
+
+- *xe template-list params="<PARAMETER>" --minimal*
+
+
+OPTIONAL PARAMETERS
+-------------------
+
+*params*:: 
+	
+*database:*:: 
+	
+*uuid*:: 
+	Display TEMPLATE UUIDs
+*name-label*:: 
+	Display TEMPLATE name-labels
+*name-description*:: 
+	Display TEMPLATE name-descriptions
+*user-version*:: 
+	
+*is-a-template*:: 
+	
+*is-a-snapshot*:: 
+	
+*snapshot-of*:: 
+	
+*snapshots*:: 
+	
+*snapshot-time*:: 
+	
+*snapshot-info*:: 
+	
+*parent*:: 
+	
+*children*:: 
+	
+*is-control-domain*:: 
+	
+*power-state*:: 
+	
+*memory-actual*:: 
+	
+*memory-target*:: 
+	
+*memory-overhead*:: 
+	
+*memory-static-max*:: 
+	
+*memory-dynamic-max*:: 
+	
+*memory-dynamic-min*:: 
+	
+*memory-static-min*:: 
+	
+*suspend-VDI-uuid*:: 
+	
+*suspend-SR-uuid*:: 
+	
+*VCPUs-params*:: 
+	
+*VCPUs-max*:: 
+	
+*VCPUs-at-startup*:: 
+	
+*actions-after-shutdown*:: 
+	
+*actions-after-reboot*:: 
+	
+*actions-after-crash*:: 
+	
+*console-uuids*:: 
+	
+*platform*:: 
+	
+*allowed-operations*:: 
+	Display list of operations allowed on TEMPLATEs
+*current-operations*:: 
+	Display currently running operations on TEMPLATEs
+*blocked-operations*:: 
+	
+*allowed-VBD-devices*:: 
+	
+*allowed-VIF-devices*:: 
+	
+*possible-hosts*:: 
+	
+*HVM-boot-policy*:: 
+	
+*HVM-boot-params*:: 
+	
+*HVM-shadow-multiplier*:: 
+	
+*PV-kernel*:: 
+	
+*PV-ramdisk*:: 
+	
+*PV-args*:: 
+	
+*PV-legacy-args*:: 
+	
+*PV-bootloader*:: 
+	
+*PV-bootloader-args*:: 
+	
+*last-boot-CPU-flags*:: 
+	
+*last-boot-record*:: 
+	
+*resident-on*:: 
+	
+*affinity*:: 
+	
+*other-config*:: 
+	
+*dom-id*:: 
+	
+*recommendations*:: 
+	
+*xenstore-data*:: 
+	
+*ha-always-run*:: 
+	
+*ha-restart-priority*:: 
+	
+*blobs*:: 
+	
+*start-time*:: 
+	
+*install-time*:: 
+	
+*VCPUs-number*:: 
+	
+*VCPUs-utilisation*:: 
+	
+*os-version*:: 
+	
+*PV-drivers-version*:: 
+	
+*PV-drivers-up-to-date*:: 
+	
+*memory*:: 
+	
+*disks*:: 
+	
+*networks*:: 
+	
+*other*:: 
+	
+*live*:: 
+	
+*guest-metrics-last-updated*:: 
+	
+*cooperative*:: 
+	
+*tags*:: 
+	
+*appliance*:: 
+	
+*start-delay*:: 
+	
+*shutdown-delay*:: 
+	
+*order*:: 
+	
+*version*:: 
+	
+*generation-id*:: 
+	
+*console-uuids:contains*:: 
+	
+*allowed-operations:contains*:: 
+	
+*current-operations:contains*:: 
+	
+*allowed-VBD-devices:contains*:: 
+	
+*allowed-VIF-devices:contains*:: 
+	
+*tags:contains*:: 
+	
+
+
+
+EXAMPLES
+--------
+To display all parameters for all TEMPLATEs:
+
+- *xe template-list* params="all"
+
+To display all parameters for a specific TEMPLATE:
+
+- *xe template-list* uuid=<template UUID> params="all"
+
+To display <PARAMETER> for a specific TEMPLATE:
+
+- *xe template-list* uuid=<template UUID> params="VIF-uuids"
+
+To display the <PARAMETER> and <PARAMETER> parameters of all TEMPLATEs  with a <PARAMETER> of <VALUE>:
+
+- *xe template-list* <PARAMETER>=<VALUE> params="<MULTIPLE PAMETERS>"
+
+SEE ALSO
+--------
+*xe help template-list*,
+
+AUTHORS
+-------
+Manpage Author(s):
+
+- <manpage author name> <manpage author email address>
+
+BUGS
+----
+For guidelines on submitting bug reports see http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP. Submit bugs and general questions to xen-api@lists.xen.org.
+
+COPYRIGHT
+---------
+Copyright \(C)  2013 - <manpage author name>
+Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License, Version 1.3 or any later version published by the Free Software Foundation; with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts. A copy of the license is included in the section entitled "GNU Free Documentation License".

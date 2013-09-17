@@ -1,0 +1,50 @@
+XE(1)
+=======
+:doctype: manpage
+:man source:   xe vgpu-param-clear
+:man version:  {1}
+:man manual:   xe vgpu-param-clear manual
+
+NAME
+-----
+xe-vgpu-param-clear - Clear a specific writable parameter for a vgpu
+
+SYNOPSIS
+--------
+*xe vgpu-param-clear* uuid=<VGPU UUID> param-name=<PARAMETER NAME>
+
+DESCRIPTION
+-----------
+*xe vgpu-param-clear* attempts to clear any writable parameter. Use *xe vgpu-list* and *xe vgpu-param-list* to identify writable parameters (RW, SRW, MRW).
+
+
+REQUIRED PARAMETERS
+-------------------
+
+*uuid*:: 
+	VGPU UUID - Use *xe VGPU-list* to obtain a list of VGPU UUIDs.
+*param-name*:: 
+	Writable parameter to be cleared. (e.g. other-config).
+
+EXAMPLES
+--------
+
+
+SEE ALSO
+--------
+*xe help vgpu-param-clear*,
+
+AUTHORS
+-------
+Manpage Author(s):
+
+- <manpage author name> <manpage author email address>
+
+BUGS
+----
+For guidelines on submitting bug reports see http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP. Submit bugs and general questions to xen-api@lists.xen.org.
+
+COPYRIGHT
+---------
+Copyright \(C)  2013 - <manpage author name>
+Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License, Version 1.3 or any later version published by the Free Software Foundation; with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts. A copy of the license is included in the section entitled "GNU Free Documentation License".
