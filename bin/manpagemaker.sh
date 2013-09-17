@@ -2,11 +2,11 @@
 #12/25/2012 - Matthew Spah
 #06/25/2013 - Grant McWilliams
 #08/19/2013 - Matthew Spah - Added new functions for the low level commands
-
+set -x
 oIFS=$IFS
 IFS="\n"
 SEP="@#@"
-PARAMTABLE="$HOME/bin/xe-paramtable.txt"
+PARAMTABLE="/root/bin/xe-paramtable.txt"
 
 createheader()
 {
@@ -32,7 +32,6 @@ createparamgetdescription()
 	echo ""
 	echo "DESCRIPTION"
 	echo "-----------"
-	echo ""		
 	echo "*xe ${XE_COMMAND}* returns the value(s) of a parameter or a map parameter key value for a specified ${OBJECT}"
 	echo ""
 }
@@ -42,7 +41,6 @@ createparamcleardescription()
 	echo ""
 	echo "DESCRIPTION"
 	echo "-----------"
-	echo ""		
 	echo "*xe ${XE_COMMAND}* attempts to clear any writable parameter. Use *xe ${OBJECT}-list* and *xe ${OBJECT}-param-list* to identify writable parameters (RW, SRW, MRW)."
 	echo ""
 }
@@ -52,7 +50,6 @@ createparamremovedescription()
 	echo ""
 	echo "DESCRIPTION"
 	echo "-----------"
-	echo ""		
 	echo "*xe ${XE_COMMAND}* removes a key from a set parameter or key/value pair from a map parameter. Use *xe ${OBJECT}-list* and *xe ${OBJECT}-param-list* to identify writable set or map parameters (SRW, MRW).﻿"
 	echo ""
 }
@@ -62,7 +59,6 @@ createparamadddescription()
 	echo ""
 	echo "DESCRIPTION"
 	echo "-----------"
-	echo ""		
 	echo "*xe ${XE_COMMAND}* adds a key to a set parameter or a key/value pair to a map parameter. Use *xe ${OBJECT}-list* and *xe ${OBJECT}-param-list to identify writable parameters (RW, MRW)."
 	echo ""
 }
@@ -72,7 +68,6 @@ createparamsetdescription()
 	echo ""
 	echo "DESCRIPTION"
 	echo "-----------"
-	echo ""		
 	echo "*xe ${XE_COMMAND}* sets writable parameters. Use *xe ${OBJECT}-list* and *xe ${OBJECT}-param-list to identify writable parameters (RW, MRW). To append a value to a writable set or map (SRW, MRW) parameter use *xe ${OBJECT}-param-add*"
 	echo ""
 }
@@ -82,7 +77,6 @@ createlistdescription()
 	echo ""
 	echo "DESCRIPTION"
 	echo "-----------"
-	echo ""	
 	echo "*xe ${XE_COMMAND}* displays ${OBJECTUPPER}s and their parameters."
 	echo ""
 	echo "Output can be filtered by using the *params* parameter and a value (multiple parameters should be separated by commas):"
@@ -129,8 +123,7 @@ createparams(){
 			echo -e "*$PARAMSTRING*:: \n\t${DESC}" 
 		done
 		echo ""
-		echo "*--minimal*::"
-		echo "	Specify --minimal to only show minimal output"
+		echo ""
 	fi
 
 }
@@ -140,8 +133,7 @@ createpage()
 	echo ""
 	echo "NAME"
 	echo "----"
-	echo ""
-	echo "${XE_COMMAND} -"
+	echo "xe-${XE_COMMAND} -"
 	echo ""
 	echo "SYNOPSIS"
 	echo "--------"
@@ -288,8 +280,9 @@ createfooter()
 {
 	echo "AUTHORS"
 	echo "-------"
-	echo "Manpage Author(s): ::"
-	echo "$COPYNAME $COPYEMAIL" # add user input options for authors
+	echo "Manpage Author(s):"
+	echo ""
+	echo "- $COPYNAME $COPYEMAIL" # add user input options for authors
 	echo ""
 	echo "BUGS"
 	echo "----"
