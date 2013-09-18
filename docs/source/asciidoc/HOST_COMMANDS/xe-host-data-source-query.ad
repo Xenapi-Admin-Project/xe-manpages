@@ -5,44 +5,42 @@ XE(1)
 :man version:  {1}
 :man manual:   xe host-data-source-query manual
 
-
 NAME
 ----
-xe-host-data-source-query -
+xe-host-data-source-query - Return a value from a data-source
 
 SYNOPSIS
 --------
+*xe host-data-source-query* <host-selectors> data-source=<DATA-SOURCE>
 
 DESCRIPTION
 -----------
-
+*xe host-data-source-query* returns a value from the specified data-source on a host. 
 
 REQUIRED PARAMETERS
 -------------------
-
-*data-source*:: 
+*data-source*::
+	The data-source value to return -  Use *xe host-data-source-list* to obtain a list of available data-sources. 
 	
-
-OPTIONAL PARAMETERS
--------------------
-
 *<host-selectors>*:: 
 	Parameters to select host(s) - use *xe host-list params=all* to get a list of host parameters to filter on.
-
-
+	
 EXAMPLES
 --------
+To display the utilization for cpu0 for a specific host: 
+
+- *xe host-data-source-query uuid=<HOST UUID> data-source="cpu0"
 
 
 SEE ALSO
 --------
-*xe help host-data-source-query*,
+*xe help host-data-source-query*, *xe host-data-source-list*(1), *xe host-data-source-record*(1), *xe host-data-source-forget*(1)
 
 AUTHORS
 -------
 Manpage Author(s):
 
-- <manpage author name> <manpage author email address>
+- Matthew Spah <spahmatthew@xenapiadmin.com>
 
 BUGS
 ----

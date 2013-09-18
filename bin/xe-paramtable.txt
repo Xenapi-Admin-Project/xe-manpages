@@ -227,7 +227,7 @@ host-crashdump-upload@#@url@#@
 host-crashdump-upload@#@uuid@#@HOST UUID - Use *xe HOST-list to obtain a list of HOST UUIDs.
 host-data-source-forget@#@data-source@#@
 host-data-source-forget@#@<host-selectors>@#@Parameters to select host(s) - use *xe host-list params=all* to get a list of host parameters to filter on.
-host-data-source-list@#@<host-selectors>@#@
+host-data-source-list@#@<host-selectors>@#@Parameters to select host(s) - use *xe host-list params=all* to get a list of host parameters to filter on.
 host-data-source-query@#@data-source@#@
 host-data-source-query@#@<host-selectors>@#@Parameters to select host(s) - use *xe host-list params=all* to get a list of host parameters to filter on.
 host-data-source-record@#@data-source@#@
