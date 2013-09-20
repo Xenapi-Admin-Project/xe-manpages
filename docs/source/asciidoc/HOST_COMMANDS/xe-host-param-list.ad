@@ -19,7 +19,7 @@ DESCRIPTION
 REQUIRED PARAMETERS
 -------------------
 *uuid*::
-	Host UUID - Use *xe host-list* to obtain a list of host UUIDs.
+	Host UUID - Use *xe host-list* to obtain a list of Host UUIDs.
 	
 EXAMPLES
 --------

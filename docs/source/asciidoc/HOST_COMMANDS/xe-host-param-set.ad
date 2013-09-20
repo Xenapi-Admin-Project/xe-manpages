@@ -17,32 +17,34 @@ DESCRIPTION
 -----------
 *xe host-param-set* sets writable parameters. Use *xe host-list* and *xe host-param-list to identify writable parameters (RW, MRW). To append a value to a writable set or map (SRW, MRW) parameter use *xe host-param-add*
 
-
 REQUIRED PARAMETERS
 -------------------
-
 *uuid*:: 
 	HOST UUID - Use *xe HOST-list* to obtain a list of HOST UUIDs.
 
 OPTIONAL PARAMETERS
 -------------------
-
 *name-label*:: 
-	Set name of HOST
+	Set name of Host
+	
 *name-description*:: 
-	Set name-description of HOST
+	Set name-description of Host
+	
 *suspend-image-sr-uuid*:: 
+	Set suspend image storage repository
 	
 *crash-dump-sr-uuid*:: 
+	Set crash-drump storage repository
 	
-*logging:*:: 
+*logging:*::
+	Set logging 
 	
 *other-config:*:: 
 	
+	
 *guest_VCPUs_params:*:: 
 	
-
-
+	
 
 EXAMPLES
 --------
@@ -50,13 +52,13 @@ EXAMPLES
 
 SEE ALSO
 --------
-*xe help host-param-set*,
+*xe help host-param-set*, *xe host-list*(1), *xe host-param-list*(1), *xe host-param-get*(1),
 
 AUTHORS
 -------
 Manpage Author(s):
 
-- <manpage author name> <manpage author email address>
+- Matthew Spah <spahmatthew@xenapiadmin.com>
 
 BUGS
 ----

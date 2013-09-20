@@ -13,6 +13,7 @@ xe-host-syslog-reconfigure -
 SYNOPSIS
 --------
 
+
 DESCRIPTION
 -----------
 
@@ -22,6 +23,7 @@ REQUIRED PARAMETERS
 
 *host-uuid*:: 
 	Host UUID - Use *xe host-list* to obtain a list of host UUIDs.
+
 EXAMPLES
 --------
 

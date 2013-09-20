@@ -17,22 +17,18 @@ DESCRIPTION
 -----------
 *xe host-param-add* adds a key to a set parameter or a key/value pair to a map parameter. Use *xe host-list* and *xe host-param-list to identify writable parameters (RW, MRW).
 
-
 REQUIRED PARAMETERS
 -------------------
-
 *uuid*:: 
 	HOST UUID - Use *xe HOST-list* to obtain a list of HOST UUIDs.
+	
 *param-name*:: 
 	Parameter to have key or key/value pair added - Use *xe HOST-param-list* to obtain a list of host parameters.
 
 OPTIONAL PARAMETERS
 -------------------
-
 *param-key*:: 
 	Key to be added to a set parameter (SRW).
-
-
 
 EXAMPLES
 --------

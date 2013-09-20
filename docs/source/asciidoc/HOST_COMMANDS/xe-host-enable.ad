@@ -33,7 +33,7 @@ EXAMPLES
 --------
 To enable a host using a UUID: 
 
-- *xe host-disable* uuid=<HOST UUID>
+- *xe host-enable* uuid=<HOST UUID>
 
 SEE ALSO
 --------

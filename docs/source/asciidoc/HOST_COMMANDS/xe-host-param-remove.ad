@@ -17,14 +17,14 @@ DESCRIPTION
 -----------
 *xe host-param-remove* removes a key from a set parameter or key/value pair from a map parameter. Use *xe host-list* and *xe host-param-list* to identify writable set or map parameters (SRW, MRW).﻿
 
-
 REQUIRED PARAMETERS
 -------------------
-
 *uuid*:: 
 	HOST UUID - Use *xe HOST-list* to obtain a list of HOST UUIDs.
+	
 *param-name*:: 
 	Parameter that contains keys or key/value pairs. (e.g. other-config).
+	
 *param-key*:: 
 	Key or key/value pair to be removed.
 
@@ -32,15 +32,17 @@ EXAMPLES
 --------
 
 
+
+
 SEE ALSO
 --------
-*xe help host-param-remove*,
+*xe help host-param-remove*, *xe host-param-list*(1), *xe host-param-get*(1), *xe host-param-clear*(1), *xe host-list*(1)
 
 AUTHORS
 -------
 Manpage Author(s):
 
-- <manpage author name> <manpage author email address>
+- Matthew Spah <spahmatthew@xenapiadmin.com>
 
 BUGS
 ----

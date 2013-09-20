@@ -8,41 +8,40 @@ XE(1)
 
 NAME
 ----
-xe-host-data-source-forget -
+xe-host-data-source-forget - Stop recording a data-source
 
 SYNOPSIS
 --------
+*xe host-data-source-forget* <host-selectors> data-source=<DATA-SOURCE>
 
 DESCRIPTION
 -----------
+*xe host-data-source-forget* stops the recording of a specified data-source on a host, and removes all the recorded data. Select a host by using one or more parameters displayed by xe host-list params=all. *xe host-data-source-query* can only be performed on one host at a time 
 
 
 REQUIRED PARAMETERS
 -------------------
-
 *data-source*:: 
-	
-
-OPTIONAL PARAMETERS
--------------------
+	The data-source recording to forget - Use *xe host-data-source-list* to obtain a list of available data-sources.
 
 *<host-selectors>*:: 
 	Parameters to select host(s) - use *xe host-list params=all* to get a list of host parameters to filter on.
 
-
 EXAMPLES
 --------
+To stop recording and remove all data from a cpu0 data-source on a host: 
 
+- *xe host-data-source-forget* uuid=<HOST UUID> data-source="cpu0"
 
 SEE ALSO
 --------
-*xe help host-data-source-forget*,
+*xe help host-data-source-forget*, *xe-host-list*(1), *xe-host-data-source-list*(1), *xe-host-data-source-record*(1), *xe-host-data-source-query*(1)
 
 AUTHORS
 -------
 Manpage Author(s):
 
-- <manpage author name> <manpage author email address>
+- Matthew Spah <spahmatthew@xenapiadmin.com>
 
 BUGS
 ----
@@ -50,5 +49,5 @@ For guidelines on submitting bug reports see http://wiki.xen.org/wiki/Reporting_
 
 COPYRIGHT
 ---------
-Copyright \(C)  2013 - <manpage author name>
+Copyright \(C)  2013 - Matthew Spah
 Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License, Version 1.3 or any later version published by the Free Software Foundation; with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts. A copy of the license is included in the section entitled "GNU Free Documentation License".
