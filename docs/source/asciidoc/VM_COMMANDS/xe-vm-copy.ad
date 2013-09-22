@@ -19,13 +19,11 @@ DESCRIPTION
 
 REQUIRED PARAMETERS
 -------------------
-
 *new-name-label*:: 
 	Desired new name-label for VM
 
 OPTIONAL PARAMETERS
 -------------------
-
 *new-name-description*:: 
 	Desired new name-description for VM
 *sr-uuid*:: 

@@ -32,11 +32,12 @@ OPTIONAL PARAMETERS
 
 EXAMPLES
 --------
+// look up and add examples
 
 
 SEE ALSO
 --------
-*xe help host-param-add*,
+*xe help host-param-add*, *xe-host-list*(1), *xe-host-param-clear*(1), *xe-host-param-list*(1), *xe-host-param-set*(1), *xe-host-param-get*(1s)
 
 AUTHORS
 -------
