@@ -8,10 +8,12 @@ XE(1)
 
 NAME
 ----
-xe-vm-clone -
+xe-vm-clone - Clone a Virtual Machine
 
 SYNOPSIS
 --------
+*xe vm-clone* <vm-selectors>=<SELECTOR> new-name-label=<NEW NAME LABEL> [ new-name-description=<NEW NAME DESCRIPTION> ] 
+
 
 DESCRIPTION
 -----------
@@ -19,18 +21,16 @@ DESCRIPTION
 
 REQUIRED PARAMETERS
 -------------------
-
 *new-name-label*:: 
 	Desired new name-label for VM
 
-OPTIONAL PARAMETERS
--------------------
-
-*new-name-description*:: 
-	Desired new name-description for VM
 *<vm-selectors>*:: 
 	Parameters to select VM(s) - use *xe vm-list params=all* to get a list of VM parameters to filter on.
 
+OPTIONAL PARAMETERS
+-------------------
+*new-name-description*:: 
+	Desired new name-description for VM
 
 EXAMPLES
 --------
