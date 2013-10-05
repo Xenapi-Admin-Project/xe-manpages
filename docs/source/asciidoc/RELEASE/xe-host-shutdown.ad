@@ -12,8 +12,7 @@ xe-host-shutdown - Attempts to shut down the specified XenServer/XCP host(s).
 
 SYNOPSIS
 --------
-*xe host-shutdown* [ parameter=<PARAMETER> ] [--multiple]
-
+*xe host-shutdown* [ host-selectors ] [--multiple]
 
 DESCRIPTION
 -----------
@@ -25,13 +24,11 @@ A special procedure is required to shut down hosts with HA enabled. After disabl
 
 OPTIONAL PARAMETERS
 -------------------
-
-*<parameter>=<PARAMETER>*::
-	*xe host-shutdown* uses the common host selector mechanism.
+<host-selectors>::
+	Parameters to select host(s) - Use *xe host-list params=all* to get a list of host parameters to filter on.
 
 EXAMPLES
 --------
-
 To shut down a host specified by its name-label:
 
 - *xe host-shutdown* host=<NAME-LABEL>
@@ -42,7 +39,7 @@ To shut down all disabled hosts:
 
 SEE ALSO
 --------
-*xe-host-disable*(1), *xe-host-evacuate*(1)
+*xe help host-shutdown*, *xe host-list*(1), *xe-host-disable*(1), *xe-host-evacuate*(1)
 
 AUTHORS
 -------
@@ -50,11 +47,9 @@ Manpage Author(s):
 
 - Jeff Loughridge <jeffl@alumni.duke.edu>
 
-
 BUGS
 ----
 See http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP on how to send bug reports, send bugs and general questions to xen-api@lists.xen.org.
-
 
 COPYRIGHT
 ---------

@@ -8,35 +8,42 @@ XE(1)
 
 NAME
 ----
-xe-vm-data-source-list -
+xe-vm-data-source-list - Display data sources present on VMs
 
 SYNOPSIS
 --------
+*xe vm-data-source-list* [ vm-selectors ]
 
 DESCRIPTION
 -----------
+*xe vm-data-source-list* displays data-sources and their parameters present on specific VM. Use *xe vm-data-source-query* to return data from sensors displayed by *xe vm-data-source-list*. 
 
+Select a VM by using one or more parameters displayed by xe vm-list params=all. *xe vm-data-source-list* can only be performed on one VM at a time.
 
 OPTIONAL PARAMETERS
 -------------------
-
 *<vm-selectors>*:: 
-	
-
+	Parameters to select VM(s) - use *xe vm-list params=all* to get a list of VM parameters to filter on.
 
 EXAMPLES
 --------
+To display data sources for a specific VM using a name label:
 
+- *xe vm-data-source-list* vm=<VM NAME-LABEL>
+
+To display data sources for a specific VM using a UUID: 
+
+- *xe vm-data-source-list* uuid=<VM UUID>
 
 SEE ALSO
 --------
-*xe help vm-data-source-list*,
+*xe help vm-data-source-list*, *xe vm-data-source-forget*(1), *xe vm-data-source-query*(1), *xe vm-list*(1)
 
 AUTHORS
 -------
 Manpage Author(s):
 
-- <manpage author name> <manpage author email address>
+- Matthew Spah <spahmatthew@xenapiadmin.com>
 
 BUGS
 ----
@@ -44,5 +51,5 @@ For guidelines on submitting bug reports see http://wiki.xen.org/wiki/Reporting_
 
 COPYRIGHT
 ---------
-Copyright \(C)  2013 - <manpage author name>
+Copyright \(C)  2013 - Matthew Spah
 Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License, Version 1.3 or any later version published by the Free Software Foundation; with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts. A copy of the license is included in the section entitled "GNU Free Documentation License".
