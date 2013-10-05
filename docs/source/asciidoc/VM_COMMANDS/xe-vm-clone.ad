@@ -14,7 +14,6 @@ SYNOPSIS
 --------
 *xe vm-clone* <vm-selectors>=<SELECTOR> new-name-label=<NEW NAME LABEL> [ new-name-description=<NEW NAME DESCRIPTION> ] 
 
-
 DESCRIPTION
 -----------
 
@@ -34,7 +33,6 @@ OPTIONAL PARAMETERS
 
 EXAMPLES
 --------
-
 
 SEE ALSO
 --------

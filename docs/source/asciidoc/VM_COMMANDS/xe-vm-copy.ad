@@ -13,6 +13,7 @@ xe-vm-copy -
 SYNOPSIS
 --------
 
+
 DESCRIPTION
 -----------
 
@@ -26,8 +27,10 @@ OPTIONAL PARAMETERS
 -------------------
 *new-name-description*:: 
 	Desired new name-description for VM
+	
 *sr-uuid*:: 
 	Desired storage repository UUID - use *xe sr-list* to get a list of storage repositories
+	
 *<vm-selectors>*:: 
 	Parameters to select VM(s) - use *xe vm-list params=all* to get a list of VM parameters to filter on.
 
