@@ -4,6 +4,7 @@ XE(1)
 :man source:   xe vbd-param-list
 :man version:  {1}
 :man manual:   xe vbd-param-list manual
+
 NAME
 ----
 xe-vbd-param-list - Displays all parameters for a Virtual Block Device (VBD) 

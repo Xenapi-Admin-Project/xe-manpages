@@ -126,7 +126,7 @@
   <!-- * processing before final output, the character-map will -->
   <!-- * handle conversion of the &#x2022; to "\(bu" for us -->
   <xsl:text>&#10;</xsl:text>
-  <xsl:text>.sp</xsl:text>
+  <xsl:text>.sp 0</xsl:text>
   <xsl:text>&#10;</xsl:text>
   <xsl:text>.RS</xsl:text>
   <xsl:if test="not($list-indent = '')">
@@ -150,12 +150,13 @@
     </xsl:otherwise>
   </xsl:choose>
   <xsl:text>'</xsl:text>
+  <xsl:text>&#x20;&#x20;&#x20;&#x20;</xsl:text>
   <xsl:text>&#x2022;</xsl:text>
   <xsl:text>\h'+</xsl:text>
   <xsl:choose>
     <xsl:when test="not($list-indent = '')">
       <xsl:text>0</xsl:text>
-      <xsl:value-of select="$list-indent - 1"/>
+      <xsl:value-of select="$list-indent - 2.4"/>
     </xsl:when>
     <xsl:otherwise>
       <xsl:text>\n(INu-1</xsl:text>

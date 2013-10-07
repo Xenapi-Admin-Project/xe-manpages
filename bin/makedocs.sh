@@ -7,11 +7,13 @@
 
 setup()
 {
-	DOCDIR="$HOME/Projects/xe-manpages"
+	DOCDIR="$HOME/Documents/XenAPI/xe-manpages"
 	SRCDOCDIR="$DOCDIR/docs/source/asciidoc"
+	RELEASE="$SRCDOCDIR/RELEASE/"
 	MANDOCDIR="$DOCDIR/docs/manpage"
 	PDFDOCDIR="$DOCDIR/docs/pdf"
 	BINDIR="$DOCDIR/bin"
+	XSLPOINTER="$BINDIR/XSLManpages/manpages/docbook.xsl" #Added 10/7/2013
 	TMPDIR=$(mktemp -d)
 	PROGNAME=$(basename $0)
 	
@@ -27,11 +29,17 @@ setup()
 		fi
 	done
 
+
+	if [[ ! -f "$XSLPOINTER" ]] ;then
+		echo "XenAPI Manpage XSL Stylesheets not installed - exiting"
+		exit 1
+	fi
+
 	if ! which a2x &> /dev/null ; then
 		echo "a2x command not installed - exiting"
 		exit 1
 	fi
-
+	
 	if ! which fop &> /dev/null ; then
 		echo "The fop command not installed - $PROGNAME will not be able to create pdf documents"
 	fi
@@ -57,7 +65,7 @@ makeman()
 	echo "Converting $FILE to manpage"
 	cp -f "$FILE" "$TMPDIR"
 	TMPFILE=$(basename "$FILE") 
-	a2x --doctype manpage -f manpage "${TMPDIR}/${TMPFILE}" -D "${MANDOCDIR}/"
+	a2x --xsl-file="$XSLPOINTER" --doctype manpage -f manpage "${TMPDIR}/${TMPFILE}" -D "${MANDOCDIR}/"
 	echo ""
 }
 
