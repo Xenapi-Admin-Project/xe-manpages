@@ -21,13 +21,14 @@ REQUIRED PARAMETERS
 -------------------
 *uuid*::
 	VDI UUID - Use *xe vdi-list* to obtain a list of VDI UUIDs.
+	
 *param-name*::
 	VDI parameter value to return - Use *xe vdi-param-list* to obtain a list of VDI parameters.
 
 OPTIONAL PARAMETERS
 -------------------
 *param-key*::
-	VDI map parameter key value to return
+	VDI key value to return
 
 EXAMPLES
 --------

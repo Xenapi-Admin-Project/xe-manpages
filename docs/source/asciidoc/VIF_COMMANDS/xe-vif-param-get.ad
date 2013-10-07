@@ -23,12 +23,12 @@ REQUIRED PARAMETERS
 	VIF UUID - Use *xe vif-list* to obtain a list of VIF UUIDs
 	
 *param-name*::
-	The VIF parameter value to return.
+	The VIF parameter value to return
 
 OPTIONAL PARAMETERS
 -------------------
 *param-key*::
-	The VIF key value to return.
+	The VIF key value to return
 
 EXAMPLES
 --------

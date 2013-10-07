@@ -1,44 +1,49 @@
 XE(1)
 =======
 :doctype: manpage
-:man source:   xe host-param-get
+:man source:   xe vm-param-get
 :man version:  {1}
-:man manual:   xe host-param-get manual
+:man manual:   xe vm-param-get manual
 
 NAME
 -----
-xe-host-param-get - Return a parameter for a host
+xe-vm-param-get - Return a parameter for a Virtual Machine (VM)
 
 SYNOPSIS
 --------
-*xe host-param-get*  uuid=<HOST UUID> param-name=<PARAMETER> [ param-key=<PARAMETER KEY> ]
+*xe vm-param-get*  uuid=<VM UUID> param-name=<PARAMETER> [ param-key=<PARAMETER KEY> ]
 
 DESCRIPTION
 -----------
-*xe host-param-get* returns the value(s) of a parameter or a map parameter key value for a specified host
+*xe vm-param-get* returns the value(s) of a parameter or a map parameter key value for a specific VM.
 
 REQUIRED PARAMETERS
 -------------------
 *uuid*:: 
-	Host UUID - Use *xe host-list* to obtain a list of Host UUIDs.
+	VM UUID - Use *xe vm-list* to obtain a list of VM UUIDs
+	
 *param-name*:: 
-	The Host parameter to return
+	The VM parameter value to return - Use *xe vm-param-list* to obtain a list of VM parameters 
 
 OPTIONAL PARAMETERS
 -------------------
-*param-key*:: 
-	The Host map parameter key value to return
- 
+*param-key*::
+	The VM key value to return
+
 EXAMPLES
 --------
-To return the UUID of the Suspend Image Storage Repository: 
+To return the power state of a specific VM:
 
-- *xe host-param-get* uuid=<HOST UUID> param-name="suspend-image-sr-uuid"
+- *xe vm-param-get* uuid=<VM UUID> param-name="power-state"
+
+To return the storage_driver_domain key from the map parameter *other-config*:
+
+- *xe vm-param-get* uuid=<VM UUID> param-name="other-config" param-key="storage_driver_domain"
 
 
 SEE ALSO
 --------
-*xe help host-param-get*, *xe host-list*(1), *xe host-param-set*(1), *xe host-param-remove*(1). *xe host-param-clear*(1), *xe host-param-add*(1)
+*xe help vm-param-get*, *xe vm-list*(1), *xe vm-param-set*(1), *xe vm-param-add*(1), *xe vm-param-list*(1)
 
 AUTHORS
 -------

@@ -1,43 +1,45 @@
-XE(1)	
+XE(1)
 =======
 :doctype: manpage
-:man source:   xe task-param-get
+:man source:   xe host-param-get
 :man version:  {1}
-:man manual:   xe task-param-get manual
+:man manual:   xe host-param-get manual
 
 NAME
 -----
-xe-task-param-get - Return a parameter for a task
+xe-host-param-get - Return a parameter for a host
 
 SYNOPSIS
 --------
-*xe task-param-get*  uuid=<TASK UUID> param-name=<PARAMETER> [ param-key=<PARAMETER KEY> ]
+*xe host-param-get*  uuid=<HOST UUID> param-name=<PARAMETER> [ param-key=<PARAMETER KEY> ]
 
 DESCRIPTION
 -----------
-*xe task-param-get* returns the value(s) of a parameter or a map parameter key value for a specified task.
+*xe host-param-get* returns the value(s) of a parameter or a map parameter key value for a specified host.
 
 REQUIRED PARAMETERS
 -------------------
 *uuid*:: 
-	Task UUID - Use *xe task-list* to obtain a list of task UUIDs.
+	Host UUID - Use *xe host-list* to obtain a list of host UUIDs.
 
 *param-name*:: 
-	The task parameter to return
+	The host parameter value to return - Use *xe host-param-list* to obtain a list of host parameters
 
 OPTIONAL PARAMETERS
 -------------------
 *param-key*:: 
-	The task key value to return
-
+	The host key value to return
+ 
 EXAMPLES
 --------
-// Add examples...
+To return the UUID of the Suspend Image Storage Repository: 
+
+- *xe host-param-get* uuid=<HOST UUID> param-name="suspend-image-sr-uuid"
 
 
 SEE ALSO
 --------
-*xe help task-param-get*, *xe task-list(1), *xe task-param-list*(1), *xe task-param-set*(1), *xe task-cancel*(1)
+*xe help host-param-get*, *xe host-list*(1), *xe host-param-set*(1), *xe host-param-remove*(1). *xe host-param-clear*(1), *xe host-param-add*(1)
 
 AUTHORS
 -------

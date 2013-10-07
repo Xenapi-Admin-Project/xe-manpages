@@ -21,13 +21,14 @@ REQUIRED PARAMETERS
 -------------------
 *uuid*::
 	VBD UUID - Use *xe vbd-list* to obtain a list of VBD UUIDs.
+	
 *param-name*::
 	VBD parameter value to return - Use *xe vbd-param-list* to obtain a list of VBD parameters.
 
 OPTIONAL PARAMETERS
 -------------------
 *param-key*::
-	VBD map parameter key value to return
+	VBD key value to return
 
 EXAMPLES
 --------

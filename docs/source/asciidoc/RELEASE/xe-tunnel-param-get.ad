@@ -23,7 +23,7 @@ REQUIRED PARAMETERS
 	Tunnel UUID - Use *xe tunnel-list* to obtain a list of tunnel UUIDs.
 
 *param-name*::
-	The tunnel parameter to return.
+	The tunnel parameter to return - Use *xe tunnel-param-list* to obtain a list of tunnel parameters 
 	
 OPTIONAL PARAMETERS
 -------------------
@@ -32,8 +32,9 @@ OPTIONAL PARAMETERS
 
 EXAMPLES
 --------
-To return the *access-PIF* parameter: ::
-	*xe tunnel-param-get* uuid=<TUNNEL UUID> param-name="access-PIF"
+To return the *access-PIF* parameter:
+
+- *xe tunnel-param-get* uuid=<TUNNEL UUID> param-name="access-PIF"
 
 SEE ALSO
 --------
@@ -41,13 +42,13 @@ SEE ALSO
 
 AUTHORS
 -------
-Manpage Author(s): ::
-Matthew Spah <spahmatthew@xenapiadmin.com>
+Manpage Author(s):
+
+- Matthew Spah <spahmatthew@xenapiadmin.com>
 
 BUGS
 ----
 See http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP on how to send bug reports, send bugs and general questions to xen-api@lists.xen.org.
-
 
 COPYRIGHT
 ---------

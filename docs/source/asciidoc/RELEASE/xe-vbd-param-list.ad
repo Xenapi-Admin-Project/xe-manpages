@@ -6,7 +6,7 @@ XE(1)
 :man manual:   xe vbd-param-list manual
 NAME
 ----
-xe-vbd-param-list - Displays all parameters for a VBD 
+xe-vbd-param-list - Displays all parameters for a Virtual Block Device (VBD) 
 
 SYNOPSIS
 --------
@@ -37,7 +37,6 @@ Manpage Author(s):
 
 - Matthew Spah <spahmatthew@xenapiadmin.com>
 - Christina Nguyen <christinam@xenapiadmin.com>
-
 
 BUGS
 ----
