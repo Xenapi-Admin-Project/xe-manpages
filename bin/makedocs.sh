@@ -10,17 +10,41 @@
 # Version 0.2
 # added the -r option to render the entire RELEASE Directory
 
+
+# Looking for the xe-manpage repository in Users home directory
+find_git()
+{
+	GITDIRS=$(find $HOME -name "*.git" | grep 'xe-manpages/.git')
+	PS3='Please enter your choice for default GIT xe-manpage directory: '
+	select opt in ${GITDIRS[@]}
+	do
+		echo "${opt%/.git}"
+		break ;
+	done
+
+}
+
 setup()
 {
-	DOCDIR="$HOME/Projects/xe-manpages"
+	DOCDIR=$(find_git)
+		
+	# Added 10/15/2013 
+	# If we can't find the repository exit
+	if [[ ! -d "$DOCDIR" ]] ;then
+		echo "Unable to locate GIT xe-manpages directory"
+		echo "Have you cloned the xe-manpages repostory?"
+		exit 1
+	fi
+	
 	SRCDOCDIR="$DOCDIR/docs/source/asciidoc"
-	RELEASE="$SRCDOCDIR/RELEASE/"
+	RELEASE="$SRCDOCDIR/RELEASE/" #Added 10/14/2013
 	MANDOCDIR="$DOCDIR/docs/manpage"
 	PDFDOCDIR="$DOCDIR/docs/pdf"
-	BINDIR="$DOCDIR/bin"
-	XSLPOINTER="$BINDIR/XSLManpages/manpages/docbook.xsl" #Added 10/7/2013
+	BINDIR="$DOCDIR/bin" 
+	XSLPOINTER="$BINDIR/XSLManpages/manpages/docbook.xsl" #Added 10/14/2013
 	TMPDIR=$(mktemp -d)
 	PROGNAME=$(basename $0)
+	
 	
 	for DIR in "$SRCDOCDIR" "$MANDOCDIR" "$PDFDOCDIR" ; do
 		if [[ ! -d "$DIR" ]] ;then
@@ -35,7 +59,8 @@ setup()
 	done
 
 
-	if [[ ! -f "$XSLPOINTER" ]] ;then
+	# Added 10/14/2013
+	if [[ ! -f "$XSLPOINTER" ]] ;then 
 		echo "XenAPI Manpage XSL Stylesheets not installed - exiting"
 		exit 1
 	fi
@@ -61,7 +86,7 @@ syntax()
 	echo "options:"
 	echo "-m	make manpage document type"
 	echo "-p	make pdf document type"
-	echo "-r	render manpage RELEASE directory"
+	echo "-r	render manpage RELEASE directory" #Added 10/14/2013
 	echo ""
 }
 
@@ -107,7 +132,7 @@ cleanup()
 }
 
 setup
-TARGET="$@"
+TARGET="$@" # Added 10/14/2013
 if [[ -z "$1" ]] ; then
 	syntax
 	exit 1
@@ -118,13 +143,13 @@ while getopts ahmrpu opt ;do
         case $opt in
                 m) FORMAT="manpage" ;;
                 p) FORMAT="pdf" ;;
-                r) TARGET="$RELEASE" ;; 
+                r) TARGET="$RELEASE" ;; # Added 10/14/2013 
                 \?) echo "Unknown option" ; syntax ;;
         esac
 done
 shift $(($OPTIND - 1))
 
-
+# Replaced "$@" with $TARGET so we could specify the directory
 for ITEM in $TARGET ;do
 	if [[ -d "$ITEM" ]] ;then
 		for FILE in $(find $ITEM -name '*.ad') ;do
