@@ -8,27 +8,29 @@ XE(1)
 
 NAME
 ----
-xe-host-shutdown-agent -
+xe-host-shutdown-agent - Stop the xapi service on host
 
 SYNOPSIS
 --------
+*xe host-shutdown-agent*
 
 DESCRIPTION
 -----------
+*xe host-shutdown-agent* attempts to stop the xapi service on host. To restart the xapi service, use *xe-toolstart-restart* or */etc/init.d/xapi start*.
 
 EXAMPLES
 --------
-
+To stop the xapi service on host:
+	*xe host-shutdown-agent*
 
 SEE ALSO
 --------
-*xe help host-shutdown-agent*,
-
+*xe help host-shutdown-agent*, *xe host-list*(1), *xe-toolstack-restart*
 AUTHORS
 -------
 Manpage Author(s):
 
-- <manpage author name> <manpage author email address>
+- Matthew Spah <spahmatthew@xenapiadmin.com>
 
 BUGS
 ----
@@ -36,5 +38,5 @@ For guidelines on submitting bug reports see http://wiki.xen.org/wiki/Reporting_
 
 COPYRIGHT
 ---------
-Copyright \(C)  2013 - <manpage author name>
+Copyright \(C)  2013 - Matthew Spah 
 Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License, Version 1.3 or any later version published by the Free Software Foundation; with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts. A copy of the license is included in the section entitled "GNU Free Documentation License".

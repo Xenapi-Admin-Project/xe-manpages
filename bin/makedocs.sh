@@ -5,9 +5,14 @@
 # Version 0.1
 # October 22, 2012
 
+# Edit by Matthew Spah
+# Oct 14, 2013
+# Version 0.2
+# added the -r option to render the entire RELEASE Directory
+
 setup()
 {
-	DOCDIR="$HOME/Documents/XenAPI/xe-manpages"
+	DOCDIR="$HOME/Projects/xe-manpages"
 	SRCDOCDIR="$DOCDIR/docs/source/asciidoc"
 	RELEASE="$SRCDOCDIR/RELEASE/"
 	MANDOCDIR="$DOCDIR/docs/manpage"
@@ -54,8 +59,9 @@ syntax()
 	echo ""
 	echo "$PROGNAME [options] <asciidoc file>"
 	echo "options:"
-	echo "-m   make manpage document type"
-	echo "-p   make pdf document type"
+	echo "-m	make manpage document type"
+	echo "-p	make pdf document type"
+	echo "-r	render manpage RELEASE directory"
 	echo ""
 }
 
@@ -101,22 +107,25 @@ cleanup()
 }
 
 setup
+TARGET="$@"
 if [[ -z "$1" ]] ; then
 	syntax
 	exit 1
 fi
 
 
-while getopts ahmpu opt ;do
+while getopts ahmrpu opt ;do
         case $opt in
                 m) FORMAT="manpage" ;;
                 p) FORMAT="pdf" ;;
+                r) TARGET="$RELEASE" ;; 
                 \?) echo "Unknown option" ; syntax ;;
         esac
 done
 shift $(($OPTIND - 1))
 
-for ITEM in $@ ;do
+
+for ITEM in $TARGET ;do
 	if [[ -d "$ITEM" ]] ;then
 		for FILE in $(find $ITEM -name '*.ad') ;do
 			case "$FORMAT" in
