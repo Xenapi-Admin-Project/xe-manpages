@@ -11,19 +11,6 @@
 # added the -r option to render the entire RELEASE Directory
 
 
-# Looking for the xe-manpage repository in Users home directory
-find_git()
-{
-	GITDIRS=$(find $HOME -name "*.git" | grep 'xe-manpages/.git')
-	PS3='Please enter your choice for default GIT xe-manpage directory: '
-	select opt in ${GITDIRS[@]}
-	do
-		echo "${opt%/.git}"
-		break ;
-	done
-
-}
-
 setup()
 {
 	DOCDIR=$(find_git)
@@ -77,6 +64,19 @@ setup()
 		echo "The xsltproc command not installed - $PROGNAME will not be able to process documents"
 		exit 1
 	fi
+}
+
+# Looking for the xe-manpage repository in Users home directory
+find_git()
+{
+	GITDIRS=$(find $HOME -name "*.git" | grep 'xe-manpages/.git')
+	PS3='Please enter your choice for default GIT xe-manpage directory: '
+	select opt in ${GITDIRS[@]}
+	do
+		echo "${opt%/.git}"
+		break ;
+	done
+
 }
 
 syntax()
