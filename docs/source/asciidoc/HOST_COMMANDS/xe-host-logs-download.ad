@@ -18,6 +18,8 @@ DESCRIPTION
 -----------
 *xe host-logs-download* downloads and compresses the XenServer host(s) logs into a gzip file. The file-name can be specified using the *file-name* parameter. Select host(s) by using one or more parameters displayed by xe host-list params=all. If no hosts(s) are selected then the log of all hosts is saved. Append --multiple if more than one host is selected. 
 
+While the xe host-logs-download command will work if executed on the local host (that is, without a specific hostname specified), do not use it this way. Doing so will clutter the control domain partition with the copy of the logs, which would be a bad thing. The command should only be used from a remote off-host machine where you have space to hold the copy of the logs.
+
 
 OPTIONAL PARAMETERS
 -------------------
