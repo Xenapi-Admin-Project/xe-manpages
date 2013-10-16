@@ -15,16 +15,8 @@ SYNOPSIS
 
 DESCRIPTION
 -----------
-*xe host-reboot* reboots specified disabled XenServer host(s). Use *xe host-disable* to disable a XenServer host.
+*xe host-reboot* reboots specified disabled XenServer host(s). Use *xe host-disable* to disable a XenServer host. Currently running Virtual Machines that are a resident on rebooting hosts will be evacuated, and migrated to available hosts. After the rebooting hosts have completed the reboot, they will reconnect and synchronize with the pool.
 
-When rebooting XenServer slave hosts in a pool, the other members and the master will continue to function as normal. If 
-
-
-If the specified XenServer hosts are members of a pool, the loss of connectivity on shutdown will be handled and
-the pool will recover when the XenServer hosts returns. If you shut down a pool member, other members and
-the master will continue to function. If you shut down the master, the pool will be out of action until the master
-is rebooted and back on line (at which point the members will reconnect and synchronize with the master) or
-until you make one of the members into the master.
 
 REQUIRED PARAMETERS
 -------------------
