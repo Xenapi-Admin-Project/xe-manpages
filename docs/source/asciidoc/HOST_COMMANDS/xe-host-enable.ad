@@ -14,10 +14,11 @@ SYNOPSIS
 --------
 *xe-host-enable* [ host-selectors ] [--multiple]
 
-
 DESCRIPTION
 -----------
-*xe host-enable* enables XenServer host(s). Select hosts by using one or more parameters displayed by xe host-list params=all.  Append --multiple if more than one host matches. 
+*xe host-enable* enables XenServer host(s). Once the host(s) are enabled, Virtual Machines can be migrated or started on the host(s).  
+
+Select hosts by using one or more parameters displayed by xe host-list params=all.  Append --multiple if more than one host matches. 
 
 REQUIRED PARAMETERS
 -------------------
