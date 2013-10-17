@@ -7,7 +7,7 @@ XE(1)
 
 NAME
 ----
-xe-host-evacuate - Migrate all VMs off XenServer host
+xe-host-evacuate - Migrate all Virtual Machiness off XenServer host(s)
 
 SYNOPSIS
 --------
@@ -15,11 +15,11 @@ SYNOPSIS
 
 DESCRIPTION
 -----------
-*xe host-evacuate* migrates all running Virtual Machines (VM) from the specified XenServer host(s) to other suitable host(s). *xe host-evacuate* requires the evacuated host(s) be disabled before VM migration. 
+*xe host-evacuate* migrates all running Virtual Machines (VM) from the specified XenServer host(s) to other suitable host(s). *xe host-evacuate* requires the host(s) be disabled before VM migration. 
 
-When evacuating the pool master, a new pool master must be selected for pool functionality to continue. To elect a new pool master when HA is disabled use *pool-designate-new-master*. With HA enabled, shut down the evacuated host, which will cause HA to elect a new master at random. 
+When evacuating VMs from the pool master, a new pool master must be selected for pool functionality to continue. To elect a new pool master when HA is disabled use *pool-designate-new-master*. With HA enabled, shut down the evacuated pool master, which will cause HA to elect a new master at random. 
 
-
+Select hosts by using one or more parameters displayed by xe host-list params=all.  Append --multiple if more than one host matches. 
 
 REQUIRED PARAMETERS
 -------------------

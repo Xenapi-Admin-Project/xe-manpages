@@ -32,6 +32,10 @@ OPTIONAL PARAMETERS
 	
 EXAMPLES
 --------
+To check the current status of a host:
+
+- *xe host-param-get* 
+
 To enable a host using a UUID: 
 
 - *xe host-enable* uuid=<HOST UUID>

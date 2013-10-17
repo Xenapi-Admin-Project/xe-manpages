@@ -7,7 +7,7 @@ XE(1)
 
 NAME
 ----
-xe-host-disable - Disable a XenServer host
+xe-host-disable - Disable XenServer host(s)
 
 SYNOPSIS
 --------
@@ -15,7 +15,9 @@ SYNOPSIS
 
 DESCRIPTION
 -----------
-*xe host-disable* disables XenServer host(s). Select hosts by using one or more parameters displayed by xe host-list params=all.  Append --multiple if more than one host matches. 
+*xe host-disable* disables XenServer host(s). To migrate Virtual Machines off a disabled host use *xe host-evacuate*. Once a host is disabled, no new Virtual Machines can be started or migrated to the host. Use *xe host-enabled* to re-enabled any disabled hosts. 
+
+Select hosts by using one or more parameters displayed by xe host-list params=all.  Append --multiple if more than one host matches. 
 
 REQUIRED PARAMETERS
 -------------------
@@ -32,6 +34,8 @@ EXAMPLES
 To disable a host using a UUID: 
 
 - *xe host-disable* uuid=<HOST UUID>
+
+To disable 
 		
 SEE ALSO
 --------
