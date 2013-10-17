@@ -5,13 +5,13 @@ XE(1)
 :man version:  {1}
 :man manual:   xe host-get-system-status-capabilities manual
 
-
 NAME
 ----
-xe-host-get-system-status-capabilities -
+xe-host-get-system-status-capabilities - Display system status capabilities for XenServer host(s)
 
 SYNOPSIS
 --------
+*xe host-get-system-status-capabilities* 
 
 DESCRIPTION
 -----------

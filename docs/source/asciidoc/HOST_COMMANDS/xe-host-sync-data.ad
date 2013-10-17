@@ -15,7 +15,9 @@ SYNOPSIS
 
 DESCRIPTION
 -----------
-*xe host-sync-data* synchronises non-database data from the pool master with the specified host(s). Select host(s) by using one or more parameters displayed by xe host-list params=all. Append --multiple if more than one host is selected. 
+*xe host-sync-data* synchronises non-database data from the pool master with the specified host(s). 
+
+Select host(s) by using one or more parameters displayed by xe host-list params=all. Append --multiple if more than one host is selected. 
 
 OPTIONAL PARAMETERS
 -------------------

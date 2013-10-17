@@ -15,7 +15,7 @@ SYNOPSIS
 
 DESCRIPTION
 -----------
-*xe host-disable* disables XenServer host(s). To migrate Virtual Machines off a disabled host use *xe host-evacuate*. Once a host is disabled, no new Virtual Machines can be started or migrated to the host. Use *xe host-enabled* to re-enabled any disabled hosts. 
+*xe host-disable* disables XenServer host(s). Any Virtual Machines (VM) running on a disabled host will remain there until migrated. While disabled, no VMs can be migrated or started on the host. Use *xe host-enabled* to re-enabled any disabled hosts. 
 
 Select hosts by using one or more parameters displayed by xe host-list params=all.  Append --multiple if more than one host matches. 
 
@@ -31,11 +31,14 @@ OPTIONAL PARAMETERS
 	
 EXAMPLES
 --------
+To return the status of a host:
+
+- *xe host-param-get* uuid=<HOST UUID> params="enabled"
+
 To disable a host using a UUID: 
 
 - *xe host-disable* uuid=<HOST UUID>
-
-To disable 
+ 
 		
 SEE ALSO
 --------

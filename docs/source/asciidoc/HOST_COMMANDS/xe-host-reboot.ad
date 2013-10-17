@@ -15,12 +15,11 @@ SYNOPSIS
 
 DESCRIPTION
 -----------
-*xe host-reboot* reboots specified XenServer host(s) that have been disabled. Use *xe host-disable* to disable a host. Currently running Virtual Machines that are a resident on rebooting hosts are migrated to suitable hosts. 
+*xe host-reboot* reboots specified XenServer host(s) that have been disabled. Use *xe host-disable* to disable a host. Virtual Machines (VM) utilizing local storage will be halted, while VMs utilization shared remote storage will be migrated to other suitable host(s).
  
-Upon reboot, slave host(s) reconnect and synchronize with the pool. If the rebooting host is a master, then pool function is halted until the master recovers, or a new master is selected. 
+Upon reboot, slave host(s) reconnect and synchronize with the pool. When rebooting the master, pool function is halted until the master recovers, or a new master is selected.
 
-Select hosts by using one or more parameters displayed by xe host-list params=all.  Append --multiple if more than one host matches. 
-
+Select hosts by using one or more parameters displayed by xe host-list params=all.  Append --multiple if more than one host matches.
 
 REQUIRED PARAMETERS
 -------------------
@@ -34,13 +33,21 @@ OPTIONAL PARAMETERS
 	
 EXAMPLES
 --------
+To return the status of a XenServer host:
+
+- *xe host-param-get* uuid=<HOST UUID> param-name="enabled"
+
 To reboot a host using a UUID:
 
 - *xe host-reboot* uuid=<HOST UUID>
 
+To reboot all disabled hosts:
+
+- *xe host-reboot* enabled="false" --multiple
+
 SEE ALSO
 --------
-*xe help host-reboot*, *xe-host-disable*(1), *xe-host-enable*(1), 
+*xe help host-reboot*, *xe-host-disable*(1), *xe-host-enable*(1), *xe-host-list*(1), *xe-host-param-get*(1)
 
 AUTHORS
 -------

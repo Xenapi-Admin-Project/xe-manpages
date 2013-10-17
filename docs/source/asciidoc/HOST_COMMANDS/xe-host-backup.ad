@@ -5,7 +5,6 @@ XE(1)
 :man version:  {1}
 :man manual:   xe host-backup manual
 
-
 NAME
 ----
 xe-host-backup - Download a copy of the host's control domain
@@ -18,17 +17,18 @@ DESCRIPTION
 -----------
 *xe host-backup* creates a back up of a control domain.
 
+While the xe host-backup command will work if executed on the local host (that is, without a specific hostname specified), do not use it this way. Doing so would fill up the control domain partition with the backup file. The command should only be used from a remote off-host machine where you have space to hold the backup file.
 
 REQUIRED PARAMETERS
 -------------------
 *file-name*::
 	Desired filename for Dom0 back up
 	
-
 OPTIONAL PARAMETERS
 -------------------
 *<host-selectors>*::
 	Parameters to select host(s) - use *xe host-list params=all* to get a list of host parameters to filter on. 
+
 *--multiple* ::
 	Append --multiple if you want to match more than one host.
 	
@@ -40,7 +40,7 @@ To create a back up of a control domain on a single host:
 
 SEE ALSO
 --------
-*xe help host-backup*,
+*xe help host-backup*, *xe host-list*(1), 
 
 AUTHORS
 -------
