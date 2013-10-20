@@ -19,40 +19,46 @@ DESCRIPTION
 
 Output can be filtered by using the *params* parameter and a value (multiple parameters should be separated by commas):
 
-- *xe vm-list params=<PARAM1>*
-- *xe vm-list params=<PARAM1,PARAM2,PARAM3>*
+- *xe vm-list params="name-label"*
+- *xe vm-list params="uuid,name-label,dom-id"*
 
 Output can be filtered by using parameter values and the desired value:
 
-- *xe vm-list <PARAMETER>=<VALUE>*
+- *xe vm-list is-control-domain="true"*
 
 Append --minimal to display values for one parameter on a single line separated by commas:
 
-- *xe vm-list params="<PARAMETER>" --minimal*
+- *xe vm-list params="uuid" --minimal*
 
 
 OPTIONAL PARAMETERS
 -------------------
 
-*params*:: 
-	
-*database:*:: 
+*all*::
+	Display all parameter values
 	
 *uuid*:: 
 	Display VM UUIDs
+	
 *name-label*:: 
 	Display VM name-labels
+	
 *name-description*:: 
 	Display VM name-descriptions
+	
 *user-version*:: 
+	Display VMs user-version
 	
 *is-a-template*:: 
-	
+	Display if the VM is a template [ true | false ]
+
 *is-a-snapshot*:: 
+	Display if the VM is a snapshot [ true | false ]
 	
 *snapshot-of*:: 
 	
-*snapshots*:: 
+*snapshots*::
+	Display VMs snapshot UUIDs
 	
 *snapshot-time*:: 
 	
@@ -63,54 +69,74 @@ OPTIONAL PARAMETERS
 *children*:: 
 	
 *is-control-domain*:: 
+	Display if the VM is the control-domain [ true | false ]
 	
 *power-state*:: 
+	Display VMs power state [ running | halted ]
 	
 *memory-actual*:: 
+	
 	
 *memory-target*:: 
 	
 *memory-overhead*:: 
 	
-*memory-static-max*:: 
+*memory-static-max*::
+	Display VMs maximum amount of static memory, in bytes
 	
-*memory-dynamic-max*:: 
+*memory-dynamic-max*::
+	Display VMs maximum amount of dynamic memory, in bytes
 	
 *memory-dynamic-min*:: 
+	Display VMs minimal amount of dynamic memory, in bytes
 	
 *memory-static-min*:: 
+	Display VMs minimal amount of static memory, in bytes
 	
 *suspend-VDI-uuid*:: 
 	
 *suspend-SR-uuid*:: 
 	
 *VCPUs-params*:: 
+	Dispaly VMs VCPU configuration parameters
 	
 *VCPUs-max*:: 
+	Display VMs maximum amount of VCPUs
 	
 *VCPUs-at-startup*:: 
+	Display VMs number of VCPUs at boot
 	
 *actions-after-shutdown*:: 
+	Display VMs actions after a shutdown
 	
 *actions-after-reboot*:: 
+	Display VMs actions after a reboot
 	
 *actions-after-crash*:: 
+	Display VMs actions actions after a crash
 	
-*console-uuids*:: 
+*console-uuids*::
+	Display VMs console UUIDs
 	
 *platform*:: 
 	
 *allowed-operations*:: 
 	Display list of operations allowed on VMs
+	
 *current-operations*:: 
 	Display currently running operations on VMs
+	
 *blocked-operations*:: 
+	Display a VMs blocked-operations
 	
 *allowed-VBD-devices*:: 
+	Display VMs allowed Virtual Block Device (VBD) numbers
 	
 *allowed-VIF-devices*:: 
+	Display VMs allowed Virtual Interfaces (VIF) numbers
 	
 *possible-hosts*:: 
+	Display VMs suitable hosts to be present on
 	
 *HVM-boot-policy*:: 
 	
@@ -134,31 +160,37 @@ OPTIONAL PARAMETERS
 	
 *last-boot-record*:: 
 	
-*resident-on*:: 
+*resident-on*::
+	Display a VMs current host
 	
-*affinity*:: 
+*affinity*:: 	
 	
-*other-config*:: 
-	
-*dom-id*:: 
+*dom-id*::
+	Display VMs dom-id number
 	
 *recommendations*:: 
 	
 *xenstore-data*:: 
 	
 *ha-always-run*:: 
+	[DEPRECATED] Display if the VM will always be restarted on another host incase failure on the VMs current host [ true | false ]
 	
-*ha-restart-priority*:: 
+*ha-restart-priority*::
+	Display VMs restart priority, 1 is the highest priority [ 1, 2, 3 ]  
 	
 *blobs*:: 
+	Display VMs binary data store 
 	
 *start-time*:: 
-	
+	Display timestamps of the date and time that the metrics for the VMs were read, in the form yyyymmddThh:mm:ss
+
 *install-time*:: 
 	
 *VCPUs-number*:: 
+	Display VMs number of VCPUs
 	
 *VCPUs-utilisation*:: 
+	Display VMs VCPUs utilisation
 	
 *os-version*:: 
 	
@@ -182,7 +214,8 @@ OPTIONAL PARAMETERS
 	
 *tags*:: 
 	
-*appliance*:: 
+*appliance*::
+	Display VMs appliance/vApp UUIDs
 	
 *start-delay*:: 
 	
@@ -193,21 +226,10 @@ OPTIONAL PARAMETERS
 *version*:: 
 	
 *generation-id*:: 
-	
-*console-uuids:contains*:: 
-	
-*allowed-operations:contains*:: 
-	
-*current-operations:contains*:: 
-	
-*allowed-VBD-devices:contains*:: 
-	
-*allowed-VIF-devices:contains*:: 
-	
-*tags:contains*:: 
-	
 
+*other-config*:: 
 
+	
 
 EXAMPLES
 --------
@@ -217,15 +239,15 @@ To display all parameters for all VMs:
 
 To display all parameters for a specific VM:
 
-- *xe vm-list* uuid=<vm UUID> params="all"
+- *xe vm-list* uuid=<VM UUID> params="all"
 
-To display <PARAMETER> for a specific VM:
+To display the *dom-id* for a specific VM:
 
-- *xe vm-list* uuid=<vm UUID> params="VIF-uuids"
+- *xe vm-list* uuid=<vm UUID> params="dom-id"
 
-To display the <PARAMETER> and <PARAMETER> parameters of all VMs  with a <PARAMETER> of <VALUE>:
+To display the UUID and dom-id parameters of all VMs with a *power-state* value of "running":
 
-- *xe vm-list* <PARAMETER>=<VALUE> params="<MULTIPLE PAMETERS>"
+- *xe vm-list* power-state="running" params="uuid,dom-id"
 
 SEE ALSO
 --------
@@ -235,7 +257,7 @@ AUTHORS
 -------
 Manpage Author(s):
 
-- <manpage author name> <manpage author email address>
+- Matthew Spah <spahmatthew@xenapiadmin.com> 
 
 BUGS
 ----
@@ -243,5 +265,5 @@ For guidelines on submitting bug reports see http://wiki.xen.org/wiki/Reporting_
 
 COPYRIGHT
 ---------
-Copyright \(C)  2013 - <manpage author name>
+Copyright \(C)  2013 - Matthew Spah
 Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License, Version 1.3 or any later version published by the Free Software Foundation; with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts. A copy of the license is included in the section entitled "GNU Free Documentation License".
