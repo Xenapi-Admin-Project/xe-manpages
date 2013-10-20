@@ -32,9 +32,9 @@ OPTIONAL PARAMETERS
 	
 EXAMPLES
 --------
-To check the current status of a host:
+To return the current status of a host:
 
-- *xe host-param-get* 
+- *xe host-param-get* uuid=<HOST UUID> param-name="enabled"
 
 To enable a host using a UUID: 
 
