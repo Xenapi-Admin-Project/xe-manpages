@@ -75,8 +75,7 @@ OPTIONAL PARAMETERS
 	Display VMs power state [ running | halted ]
 	
 *memory-actual*:: 
-	
-	
+		
 *memory-target*:: 
 	
 *memory-overhead*:: 
@@ -94,8 +93,10 @@ OPTIONAL PARAMETERS
 	Display VMs minimal amount of static memory, in bytes
 	
 *suspend-VDI-uuid*:: 
+	Display VMs suspend VDI UUIDs
 	
 *suspend-SR-uuid*:: 
+	Display VMs suspend SR UUIDs
 	
 *VCPUs-params*:: 
 	Dispaly VMs VCPU configuration parameters
@@ -139,31 +140,43 @@ OPTIONAL PARAMETERS
 	Display VMs suitable hosts to be present on
 	
 *HVM-boot-policy*:: 
+	Display boot policies for HVM VMs
 	
 *HVM-boot-params*:: 
+	Display boot parameters for HVM VMs
 	
 *HVM-shadow-multiplier*:: 
+	Display shadow multipliers for HVM VMs
 	
 *PV-kernel*:: 
+	Display PV VMs kernel path
 	
-*PV-ramdisk*:: 
+*PV-ramdisk*::
+	Display PV VMs path to init.d
 	
 *PV-args*:: 
+	Display PV kernel command line arguments
 	
 *PV-legacy-args*:: 
+	Display PV VMs legacy arugments 
 	
 *PV-bootloader*:: 
+	Display PV VMs path to bootloader
 	
 *PV-bootloader-args*:: 
+	Display PV VMs bootloader arguments
 	
-*last-boot-CPU-flags*:: 
+*last-boot-CPU-flags*::
+	Display VMs last boot CPU flags
 	
 *last-boot-record*:: 
+	Display VMs last boot record 
 	
 *resident-on*::
 	Display a VMs current host
 	
 *affinity*:: 	
+	Display VM's prefered host
 	
 *dom-id*::
 	Display VMs dom-id number
