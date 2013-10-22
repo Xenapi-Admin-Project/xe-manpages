@@ -34,7 +34,7 @@ EXAMPLES
 --------
 To display the model name of a CPU:
 
-- *xe host-cpu-param-get* uuid=<CPU UUID> param-name=modelname
+- *xe host-cpu-param-get* uuid=<CPU UUID> param-name="modelname"
 
 SEE ALSO
 --------

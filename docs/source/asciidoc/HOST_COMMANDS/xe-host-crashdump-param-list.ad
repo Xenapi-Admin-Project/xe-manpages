@@ -23,17 +23,19 @@ REQUIRED PARAMETERS
 
 EXAMPLES
 --------
-To display all parameters for a specific host-crashdump: ::
-	*xe host-crashdump-param-list* uuid=<HOST-CRASHDUMP UUID>
+To display all parameters for a specific host-crashdump:
+
+- *xe host-crashdump-param-list* uuid=<HOST-CRASHDUMP UUID>
 
 SEE ALSO
 --------
-*xe help host-crashdump-param-list*, 
+*xe help host-crashdump-param-list*, *xe-host-crashdump-list*(1), *xe-host-crashdump-destroy*(1), *xe-host-crashdump-upload*(1), *xe-host-crashdump-param-get*(1)
 
 AUTHORS
 -------
-Manpage Author(s): ::
-Matthew Spah <spahmatthew@xenapiadmin.com>
+Manpage Author(s):
+
+- Matthew Spah <spahmatthew@xenapiadmin.com>
 
 BUGS
 ----

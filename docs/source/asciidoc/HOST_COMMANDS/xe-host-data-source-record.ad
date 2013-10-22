@@ -5,7 +5,6 @@ XE(1)
 :man version:  {1}
 :man manual:   xe host-data-source-record manual
 
-
 NAME
 ----
 xe-host-data-source-record - Record a data-source on a host

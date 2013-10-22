@@ -17,7 +17,7 @@ DESCRIPTION
 -----------
 *xe host-reboot* reboots specified XenServer host(s) that have been disabled. Use *xe host-disable* to disable a host. Virtual Machines (VM) utilizing local storage will be halted, while VMs utilization shared remote storage will be migrated to other suitable host(s).
  
-Upon reboot, slave host(s) reconnect and synchronize with the pool. When rebooting the master, pool function is halted until the master recovers, or a new master is selected.
+Upon reboot, slave host(s) reconnect and synchronize with the pool. When rebooting the master, pool function is halted until the master recovers, or a new master is designated.
 
 Select hosts by using one or more parameters displayed by xe host-list params=all.  Append --multiple if more than one host matches.
 

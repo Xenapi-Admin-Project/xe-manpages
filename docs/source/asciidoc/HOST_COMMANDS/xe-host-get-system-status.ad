@@ -57,12 +57,10 @@ Select from the following entries:
 - xenserver-domains    
 
 
-
-
 REQUIRED PARAMETERS
 -------------------
 *filename*:: 
-	Desired system status archive filename 
+	Desired archive filename 
 
 OPTIONAL PARAMETERS
 -------------------
@@ -70,7 +68,7 @@ OPTIONAL PARAMETERS
 	Comma-separated list of system status entries
 	
 *output*:: 
-	Compression output for system status file  [ tar | tar.bz2 | zip ]
+	Archive format for system status file  [ tar | tar.bz2 | zip ]
 	
 <host-selectors>::
 	Parameters to select host(s) - Use *xe host-list params=all* to get a list of host parameters to filter on

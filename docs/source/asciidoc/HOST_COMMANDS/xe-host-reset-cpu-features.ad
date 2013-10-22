@@ -5,7 +5,6 @@ XE(1)
 :man version:  {1}
 :man manual:   xe host-reset-cpu-features manual
 
-
 NAME
 ----
 xe-host-reset-cpu-features - Removes the feature mask of the host's physical CPU

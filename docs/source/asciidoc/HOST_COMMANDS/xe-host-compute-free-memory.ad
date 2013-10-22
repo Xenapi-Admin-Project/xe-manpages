@@ -5,7 +5,6 @@ XE(1)
 :man version:  {1}
 :man manual:   xe host-compute-free-memory manual
 
-
 NAME
 ----
 xe-host-compute-free-memory - Display the amount of free memory on a host
@@ -16,19 +15,20 @@ SYNOPSIS
  
 DESCRIPTION
 -----------
-*xe host-compute-free-memory* displays the amount of free memory, in bytes, on a host. Only one host can be selected at a time. Select a host by using one or more parameters displayed by xe host-list params=all.
+*xe host-compute-free-memory* displays the amount of free memory, in bytes, on a host. Only one host can be selected at a time. 
+
+Select a host by using one or more parameters displayed by xe host-list params=all.
 
 OPTIONAL PARAMETERS
 -------------------
 *<host-selectors>*::
 		Parameters to select a host - use *xe host-list params=all* to get a list of host parameters to filter on. 
-	
+
 EXAMPLES
 --------
 To display the amount of free memory on a host using the host UUID parameter: 
 
 - *xe host-compute-free-memory* uuid=<HOST UUID>
-
 
 SEE ALSO
 --------

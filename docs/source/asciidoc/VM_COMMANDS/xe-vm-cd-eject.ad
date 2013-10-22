@@ -13,54 +13,50 @@ SYNOPSIS
 --------
 *xe vm-cd-eject* cd-name=<CD NAME> [ vm selectors ] [--multiple]
 
-
 DESCRIPTION
 -----------
 *xe vm-cd-eject* will eject a CD from a Virtual Machine or from multiple Virtual Machines. Select VMs by using one or more parameters displayed by xe vm-list params=all.  Append --multiple if more than one VM matches. 
-
 
 REQUIRED PARAMETERS
 -------------------
 *cd-name*::
 	CD Name - Use *xe cd-list* to obtain a list of CD names.
 
-
 OPTIONAL PARAMETERS
 -------------------
 *<vm selectors*::
 	Parameters to select VM(s) - use *xe vm-list params=all* to get a list of VM parameters to filter on. 
+	
 *--multiple* ::
 	Specify --multiple if you want to match more than one VM.
 	
-
 EXAMPLES
 --------
-To remove a CD from a specified VM: ::
-	xe vm-cd-remove cd-name=<CD NAME> uuid=<VM UUID>
+To remove a CD from a specified VM:
 
-To remove a CD from all VMs resident on a host: ::
-	xe vm-cd-remove cd-name=<CD NAME> resident-on=<HOST UUID> --multiple
+-	xe vm-cd-remove cd-name=<CD NAME> uuid=<VM UUID>
+
+To remove a CD from all VMs resident on a host:
+
+-	xe vm-cd-remove cd-name=<CD NAME> resident-on=<HOST UUID> --multiple
 	
-To remove a CD from all running VMs that are not control domains: ::
-	xe vm-cd-remove cd-name=<CD NAME> power-state=running is-control-domain=false --multiple
+To remove a CD from all running VMs that are not control domains:
 
+-	xe vm-cd-remove cd-name=<CD NAME> power-state=running is-control-domain=false --multiple
 
 SEE ALSO
 --------
 *xe help vm-cd-remove*, *xe-vm-cd-add*(1), *xe-cd-list*(1), *xe-vm-cd-eject*(1), *xe-vm-cd-insert*(1), *xe-vm-cd-list*(1)
 
-
 AUTHORS
 -------
-Manpage Author(s): ::
-Grant McWilliams <grant@soundlinuxtraining.com>
+Manpage Author(s):
 
-
+-	Grant McWilliams <grant@soundlinuxtraining.com>
 
 BUGS
 ----
 For guidelines on submitting bug reports see http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP. Submit bugs and general questions to xen-api@lists.xen.org.
-
 
 COPYRIGHT
 ---------

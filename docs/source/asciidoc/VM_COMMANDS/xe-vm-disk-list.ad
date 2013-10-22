@@ -15,29 +15,43 @@ SYNOPSIS
 
 DESCRIPTION
 -----------
-*xe vm-disk-list* displays VBD and VDI information for a Virtual Machine or for multiple Virtual Machines. Select VMs by using one or more parameters displayed by xe vm-list params=all.  Append --multiple if more than one VM matches. Use the vbd-params and vdi-params options to specify which VBD and VDI parameters to display (separate multiple parameters with commas).
+*xe vm-disk-list* displays VBD and VDI information for Virtual Machines. 
+
+Select VMs by using one or more parameters displayed by xe vm-list params=all.  Append --multiple if more than one VM matches. 
+
+Use the vbd-params and vdi-params options to specify which VBD and VDI parameters to display (separate multiple parameters with commas).
 
 OPTIONAL PARAMETERS
 -------------------
 *<vm selectors*::
 	Parameters to select VM(s) - Use *xe vm-list params=all* to get a list of VM parameters to filter on.
+	
 *vdb-params*::
 	Virtual block device parameters to display - Use *xe vbd-list* & *xe vbd-param-list* to obtain a list of VBD parameters.
+	
 *vdi-params*::
 	Virtual disk image parameters to display - Use *xe vdi-list* & *xe vdi-param-list* to obtain a list of VDI parameters.
+	
 *--multiple* ::
 	Specify --multiple if you want to match more than one VM.
 	
 EXAMPLES
 --------
-To display default VBD and VDI information for all VMs: ::
-	*xe vm-disk-list* --multiple
-To display default VBD and VDI information for a specific VM: ::
-	*xe vm-disk-list* uuid=<VM UUID>
-To display default VBD and VDI infromation for all running VMs: :
-	*xe vm-disk-list* power-state="running" --multiple
-To display the VDI *name-label* and VBD *userdevice* parameters for a specific VM: ::
-	*xe vm-disk-list* vdi-params="name-label" vbd-params="userdevice" uuid=<VM UUID>
+To display default VBD and VDI information for all VMs:
+
+-	*xe vm-disk-list* --multiple
+
+To display default VBD and VDI information for a specific VM:
+
+-	*xe vm-disk-list* uuid=<VM UUID>
+
+To display default VBD and VDI infromation for all running VMs:
+
+-	*xe vm-disk-list* power-state="running" --multiple
+
+To display the VDI *name-label* and VBD *userdevice* parameters for a specific VM:
+
+-	*xe vm-disk-list* vdi-params="name-label" vbd-params="userdevice" uuid=<VM UUID>
 	
 SEE ALSO
 --------
@@ -45,12 +59,9 @@ SEE ALSO
 
 AUTHORS
 -------
-Matthew Spah <spahmatthew@gmail.com>
+Manpage Author(s):
 
-AUTHORS
--------
-Manpage Author(s): ::
-Matthew Spah <spahmatthew@xenapiadmin.com>
+-	Matthew Spah <spahmatthew@xenapiadmin.com>
 
 BUGS
 ----

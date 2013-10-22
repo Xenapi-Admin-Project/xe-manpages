@@ -17,7 +17,6 @@ DESCRIPTION
 -----------
 *xe host-data-source-query* returns a value to STDOUT from the specified data-source on a host. Select a host by using one or more parameters displayed by xe host-list params=all. *xe host-data-source-query* can only be performed on one host at a time 
 
-
 REQUIRED PARAMETERS
 -------------------
 *data-source*::
@@ -31,7 +30,6 @@ EXAMPLES
 To return the utilization for cpu0 on a specific host: 
 
 - *xe host-data-source-query uuid=<HOST UUID> data-source="cpu0"
-
 
 SEE ALSO
 --------

@@ -15,21 +15,27 @@ SYNOPSIS
 
 DESCRIPTION
 -----------
-*xe vm-vif-list* displays VIF information for a Virtual Machine or for multiple Virtual Machines. Select VMs by using one or more parameters displayed by xe vm-list params=all.  Append --multiple if more than one VM matches. 
+*xe vm-vif-list* displays VIF information for Virtual Machines. 
+
+Select VMs by using one or more parameters displayed by xe vm-list params=all.  Append --multiple if more than one VM matches. 
 
 OPTIONAL PARAMETERS
 -------------------
 *<vm selectors*::
-	Parameters to select VM(s) - use *xe vm-list params=all* to get a list of VM parameters to filter on. 
+	Parameters to select VM(s) - use *xe vm-list params=all* to get a list of VM parameters to filter on.
+	
 *--multiple* ::
 	Specify --multiple if you want to match more than one VM.
 	
 EXAMPLES
 --------
-To display VIF information for all running VMs: ::
-	*xe vm-vif-list* power-state=running
-To display VIF information for a specific VM: ::
-	*xe vm-vif-list* uuid=<VM UUID>
+To display VIF information for all running VMs:
+
+-	*xe vm-vif-list* power-state=running
+	
+To display VIF information for a specific VM:
+
+-	*xe vm-vif-list* uuid=<VM UUID>
 	
 SEE ALSO
 --------
@@ -41,8 +47,9 @@ Matthew Spah <spahmatthew@gmail.com>
 
 AUTHORS
 -------
-Manpage Author(s): ::
-Matthew Spah <spahmatthew@xenapiadmin.com>
+Manpage Author(s):
+
+-	Matthew Spah <spahmatthew@xenapiadmin.com>
 
 BUGS
 ----

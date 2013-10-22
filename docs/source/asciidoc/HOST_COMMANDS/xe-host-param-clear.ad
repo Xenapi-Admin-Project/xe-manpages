@@ -34,7 +34,6 @@ To clear the map parameter logging from a host:
 
 - *xe host-param-clear* param-name="logging" uuid=<HOST UUID>
 
-
 SEE ALSO
 --------
 *xe help host-param-clear*, *xe host-list*(1), *xe host-param-list*(1), *xe host-param-get*(1), *xe host-param-set*(1)

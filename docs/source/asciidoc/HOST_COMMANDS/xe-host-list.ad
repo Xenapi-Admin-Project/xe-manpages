@@ -19,8 +19,8 @@ DESCRIPTION
 
 Output can be filtered by using the *params* parameter and a value (separate multiple parameters with commas):
 
-- *xe host-list params=name-descriptions*
-- *xe host-list params=uuid,name-label,enabled*
+- *xe host-list params="name-descriptions"*
+- *xe host-list params="uuid,name-label,enabled"*
 
 Output can be filtered by using parameter values and the desired value:
 

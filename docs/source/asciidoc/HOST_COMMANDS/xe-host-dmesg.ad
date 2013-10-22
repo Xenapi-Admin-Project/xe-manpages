@@ -15,7 +15,9 @@ SYNOPSIS
 
 DESCRIPTION
 -----------
-*xe host-dmesg* displays the Xen dmesg of a XenServer host or multiple XenServer hosts. Select host(s) by using one or more parameters displayed by xe host-list params=all. If no hosts(s) are selected then the Xen dmesg of all hosts is displayed. Append --multiple if more than one host is selected. 
+*xe host-dmesg* displays the Xen dmesg of a XenServer host or multiple XenServer hosts. 
+
+Select host(s) by using one or more parameters displayed by xe host-list params=all. If no hosts(s) are selected then the Xen dmesg of all hosts is displayed. Append --multiple if more than one host is selected. 
 
 OPTIONAL PARAMETERS
 -------------------	
@@ -24,7 +26,6 @@ OPTIONAL PARAMETERS
 	
 *--multiple* ::
 	Append --multiple if you want to match more than one host.
-
 
 EXAMPLES
 --------
@@ -35,7 +36,6 @@ To display the Xen dmesg for all hosts in a pool:
 To display the Xen dmesg for a specific host using a host UUID: 
 
 - *xe host-dmesg* uuid=<HOST UUID>
-
 
 SEE ALSO
 --------

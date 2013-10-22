@@ -18,7 +18,6 @@ DESCRIPTION
 -----------
 *xe host-data-source-forget* stops the recording of a specified data-source on a host, and removes all the recorded data. Select a host by using one or more parameters displayed by xe host-list params=all. *xe host-data-source-query* can only be performed on one host at a time 
 
-
 REQUIRED PARAMETERS
 -------------------
 *data-source*:: 
