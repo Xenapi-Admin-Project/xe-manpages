@@ -7,7 +7,7 @@ XE(1)
 
 NAME
 -----
-xe-vm-list - Display VMs
+xe-vm-list - Display Virtual Machines (VM)
 
 SYNOPSIS
 --------
@@ -51,18 +51,21 @@ OPTIONAL PARAMETERS
 	
 *is-a-template*:: 
 	Display if the VM is a template [ true | false ]
-
+	
 *is-a-snapshot*:: 
 	Display if the VM is a snapshot [ true | false ]
 	
-*snapshot-of*:: 
+*snapshot-of*::
+	Display VMs UUID that this is a snapshot of 
 	
 *snapshots*::
 	Display VMs snapshot UUIDs
 	
 *snapshot-time*:: 
+	Display timestamp of the snapshot
 	
 *snapshot-info*:: 
+	Display additional snapshot information	
 	
 *parent*:: 
 	
@@ -74,11 +77,14 @@ OPTIONAL PARAMETERS
 *power-state*:: 
 	Display VMs power state [ running | halted ]
 	
-*memory-actual*:: 
-		
-*memory-target*:: 
+*memory-actual*::
+	Display VMs actual memory, in bytes
 	
-*memory-overhead*:: 
+*memory-target*:: 
+	Display VMs memory target, in bytes
+	
+*memory-overhead*::
+	Display VMs memory overhead, in bytes
 	
 *memory-static-max*::
 	Display VMs maximum amount of static memory, in bytes
@@ -119,7 +125,8 @@ OPTIONAL PARAMETERS
 *console-uuids*::
 	Display VMs console UUIDs
 	
-*platform*:: 
+*platform*::
+	Display VMs platform
 	
 *allowed-operations*:: 
 	Display list of operations allowed on VMs
@@ -182,8 +189,10 @@ OPTIONAL PARAMETERS
 	Display VMs dom-id number
 	
 *recommendations*:: 
+	Display recommended values and ranges of properties for VMs in XML format  
 	
-*xenstore-data*:: 
+*xenstore-data*::
+	Display VMs data to be inserted into the XenStore tree after the VM is created
 	
 *ha-always-run*:: 
 	[DEPRECATED] Display if the VM will always be restarted on another host incase failure on the VMs current host [ true | false ]
@@ -197,7 +206,8 @@ OPTIONAL PARAMETERS
 *start-time*:: 
 	Display timestamps of the date and time that the metrics for the VMs were read, in the form yyyymmddThh:mm:ss
 
-*install-time*:: 
+*install-time*::
+	Display timestamps of the date and time that the metrics for the VMs were read, in the form yyyymmddThh:mm:ss 
 	
 *VCPUs-number*:: 
 	Display VMs number of VCPUs
@@ -205,42 +215,59 @@ OPTIONAL PARAMETERS
 *VCPUs-utilisation*:: 
 	Display VMs VCPUs utilisation
 	
-*os-version*:: 
+*os-version*::
+	Display VMs operating system version
 	
 *PV-drivers-version*:: 
+	Display VMs paravirtualized drivers version
 	
 *PV-drivers-up-to-date*:: 
+	Display flag for latest version of the paravirtualized drivers for VMs 
 	
 *memory*:: 
+	Display VMs memory metrics 
 	
 *disks*:: 
+	Display VMs disk metrics
 	
 *networks*:: 
+	Display VMs network metrics
 	
 *other*:: 
+	Display VMs other metrics
 	
-*live*:: 
+*live*::
+	Display if the VM is running [ True | False ]
 	
 *guest-metrics-last-updated*:: 
+	Display timestamps of last write to metric fields, yyyymmddThh:mm:ss z 
 	
 *cooperative*:: 
+	[DEPRECATED]
 	
-*tags*:: 
+*tags*::
+	Display VM tags
 	
 *appliance*::
 	Display VMs appliance/vApp UUIDs
 	
-*start-delay*:: 
+*start-delay*::
+	Display VMs delay to wait before a call to start up the VM returns
 	
 *shutdown-delay*:: 
+	Display VMs delay to wait before a call to shutdown the VM returns
 	
 *order*:: 
+	Display VMs start order for vApp startup/shutdown and for start up after a HA failure, 1 is the highest priority [ 1, 2, 3]
 	
-*version*:: 
+*version*::
+	Display the number of times the VM has been recovered 
 	
 *generation-id*:: 
-
+	Display VMs generation-ids
+	
 *other-config*:: 
+	Display VMs other-config map parameter key/value pairs
 
 	
 
