@@ -7,7 +7,7 @@ XE(1)
 
 NAME
 -----
-xe-patch-list - Displays Patches and their parameters.
+xe-patch-list - Displays patches and their parameters.
 
 SYNOPSIS
 --------
@@ -16,56 +16,67 @@ SYNOPSIS
 DESCRIPTION
 -----------
 
-*xe patch-list* displays Patches and their parameters.
+*xe patch-list* displays patches and their parameters.
 
-Output can be filtered by using the *params* parameter and a value (multiple parameters should be separated by commas): ::
-	*xe patch-list params=uuid* +
-	*xe patch-list params=uuid,name-label,name-description*
+Output can be filtered by using the *params* parameter and a value (multiple parameters should be separated by commas): 
+	
+-	*xe patch-list params="uuid"* 
+-	*xe patch-list params="uuid,name-label,name-description"*
 
-Output can be filtered by using parameter values and the desired value: ::
-	*xe patch-list name-label=XS62E001*
+Output can be filtered by using parameter values and the desired value: 
 
-Append --minimal to display values for one parameter outputted on a single line with results separated by commas: ::
-	*xe patch-list params="hosts" --minimal*
+-	*xe patch-list name-label="XS62E001"*
+
+Append --minimal to display values for one parameter outputted on a single line with results separated by commas:
+
+-	*xe patch-list params="hosts" --minimal*
 
 OPTIONAL PARAMETERS
 -------------------
 *all*::
         Display all parameter values	
 *uuid*:: 
-		Display Patch UUIDs
+		Display patch UUIDs
 *name-label*:: 
-		Display Patch name labels
+		Display patch name labels
 *name-description*:: 
-		Display Patch name descriptions
+		Display patch name descriptions
 *size*:: 
-		Display Patch size
+		Display patch size in bytes
 *hosts*:: 
-		Display Patched host(s)
+		Display patched host(s)
 *after-apply-guidance*:: 
-		Display required action after applying Patch
+		Display required action after applying patch
 *--minimal*::
 		Specify --minimal to only show minimal output
 
 EXAMPLES
 --------
-To display all parameters for all Patches: ::
-	*xe patch-list* params="all"
-To display all parameters for a specific Patch: ::
-	*xe patch-list* uuid=<patch UUID> params="all"
-To display *hosts* for a specific Patch: ::
-	*xe patch-list* uuid=<patch UUID> params="hosts"
-To display the *hosts* and *size* parameters of all PATCHs with a *name-label* of XS62E001: ::
-	*xe patch-list* name-label="XS62E001" params="hosts,size"
+To display all parameters for all patches: 
+	
+-	*xe patch-list* params="all"
+
+To display all parameters for a specific patch: 
+
+-	*xe patch-list* uuid=<patch UUID> params="all"
+
+To display *hosts* for a specific patch: 
+
+-	*xe patch-list* uuid=<patch UUID> params="hosts"
+
+To display the *hosts* and *size* parameters of all patches with a *name-label* of XS62E001: 
+
+-	*xe patch-list* name-label="XS62E001" params="hosts,size"
 
 SEE ALSO
 --------
-*xe help patch-list*, *patch-apply*(1), *patch-param-clear*(1), *patch-pool-clean*(1), *patch-clean*(1), *patch-param-get*(1), *patch-precheck*(1), *patch-destroy*(1), *patch-param-list*(1), *patch-upload*(1), *patch-list*(1), *patch-pool-apply*(1)
+*xe help patch-list*, *xe-patch-apply*(1), *xe-patch-param-clear*(1), *xe-patch-pool-clean*(1), *xe-patch-clean*(1), *xe-patch-param-get*(1), *xe-patch-precheck*(1), *xe-patch-destroy*(1), *xe-patch-param-list*(1), *xe-patch-upload*(1), *xe-patch-pool-apply*(1)
 
 AUTHORS
 -------
-Manpage Author(s): ::
-Anthony Giles <agiles@icloud.com>
+Manpage Author(s): 
+
+- Anthony Giles <agiles@icloud.com>
 
 BUGS
 ----
