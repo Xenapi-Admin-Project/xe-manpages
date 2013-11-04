@@ -1,0 +1,580 @@
+appliance-param-list@#@uuid@#@Appliance UUID - Use *xe appliance-list* to obtain a list of appliance UUIDs.
+bond-param-list@#@uuid@#@Bond UUID - Use *xe bond-list* to obtain a list of bonds.
+console-param-list@#@uuid@#@Console UUID - Use *xe console-list* to obtain a list of console UUIDs.
+gpu-group-param-list@#@uuid@#@GPU group UUID - Use *xe gpu-group-list* to obtain a list of GPU group UUIDs.
+host-cpu-param-list@#@uuid@#@Host CPU UUID - Use *xe host-cpu-list* to obtain a list of host CPU UUIDs.
+host-crashdump-param-list@#@uuid@#@host-crashdump UUID - Use *xe host-crashdump-list* to obtain a list of host-crashdump UUIDs.
+host-param-list@#@uuid@#@Host UUID - Use *xe host-list* to obtain a list of host UUIDs.
+message-param-list@#@uuid@#@Message UUID - Use *xe message-list* to obtain a list of message UUIDs.
+network-param-list@#@uuid@#@Network UUID - Use *xe network-list* to obtain a list of network UUIDs.
+patch-param-list@#@uuid@#@Patch UUID - Use *xe patch-list* to obtain a list of patch UUIDs.
+pbd-param-list@#@uuid@#@PBD UUID - Use *xe pbd-list* to obtain a list of PBD UUIDs.
+pgpu-param-list@#@uuid@#@PGPU UUID - Use *xe pgpu-list* to obtain a list of PGPU UUIDs.
+pif-param-list@#@uuid@#@PIF UUID - Use *xe pif-list* to obtain PIF UUIDs.
+pool-param-list@#@uuid@#@Pool UUID - Use *xe pool-list* to obtain a list of pool UUIDs.
+role-param-list@#@uuid@#@Role UUID - Use *xe role-list* to obtain a list of role UUIDs.
+secret-param-list@#@uuid@#@Secret UUID - Use *xe secret-list* to obtain a list of secret UUIDs.
+sm-param-list@#@uuid@#@SM UUID - Use *xe sm-list* to obtain a list of SM UUIDs.
+snapshot-param-list@#@uuid@#@SNAPSHOT UUID - Use *xe SNAPSHOT-list* to obtain a list of snapshot UUIDs.
+sr-param-list@#@uuid@#@SR UUID - Use *xe sr-list* to obtain a list of storage repository UUIDs.
+subject-param-list@#@uuid@#@SUBJECT UUID - Use *xe SUBJECT-list* to obtain a list of subject UUIDs.
+task-param-list@#@uuid@#@Task UUID - Use *xe task-list* to obtain a list of task UUIDs.
+template-param-list@#@uuid@#@Template UUID - Use *xe template-list* to obtain a list of template UUIDs.
+tunnel-param-list@#@uuid@#@Tunnel UUID - Use *xe tunnel-list* to obtain a list of tunnel UUIDs.
+vbd-param-list@#@uuid@#@VBD UUID - Use *xe vbd-list* to obtain a list of VBD UUIDs.
+vdi-param-list@#@uuid@#@VDI UUID - Use *xe vdi-list* to obtain a list of VDI UUIDs.
+vgpu-param-list@#@uuid@#@VGPU UUID - Use *xe vgpu-list* to obtain a list of VGPU UUIDs.
+vif-param-list@#@uuid@#@VIF UUID - Use *xe vif-list* to obtain a list of VIF UUIDs.
+vlan-param-list@#@uuid@#@VLAN UUID - Use *xe vlan-list* to obtain a list of a VLAN UUIDs.
+vm-param-list@#@uuid@#@VM UUID - Use *xe VM-list* to obtain a list of vm UUIDs.
+appliance-param-get@#@database@#@
+appliance-param-get@#@param-key@#@The APPLIANCE map parameter key value to return
+appliance-param-get@#@param-name@#@The APPLIANCE parameter to return
+appliance-param-get@#@uuid@#@APPLIANCE UUID - Use *xe APPLIANCE-list* to obtain a list of APPLIANCE UUIDs.
+bond-param-get@#@database@#@
+bond-param-get@#@param-key@#@The bond key to return
+bond-param-get@#@param-name@#@The bond parameter to return.
+bond-param-get@#@uuid@#@UUID of bond. Use *xe bond-list* to obtain a list of bonds.
+console-param-get@#@database@#@
+console-param-get@#@param-key@#@The CONSOLE map parameter key value to return
+console-param-get@#@param-name@#@The CONSOLE parameter to return
+console-param-get@#@uuid@#@CONSOLE UUID - Use *xe CONSOLE-list* to obtain a list of CONSOLE UUIDs.
+drtask-param-get@#@database@#@
+drtask-param-get@#@param-key@#@The DRTASK map parameter key value to return
+drtask-param-get@#@param-name@#@The DRTASK parameter to return
+drtask-param-get@#@uuid@#@DRTASK UUID - Use *xe DRTASK-list* to obtain a list of DRTASK UUIDs.
+gpu-group-param-get@#@database@#@
+gpu-group-param-get@#@param-key@#@The GPU group key to return.  
+gpu-group-param-get@#@param-name@#@The GPU group parameter to return.
+gpu-group-param-get@#@uuid@#@GPU group UUID - Use *xe gpu-group-list* to obtain a list of GPU group UUIDs.
+host-cpu-param-get@#@database@#@
+host-cpu-param-get@#@param-key@#@The CPU key value to return.  
+host-cpu-param-get@#@param-name@#@The CPU parameter value to return.
+host-cpu-param-get@#@uuid@#@CPU UUID - Use *xe host-cpu-list* to obtain a list of CPU UUIDs.
+host-crashdump-param-get@#@database@#@
+host-crashdump-param-get@#@param-key@#@The HOST map parameter key value to return
+host-crashdump-param-get@#@param-name@#@The HOST parameter to return
+host-crashdump-param-get@#@uuid@#@HOST UUID - Use *xe HOST-list* to obtain a list of HOST UUIDs.
+host-param-get@#@database@#@
+host-param-get@#@param-key@#@The HOST map parameter key value to return
+host-param-get@#@param-name@#@The HOST parameter to return
+host-param-get@#@uuid@#@HOST UUID - Use *xe HOST-list* to obtain a list of HOST UUIDs.
+message-param-get@#@database@#@
+message-param-get@#@param-key@#@The message key to return.  
+message-param-get@#@param-name@#@The message parameter to return.
+message-param-get@#@uuid@#@Message UUID - Use *xe message-list* to obtain a list of message UUIDs.
+network-param-get@#@database@#@
+network-param-get@#@param-key@#@The network key value to return.  
+network-param-get@#@param-name@#@The network parameter value to return.
+network-param-get@#@uuid@#@Network UUID - Use *xe network-list* to obtain a list of network UUIDs.
+patch-param-get@#@database@#@
+patch-param-get@#@param-key@#@The PATCH map parameter key value to return
+patch-param-get@#@param-name@#@The PATCH parameter to return
+patch-param-get@#@uuid@#@PATCH UUID - Use *xe PATCH-list* to obtain a list of PATCH UUIDs.
+pbd-param-get@#@database@#@
+pbd-param-get@#@param-key@#@The PBD map parameter key value to return
+pbd-param-get@#@param-name@#@The PBD parameter to return
+pbd-param-get@#@uuid@#@PBD UUID - Use *xe PBD-list* to obtain a list of PBD UUIDs.
+pgpu-param-get@#@database@#@
+pgpu-param-get@#@param-key@#@The PGPU map parameter key value to return
+pgpu-param-get@#@param-name@#@The PGPU parameter to return
+pgpu-param-get@#@uuid@#@PGPU UUID - Use *xe PGPU-list* to obtain a list of PGPU UUIDs.
+pif-param-get@#@database@#@
+pif-param-get@#@param-key@#@The PIF map parameter key value to return
+pif-param-get@#@param-name@#@The PIF parameter value to return	
+pif-param-get@#@uuid@#@PIF UUID - Use *xe pif-list* to obtain PIF UUIDs.
+pool-param-get@#@database@#@
+pool-param-get@#@param-key@#@The POOL map parameter key value to return
+pool-param-get@#@param-name@#@The POOL parameter to return
+pool-param-get@#@uuid@#@POOL UUID - Use *xe POOL-list* to obtain a list of POOL UUIDs.
+role-param-get@#@database@#@
+role-param-get@#@param-key@#@The ROLE map parameter key value to return
+role-param-get@#@param-name@#@The role parameter to return.
+role-param-get@#@uuid@#@Role UUID - Use *xe role-list* to obtain a list of role UUIDs.
+secret-param-get@#@database@#@
+secret-param-get@#@param-key@#@The SECRET map parameter key value to return
+secret-param-get@#@param-name@#@The SECRET parameter to return
+secret-param-get@#@uuid@#@SECRET UUID - Use *xe SECRET-list* to obtain a list of SECRET UUIDs.
+sm-param-get@#@database@#@
+sm-param-get@#@param-key@#@The SM map parameter key value to return
+sm-param-get@#@param-name@#@The SM parameter to return
+sm-param-get@#@uuid@#@SM UUID - Use *xe SM-list* to obtain a list of SM UUIDs.
+snapshot-param-get@#@all@#@Display all parameter values
+snapshot-param-get@#@database@#@
+snapshot-param-get@#@--minimal@#@Specify --minimal to only show minimal output
+snapshot-param-get@#@param-key@#@The SNAPSHOT map parameter key value to return
+snapshot-param-get@#@param-name@#@The SNAPSHOT parameter to return
+snapshot-param-get@#@uuid@#@SNAPSHOT UUID - Use *xe SNAPSHOT-list* to obtain a list of SNAPSHOT UUIDs.
+sr-param-get@#@database@#@
+sr-param-get@#@param-key@#@The storage repository key to return.  
+sr-param-get@#@param-name@#@The storage repository parameter to return.
+sr-param-get@#@uuid@#@SR UUID - Use *xe sr-list* to obtain a list of storage repository UUIDs.
+subject-param-get@#@database@#@
+subject-param-get@#@param-key@#@The SUBJECT map parameter key value to return
+subject-param-get@#@param-name@#@The SUBJECT parameter to return
+subject-param-get@#@uuid@#@SUBJECT UUID - Use *xe SUBJECT-list* to obtain a list of SUBJECT UUIDs.
+task-param-get@#@database@#@
+task-param-get@#@param-key@#@The TASK map parameter key value to return
+task-param-get@#@param-name@#@The TASK parameter to return
+task-param-get@#@uuid@#@TASK UUID - Use *xe TASK-list* to obtain a list of TASK UUIDs.
+template-param-get@#@database@#@
+template-param-get@#@param-key@#@The TEMPLATE map parameter key value to return
+template-param-get@#@param-name@#@The TEMPLATE parameter to return
+template-param-get@#@uuid@#@TEMPLATE UUID - Use *xe TEMPLATE-list* to obtain a list of TEMPLATE UUIDs.
+tunnel-param-get@#@database@#@
+tunnel-param-get@#@param-key@#@The tunnel key to return.  
+tunnel-param-get@#@param-name@#@The tunnel parameter to return.
+tunnel-param-get@#@uuid@#@Tunnel UUID - Use *xe tunnel-list* to obtain a list of tunnel UUIDs.
+vbd-param-get@#@database@#@
+vbd-param-get@#@param-key@#@The VBD map parameter key value to return
+vbd-param-get@#@param-name@#@The VBD parameter to return
+vbd-param-get@#@uuid@#@VBD UUID - Use *xe VBD-list* to obtain a list of VBD UUIDs.
+vdi-param-get@#@database@#@
+vdi-param-get@#@param-key@#@The VDI map parameter key value to return
+vdi-param-get@#@param-name@#@The VDI parameter to return
+vdi-param-get@#@uuid@#@VDI UUID - Use *xe VDI-list* to obtain a list of VDI UUIDs.
+vgpu-param-get@#@database@#@
+vgpu-param-get@#@param-key@#@The VGPU map parameter key value to return
+vgpu-param-get@#@param-name@#@The VGPU parameter to return
+vgpu-param-get@#@uuid@#@VGPU UUID - Use *xe VGPU-list* to obtain a list of VGPU UUIDs.
+vif-param-get@#@database@#@
+vif-param-get@#@param-key@#@The VIF key value to return.
+vif-param-get@#@param-name@#@The VIF parameter value to return.
+vif-param-get@#@uuid@#@VIF UUID - Use *xe vif-list* to obtain a list of VIF UUIDs
+vlan-param-get@#@database@#@
+vlan-param-get@#@param-key@#@The VLAN map parameter key value to return
+vlan-param-get@#@param-name@#@The VLAN parameter value to return.
+vlan-param-get@#@uuid@#@VLAN UUID - Use *xe vlan-list* to obtain a list of VLAN UUIDs.
+vm-param-get@#@database@#@
+vm-param-get@#@param-key@#@The VM map parameter key value to return
+vm-param-get@#@param-name@#@The VM parameter to return
+vm-param-get@#@uuid@#@VM UUID - Use *xe VM-list* to obtain a list of VM UUIDs.
+appliance-param-set@#@uuid@#@APPLIANCE UUID - Use *xe APPLIANCE-list* to obtain a list of APPLIANCE UUIDs.
+bond-param-set@#@uuid@#@Bond UUID - Use *xe bond-list* to obtain a list of bonds.
+console-param-set@#@uuid@#@CONSOLE UUID - Use *xe CONSOLE-list* to obtain a list of CONSOLE UUIDs.
+gpu-group-param-set@#@uuid@#@GPU group UUID - Use *xe gpu-group-list* to obtain a list of GPU group UUIDs.
+host-param-set@#@uuid@#@HOST UUID - Use *xe HOST-list* to obtain a list of HOST UUIDs.
+network-param-set@#@uuid@#@Network UUID - Use *xe network-list* to obtain a list of network UUIDs.
+pbd-param-set@#@uuid@#@PBD UUID - Use *xe PBD-list* to obtain a list of PBD UUIDs.
+pgpu-param-set@#@uuid@#@PGPU UUID - Use *xe PGPU-list* to obtain a list of PGPU UUIDs.
+pif-param-set@#@uuid@#@PIF UUID - Use *xe pif-list* to obtain PIF interface UUIDs.
+pool-param-set@#@uuid@#@POOL UUID - Use *xe POOL-list* to obtain a list of POOL UUIDs.
+secret-param-set@#@uuid@#@SECRET UUID - Use *xe SECRET-list* to obtain a list of SECRET UUIDs.
+snapshot-param-set@#@uuid@#@SNAPSHOT UUID - Use *xe SNAPSHOT-list* to obtain a list of SNAPSHOT UUIDs.
+sr-param-set@#@uuid@#@SR UUID - Use *xe SR-list* to obtain a list of SR UUIDs.
+task-param-set@#@uuid@#@TASK UUID - Use *xe TASK-list* to obtain a list of TASK UUIDs.
+template-param-set@#@uuid@#@TEMPLATE UUID - Use *xe TEMPLATE-list* to obtain a list of TEMPLATE UUIDs.
+tunnel-param-set@#@uuid@#@TUNNEL UUID - Use *xe TUNNEL-list* to obtain a list of TUNNEL UUIDs.
+vbd-param-set@#@uuid@#@VBD UUID - Use *xe VBD-list* to obtain a list of VBD UUIDs.
+vdi-param-set@#@uuid@#@VDI UUID - Use *xe VDI-list* to obtain a list of VDI UUIDs.
+vgpu-param-set@#@uuid@#@VGPU UUID - Use *xe VGPU-list* to obtain a list of VGPU UUIDs.
+vif-param-set@#@uuid@#@VIF UUID - Use *xe vif-list* to obtain a list of VIF UUIDs
+vm-param-set@#@uuid@#@VM UUID - Use *xe VM-list* to obtain a list of VM UUIDs.
+console-param-set@#@other-config@#@
+gpu-group-param-set@#@other-config@#@
+host-param-set@#@other-config@#@
+network-param-set@#@other-config@#@
+network-param-set@#@other-config:ethtool-autoneg@#@Set to enable autonegotiation: ethtool-autoneg=[ on | off ]	
+network-param-set@#@other-config:ethtool-gso@#@Set to enable generic segmentation offload: ethtool-gso=[ on | off ]	
+network-param-set@#@other-config:ethtool-rx@#@Set to enable receive checksum: ethtool-rx=[ on | off ]	
+network-param-set@#@other-config:ethtool-sg@#@Set to enable scatter gather: ethtool-sg=[ on | off ]	
+network-param-set@#@other-config:ethtool-tso@#@Set to enable TCP segmentation offload: ethtool-tso=[ on | off ]	
+network-param-set@#@other-config:ethtool-tx@#@Set to enable transmit checksum: ethtool-tx=[ on | off ]	
+network-param-set@#@other-config:ethtool-ufo@#@Set to enable UDP fragment offload: ethtool-ufo=[ on | off ]	
+network-param-set@#@other-config:static-routes@#@Set one or more static routes (separate with commas): static-routes=[ <SOURCE NETWORK ADDRESS>/<CIDR MASK>/<NEXT HOP ADDRESS> ]		
+pbd-param-set@#@other-config@#@
+pgpu-param-set@#@other-config@#@
+pif-param-set@#@other-config@#@
+pif-param-set@#@other-config:bond-downdelay@#@Set number of milliseconds the bond waits after the link is lost before considering the link down. Default is 200ms. 
+pif-param-set@#@other-config:bond-miimon@#@Set the time between link liveness checks on the bond, in milliseconds.	
+pif-param-set@#@other-config:bond-updelay@#@Set number of milliseconds the bond waits after the link comes up before considering it up. Default is 31s.
+pif-param-set@#@other-config:domain@#@Set the DNS search path (DNS Suffix). Use a comma as a field separator.
+pif-param-set@#@other-config:ethtool-autoneg@#@Set autonegotiation status on PIF: ethtool-autoneg=[ on | off ]
+pif-param-set@#@other-config:ethtool-duplex@#@Set duplex mode of PIF: ethtool-duplex=[ full | half ]
+pif-param-set@#@other-config:ethtool-gso@#@Enable generic segmentation offload: ethtool-gso=[ on | off ]
+pif-param-set@#@other-config:ethtool-rx@#@Enable receive checksum: ethtool-rx=[ on | half ]
+pif-param-set@#@other-config:ethtool-sg@#@Enable scatter gather:  ethtool-sg=[ on | off ]
+pif-param-set@#@other-config:ethtool-speed@#@Set speed of PIF interface in Mbps: ethtool-speed=[ 10 | 100 | 1000 ]
+pif-param-set@#@other-config:ethtool-tso@#@Enable TCP segmentation offload: ethtool-tso=[ on | off ]
+pif-param-set@#@other-config:ethtool-tx@#@Enable transmit checksum: ethtool-tx=[ on | off ]
+pif-param-set@#@other-config:ethtool-ufo@#@Enable UDP fragment offload: ethtool-ufo=[ on | off ]
+pool-param-set@#@other-config@#@
+snapshot-param-set@#@other-config@#@
+sr-param-set@#@other-config@#@
+task-param-set@#@other-config@#@
+template-param-set@#@other-config@#@
+tunnel-param-set@#@other-config@#@
+vbd-param-set@#@other-config@#@
+vdi-param-set@#@other-config@#@
+vgpu-param-set@#@other-config@#@
+vif-param-set@#@other-config@#@
+vif-param-set@#@other-config:ethtool-gso@#@Set to enable generic segmentation offload: ethtool-gso=[ on | off ]
+vif-param-set@#@other-config:ethtool-rx@#@Set to enable receive checksum: ethtool-rx=[ on | off ]
+vif-param-set@#@other-config:ethtool-sg@#@Set to enable scatter gather: ethtool-sg=[ on | off ]
+vif-param-set@#@other-config:ethtool-tso@#@Set to enable TCP segmentation offload: ethtool-tso=[ on | off ]
+vif-param-set@#@other-config:ethtool-tx@#@Set to enable transmit checksum: ethtool-tx=[ on | off ]
+vif-param-set@#@other-config:ethtool-ufo@#@Set to enable UDP fragment offload: ethtool-ufo=[ on | off ]
+vif-param-set@#@other-config:mtu@#@Set MTU size for VIF
+vif-param-set@#@other-config:promiscuous@#@Set to enable promiscuous mode: promiscuous=[ true | false ]
+vm-param-set@#@other-config@#@
+console-param-add@#@param-key@#@Key to be added to a set parameter (SRW).
+console-param-add@#@param-name@#@Parameter to have key or key/value pair added - Use *xe CONSOLE-param-list* to obtain a list of console parameters.
+console-param-add@#@uuid@#@CONSOLE UUID - Use *xe CONSOLE-list* to obtain a list of CONSOLE UUIDs.
+gpu-group-param-add@#@<MAP PARAMETER KEY>@#@Key/value pair to be added to a map parameter (MRW). 
+gpu-group-param-add@#@param-key@#@Key to be added to a set parameter (SRW).
+gpu-group-param-add@#@param-name@#@Parameter to have a key or key/value pair added - Use *xe gpu-group-param-list* to obtain a list of GPU group parameters.
+gpu-group-param-add@#@uuid@#@GPU group UUID - Use *xe gpu-group-list* to obtain a list of GPU group UUIDs.
+host-param-add@#@param-key@#@Key to be added to a set parameter (SRW).
+host-param-add@#@param-name@#@Parameter to have key or key/value pair added - Use *xe HOST-param-list* to obtain a list of host parameters.
+host-param-add@#@uuid@#@HOST UUID - Use *xe HOST-list* to obtain a list of HOST UUIDs.
+network-param-add@#@<MAP PARAMETER KEY>@#@Key/value pair to be added to a map parameter (MRW). 
+network-param-add@#@param-key@#@Key to be added to a set parameter (SRW).
+network-param-add@#@param-name@#@Parameter to have key or key/value pair added - Use *xe network-param-list* to obtain a list of network parameters.
+network-param-add@#@uuid@#@Network UUID - Use *xe network-list* to obtain a list of network UUIDs.
+pbd-param-add@#@param-key@#@Key to be added to a set parameter (SRW).
+pbd-param-add@#@param-name@#@Parameter to have key or key/value pair added - Use *xe PBD-param-list* to obtain a list of pbd parameters.
+pbd-param-add@#@uuid@#@PBD UUID - Use *xe PBD-list* to obtain a list of PBD UUIDs.
+pgpu-param-add@#@param-key@#@Key to be added to a set parameter (SRW).
+pgpu-param-add@#@param-name@#@Parameter to have key or key/value pair added - Use *xe PGPU-param-list* to obtain a list of pgpu parameters.
+pgpu-param-add@#@uuid@#@PGPU UUID - Use *xe PGPU-list* to obtain a list of PGPU UUIDs.
+pif-param-add@#@<MAP PARAMETER KEY>@#@Key/value pair to be added to a map parameter (MRW)
+pif-param-add@#@param-key@#@Key to be added to a set parameter (SRW)
+pif-param-add@#@param-name@#@Parameter to have key or key/value pair added - Use *xe pif-param-list* to obtain a list of PIF parameters.
+pif-param-add@#@uuid@#@PIF UUID - Use *xe pif-list* to obtain a list of PIF UUIDs.
+pool-param-add@#@<MAP PARAMETER KEY>@#@Key/value pair to be added to a map parameter (MRW). 
+pool-param-add@#@param-key@#@Key to be added to a set parameter (SRW).
+pool-param-add@#@param-name@#@Parameter to have key or key/value pair added - Use *xe pool-param-list* to obtain a list of network parameters.
+pool-param-add@#@uuid@#@Pool UUID - Use *xe pool-list* to obtain a list of pool UUIDs.
+snapshot-param-add@#@param-key@#@Key to be added to a set parameter (SRW).
+snapshot-param-add@#@param-name@#@Parameter to have key or key/value pair added - Use *xe SNAPSHOT-param-list* to obtain a list of snapshot parameters.
+snapshot-param-add@#@uuid@#@SNAPSHOT UUID - Use *xe SNAPSHOT-list* to obtain a list of SNAPSHOT UUIDs.
+sr-param-add@#@param-key@#@Key to be added to a set parameter (SRW).
+sr-param-add@#@param-name@#@Parameter to have key or key/value pair added - Use *xe SR-param-list* to obtain a list of sr parameters.
+sr-param-add@#@uuid@#@SR UUID - Use *xe SR-list* to obtain a list of SR UUIDs.
+task-param-add@#@param-key@#@Key to be added to a set parameter (SRW).
+task-param-add@#@param-name@#@Parameter to have key or key/value pair added - Use *xe TASK-param-list* to obtain a list of task parameters.
+task-param-add@#@uuid@#@TASK UUID - Use *xe TASK-list* to obtain a list of TASK UUIDs.
+template-param-add@#@param-key@#@Key to be added to a set parameter (SRW).
+template-param-add@#@param-name@#@Parameter to have key or key/value pair added - Use *xe TEMPLATE-param-list* to obtain a list of template parameters.
+template-param-add@#@uuid@#@TEMPLATE UUID - Use *xe TEMPLATE-list* to obtain a list of TEMPLATE UUIDs.
+tunnel-param-add@#@param-key@#@Key to be added to a set parameter (SRW).
+tunnel-param-add@#@param-name@#@Parameter to have key or key/value pair added - Use *xe TUNNEL-param-list* to obtain a list of tunnel parameters.
+tunnel-param-add@#@uuid@#@TUNNEL UUID - Use *xe TUNNEL-list* to obtain a list of TUNNEL UUIDs.
+vbd-param-add@#@param-key@#@Key to be added to a set parameter (SRW).
+vbd-param-add@#@param-name@#@Parameter to have key or key/value pair added - Use *xe VBD-param-list* to obtain a list of vbd parameters.
+vbd-param-add@#@uuid@#@VBD UUID - Use *xe VBD-list* to obtain a list of VBD UUIDs.
+vdi-param-add@#@param-key@#@Key to be added to a set parameter (SRW).
+vdi-param-add@#@param-name@#@Parameter to have key or key/value pair added - Use *xe VDI-param-list* to obtain a list of vdi parameters.
+vdi-param-add@#@uuid@#@VDI UUID - Use *xe VDI-list* to obtain a list of VDI UUIDs.
+vgpu-param-add@#@param-key@#@Key to be added to a set parameter (SRW).
+vgpu-param-add@#@param-name@#@Parameter to have key or key/value pair added - Use *xe VGPU-param-list* to obtain a list of vgpu parameters.
+vgpu-param-add@#@uuid@#@VGPU UUID - Use *xe VGPU-list* to obtain a list of VGPU UUIDs.
+vif-param-add@#@<MAP PARAMETER KEY>@#@Key/value pair to be added to a map parameter (MRW). 
+vif-param-add@#@param-key@#@Key to be added to a set parameter (SRW).
+vif-param-add@#@param-name@#@Parameter to have key or key/value pair added - Use *xe vif-param-list* to obtain a list of network parameters.
+vif-param-add@#@uuid@#@VIF UUID - Use *xe vif-list* to obtain a list of vif UUIDs
+vm-param-add@#@param-key@#@Key to be added to a set parameter (SRW).
+vm-param-add@#@param-name@#@Parameter to have key or key/value pair added - Use *xe VM-param-list* to obtain a list of vm parameters.
+vm-param-add@#@uuid@#@VM UUID - Use *xe VM-list* to obtain a list of VM UUIDs.
+appliance-param-clear@#@param-name@#@Writable parameter to be cleared. (e.g. other-config).
+appliance-param-clear@#@uuid@#@APPLIANCE UUID - Use *xe APPLIANCE-list* to obtain a list of APPLIANCE UUIDs.
+bond-param-clear@#@param-name@#@Writable parameter to be cleared. 
+bond-param-clear@#@uuid@#@UUID of Bond. Use *xe bond-list* to obtain a list of bond UUIDs.
+console-param-clear@#@param-name@#@Writable parameter to be cleared. (e.g. other-config).
+console-param-clear@#@uuid@#@CONSOLE UUID - Use *xe CONSOLE-list* to obtain a list of CONSOLE UUIDs.
+gpu-group-param-clear@#@param-name@#@Writable parameter to be cleared (e.g. <WRITABLE PARAMETER>).
+gpu-group-param-clear@#@uuid@#@GPU group UUID - Use *xe gpu-group-list* to obtain GPU group UUIDs.
+host-param-clear@#@param-name@#@Writable parameter to be cleared (e.g name-description).
+host-param-clear@#@uuid@#@Host UUID - Use *xe host-list* to obtain a list of host UUIDs.
+network-param-clear@#@param-name@#@Writable parameter to be cleared (e.g. name-description).
+network-param-clear@#@uuid@#@Network UUID - Use *xe network-list* to obtain a list of network UUIDs.
+patch-param-clear@#@param-name@#@Writable parameter to be cleared. (e.g. other-config).
+patch-param-clear@#@uuid@#@PATCH UUID - Use *xe PATCH-list* to obtain a list of PATCH UUIDs.
+pbd-param-clear@#@param-name@#@Writable parameter to be cleared. (e.g. other-config).
+pbd-param-clear@#@uuid@#@PBD UUID - Use *xe PBD-list* to obtain a list of PBD UUIDs.
+pgpu-param-clear@#@param-name@#@Writable parameter to be cleared. (e.g. other-config).
+pgpu-param-clear@#@uuid@#@PGPU UUID - Use *xe PGPU-list* to obtain a list of PGPU UUIDs.
+pif-param-clear@#@param-name@#@Writable parameter to be cleared. (e.g. other-config). 
+pif-param-clear@#@uuid@#@PIF UUID - Use *xe pif-list* to obtain PIF UUIDs.
+pool-param-clear@#@param-name@#@Writable parameter to be cleared (e.g. *gui-config*).
+pool-param-clear@#@uuid@#@Pool UUID - Use *xe pool-list* to obtain pool UUIDs.
+secret-param-clear@#@param-name@#@Writable parameter to be cleared. (e.g. other-config).
+secret-param-clear@#@uuid@#@SECRET UUID - Use *xe SECRET-list* to obtain a list of SECRET UUIDs.
+sm-param-clear@#@param-name@#@Writable parameter to be cleared. (e.g. other-config).
+sm-param-clear@#@uuid@#@SM UUID - Use *xe SM-list* to obtain a list of SM UUIDs.
+snapshot-param-clear@#@all@#@Display all parameter values
+snapshot-param-clear@#@--minimal@#@Specify --minimal to only show minimal output
+snapshot-param-clear@#@param-name@#@Writable parameter to be cleared. (e.g. other-config).
+snapshot-param-clear@#@uuid@#@SNAPSHOT UUID - Use *xe SNAPSHOT-list* to obtain a list of SNAPSHOT UUIDs.
+sr-param-clear@#@param-name@#@Writable parameter to be cleared (e.g. *tags*).
+sr-param-clear@#@uuid@#@SR UUID - Use *xe sr-list* to obtain storage repository UUIDs.
+subject-param-clear@#@param-name@#@Writable parameter to be cleared. (e.g. other-config).
+subject-param-clear@#@uuid@#@SUBJECT UUID - Use *xe SUBJECT-list* to obtain a list of SUBJECT UUIDs.
+task-param-clear@#@param-name@#@Writable parameter to be cleared. (e.g. other-config).
+task-param-clear@#@uuid@#@TASK UUID - Use *xe TASK-list* to obtain a list of TASK UUIDs.
+template-param-clear@#@param-name@#@Writable parameter to be cleared. (e.g. other-config).
+template-param-clear@#@uuid@#@TEMPLATE UUID - Use *xe TEMPLATE-list* to obtain a list of TEMPLATE UUIDs.
+tunnel-param-clear@#@param-name@#@Writable parameter to be cleared. (e.g. other-config).
+tunnel-param-clear@#@uuid@#@TUNNEL UUID - Use *xe TUNNEL-list* to obtain a list of TUNNEL UUIDs.
+vbd-param-clear@#@param-name@#@Writable parameter to be cleared. (e.g. other-config).
+vbd-param-clear@#@uuid@#@VBD UUID - Use *xe VBD-list* to obtain a list of VBD UUIDs.
+vdi-param-clear@#@param-name@#@Writable parameter to be cleared. (e.g. other-config).
+vdi-param-clear@#@uuid@#@VDI UUID - Use *xe VDI-list* to obtain a list of VDI UUIDs.
+vgpu-param-clear@#@param-name@#@Writable parameter to be cleared. (e.g. other-config).
+vgpu-param-clear@#@uuid@#@VGPU UUID - Use *xe VGPU-list* to obtain a list of VGPU UUIDs.
+vif-param-clear@#@param-name@#@Writable parameter to be cleared. (e.g. *ipv4-allowed*). 
+vif-param-clear@#@uuid@#@VIF UUID - Use *xe vif-list* to obtain a list of VIF UUIDs.
+vm-param-clear@#@param-name@#@Writable parameter to be cleared. (e.g. other-config).
+vm-param-clear@#@uuid@#@VM UUID - Use *xe VM-list* to obtain a list of VM UUIDs.
+console-param-remove@#@param-key@#@Key or key/value pair to be removed.
+console-param-remove@#@param-name@#@Parameter that contains keys or key/value pairs. (e.g. other-config).
+console-param-remove@#@uuid@#@CONSOLE UUID - Use *xe CONSOLE-list* to obtain a list of CONSOLE UUIDs.
+gpu-group-param-remove@#@param-key@#@Key or key/value pair to be removed.
+gpu-group-param-remove@#@param-name@#@Parameter that contains keys or key/value pairs. (e.g. other-config).
+gpu-group-param-remove@#@uuid@#@GPU group UUID - Use *xe gpu-group-list* to obtain GPU group UUIDs.
+host-param-remove@#@param-key@#@Key or key/value pair to be removed.
+host-param-remove@#@param-name@#@Parameter that contains keys or key/value pairs. (e.g. other-config).
+host-param-remove@#@uuid@#@HOST UUID - Use *xe HOST-list* to obtain a list of HOST UUIDs.
+network-param-remove@#@param-key@#@Key or key/value pair to be removed.
+network-param-remove@#@param-name@#@Parameter that contains keys or key/value pairs (e.g. other-config).
+network-param-remove@#@uuid@#@Network UUID - Use *xe network-list* to obtain a list of network UUIDs.
+pbd-param-remove@#@param-key@#@Key or key/value pair to be removed.
+pbd-param-remove@#@param-name@#@Parameter that contains keys or key/value pairs. (e.g. other-config).
+pbd-param-remove@#@uuid@#@PBD UUID - Use *xe PBD-list* to obtain a list of PBD UUIDs.
+pgpu-param-remove@#@param-key@#@Key or key/value pair to be removed.
+pgpu-param-remove@#@param-name@#@Parameter that contains keys or key/value pairs. (e.g. other-config).
+pgpu-param-remove@#@uuid@#@PGPU UUID - Use *xe PGPU-list* to obtain a list of PGPU UUIDs.
+pif-param-remove@#@param-key@#@Key or key/value pair to be removed.
+pif-param-remove@#@param-name@#@Parameter that contains keys or key/value pairs. (e.g. other-config).
+pif-param-remove@#@uuid@#@PIF UUID - Use *xe pif-list* to obtain PIF UUIDs.
+pool-param-remove@#@param-key@#@Key or key/value pair to be removed.
+pool-param-remove@#@param-name@#@Parameter that contains keys or key/value pairs. (e.g. other-config).
+pool-param-remove@#@uuid@#@POOL UUID - Use *xe POOL-list* to obtain a list of POOL UUIDs.
+snapshot-param-remove@#@all@#@Display all parameter values
+snapshot-param-remove@#@--minimal@#@Specify --minimal to only show minimal output
+snapshot-param-remove@#@param-key@#@Key or key/value pair to be removed.
+snapshot-param-remove@#@param-name@#@Parameter that contains keys or key/value pairs. (e.g. other-config).
+snapshot-param-remove@#@uuid@#@SNAPSHOT UUID - Use *xe SNAPSHOT-list* to obtain a list of SNAPSHOT UUIDs.
+sr-param-remove@#@param-key@#@Key or key/value pair to be removed.
+sr-param-remove@#@param-name@#@Parameter that contains keys or key/value pairs. (e.g. other-config).
+sr-param-remove@#@uuid@#@SR UUID - Use *xe SR-list* to obtain a list of SR UUIDs.
+task-param-remove@#@param-key@#@Key or key/value pair to be removed.
+task-param-remove@#@param-name@#@Parameter that contains keys or key/value pairs. (e.g. other-config).
+task-param-remove@#@uuid@#@TASK UUID - Use *xe TASK-list* to obtain a list of TASK UUIDs.
+template-param-remove@#@param-key@#@Key or key/value pair to be removed.
+template-param-remove@#@param-name@#@Parameter that contains keys or key/value pairs. (e.g. other-config).
+template-param-remove@#@uuid@#@TEMPLATE UUID - Use *xe TEMPLATE-list* to obtain a list of TEMPLATE UUIDs.
+tunnel-param-remove@#@param-key@#@Key or key/value pair to be removed.
+tunnel-param-remove@#@param-name@#@Parameter that contains keys or key/value pairs. (e.g. other-config).
+tunnel-param-remove@#@uuid@#@TUNNEL UUID - Use *xe TUNNEL-list* to obtain a list of TUNNEL UUIDs.
+vbd-param-remove@#@param-key@#@Key or key/value pair to be removed.
+vbd-param-remove@#@param-name@#@Parameter that contains keys or key/value pairs. (e.g. other-config).
+vbd-param-remove@#@uuid@#@VBD UUID - Use *xe VBD-list* to obtain a list of VBD UUIDs.
+vdi-param-remove@#@param-key@#@Key or key/value pair to be removed.
+vdi-param-remove@#@param-name@#@Parameter that contains keys or key/value pairs. (e.g. other-config).
+vdi-param-remove@#@uuid@#@VDI UUID - Use *xe VDI-list* to obtain a list of VDI UUIDs.
+vgpu-param-remove@#@param-key@#@Key or key/value pair to be removed.
+vgpu-param-remove@#@param-name@#@Parameter that contains keys or key/value pairs. (e.g. other-config).
+vgpu-param-remove@#@uuid@#@VGPU UUID - Use *xe VGPU-list* to obtain a list of VGPU UUIDs.
+vif-param-remove@#@param-key@#@Key or key/value pair to be removed.
+vif-param-remove@#@param-name@#@Parameter that contains keys or key/value pairs. (e.g. other-config).
+vif-param-remove@#@uuid@#@VIF UUID - Use *xe vif-list* to obtain a list of VIF UUIDs.
+vm-param-remove@#@param-key@#@Key or key/value pair to be removed.
+vm-param-remove@#@param-name@#@Parameter that contains keys or key/value pairs. (e.g. other-config).
+vm-param-remove@#@uuid@#@VM UUID - Use *xe VM-list* to obtain a list of VM UUIDs.
+bond-list@#@all@#@Display all parameter values
+cd-list@#@all@#@Display all parameter values
+gpu-group-list@#@all@#@Display all parameter values
+host-cpu-list@#@all@#@Display all parameter values
+host-list@#@all@#@Display all parameter values
+message-list@#@all@#@Display all parameter values
+network-list@#@all@#@Display all parameter values
+pbd-list@#@all@#@Display all parameter values
+pgpu-list@#@all@#@Display all parameter values
+pif-list@#@all@#@Display all parameter values
+pool-list@#@all@#@Display all parameter values
+snapshot-disk-list@#@all@#@Display all parameter values
+snapshot-list@#@all@#@Display all parameter values
+snapshot-param-list@#@all@#@Display all parameter values
+sr-list@#@all@#@Display all parameter values
+tunnel-list@#@all@#@Display all parameter values
+vgpu-list@#@all@#@Display all parameter values
+vlan-list@#@all@#@Display all parameter values	
+appliance-list@#@uuid@#@Display APPLIANCE UUIDs
+appliance-param-list@#@uuid@#@Appliance UUID - Use *xe appliance-list* to obtain a list of appliance UUIDs.
+bond-list@#@uuid@#@Display bond UUIDs
+bond-param-list@#@uuid@#@Bond UUID - Use *xe bond-list* to obtain a list of bonds.
+cd-list@#@uuid@#@Display CD UUIDs
+console-list@#@uuid@#@Universally Unique IDentifier for the console. (Autocomplete by using the tab key twice after a reasonable number of characters.) 
+console-param-list@#@uuid@#@Console UUID - Use *xe console-list* to obtain a list of console UUIDs.
+drtask-list@#@uuid@#@Display DRTASK UUIDs
+gpu-group-list@#@uuid@#@Display a GPU group UUID
+gpu-group-param-list@#@uuid@#@GPU group UUID - Use *xe gpu-group-list* to obtain a list of GPU group UUIDs.
+host-cpu-list@#@uuid@#@Display CPU UUIDs
+host-cpu-param-list@#@uuid@#@Host CPU UUID - Use *xe host-cpu-list* to obtain a list of host CPU UUIDs.
+host-crashdump-list@#@uuid@#@Display HOST UUIDs
+host-crashdump-param-list@#@uuid@#@host-crashdump UUID - Use *xe host-crashdump-list* to obtain a list of host-crashdump UUIDs.
+host-list@#@uuid@#@Display host UUIDs
+host-param-list@#@uuid@#@Host UUID - Use *xe host-list* to obtain a list of host UUIDs.
+message-list@#@uuid@#@Display message UUID
+message-param-list@#@uuid@#@Message UUID - Use *xe message-list* to obtain a list of message UUIDs.
+network-list@#@uuid@#@Display network UUIDs
+network-param-list@#@uuid@#@Network UUID - Use *xe network-list* to obtain a list of network UUIDs.
+patch-list@#@uuid@#@Display PATCH UUIDs
+patch-param-list@#@uuid@#@Patch UUID - Use *xe patch-list* to obtain a list of patch UUIDs.
+pbd-list@#@uuid@#@Display PBD UUIDs
+pbd-param-list@#@uuid@#@PBD UUID - Use *xe pbd-list* to obtain a list of PBD UUIDs.
+pgpu-list@#@uuid@#@Display physical GPU UUID
+pgpu-param-list@#@uuid@#@PGPU UUID - Use *xe pgpu-list* to obtain a list of PGPU UUIDs.
+pif-list@#@uuid@#@Display PIF UUIDs
+pif-param-list@#@uuid@#@PIF UUID - Use *xe pif-list* to obtain PIF UUIDs.
+pool-list@#@uuid@#@Display pool UUIDs
+pool-param-list@#@uuid@#@Pool UUID - Use *xe pool-list* to obtain a list of pool UUIDs.
+role-list@#@uuid@#@Display ROLE UUIDs
+role-param-list@#@uuid@#@Role UUID - Use *xe role-list* to obtain a list of role UUIDs.
+secret-list@#@uuid@#@Display SECRET UUIDs
+secret-param-list@#@uuid@#@Secret UUID - Use *xe secret-list* to obtain a list of secret UUIDs.
+sm-list@#@uuid@#@Display SM UUIDs
+sm-param-list@#@uuid@#@SM UUID - Use *xe sm-list* to obtain a list of SM UUIDs.
+snapshot-disk-list@#@uuid@#@Display SNAPSHOT UUIDs
+snapshot-list@#@uuid@#@Display SNAPSHOT UUIDs
+snapshot-param-list@#@uuid@#@SNAPSHOT UUID - Use *xe SNAPSHOT-list* to obtain a list of snapshot UUIDs.
+sr-list@#@uuid@#@Display SR UUIDs
+sr-param-list@#@uuid@#@SR UUID - Use *xe sr-list* to obtain a list of storage repository UUIDs.
+subject-list@#@uuid@#@Display SUBJECT UUIDs
+subject-param-list@#@uuid@#@SUBJECT UUID - Use *xe SUBJECT-list* to obtain a list of subject UUIDs.
+task-list@#@uuid@#@Display TASK UUIDs
+task-param-list@#@uuid@#@Task UUID - Use *xe task-list* to obtain a list of task UUIDs.
+template-list@#@uuid@#@Display TEMPLATE UUIDs
+template-param-list@#@uuid@#@Template UUID - Use *xe template-list* to obtain a list of template UUIDs.
+tunnel-list@#@uuid@#@Display tunnel UUIDs
+tunnel-param-list@#@uuid@#@Tunnel UUID - Use *xe tunnel-list* to obtain a list of tunnel UUIDs.
+vbd-list@#@uuid@#@Display VBD UUIDs
+vbd-param-list@#@uuid@#@VBD UUID - Use *xe vbd-list* to obtain a list of VBD UUIDs.
+vdi-list@#@uuid@#@Display VDI UUIDs
+vdi-param-list@#@uuid@#@VDI UUID - Use *xe vdi-list* to obtain a list of VDI UUIDs.
+vgpu-list@#@uuid@#@Display a Virtual GPU UUID
+vgpu-param-list@#@uuid@#@VGPU UUID - Use *xe vgpu-list* to obtain a list of VGPU UUIDs.
+vif-list@#@uuid@#@Display VIF UUIDs
+vif-param-list@#@uuid@#@VIF UUID - Use *xe vif-list* to obtain a list of VIF UUIDs.
+vlan-list@#@uuid@#@Display VLAN UUIDs
+vlan-param-list@#@uuid@#@VLAN UUID - Use *xe vlan-list* to obtain a list of a VLAN UUIDs.
+vm-list@#@uuid@#@Display VM UUIDs
+vm-param-list@#@uuid@#@VM UUID - Use *xe VM-list* to obtain a list of vm UUIDs.
+appliance-list@#@name-label@#@Display APPLIANCE name-labels
+cd-list@#@name-label@#@Display CD name labels
+gpu-group-list@#@name-label@#@Display a GPU group name
+host-list@#@name-label@#@Display host name-labels
+network-list@#@name-label@#@Display network name-labels
+patch-list@#@name-label@#@Display PATCH name-labels
+pool-list@#@name-label@#@Display pool name-labels
+sm-list@#@name-label@#@Display SM name-labels
+snapshot-list@#@name-label@#@Display SNAPSHOT name-labels
+sr-list@#@name-label@#@Display SR name-labels
+task-list@#@name-label@#@Display TASK name-labels
+template-list@#@name-label@#@Display TEMPLATE name-labels
+vdi-list@#@name-label@#@Display VDI name-labels
+vm-list@#@name-label@#@Display VM name-labels
+appliance-list@#@name-description@#@Display APPLIANCE name-descriptions
+cd-list@#@name-description@#@Display CD name descriptions
+gpu-group-list@#@name-description@#@Display a GPU group name description
+host-list@#@name-description@#@Display host name-descriptions
+network-list@#@name-description@#@Display network descriptions
+patch-list@#@name-description@#@Display PATCH name-descriptions
+pool-list@#@name-description@#@Display pool name-descriptions 
+sm-list@#@name-description@#@Display SM name-descriptions
+snapshot-list@#@name-description@#@Display SNAPSHOT name-descriptions
+sr-list@#@name-description@#@Display SR name-descriptions
+task-list@#@name-description@#@Display TASK name-descriptions
+template-list@#@name-description@#@Display TEMPLATE name-descriptions
+vdi-list@#@name-description@#@Display VDI name-descriptions
+vm-list@#@name-description@#@Display VM name-descriptions
+appliance-list@#@current-operations@#@Display currently running operations on APPLIANCEs
+cd-list@#@current-operations@#@Display current operations 
+host-list@#@current-operations@#@Display current-operations for XCP hosts
+snapshot-list@#@current-operations@#@Display currently running operations on SNAPSHOTs
+sr-list@#@current-operations@#@Display current-operations for SRs
+template-list@#@current-operations@#@Display currently running operations on TEMPLATEs
+vbd-list@#@current-operations@#@Display currently running operations on VBDs
+vdi-list@#@current-operations@#@Display currently running operations on VDIs
+vif-list@#@current-operations@#@Display currently running operations on VIFs
+vm-list@#@current-operations@#@Display currently running operations on VMs
+appliance-list@#@allowed-operations@#@Display list of operations allowed on APPLIANCEs
+cd-list@#@allowed-operations@#@Display allowed operations 
+host-list@#@allowed-operations@#@Display allowed-operations for XCP hosts
+snapshot-list@#@allowed-operations@#@Display list of operations allowed on SNAPSHOTs
+sr-list@#@allowed-operations@#@Display allowed-operations for SRs
+template-list@#@allowed-operations@#@Display list of operations allowed on TEMPLATEs
+vbd-list@#@allowed-operations@#@Display list of operations allowed on VBDs
+vdi-list@#@allowed-operations@#@Display list of operations allowed on VDIs
+vif-list@#@allowed-operations@#@Display list of operations allowed on VIFs
+vm-list@#@allowed-operations@#@Display list of operations allowed on VMs
+cd-list@#@other-config@#@Display additional configuration parameter values for CD
+console-list@#@other-config@#@A list of key/value pairs that specify additional configuration parameters for the console.
+gpu-group-list@#@other-config@#@Display additional configuration parameter values for the GPU group
+host-list@#@other-config@#@Display other-config map parameter key/value pairs
+network-list@#@other-config@#@
+pbd-list@#@other-config@#@Display other-config map parameter key/value pairs // add more??	
+pgpu-list@#@other-config@#@Display additional configuration parameter values for physical GPU
+pif-list@#@other-config@#@
+pool-list@#@other-config@#@Display list of map parameter key/values for a pool
+snapshot-list@#@other-config@#@
+sr-list@#@other-config@#@
+subject-list@#@other-config@#@
+task-list@#@other-config@#@
+template-list@#@other-config@#@
+tunnel-list@#@other-config@#@
+vbd-list@#@other-config@#@
+vdi-list@#@other-config@#@
+vgpu-list@#@other-config@#@Display additional configuration parameter values for a virtual GPU
+vif-list@#@other-config@#@Display additional configuration settings for VIFs
+vm-list@#@other-config@#@
+diagnostic-vdi-status@#@uuid@#@VDI UUID - Use *xe vdi-list* to obtain a list of VDI UUIDs.
+diagnostic-vm-status@#@uuid@#@VM UUID - Use *xe vm-list* to obtain a list of VM UUIDs.
+bond-list@#@--minimal@#@Specify --minimal to only show minimal output
+cd-list@#@--minimal@#@Specify --minimal to only show minimal output.
+gpu-group-list@#@--minimal@#@Specify --minimal to only show minimal output
+host-cpu-list@#@--minimal@#@Specify --minimal to only show minimal output
+host-list@#@--minimal@#@Specify --minimal to only show minimal output
+network-list@#@--minimal@#@Specify --minimal to only show minimal output
+pbd-list@#@--minimal@#@Specify --minimal to only show minimal output
+pgpu-list@#@--minimal@#@Specify --minimal to only show minimal output
+pif-list@#@--minimal@#@Specify --minimal to only show minimal output
+pool-list@#@--minimal@#@Specify --minimal to only show minimal output
+snapshot-disk-list@#@--minimal@#@Specify --minimal to only show minimal output
+snapshot-list@#@--minimal@#@Specify --minimal to only show minimal output
+snapshot-param-list@#@--minimal@#@Specify --minimal to only show minimal output
+sr-list@#@--minimal@#@Specify --minimal to only show minimal output
+tunnel-list@#@--minimal@#@Specify --minimal to only show minimal output
+vgpu-list@#@--minimal@#@Specify --minimal to only show minimal output
+appliance-list@#@params@#@
+bond-list@#@params@#@
+cd-list@#@params@#@
+console-list@#@params@#@Specify which parameter(s) to display.
+drtask-list@#@params@#@
+gpu-group-list@#@params@#@
+host-cpu-list@#@params@#@
+host-crashdump-list@#@params@#@
+host-list@#@params@#@
+message-list@#@params@#@
+network-list@#@params@#@
+patch-list@#@params@#@
+pbd-list@#@params@#@
+pgpu-list@#@params@#@
+pif-list@#@params@#@
+pool-list@#@params@#@
+role-list@#@params@#@
+secret-list@#@params@#@
+sm-list@#@params@#@
+snapshot-list@#@params@#@
+sr-list@#@params@#@
+subject-list@#@params@#@
+task-list@#@params@#@
+template-list@#@params@#@
+tunnel-list@#@params@#@
+vbd-list@#@params@#@
+vdi-list@#@params@#@
+vgpu-list@#@params@#@
+vif-list@#@params@#@
+vlan-list@#@params@#@
+vm-list@#@params@#@
