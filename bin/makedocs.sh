@@ -25,15 +25,25 @@ setup()
 	
 	SRCDOCDIR="$DOCDIR/docs/source/asciidoc"
 	RELEASE="$SRCDOCDIR/RELEASE/" #Added 10/14/2013
-	MANDOCDIR="$DOCDIR/docs/manpage"
-	PDFDOCDIR="$DOCDIR/docs/pdf"
 	BINDIR="$DOCDIR/bin" 
 	XSLPOINTER="$BINDIR/XSLManpages/manpages/docbook.xsl" #Added 10/14/2013
 	TMPDIR=$(mktemp -d)
 	PROGNAME=$(basename $0)
 	
+	# Adding so if you don't select the PDF option, it won't ask you if you need to create a PDF dir
+	case "$FORMAT" in
+		pdf) PDFDOCDIR="$DOCDIR/docs/pdf" ;;
+		manpage) MANDOCDIR="$DOCDIR/docs/manpage" ;;
+	esac
+	
 	
 	for DIR in "$SRCDOCDIR" "$MANDOCDIR" "$PDFDOCDIR" ; do
+		
+		# Added 10/30/2013
+		if [[ -z "$DIR" ]] ;then # skip over variable if it is white space 
+			continue 
+		fi
+				
 		if [[ ! -d "$DIR" ]] ;then
 			echo "$DIR doesn't exist - maybe git isn't set up"
 			if yesno "Do you want to create $DIR"
@@ -86,7 +96,6 @@ syntax()
 	echo "options:"
 	echo "-m	make manpage document type"
 	echo "-p	make pdf document type"
-	echo "-r	render manpage RELEASE directory" #Added 10/14/2013
 	echo ""
 }
 
@@ -131,26 +140,26 @@ cleanup()
 	rm -Rf "$TMPDIR"
 }
 
-setup
-TARGET="$@" # Added 10/14/2013
+
+ # Added 10/14/2013 This isn't going to work matt.. you are passing everything
 if [[ -z "$1" ]] ; then
 	syntax
 	exit 1
 fi
 
-
 while getopts ahmrpu opt ;do
         case $opt in
                 m) FORMAT="manpage" ;;
                 p) FORMAT="pdf" ;;
-                r) TARGET="$RELEASE" ;; # Added 10/14/2013 
                 \?) echo "Unknown option" ; syntax ;;
         esac
 done
 shift $(($OPTIND - 1))
 
+setup
+
 # Replaced "$@" with $TARGET so we could specify the directory
-for ITEM in $TARGET ;do
+for ITEM in $@ ;do
 	if [[ -d "$ITEM" ]] ;then
 		for FILE in $(find $ITEM -name '*.ad') ;do
 			case "$FORMAT" in
