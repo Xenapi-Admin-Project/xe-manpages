@@ -144,7 +144,7 @@ OPTIONAL PARAMETERS
 	Display VMs allowed Virtual Interfaces (VIF) numbers
 	
 *possible-hosts*:: 
-	Display VMs suitable hosts to be present on
+	Display hosts suitable for the VM
 	
 *HVM-boot-policy*:: 
 	Display boot policies for HVM VMs
@@ -291,7 +291,7 @@ To display the UUID and dom-id parameters of all VMs with a *power-state* value 
 
 SEE ALSO
 --------
-*xe help vm-list*,
+*xe help vm-list*, *xe-vm-install*(1), *xe-vm-param-get*(1), *xe-vm-param-remove*(1), *xe-vm-param-set*(1), *xe-vm-param-clear*(1), *xe-vm-uninstall*(1)
 
 AUTHORS
 -------
