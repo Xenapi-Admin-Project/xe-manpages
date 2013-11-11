@@ -13,6 +13,7 @@
 
 setup()
 {
+	
 	DOCDIR=$(find_git)
 		
 	# Added 10/15/2013 
@@ -55,25 +56,29 @@ setup()
 		fi
 	done
 
-
 	# Added 10/14/2013
 	if [[ ! -f "$XSLPOINTER" ]] ;then 
 		echo "XenAPI Manpage XSL Stylesheets not installed - exiting"
 		exit 1
 	fi
 
+
 	if ! which a2x &> /dev/null ; then
 		echo "a2x command not installed - exiting"
 		exit 1
 	fi
+
 	
 	if ! which fop &> /dev/null ; then
 		echo "The fop command not installed - $PROGNAME will not be able to create pdf documents"
 	fi
+
+
 	if ! which xsltproc &> /dev/null ; then
 		echo "The xsltproc command not installed - $PROGNAME will not be able to process documents"
 		exit 1
 	fi
+
 }
 
 # Looking for the xe-manpage repository in Users home directory
@@ -176,4 +181,4 @@ for ITEM in $@ ;do
 
 done
 
-cleanup
+trap EXIT cleanup

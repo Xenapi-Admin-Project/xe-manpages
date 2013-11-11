@@ -15,21 +15,32 @@ SYNOPSIS
 
 DESCRIPTION
 -----------
-*xe vm-suspend* suspends VM(s)
+*xe vm-suspend* suspends running VM(s). A suspended VM remains in its supended state until it is resumed. Use *xe vm-resume* to resume a supended VM.
+
+Select VMs by using one or more parameters displayed by xe vm-list params=all.  Append --multiple if more than one VM matches.
 
 OPTIONAL PARAMETERS
 -------------------
 *<vm-selectors>*:: 
-	Parameters to select VM(s) - use *xe vm-list params=all* to get a list of VM parameters to filter on.
+	Parameters to select VM(s) - use *xe vm-list params=all* to get a list of VM parameters to filter on
 
-
-EXAMPLES
+EXAMPLES 
 --------
+To suspend a VM:
 
+- *xe vm-suspend* uuid=<VM UUID>
+
+To resume a suspended VM:
+
+- *xe vm-resume* uuid=<VM UUID>
+
+To suspend all running VMs on a host:
+
+- *xe vm-suspend* uuid=<VM UUID> power-state="running" resident-on=<HOST UUID>
 
 SEE ALSO
 --------
-*xe help vm-suspend*,
+*xe help vm-suspend*, *xe-vm-resume*(1), *xe-vm-list*(1), *xe-vm-pause*(1), *xe-vm-unpause*(1), *xe-vm-start*(1), *xe-vm-shutdown*(1), *xe-vm-reboot*(1)
 
 AUTHORS
 -------
