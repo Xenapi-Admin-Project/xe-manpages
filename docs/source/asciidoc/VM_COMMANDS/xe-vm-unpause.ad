@@ -16,7 +16,7 @@ SYNOPSIS
 
 DESCRIPTION
 -----------
-
+*xe vm-unpause* unpauses paused VM(s).
 
 OPTIONAL PARAMETERS
 -------------------

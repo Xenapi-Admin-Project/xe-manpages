@@ -8,7 +8,7 @@ XE(1)
 
 NAME
 ----
-xe-vm-pause - Pause Virtual Machine(s)
+xe-vm-pause - Pause Virtual Machine(s) (VM)
 
 SYNOPSIS
 --------
@@ -16,7 +16,7 @@ SYNOPSIS
 
 DESCRIPTION
 -----------
-
+*xe vm-pause* pauses running VM(s).
 
 OPTIONAL PARAMETERS
 -------------------

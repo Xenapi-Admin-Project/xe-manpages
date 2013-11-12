@@ -17,7 +17,7 @@ DESCRIPTION
 -----------
 *xe vm-start* starts halted VM(s). If the VM is on a shared storage repository, use the *on* parameter to specify which host to start the VM(s), or else the system will determine a suitable host.
 
-Select VMs by using one or more parameters displayed by xe vm-list params=all.  Append --multiple if more than one VM matches.
+Select VMs by using one or more parameters displayed by xe vm-list params=all. Append --multiple if more than one VM matches.
 
 
 OPTIONAL PARAMETERS

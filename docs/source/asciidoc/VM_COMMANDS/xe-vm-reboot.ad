@@ -17,7 +17,7 @@ DESCRIPTION
 -----------
 *xe vm-reboot* reboots specified running VM(s). Use the force parameter to initiate an ungraceful shutdown. Using a forced shutdown increases the risk for data loss or corruption.
 
-Select VMs by using one or more parameters displayed by xe vm-list params=all.  Append --multiple if more than one VM matches.
+Select VMs by using one or more parameters displayed by xe vm-list params=all. Append --multiple if more than one VM matches.
 
 OPTIONAL PARAMETERS
 -------------------
