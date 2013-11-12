@@ -15,7 +15,7 @@ SYNOPSIS
 
 DESCRIPTION
 -----------
-*xe vm-suspend* suspends running VM(s). A suspended VM remains in its supended state until it is resumed. Use *xe vm-resume* to resume a supended VM.
+*xe vm-suspend* suspends running VM(s). A suspended VM is not a resident on any hosts, and remains in a suspended state until it is resumed. The memory allocated to the suspended VM will be released on the host to be used by other VMs. Use *xe vm-resume* to resume a supended VM. 
 
 Select VMs by using one or more parameters displayed by xe vm-list params=all.  Append --multiple if more than one VM matches.
 
@@ -26,6 +26,10 @@ OPTIONAL PARAMETERS
 
 EXAMPLES 
 --------
+To check the current power-state of a VM:
+
+- *xe vm-param-get* uuid=<VM UUID> param-name="power-state"
+
 To suspend a VM:
 
 - *xe vm-suspend* uuid=<VM UUID>

@@ -11,11 +11,11 @@ xe-vm-start - Start Virtual Machine(s)
 
 SYNOPSIS
 --------
-*xe vm-start* [ vm-selectors ] [ on=<host-selectors> ] [ force=<true | false> ] [ --multiple ]
+*xe vm-start* [ vm-selectors ] [ on=<HOST UUID> ] [ force=<true | false> ] [ --multiple ]
 
 DESCRIPTION
 -----------
-*xe vm-start* starts halted VM(s). If the VM is on a shared storage repository, use the *on* parameter to specify which host to start the VM(s) on. 
+*xe vm-start* starts halted VM(s). If the VM is on a shared storage repository, use the *on* parameter to specify which host to start the VM(s), or else the system will determine a suitable host.
 
 Select VMs by using one or more parameters displayed by xe vm-list params=all.  Append --multiple if more than one VM matches.
 
@@ -26,13 +26,17 @@ OPTIONAL PARAMETERS
 	Force operation [ true | false ]
 	
 *on*::
-	Use a host parameters to select which host to start the VM(s) on
+	Use the host UUID parameter to specify which host to start the VM(s). Use *xe host-list* to obtain a list of host UUIDs.
 	
 *<vm-selectors>*:: 
 	Parameters to select VM(s) - use *xe vm-list params=all* to get a list of VM parameters to filter on.
 
 EXAMPLES
 --------
+To check the current power-state of a VM:
+
+- *xe vm-param-get* uuid=<VM UUID> param-name="power-state"
+
 To start a VM:
 
 - *xe vm-start* uuid=<VM UUID>

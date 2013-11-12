@@ -8,33 +8,47 @@ XE(1)
 
 NAME
 ----
-xe-vm-resume -
+xe-vm-resume - Resume suspended Virtual Machine(s) (VM)
 
 SYNOPSIS
 --------
+*xe vm-resume* [ vm-selectors ] [ on=<HOST UUID> ] [ force=< true | false > ] [ --multiple ]
 
 DESCRIPTION
 -----------
+*xe vm-resume* resumes a VM in a suspended power-state. If the VM is on a shared storage repository, use the *on* parameter to specify which host to start the VM(s) on, or else the system will determine a suitable host. 
 
+Select VMs by using one or more parameters displayed by xe vm-list params=all.  Append --multiple if more than one VM matches.
 
 OPTIONAL PARAMETERS
 -------------------
-*force*:: 
-	Force operation
+*force*::
+	Force operation [ true | false ]
 	
-*on*:: 
+*on*::
+	Use the host UUID parameter to specify which host to resume the VM(s). Use *xe host-list* to obtain a list of host UUIDs.
 	
 *<vm-selectors>*:: 
 	Parameters to select VM(s) - use *xe vm-list params=all* to get a list of VM parameters to filter on.
 
-
 EXAMPLES
 --------
+To check the current power-state of a VM:
+
+- *xe vm-param-get* uuid=<VM UUID> param-name="power-state"
+
+To resume a suspended VM:
+
+- *xe vm-resume* uuid=<VM UUID> 
+
+To resume multiple suspended VMs on a host:
+
+- *xe vm-resume* power-state="suspended" resident-on=<HOST UUID> --multiple
 
 
 SEE ALSO
 --------
-*xe help vm-resume*,
+*xe help vm-resume*, *xe-vm-suspend*(1), *xe-vm-list*(1), *xe-vm-start*(1), *xe-vm-shutdown*(1), *xe-host-list*(1)
 
 AUTHORS
 -------
