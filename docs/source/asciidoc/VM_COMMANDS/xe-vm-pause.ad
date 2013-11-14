@@ -16,7 +16,11 @@ SYNOPSIS
 
 DESCRIPTION
 -----------
-*xe vm-pause* pauses running VM(s).
+*xe vm-pause* pauses running VM(s). Memory allocated to the VM will remain allocated to the VM while paused. The paused VM can not be migrated to other hosts until it is unpaused. Use *xe vm-unpause* to unpause VM(s). 
+
+// Test conditions.. what exactly is going on when you pause a VM??
+
+Select VMs by using one or more parameters displayed by xe vm-list params=all. Append --multiple if more than one VM matches.
 
 OPTIONAL PARAMETERS
 -------------------
@@ -25,12 +29,19 @@ OPTIONAL PARAMETERS
 
 EXAMPLES
 --------
+To check the current power-state of a VM:
+
+- *xe vm-param-get* uuid=<VM UUID> param-name="power-state"
+
+To pause a specific VM:
+
+- *xe vm-pause* uuid=<VM UUID>
 
 
 
 SEE ALSO
 --------
-*xe help vm-pause*,
+*xe help vm-pause*, *xe-vm-unpause*(1), *xe-vm-list*(1), *xe-vm-param-get*(1), *xe-vm-suspend*(1), *xe-vm-start*(1), *xe-vm-shutdown*(1)
 
 AUTHORS
 -------
