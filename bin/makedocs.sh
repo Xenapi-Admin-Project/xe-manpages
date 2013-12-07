@@ -13,6 +13,7 @@
 
 setup()
 {
+	
 	DOCDIR=$(find_git)
 		
 	# Added 10/15/2013 
@@ -25,15 +26,25 @@ setup()
 	
 	SRCDOCDIR="$DOCDIR/docs/source/asciidoc"
 	RELEASE="$SRCDOCDIR/RELEASE/" #Added 10/14/2013
-	MANDOCDIR="$DOCDIR/docs/manpage"
-	PDFDOCDIR="$DOCDIR/docs/pdf"
 	BINDIR="$DOCDIR/bin" 
 	XSLPOINTER="$BINDIR/XSLManpages/manpages/docbook.xsl" #Added 10/14/2013
 	TMPDIR=$(mktemp -d)
 	PROGNAME=$(basename $0)
 	
+	# Adding so if you don't select the PDF option, it won't ask you if you need to create a PDF dir
+	case "$FORMAT" in
+		pdf) PDFDOCDIR="$DOCDIR/docs/pdf" ;;
+		manpage) MANDOCDIR="$DOCDIR/docs/manpage" ;;
+	esac
+	
 	
 	for DIR in "$SRCDOCDIR" "$MANDOCDIR" "$PDFDOCDIR" ; do
+		
+		# Added 10/30/2013
+		if [[ -z "$DIR" ]] ;then # skip over variable if it is white space 
+			continue 
+		fi
+				
 		if [[ ! -d "$DIR" ]] ;then
 			echo "$DIR doesn't exist - maybe git isn't set up"
 			if yesno "Do you want to create $DIR"
@@ -45,25 +56,29 @@ setup()
 		fi
 	done
 
-
 	# Added 10/14/2013
 	if [[ ! -f "$XSLPOINTER" ]] ;then 
 		echo "XenAPI Manpage XSL Stylesheets not installed - exiting"
 		exit 1
 	fi
 
+
 	if ! which a2x &> /dev/null ; then
 		echo "a2x command not installed - exiting"
 		exit 1
 	fi
+
 	
 	if ! which fop &> /dev/null ; then
 		echo "The fop command not installed - $PROGNAME will not be able to create pdf documents"
 	fi
+
+
 	if ! which xsltproc &> /dev/null ; then
 		echo "The xsltproc command not installed - $PROGNAME will not be able to process documents"
 		exit 1
 	fi
+
 }
 
 # Looking for the xe-manpage repository in Users home directory
@@ -86,7 +101,6 @@ syntax()
 	echo "options:"
 	echo "-m	make manpage document type"
 	echo "-p	make pdf document type"
-	echo "-r	render manpage RELEASE directory" #Added 10/14/2013
 	echo ""
 }
 
@@ -131,26 +145,26 @@ cleanup()
 	rm -Rf "$TMPDIR"
 }
 
-setup
-TARGET="$@" # Added 10/14/2013
+
+ # Added 10/14/2013 This isn't going to work matt.. you are passing everything
 if [[ -z "$1" ]] ; then
 	syntax
 	exit 1
 fi
 
-
 while getopts ahmrpu opt ;do
         case $opt in
                 m) FORMAT="manpage" ;;
                 p) FORMAT="pdf" ;;
-                r) TARGET="$RELEASE" ;; # Added 10/14/2013 
                 \?) echo "Unknown option" ; syntax ;;
         esac
 done
 shift $(($OPTIND - 1))
 
+setup
+
 # Replaced "$@" with $TARGET so we could specify the directory
-for ITEM in $TARGET ;do
+for ITEM in $@ ;do
 	if [[ -d "$ITEM" ]] ;then
 		for FILE in $(find $ITEM -name '*.ad') ;do
 			case "$FORMAT" in
@@ -167,4 +181,4 @@ for ITEM in $TARGET ;do
 
 done
 
-cleanup
+trap EXIT cleanup

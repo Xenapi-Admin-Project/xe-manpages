@@ -1,46 +1,57 @@
 XE(1)
 =======
 :doctype: manpage
-:man source:   xe vm-reboot
+:man source:   xe vm-start
 :man version:  {1}
-:man manual:   xe vm-reboot manual
+:man manual:   xe vm-start manual
 
 NAME
 ----
-xe-vm-reboot - Reboot Virtual Machine(s) (VM)
+xe-vm-start - Start Virtual Machine(s)
 
 SYNOPSIS
 --------
-*xe vm-reboot* [ vm-selectors ] [ force=<true | false> ] [ --multiple ]
+*xe vm-start* [ vm-selectors ] [ on=<HOST UUID> ] [ force=<true | false> ] [ --multiple ]
 
 DESCRIPTION
 -----------
-*xe vm-reboot* reboots specified running VM(s). Use the force parameter to initiate an ungraceful shutdown. Using a forced shutdown increases the risk for data loss or corruption.
+*xe vm-start* starts halted VM(s). If the VM is on a shared storage repository, use the *on* parameter to specify which host to start the VM(s), or else the system will determine a suitable host automatically. 
 
 Select VMs by using one or more parameters displayed by xe vm-list params=all. Append --multiple if more than one VM matches.
+
 
 OPTIONAL PARAMETERS
 -------------------
 *force*:: 
 	Force operation [ true | false ]
 	
+*on*::
+	Use the host UUID parameter to specify which host to start the VM(s). Use *xe host-list* to obtain a list of host UUIDs.
+	
 *<vm-selectors>*:: 
 	Parameters to select VM(s) - use *xe vm-list params=all* to get a list of VM parameters to filter on.
 
 EXAMPLES
 --------
-To reboot a specific VM:
+To check the current power-state of a VM:
 
-- *xe vm-reboot* uuid=<VM UUID> 
+- *xe vm-param-get* uuid=<VM UUID> param-name="power-state"
 
-To reboot all VMs on a host:
+To start a VM:
 
-- *xe vm-reboot* uuid=<VM UUID> power-state="running" resident-on=<HOST UUID> --multiple
- 
+- *xe vm-start* uuid=<VM UUID>
+
+To start a VM on a specific host:
+
+- *xe vm-start* uuid=<VM UUID> on=<HOST UUID>
+
+To start all VMs in a pool:
+
+- *xe vm-start* --multiple 
 
 SEE ALSO
 --------
-*xe help vm-reboot*, *xe vm-list*(1), *xe-vm-start*(1), *xe-vm-shutdown*(1), *xe-vm-pause*(1), *xe-vm-unpause*(1), *xe-vm-suspend*(1), *xe-vm-resume*(1)
+*xe help vm-start*, *xe-vm-shutdown*(1), *xe-vm-list*(1), *xe-host-list*(1)
 
 AUTHORS
 -------
@@ -54,5 +65,5 @@ For guidelines on submitting bug reports see http://wiki.xen.org/wiki/Reporting_
 
 COPYRIGHT
 ---------
-Copyright \(C)  2013 - Matthew Spah 
+Copyright \(C)  2013 - Matthew Spah
 Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License, Version 1.3 or any later version published by the Free Software Foundation; with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts. A copy of the license is included in the section entitled "GNU Free Documentation License".
