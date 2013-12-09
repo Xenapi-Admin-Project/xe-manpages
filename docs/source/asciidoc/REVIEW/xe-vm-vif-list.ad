@@ -1,4 +1,4 @@
-XE(1)
+XE(1) 
 =======
 :doctype: manpage
 :man source:   xe vm-vif-list
@@ -7,7 +7,7 @@ XE(1)
 
 NAME
 ----
-xe-vm-vif-list - Display VIF information for VMs 
+xe-vm-vif-list - Display Virtual Interface (VIF) information for Virtual Machine(s) (VM) 
 
 SYNOPSIS
 --------
@@ -15,7 +15,7 @@ SYNOPSIS
 
 DESCRIPTION
 -----------
-*xe vm-vif-list* displays VIF information for Virtual Machines. 
+*xe vm-vif-list* displays VIF information for VM(s). 
 
 Select VMs by using one or more parameters displayed by xe vm-list params=all.  Append --multiple if more than one VM matches. 
 
@@ -29,13 +29,14 @@ OPTIONAL PARAMETERS
 	
 EXAMPLES
 --------
-To display VIF information for all running VMs:
-
--	*xe vm-vif-list* power-state=running
-	
 To display VIF information for a specific VM:
 
 -	*xe vm-vif-list* uuid=<VM UUID>
+
+To display VIF information for all running VMs:
+
+-	*xe vm-vif-list* power-state="running" --multiple
+	
 	
 SEE ALSO
 --------
@@ -59,4 +60,4 @@ COPYRIGHT
 ---------
 Copyright \(C) 2012 - Matthew Spah
 
-Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License, Version 1.3 or any later version published by the Free Software Foundation; with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts. A copy of the license is included in the section entitled "GNU Free Documentation License"
+Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License, Version 1.3 or any later version published by the Free Software Foundation; with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts. A copy of the license is included in the section entitled "GNU Free Documentation License."
