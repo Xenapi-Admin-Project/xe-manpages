@@ -49,7 +49,7 @@ To destory a snapshot:
 
 SEE ALSO
 --------
-*xe help snapshot-destroy*,
+*xe help snapshot-destroy*
 
 AUTHORS
 -------
