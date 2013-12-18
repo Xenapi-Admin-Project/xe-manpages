@@ -17,7 +17,7 @@ SYNOPSIS
 
 DESCRIPTION
 -----------
-*xe snapshot-uninstall* uninstall a snapshot and VDI's marked as RW connected to this snapshot
+*xe snapshot-uninstall* Uninstall a snapshot and VDI's marked as RW connected to this snapshot
 
 
 REQUIRED PARAMETERS
@@ -51,7 +51,7 @@ To uninstall a shanpshot:
 
 SEE ALSO
 --------
-*xe help snapshot-uninstall*,
+*xe help snapshot-uninstall*
 
 AUTHORS
 -------
