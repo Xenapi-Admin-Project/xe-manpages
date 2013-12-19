@@ -5,43 +5,29 @@ XE(1)
 :man version:  {1}
 :man manual:   xe snapshot-uninstall manual
 
-
 NAME
 ----
-
-snapshot-uninstall - Uninstall a snapshot with attached storage.
+xe-snapshot-uninstall - Remove a VM snapshot.
 
 SYNOPSIS
 --------
-*xe snapshot-uninstall uuid=<SNAPSHOT UUID>
+*xe snapshot-uninstall* uuid=<SNAPSHOT UUID>
 
 DESCRIPTION
 -----------
-*xe snapshot-uninstall* Uninstall a snapshot and VDI's marked as RW connected to this snapshot
-
+*xe snapshot-uninstall* Removes a Virtual Machine (VM) snapshot and all connected Virtual Disk
+Images (VDI). You will be prompted to confirm removal, type "yes" to continue.
 
 REQUIRED PARAMETERS
 -------------------
-
-*reqd params     : *:: 
+*snapshot-uuid*::
+		Snapshot UUID - Use the *xe snapshot-list* to obtain a list of snapshot UUIDs. 
 	
 
 OPTIONAL PARAMETERS
 -------------------
-*all*::
-	Display all parameter values
-
-*uuid*:: 
- UUID - Use *xe snapshot-list* to obtain a list of snapshot UUIDs.
-
-*snapshot-uuid*:: 
-	Snapshot UUID - Use *xe snapshot-list* to obtain a list of snapshot UUIDs.
-
 *force*:: 
-  force - 
-
-*--minimal*::
-	Specify --minimal to only show minimal output
+  force - Force opperation [ true | false ]
 
 EXAMPLES
 --------
@@ -49,9 +35,13 @@ To uninstall a shanpshot:
 
 - *xe snapshot-uninstall* uuid=<SNAPSHOT UUID>
 
+To force the uninstall:
+
+- * xe snapshot-uninstall snapshot-uuid=<SNAPSHOT UUID> force=true
+
 SEE ALSO
 --------
-*xe help snapshot-uninstall*
+*xe help snapshot-uninstall*, *xe snapshot-list*(1)
 
 AUTHORS
 -------
