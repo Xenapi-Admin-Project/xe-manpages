@@ -16,29 +16,16 @@ SYNOPSIS
 
 DESCRIPTION
 -----------
-*xe snapshot-destroy* removes a snapshot but leaves attached VDIs
-
-
+*xe snapshot-destroy* Removes a snapshot but leaves attached Virtual Disk Images (VDIs).
+To remove attached storage use *snapshot-uninstall*
 
 REQUIRED PARAMETERS
 -------------------
-
-*reqd params     : *:: 
+*uuid*::
+	Snapshot UUID - Use the *xe snapshot-list* to obtain a list of snapshot UUIDs. 
 	
-
 OPTIONAL PARAMETERS
 -------------------
-*all*::
-	Display all parameter values
-
-*uuid*:: 
-  UUID - Use *xe snapshot-list* to obtain a list of snapshot UUIDs.
-	
-*snapshot-uuid*:: 
-	Snapshot UUID - Use *xe snapshot-list* to obtain a list of snapshot UUIDs.
-
-*--minimal*::
-	Specify --minimal to only show minimal output
 
 EXAMPLES
 --------
@@ -46,10 +33,9 @@ To destory a snapshot:
 
 - *xe snapshot-destroy* uuid=<SNAPSHOT UUID>
 
-
 SEE ALSO
 --------
-*xe help snapshot-destroy*
+*xe help snapshot-destroy*, *xe snapshot-list*(1), *xe snapshot-uninstall*
 
 AUTHORS
 -------
