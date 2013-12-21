@@ -15,7 +15,7 @@ SYNOPSIS
 
 DESCRIPTION
 -----------
-Create a new template by cloning an existing snapshot, using storage-level fast disk clone operation where available.
+Create a new template by cloning an existing snapshot using storage-level fast disk clone operation where available.
 
 REQUIRED PARAMETERS
 -------------------

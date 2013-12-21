@@ -11,7 +11,7 @@ xe-snapshot-uninstall - Remove a VM snapshot.
 
 SYNOPSIS
 --------
-*xe snapshot-uninstall* uuid=<SNAPSHOT UUID>
+*xe snapshot-uninstall* snashot-uuid=<SNAPSHOT-UUID>
 
 DESCRIPTION
 -----------
