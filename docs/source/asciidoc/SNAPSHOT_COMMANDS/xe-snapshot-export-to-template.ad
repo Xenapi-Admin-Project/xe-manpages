@@ -21,21 +21,17 @@ DESCRIPTION
 REQUIRED PARAMETERS
 -------------------
 
-*reqd params     : filename*:: 
+*filename*:: 
 	
 *snapshot-uuid*:: 
 	
 
 OPTIONAL PARAMETERS
 -------------------
-*all*::
-	Display all parameter values
 
 *preserve-power-state*:: 
+	Preserve the power state. [ yes | no ]
 	
-
-*--minimal*::
-	Specify --minimal to only show minimal output
 EXAMPLES
 --------
 

@@ -8,43 +8,40 @@ XE(1)
 
 NAME
 ----
-
-snapshot-copy -
+xe-snapshot-copy - Copy a snapshot
 
 SYNOPSIS
 --------
+*xe snapshot-copy* uuid=<SNAPSHOT-UUID> new-name-label=<NEW-NAME-LABEL>
 
 DESCRIPTION
 -----------
-
+Create a VM template from a snapshot. Memory will be removed.
 
 REQUIRED PARAMETERS
 -------------------
+*uuid*:: 
+	UUID of SNAPSHOT that is to be copied. Use *xe snapshot-list* to obtain the UUID of the SNAPSHOT.
 
-*reqd params     : new-name-label*:: 
+*new-name-label*:: 
+	New name-label fro the VM template.
 	
 
 OPTIONAL PARAMETERS
 -------------------
-*all*::
-	Display all parameter values
-
-*uuid*:: 
-	
 *new-name-description*:: 
+	New name description for the VM template.
 	
 *sr-uuid*:: 
-	
+	UUID of the storage repository to save the VM. Use *xe sr-list* to obtain a list or storage repositories.
 
-*--minimal*::
-	Specify --minimal to only show minimal output
 EXAMPLES
 --------
-
+xe snapshot-copy new-name-label=<VM-TEMPLATE-NAME> uuid=<SNAPSHOT-UUID>
 
 SEE ALSO
 --------
-*xe help snapshot-copy*,
+*xe help snapshot-copy*, *xe snapshot-list*(1), *xe sr-list*(2)
 
 AUTHORS
 -------
