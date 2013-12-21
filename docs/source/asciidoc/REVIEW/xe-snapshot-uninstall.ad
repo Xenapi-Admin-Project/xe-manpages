@@ -5,6 +5,7 @@ XE(1)
 :man version:  {1}
 :man manual:   xe snapshot-uninstall manual
 
+
 NAME
 ----
 xe-snapshot-uninstall - Remove a VM snapshot.
