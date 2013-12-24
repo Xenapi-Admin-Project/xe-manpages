@@ -11,11 +11,13 @@ xe-vm-start - Start Virtual Machine(s)
 
 SYNOPSIS
 --------
-*xe vm-start* [ vm-selectors ] [ on=<HOST UUID> ] [ force=<true | false> ] [ --multiple ]
+*xe vm-start* [ vm-selectors ] [ on=<HOST UUID> ] [ force=<True | False> ] [ paused=<True | False> ] [ --multiple ]
 
 DESCRIPTION
 -----------
 *xe vm-start* starts halted VM(s). If the VM is on a shared storage repository, use the *on* parameter to specify which host to start the VM(s), or else the system will determine a suitable host automatically. 
+
+To start a VM in a paused state, use the *paused* parameter. See *xe vm-unpause* for information on unpausing the VM.  
 
 Select VMs by using one or more parameters displayed by xe vm-list params=all. Append --multiple if more than one VM matches.
 
@@ -23,7 +25,10 @@ Select VMs by using one or more parameters displayed by xe vm-list params=all. A
 OPTIONAL PARAMETERS
 -------------------
 *force*:: 
-	Force operation [ true | false ]
+	Force operation [ True | False ]
+	
+*paused*::
+	Start a VM in a paused state [ True | False ] 
 	
 *on*::
 	Use the host UUID parameter to specify which host to start the VM(s). Use *xe host-list* to obtain a list of host UUIDs.
@@ -48,6 +53,10 @@ To start a VM on a specific host:
 To start all VMs in a pool:
 
 - *xe vm-start* --multiple 
+
+To start a VM in the paused state:
+
+- *xe vm-start* uuid=<VM UUID> paused="True"
 
 SEE ALSO
 --------

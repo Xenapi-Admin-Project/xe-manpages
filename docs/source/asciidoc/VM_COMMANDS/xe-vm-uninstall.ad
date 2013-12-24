@@ -19,9 +19,9 @@ DESCRIPTION
 
 OPTIONAL PARAMETERS
 -------------------
-
 *force*:: 
 	Force operation
+
 *<vm-selectors>*:: 
 	Parameters to select VM(s) - use *xe vm-list params=all* to get a list of VM parameters to filter on.
 

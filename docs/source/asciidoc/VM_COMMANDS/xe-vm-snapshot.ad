@@ -8,41 +8,50 @@ XE(1)
 
 NAME
 ----
-xe-vm-snapshot -
+xe-vm-snapshot - Create a Virtual Machine (VM) snapshot
 
 SYNOPSIS
 --------
+*xe vm-snapshot* new-name-label=<NAME LABEL> [ vm-slectors ] [ new-name-description=<NAME DESCRIPTION> ]  
 
 DESCRIPTION
 -----------
+*xe vm-snapshot* creates a regular snapshot of a running or suspended VM on all storage repostiory types. A regular VM snapshot contains all storage information, parameters, and all attached Virtual Interfaces (VIF) of the VM, which allows them to be exported and restored for backup purposes. Regular snapshots are crash consistent and can be created from on all VM types. See *xe vm-checkpoint* for creating a VM snapshot that also saves the VM state (RAM). 
 
+While the snapshot is being created, IO is temporary halted to ensure a contestant disk image is captured. 
 
 REQUIRED PARAMETERS
 -------------------
 *new-name-label*:: 
-	Desired new name-label for VM
+	Desired new name-label for VM snapshot
 
 OPTIONAL PARAMETERS
 -------------------
 *new-name-description*:: 
-	Desired new name-description for VM
+	Desired new name-description for VM snapshot
+	
 *<vm-selectors>*:: 
 	Parameters to select VM(s) - use *xe vm-list params=all* to get a list of VM parameters to filter on.
 
-
 EXAMPLES
 --------
+To create a regular snapshot of a VM:
 
+- *xe vm-snapshot* new-name-label="Linux Test Snapshot" uuid=<VM UUID>
+
+To create a regular snapshot of a VM with a description:
+
+- *xe vm-snapshot* new-name-description="This is the description" new-name-label="VM Snapshot" uuid=<VM UUID>
 
 SEE ALSO
 --------
-*xe help vm-snapshot*,
+*xe help vm-snapshot*, *xe snapshot-list*(1), *xe vm-list*(1), *Xe vm-checkpoint*(1), *vm-snapshot-with-quiesce*(1)
 
 AUTHORS
 -------
 Manpage Author(s):
 
-- <manpage author name> <manpage author email address>
+- Matthew Spah <spahmatthew@xenapiadmin.com>
 
 BUGS
 ----
