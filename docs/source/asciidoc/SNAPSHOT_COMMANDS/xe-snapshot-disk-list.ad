@@ -20,18 +20,16 @@ DESCRIPTION
 
 REQUIRED PARAMETERS
 -------------------
-
-*reqd params     : *:: 
+*uuid*:: 
+	Display UUIDs
 	
-
+*snapshot-uuid*:: 
+	Display snapshot UUIDs
+	
 OPTIONAL PARAMETERS
 -------------------
 *all*::
 	Display all parameter values
-
-*uuid*:: 
-	
-*snapshot-uuid*:: 
 	
 *vbd-params*:: 
 	
