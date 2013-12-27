@@ -17,10 +17,8 @@ DESCRIPTION
 -----------
 *xe snapshot-param-add* adds a key to a set parameter or a key/value pair to a map parameter. Use *xe snapshot-list* and *xe snapshot-param-list to identify writable parameters (RW, MRW).
 
-
 REQUIRED PARAMETERS
 -------------------
-
 *uuid*:: 
 	SNAPSHOT UUID - Use *xe SNAPSHOT-list* to obtain a list of SNAPSHOT UUIDs.
 *param-name*:: 
@@ -28,11 +26,8 @@ REQUIRED PARAMETERS
 
 OPTIONAL PARAMETERS
 -------------------
-
 *param-key*:: 
 	Key to be added to a set parameter (SRW).
-
-
 
 EXAMPLES
 --------
