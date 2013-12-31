@@ -5,7 +5,6 @@ XE(1)
 :man version:  {1}
 :man manual:   xe vm-pause manual
 
-
 NAME
 ----
 xe-vm-pause - Pause Virtual Machine(s) (VM)
@@ -16,9 +15,7 @@ SYNOPSIS
 
 DESCRIPTION
 -----------
-*xe vm-pause* pauses running VM(s). Memory allocated to the VM will remain allocated to the VM while paused. The paused VM can not be migrated to other hosts until it is unpaused. Use *xe vm-unpause* to unpause VM(s). 
-
-// Test conditions.. what exactly is going on when you pause a VM??
+*xe vm-pause* pauses the running state of a VM(s). Memory allocated to the VM will remain allocated to the VM while paused. The paused VM can not be migrated to other hosts until it is unpaused. Use *xe vm-unpause* to unpause VM(s). 
 
 Select VMs by using one or more parameters displayed by xe vm-list params=all. Append --multiple if more than one VM matches.
 
@@ -36,8 +33,6 @@ To check the current power-state of a VM:
 To pause a specific VM:
 
 - *xe vm-pause* uuid=<VM UUID>
-
-
 
 SEE ALSO
 --------
