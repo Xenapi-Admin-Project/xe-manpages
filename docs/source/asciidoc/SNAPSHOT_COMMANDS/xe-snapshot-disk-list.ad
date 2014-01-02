@@ -8,15 +8,17 @@ XE(1)
 
 NAME
 ----
-
-snapshot-disk-list -
+xe snapshot-disk-list - List the disks on a selected VM(s)
 
 SYNOPSIS
 --------
+*xe-snapshot-disk-list* uuid=<SNAPSHOT-UUID>
+
 
 DESCRIPTION
 -----------
-
+*xe snapshot-disk-list* lists the disks on a specific VM. VM's can also be spoecified by filtering 
+the full list on values of field.
 
 REQUIRED PARAMETERS
 -------------------
