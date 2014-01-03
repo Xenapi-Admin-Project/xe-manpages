@@ -33,15 +33,15 @@ OPTIONAL PARAMETERS
 *all*::
 	Display all parameter values
 	
-*vbd-params*:: 
-	
-*vdi-params*:: 
-	
-*<vm-selectors>*:: 
-	
+*vdb-params*::
+    Virtual block device parameters to display - Use *xe vbd-list* & *xe vbd-param-list* to obtain a list of VBD parameters.
 
-*--minimal*::
-	Specify --minimal to only show minimal output
+*vdi-params*::
+    Virtual disk image parameters to display - Use *xe vdi-list* & *xe vdi-param-list* to obtain a list of VDI parameters.
+
+*--multiple* ::
+    Specify --multiple if you want to match more than one VM.
+
 EXAMPLES
 --------
 
