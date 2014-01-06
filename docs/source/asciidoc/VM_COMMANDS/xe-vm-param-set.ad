@@ -7,7 +7,7 @@ XE(1)
 
 NAME
 -----
-xe-vm-param-set - Set parameters for a vm
+xe-vm-param-set - Set parameters for a Virtual Machine (VM)
 
 SYNOPSIS
 --------
@@ -17,10 +17,8 @@ DESCRIPTION
 -----------
 *xe vm-param-set* sets writable parameters. Use *xe vm-list* and *xe vm-param-list to identify writable parameters (RW, MRW). To append a value to a writable set or map (SRW, MRW) parameter use *xe vm-param-add*
 
-
 REQUIRED PARAMETERS
 -------------------
-
 *uuid*:: 
 	VM UUID - Use *xe VM-list* to obtain a list of VM UUIDs.
 
@@ -29,25 +27,34 @@ OPTIONAL PARAMETERS
 
 *name-label*:: 
 	Set name of VM
+
 *name-description*:: 
 	Set name-description of VM
-*user-version*:: 
-	
+
+*user-version*::
+	Set user-version number of VM
+
 *is-a-template*:: 
-	
+	Set template mode of a VM: is-a-template=[ true | false ]
+
 *memory-static-max*:: 
+	Set the max static memory in bytes for a VM
 	
 *memory-dynamic-max*:: 
+	Set the max dynamic memory in bytes for a VM
 	
 *memory-dynamic-min*:: 
+	Set the minimal dynamic memory in bytes for a VM
 	
 *memory-static-min*:: 
+	Set the static minimal memory in bytes for a VM
 	
 *suspend-VDI-uuid*:: 
 	
-*suspend-SR-uuid*:: 
+*suspend-SR-uuid*::
+	Set the suspend SR  
 	
-*VCPUs-max*:: 
+*VCPUs-max*::
 	
 *VCPUs-at-startup*:: 
 	
@@ -99,8 +106,6 @@ OPTIONAL PARAMETERS
 	
 *xenstore-data:*:: 
 	
-
-
 
 EXAMPLES
 --------
