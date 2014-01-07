@@ -1,0 +1,71 @@
+XE(1)
+=======
+:doctype: manpage
+:man source:   xe vm-uninstall
+:man version:  {1}
+:man manual:   xe vm-uninstall manual
+
+NAME
+----
+xe-vm-uninstall - Uninstall a Virtual Machine (VM)
+
+SYNOPSIS
+--------
+*xe vm-uninstall* <vm-selections> [ force=< true | false> ] [ --multiple ]
+
+DESCRIPTION
+-----------
+*xe vm-uninstall* uninstalls a VM, and all RW Virtual Disk Images (VDIs) assoisated with the VM, including snapshots. *xe vm-uninstall* displays all VM and VDI UUIDs that are pending for removal, type *yes* to continue. To force the uninstall of a VM, use the *force* argument. If you wish to remove only the VM record, then use *xe vm-remove*. 
+
+Select a VM by using one or more parameters displayed by *xe vm-list* params=all.  Append --multiple if more than one VM matches. 
+
+REQUIRED PARAMETERS
+-------------------
+*<vm-selectors>*:: 
+	Parameters to select VM(s) - use *xe vm-list params=all* to get a list of VM parameters to filter on.
+
+OPTIONAL PARAMETERS
+-------------------
+*force*:: 
+	Force operation
+
+*--multiple*::
+	Specify --multiple if you want to match more than one VM
+
+EXAMPLES
+--------
+To uninstall a VM:
+
+- *xe vm-uninstall* uuid=<VM UUID>
+
+To force the uninstall of a VM:
+
+- *xe vm-uninstall* uuid=<VM UUID> force="true"
+
+To remove all VMs that match a *tag*:
+
+- *xe vm-uninstall* tags=<TAG STRING> --multiple
+
+To uninstall all VMs *resident-on* on a certain host:
+
+- *xe vm-uninstall* resident-on=<HOST UUID> --multiple
+
+
+SEE ALSO
+--------
+*xe help vm-uninstall*, *xe-vm-list*(1), *xe-vm-destroy*(1), *xe-vm-clone*(1), *xe-vm-install*(1), *xe snapshot-list*(1)
+
+AUTHORS
+-------
+Manpage Author(s):
+
+- Matthew Spah <spahmatthew@xenapiadmin.com>
+
+BUGS
+----
+For guidelines on submitting bug reports see http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP. Submit bugs and general questions to xen-api@lists.xen.org.
+
+COPYRIGHT
+---------
+Copyright \(C)  2014 - Matthew Spah
+Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License, Version 1.3 or any later version published by the Free Software Foundation; with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts. A copy of the license is included in the section entitled "GNU Free Documentation License".

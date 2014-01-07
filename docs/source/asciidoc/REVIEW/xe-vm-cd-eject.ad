@@ -15,20 +15,20 @@ SYNOPSIS
 
 DESCRIPTION
 -----------
-*xe vm-cd-eject* will eject a CD from a Virtual Machine or from multiple Virtual Machines. Select VMs by using one or more parameters displayed by xe vm-list params=all.  Append --multiple if more than one VM matches. 
+*xe vm-cd-eject* will eject a CD from a Virtual Machine or from multiple Virtual Machines. Select VMs by using one or more parameters displayed by xe vm-list params=all. Append --multiple if more than one VM matches. 
 
 REQUIRED PARAMETERS
 -------------------
 *cd-name*::
-	CD Name - Use *xe cd-list* to obtain a list of CD names.
+	CD Name - Use *xe cd-list* to obtain a list of CD names
 
 OPTIONAL PARAMETERS
 -------------------
 *<vm selectors*::
-	Parameters to select VM(s) - use *xe vm-list params=all* to get a list of VM parameters to filter on. 
+	Parameters to select VM(s) - use *xe vm-list params=all* to get a list of VM parameters to filter on
 	
 *--multiple* ::
-	Specify --multiple if you want to match more than one VM.
+	Specify --multiple if you want to match more than one VM
 	
 EXAMPLES
 --------
