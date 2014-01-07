@@ -16,8 +16,7 @@ SYNOPSIS
 
 DESCRIPTION
 -----------
-*xe snapshot-disk-list* lists the disks on a specific VM. VM's can also be specified by filtering 
-the full list on values of field.
+*xe snapshot-disk-list* lists the disks on a specific VM. VM's can also be specified by filtering the full list on values of field. Use *xe vm-list params=all* to get a list of values. If there are multiple matches the option '--multiple' must be specified.
 
 REQUIRED PARAMETERS
 -------------------
@@ -43,7 +42,7 @@ OPTIONAL PARAMETERS
 
 EXAMPLES
 --------
-- *xe snapshot-disk-list* uuid=<UUID>
+- *xe snapshot-disk-list* uuid=<UUID> vdi-params=<all>
 
 SEE ALSO
 --------
