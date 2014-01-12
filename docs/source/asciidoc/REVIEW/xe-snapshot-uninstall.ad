@@ -16,13 +16,12 @@ SYNOPSIS
 
 DESCRIPTION
 -----------
-*xe snapshot-uninstall* Removes a Virtual Machine (VM) snapshot and all connected Virtual Disk
-Images (VDI). You will be prompted to confirm removal, type "yes" to continue.
+*xe snapshot-uninstall* Removes a Virtual Machine (VM) snapshot and all connected Virtual Disk Images (VDI). You will be prompted to confirm removal, type "yes" to continue.
 
 REQUIRED PARAMETERS
 -------------------
 *snapshot-uuid*::
-		Snapshot UUID - Use the *xe snapshot-list* to obtain a list of snapshot UUIDs. 
+  Snapshot UUID - Use the *xe snapshot-list* to obtain a list of snapshot UUIDs. 
 	
 
 OPTIONAL PARAMETERS
