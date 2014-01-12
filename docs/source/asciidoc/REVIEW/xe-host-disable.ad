@@ -21,7 +21,7 @@ Select hosts by using one or more parameters displayed by xe host-list params=al
 
 REQUIRED PARAMETERS
 -------------------
-<host-selectors>::
+*host-selectors*::
 	Parameters to select host(s) - Use *xe host-list params=all* to get a list of host parameters to filter on.
 	
 OPTIONAL PARAMETERS

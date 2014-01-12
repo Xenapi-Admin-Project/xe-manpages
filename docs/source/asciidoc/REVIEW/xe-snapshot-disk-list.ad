@@ -5,7 +5,6 @@ XE(1)
 :man version:  {1}
 :man manual:   xe snapshot-disk-list manual
 
-
 NAME
 ----
 xe snapshot-disk-list - List the disks on a selected VM(s)

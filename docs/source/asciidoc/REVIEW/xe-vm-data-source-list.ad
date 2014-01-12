@@ -5,7 +5,6 @@ XE(1)
 :man version:  {1}
 :man manual:   xe vm-data-source-list manual
 
-
 NAME
 ----
 xe-vm-data-source-list - Display data sources present on VMs

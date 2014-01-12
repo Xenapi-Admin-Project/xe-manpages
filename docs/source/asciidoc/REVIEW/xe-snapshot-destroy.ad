@@ -5,7 +5,6 @@ XE(1)
 :man version:  {1}
 :man manual:   xe snapshot-destroy manual
 
-
 NAME
 ----
 xe-snapshot-destroy - Remove a snapshot while leaving storage intact.

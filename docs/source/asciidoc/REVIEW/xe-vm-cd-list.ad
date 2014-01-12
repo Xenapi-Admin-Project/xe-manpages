@@ -5,16 +5,13 @@ XE(1)
 :man version:  	{1}
 :man manual:   	xe vm-cd-list Manual
 
-
 NAME
 ----
 xe-vm-cd-list - Lists all CD images attached to VMs
 
 SYNOPSIS
 --------
-
 *xe vm-cd-list* [ params=<PARAMETER> ] [--minimal]
-
 
 DESCRIPTION
 -----------
@@ -30,10 +27,8 @@ Append --minimal to display values for one parameter on a single line separated 
 	
 - *xe vm-cd-list params="name-label" --minimal*
 
-
 OPTIONAL PARAMETERS
 -------------------
-
 *all*::
 	Display all parameter values
 *uuid*::

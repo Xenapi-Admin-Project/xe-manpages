@@ -5,7 +5,6 @@ XE(1)
 :man version:  {1}
 :man manual:   xe snapshot-copy manual
 
-
 NAME
 ----
 xe-snapshot-copy - Copy a snapshot
