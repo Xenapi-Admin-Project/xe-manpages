@@ -1,0 +1,63 @@
+XE(1)
+=======
+:doctype: manpage
+:man source:   xe snapshot-disk-list
+:man version:  {1}
+:man manual:   xe snapshot-disk-list manual
+
+
+NAME
+----
+xe snapshot-disk-list - List the disks on a selected VM(s)
+
+SYNOPSIS
+--------
+*xe-snapshot-disk-list* uuid=<SNAPSHOT-UUID>
+
+DESCRIPTION
+-----------
+*xe snapshot-disk-list* lists the disks on a specific VM. VM's can also be specified by filtering the full list on values of field. Use *xe vm-list params=all* to get a list of values. If there are multiple matches, the option --multiple must be specified.
+
+REQUIRED PARAMETERS
+-------------------
+*uuid*:: 
+	Display UUIDs
+	
+*snapshot-uuid*:: 
+	Display snapshot UUIDs
+	
+OPTIONAL PARAMETERS
+-------------------
+*all*::
+	Display all parameter values
+	
+*vdb-params*::
+    Virtual block device parameters to display - Use *xe vbd-list* & *xe vbd-param-list* to obtain a list of VBD parameters.
+
+*vdi-params*::
+    Virtual disk image parameters to display - Use *xe vdi-list* & *xe vdi-param-list* to obtain a list of VDI parameters.
+
+*--multiple* ::
+    Specify --multiple if you want to match more than one VM.
+
+EXAMPLES
+--------
+- *xe snapshot-disk-list* uuid=<UUID> vdi-params=<all>
+
+SEE ALSO
+--------
+*xe help snapshot-disk-list*, *xe help vm-list*(1)
+
+AUTHORS
+-------
+Manpage Author(s): ::
+<Adam Sparks> <adam@xenapiadmin.com>
+
+BUGS
+----
+For guidelines on submitting bug reports see http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP. Submit bugs and general questions to xen-api@lists.xen.org.
+
+COPYRIGHT
+---------
+Copyright \(C)  2013 - <Adam Sparks>
+Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License, Version 1.3 or any later version published by the Free Software Foundation; with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts. A copy of the license is included in the section entitled "GNU Free Documentation License"
