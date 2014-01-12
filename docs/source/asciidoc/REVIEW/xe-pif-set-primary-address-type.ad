@@ -6,7 +6,7 @@ XE(1)
 :man manual:   xe pif-set-primary-address-type manual
 
 NAME
------
+----
 xe-pif-set-primary-address-type - Set primary address type used by a PIF
 
 SYNOPSIS
