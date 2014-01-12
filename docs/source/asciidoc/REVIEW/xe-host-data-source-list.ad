@@ -7,7 +7,7 @@ XE(1)
 
 NAME
 ----
-xe-host-data-source-list - Display data sources present on hosts
+xe-host-data-source-list - Display data-sources present on host
 
 SYNOPSIS
 --------
@@ -15,20 +15,24 @@ SYNOPSIS
 
 DESCRIPTION
 -----------
-*xe host-data-source-list* displays data-sources and their parameters present on specific host. Use *xe host-data-source-query* to return data from sensors displayed by *xe host-data-source-list*. 
+*xe host-data-source-list* displays data-sources and their parameters present on a specific host. Use *xe host-data-source-query* to return data from sensors displayed by *xe host-data-source-list*. 
 
 Select a host by using one or more parameters displayed by xe host-list params=all. *xe host-data-source-list* can only be performed on one host at a time
 
 REQUIRED PARAMETERS
 -------------------
 *<host-selectors>*::
-	Parameters to select host(s) - use *xe host-list params=all* to get a list of host parameters to filter on.
+	Parameters to select host - use *xe host-list params=all* to get a list of host parameters to filter on.
 
 EXAMPLES
 --------
-To display data sensors present on a host using a host UUID:
+To display data-sensors present on a host using a host UUID:
 
 - *xe host-data-source-list* uuid=<HOST UUID>
+
+To display data-sensors present on a host using a host name-label:
+
+- *xe host-data-source-list* name-label=<HOST NAME-LABEL>
 
 SEE ALSO
 --------
