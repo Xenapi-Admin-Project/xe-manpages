@@ -23,7 +23,7 @@ Select VMs by using one or more parameters displayed by xe vm-list params=all.  
 OPTIONAL PARAMETERS
 -------------------
 *force*::
-	Force operation [ true | false ]
+	Force operation [ True | False ]
 	
 *on*::
 	Use the host UUID parameter to specify which host to resume the VM(s). Use *xe host-list* to obtain a list of host UUIDs.
