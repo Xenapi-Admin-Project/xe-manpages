@@ -26,7 +26,7 @@ REQUIRED PARAMETERS
 OPTIONAL PARAMETERS
 -------------------
 *force*:: 
-  force - Force opperation [ true | false ]
+  force - Force opperation [ True | False ]
 
 EXAMPLES
 --------
@@ -36,7 +36,7 @@ To uninstall a shanpshot:
 
 To force the uninstall:
 
-- * xe snapshot-uninstall snapshot-uuid=<SNAPSHOT UUID> force=true
+- * xe snapshot-uninstall snapshot-uuid=<SNAPSHOT UUID> force=True
 
 SEE ALSO
 --------
