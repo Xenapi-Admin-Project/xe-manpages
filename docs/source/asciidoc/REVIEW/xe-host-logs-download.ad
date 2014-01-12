@@ -5,7 +5,6 @@ XE(1)
 :man version:  {1}
 :man manual:   xe host-logs-download manual
 
-
 NAME
 ----
 xe-host-logs-download - Download XenServer host(s) log(s)

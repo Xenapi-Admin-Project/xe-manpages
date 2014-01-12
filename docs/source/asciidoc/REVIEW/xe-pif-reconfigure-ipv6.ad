@@ -6,7 +6,7 @@ XE(1)
 :man manual:   xe pif-reconfigure-ipv6 manual
 
 NAME
------
+----
 xe-pif-reconfigure-ipv6 - Configure physical interface (PIF) IPv6 addressing
 
 SYNOPSIS

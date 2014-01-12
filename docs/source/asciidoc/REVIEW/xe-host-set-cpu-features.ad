@@ -5,7 +5,6 @@ XE(1)
 :man version:  {1}
 :man manual:   xe host-set-cpu-features manual
 
-
 NAME
 ----
 xe-host-set-cpu-features - Apply a mask to a XenServer CPU
