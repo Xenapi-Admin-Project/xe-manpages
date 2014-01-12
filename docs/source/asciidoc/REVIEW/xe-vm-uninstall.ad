@@ -27,7 +27,7 @@ REQUIRED PARAMETERS
 OPTIONAL PARAMETERS
 -------------------
 *force*:: 
-	Force operation
+	Force operation [ True | False ]
 
 *--multiple*::
 	Specify --multiple if you want to match more than one VM

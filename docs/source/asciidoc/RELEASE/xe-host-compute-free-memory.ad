@@ -15,7 +15,7 @@ SYNOPSIS
  
 DESCRIPTION
 -----------
-*xe host-compute-free-memory* displays the amount of free memory, in bytes, on a host. Only one host can be selected at a time. 
+*xe host-compute-free-memory* displays the amount of free memory in bytes on a host. Only one host can be selected at a time. 
 
 Select a host by using one or more parameters displayed by xe host-list params=all.
 

@@ -22,7 +22,7 @@ Select VMs by using one or more parameters displayed by xe vm-list params=all. A
 OPTIONAL PARAMETERS
 -------------------
 *force*:: 
-	Force operation [ true | false ]
+	Force operation [ True | False ]
 	
 *<vm-selectors>*:: 
 	Parameters to select VM(s) - use *xe vm-list params=all* to get a list of VM parameters to filter on.
