@@ -6,7 +6,7 @@ XE(1)
 :man manual:   xe host-list manual
 
 NAME
------
+----
 xe-host-list - Displays hosts and all parameters.
 
 SYNOPSIS

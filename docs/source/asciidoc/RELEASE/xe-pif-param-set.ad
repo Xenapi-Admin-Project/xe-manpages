@@ -78,7 +78,7 @@ To turn off autonegotiation:
 
 - *xe pif-param-set* uuid=<PIF UUID> other-config:ethtool-autoneg="off"
 
-To set ethernet speed (autonegotiation has to be off):
+To set ethernet speed in Mbps (autonegotiation has to be off):
 	
 - *xe pif-param-set* uuid=<PIF UUID> other-config:ethtool-speed="1000"
 

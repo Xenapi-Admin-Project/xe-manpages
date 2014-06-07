@@ -15,14 +15,14 @@ SYNOPSIS
 
 DESCRIPTION
 -----------
-*xe vm-reboot* reboots specified running VM(s). Use the force parameter to initiate an ungraceful shutdown. Using a forced shutdown increases the risk for data loss or corruption.
+*xe vm-reboot* reboots specified running VM(s). Use the force parameter to initiate an ungraceful shutdown. A forced reboot increases the risk for data loss or corruption.
 
 Select VMs by using one or more parameters displayed by xe vm-list params=all. Append --multiple if more than one VM matches.
 
 OPTIONAL PARAMETERS
 -------------------
 *force*:: 
-	Force operation [ true | false ]
+	Force operation [ True | False ]
 	
 *<vm-selectors>*:: 
 	Parameters to select VM(s) - use *xe vm-list params=all* to get a list of VM parameters to filter on.

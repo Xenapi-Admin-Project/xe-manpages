@@ -1,0 +1,66 @@
+XE(1)
+=======
+:doctype: manpage
+:man source:   xe vm-checkpoint
+:man version:  {1}
+:man manual:   xe vm-checkpoint manual
+
+NAME
+----
+xe-vm-checkpoint - Create a Virtual Machine (VM) checkpoint
+
+SYNOPSIS
+--------
+*xe vm-checkpoint* new-name-label=<NAME LABEL> [ vm-selectors ] [ new-name-description=<NAME DESCRIPTION> ]
+
+DESCRIPTION
+-----------
+*xe vm-checkpoint* creates a snapshot with memory state of a running or suspended VM on all storage repostiory types. LVM based storage repositories must be upgraded if they were created on a previous version of XenServer, and the volumes (VDIs) must be created using the default format (type=raw volumes cannot be snapshotted). See *xe vm-snapshot-revert* for restoring a VM using a snapshot. 
+
+A VM snapshot with memory contains all storage information, parameters, all attached Virtual Interfaces (VIF), and the current state of the VM (RAM). A snapshot with memory requires at least 4MB of disk space per disk, plus the size of the RAM, plus around 20% overhead. So a checkpoint with 256MB RAM would require approximately 300MB of storage.
+
+While a checkpoint is being created, the VM will be paused until the process is completed.  
+
+See *xe vm-snapshot* for creating a regular VM snapshot. See *xe vm-snapshot-with-quiesce* for creating snapshots that utilize the Windows Volume Shadow Copy Service (VSS). 
+
+REQUIRED PARAMETERS
+-------------------
+*new-name-label*:: 
+	Desired new name-label for VM
+
+OPTIONAL PARAMETERS
+-------------------
+*new-name-description*:: 
+	Desired new name-description for VM
+
+*<vm-selectors>*:: 
+	Parameters to select VM(s) - use *xe vm-list params=all* to get a list of VM parameters to filter on.
+
+EXAMPLES
+--------
+To create a VM checkpoint on a specific VM:
+
+-	*xe vm-checkpoint* uuid=<VM UUID> new-name-label=<CHECKPOINT NAME LABEL>
+
+To create a VM checkpoint on a specific VM with a description:
+
+-	*xe vm-checkpoint* uuid=<VM UUID> new-name-label=<CHECKPOINT NAME LABEL> new-name-description=<DESCRIPTION>
+
+SEE ALSO
+--------
+*xe help vm-checkpoint*, *xe-vm-list*(1), *xe-vm-snapshot*(1), *xe-vm-snapshot-with-quiesce*(1), *xe-snapshot-list*(1)
+
+AUTHORS
+-------
+Manpage Author(s):
+
+- Matthew Spah <spahmatthew@xenapiadmin.com>
+
+BUGS
+----
+For guidelines on submitting bug reports see http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP. Submit bugs and general questions to xen-api@lists.xen.org.
+
+COPYRIGHT
+---------
+Copyright \(C)  2014 - Matthew Spah
+Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License, Version 1.3 or any later version published by the Free Software Foundation; with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts. A copy of the license is included in the section entitled "GNU Free Documentation License".

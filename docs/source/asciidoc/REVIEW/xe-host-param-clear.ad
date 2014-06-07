@@ -6,7 +6,7 @@ XE(1)
 :man manual:   xe host-param-clear manual
 
 NAME
------
+----
 xe-host-param-clear - Clears a specific writable parameter for a host
 
 SYNOPSIS

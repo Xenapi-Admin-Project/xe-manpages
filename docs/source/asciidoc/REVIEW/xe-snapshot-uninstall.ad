@@ -5,43 +5,27 @@ XE(1)
 :man version:  {1}
 :man manual:   xe snapshot-uninstall manual
 
-
 NAME
 ----
-
-snapshot-uninstall - Uninstall a snapshot with attached storage.
+xe-snapshot-uninstall - Remove a VM snapshot.
 
 SYNOPSIS
 --------
-*xe snapshot-uninstall uuid=<SNAPSHOT UUID>
+*xe snapshot-uninstall* snashot-uuid=<SNAPSHOT-UUID>
 
 DESCRIPTION
 -----------
-*xe snapshot-uninstall* uninstall a snapshot and VDI's marked as RW connected to this snapshot
-
+*xe snapshot-uninstall* Removes a Virtual Machine (VM) snapshot and all connected Virtual Disk Images (VDI). You will be prompted to confirm removal, type "yes" to continue.
 
 REQUIRED PARAMETERS
 -------------------
-
-*reqd params     : *:: 
-	
+*snapshot-uuid*::
+  Snapshot UUID - Use the *xe snapshot-list* to obtain a list of snapshot UUIDs. 
 
 OPTIONAL PARAMETERS
 -------------------
-*all*::
-	Display all parameter values
-
-*uuid*:: 
- UUID - Use *xe snapshot-list* to obtain a list of snapshot UUIDs.
-
-*snapshot-uuid*:: 
-	Snapshot UUID - Use *xe snapshot-list* to obtain a list of snapshot UUIDs.
-
 *force*:: 
-  force - 
-
-*--minimal*::
-	Specify --minimal to only show minimal output
+  force - Force opperation [ True | False ]
 
 EXAMPLES
 --------
@@ -49,14 +33,18 @@ To uninstall a shanpshot:
 
 - *xe snapshot-uninstall* uuid=<SNAPSHOT UUID>
 
+To force the uninstall:
+
+- * xe snapshot-uninstall snapshot-uuid=<SNAPSHOT UUID> force=True
+
 SEE ALSO
 --------
-*xe help snapshot-uninstall*,
+*xe help snapshot-uninstall*, *xe snapshot-list*(1)
 
 AUTHORS
 -------
 Manpage Author(s): ::
-<Adam Sparks> <adam@xenapiadmin.com>
+- Adam Sparks <adam@xenapiadmin.com>
 
 BUGS
 ----
@@ -64,5 +52,5 @@ For guidelines on submitting bug reports see http://wiki.xen.org/wiki/Reporting_
 
 COPYRIGHT
 ---------
-Copyright \(C)  2013 - <Adam Sparks>
+Copyright \(C)  2013 - Adam Sparks
 Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License, Version 1.3 or any later version published by the Free Software Foundation; with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts. A copy of the license is included in the section entitled "GNU Free Documentation License"

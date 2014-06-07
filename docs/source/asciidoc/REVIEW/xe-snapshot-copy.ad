@@ -5,51 +5,49 @@ XE(1)
 :man version:  {1}
 :man manual:   xe snapshot-copy manual
 
-
 NAME
 ----
-
-snapshot-copy -
+xe-snapshot-copy - Copy a snapshot
 
 SYNOPSIS
 --------
+*xe snapshot-copy* uuid=<SNAPSHOT-UUID> new-name-label=<NEW-NAME-LABEL>
 
 DESCRIPTION
 -----------
-
+*xe snapshot-copy* Create a VM template from a snapshot. Memory will be removed.
 
 REQUIRED PARAMETERS
 -------------------
+*uuid*:: 
+	UUID of SNAPSHOT that is to be copied. Use *xe snapshot-list* to obtain the UUID of the SNAPSHOT.
 
-*reqd params     : new-name-label*:: 
+*new-name-label*:: 
+	New name-label fro the VM template.
 	
 
 OPTIONAL PARAMETERS
 -------------------
-*all*::
-	Display all parameter values
-
-*uuid*:: 
-	
 *new-name-description*:: 
+	New name description for the VM template.
 	
 *sr-uuid*:: 
-	
+	UUID of the storage repository to save the VM. Use *xe sr-list* to obtain a list or storage repositories.
 
-*--minimal*::
-	Specify --minimal to only show minimal output
 EXAMPLES
 --------
+To copy a Snapshot:
 
+xe snapshot-copy new-name-label=<VM-TEMPLATE-NAME> uuid=<SNAPSHOT-UUID>
 
 SEE ALSO
 --------
-*xe help snapshot-copy*,
+*xe help snapshot-copy*, *xe snapshot-list*(1), *xe sr-list*(2)
 
 AUTHORS
 -------
 Manpage Author(s): ::
-<Adam Sparks> <adam@xenapiadmin.com>
+- Adam Sparks <adam@xenapiadmin.com>
 
 BUGS
 ----
@@ -57,5 +55,5 @@ For guidelines on submitting bug reports see http://wiki.xen.org/wiki/Reporting_
 
 COPYRIGHT
 ---------
-Copyright \(C)  2013 - <Adam Sparks>
+Copyright \(C)  2013 - Adam Sparks
 Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License, Version 1.3 or any later version published by the Free Software Foundation; with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts. A copy of the license is included in the section entitled "GNU Free Documentation License"

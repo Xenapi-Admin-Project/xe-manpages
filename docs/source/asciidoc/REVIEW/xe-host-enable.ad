@@ -5,7 +5,6 @@ XE(1)
 :man version:  {1}
 :man manual:   xe host-enable manual
 
-
 NAME
 ----
 xe-host-enable - Enable a XenServer host

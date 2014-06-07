@@ -1,0 +1,76 @@
+XE(1)
+=======
+:doctype: manpage
+:man source:   xe vm-disk-add
+:man version:  {1}
+:man manual:   xe vm-disk-add manual
+
+NAME
+----
+xe-vm-disk-add - Create and attach a new Virtual Disk Image (VDI) to a Virtual Machine (VM)
+
+SYNOPSIS
+--------
+*xe vm-disk-add* disk-size=<DISK SIZE> device=<VBD DEVICE> [ sr-uuid=<SR UUID> ] [ vm-selectors ] [ --multiple ]
+
+DESCRIPTION
+-----------
+*xe vm-disk-add* creates a new VDI, new VBD, and attaches it to the specified VBD device number. If no default storage repository is set, then a *sr-uuid* argument is required. When a VM is utilizing a local SR, the VDI must reside on the same SR as the VM.
+
+Select VMs by using one or more parameters displayed by xe vm-list params=all. Append --multiple if more than one VM matches.
+	
+REQUIRED PARAMETERS
+-------------------
+*disk-size*::
+	Specified disk size for the new VDI. Specify the size using the IEC suffix standards, KiB, MiB, GiB, and TiB.
+	
+*device*:: 
+	VBD device number - Use *xe vm-param-get* uuid=<VM UUID> param-name="allowed-VBD-devices" to get a list of available VBD device numbers
+
+OPTIONAL PARAMETERS
+-------------------
+*sr-uuid*:: 
+	Desired storage repository UUID - Use *xe sr-list* to get a list of storage repositories
+
+*<vm-selectors>*:: 
+	Parameters to select VM(s) - Use *xe vm-list params=all* to get a list of VM parameters to filter on.
+
+*--multiple* ::
+	Specify --multiple if you want to match more than one VM.
+
+EXAMPLES
+--------
+To create a 60 GiB disk for a specific VM:
+
+- *xe vm-disk-add* uuid=<VM UUID> disk-size="60GiB" 
+
+To create a 80 GiB disk on a specific VM using a specific SR:
+
+- *xe vm-disk-add* uuid=<VM UUID> disk-size="80GiB" sr-uuid=<SR UUID>
+
+To create a 40 GiB Disk on all VMs matching a certain tag parameter:
+
+- *xe vm-disk-add* tags=<TAG> disk-size="40GiB" --multiple 
+
+To create a 1 TiB disk on a specific SR on all VMs resident on a certain host:
+
+- *xe vm-disk-add* resident-on=<HOST UUID> disk-size="1 TiB" sr-uuid=<SR UUID> --multiple
+
+SEE ALSO
+--------
+*xe help vm-disk-add*, *xe vm-list*(1), *xe vm-disk-remove*(1), *xe vm-param-get*(1),
+
+AUTHORS
+-------
+Manpage Author(s):
+
+- Matthew Spah <spahmatthew@xenapiadmin.com>
+
+BUGS
+----
+For guidelines on submitting bug reports see http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP. Submit bugs and general questions to xen-api@lists.xen.org.
+
+COPYRIGHT
+---------
+Copyright \(C)  2014 - Matthew Spah
+Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License, Version 1.3 or any later version published by the Free Software Foundation; with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts. A copy of the license is included in the section entitled "GNU Free Documentation License".

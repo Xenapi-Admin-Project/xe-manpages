@@ -1,0 +1,66 @@
+XE(1)
+=======
+:doctype: manpage
+:man source:   xe vm-snapshot
+:man version:  {1}
+:man manual:   xe vm-snapshot manual
+
+NAME
+----
+xe-vm-snapshot - Create a Virtual Machine (VM) snapshot
+
+SYNOPSIS
+--------
+*xe vm-snapshot* new-name-label=<NAME LABEL> [ vm-slectors ] [ new-name-description=<NAME DESCRIPTION> ]  
+
+DESCRIPTION
+-----------
+*xe vm-snapshot* creates a regular snapshot of a running or suspended VM on all storage repostiory types. LVM based storage repositories must be upgraded if they were created on a previous version of XenServer, and the volumes (VDIs) must be created using the default format (type=raw volumes cannot be snapshotted). 
+
+A regular VM snapshot contains all storage information, parameters, and all attached Virtual Interfaces (VIF), which allows them to be exported and restored for backup purposes. Regular snapshots are crash consistent and can be created on all VM types. See *xe vm-snapshot-revert* for restoring a VM using a snapshot.
+
+While a snapshot is being created, IO is temporary halted to ensure a contestant disk image is captured. 
+
+See *xe vm-checkpoint* for creating a VM snapshot that also saves the VM state (RAM). See *xe vm-snapshot-with-quiesce* for creating snapshots that utilize the Windows Volume Shadow Copy Service (VSS).
+
+REQUIRED PARAMETERS
+-------------------
+*new-name-label*:: 
+	Desired new name-label for VM snapshot
+
+*<vm-selectors>*:: 
+	Parameters to select VM(s) - use *xe vm-list params=all* to get a list of VM parameters to filter on.
+
+OPTIONAL PARAMETERS
+-------------------
+*new-name-description*:: 
+	Desired new name-description for VM snapshot
+	
+EXAMPLES
+--------
+To create a regular snapshot of a VM:
+
+- *xe vm-snapshot* new-name-label="Linux Test Snapshot" uuid=<VM UUID>
+
+To create a regular snapshot of a VM with a description:
+
+- *xe vm-snapshot* new-name-description="This is the description" new-name-label="VM Snapshot" uuid=<VM UUID>
+
+SEE ALSO
+--------
+*xe help vm-snapshot*, *xe snapshot-list*(1), *xe vm-list*(1), *Xe vm-checkpoint*(1), *vm-snapshot-with-quiesce*(1)
+
+AUTHORS
+-------
+Manpage Author(s):
+
+- Matthew Spah <spahmatthew@xenapiadmin.com>
+
+BUGS
+----
+For guidelines on submitting bug reports see http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP. Submit bugs and general questions to xen-api@lists.xen.org.
+
+COPYRIGHT
+---------
+Copyright \(C)  2014 - Matthew Spah
+Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License, Version 1.3 or any later version published by the Free Software Foundation; with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts. A copy of the license is included in the section entitled "GNU Free Documentation License".

@@ -7,7 +7,7 @@ XE(1)
 
 NAME
 -----
-xe-vm-param-set - Set parameters for a vm
+xe-vm-param-set - Set parameters for a Virtual Machine (VM)
 
 SYNOPSIS
 --------
@@ -17,10 +17,8 @@ DESCRIPTION
 -----------
 *xe vm-param-set* sets writable parameters. Use *xe vm-list* and *xe vm-param-list to identify writable parameters (RW, MRW). To append a value to a writable set or map (SRW, MRW) parameter use *xe vm-param-add*
 
-
 REQUIRED PARAMETERS
 -------------------
-
 *uuid*:: 
 	VM UUID - Use *xe VM-list* to obtain a list of VM UUIDs.
 
@@ -28,79 +26,113 @@ OPTIONAL PARAMETERS
 -------------------
 
 *name-label*:: 
-	Set name of VM
+	Set name of VM. Inclose your name-label in quotes to incorpurate spaces
+
 *name-description*:: 
-	Set name-description of VM
-*user-version*:: 
-	
+	Set name-description. Inclose your description in quotes to incorpurate spaces
+
+*user-version*::
+	Set user-version number 
+
 *is-a-template*:: 
-	
+	Set template mode of a VM: is-a-template=[ true | false ]
+
 *memory-static-max*:: 
+	Set the max static memory in bytes 
 	
 *memory-dynamic-max*:: 
+	Set the max dynamic memory in bytes 
 	
 *memory-dynamic-min*:: 
+	Set the minimal dynamic memory in bytes 
 	
 *memory-static-min*:: 
+	Set the static minimal memory in bytes 
 	
 *suspend-VDI-uuid*:: 
+	Set the suspend VDI UUID
+
+*suspend-SR-uuid*::
+	Set the suspend SR UUID
 	
-*suspend-SR-uuid*:: 
+*VCPUs-max*::
+	Set the maximum number of Virtual CPUs
 	
-*VCPUs-max*:: 
-	
-*VCPUs-at-startup*:: 
+*VCPUs-at-startup*::
+	Set the maximum number of boot Virtual CPUs
 	
 *actions-after-shutdown*:: 
+	Set the actions to occur after the VM has shutdown
 	
-*actions-after-reboot*:: 
+*actions-after-reboot*::
+	Set the actions to occur after the VM has rebooted
 	
 *actions-after-crash*:: 
+	Set the actions to occur after the VM has crashed
 	
-*HVM-boot-policy*:: 
-	
-*HVM-shadow-multiplier*:: 
+*HVM-boot-policy*::
+	Set the boot policy for HVM guests. Either BIOS Order or an empty string.
+
+*HVM-shadow-multiplier*::
+ 	Set a floating point value which controls the amount of shadow memory overhead to grant the VM (Default is 1.0)
 	
 *PV-kernel*:: 
+	Set path to kernal 
 	
 *PV-ramdisk*:: 
+	Set path to initrd
 	
-*PV-args*:: 
+*PV-args*::
+	Set a string of kernel command line read/write arguments
 	
 *PV-legacy-args*:: 
-	
-*PV-bootloader*:: 
+	Set a string of arguments to make read/write legacy VMs boot
+
+*PV-bootloader*::
+	Set name or path to bootloader
 	
 *PV-bootloader-args*:: 
-	
+	Set string of read/write arguments for the bootloader
+
 *affinity*:: 
-	
+	Set the prefered host to start the VM on: affinity=<HOST UUID>
+
 *ha-always-run*:: 
+	Set the VM to be restarted on another host in case of of the failure of the host the VM is resident on: ha-always-run=< True | False >
 	
 *ha-restart-priority*:: 
-	
+	Set the HA restart priority, 1 2 3 or best effort. 1 is the highest restart priority: ha-restart-priority=< 1 | 2 | 3 | best effort>
+
 *appliance*:: 
-	
+	Set the appliance/vApp to which the VM belongs
+
 *start-delay*:: 
-	
-*shutdown-delay*:: 
-	
-*order*:: 
-	
-*VCPUs-params:*:: 
-	
-*platform:*:: 
-	
-*blocked-operations:*:: 
-	
-*HVM-boot-params:*:: 
-	
-*other-config:*:: 
-	
-*xenstore-data:*:: 
-	
+	Set the delay to wait before a call to start up the VM returns
 
-
+*shutdown-delay*::
+	Set the delay to wait before a call to shutdown the VM returns
+	
+*order*::
+	Set the start order for vApp startup/shutdown and for startup after HA failover
+	
+*VCPUs-params*::
+	Set configuration parameters for the selected VCPU policy
+	
+*platform:*::
+	Set platform-specific configuration parameters
+	
+*blocked-operations:*::
+	Set blocked-operations: blocked-operations=< start | shutdown | reboot> # Verify
+	
+*HVM-boot-params*:: 
+	Set HVM-boot-params
+	
+*other-config*::
+	Set other-config parameters 
+	
+*xenstore-data*::
+	Set xenstore-data
+	
 
 EXAMPLES
 --------
@@ -114,7 +146,7 @@ AUTHORS
 -------
 Manpage Author(s):
 
-- <manpage author name> <manpage author email address>
+- Matthew Spah <spahmatthew@xenapiadmin.com>
 
 BUGS
 ----
@@ -122,5 +154,5 @@ For guidelines on submitting bug reports see http://wiki.xen.org/wiki/Reporting_
 
 COPYRIGHT
 ---------
-Copyright \(C)  2013 - <manpage author name>
+Copyright \(C)  2014- Matthew Spah
 Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License, Version 1.3 or any later version published by the Free Software Foundation; with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts. A copy of the license is included in the section entitled "GNU Free Documentation License".

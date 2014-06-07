@@ -4,6 +4,7 @@ XE(1)
 :man source:   xe pool-param-list
 :man version:  {1}
 :man manual:   xe pool-param-list manual
+
 NAME
 ----
 xe-pool-param-list - Displays all parameters for a pool
