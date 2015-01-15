@@ -1,0 +1,10 @@
+gpu-group-create
+gpu-group-destroy
+gpu-group-get-remaining-capacity
+host-declare-dead
+pool-apply-edition
+sm-param-clear
+vdi-export
+vgpu-type-list
+vgpu-type-param-get
+vgpu-type-param-list
