@@ -1,0 +1,62 @@
+XE(1)
+=======
+:doctype: manpage
+:man source:   xe vif-plug
+:man version:  {1}
+:man manual:   xe vif-plug manual
+
+NAME
+----
+xe-vif-plug - Plug in a virtual interface (VIF) 
+
+SYNOPSIS
+--------
+*xe vif-plug* uuid=<VIF UUID> [ force=<TRUE | FALSE> ]
+
+DESCRIPTION
+-----------
+*xe vif-plug* attaches a VIF interface to a running VM. VIF interfaces automatically attach when you start a VM. Use *xe vif-unplug* to detach a VIF.
+
+REQUIRED PARAMETERS
+-------------------
+*uuid*::
+	VIF UUID - Use *xe vif-list* to obtain a list of VIF UUIDs.
+
+OPTIONAL PARAMETERS
+-------------------
+*force*::
+	Force operation [ true | false ]
+
+EXAMPLES
+--------
+To display if a VIF is detached:
+
+- *xe vif-param-get* uuid=<VIF UUID> param-name="currently-attached"
+
+To attach a VIF interface to a running VM type:
+
+- *xe vif-plug* uuid=<VIF UUID>
+
+To display all detached VIFs for a network:
+
+- *xe vif-list* network-uuid=<NETWORK UUID> currently-attached="false"
+
+SEE ALSO
+--------
+*xe help vif-plug*, *xe-vif-list*(1), *xe-vif-unplug*(1), *xe-vif-create*(1), *xe-vif-destroy*, *xe-vm-list*(1), *xe-network-list*(1)
+
+AUTHORS
+-------
+Manpage Author(s):
+
+- Matthew Spah <spahmatthew@xenapiadmin.com>
+
+BUGS
+----
+For guidelines on submitting bug reports see http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP. Submit bugs and general questions to xen-api@lists.xen.org.
+
+COPYRIGHT
+---------
+Copyright \(C) 2013 - Matthew Spah
+
+Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License, Version 1.3 or any later version published by the Free Software Foundation; with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts. A copy of the license is included in the section entitled "GNU Free Documentation License."

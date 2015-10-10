@@ -1,0 +1,249 @@
+'\" t
+.\"     Title: xe
+.\"    Author: [see the "AUTHORS" section]
+.\" Generator: DocBook XSL Stylesheets v1.78.1 <http://docbook.sf.net/>
+.\"      Date: 06/09/2013
+.\"    Manual: xe cd-list Manual
+.\"    Source: xe-cd-list
+.\"  Language: English
+.\"
+.TH "XE" "1" "06/09/2013" "xe\-cd\-list" "xe cd\-list Manual"
+.\" -----------------------------------------------------------------
+.\" * Define some portability stuff
+.\" -----------------------------------------------------------------
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.\" http://bugs.debian.org/507673
+.\" http://lists.gnu.org/archive/html/groff/2009-02/msg00013.html
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.ie \n(.g .ds Aq \(aq
+.el       .ds Aq '
+.\" -----------------------------------------------------------------
+.\" * set default formatting
+.\" -----------------------------------------------------------------
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
+.ad l
+.\" -----------------------------------------------------------------
+.\" * MAIN CONTENT STARTS HERE *
+.\" -----------------------------------------------------------------
+.SH "NAME"
+xe-cd-list \- Lists CD images
+.SH "SYNOPSIS"
+.sp
+\fBxe cd\-list\fR [ params=<PARAMETER> ] [\-\-minimal]
+.SH "DESCRIPTION"
+.sp
+\fBxe cd\-list\fR displays cds and their parameters\&.
+.PP
+Output can be filtered by using the \fBparams\fR parameter and a value (separate multiple parameters with commas):
+.RS 4
+\fBxe cd\-list params=uuid\fR\fBxe cd\-list params=uuid,name\-label,name\-description\fR
+.RE
+.PP
+Append \-\-minimal to display values for one parameter on a single line separated by commas:
+.RS 4
+\fBxe cd\-list params="name\-label" \-\-minimal\fR
+.RE
+.SH "OPTIONAL PARAMETERS"
+.PP
+\fBall\fR
+.RS 4
+Display all parameter values
+.RE
+.PP
+\fBuuid\fR
+.RS 4
+Display CD UUIDs
+.RE
+.PP
+\fBname\-label\fR
+.RS 4
+Display CD name labels
+.RE
+.PP
+\fBname\-description\fR
+.RS 4
+Display CD name descriptions
+.RE
+.PP
+\fBis\-a\-snapshot\fR
+.RS 4
+Display if a CD is a snapshot [ true | false ]
+.RE
+.PP
+\fBsnapshot\-of\fR
+.RS 4
+Display UUID of snapshotted CD
+.RE
+.PP
+\fBsnapshots\fR
+.RS 4
+Display how many snapshots the CD has
+.RE
+.PP
+\fBsnapshot\-time\fR
+.RS 4
+Display the time of the snapshot
+.RE
+.PP
+\fBallowed\-operations\fR
+.RS 4
+Display allowed operations
+.RE
+.PP
+\fBcurrent\-operations\fR
+.RS 4
+Display current operations
+.RE
+.PP
+\fBsr\-uuid\fR
+.RS 4
+Display UUID of the ISO Storage Repository where the CD resides
+.RE
+.PP
+\fBsr\-name\-label\fR
+.RS 4
+Display name\-label of the ISO Storage Repository where the CD resides
+.RE
+.PP
+\fBvbd\-uuids\fR
+.RS 4
+Display any Virtual Block Device UUIDs
+.RE
+.PP
+\fBcrashdump\-uuids\fR
+.RS 4
+Display any crash dump UUIDs
+.RE
+.PP
+\fBvirtual\-size\fR
+.RS 4
+Display the virtual size in bytes
+.RE
+.PP
+\fBphysical\-utilisation\fR
+.RS 4
+Display utilised size in bytes
+.RE
+.PP
+\fBlocation\fR
+.RS 4
+Display the CD filename
+.RE
+.PP
+\fBtype\fR
+.RS 4
+Display the CD type [ User | System ]
+.RE
+.PP
+\fBsharable\fR
+.RS 4
+Display if the CD is sharable [ true | false ]
+.RE
+.PP
+\fBread\-only\fR
+.RS 4
+Display if the CD is read\-only [ true | false ]
+.RE
+.PP
+\fBstorage\-lock\fR
+.RS 4
+Display if the disk is locked at the storage level [ true | false ]
+.RE
+.PP
+\fBmanaged\fR
+.RS 4
+Display if managed [ true | false ]
+.RE
+.PP
+\fBparent\fR
+.RS 4
+Display parent disk if CD is part of a chain
+.RE
+.PP
+\fBmissing\fR
+.RS 4
+Display if the ISO Storage Repository has reported CD missing [ true | false ]
+.RE
+.PP
+\fBother\-config\fR
+.RS 4
+Display additional configuration parameter values for CD
+.RE
+.PP
+\fBxenstore\-data\fR
+.RS 4
+Display data to be inserted into xenstore tree
+.RE
+.PP
+\fBsm\-config\fR
+.RS 4
+Display storage manager device config keys
+.RE
+.PP
+\fBon\-boot\fR
+.RS 4
+Display on\-boot config
+.RE
+.PP
+\fBallow\-caching\fR
+.RS 4
+Display if caching is allowed [ true | false ]
+.RE
+.PP
+\fBmetadata\-latest\fR
+.RS 4
+Display latest CD metadata
+.RE
+.PP
+\fBmetadata\-of\-pool\fR
+.RS 4
+Display pool metadata
+.RE
+.PP
+\fBtags\fR
+.RS 4
+Display tags
+.RE
+.PP
+\fB\-\-minimal\fR
+.RS 4
+Specify \-\-minimal to only show minimal output\&.
+.RE
+.SH "EXAMPLES"
+.PP
+To display all CD name\-labels:
+.RS 4
+\fBxe cd\-list\fR
+params="name\-label"
+.RE
+.PP
+To display all parameters for all CDs:
+.RS 4
+\fBxe cd\-list\fR
+params="all"
+.RE
+.PP
+To display minimal output for all CDs:
+.RS 4
+\fBxe cd\-list\fR
+\-\-minimal
+.RE
+.SH "SEE ALSO"
+.sp
+\fBxe help cd\-list\fR, \fBxe\-vm\-cd\-add\fR(1), \fBxe\-vm\-cd\-eject\fR(1), \fBxe\-vm\-cd\-insert\fR(1), \fBxe\-vm\-cd\-list\fR(1), \fBxe\-vm\-cd\-remove\fR(1)
+.SH "AUTHORS"
+.PP
+Manpage Author(s):
+.RS 4
+Grant McWilliams <grant@xenapiadmin\&.com>
+.RE
+.SH "BUGS"
+.sp
+For guidelines on submitting bug reports see http://wiki\&.xen\&.org/wiki/Reporting_Bugs_against_XCP\&. Submit bugs and general questions to xen\-api@lists\&.xen\&.org\&.
+.SH "COPYRIGHT"
+.sp
+Copyright (C) 2012 \- Grant McWilliams
+.sp
+Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License, Version 1\&.3 or any later version published by the Free Software Foundation; with no Invariant Sections, no Front\-Cover Texts, and no Back\-Cover Texts\&. A copy of the license is included in the section entitled "GNU Free Documentation License"

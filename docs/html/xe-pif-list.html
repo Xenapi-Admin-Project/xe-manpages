@@ -1,0 +1,543 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+    "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="generator" content="AsciiDoc 8.6.8" />
+<title>XE(1)</title>
+<link rel="stylesheet" href="./asciidoc.css" type="text/css" />
+<link rel="stylesheet" href="./asciidoc-manpage.css" type="text/css" />
+<link rel="stylesheet" href="./layout-css.css" type="text/css" />
+<script type="text/javascript" src="./asciidoc.js"></script>
+<script type="text/javascript">
+/*<![CDATA[*/
+asciidoc.install();
+/*]]>*/
+</script>
+</head>
+<body>
+<div id="layout-menu-box">
+<div id="layout-menu">
+  <div>&#187;<a href="index.html">Index</a></div>
+</div>
+</div>
+<div id="layout-content-box">
+<div id="layout-banner">
+  <div id="layout-title">Xenapi Admin Project</div>
+  <div id="layout-description">XenServer xe Manpages</div>
+</div>
+<div id="layout-content">
+  <div align="right" id="page-source"><a href="xe-pif-list.ad">Page&nbsp;Source</a></div>
+<div id="header">
+<h1>
+XE(1) Manual Page
+</h1>
+<h2>NAME</h2>
+<div class="sectionbody">
+<p>xe-pif-list -
+   Displays physical interfaces (PIF) and their parameters
+</p>
+</div>
+</div>
+<div id="content">
+<div class="sect1">
+<h2 id="_synopsis">SYNOPSIS</h2>
+<div class="sectionbody">
+<div class="paragraph"><p><strong>xe pif-list</strong>  [ params=&lt;PARAMETER&gt; ] [ --minimal ]</p></div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_description">DESCRIPTION</h2>
+<div class="sectionbody">
+<div class="paragraph"><p><strong>xe pif-list</strong> displays physical interfaces (PIF) and their parameters.</p></div>
+<div class="paragraph"><p>Output can be filtered by using the <strong>params</strong> parameter and a value (separate multiple parameters with commas):</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+<strong>xe pif-list params="IP"</strong>
+</p>
+</li>
+<li>
+<p>
+<strong>xe pif-list params="device,uuid,IP,netmask"</strong>
+</p>
+</li>
+</ul></div>
+<div class="paragraph"><p>Output can be filtered by using parameter values and the desired value:</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+<strong>xe pif-list host-uuid=&lt;HOST UUID&gt;</strong>
+</p>
+</li>
+</ul></div>
+<div class="paragraph"><p>Append --minimal to display values for one parameter on a single line separated by commas:</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+<strong>xe pif-list params="uuid" --minimal</strong>
+</p>
+</li>
+</ul></div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_optional_parameters">OPTIONAL PARAMETERS</h2>
+<div class="sectionbody">
+<div class="dlist"><dl>
+<dt class="hdlist1">
+<strong>all</strong>
+</dt>
+<dd>
+<p>
+        Display all parameter values
+</p>
+</dd>
+<dt class="hdlist1">
+<strong>uuid</strong>
+</dt>
+<dd>
+<p>
+        Display PIF UUIDs
+</p>
+</dd>
+<dt class="hdlist1">
+<strong>device</strong>
+</dt>
+<dd>
+<p>
+        Display physical network interfaces (e.g. eth0)
+</p>
+</dd>
+<dt class="hdlist1">
+<strong>MAC</strong>
+</dt>
+<dd>
+<p>
+    Display MAC addresses
+</p>
+</dd>
+<dt class="hdlist1">
+<strong>physical</strong>
+</dt>
+<dd>
+<p>
+    Display if the PIF is a physical device [ true | false ]
+</p>
+</dd>
+<dt class="hdlist1">
+<strong>currently-attached</strong>
+</dt>
+<dd>
+<p>
+        Display if the PIF is attached to the physical network interface [ true | false ]
+</p>
+</dd>
+<dt class="hdlist1">
+<strong>MTU</strong>
+</dt>
+<dd>
+<p>
+    Display MTU values
+</p>
+</dd>
+<dt class="hdlist1">
+<strong>VLAN</strong>
+</dt>
+<dd>
+<p>
+        Display VLAN tags
+</p>
+</dd>
+<dt class="hdlist1">
+<strong>bond-master-of</strong>
+</dt>
+<dd>
+<p>
+        Display bond master UUIDs
+</p>
+</dd>
+<dt class="hdlist1">
+<strong>bond-slave-of</strong>
+</dt>
+<dd>
+<p>
+        Display bond slave UUIDs
+</p>
+</dd>
+<dt class="hdlist1">
+<strong>tunnel-access-PIF-of</strong>
+</dt>
+<dd>
+<p>
+        Display tunnel-access UUIDs
+</p>
+</dd>
+<dt class="hdlist1">
+<strong>tunnel-transport-PIF-of</strong>
+</dt>
+<dd>
+<p>
+        Display tunnel-transport UUIDs
+</p>
+</dd>
+<dt class="hdlist1">
+<strong>management</strong>
+</dt>
+<dd>
+<p>
+        Display if PIF is a management interface  [ true | false ]
+</p>
+</dd>
+<dt class="hdlist1">
+<strong>network-uuid</strong>
+</dt>
+<dd>
+<p>
+    Display network UUIDs
+</p>
+</dd>
+<dt class="hdlist1">
+<strong>network-name-label</strong>
+</dt>
+<dd>
+<p>
+    Display network name-labels
+</p>
+</dd>
+<dt class="hdlist1">
+<strong>host-uuid</strong>
+</dt>
+<dd>
+<p>
+    Display host UUIDs
+</p>
+</dd>
+<dt class="hdlist1">
+<strong>host-name-label</strong>
+</dt>
+<dd>
+<p>
+    Display host name-labels
+</p>
+</dd>
+<dt class="hdlist1">
+<strong>IP-configuration-mode</strong>
+</dt>
+<dd>
+<p>
+        Display IP configuration mode [ DHCP | static ]
+</p>
+</dd>
+<dt class="hdlist1">
+<strong>IP</strong>
+</dt>
+<dd>
+<p>
+    Display IP addresses
+</p>
+</dd>
+<dt class="hdlist1">
+<strong>netmask</strong>
+</dt>
+<dd>
+<p>
+    Display netmasks
+</p>
+</dd>
+<dt class="hdlist1">
+<strong>gateway</strong>
+</dt>
+<dd>
+<p>
+    Display gateway addresses
+</p>
+</dd>
+<dt class="hdlist1">
+<strong>DNS</strong>
+</dt>
+<dd>
+<p>
+    Display DNS addresses
+</p>
+</dd>
+<dt class="hdlist1">
+<strong>io_read_kbs</strong>
+</dt>
+<dd>
+<p>
+        Display the average receive rate in kB/s
+</p>
+</dd>
+<dt class="hdlist1">
+<strong>io_write_kbs</strong>
+</dt>
+<dd>
+<p>
+    Display the average transmit rate in kB/s
+</p>
+</dd>
+<dt class="hdlist1">
+<strong>carrier</strong>
+</dt>
+<dd>
+<p>
+        Display if Ethernet link is detected [ true | false ]
+</p>
+</dd>
+<dt class="hdlist1">
+<strong>vendor-id</strong>
+</dt>
+<dd>
+<p>
+    Display NIC vendr IDs
+</p>
+</dd>
+<dt class="hdlist1">
+<strong>vendor-name</strong>
+</dt>
+<dd>
+<p>
+    Display NIC vendor names
+</p>
+</dd>
+<dt class="hdlist1">
+<strong>device-id</strong>
+</dt>
+<dd>
+<p>
+    Display NIC vendor device-id numbers
+</p>
+</dd>
+<dt class="hdlist1">
+<strong>device-name</strong>
+</dt>
+<dd>
+<p>
+        Display NIC vendor device-name
+</p>
+</dd>
+<dt class="hdlist1">
+<strong>speed</strong>
+</dt>
+<dd>
+<p>
+    Display NIC speeds
+</p>
+</dd>
+<dt class="hdlist1">
+<strong>duplex</strong>
+</dt>
+<dd>
+<p>
+    Display duplex settings [ full | half ]
+</p>
+</dd>
+<dt class="hdlist1">
+<strong>disallow-unplug</strong>
+</dt>
+<dd>
+<p>
+        Display disallow-unplug protection settings [ true | false ]
+</p>
+</dd>
+<dt class="hdlist1">
+<strong>pci-bus-path</strong>
+</dt>
+<dd>
+<p>
+        Display PCI bus path addresses
+</p>
+</dd>
+<dt class="hdlist1">
+<strong>other-config:ethtool-speed</strong>
+</dt>
+<dd>
+<p>
+        Display configured speed of PIF interface in Mbps.
+</p>
+</dd>
+<dt class="hdlist1">
+<strong>other-config:ethtool-autoneg</strong>
+</dt>
+<dd>
+<p>
+        Display configured ethernet autonegotiation [ on | off ]
+</p>
+</dd>
+<dt class="hdlist1">
+<strong>other-config:ethtool-rx</strong>
+</dt>
+<dd>
+<p>
+        Display configured receive checksum status [ on | off ]
+</p>
+</dd>
+<dt class="hdlist1">
+<strong>other-config:ethtool-tx</strong>
+</dt>
+<dd>
+<p>
+        Display configured transmit checksum status [ on | off ]
+</p>
+</dd>
+<dt class="hdlist1">
+<strong>other-config:ethtool-sg</strong>
+</dt>
+<dd>
+<p>
+        Display configured scatter gather status [ on | off]
+</p>
+</dd>
+<dt class="hdlist1">
+<strong>other-config:ethtool-tso</strong>
+</dt>
+<dd>
+<p>
+        Display configured TCP segmentation offload status [ on | off ]
+</p>
+</dd>
+<dt class="hdlist1">
+<strong>other-config:ethtool-ufo</strong>
+</dt>
+<dd>
+<p>
+        Display configured UDP fragment offload status [ on | off ]
+</p>
+</dd>
+<dt class="hdlist1">
+<strong>other-config:ethtool-gso</strong>
+</dt>
+<dd>
+<p>
+        Display configured generic segmentation offload status [ on | off ]
+</p>
+</dd>
+<dt class="hdlist1">
+<strong>other-config:domain</strong>
+</dt>
+<dd>
+<p>
+        Display DNS search path ( DNS suffix ).
+</p>
+</dd>
+<dt class="hdlist1">
+<strong>other-config:bond-miimon</strong>
+</dt>
+<dd>
+<p>
+        Display the time between link liveness checks, in milliseconds.
+</p>
+</dd>
+<dt class="hdlist1">
+<strong>other-config:bond-downdelay</strong>
+</dt>
+<dd>
+<p>
+        Display the number of milliseconds the bond waits after the link is lost before considering the link down. Default is 200ms.
+</p>
+</dd>
+<dt class="hdlist1">
+<strong>other-config:bond-updelay</strong>
+</dt>
+<dd>
+<p>
+        Display the number of milliseconds the bond waits after the link comes up before considering it up. Default is 31s.
+</p>
+</dd>
+<dt class="hdlist1">
+<strong>--minimal</strong>
+</dt>
+<dd>
+<p>
+        Specify --minimal to only show minimal output
+</p>
+</dd>
+</dl></div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_examples">EXAMPLES</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>To display all parameters for all PIFs:</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+<strong>xe pif-list</strong> params="all"
+</p>
+</li>
+</ul></div>
+<div class="paragraph"><p>To display all parameters for a specific PIF:</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+<strong>xe pif-list</strong> uuid=&lt;PIF UUID&gt; params="all"
+</p>
+</li>
+</ul></div>
+<div class="paragraph"><p>To display <strong>network-uuid</strong> for a specific PIF:</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+<strong>xe pif-list</strong> uuid=&lt;PIF UUID&gt; params="network-uuid"
+</p>
+</li>
+</ul></div>
+<div class="paragraph"><p>To display the <strong>device</strong> and <strong>UUID</strong> parameters of all PIFs on a specific host:</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+<strong>xe pif-list</strong> host-uuid=&lt;HOST UUID&gt; params="uuid,device"
+</p>
+</li>
+</ul></div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_see_also">SEE ALSO</h2>
+<div class="sectionbody">
+<div class="paragraph"><p><strong>xe help pif-list</strong>, <strong>xe-network-list</strong>(1), <strong>xe-vlan-list</strong>(1), <strong>xe-pif-introduce</strong>(1), <strong>xe-pif-forget</strong>(1), <strong>xe-pif-reconfigure-ip</strong>(1), <strong>xe-pif-param-add</strong>(1), <strong>xe-pif-plug</strong>(1), <strong>xe-pif-unplug</strong>(1), <strong>xe-pif-param-get</strong>(1), <strong>xe-pif-param-set</strong>(1), <strong>xe-pif-param-remove</strong>(1)</p></div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_authors">AUTHORS</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>Manpage Author(s):</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+Matthew Spah &lt;<a href="mailto:spahmatthew@xenapiadmin.com">spahmatthew@xenapiadmin.com</a>&gt;
+</p>
+</li>
+<li>
+<p>
+Lisa Nguyen &lt;<a href="mailto:lisa@xenapiadmin.com">lisa@xenapiadmin.com</a>&gt;
+</p>
+</li>
+</ul></div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_bugs">BUGS</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>For guidelines on submitting bug reports see <a href="http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP">http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP</a>. Submit bugs and general questions to <a href="mailto:xen-api@lists.xen.org">xen-api@lists.xen.org</a>.</p></div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_copyright">COPYRIGHT</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>Copyright (C) 2012 - Matthew Spah, Lisa Nguyen</p></div>
+<div class="paragraph"><p>Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License, Version 1.3 or any later version published by the Free Software Foundation; with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts. A copy of the license is included in the section entitled "GNU Free Documentation License."</p></div>
+</div>
+</div>
+</div>
+<div id="footnotes"><hr /></div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2015-10-10 15:35:17 PDT
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,54 @@
+XE(1)
+=======
+:doctype: manpage
+:man source:   xe host-data-source-list
+:man version:  {1}
+:man manual:   xe host-data-source-list manual
+
+NAME
+----
+xe-host-data-source-list - Display data-sources present on host
+
+SYNOPSIS
+--------
+*xe host-data-source-list* <host-selectors> 
+
+DESCRIPTION
+-----------
+*xe host-data-source-list* displays data-sources and their parameters present on a specific host. Use *xe host-data-source-query* to return data from sensors displayed by *xe host-data-source-list*. 
+
+Select a host by using one or more parameters displayed by xe host-list params=all. *xe host-data-source-list* can only be performed on one host at a time
+
+REQUIRED PARAMETERS
+-------------------
+*<host-selectors>*::
+	Parameters to select host - use *xe host-list params=all* to get a list of host parameters on which to filter.
+
+EXAMPLES
+--------
+To display data-sensors present on a host using a host UUID:
+
+- *xe host-data-source-list* uuid=<HOST UUID>
+
+To display data-sensors present on a host using a host name-label:
+
+- *xe host-data-source-list* name-label=<HOST NAME-LABEL>
+
+SEE ALSO
+--------
+*xe help host-data-source-list*, *xe host-list*(1), *xe-host-data-source-record*(1), *xe-host-data-source-forget*(1), *xe-host-data-source-query*(1)
+
+AUTHORS
+-------
+Manpage Author(s):
+
+- Matthew Spah <spahmatthew@xenapiadmin.com>
+
+BUGS
+----
+For guidelines on submitting bug reports see http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP. Submit bugs and general questions to xen-api@lists.xen.org.
+
+COPYRIGHT
+---------
+Copyright \(C)  2014 - Matthew Spah
+Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License, Version 1.3 or any later version published by the Free Software Foundation; with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts. A copy of the license is included in the section entitled "GNU Free Documentation License".

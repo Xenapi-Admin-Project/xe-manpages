@@ -1,0 +1,62 @@
+XE(1)
+=======
+:doctype: manpage
+:man source:   xe vif-param-get
+:man version:  {1}
+:man manual:   xe vif-param-get manual
+
+NAME
+----
+xe-vif-param-get - Return a parameter for a virtual interface (VIF).
+
+SYNOPSIS
+--------
+*xe vif-param-get* uuid=<VIF UUID> param-name=<PARAMETER NAME> [ param-key=<PARAMETER KEY> ]
+
+DESCRIPTION
+-----------
+*xe vif-param-get* returns the value(s) of a parameter or a map parameter key value for a specified VIF. 
+
+REQUIRED PARAMETERS
+-------------------
+*uuid*::
+	VIF UUID - Use *xe vif-list* to obtain a list of VIF UUIDs
+	
+*param-name*::
+	The VIF parameter value to return
+
+OPTIONAL PARAMETERS
+-------------------
+*param-key*::
+	The VIF key value to return
+
+EXAMPLES
+--------
+To display the *UUID* of the VM assigned the VIF type:
+
+- *xe vif-param-get* uuid=<VIF UUID> param-name="vm-uuid"
+
+To display the status of the map parameter key *other-config:promiscous*:
+
+- *xe vif-param-get* uuid=<VIF UUID> param-name="other-config" param-key="promiscous"
+
+SEE ALSO
+--------
+*xe help vif-param-get*, *xe-vif-create*(1), *xe-vif-list*(1), *xe-vif-param-set*(1), , *xe-vif-param-list*(1), *xe-vif-param-remove*(1), *xe-network-list*(1)
+
+AUTHORS
+-------
+Manpage Author(s):
+
+- Matthew Spah <spahmatthew@xenapiadmin.com>
+
+BUGS
+----
+For guidelines on submitting bug reports see http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP. Submit bugs and general questions to xen-api@lists.xen.org.
+
+COPYRIGHT
+---------
+Copyright \(C) 2013 - Matthew Spah
+
+Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License, Version 1.3 or any later version published by the Free Software Foundation; with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts. A copy of the license is included in the section entitled "GNU Free Documentation License"
+

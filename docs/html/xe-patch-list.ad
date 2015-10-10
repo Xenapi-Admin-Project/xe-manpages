@@ -1,0 +1,88 @@
+XE(1)
+=======
+:doctype: manpage
+:man source:   xe patch-list
+:man version:  {1}
+:man manual:   xe patch-list manual
+
+NAME
+-----
+xe-patch-list - Displays patches and their parameters.
+
+SYNOPSIS
+--------
+*xe patch-list*  [ params=<PARAMETER> ] [--minimal]
+
+DESCRIPTION
+-----------
+
+*xe patch-list* displays patches and their parameters.
+
+Output can be filtered by using the *params* parameter and a value (multiple parameters should be separated by commas): 
+	
+-	*xe patch-list params="uuid"* 
+-	*xe patch-list params="uuid,name-label,name-description"*
+
+Output can be filtered by using parameter values and the desired value: 
+
+-	*xe patch-list name-label="XS62E001"*
+
+Append --minimal to display values for one parameter outputted on a single line with results separated by commas:
+
+-	*xe patch-list params="hosts" --minimal*
+
+OPTIONAL PARAMETERS
+-------------------
+*all*::
+        Display all parameter values	
+*uuid*:: 
+		Display patch UUIDs
+*name-label*:: 
+		Display patch name labels
+*name-description*:: 
+		Display patch name descriptions
+*size*:: 
+		Display patch size in bytes
+*hosts*:: 
+		Display patched host(s)
+*after-apply-guidance*:: 
+		Display required action after applying patch
+*--minimal*::
+		Specify --minimal to only show minimal output
+
+EXAMPLES
+--------
+To display all parameters for all patches: 
+	
+-	*xe patch-list* params="all"
+
+To display all parameters for a specific patch: 
+
+-	*xe patch-list* uuid=<patch UUID> params="all"
+
+To display *hosts* for a specific patch: 
+
+-	*xe patch-list* uuid=<patch UUID> params="hosts"
+
+To display the *hosts* and *size* parameters of all patches with a *name-label* of XS62E001: 
+
+-	*xe patch-list* name-label="XS62E001" params="hosts,size"
+
+SEE ALSO
+--------
+*xe help patch-list*, *xe-patch-apply*(1), *xe-patch-param-clear*(1), *xe-patch-pool-clean*(1), *xe-patch-clean*(1), *xe-patch-param-get*(1), *xe-patch-precheck*(1), *xe-patch-destroy*(1), *xe-patch-param-list*(1), *xe-patch-upload*(1), *xe-patch-pool-apply*(1)
+
+AUTHORS
+-------
+Manpage Author(s): 
+
+- Anthony Giles <agiles@icloud.com>
+
+BUGS
+----
+For guidelines on submitting bug reports see http://wiki.xen.org/wiki/Reporting_Bugs_against_XCP. Submit bugs and general questions to xen-api@lists.xen.org.
+
+COPYRIGHT
+---------
+Copyright \(C)  2013 - Anthony Giles
+Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License, Version 1.3 or any later version published by the Free Software Foundation; with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts. A copy of the license is included in the section entitled "GNU Free Documentation License"
